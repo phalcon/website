@@ -1,0 +1,75 @@
+<?php
+
+require '../refactor.php';
+
+if(isset($refactor[$className])){
+
+	$refactorClass = $refactor[$className];
+
+	echo '<h2>Class <strong>', $className, '</strong></h2>';
+
+	//print_r($refactorClass);
+
+	if($refactorClass['extends']){
+		echo '<h3>Extends</h3>';
+		echo '<span class="icon-class">', Phalcon_Tag::linkTo('api/class/'.$refactorClass['extends'], $refactorClass['extends']), '</span>';
+	}
+
+	if($refactorClass['implements']){
+		echo '<h3>Implements</h3>';
+		echo '<span class="icon-interface">', join(', ', $refactorClass['implements']), '</span>';
+	}
+
+	if(isset($refactorClass['description'])){
+		echo '<p>', $refactorClass['description'], '</p>';
+	}
+
+	if(count($refactorClass['constants'])){
+		echo '<h3>Constants</h3>';
+		foreach($refactorClass['constants'] as $name => $constant){
+			echo '<p><h4><span class="return-value">',  gettype($constant), '</span> ', $name, '</h4></p>';
+		}
+	}
+
+	echo '<h3>Methods</h3>';
+	foreach($refactorClass['methods'] as $name => $method){
+		echo '<div class="method">';
+		echo '<h4>';
+		if($method['return']!='unknown'){
+			echo '<span class="return-value">', $method['return'], '</span> ';
+		}
+		echo '<span class="visibility">', join(' ', $method['modifiers']), '</span> ', $name, '(';
+		$parameters = array();
+		foreach($method['parameters'] as $parameterName => $parameter){
+			if($parameter['optional']){
+				$type = gettype($parameter['default']);
+				switch($type){
+					case 'string':
+						$parameter['default'] = '"'.$parameter['default'].'"';
+						break;
+					case 'boolean':
+						if($parameter['default']){
+							$parameter['default'] = 'true';
+						} else {
+							$parameter['default'] = 'false';
+						};
+						break;
+					case 'NULL';
+						$parameter['default'] = 'null';
+						break;
+					default:
+						$parameter['default'] = $type;
+						break;
+				}
+				$parameters[] = '[<span class="parameter-type">'.$parameter['type'].'</span> '.$parameterName.'='.$parameter['default'].']';
+			} else {
+				$parameters[] = '<span class="parameter-type">'.$parameter['type'].'</span> '.$parameterName;
+			}
+		}
+		echo join(', ', $parameters);
+		echo ')</h4>';
+		echo '<div class="doc"><p>', $method['description'], '<p></div>';
+		echo '</div>';
+	}
+
+}

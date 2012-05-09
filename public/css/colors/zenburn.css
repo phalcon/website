@@ -1,0 +1,71 @@
+/*
+ * Copyright 2008 Konrad Rudolph
+ * All rights reserved.
+ *
+ * Color scheme for code is a simplified version of the VIM Zenburn scheme:
+ * http://slinky.imukuppi.org/zenburn/
+ */
+
+.source-code {
+	font-family: Consolas, "Lucida Console", monospace;
+	font-size: 14px;
+    background: none repeat scroll 0 0 #212121;
+    color: #DCDCCC;
+    padding: 5px;
+    margin: 5px;
+    margin-top: 7px;
+    line-height: 18px;
+    text-align: left;
+    overflow-x: scroll;
+    max-width: 95%;
+}
+
+.source-code .comment {
+    color: #7F9F7F;
+    font-style: italic;
+}
+
+.source-code .comment .todo {
+    color: #DFDFDF;
+    font-weight: bold;
+}
+
+.source-code .tag {
+    color: #EFEF8F;
+}
+
+.source-code .identifier {
+    color: #EFDCBC;
+}
+
+.source-code .keyword {
+    color: #F0DFAF;
+    font-weight: bold;
+}
+
+.source-code .keyword.builtin {
+    color: #EFEF8F;
+    font-weight: normal;
+}
+
+.source-code .keyword.operator {
+    color: #FFCFAF;
+}
+
+.source-code .number {
+    color: #8CD0D3;
+}
+
+.source-code .string {
+    color: #CC9393;
+}
+
+.source-code::-moz-selection, .source-code span::-moz-selection {
+    background: #70D2B3;
+    color: #233322;
+}
+
+.source-code::selection, .source-code span::selection {
+    background: yellow;
+    color: black;
+}

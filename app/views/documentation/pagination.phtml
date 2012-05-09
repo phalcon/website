@@ -1,0 +1,145 @@
+
+<div class="nav-bar">
+	<?php echo Phalcon_Tag::linkTo('index', 'Home') ?> » Documentation
+</div>
+
+<div class="doc-paragraph">
+	<h2>Data Pagination</h2>
+	The process of pagination take place when we need to present big groups of arbitrary data gradually.
+	<?php echo Tag::classLink('Phalcon_Paginator') ?> is a fast way to split sets of data into browsable pages.
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="adapters">Data Adapters</a></h3>
+	This component makes use of adapters to encapsulate the different sources of data for the paginator
+</div>
+
+<div class="doc-paragraph">
+	<table align="center" cellspacing="0">
+		<tr>
+			<th>Adapter</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>Array</td>
+			<td>Use a PHP array as source data</td>
+		</tr>
+		<tr>
+			<td>Model</td>
+			<td>Use a <?php echo Tag::classLink('Phalcon_Model_Resultset') ?> as source data</td>
+		</tr>
+	</table>
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="using">Using Paginators</a></h3>
+	The method Phalcon_Paginator::factory allow us to create an instance of a paginator adapter.
+	That method receives two parameters. The first is the name of adapter and second is a group
+	of options to pass to it. In the below example, the paginator will use as its source data
+	the result of a query from a model:
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('<?php
+
+//Number page to paginate
+$numberPage = (int) $_GET["page"];
+
+//The data set to paginate
+$robots = Robots::find();
+
+//Create a model paginator, show 10 rows by page starting from $numberPage
+$paginator = Phalcon_Paginator::factory("Model", array(
+  "data" => $robots,
+  "limit"=> 10,
+  "page" => $numberPage
+));
+
+//Get the pagination
+$page = $paginator->getPaginate();
+
+', 'php') ?>
+</div>
+
+<div class="doc-paragraph">
+	Variable $numberPage controls the page to be displayed.
+	The $paginator->getPaginate() returns a $page object that have the pagination data.
+	It can be used for generate the pagination:
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('
+<table>
+  <tr>
+   <th>Id</th>
+   <th>Name</th>
+   <th>Type</th>
+ </tr>
+ <?php foreach($page->items as $item){ ?>
+  <tr>
+   <td><?php echo $item->id ?></td>
+   <td><?php echo $item->name ?></td>
+   <td><?php echo $item->type ?></td>
+  </tr>
+ <?php } ?>
+</table>', 'php') ?>
+</div>
+
+<div class="doc-paragraph">
+	Also, the page $object contain the navigation data:
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('<?php
+
+ <?= Phalcon_Tag::linkTo("robots/search", "First") ?>
+ <?= Phalcon_Tag::linkTo("robots/search?page=".$page->before, "Previous") ?>
+ <?= Phalcon_Tag::linkTo("robots/search?page=".$page->next, "Next") ?>
+ <?= Phalcon_Tag::linkTo("robots/search?page=".$page->last, "Last") ?>
+
+ <?php echo "You are in page ", $page->current, " of ", $page->total_pages ?>
+ ', 'php') ?>
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="page">Page Attributes</a></h3>
+	The page object has the following attributes:
+</div>
+
+<div class="doc-paragraph">
+	<table align="center" cellspacing="0">
+		<tr>
+			<th>Adapter</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>items</td>
+			<td>The set of records to be displayed at the current page</td>
+		</tr>
+		<tr>
+			<td>before</td>
+			<td>The previous page to the current one</td>
+		</tr>
+		<tr>
+			<td>next</td>
+			<td>The next page to the current one</td>
+		</tr>
+		<tr>
+			<td>next</td>
+			<td>The last page in the set of records</td>
+		</tr>
+	</table>
+</div>
+
+<div class="nav-bar">
+	<table width="90%" align="center">
+		<tr>
+			<td align="left">
+				<?php echo Phalcon_Tag::linkTo('documentation/config', '← Reading Configurations') ?>
+			</td>
+			<td align="right">
+				<?php echo Phalcon_Tag::linkTo('documentation/cache', 'Improving Performance with Cache →') ?>
+			</td>
+		</tr>
+	</table>
+</div>

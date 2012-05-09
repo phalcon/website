@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+		<meta name="description" content="PhalconPHP is a web framework delivered as a C extension providing high performance and lower resource consumption"/>
+		<?php echo Phalcon_Tag::stylesheetLink("http://fonts.googleapis.com/css?family=Rosario", false) ?>
+		<?php echo Phalcon_Tag::stylesheetLink("css/s.css") ?>
+		<?php echo Phalcon_Tag::getTitle() ?>
+	</head>
+	<body>
+		<?php echo $this->getContent() ?>
+		<script type="text/javascript" src="http://phalconphp.com/javascript/gs.js"></script>
+	</body>
+</html>

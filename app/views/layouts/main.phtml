@@ -1,0 +1,62 @@
+<div id="header">
+	<h1>
+		<?php echo Phalcon_Tag::linkTo('index', Phalcon_Tag::image('img/logo-small.png')) ?>
+	</h1>
+	<div align="center">
+		<div id="nav-main" role="navigation">
+			<div class="menubar">
+				<div class="nav-main-features nav-first">
+					<?php echo Phalcon_Tag::linkTo('index', 'HOME'); ?>
+				</div>
+				<div class="nav-main-features nav-first">
+					<?php echo Phalcon_Tag::linkTo('download', 'DOWNLOAD'); ?>
+				</div>
+				<div class="nav-main-features">
+					<?php echo Phalcon_Tag::linkTo('documentation', 'DOCUMENTATION'); ?>
+				</div>
+				<div class="nav-main-features">
+					<a href="http://phalcon.uservoice.com/" target="fb">SUPPORT</a>
+				</div>
+				<div class="nav-main-features nav-first">
+					<a href="https://github.com/phalcon/cphalcon">GITHUB</a>
+				</div>
+				<div class="nav-main-features">
+					<a target="blog" href="http://blog.phalconphp.com/">BLOG</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<?php echo $this->getContent(); ?>
+
+<div id="footer" align="center">
+	<table class="footer-table">
+		<tr>
+			<td class="social">
+				<label>Social</label><br/>
+				<a href="http://twitter.com/phalconphp">Follow us on Twitter</a><br/>
+				<a href="http://www.facebook.com/pages/Phalcon/134230726685897">Facebook Page</a><br/>
+				<a href="http://blog.phalconphp.com">Official Blog</a><br/>
+			</td>
+			<td class="social">
+				<label>Support</label><br/>
+				<a href="http://webchat.freenode.net/?channels=phalconphp">IRC Channel</a><br/>
+				<a href="https://github.com/phalcon/cphalcon/issues">Issues at Github</a><br/>
+				<a href="http://phalcon.uservoice.com/">Feedback & Support</a><br/>
+			</td>
+			<td class="subscribe">
+				<label>Get Monthly News</label><br/>
+				<?php echo Phalcon_Tag::form('index/subscribe') ?>
+				<table>
+					<tr>
+						<td><?php echo Phalcon_Tag::textField(array('email', 'placeholder' => 'Your email address', 'size' => 30)) ?></td>
+						<td><?php echo Phalcon_Tag::submitButton('Subscribe') ?></td>
+					</tr>
+				</table>
+				</form>
+			</td>
+		</tr>
+	</table>
+</div>
+

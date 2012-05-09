@@ -1,0 +1,12 @@
+<?php
+
+require '../refactor.php';
+
+echo '<h2>Framework API</h2>';
+
+echo '<h3>Classes</h3>';
+ksort($refactor);
+foreach($refactor as $className => $value){
+	echo '<h4>', Phalcon_Tag::linkTo(array('api/class/'.$className, $className)), '</h4>';
+}
+echo '</ul>';

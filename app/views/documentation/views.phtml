@@ -1,0 +1,396 @@
+
+<div class="nav-bar">
+	<?php echo Phalcon_Tag::linkTo('index', 'Home') ?> » Documentation
+</div>
+
+<div class="doc-paragraph">
+	<h2>Using Views</h2>
+	Views represent the user interface of your application. Views are often HTML files with embedded
+	PHP code that perform tasks related solely to the presentation of the data. Views handle the job
+	of providing data to the web browser or other tool that is used to make requests from your application.
+</div>
+
+<div class="doc-paragraph">
+	The View component is responsible for the managing of the standard way to generate the
+	final presentation to the browser.
+</div>
+
+<div class="doc-paragraph">
+	A hierarchy of files is supported by the component allowing reducing coding
+	by creating common points for the application, controllers or by implementing templates.
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="controllers">Integrating Views with Controllers</a></h3>
+	Phalcon automatically pull down the execution flow to the view component when the controller has ended its work.
+	View component will look in the views directory for another directory named as the last controller executed.
+</div>
+
+<div class="doc-paragraph">
+	For example, a request is made to the next URL <i>http://127.0.0.1/blog/posts/show/301</i>, by default Phalcon
+	will split the URL as is follows:
+</div>
+
+<div class="doc-paragraph">
+	<table align="center" cellspacing="0">
+		<tr>
+			<td align="right"><b>Server Address</b></td>
+			<td>127.0.0.1</td>
+		</tr>
+		<tr>
+			<td align="right"><b>Phalcon Directory</b></td>
+			<td>blog</td>
+		</tr>
+		<tr>
+			<td align="right"><b>Controller</b></td>
+			<td>posts</td>
+		</tr>
+		<tr>
+			<td align="right"><b>Action</b></td>
+			<td>show</td>
+		</tr>
+		<tr>
+			<td align="right"><b>Parameter</b></td>
+			<td>301</td>
+		</tr>
+	</table>
+</div>
+
+<div class="doc-paragraph">
+	The dispatcher will look for a "PostsController" and its action "showAction". A simple controller file for this example:
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('<?php
+
+class PostsController extends Phalcon_Controller {
+
+  function indexAction(){
+
+  }
+
+  function showAction($postId){
+    //Pass the $postId parameter to the view
+    $this->view->setVar("postId", $postId);
+  }
+
+}', 'php'); ?>
+</div>
+
+<div class="doc-paragraph">
+	The setVar lets to create variables on the fly for each view executed in the current request. The above example
+	show how to pass the $postId parameter to the views with the same name.
+</div>
+
+<div class="doc-paragraph">
+	By default the View component uses PHP itself as template engine. In this case views should have the .phtml extension.
+	If the views directory is <i>app/views</i> then view component will find automatically for these 3 view files.
+</div>
+
+<div class="doc-paragraph">
+	<table align="center" cellspacing="0">
+		<tr>
+			<th>Name</th>
+			<th>File</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>Action View</td>
+			<td>app/views/posts/show.phtml</td>
+			<td>This is the view related to the action. It only will be shown when the "show" action was executed.</td>
+		</tr>
+		<tr>
+			<td>Controller Layout</td>
+			<td>app/views/layouts/posts.phtml</td>
+			<td>This is the view related to the controller. It only will be shown for every action
+				executed within the controller "posts". All the code implemented in the layout will reused for
+				all the actions in this controller.
+			</td>
+		</tr>
+		<tr>
+			<td>Main Layout</td>
+			<td>app/views/index.phtml</td>
+			<td>This is main action it will be shown for every controller or action executed within the application.</td>
+		</tr>
+	</table>
+</div>
+
+<div class="doc-paragraph">
+	You are not required to implement all of the files mentioned above. <?php echo Tag::classLink('Phalcon_View') ?> simply will pass to next view level in the hierarchy of files.
+	If 3 view files will implemented, they could be look as follows:
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('
+<!-- app/views/posts/show.phtml -->
+
+<h3>This is show view!</h3>
+
+<p>I have received the parameter <?= $postId ?></p>
+
+', 'php'); ?>
+
+<?php echo hyperlight('
+<!-- app/views/layouts/posts.phtml -->
+
+<h2>This is the "posts" controller layout!</h2>
+
+<?= $this->getContent() ?>
+
+', 'php'); ?>
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('
+<!-- app/views/index.phtml -->
+<html>
+ <head>
+  <title>Example</title>
+ </head>
+ <body>
+
+   <h1>This is main layout!</h1>
+
+   <?= $this->getContent() ?>
+
+ </body>
+</html>
+', 'php'); ?>
+</div>
+
+<div class="doc-paragraph">
+	Note the lines where the method <i>$this->getContent()</i> was called out.
+	It tells to View where to embed the content of the previous view executed in the hierarchy.
+	As above, the final output sent to the browser will:
+</div>
+
+<div class="doc-paragraph" align="center">
+	<?php echo Phalcon_Tag::image('img/views-1.png') ?>
+</div>
+
+<div class="doc-paragraph">
+	The generated HTML by the request will be:
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('
+<!-- app/views/index.phtml -->
+<html>
+ <head>
+  <title>Example</title>
+ </head>
+ <body>
+
+   <h1>This is main layout!</h1>
+
+   <!-- app/views/layouts/posts.phtml -->
+
+   <h2>This is the "posts" controller layout!</h2>
+
+     <!-- app/views/posts/show.phtml -->
+
+     <h3>This is show view!</h3>
+
+     <p>I have received the parameter 101</p>
+
+ </body>
+</html>
+', 'php'); ?>
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="partials">Using Partials</a></h3>
+	Partial templates are another way for breaking the rendering process
+	into simpler chunks. With a partial, you can move the code for rendering a particular
+	piece of a response to its own file.
+</div>
+
+<div class="doc-paragraph">
+	One way to use partials is to treat them as the equivalent of subroutines: as a way to move details out of a
+	view so that you can grasp what's going on more easily. For example, you might have a view that looked like this:
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('
+<?php $this->partial("shared/ad_banner") ?>
+
+<h1>Robots</h1>
+
+<p>Check out our specials for robots:</p>
+...
+
+<?php $this->partial("shared/footer") ?>'
+, 'php'); ?>
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="transfer">Transfer values from the controller to views</a></h3>
+	You may need to pass values from the action to the view to be presented or visualized on them. In this case
+	you can access the view component within the controller and use the method setVar:
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('<?php
+
+class PostsController extends Phalcon_Controller {
+
+   function indexAction(){
+
+   }
+
+   function showAction(){
+      //Pass all the posts to the views
+      $this->view->setVar("posts", Posts:find());
+   }
+
+}', 'php'); ?>
+</div>
+
+<div class="doc-paragraph">
+	Magically a variable with the name of the first parameter become available. You can use it as you want.
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('
+
+<div class="post">
+<?php
+
+  foreach($posts as $post){
+    echo "<h1>", $post->title, "</h1>";
+  }
+
+?>
+</div>
+
+', 'iphp'); ?>
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="rendering">Control Rendering Levels</a></h3>
+	As seen above, there is a view hierarchy. It may also be needed to control the level of rendering produced
+	finally by the view component. The method Phalcon_View::setRenderLevel provides this functionality.
+</div>
+
+<div class="doc-paragraph">
+	This method can be invoked from the controller or from a superior view layer to prevent that others are presented.
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('<?php
+
+class PostsController extends Phalcon_Controller {
+
+   function indexAction(){
+
+   }
+
+   function findAction(){
+
+     //This is an Ajax response so don\'t generate any kind of view
+     $this->view->setRenderLevel(Phalcon_View::LEVEL_NO_RENDER);
+
+     //...
+   }
+
+   function showAction($postId){
+     //Shows only the view related to the
+     $this->view->setRenderLevel(Phalcon_View::LEVEL_ACTION_VIEW);
+   }
+
+}', 'php'); ?>
+</div>
+
+<div class="doc-paragraph">
+	<table align="center" cellspacing="0">
+		<tr>
+			<th>Class Constant</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>LEVEL_NO_RENDER</td>
+			<td>Indicates to avoid generating any kind of presentation.</td>
+		</tr>
+		<tr>
+			<td>LEVEL_ACTION_VIEW</td>
+			<td>Generates the presentation to the view associated to the action.</td>
+		</tr>
+		<tr>
+			<td>LEVEL_BEFORE_TEMPLATE</td>
+			<td>Generates presentation templates prior to the controller layout.</td>
+		</tr>
+		<tr>
+			<td>LEVEL_LAYOUT</td>
+			<td>Generates the presentation to the controller layout.</td>
+		</tr>
+		<tr>
+			<td>LEVEL_AFTER_TEMPLATE</td>
+			<td>Generates the presentation to the templates after the controller layout.</td>
+		</tr>
+		<tr>
+			<td>LEVEL_MAIN_LAYOUT</td>
+			<td>Generates the presentation to the main layout. File views/index.phtml</td>
+		</tr>
+	</table>
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="models">Using models at presentation</a></h3>
+	Application models are always available at the presentation. Autoloader automatically will instantiate them in runtime:
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('
+
+<div class="categories">
+<?php
+
+foreach(Catergories::find("status=1") as $category){
+   echo "<span class=\'category\'>", $category->name, "</span>";
+}
+
+?>
+</div>
+
+', 'iphp'); ?>
+</div>
+
+
+<div class="doc-paragraph">
+	<h3><a name="environment">View Environment</a></h3>
+	Every view executed is included inside a Phalcon_View instance so you can have access to its environment
+	allowing getting useful information you can apply in your own developments.
+</div>
+
+<div class="doc-paragraph">
+	The following example shows how to write a Jquery <a href="http://api.jquery.com/jQuery.ajax/">ajax request</a>
+	using an url with the frameworks conventions. The method url is called from a $this instance that makes
+	references to a Phalcon_View object:
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('
+$.ajax({
+  url: "<?= $this->url("cities/get") ?>"
+}).done(function() {
+  alert("Done!");
+});
+', 'iphp'); ?>
+</div>
+
+<div class="doc-paragraph">
+	This method can be invoked from the controller or from a superior view layer to prevent that others are presented.
+</div>
+
+<div class="nav-bar">
+	<table width="90%" align="center">
+		<tr>
+			<td align="left">
+				<?php echo Phalcon_Tag::linkTo('documentation/models', '← Working with Models') ?>
+			</td>
+			<td align="right">
+				<?php echo Phalcon_Tag::linkTo('documentation/tags', 'View Helpers →') ?>
+			</td>
+		</tr>
+	</table>
+</div>

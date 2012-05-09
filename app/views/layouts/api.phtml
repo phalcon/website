@@ -1,0 +1,26 @@
+
+<?php echo Phalcon_Tag::stylesheetLink("css/a.css") ?>
+
+<table width="90%" align="center">
+	<tr>
+		<td class="api-primary-box" valign="top">
+			<h2>Phalcon API</h2>
+			<?php
+				echo '<ul class="icon">';
+				ksort($refactor);
+				foreach($refactor as $className => $value){
+					if(preg_match('/_Exception$/', $className)){
+						echo '<li>', Phalcon_Tag::linkTo(array('api/class/'.$className, $className, 'class' => 'icon-exception')), '</li>';
+					} else {
+						echo '<li>', Phalcon_Tag::linkTo(array('api/class/'.$className, $className, 'class' => 'icon-class')), '</li>';
+					}
+				}
+				echo '</ul>';
+			?>
+		</td>
+		<td class="api-second-box" valign="top" align="left">
+			<?php echo $this->getContent(); ?>
+		</td>
+	</tr>
+</table>
+

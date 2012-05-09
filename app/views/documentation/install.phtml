@@ -1,0 +1,104 @@
+
+<div class="nav-bar">
+	<?php echo Phalcon_Tag::linkTo('index', 'Home') ?> » Documentation
+</div>
+
+<div class="doc-paragraph">
+	<h2>Installation</h2>
+	PHP extensions require a different installation method of traditional php-based libraries or frameworks.
+	You can either download a binary package for the system of your choice or
+	build it from sources.
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="windows">Windows</a></h3>
+	To use phalcon on Windows you can download a DLL library.
+	Edit your php.ini file and then append at the end:
+</div>
+
+<div class="doc-center">
+	<pre class="source-code php">extension=php_phalcon.dll</pre>
+</div>
+
+<div class="doc-paragraph">
+	Finally restart your webserver.
+</div>
+
+<div class="doc-paragraph">
+	The following screencast is a step-by-step guide to install Phalcon on Windows:
+</div>
+
+<iframe src="http://player.vimeo.com/video/40265988" width="500" height="266" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+<div class="doc-paragraph">
+	<h4>Related Guides</h4>
+	<ul>
+		<li><?php echo Phalcon_Tag::linkTo('documentation/xampp', 'Detailed Installation on XAMPP for Windows') ?></li>
+		<li><?php echo Phalcon_Tag::linkTo('documentation/wamp', 'Detailed Installation on WAMP for Windows') ?></li>
+	</ul>
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="unix">Unix/Linux</a></h3>
+	On platform Unix/Linux you can easily compile and install the extension from source code:
+</div>
+
+<div class="doc-paragraph">
+	<h4>Requirements</h4>
+	We need some packages previously installed.
+	<ul>
+   		<li>PHP 5.x development resources</li>
+   		<li>GCC compiler (Linux) or Xcode (Mac)</li>
+	</ul>
+</div>
+
+<div class="doc-center">
+<pre class="source-code php">
+#Ubuntu
+sudo apt-get install php5-dev php5-mysql gcc
+
+#Suse
+yast2 -i php5-pear php5-dev php5-mysql gcc
+</pre>
+</div>
+
+<div class="doc-paragraph">
+	<h4>Compilation</h4>
+	On platform Unix/Linux you can easily compile and install the extension from source code:
+</div>
+
+<div class="doc-center">
+<pre class="source-code php">
+# git clone git://github.com/phalcon/cphalcon.git
+# cd cphalcon/release
+# phpize
+# ./configure --enable-phalcon
+# make
+# sudo make install
+</pre>
+</div>
+
+<div class="doc-paragraph">
+	Add extension to your php.ini
+</div>
+
+<div class="doc-center">
+<pre class="source-code php">extension=phalcon.so</pre>
+</div>
+
+<div class="doc-paragraph">
+	Finally restart the webserver
+</div>
+
+<div class="nav-bar">
+	<table width="90%" align="center">
+		<tr>
+			<td align="left">
+				<?php echo Phalcon_Tag::linkTo('documentation/benchmark', '← OurFramework Benchmark') ?>
+			</td>
+			<td align="right">
+				<?php echo Phalcon_Tag::linkTo('documentation/tutorial', 'Tutorial →') ?>
+			</td>
+		</tr>
+	</table>
+</div>

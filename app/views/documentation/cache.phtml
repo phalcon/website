@@ -1,0 +1,113 @@
+
+<div class="nav-bar">
+	<?php echo Phalcon_Tag::linkTo('index', 'Home') ?> » Documentation
+</div>
+
+<div class="doc-paragraph">
+	<h2>Improving Performance with Cache</h2>
+	Phalcon provides the <?php echo Tag::classLink('Phalcon_Cache') ?>, it help us to cache output fragments
+	avoiding the continuous reprocessing of code that every time returns the same output.
+</div>
+
+<div class="doc-paragraph">
+	Phalcon_Cache is very similar to the Zend Framework counterpart but is written in C to reach high performance.
+	This component uses a internal structure of frontends and backends. Frontends acts as input sources and
+	backends provides storage features.
+</div>
+
+<div class="doc-paragraph">
+	The following example shows how to implement a cache using this component. It takes the output generated
+	by PHP and stores it into a file. The content of the file is refreshed each 172800 seconds (2 days).
+	The implementation of the cache avoids the continuous execution of the helper Phalcon_Tag::linkTo:
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('<?php
+
+//Cache the files for 2 days
+$frontendOptions = array(
+  "lifetime" => 172800
+);
+
+//Set the cache files directory
+$backendOptions = array(
+  "cacheDir" => "../app/cache/"
+);
+
+//Create a cache that caches from the "Output" to a "File" backend
+$cache = Phalcon_Cache::factory("Output", "File",
+   $frontendOptions, $backendOptions);
+
+//Get/Set the cache file to ../app/cache/my-cache.html
+$content = $cache->start("my-cache.html");
+
+//If $content is null then the content will be created or will refreshed
+if($content===null){
+
+  //Generate a link to the sign-up action
+  echo Phalcon_Tag::linkTo(array(
+    "user/signup",
+    "Sign Up",
+    "class" => "signup-button"
+  ));
+
+  //Stores the output into cache file
+  $cache->save();
+} else {
+
+  //Echo the cached output
+  echo $content;
+}
+', 'php');
+
+?>
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="frontend">Frontend Adapters</a></h3>
+	This component makes use of frontend adapters to encapsulate the different input sources to cache.
+</div>
+
+<div class="doc-paragraph">
+	<table align="center" cellspacing="0">
+		<tr>
+			<th>Adapter</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>Output</td>
+			<td>Read input data from standard PHP output</td>
+		</tr>
+	</table>
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="backend">Backend Adapters</a></h3>
+	This component also makes use of backend adapters to encapsulate storage related details of the cache.
+</div>
+
+<div class="doc-paragraph">
+	<table align="center" cellspacing="0">
+		<tr>
+			<th>Adapter</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>File</td>
+			<td>Stored cached data to local plain files</td>
+		</tr>
+	</table>
+</div>
+
+<div class="nav-bar">
+	<table width="90%" align="center">
+		<tr>
+			<td align="left">
+				<?php echo Phalcon_Tag::linkTo('documentation/pagination', '← Data Pagination') ?>
+			</td>
+			<td align="right">
+				<?php echo Phalcon_Tag::linkTo('documentation/acl', 'Access Control Lists (ACL) →') ?>
+			</td>
+		</tr>
+	</table>
+</div>

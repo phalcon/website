@@ -1,0 +1,56 @@
+<?php echo $this->getContent() ?>
+
+<div align="left">
+	<div id="main-content">
+		<table align="center" class="main-table">
+			<tr>
+				<td valign="top">
+					<div class="name">
+						Welcome<br/>
+						<div class="subname">TO THE FASTEST<br/>PHP FRAMEWORK</div>
+						<p>PhalconPHP is a web framework delivered as a C extension
+					   		providing <?php echo Phalcon_Tag::linkTo('documentation/benchmark', 'high performance') ?>
+					   		and lower resource consumption
+						</p>
+						<table align="center">
+							<tr>
+								<td align="center">
+									<?php echo Phalcon_Tag::linkTo(array('documentation', '<div class="documentation">See documentation</div>', 'class' => 'no-decoration')) ?>
+								</td>
+								<td align="center">
+									<?php echo Phalcon_Tag::linkTo(array('download', '<div class="download">Download</div>', 'class' => 'no-decoration')) ?>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</td>
+				<td width="45%" id="speakerdeck">
+					<div id="speakerdeck_presentation_wrapper_4edf11f72a2b980050009919">
+						<iframe class="present_iframe" frameBorder="0" allowTransparency="true" id="presentation_frame_4edf11f72a2b980050009919" src="//speakerdeck.com/embed/4edf11f72a2b980050009919?size=preview&slide=1" width="400" height="364"></iframe></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<div align="center">
+	<div class="sub-content">
+		<div class="sub">
+			<?php echo Phalcon_Tag::linkTo('download', Phalcon_Tag::image('img/download.png').'<br/>Download and Try<br/><span>C extensions are available for many platforms</span>') ?><br/>
+		</div>
+		<div class="sub">
+			<?php echo Phalcon_Tag::linkTo('documentation', Phalcon_Tag::image('img/book.png').'<br/>Learn and Enjoy<br/><span>Read updated documentation and guides</span>') ?>
+		</div>
+		<div class="sub">
+			<a href="https://twitter.com/phalconphp"><?php echo Phalcon_Tag::image('img/chat.png').'<br/>Share and Socialize<br/><span>Tell your friends about Phalcon framework in social networks</span>' ?></a>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+window.onload = function(){
+	var s = document.createElement('SCRIPT');
+	s.src = "http://speakerdeck.com/embed/4edf11f72a2b980050009919.js";
+	document.getElementById("speakerdeck").appendChild(s);
+};
+</script>

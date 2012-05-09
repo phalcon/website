@@ -1,0 +1,60 @@
+<?php
+
+/*$frontendOptions = array(
+	'lifetime' => 172800
+);
+
+$backendOptions = array(
+	'cacheDir' => '../app/cache/'
+);
+
+$cache = Phalcon_Cache::factory('File', $frontendOptions, $backendOptions);
+
+$content = $cache->start('docs-'.$this->getActionName());
+if($content===null){*/
+
+echo Phalcon_Tag::stylesheetLink("css/d.css");
+
+?>
+
+<table width="90%" align="center">
+	<tr>
+		<td class="primary-box" width="30%" valign="top">
+			<ul>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/index', 'Introduction') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/toc', 'Table of Contents') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/motivation', 'Our motivation') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/benchmark', 'Framework Benchmark') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/install', 'Installation') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/tutorial', 'Tutorial') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/mvc', 'The MVC Architecture') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/controllers', 'Using Controllers') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/models', 'Working with Models') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/views', 'Using Views') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/tags', 'View Helpers') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/filter', 'Filtering and Sanitizing') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/config', 'Reading Configurations') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/pagination', 'Data Pagination') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/cache', 'Improving Performance with Cache') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/acl', 'Access Control Lists (ACL)') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/intl', 'Internationalization') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/db', 'Database Abstraction Layer') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/logging', 'Logging') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/loader', 'Universal Class Loader') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/migrations', 'Database Migrations') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/tools', 'Using Developer Tools') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/settings', 'Framework Settings') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('api', 'Framework API') ?></li>
+			</ul>
+		</td>
+		<td class="second-box" valign="top">
+			<?php echo $this->getContent(); ?>
+		</td>
+	</tr>
+</table>
+
+<?php
+	/*$cache->save();
+} else {
+	echo $content;
+}*/

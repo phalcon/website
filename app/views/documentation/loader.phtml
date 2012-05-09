@@ -1,0 +1,42 @@
+<div class="nav-bar">
+	<?php echo Phalcon_Tag::linkTo('index', 'Home') ?> » Documentation
+</div>
+
+<div class="doc-paragraph">
+	<h2>Universal Class Loader</h2>
+	<?php echo Tag::classLink('Phalcon_Loader') ?> helps to load your project classes
+	automatically based on some predefined conventions.
+</div>
+
+<?php echo hyperlight('<?php
+
+//Creates the autoloader
+$loader = new Phalcon_Loader();
+
+//Register some namespaces
+$loader->registerNamespaces(array(
+   "Example\\Base" => "vendor/example/base/",
+   "Example\\Adapter" => "vendor/example/adapter/"
+   "Example" => "vendor/example/"
+));
+
+//register autoloader
+$loader->register();
+
+//Requiring class wil automatically include file vendor/example/adapter/Some.php
+$adapter = Example\Adapter\Some();
+
+', 'php'); ?>
+
+<div class="nav-bar">
+	<table width="90%" align="center">
+		<tr>
+			<td align="left">
+				<?php echo Phalcon_Tag::linkTo('documentation/acl', '← Access Control Lists (ACL)') ?>
+			</td>
+			<td align="right">
+				<?php echo Phalcon_Tag::linkTo('documentation/migrations', 'Database Migrations →') ?>
+			</td>
+		</tr>
+	</table>
+</div>

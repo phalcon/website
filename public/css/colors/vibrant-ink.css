@@ -1,0 +1,47 @@
+/*
+ * Copyright 2008 Konrad Rudolph
+ * All rights reserved.
+ *
+ * Colour scheme based on the Vibrant Ink scheme by Justin Palmer for the
+ * TextMate text editor.
+ * http://alternateidea.com/blog/articles/2006/1/3/textmate-vibrant-ink-theme-and-prototype-bundle
+ */
+
+.source-code {
+    background: black;
+    color: white;
+}
+
+.source-code .keyword { color: #F60; font-weight: bold; }
+.source-code .keyword.literal { color: #FC0; }
+.source-code .keyword.type { color: #FC0; }
+.source-code .keyword.builtin { color: #44B4CC; }
+.source-code .preprocessor { color: #996; }
+.source-code .comment { color: #93C; }
+.source-code .comment .doc { color: #399; font-weight: bold; }
+.source-code .identifier { color: white; }
+.source-code .string, .source-code .char { color: #6F0; }
+.source-code .escaped { color: #AAA; }
+.source-code .number, .source-code .tag { color: #FFEE98; }
+.source-code .regex, .source-code .attribute { color: #44B4CC; }
+.source-code .operator { color: #888; }
+.source-code .keyword.operator { color: #F60; }
+.source-code .whitespace { background: #333; }
+.source-code .error { border-bottom: 1px solid red; }
+
+.source-code .tag .attribute { font-style: italic; }
+.source-code.xml .preprocessor .keyword { color #996; }
+.source-code.xml .preprocessor .keyword { color: #996; }
+.source-code.xml .meta, .source-code.xml .meta .keyword { color: #399; }
+
+.source-code.cpp .preprocessor .identifier { color: #996; }
+
+.source-code::-moz-selection, .source-code span::-moz-selection {
+    background: yellow;
+    color: black;
+}
+
+.source-code::selection, .source-code span::selection {
+    background: yellow;
+    color: black;
+}

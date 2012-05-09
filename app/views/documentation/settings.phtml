@@ -1,0 +1,87 @@
+
+<div class="nav-bar">
+	<?php echo Phalcon_Tag::linkTo('index', 'Home') ?> » Documentation
+</div>
+
+<div class="doc-paragraph">
+	<h2>Framework Settings</h2>
+	This list includes the directives you can set to configure your Phalcon setup.
+</div>
+
+<div class="doc-paragraph">
+	<table align="center" cellspacing="0">
+		<tr>
+			<th>Section</th>
+			<th>File</th>
+			<th>Description</th>
+			<th>Example</th>
+		</tr>
+		<tr>
+			<td>phalcon</td>
+			<td>controllersDir</td>
+			<td>Directory where <?php echo Tag::classLink('Phalcon_Dispatcher') ?> will get the controllers classes</td>
+			<td>controllersDir = "../app/controllers/"</td>
+		</tr>
+		<tr>
+			<td>phalcon</td>
+			<td>modelsDir</td>
+			<td>Directory where <?php echo Tag::classLink('Phalcon_Model_Manager') ?> will get the models classes</td>
+			<td>modelsDir = "../app/models/"</td>
+		</tr>
+		<tr>
+			<td>phalcon</td>
+			<td>viewsDir</td>
+			<td>Directory on where <?php echo Tag::classLink('Phalcon_View') ?> will get the views files</td>
+			<td>viewsDir = "../app/views/"</td>
+		</tr>
+		<tr>
+			<td>phalcon</td>
+			<td>baseUri</td>
+			<td>The absolute uri to the directory where the application was installed</td>
+			<td>baseUri = "/store/"</td>
+		</tr>
+		<tr>
+			<td>phalcon</td>
+			<td>baseUri</td>
+			<td>The absolute local path to the directory where the application was installed</td>
+			<td>basePath = "/srv/www/htdocs/store/"</td>
+		</tr>
+		<tr>
+			<td>database</td>
+			<td>adapter</td>
+			<td>Adapter used to connect to the database. This is usually the name of the database system</td>
+			<td>adapter = Mysql</td>
+		</tr>
+		<tr>
+			<td>database</td>
+			<td>host</td>
+			<td>Host where the database is located</td>
+			<td>host = "127.0.0.1"</td>
+		</tr>
+		<tr>
+			<td>database</td>
+			<td>username</td>
+			<td>Database user to connect to the database</td>
+			<td>username = "root"</td>
+		</tr>
+		<tr>
+			<td>database</td>
+			<td>password</td>
+			<td>Database password to connect to the database</td>
+			<td>password = "hea101"</td>
+		</tr>
+		<tr>
+			<td>database</td>
+			<td>name</td>
+			<td>Name of the database or schema</td>
+			<td>name = "demo"</td>
+		</tr>
+	</table>
+</div>
+
+<div class="doc-paragraph">
+	<h3>Related Guides</h3>
+	<ul>
+		<li><?php echo Phalcon_Tag::linkTo('documentation/config', 'Reading Configurations') ?></li>
+	</ul>
+</div>

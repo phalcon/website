@@ -1,0 +1,60 @@
+
+<div class="nav-bar">
+	<?php echo Phalcon_Tag::linkTo('index', 'Home') ?> » Documentation
+</div>
+
+<div class="doc-paragraph">
+	<h2>The MVC Architecture</h2>
+
+	Phalcon provides you object oriented classes to implement a Model, View, Controller architecture,
+	usually just called <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC</a>.
+	This design pattern is widely used by other web frameworks and desktop applications.
+	MVC benefits include:
+	<ul>
+	    <li>Isolation of business logic from the user interface</li>
+	    <li>Making it clear where different types of code belong for easier maintenance</li>
+	</ul>
+
+	When you decide to use MVC, every request to application will be managed by MVC.
+	Phalcon classes written in C language provide a high performance approach of this pattern
+	in a PHP based application.
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="models">Models</a></h3>
+	A model represents the information (data) of the application and the rules to manipulate that data.
+	Models are primarily used for managing the rules of interaction with a corresponding database table.
+	In most cases, each table in your database will correspond to one model in your application.
+	The bulk of your application’s business logic will be concentrated in the models.
+	<?php echo Phalcon_Tag::linkTo('documentation/models', 'Learn more') ?>
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="views">Views</a></h3>
+	Views represent the user interface of your application. Views are often HTML files with
+	embedded PHP code that perform tasks related solely to the presentation of the data.
+	Views handle the job of providing data to the web browser or other tool that is used to
+	make requests from your application.
+	<?php echo Phalcon_Tag::linkTo('api/class/views', 'Learn more') ?>
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="controllers">Controllers</a></h3>
+	Controllers provide the “flow” between models and views. Controllers are responsible
+	for processing the incoming requests from the web browser, interrogating the models for data,
+	and passing that data on to the views for presentation.
+	<?php echo Phalcon_Tag::linkTo('documentation/controllers', 'Learn more') ?>
+</div>
+
+<div class="nav-bar">
+	<table width="90%" align="center">
+		<tr>
+			<td align="left">
+				<?php echo Phalcon_Tag::linkTo('documentation/tutorial', '← Tutorial') ?>
+			</td>
+			<td align="right">
+				<?php echo Phalcon_Tag::linkTo('documentation/controllers', 'Using Controllers →') ?>
+			</td>
+		</tr>
+	</table>
+</div>

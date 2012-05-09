@@ -1,0 +1,111 @@
+
+<div class="nav-bar">
+	<?php echo Phalcon_Tag::linkTo('index', 'Home') ?> » <?php echo Phalcon_Tag::linkTo('documentation/tools', 'Developer Tools') ?> » Mac OS X
+</div>
+
+<div class="doc-paragraph">
+	<h2>Phalcon Developer Tools on Mac OS X</h2>
+	These steps will guide you throught the process of install Phalcon Developer Tools on Mac OS X.
+</div>
+
+<div class="doc-paragraph">
+	<h3>Requisites</h3>
+	PHP extension is required to execute Phalcon Tools. Be sure you have installed it previously.
+</div>
+
+<div class="doc-paragraph">
+	<h3>Download</h3>
+	You can download a cross platform package containing the developer tools from the
+	<?php echo Phalcon_Tag::linkTo('download', 'download page') ?>. Also you can clone it
+	from <a href="https://github.com/phalcon/phalcon-devtools">Github</a>.
+</div>
+
+<div class="doc-paragraph">
+	Open your terminal and execute the commands as follows to get a rapid installation:
+</div>
+
+<div class="doc-paragraph image-center">
+	<?php echo Phalcon_Tag::image('img/mac-1.png') ?>
+</div>
+
+<div class="doc-paragraph">
+	Copy & Paste the below commands in your terminal:
+</div>
+
+<div align="center">
+	<?php echo hyperlight('wget -q --no-check-certificate -O phalcon-tools.zip http://github.com/phalcon/phalcon-devtools/zipball/master
+unzip -q phalcon-tools.zip
+mv phalcon-phalcon-devtools-* phalcon-tools', 'php'); ?>
+</div>
+
+<div class="doc-paragraph">
+	Check where the phalcon-tools directory was installed using a <i>pwd</i> command in your terminal:
+</div>
+
+<div class="doc-paragraph image-center">
+	<?php echo Phalcon_Tag::image('img/mac-2.png') ?>
+</div>
+
+<div class="doc-paragraph">
+	On the Mac platform, you need to configure your user PATH to include phalcon tools. Edit your .profile and
+	append the phalcon tools path to the environment variable PATH:
+</div>
+
+<div class="doc-paragraph image-center">
+	<?php echo Phalcon_Tag::image('img/mac-3.png') ?>
+</div>
+
+<div class="doc-paragraph">
+	On the Mac platform, you need to configure your user PATH to include phalcon tools. Edit your .profile and
+	append the phalcon tools path to the PATH environment variable:
+</div>
+
+<div class="doc-paragraph">
+	Insert these two lines at the end of the file:
+</div>
+
+<div align="center">
+	<?php echo hyperlight('export PATH=$PATH:/Users/scott/phalcon-tools
+export PTOOLSPATH=/Users/scott/phalcon-tools', 'php'); ?>
+</div>
+
+<div class="doc-paragraph">
+	The .profile should look like this:
+</div>
+
+<div class="doc-paragraph image-center">
+	<?php echo Phalcon_Tag::image('img/mac-4.png') ?>
+</div>
+
+<div class="doc-paragraph">
+	Save modifications, close and open again your Terminal.
+</div>
+
+<div class="doc-paragraph">
+	The last step is to create a symbolic link to the phalcon.sh script. You can do that typing the next command in your terminal:
+</div>
+
+<div align="center">
+	<?php echo hyperlight('ln -s ~/phalcon-tools/phalcon.sh ~/phalcon-tools/phalcon
+chmod +x ~/phalcon-tools/phalcon', 'php'); ?>
+</div>
+
+<div class="doc-paragraph">
+	Type the command "phalcon" and you will look something like this:
+</div>
+
+<div class="doc-paragraph image-center">
+	<?php echo Phalcon_Tag::image('img/mac-5.png') ?>
+</div>
+
+<div class="doc-paragraph">
+	Congratulations you now have phalcon tools installed!
+</div>
+
+<div class="doc-paragraph">
+	<h4>Related Guides</h4>
+	<ul>
+		<li><?php echo Phalcon_Tag::linkTo('documentation/tools', 'Using Developer Tools') ?></li>
+		<li><?php echo Phalcon_Tag::linkTo('documentation/wintools', 'Installation on Windows') ?></li>
+	</ul>
+</div>

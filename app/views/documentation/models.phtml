@@ -1,0 +1,835 @@
+
+<div class="nav-bar">
+	<?php echo Phalcon_Tag::linkTo('index', 'Home') ?> » Documentation
+</div>
+
+<div class="doc-paragraph">
+	<h2>Working with Models</h2>
+	A model represents the information (data) of the application and the rules to manipulate that data.
+	Models are primarily used for managing the rules of interaction with a corresponding database table.
+	In most cases, each table in your database will correspond to one model in your application.
+	The bulk of your application’s business logic will be concentrated in the models.
+</div>
+
+<div class="doc-paragraph">
+	<?php echo Tag::classLink('Phalcon_Model_Base', 'Phalcon_Model') ?> is the base for the models
+	in a Phalcon application. It provides database
+	independence, basic CRUD functionality, advanced finding capabilities, and the ability
+	to relate models to one another, among other services. Phalcon_Model avoids the need of
+	have to use SQL statements because it translates dinamically to the respective database engine.
+</div>
+
+<div class="doc-paragraph highlightb">
+	Models are intended to work in a database high layer of abstraction.
+	If you need to work with databases at a lower level
+	check out the <?php echo Phalcon_Tag::linkTo('documentation/db', 'Phalcon_Db') ?>
+	component documentation.
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="creating">Creating Models</a></h3>
+	A model is a class that extends from Phalcon_Model_Base. It must be placed at the models directory.
+	A model file must contain a single class; its class name should be in camel case notation:
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('<?php
+
+class Robots extends Phalcon_Model_Base {
+
+}
+
+', 'php'); ?>
+</div>
+
+<div class="doc-paragraph">
+	The above example showed us how to implement model "Robots".
+	There isn’t much to this file – but note that the class Robots inherits from Phalcon_Model_Base -.
+	Phalcon_Model supplies a great deal of functionality to your models for free,
+	including basic database CRUD (Create, Read, Update, Destroy) operations, data validation,
+	as well as sophisticated search support and the ability to relate multiple models to one another.
+</div>
+
+<div class="doc-paragraph">
+	By default model "Robots" will refers to table "robots". If you want to manually specify another name
+	for the mapping table, you can use the setSource method:
+</div>
+
+<?php echo hyperlight('<?php
+
+class Robots extends Phalcon_Model_Base {
+
+  function initialize(){
+     $this->setSource("the_robots");
+  }
+
+}
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	The model Robots now maps to table "the_birds". The "initialize" method helps us to setup the model with
+	custom behavior.
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="understanding">Understanding Record To Objects</a></h3>
+	Every instance of a model represents a row in the table. You can easily access record data by reading objects properties.
+	For example, for a table "robots" with the next records:
+</div>
+
+<?php echo hyperlight('
+mysql> select * from robots;
++----+------------+------------+------+
+| id | name       | type       | year |
++----+------------+------------+------+
+|  1 | Robotina   | mechanical | 1972 |
+|  2 | Astro Boy  | mechanical | 1952 |
+|  3 | Terminator | cyborg     | 2029 |
++----+------------+------------+------+
+3 rows in set (0.00 sec)
+', 'php'); ?>
+
+<div class="doc-paragraph">
+You could find a certain record by its primary key and then print its name:
+</div>
+
+<?php echo hyperlight('
+//Find record with id=3
+$robot = Robots::findFirst(3);
+
+//Prints "Terminator"
+echo $robot->name;
+
+', 'iphp'); ?>
+
+<div class="doc-paragraph">
+Once the record is in memory, you can make modifications to it and then save changes:
+</div>
+
+<?php echo hyperlight('
+$robot = Robots::findFirst(3);
+$robot->name = "RoboCop";
+$robot->save();
+
+', 'iphp'); ?>
+
+
+<div class="doc-paragraph">
+As you can see, there is not need of use SQL statements or similar. Phalcon_Model provides high database abstraction for web applications.
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="finding">Finding Records</a></h3>
+	Phalcon_Model provide you several methods for doing querying of records. The next examples will show you
+	how to query out one or more records from a model:
+</div>
+
+<?php echo hyperlight('<?php
+
+//How many robots are there?
+$robots = Robots::find();
+echo "There are ", count($robots), "\n";
+
+//How many mechanical robots are there?
+$robots = Robots::find("type=\'mechanical=\'");
+echo "There are ", count($robots), "\n";
+
+//Get and print virtual robots ordered by name
+$robots = Robots::find(array("type=\'virtual\'", "order" => "name"));
+foreach($robots as $robot){
+   echo $robot->name, "\n";
+}
+
+//Get first 100 virtual robots ordered by name
+$robots = Robots::find(array("type=\'virtual\'", "order" => "name", "limit" => 100));
+foreach($robots as $robot){
+	echo $robot->name, "\n";
+}
+', 'php'); ?>
+
+<div class="doc-paragraph">
+You could also use the findFirst method to get only the first record matching the given conditions:
+</div>
+
+<?php echo hyperlight('<?php
+
+//What\'s the first robot in robots table?
+$robot = Robots::findFirst();
+echo "The robot name is ", $robot->name, "\n";
+
+//What\'s the first mechanical robot in robots table?
+$robot = Robots::findFirst("type=\'mechanical\'");
+echo "The first mechanical robot name is ", $robot->name, "\n";
+
+//Get first virtual robot ordered by name
+$robot = Robots::findFirst(array("type=\'virtual\'", "order" => "name"));
+echo "The first virtual robot name is ", $robot->name, "\n";
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+Both find and findFirst can accept an associative array specfying the find options.
+The following example shows how it works:
+</div>
+
+<?php echo hyperlight('<?php
+
+$robot = Robots::findFirst(array(
+	"type=\'virtual\'",
+	"order" => "name DESC",
+	"limit" => 30
+));
+
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+The available query options are:
+</div>
+
+<div class="doc-paragraph">
+	<table width="95%" align="center" cellspacing="0">
+		<tr>
+			<th>Parameter</th>
+			<th>Description</th>
+			<th>Example</th>
+		</tr>
+		<tr>
+			<td>conditions</td>
+			<td>Search conditions for the find operation. Is used to extract only those records that fulfill a
+			specified criterion. By default
+			Phalcon_model assumes the first parameter are the conditions.</td>
+			<td>"conditions" => "name LIKE 'steve%'"</td>
+		</tr>
+		<tr>
+			<td>order</td>
+			<td>Is used to sort the result-set. Use one or more fields separated by commas.</td>
+			<td>"order" => "name DESC, status"</td>
+		</tr>
+		<tr>
+			<td>limit</td>
+			<td>Limit the results of the query to results between a certain number range</td>
+			<td>"limit" => 10</td>
+		</tr>
+		<tr>
+			<td>columns</td>
+			<td>Specific columns we need to query. Use this ONLY on read-only resultsets.</td>
+			<td>"columns" => "id, name"</td>
+		</tr>
+		<tr>
+			<td>group</td>
+			<td>Allows to collect data across multiple records and group the results by one or more columns</td>
+			<td>"group" => "name, status"</td>
+		</tr>
+		<tr>
+			<td>for_update</td>
+			<td>With this option, Phalcon_Model reads the latest available data, setting exclusive locks
+				on each row it reads</td>
+			<td>"for_update" => true</td>
+		</tr>
+		<tr>
+			<td>shared_lock</td>
+			<td>With this option, Phalcon_Model reads the latest available data, setting shared locks
+				on each row it reads</td>
+			<td>"shared_lock" => true</td>
+		</tr>
+	</table>
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="relationships">Relationships between Models</a></h3>
+	There are four types of multiple relationships: one-on-one, one-to-many, many-to-one and many-to-many.
+	The relationship may be unidirectional or bidirectional, and each can be simple or by a combination of models.
+	Normally the models manager manages foreign key constraints for these relationships, the definition of
+	these helps the reliable data integrity and the easy finding of related records to a model.
+	Through the implementation of relations is possible to access records relating to each record in a uniform way.
+</div>
+
+<div class="doc-paragraph">
+	<h4>Unidirectional relationships</h4>
+	Unidirectional relations are those that are generated in relation to one another but not vice versa.
+	Using the methods belongsTo, hasOne or hasMany states that one or more fields refer to equivalents in
+	another model.
+</div>
+
+<div class="doc-paragraph">
+	<h4>Bidirectional relations</h4>
+	The bidirectional relations build relationships in which each has a complementary and vice versa.
+</div>
+
+<div class="doc-paragraph">
+	The following schema shows 3 tables whose relations will serve us as an example to explain the relationships:
+</div>
+
+<?php echo hyperlight('
+
+CREATE TABLE `robots` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(70) NOT NULL,
+  `type` varchar(32) NOT NULL,
+  `year` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `robots_parts` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `robots_id` int(10) NOT NULL,
+  `parts_id` int(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `robots_id` (`robots_id`),
+  KEY `parts_id` (`parts_id`)
+);
+
+CREATE TABLE `parts` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(70) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	The model "Robots" has many "RobotsParts". Similar case for model "Parts" that has many "RobotsParts".
+	On the other hand "RobotsParts" belongs to "Robots" and "Parts" models as a one-to-many relation.
+</div>
+
+<div class="doc-paragraph">
+	The models with their relations could be implemented as follows:
+</div>
+
+<?php echo hyperlight('<?php
+
+class Robots extends Phalcon_Model_Base {
+
+  function initialize(){
+     $this->hasMany("id", "RobotsParts", "robots_id");
+  }
+
+}
+
+', 'php'); ?>
+
+<?php echo hyperlight('<?php
+
+class Parts extends Phalcon_Model_Base {
+
+  function initialize(){
+     $this->hasMany("id", "RobotsParts", "parts_id");
+  }
+
+}
+
+', 'php'); ?>
+
+<?php echo hyperlight('<?php
+
+class RobotsParts extends Phalcon_Model_Base {
+
+  function initialize(){
+     $this->belongsTo("robots_id", "Robots", "id");
+     $this->belongsTo("parts_id", "Parts", "id");
+  }
+
+}
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	The first parameter indicates the field of the local model that is making the association;
+	the second indicates the name of the referenced model and the third field name in the referenced field.
+	You could also use arrays to define multiple fields in the relationship.
+	When explicitly define the relationships between models,
+	is easy to find records relating to a previously consulted.
+</div>
+
+<?php echo hyperlight('<?php
+
+$robot = Robots::findFirst(2);
+foreach($robot->getRobotsParts() as $robotPart){
+	echo $robotPart->getParts()->name, "\n";
+}
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	<h3><a name="creating-updating">Creating Updating/Records</a></h3>
+	The method Phalcon_Model_Base::save() allows you to create/update records according to whether they already exist in the table associated with a model.
+	The save method is called out internally by also create and update methods of Phalcon_Model. For this to
+	work as expected it is necessary to have properly defined a primary key in the entity to
+	determine whether a record should be updated or created.
+</div>
+
+<div class="doc-paragraph">
+	Also the method executes associated validators, virtual foreign keys and events that are defined in the model.
+</div>
+
+<?php echo hyperlight('$robot = new Robots();
+$robot->type = "mechanical";
+$robot->name = "Astro Boy";
+$robot->year = 1952;
+if($robot->save() == false){
+   echo "Umh, We can\'t store robots right now: \n";
+   foreach ($robot->getMessages() as $message) {
+      echo $message, "\n";
+   }
+} else {
+   echo "Great, a new robot was saved successfully!";
+}
+', 'iphp'); ?>
+
+<div class="doc-paragraph">
+	<h4><a href="validation-messages">Validation Messages</a></h4>
+	Phalcon_Model has a message subsystem that allows a flexible way to output or store the validation messages generated
+	in the insertion/updating processes. Each message consists of an instance of the class Phalcon_Model_Message.
+	The set of generated messages can be gotten using the method getMessages().
+</div>
+
+<div class="doc-paragraph">
+	Each message provides extended information like the field name that generated the message or the message type.
+</div>
+
+<?php echo hyperlight('
+if($robot->save() == false){
+   foreach ($robot->getMessages() as $message) {
+      echo "Message: ", $message->getMessage();
+      echo "Field: ", $message->getField();
+      echo "Type: ", $message->getType();
+   }
+}', 'iphp'); ?>
+
+<div class="doc-paragraph">
+	<h4><a name="validation-events">Validation Events</a></h4>
+	Models allow you to implement events that will be thrown when performing an insert or update. They help to
+	define business rules for a certain model.
+</div>
+
+<div class="doc-paragraph">
+	The following are the events supported by Phalcon_Model and their order of execution:
+</div>
+
+<div class="doc-paragraph">
+	<table width="95%" align="center" cellspacing="0">
+		<tr>
+			<th>Operation</th>
+			<th>Name</th>
+			<th>Can stop operation?</th>
+			<th>Explanation</th>
+		</tr>
+		<tr>
+			<td>Inserting/Updating</td>
+			<td>beforeValidation</td>
+			<td>YES</td>
+			<td>Is executed before the fields are validated for not nulls or foreign keys</td>
+		</tr>
+		<tr>
+			<td>Inserting</td>
+			<td>beforeValidationOnCreate</td>
+			<td>YES</td>
+			<td>Is executed before the fields are validated for not nulls or foreign keys when an insertion operation is being made</td>
+		</tr>
+		<tr>
+			<td>Updating</td>
+			<td>beforeValidationOnUpdate</td>
+			<td>YES</td>
+			<td>Is executed before the fields are validated for not nulls or foreign keys when an updating operation is being made</td>
+		</tr>
+		<tr>
+			<td>Inserting/Updating</td>
+			<td>onValidationFails</td>
+			<td>YES (already stopped)</td>
+			<td>Is executed after an integrity validator fails</td>
+		</tr>
+		<tr>
+			<td>Inserting</td>
+			<td>afterValidationOnCreate</td>
+			<td>YES</td>
+			<td>Is executed after the fields are validated for not nulls or foreign keys when an insertion operation is being made</td>
+		</tr>
+		<tr>
+			<td>Updating</td>
+			<td>afterValidationOnUpdate</td>
+			<td>YES</td>
+			<td>Is executed after the fields are validated for not nulls or foreign keys when an updating operation is being made</td>
+		</tr>
+		<tr>
+			<td>Inserting/Updating</td>
+			<td>afterValidation</td>
+			<td>YES</td>
+			<td>Is executed after the fields are validated for not nulls or foreign keys</td>
+		</tr>
+		<tr>
+			<td>Inserting/Updating</td>
+			<td>beforeSave</td>
+			<td>YES</td>
+			<td>Runs before the required operation over the database system</td>
+		</tr>
+		<tr>
+			<td>Updating</td>
+			<td>beforeUpdate</td>
+			<td>YES</td>
+			<td>Runs before the required operation over the database system only when an updating operation is being made</td>
+		</tr>
+		<tr>
+			<td>Inserting</td>
+			<td>beforeCreate</td>
+			<td>YES</td>
+			<td>Runs before the required operation over the database system only when an inserting operation is being made</td>
+		</tr>
+		<tr>
+			<td>Updating</td>
+			<td>afterUpdate</td>
+			<td>NO</td>
+			<td>Runs after the required operation over the database system only when an updating operation is being made</td>
+		</tr>
+		<tr>
+			<td>Inserting</td>
+			<td>afterCreate</td>
+			<td>NO</td>
+			<td>Runs after the required operation over the database system only when an inserting operation is being made</td>
+		</tr>
+		<tr>
+			<td>Inserting/Updating</td>
+			<td>afterSave</td>
+			<td>NO</td>
+			<td>Runs after the required operation over the database system</td>
+		</tr>
+	</table>
+</div>
+
+<div class="doc-paragraph">
+	<h4><a name="business-rule">Implement a Business Rule</a></h4>
+	When an insert, update or deletion is executed, the model verifies if there are any methods
+	with the names of the events listed in the table above.
+</div>
+
+<div class="doc-paragraph">
+	We recommend that validation methods are declared protected to prevent that business logic
+	implementation are exposed publicly.
+</div>
+
+<div class="doc-paragraph">
+	The following example implements an event that validates the year to update or
+	insert cannot be smaller than 0:
+</div>
+
+<?php echo hyperlight('<?php
+
+class Robots extends Phalcon_Model_Base {
+
+    function beforeSave(){
+        if($this->year<0){
+            echo "Year cannot be smaller than zero!";
+            return false;
+        }
+    }
+
+}
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	Some events allow returning false as an indication to stop the current operation. If an event doesn't returns anything, Phalcon_Model will asume a true value.
+</div>
+
+<div class="doc-paragraph">
+	<h4><a name="validating-data">Validating Data Integrity</a></h4>
+	Phalcon_Model provides several events to validate data and implement business rules.
+	The special "validation" event allows us to call built-in validators over the record.
+	Phalcon implement a couple of built-in validators that can be used at this stage of validation.
+	The following example shows how to use it:
+</div>
+
+<?php echo hyperlight('<?php
+
+class Robots extends Phalcon_Model_Base {
+
+    function validation(){
+       $this->validate("InclusionIn", array(
+          "field" => "type",
+          "domain" => array("Mechanical", "Virtual")
+       ));
+       $this->validate("Uniqueness", array(
+          "field" => "name",
+          "message" => "The robot name must be unique"
+       ));
+       if($this->validationHasFailed()==true){
+          return false;
+       }
+    }
+
+}
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	The above example performs a validation using the built-in validator "InclusionIn". It checks the value of the field "type"
+	in a domain list. If the value is not included in the method then will fail returning false.
+</div>
+
+<div class="doc-paragraph">
+	The following built-in validators are available:
+</div>
+
+<div class="doc-paragraph">
+	<table width="95%" align="center" cellspacing="0">
+		<tr>
+			<th>Name</th>
+			<th>Explanation</th>
+			<th>Example</th>
+		</tr>
+		<tr>
+			<td>Email</td>
+			<td>Validates that field contains a valid email format</td>
+			<td><?php echo Tag::classLink('Phalcon_Model_Validator_Email', 'Example') ?></td>
+		</tr>
+		<tr>
+			<td>ExclusionIn</td>
+			<td>Validates that a value is not within a list of possible values</td>
+			<td><?php echo Tag::classLink('Phalcon_Model_Validator_Exclusionin', 'Example') ?></td>
+		</tr>
+		<tr>
+			<td>InclusionIn</td>
+			<td>Validates that a value is within a list of possible values</td>
+			<td><?php echo Tag::classLink('Phalcon_Model_Validator_Inclusionin', 'Example') ?></td>
+		</tr>
+		<tr>
+			<td>Numericality</td>
+			<td>Validates that a field has a numeric format</td>
+			<td><?php echo Tag::classLink('Phalcon_Model_Validator_Numericality', 'Example') ?></td>
+		</tr>
+		<tr>
+			<td>Regex</td>
+			<td>Validates that the value of a field matches a regular expression</td>
+			<td><?php echo Tag::classLink('Phalcon_Model_Validator_Regex', 'Example') ?></td>
+		</tr>
+		<tr>
+			<td>Uniqueness</td>
+			<td>Validates that a field or a combination of a set of fields
+ 			are not present more than once in the existing records of the related table</td>
+			<td><?php echo Tag::classLink('Phalcon_Model_Validator_Uniqueness', 'Example') ?></td>
+		</tr>
+	</table>
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="deleting">Deleting Records</a></h3>
+	The method Phalcon_Model_Base::delete allows to delete a record in memory. You can use it as follows:
+</div>
+
+<?php echo hyperlight('
+
+$robot = Robots::findFirst(11);
+if($robot!=false){
+   if($robot->delete() == false){
+      echo "Sorry, we can\'t delete the robot right now: \n";
+      foreach ($robot->getMessages() as $message) {
+         echo $message, "\n";
+      }
+   } else {
+     echo "The robot was deleted successfully!";
+   }
+}
+
+', 'iphp'); ?>
+
+<div class="doc-paragraph">
+	Also you can delete many records traversing a resultset by using a foreach:
+</div>
+
+<?php echo hyperlight('
+
+foreach(Robots::find("type=\'mechanical\'") as $robot){
+   if($robot->delete() == false){
+      echo "Sorry, we can\'t delete the robot right now: \n";
+      foreach ($robot->getMessages() as $message) {
+         echo $message, "\n";
+      }
+   } else {
+     echo "The robot was deleted successfully!";
+   }
+}
+
+', 'iphp'); ?>
+
+<div class="doc-paragraph">
+	The next events are available to define custom business rules that should to be
+	executed when a delete operation is being made.
+</div>
+
+<div class="doc-paragraph">
+	<table width="95%" align="center" cellspacing="0">
+		<tr>
+			<th>Operation</th>
+			<th>Name</th>
+			<th>Can stop operation?</th>
+			<th>Explanation</th>
+		</tr>
+		<tr>
+			<td>Deleting</td>
+			<td>beforeDelete</td>
+			<td>YES</td>
+			<td>Runs before the delete operation is made</td>
+		</tr>
+		<tr>
+			<td>Deleting</td>
+			<td>afterDelete</td>
+			<td>NO</td>
+			<td>Runs after the delete operation was made</td>
+		</tr>
+	</table>
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="transactions">Transactions</a></h3>
+	When a process perform multiple operations on a database, sometimes is required
+	that each run in a complete and satisfactory way. Data integrity is lost when operations
+	are interrupted and not completed successfully. Transactions in software just try
+	to avoid these situations.
+</div>
+
+<div class="doc-paragraph">
+	Transactions in Phalcon basically lets to separate the objects belonging to a transaction
+	so that all operations carried out by them can maintain a consistent state and could be
+	rolled back if required.
+</div>
+
+<?php echo hyperlight('
+try {
+
+ //Request a transaction
+ $transaction = Phalcon_Transaction_Manager::get();
+
+ $robot = new Robots();
+ $robot->setTransaction($transaction);
+ $robot->name = "WALL·E";
+ $robot->created_at = date("Y-m-d");
+ if($robot->save()==false){
+    $transaction->rollback("Cannot save robot");
+ }
+
+ $robotPart = new RobotParts();
+ $robotPart->setTransaction($transaction);
+ $robotPart->type = "head";
+ if($robotPart->save()==false){
+    $transaction->rollback("Cannot save robot part");
+ }
+
+ //Everything goes fine, let\'s commit the transaction
+ $transaction->commit();
+
+}
+catch(Phalcon_Transaction_Failed $e){
+ echo "Failed, reason: ", $e->getMessage();
+}
+
+', 'iphp'); ?>
+
+<div class="doc-paragraph">
+	Transactions can be used to delete many records in a consistent way:
+</div>
+
+<?php echo hyperlight('
+
+try {
+
+  //Request a transaction
+  $transaction = Phalcon_Transaction_Manager::get();
+
+  //Get the robots will be deleted
+  foreach(Robots::find("type=\'mechanical\'") as $robot){
+    $robot->setTransaction($transaction);
+    if($robot->delete() == false){
+       //Something goes wrong, we should to rollback the transaction
+       foreach ($robot->getMessages() as $message) {
+          $transaction->rollback($message->getMessage());
+       }
+    }
+  }
+
+  //Everything goes fine, let\'s commit the transaction
+  $transaction->commit();
+
+  echo "Robots were deleted successfully!";
+
+}
+catch(Phalcon_Transaction_Failed $e){
+  echo "Failed, reason: ", $e->getMessage();
+}
+
+', 'iphp'); ?>
+
+<div class="doc-paragraph">
+	<h3><a name="meta-data">Models Meta-Data</a></h3>
+	To speed up development Phalcon_Model helps you to query fields and constraints from tables related
+	to models. In this task, <?php echo Tag::classLink('Phalcon_Model_MetaData') ?>, plays an important role.
+	A global instance of that class is created to manage and cache table meta-data.
+</div>
+
+<div class="doc-paragraph">
+	Sometimes it is necessary to get those attributes when working with models. You can get a meta-data instance
+	by this way:
+</div>
+
+<?php echo hyperlight('
+
+$robot = new Robots();
+
+//Get Phalcon_Model_Metadata instance
+$metaData = $robot->getManager()->getMetaData();
+
+//Get robots fields names
+$attributes = $metaData->getAttributes($robot);
+print_r($attributes);
+
+//Get robots fields data types
+$dataTypes = $metaData->getDataTypes($robot);
+print_r($dataTypes);
+
+', 'iphp'); ?>
+
+<div class="doc-paragraph">
+	<h3><a name="logging">Logging Low-Level SQL Statements</a></h3>
+	When we use high-level abstraction components to access databases (like this ORM),
+	we could find difficulties to understand which statements are finally sent to the database system.
+	Phalcon_Model is supported internally on another component called
+	Phalcon_Db that provides logging capabilities to track all the SQL statements sent to the database.
+</div>
+
+<?php echo hyperlight('
+
+$robot = new Robots();
+
+$logger = new Phalcon_Logger("File", "app/logs/debug.log");
+
+//Set the logger to the internal connection
+$robot->getConnection()->setLogger($logger);
+
+$robot->name = "Robby the Robot";
+$robot->created_at = "1956-07-21"
+if($robot->save()==false){
+    echo "Cannot save robot";
+}
+
+$logger->close();
+
+', 'iphp'); ?>
+
+<div class="doc-paragraph">
+	As above, the file <i>app/logs/debug.log</i> might contain the following:
+</div>
+
+<?php echo hyperlight('[Mon, 30 Apr 12 13:47:18 -0500][DEBUG][Resource Id #77] INSERT INTO robots (name, created_at) VALUES (\'Robby the Robot\', \'1956-07-21\')', 'php') ?>
+
+<div class="nav-bar">
+	<table width="90%" align="center">
+		<tr>
+			<td align="left">
+				<?php echo Phalcon_Tag::linkTo('documentation/controllers', '← Using Controllers') ?>
+			</td>
+			<td align="right">
+				<?php echo Phalcon_Tag::linkTo('documentation/views', 'Using Views →') ?>
+			</td>
+		</tr>
+	</table>
+</div>

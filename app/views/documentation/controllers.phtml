@@ -1,0 +1,266 @@
+
+<div class="nav-bar">
+	<?php echo Phalcon_Tag::linkTo('index', 'Home') ?> » Documentation
+</div>
+
+<div class="doc-paragraph">
+	<h2>Using Controllers</h2>
+	Controllers provide a number of methods that are called actions. Actions are methods on a controller that
+	handle requests. By default all public methods on a controller are an action, and accessible from a url.
+	Actions are responsible for interpreting the request and creating the response.
+	Usually responses are in the form of a rendered view, but there are other ways to create responses as well.
+</div>
+
+<div class="doc-paragraph">
+	For example, when you access a URL like this: <i>http://localhost/blog/posts/show/2012/the-post-title</i>
+	Phalcon by default will process each part like this:
+</div>
+
+<div class="doc-paragraph">
+	<table align="center" cellspacing="0">
+		<tr>
+			<td align="right"><b>Phalcon Directory</b></td>
+			<td>blog</td>
+		</tr>
+		<tr>
+			<td align="right"><b>Controller</b></td>
+			<td>posts</td>
+		</tr>
+		<tr>
+			<td align="right"><b>Action</b></td>
+			<td>show</td>
+		</tr>
+		<tr>
+			<td align="right"><b>Parameter</b></td>
+			<td>2012</td>
+		</tr>
+		<tr>
+			<td align="right"><b>Parameter</b></td>
+			<td>the-post-title</td>
+		</tr>
+	</table>
+</div>
+
+<div class="doc-paragraph">
+	A PostsController will handle this request. The controller will look up in the controllers directory.
+	Controllers should have the suffix "Controller" while actions the suffix "Action". It would be like:
+</div>
+
+<?php echo hyperlight('<?php
+
+class PostsController extends Phalcon_Controller {
+
+  function indexAction(){
+
+  }
+
+  function showAction($year, $postTitle){
+
+  }
+
+}', 'php'); ?>
+
+<div class="doc-paragraph">
+	As you can see aditional URI parameters become method parameters. So you can access it easily as local variables.
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="dispatch-loop">Dispatch Loop</a></h3>
+	The dispatch loop will be executed within the Dispatcher until there are not pendent actions for execution.
+	In the previous example only once action was executed. Now we'll see how forward the execution flow
+	to another controller/action.
+</div>
+
+<?php echo hyperlight('<?php
+
+class PostsController extends Phalcon_Controller {
+
+  function indexAction(){
+
+  }
+
+  function showAction($year, $postTitle){
+     Phalcon_Flash::error("You don\'t have permission to access this area");
+     //Forward flow to another action
+     $this->_forward("users/signin");
+  }
+
+}', 'php'); ?>
+
+<div class="doc-paragraph">
+	If users doesn't have permissions to access a certain action then will be forwarded to another controller.
+</div>
+
+<?php echo hyperlight('<?php
+
+class UsersController extends Phalcon_Controller {
+
+  function indexAction(){
+
+  }
+
+  function signinAction(){
+
+  }
+
+}', 'php'); ?>
+
+<div class="doc-paragraph">
+	You may do many "forwards" as you require. When there are not pendent actions and dispatch loop will reached the end,
+	Phalcon automatically will pull down the view part of MVC manages by <?php echo Tag::classLink('Phalcon_View') ?>.
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="initializing">Initializing Controllers</a></h3>
+	When you implement the "initialize" method on any controller, it will be executed the first time an action
+	is requested to a certain controller. The use of the "__construct" method is not recommend.
+</div>
+
+<?php
+
+echo hyperlight('<?php
+
+class PostsController extends Phalcon_Controller {
+
+  function initialize(){
+    $this->config = array(
+       "mySetting" => "value"
+    );
+  }
+
+  function saveAction(){
+    if($this->_config["mySetting"] == "value"){
+      ...
+    }
+  }
+
+}
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	<h3><a name="dispatch-events">Dispatch Events</a></h3>
+	Events enable controllers to run shared pre- and post-processing code for its actions.
+	Every time a controller action is executed, two events are provided to check security conditions or modify the application control flow.
+	Those events are "beforeDispatch" and "afterDispatch". The first one is executed before the controller action is dispatched, developers
+	can change control flow by using a forward in that event. The second one is "afterDispatch" event but is execute after
+	controller action.
+</div>
+
+<?php
+
+echo hyperlight('<?php
+
+class PostsController extends Phalcon_Controller {
+
+  function beforeDispatch(){
+    if (Phalcon_Session::get("hasAuth") == false) {
+      //Check whether user is authenticated and forwards him to login if not
+      $this->_forward("session/login");
+      return false;
+    }
+  }
+
+  function indexAction(){
+
+  }
+
+}
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	<h3><a name="request-response">Request and Response</a></h3>
+	In every controller there are two public properties pointing to the request and the response
+	objects associated with the request cycle that is currently in execution. The `request` method
+	contains an instance of <?php echo Tag::classLink('Phalcon_Request') ?> and the `response` method contains the response
+	object representing what is going to be sent back to the client.
+</div>
+
+<?php
+
+echo hyperlight('<?php
+
+class PostsController extends Phalcon_Controller {
+
+  function indexAction(){
+
+  }
+
+  function saveAction(){
+
+    //Check if request has made with POST
+    if ($this->request->isPost() == true) {
+
+      //Access POST data
+      $customerName = $this->request->getPost("name");
+      $customerBorn = $this->request->getPost("born");
+
+    }
+
+  }
+
+}
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	The response object is not usually used directly, but is built up during the execution of the
+	action and rendering of the data that is being sent back to the user,
+	but sometimes - like in an after dispatch event - it can be useful to access the response directly.
+</div>
+
+<?php
+
+echo hyperlight('<?php
+
+class PostsController extends Phalcon_Controller {
+
+  function indexAction(){
+
+  }
+
+  function notFoundAction(){
+    $this->response->setStatusCode(404, "Not Found");
+  }
+
+}
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	<h3><a href="session-data">Session Data</a></h3>
+	Sessions help us to mantain persistent data between requests. You could access a <?php echo Tag::classLink('Phalcon_Session_Namespace') ?>
+	from any controller to encapsulate data that should be persistent.
+</div>
+
+<?php
+
+echo hyperlight('<?php
+
+class UserController extends Phalcon_Controller {
+
+  function indexAction(){
+	$this->session->name = "Michael";
+  }
+
+  function welcomeAction(){
+    echo "Welcome, ", $this->session->name;
+  }
+
+}
+
+', 'php'); ?>
+
+<div class="nav-bar">
+	<table width="90%" align="center">
+		<tr>
+			<td align="left">
+				<?php echo Phalcon_Tag::linkTo('documentation/mvc', '← The MVC Architecture') ?>
+			</td>
+			<td align="right">
+				<?php echo Phalcon_Tag::linkTo('documentation/models', 'Working with Models →') ?>
+			</td>
+		</tr>
+	</table>
+</div>

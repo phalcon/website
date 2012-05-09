@@ -1,0 +1,613 @@
+
+<div class="nav-bar">
+	<?php echo Phalcon_Tag::linkTo('index', 'Home') ?> » Documentation
+</div>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+	var data = new google.visualization.DataTable();
+	data.addColumn('string', 'Framework');
+	data.addColumn('number', 'Requests per second');
+	data.addRows([
+		['Symfony', 123.37],
+		['Zend', 234.53],
+		['Kohana', 623.77],
+		['Yii', 680.82],
+		['CodeIgniter', 844.63],
+		['Phalcon', 2599.46]
+	]);
+
+	var options = {
+		title: 'Framework / Requests per second (#/sec) [more is better]',
+		colors: ['#3366CC'],
+		animation: {
+			duration: 0.5
+		},
+		fontSize: 12,
+		chartArea: {
+			width: '600px'
+		}
+	};
+
+	var chart = new google.visualization.ColumnChart(document.getElementById('rps_div'));
+	chart.draw(data, options);
+
+	var data = new google.visualization.DataTable();
+	data.addColumn('string', 'Framework');
+	data.addColumn('number', 'Time per Request');
+	data.addRows([
+		['Symfony', 8.105],
+		['Zend', 4.264],
+		['Kohana', 1.603],
+		['Yii', 1.469],
+		['CodeIgniter', 1.184],
+		['Phalcon', 0.385]
+	]);
+
+	var options = {
+		title: 'Framework / Time per Request (mean, across all concurrent requests) [less is better]',
+		colors: ['#3366CC'],
+		fontSize: 11
+	};
+
+	var chart = new google.visualization.ColumnChart(document.getElementById('tpr_div'));
+	chart.draw(data, options);
+
+	var data = new google.visualization.DataTable();
+	data.addColumn('string', 'Framework');
+	data.addColumn('number', 'Memory Usage (MB)');
+	data.addRows([
+		['Yii', 3.50],
+		['Symfony', 3.0],
+		['Zend', 1.75],
+		['Kohana', 1.25],
+		['CodeIgniter', 1.1],
+		['Phalcon', 0.75]
+	]);
+
+	var options = {
+		title: 'Framework / Memory Usage (mean, megabytes per request) [less is better]',
+		colors: ['#3366CC'],
+		fontSize: 11
+	};
+
+	var chart = new google.visualization.ColumnChart(document.getElementById('mpr_div'));
+	chart.draw(data, options);
+
+	var data = new google.visualization.DataTable();
+	data.addColumn('string', 'Framework');
+	data.addColumn('number', 'Number of included PHP files');
+	data.addRows([
+		['Symfony', 115],
+		['Zend', 66],
+		['Kohana', 46],
+		['Yii', 36],
+		['CodeIgniter', 23],
+		['Phalcon', 4]
+	]);
+
+	var options = {
+		title: 'Framework / Number of included PHP files (mean, number on a single request) [less is better]',
+		colors: ['#3366CC'],
+		fontSize: 11
+	};
+
+	var chart = new google.visualization.ColumnChart(document.getElementById('nfi_div'));
+	chart.draw(data, options);
+
+}
+</script>
+
+<div class="doc-paragraph">
+	<h2>Framework Benchmark</h2>
+	Before, performance is not the most important thing when developing web applications, but,
+	for example, Google <a href="http://googlewebmastercentral.blogspot.com/2010/04/using-site-speed-in-web-search-ranking.html">decided</a>
+	to take site speed into account in the search rankings. This is yet another
+	way in which improving web performance will have a positive impact.
+</div>
+
+<div class="doc-paragraph">
+	Benchmarking below shows how efficient Phalcon is when compared with other traditional PHP frameworks.
+	This benchmark is updated as stable versions are released from any of the frameworks mentioned or Phalcon itself.
+</div>
+
+<div class="doc-paragraph highlight">
+	We allow you to clone the suite we use for testing. You can download it to check which code was used
+	to test the performance. If you have any additional optimizations or comments please <a href="http://phalcon.uservoice.com/">write us.</a> <a href="https://github.com/phalcon/framework-bench">Check out source at Github</a>
+</div>
+
+<div class="doc-paragraph highlightb">
+	<b>Update Mar-20-2012:</b> Benchmarks was remade changing the apc.stat setting to Off. <a href="http://www.php.net/manual/en/apc.configuration.php#ini.apc.stat">More Info</a>
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="benchmark-made">How the bechmark was made?</a></h3>
+	We made a "Hello World" benchmark looking to identify the minimal load overhead of each framework.
+	Many people don't like this kind of benchmark because real-world applications
+	need more complex features. However, these tests you will understand how much is the
+	minimum time spent by each framework to perform a simple task. A task like this, is the minimal task
+	that runs on every request made to an application.
+</div>
+
+<div class="doc-paragraph">
+	A controller and a view have been created for each framework. The controller "say" and action "hello". Action only
+	gives pass to the view for say "Hello!". Using the "ab" benchmark tool we sent 1000 requests using 5 concurrent connections to each framework.
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="measures-taken">What measures does were taken?</a></h3>
+	These were the measurements we take to measure the overall performance of the frameworks:
+	<ul>
+		<li>Requests per second</li>
+		<li>Time across all concurrent requests</li>
+		<li>Number of included PHP files on a single request (measured using function <a href="http://www.php.net/manual/en/function.get-included-files.php">get_included_files()</a></li>
+		<li>Memory Usage per request (measured using function <a href="http://php.net/manual/en/function.memory-get-usage.php">memory_get_usage()</a></li>
+	</ul>
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="test-environment">What was the test environment?</a></h3>
+	<a href="http://php.net/manual/en/book.apc.php">APC</a> intermediate code cache was enabled for all frameworks. Any Apache mod-rewrite feature
+	was disabled to avoid possible extra overheads.
+</div>
+
+<div class="doc-paragraph">
+	The testing hardware environment is as follows:
+<ul>
+    <li>Operating System: Mac OS X Snow Leopard 10.6.8
+    <li>Web Server: Apache httpd 2.2.21
+    <li>PHP: 5.3.8
+    <li>CPU: 3.06 Ghz Intel Core 2 Duo
+    <li>Main Memory: 4GB 1067 MHz DDR3
+    <li>Hard Drive: 500GB SCSI/SAS HDD
+</ul>
+
+</div>
+
+<div class="doc-paragraph">
+	<i>PHP version and info:</i>
+	<div align="center">
+		<?php echo Phalcon_Tag::image('img/bench-1.png') ?>
+	</div>
+</div>
+
+<div class="doc-paragraph">
+	<i>Apache environment:</i>
+	<div align="center">
+		<?php echo Phalcon_Tag::image('img/bench-2.png') ?>
+	</div>
+</div>
+
+<div class="doc-paragraph">
+	<i>APC settings:</i>
+	<div align="center">
+		<?php echo Phalcon_Tag::image('img/bench-3.png') ?>
+	</div>
+</div>
+
+<div class="doc-paragraph">
+	<h3>Yii (YII_DEBUG=false) Version yii-1.1.10.r3566</h3>
+	<a href="http://www.yiiframework.com/">Yii</a> is a high-performance PHP framework best
+	for developing Web 2.0 applications. Version used for benchmark was yii-1.1.10.r3566.
+	We disable YII_DEBUG for get faster perfomance.
+</div>
+
+<pre class="source-code php">
+ab -n 1000 -c 5 http://localhost/bench/yii/index.php?r=say/hello
+This is ApacheBench, Version 2.3 <$Revision: 655654 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:        Apache/2.2.21
+Server Hostname:        localhost
+Server Port:            80
+
+Document Path:          /bench/yii/index.php?r=say/hello
+Document Length:        61 bytes
+
+Concurrency Level:      5
+Time taken for tests:   1.469 seconds
+Complete requests:      1000
+Failed requests:        0
+Write errors:           0
+Total transferred:      232232 bytes
+HTML transferred:       61061 bytes
+Requests per second:    680.82 [#/sec] (mean)
+Time per request:       7.344 [ms] (mean)
+Time per request:       1.469 [ms] (mean, across all concurrent requests)
+Transfer rate:          154.40 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   1.1      0       5
+Processing:     2    6   7.5      5      80
+Waiting:        0    6   7.0      4      80
+Total:          2    7   7.5      5      81
+
+Percentage of the requests served within a certain time (ms)
+  50%      5
+  66%      6
+  75%      8
+  80%      8
+  90%     11
+  95%     18
+  98%     31
+  99%     49
+ 100%     81 (longest request)
+</pre>
+<br/>
+
+<div class="doc-paragraph">
+	<h3>Symfony Version 2.0.11</h3>
+	<a href="http://symfony.com/">Symfony</a> is another high-performance PHP framework.
+</div>
+
+<pre class="source-code php">
+[#] ab -n 1000 -c 5 http://localhost/bench/Symfony/web/app.php/say/hello/
+This is ApacheBench, Version 2.3 <$Revision: 655654 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:        Apache/2.2.21
+Server Hostname:        localhost
+Server Port:            80
+
+Document Path:          /bench/Symfony/web/app.php/say/hello/
+Document Length:        16 bytes
+
+Concurrency Level:      5
+Time taken for tests:   8.105 seconds
+Complete requests:      1000
+Failed requests:        0
+Write errors:           0
+Total transferred:      270000 bytes
+HTML transferred:       16000 bytes
+Requests per second:    123.37 [#/sec] (mean)
+Time per request:       40.527 [ms] (mean)
+Time per request:       8.105 [ms] (mean, across all concurrent requests)
+Transfer rate:          32.53 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   1.8      0      23
+Processing:    14   40  38.2     26     262
+Waiting:        6   39  37.9     25     260
+Total:         14   40  38.4     26     266
+
+Percentage of the requests served within a certain time (ms)
+  50%     26
+  66%     35
+  75%     44
+  80%     51
+  90%     80
+  95%    137
+  98%    178
+  99%    206
+ 100%    266 (longest request)
+</pre>
+<br/>
+
+<div class="doc-paragraph">
+	<h3>Zend Framework Version 1.11.11</h3>
+	<a href="http://framework.zend.com">Zend Framework</a> is an open source, object oriented web application framework for PHP 5.
+	Zend framework was installed on a Apache VirtualHost.
+</div>
+
+<pre class="source-code php">
+[#] ab -n 1000 -c 5 http://zend.local/say/hello
+This is ApacheBench, Version 2.3 <$Revision: 655654 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking zend.local (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:        Apache/2.2.21
+Server Hostname:        zend.local
+Server Port:            80
+
+Document Path:          /say/hello
+Document Length:        16 bytes
+
+Concurrency Level:      5
+Time taken for tests:   4.264 seconds
+Complete requests:      1000
+Failed requests:        0
+Write errors:           0
+Total transferred:      187000 bytes
+HTML transferred:       16000 bytes
+Requests per second:    234.53 [#/sec] (mean)
+Time per request:       21.320 [ms] (mean)
+Time per request:       4.264 [ms] (mean, across all concurrent requests)
+Transfer rate:          42.83 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   1.5      0       8
+Processing:     7   20  20.1     13     147
+Waiting:        0   20  19.7     13     147
+Total:          7   21  20.1     14     148
+
+Percentage of the requests served within a certain time (ms)
+  50%     14
+  66%     18
+  75%     23
+  80%     27
+  90%     46
+  95%     62
+  98%     93
+  99%    116
+ 100%    148 (longest request)
+</pre>
+
+<div class="doc-paragraph">
+	<h3>CodeIgniter 2.1.0</h3>
+	<a href="http://codeigniter.com/">CodeIgniter</a>  is a powerful PHP framework with a very small footprint,
+	built for PHP coders who need a simple and elegant toolkit to create full-featured web applications.
+</div>
+
+<pre class="source-code php">
+[#] ab -n 1000 -c 5 http://localhost/bench/codeigniter/index.php/say/hello
+This is ApacheBench, Version 2.3 <$Revision: 655654 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:        Apache/2.2.21
+Server Hostname:        localhost
+Server Port:            80
+
+Document Path:          /bench/codeigniter/index.php/say/hello
+Document Length:        16 bytes
+
+Concurrency Level:      5
+Time taken for tests:   1.184 seconds
+Complete requests:      1000
+Failed requests:        0
+Write errors:           0
+Total transferred:      187000 bytes
+HTML transferred:       16000 bytes
+Requests per second:    844.63 [#/sec] (mean)
+Time per request:       5.920 [ms] (mean)
+Time per request:       1.184 [ms] (mean, across all concurrent requests)
+Transfer rate:          154.24 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   0.7      0       5
+Processing:     2    5  11.0      4     148
+Waiting:        0    5  10.8      4     148
+Total:          2    6  10.9      4     148
+WARNING: The median and mean for the initial connection time are not within a normal deviation
+        These results are probably not that reliable.
+
+Percentage of the requests served within a certain time (ms)
+  50%      4
+  66%      4
+  75%      5
+  80%      6
+  90%      8
+  95%     12
+  98%     24
+  99%     38
+ 100%    148 (longest request)
+</pre>
+
+<div class="doc-paragraph">
+	<h3>Kohana 3.2.0</h3>
+	<a href="http://kohanaframework.org/index">Kohana</a> is an elegant HMVC PHP5 framework that provides a
+	rich set of components for building web applications.
+</div>
+
+<pre class="source-code php">
+[#] ab -n 1000 -c 5 http://localhost/bench/kohana/index.php/say/hello
+This is ApacheBench, Version 2.3 <$Revision: 655654 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:        Apache/2.2.21
+Server Hostname:        localhost
+Server Port:            80
+
+Document Path:          /bench/kohana/index.php/say/hello
+Document Length:        15 bytes
+
+Concurrency Level:      5
+Time taken for tests:   1.603 seconds
+Complete requests:      1000
+Failed requests:        0
+Write errors:           0
+Total transferred:      186000 bytes
+HTML transferred:       15000 bytes
+Requests per second:    623.77 [#/sec] (mean)
+Time per request:       8.016 [ms] (mean)
+Time per request:       1.603 [ms] (mean, across all concurrent requests)
+Transfer rate:          113.30 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   0.9      0       5
+Processing:     2    7  22.4      5     317
+Waiting:        0    7  22.3      4     317
+Total:          2    8  22.3      5     318
+WARNING: The median and mean for the initial connection time are not within a normal deviation
+        These results are probably not that reliable.
+
+Percentage of the requests served within a certain time (ms)
+  50%      5
+  66%      5
+  75%      6
+  80%      7
+  90%     10
+  95%     17
+  98%     33
+  99%     46
+ 100%    318 (longest request)
+</pre>
+
+<br/>
+<div class="doc-paragraph">
+	<h3>Phalcon Version 0.3.1</h3>
+</div>
+
+<pre class="source-code php">
+ab -n 1000 -c 5 http://localhost/bench/phalcon/?_url=say/hello
+This is ApacheBench, Version 2.3 <$Revision: 655654 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:        Apache/2.2.21
+Server Hostname:        localhost
+Server Port:            80
+
+Document Path:          /bench/phalcon/?_url=say/hello
+Document Length:        16 bytes
+
+Concurrency Level:      5
+Time taken for tests:   0.385 seconds
+Complete requests:      1000
+Failed requests:        0
+Write errors:           0
+Total transferred:      187000 bytes
+HTML transferred:       16000 bytes
+Requests per second:    2599.46 [#/sec] (mean)
+Time per request:       1.923 [ms] (mean)
+Time per request:       0.385 [ms] (mean, across all concurrent requests)
+Transfer rate:          474.71 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.3      0       3
+Processing:     1    2   1.9      1      43
+Waiting:        0    1   1.8      1      43
+Total:          1    2   1.9      2      43
+
+Percentage of the requests served within a certain time (ms)
+  50%      2
+  66%      2
+  75%      2
+  80%      2
+  90%      3
+  95%      4
+  98%      5
+  99%      9
+ 100%     43 (longest request)
+</pre>
+
+<div class="doc-paragraph">
+	<h3>Result Graphs</h3>
+	The first graph shows how many requests per second each framework was able to accept.
+	Second shows the average time across all concurrent requests.
+</div>
+
+<div align="center">
+	<div id="rps_div" style="width: 600px; height: 400px;"></div>
+	<div id="tpr_div" style="width: 600px; height: 400px;"></div>
+	<div id="nfi_div" style="width: 600px; height: 400px;"></div>
+	<div id="mpr_div" style="width: 600px; height: 400px;"></div>
+</div>
+
+<div class="doc-paragraph">
+	<h3>Conclusion</h3>
+	The Phalcon compiled nature offers extraordinary performance that outperforms all other frameworks in this comparison.
+	Phalcon is a real high performance framework that allow you to scale more easily than ever.
+</div>
+
+<div class="nav-bar">
+	<table width="90%" align="center">
+		<tr>
+			<td align="left">
+				<?php echo Phalcon_Tag::linkTo('documentation/motivation', '← Our Motivation') ?>
+			</td>
+			<td align="right">
+				<?php echo Phalcon_Tag::linkTo('documentation/install', 'Installation →') ?>
+			</td>
+		</tr>
+	</table>
+</div>
