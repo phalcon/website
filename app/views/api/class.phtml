@@ -8,8 +8,6 @@ if(isset($refactor[$className])){
 
 	echo '<h2>Class <strong>', $className, '</strong></h2>';
 
-	//print_r($refactorClass);
-
 	if($refactorClass['extends']){
 		echo '<h3>Extends</h3>';
 		echo '<span class="icon-class">', Phalcon_Tag::linkTo('api/class/'.$refactorClass['extends'], $refactorClass['extends']), '</span>';
