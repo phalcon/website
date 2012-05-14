@@ -1,6 +1,6 @@
 
-if(navigator.userAgent.indexOf("Win")!=-1){
-	document.getElementById("fork").style.display = "hidden";
+if(navigator.userAgent.toLowerCase().indexOf("win")!=-1){
+	document.getElementById("fork").style.display = "none";
 }
 
 window.onload = function(){
