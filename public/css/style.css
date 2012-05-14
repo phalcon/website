@@ -3,12 +3,11 @@ html {
 }
 
 body {
-    color: #333333;
-    font-family: "Open Sans",sans-serif;
-    font-size: 13px;
-    line-height: 1.231;
-	/*background: url("../img/page-background.png") repeat-x scroll 50% 0 #FFFFFF;*/
-    border-top: 2px solid #686868;
+	color: #333333;
+	font-family: "Open Sans",sans-serif;
+	font-size: 13px;
+	line-height: 1.231;
+	border-top: 2px solid #686868;
 	margin: 0;
 	min-width: 990px;
 	padding: 0;
@@ -16,8 +15,8 @@ body {
 }
 
 #header {
-    margin: 0 0px;
-    text-align: center;
+	margin: 0 0px;
+	text-align: center;
 }
 
 #header h1 {
@@ -622,26 +621,36 @@ iframe.present_iframe {
 	background:transparent;
 }
 
+#github-con {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 220px;
+	height: 180px;
+	overflow: hidden;
+	padding-top: 40px;
+}
+
 #github {
-	background-color: #121621;
-	top: 3.2em; 
-	right: -3.7em;
+	background-color: #6FB52E;
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
 	transform: rotate(45deg);
-	-webkit-box-shadow: 0 0 0 1px #1d212e inset,0 0 2px 1px #fff inset,0 0 1em #888;
-	-moz-box-shadow: 0 0 0 1px #1d212e inset,0 0 2px 1px #fff inset,0 0 1em #888;
-	box-shadow: 0 0 0 1px #1d212e inset,0 0 2px 1px #fff inset,0 0 1em #888;
+	-webkit-box-shadow: 0 0 0 1px #1d212e inset,0 0 2px 1px #fff inset,0 0 1em #333333;
+	-moz-box-shadow: 0 0 0 1px #1d212e inset,0 0 2px 1px #fff inset,0 0 1em #333333;
+	box-shadow: 0 0 0 1px #1d212e inset,0 0 2px 1px #fff inset,0 0 1em #333333;
 	color: rgba(255,255,255,0.90);
-	display: block;
 	padding: .6em 3.5em;
-	position: absolute;
-	font: bold .82em sans-serif;
+	font: bold 12px sans-serif;
 	text-align: center;
 	text-decoration: none;
 	text-shadow: 1px -1px 8px rgba(0,0,0,0.60);
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	user-select: none
+}
+
+#github a {
+	color: #fff;
 }
 
