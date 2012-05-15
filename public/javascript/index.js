@@ -3,7 +3,7 @@ function initIndex(){
 	var github = document.getElementById("github");
 	if(github){
 		if(navigator.userAgent.toLowerCase().indexOf("win")!=-1){
-			github.style.display = "none";
+			github.style.display = "block";
 		} else {
 			github.style.width = "250px";
 		}
