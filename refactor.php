@@ -1377,7 +1377,7 @@
       ),
       'setRequest' => 
       array (
-        'description' => 'Overwrittes request object default object',
+        'description' => 'Overwrites request object default object',
         'modifiers' => 
         array (
           0 => 'public',
@@ -1396,7 +1396,7 @@
       ),
       'setResponse' => 
       array (
-        'description' => 'Overwrittes response object default object',
+        'description' => 'Overwrites response object default object',
         'modifiers' => 
         array (
           0 => 'public',
@@ -1415,7 +1415,7 @@
       ),
       'setModelComponent' => 
       array (
-        'description' => 'Overwrittes models manager default object',
+        'description' => 'Overwrites models manager default object',
         'modifiers' => 
         array (
           0 => 'public',
@@ -5705,7 +5705,7 @@
       ),
       'log' => 
       array (
-        'description' => 'Sends/Writtes a message to the log',
+        'description' => 'Sends/Writes a message to the log',
         'modifiers' => 
         array (
           0 => 'public',
@@ -5731,7 +5731,7 @@
       ),
       'debug' => 
       array (
-        'description' => 'Sends/Writtes a debug message to the log',
+        'description' => 'Sends/Writes a debug message to the log',
         'modifiers' => 
         array (
           0 => 'public',
@@ -5750,7 +5750,7 @@
       ),
       'error' => 
       array (
-        'description' => 'Sends/Writtes a error message to the log',
+        'description' => 'Sends/Writes an error message to the log',
         'modifiers' => 
         array (
           0 => 'public',
@@ -5769,7 +5769,7 @@
       ),
       'info' => 
       array (
-        'description' => 'Sends/Writtes a info message to the log',
+        'description' => 'Sends/Writes an info message to the log',
         'modifiers' => 
         array (
           0 => 'public',
@@ -5788,7 +5788,7 @@
       ),
       'notice' => 
       array (
-        'description' => 'Sends/Writtes a notice message to the log',
+        'description' => 'Sends/Writes a notice message to the log',
         'modifiers' => 
         array (
           0 => 'public',
@@ -5807,7 +5807,7 @@
       ),
       'warning' => 
       array (
-        'description' => 'Sends/Writtes a warning message to the log',
+        'description' => 'Sends/Writes a warning message to the log',
         'modifiers' => 
         array (
           0 => 'public',
@@ -5826,7 +5826,7 @@
       ),
       'alert' => 
       array (
-        'description' => 'Sends/Writtes a alert message to the log',
+        'description' => 'Sends/Writes an alert message to the log',
         'modifiers' => 
         array (
           0 => 'public',
@@ -6174,7 +6174,7 @@
       ),
       'setManager' => 
       array (
-        'description' => 'Overwrittes default model manager',
+        'description' => 'Overwrites default model manager',
         'modifiers' => 
         array (
           0 => 'public',
@@ -6320,7 +6320,7 @@
       ),
       'setConnection' => 
       array (
-        'description' => 'Overwrittes internal Phalcon_Db connection',
+        'description' => 'Overwrites internal Phalcon_Db connection',
         'modifiers' => 
         array (
           0 => 'public',
@@ -7092,7 +7092,7 @@
       ),
       'setMetaData' => 
       array (
-        'description' => 'Overwrittes default meta-data manager',
+        'description' => 'Overwrites default meta-data manager',
         'modifiers' => 
         array (
           0 => 'public',
@@ -8143,18 +8143,6 @@
     'type' => 'public',
     'methods' => 
     array (
-      '__construct' => 
-      array (
-        'description' => 'Phalcon_Model_Criteria constructor',
-        'modifiers' => 
-        array (
-          0 => 'public',
-        ),
-        'parameters' => 
-        array (
-        ),
-        'return' => 'unknown',
-      ),
       'setInputData' => 
       array (
         'description' => 'Set the data to use to make the conditions in query',
@@ -8613,7 +8601,7 @@
     array (
       'setConnection' => 
       array (
-        'description' => 'Overwrittes default connection',
+        'description' => 'Overwrites default connection',
         'modifiers' => 
         array (
           0 => 'public',
@@ -9469,7 +9457,7 @@
       ),
       'setFilter' => 
       array (
-        'description' => 'Overwrittes Phalcon_Filter object used to sanitize input data',
+        'description' => 'Overwrites Phalcon_Filter object used to sanitize input data',
         'modifiers' => 
         array (
           0 => 'public',
@@ -9937,7 +9925,7 @@
       ),
       'setHeader' => 
       array (
-        'description' => 'Overwrittes a header in the response
+        'description' => 'Overwrites a header in the response
 <pre class="source-code iphp"><span class="tag">$<span class="identifier">response</span></span>-&gt;<span class="identifier">setHeader</span>(<span class="string">"Content-Type"</span>, <span class="string">"text/plain"</span>);</pre>',
         'modifiers' => 
         array (
