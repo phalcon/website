@@ -99,6 +99,10 @@ class DocumentationController extends ControllerBase {
 
 	}
 
+	public function linuxtoolsAction(){
+
+	}
+
 	public function cacheAction(){
 
 	}
