@@ -20,7 +20,7 @@
 	<h3><a name="creating">Creating an ACL</a></h3>
 	This component is designed to initially work in memory.
 	This will give us the ease of handling rapidly every aspect of the list.
-	The Phalcon_Acl constructor takes as its first parameter a adapter used
+	The Phalcon_Acl constructor takes as its first parameter an adapter used
 	to recover the information related to the control list. In this example we'll use the memory adapter:
 </div>
 
@@ -30,7 +30,7 @@
 
 <div class="doc-paragraph">
 	By default Phalcon_Acl allows access to action on resources that has not been defined previously.
-	To increase the security level of our access list we'll define a "deny" level as default access level.
+	To increase the security level of our access list we'll define a "deny" level as a default access level.
 </div>
 
 <div class="doc-center">
@@ -40,8 +40,8 @@ $acl->setDefaultAction(Phalcon_Acl::DENY);', 'iphp'); ?>
 
 <div class="doc-paragraph">
 	<h3><a name="roles">Adding Roles to the ACL</a></h3>
-	A role is somebody or something that could be access to certain resources in the access list. In our example
-	we will define roles as groups of people at an organization. The
+	A role is somebody or something that can access to certain resources in the access list. In our example
+	we will define roles as groups of people in an organization. The
 	<?php echo Tag::classLink('Phalcon_Acl_Role') ?> is available to create roles in a more structured way.
 	Let's add some roles to our recently created list:
 </div>
@@ -66,7 +66,7 @@ $acl->addRole("Designers");
 
 <div class="doc-paragraph">
 	<h3><a name="resources">Adding Resources</a></h3>
-	Resources are objects where access is controlled. Normally in MVC applications resources refer to
+	Resources are objects where access is controlled. Normally in MVC application resources refer to
 	controllers. Although this is not mandatory, <?php echo Tag::classLink('Phalcon_Acl_Resource') ?> can be used defining resources.
 	It's important to add related actions or operations to a resource so ACL can understand what it should to control.
 </div>
@@ -97,7 +97,7 @@ $acl->deny("Guests", "Customers", "update");
 ', 'iphp'); ?>
 
 <div class="doc-paragraph">
-	The allow method say to the list: Yes, this role have granted with access to this resource/operation.
+	The allow method say to the list: Yes, this role has granted with access to this resource/operation.
 	The deny method does the opposite.
 </div>
 
@@ -116,7 +116,7 @@ $acl->isAllowed("Guests", "Customers", "create"); //Returns 1
 
 <div class="doc-paragraph">
 	<h3><a name="inheritance">Roles Inheritance</a></h3>
-	In some cases, roles permissions could be inherited from another existing roles. You can do this by simply
+	In some cases, role's permissions could be inherited from other existing roles. You can do this by simply
 	refer the inherited role as the second parameter when defining a role into the list.
 </div>
 

@@ -6,19 +6,19 @@
 	<h2>Database Abstraction Layer</h2>
 	<?php echo Tag::classLink('Phalcon_Db') ?> is the component
 	behind <?php echo Tag::classLink('Phalcon_Model_Base', 'Phalcon_Model') ?>
-	that powers up all the models stuff in the framework. It consists in an independent high-level
+	that powers up all the models stuff in the framework. It consists of an independent high-level
 	abstraction layer for database systems completely written in C.
 </div>
 
 <div class="doc-paragraph">
 	This component allows doing a lower level database manipulation than using models.
-	While the models do not need to use SQL, here you can use specific SQL engine
+	While the models do not need to use SQL, here you can use the specific SQL engine
 	with you are working.
 </div>
 
 <div class="doc-paragraph highlightb">
 	This guide is not intended to be a complete documentation of available methods and their arguments.
-	Please visit the <?php echo Tag::classLink('Phalcon_Db', 'api documentation') ?> for a complete reference.
+	Please visit the <?php echo Tag::classLink('Phalcon_Db', 'API documentation') ?> for a complete reference.
 </div>
 
 <div class="doc-paragraph">
@@ -68,7 +68,7 @@
 <div class="doc-paragraph">
 	<h3><a name="connecting">Connecting to Databases</a></h3>
 	All the connections created by the component are factored in a single method: Phalcon_Db::factory.
-	Its first parameter is a supported adapter, the second is a standard php object with the connection
+	Its first parameter is a supported adapter, the second is a standard PHP object with the connection
 	settings, the third parameter tells if a
 	<a href="http://php.net/manual/en/features.persistent-connections.php">persistent connection</a>
 	should be created or not.
@@ -337,7 +337,7 @@ $connection->insert(
 	<h4>Implementing your own Logger</h4>
 	You can pass to Phalcon_Db::setLogger any object that have a method called "log" that accepts
 	a string as its first argument.
-	That method will be called out each time a SQL stament will sent to the database system.
+	That method will be called out each time a SQL statement will sent to the database system.
 </div>
 
 <div class="doc-paragraph">

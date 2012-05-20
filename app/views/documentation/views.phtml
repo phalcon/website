@@ -16,13 +16,13 @@
 </div>
 
 <div class="doc-paragraph">
-	A hierarchy of files is supported by the component allowing reducing coding
+	A hierarchy of files is supported by the component allowing reducing the coding
 	by creating common points for the application, controllers or by implementing templates.
 </div>
 
 <div class="doc-paragraph">
 	<h3><a name="controllers">Integrating Views with Controllers</a></h3>
-	Phalcon automatically pull down the execution flow to the view component when the controller has ended its work.
+	Phalcon automatically pulls down the execution flow to the view component when the controller has ended its work.
 	View component will look in the views directory for another directory named as the last controller executed.
 </div>
 
@@ -79,7 +79,7 @@ class PostsController extends Phalcon_Controller {
 
 <div class="doc-paragraph">
 	The setVar lets to create variables on the fly for each view executed in the current request. The above example
-	show how to pass the $postId parameter to the views with the same name.
+	shows how to pass the $postId parameter to the views with the same name.
 </div>
 
 <div class="doc-paragraph">
@@ -117,7 +117,7 @@ class PostsController extends Phalcon_Controller {
 
 <div class="doc-paragraph">
 	You are not required to implement all of the files mentioned above. <?php echo Tag::classLink('Phalcon_View') ?> simply will pass to next view level in the hierarchy of files.
-	If 3 view files will implemented, they could be look as follows:
+	If 3 view files will implement, they could be looked as follows:
 </div>
 
 <div class="doc-center">
@@ -200,7 +200,7 @@ class PostsController extends Phalcon_Controller {
 
 <div class="doc-paragraph">
 	<h3><a name="partials">Using Partials</a></h3>
-	Partial templates are another way for breaking the rendering process
+	Partial templates are another way of breaking the rendering process
 	into simpler chunks. With a partial, you can move the code for rendering a particular
 	piece of a response to its own file.
 </div>
@@ -336,7 +336,7 @@ class PostsController extends Phalcon_Controller {
 
 <div class="doc-paragraph">
 	<h3><a name="models">Using models at presentation</a></h3>
-	Application models are always available at the presentation. Autoloader automatically will instantiate them in runtime:
+	Application models are always available at the presentation. Autoloader automatically will instantiate them at runtime:
 </div>
 
 <div class="doc-center">
@@ -364,8 +364,8 @@ foreach(Catergories::find("status=1") as $category){
 
 <div class="doc-paragraph">
 	The following example shows how to write a Jquery <a href="http://api.jquery.com/jQuery.ajax/">ajax request</a>
-	using an url with the frameworks conventions. The method url is called from a $this instance that makes
-	references to a Phalcon_View object:
+	using an url with the framework conventions. The method url is called from a $this instance that makes
+	reference to a Phalcon_View object:
 </div>
 
 <div class="doc-center">
@@ -379,7 +379,7 @@ $.ajax({
 </div>
 
 <div class="doc-paragraph">
-	This method can be invoked from the controller or from a superior view layer to prevent that others are presented.
+	This method can be invoked from the controller or from a superior view layer to prevent that others will presented.
 </div>
 
 <div class="nav-bar">

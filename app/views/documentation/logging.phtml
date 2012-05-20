@@ -55,8 +55,8 @@ $logger->close();
 
 <div class="doc-paragraph">
 	<h3><a name="transactions">Transactions</a></h3>
-	Because write to the filesystem could be expensive in terms of performance,
-	you can take advantage of logging transactions to temporary store messages
+	Because writing to the filesystem could be expensive in terms of performance,
+	you can take advantage of logging transactions to temporariry store messages
 	in memory and later write them to disk in a single atomic operation.
 </div>
 
@@ -127,7 +127,7 @@ $logger->setFormat("%date% - %message%");
 				<?php echo Phalcon_Tag::linkTo('documentation/acl', '← Access Control Lists (ACL)') ?>
 			</td>
 			<td align="right">
-				<?php echo Phalcon_Tag::linkTo('documentation/db', 'Database Abstraction Layer →') ?>
+				<?php echo Phalcon_Tag::linkTo('documentation/loader', 'Universal Class Loader →') ?>
 			</td>
 		</tr>
 	</table>

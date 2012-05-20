@@ -22,12 +22,12 @@
 
 <div class="doc-paragraph">
 	The <?php echo Tag::classLink('Phalcon_Filter') ?> component provides a set of commonly needed data filters and sanitizes helpers.
-	It provides object-oriented wrappers to the mature PHP filter extension.
+	It provides object-oriented wrappers for the mature PHP filter extension.
 </div>
 
 <div class="doc-paragraph">
 	<h3><a name="sanitizing">Sanitizing data</a></h3>
-	Sanitize is the process of remove the characters that are not required from a certain value.
+	Sanitize is the process to remove the characters that are not required from a certain value.
 	This lets us know that the values will not have unexpected values damaging the integrity of applications.
 </div>
 
@@ -51,7 +51,7 @@ $filter->sanitize("!100a019.01a", "float");
 
 <div class="doc-paragraph">
 	<h3><a name="controllers">Sanitizing from Controllers</a></h3>
-	You can access a Phalcon_Filter object from the controllers also when accesing POST or GET input data.
+	You can access a Phalcon_Filter object from the controllers also when accessing POST or GET input data.
 	First parameter is the name of the variable to be obtained; the second is the filter to be applied.
 </div>
 

@@ -16,11 +16,11 @@
 	in a Phalcon application. It provides database
 	independence, basic CRUD functionality, advanced finding capabilities, and the ability
 	to relate models to one another, among other services. Phalcon_Model avoids the need of
-	have to use SQL statements because it translates dinamically to the respective database engine.
+	having to use SQL statements because it translates dynamically to the respective database engine.
 </div>
 
 <div class="doc-paragraph highlightb">
-	Models are intended to work in a database high layer of abstraction.
+	Models are intended to work on a database high layer of abstraction.
 	If you need to work with databases at a lower level
 	check out the <?php echo Phalcon_Tag::linkTo('documentation/db', 'Phalcon_Db') ?>
 	component documentation.
@@ -28,7 +28,7 @@
 
 <div class="doc-paragraph">
 	<h3><a name="creating">Creating Models</a></h3>
-	A model is a class that extends from Phalcon_Model_Base. It must be placed at the models directory.
+	A model is a class that extends from Phalcon_Model_Base. It must be placed in the models directory.
 	A model file must contain a single class; its class name should be in camel case notation:
 </div>
 
@@ -51,7 +51,7 @@ class Robots extends Phalcon_Model_Base {
 </div>
 
 <div class="doc-paragraph">
-	By default model "Robots" will refers to table "robots". If you want to manually specify another name
+	By default model "Robots" will refer to table "robots". If you want to manually specify another name
 	for the mapping table, you can use the setSource method:
 </div>
 
@@ -68,8 +68,7 @@ class Robots extends Phalcon_Model_Base {
 ', 'php'); ?>
 
 <div class="doc-paragraph">
-	The model Robots now maps to table "the_birds". The "initialize" method helps us to setup the model with
-	custom behavior.
+	The model Robots now maps to "the_birds" table. The "initialize" method helps us to set up the model with custom behavior.
 </div>
 
 <div class="doc-paragraph">
@@ -121,8 +120,8 @@ As you can see, there is not need of use SQL statements or similar. Phalcon_Mode
 
 <div class="doc-paragraph">
 	<h3><a name="finding">Finding Records</a></h3>
-	Phalcon_Model provide you several methods for doing querying of records. The next examples will show you
-	how to query out one or more records from a model:
+	Phalcon_Model provide you several methods for doing the querying of records. The next examples will show you
+	how to query one or more records from a model:
 </div>
 
 <?php echo hyperlight('<?php
@@ -169,7 +168,7 @@ echo "The first virtual robot name is ", $robot->name, "\n";
 ', 'php'); ?>
 
 <div class="doc-paragraph">
-Both find and findFirst can accept an associative array specfying the find options.
+Both "find" and "findFirst" can accept an associative array specifying the find options.
 The following example shows how it works:
 </div>
 
@@ -241,7 +240,7 @@ The available query options are:
 	<h3><a name="relationships">Relationships between Models</a></h3>
 	There are four types of multiple relationships: one-on-one, one-to-many, many-to-one and many-to-many.
 	The relationship may be unidirectional or bidirectional, and each can be simple or by a combination of models.
-	Normally the models manager manages foreign key constraints for these relationships, the definition of
+	Normally the model manager manages foreign key constraints for these relationships, the definition of
 	these helps the reliable data integrity and the easy finding of related records to a model.
 	Through the implementation of relations is possible to access records relating to each record in a uniform way.
 </div>
@@ -382,7 +381,7 @@ if($robot->save() == false){
 	<h4><a href="validation-messages">Validation Messages</a></h4>
 	Phalcon_Model has a message subsystem that allows a flexible way to output or store the validation messages generated
 	in the insertion/updating processes. Each message consists of an instance of the class Phalcon_Model_Message.
-	The set of generated messages can be gotten using the method getMessages().
+	The set of messages generated can be gotten with the method getMessages().
 </div>
 
 <div class="doc-paragraph">
@@ -499,7 +498,7 @@ if($robot->save() == false){
 
 <div class="doc-paragraph">
 	<h4><a name="business-rule">Implement a Business Rule</a></h4>
-	When an insert, update or deletion is executed, the model verifies if there are any methods
+	When an insert, update or delete is executed, the model verifies if there are any methods
 	with the names of the events listed in the table above.
 </div>
 
@@ -529,7 +528,7 @@ class Robots extends Phalcon_Model_Base {
 ', 'php'); ?>
 
 <div class="doc-paragraph">
-	Some events allow returning false as an indication to stop the current operation. If an event doesn't returns anything, Phalcon_Model will asume a true value.
+	Some events allow returning false as an indication to stop the current operation. If an event doesn't return anything, Phalcon_Model will assume a true value.
 </div>
 
 <div class="doc-paragraph">
@@ -682,14 +681,14 @@ foreach(Robots::find("type=\'mechanical\'") as $robot){
 
 <div class="doc-paragraph">
 	<h3><a name="transactions">Transactions</a></h3>
-	When a process perform multiple operations on a database, sometimes is required
+	When a process performs multiple operations on a database, sometimes is required
 	that each run in a complete and satisfactory way. Data integrity is lost when operations
 	are interrupted and not completed successfully. Transactions in software just try
 	to avoid these situations.
 </div>
 
 <div class="doc-paragraph">
-	Transactions in Phalcon basically lets to separate the objects belonging to a transaction
+	Transactions in Phalcon basically let to separate the objects belonging to a transaction
 	so that all operations carried out by them can maintain a consistent state and could be
 	rolled back if required.
 </div>

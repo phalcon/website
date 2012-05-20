@@ -5,8 +5,8 @@
 
 <div class="doc-paragraph">
 	<h2>Using Controllers</h2>
-	Controllers provide a number of methods that are called actions. Actions are methods on a controller that
-	handle requests. By default all public methods on a controller are an action, and accessible from a url.
+	The controllers provide a number of methods that are called actions. Actions are methods on a controller that
+	handle requests. By default all public methods on a controller are an action, and accessible from a URL.
 	Actions are responsible for interpreting the request and creating the response.
 	Usually responses are in the form of a rendered view, but there are other ways to create responses as well.
 </div>
@@ -61,7 +61,7 @@ class PostsController extends Phalcon_Controller {
 }', 'php'); ?>
 
 <div class="doc-paragraph">
-	As you can see aditional URI parameters become method parameters. So you can access it easily as local variables.
+	As you can see additional URI parameters become method parameters. So you can access it easily as local variables.
 </div>
 
 <div class="doc-paragraph">
@@ -88,7 +88,7 @@ class PostsController extends Phalcon_Controller {
 }', 'php'); ?>
 
 <div class="doc-paragraph">
-	If users doesn't have permissions to access a certain action then will be forwarded to another controller.
+	If users don't have permissions to access a certain action then will be forwarded to another controller.
 </div>
 
 <?php echo hyperlight('<?php
@@ -106,14 +106,14 @@ class UsersController extends Phalcon_Controller {
 }', 'php'); ?>
 
 <div class="doc-paragraph">
-	You may do many "forwards" as you require. When there are not pendent actions and dispatch loop will reached the end,
+	You may do many "forwards" as you require. When there are not pendent actions and dispatch loop will reach the end,
 	Phalcon automatically will pull down the view part of MVC manages by <?php echo Tag::classLink('Phalcon_View') ?>.
 </div>
 
 <div class="doc-paragraph">
 	<h3><a name="initializing">Initializing Controllers</a></h3>
 	When you implement the "initialize" method on any controller, it will be executed the first time an action
-	is requested to a certain controller. The use of the "__construct" method is not recommend.
+	requests to a certain controller. The use of the "__construct" method is not recommended.
 </div>
 
 <?php
@@ -143,7 +143,7 @@ class PostsController extends Phalcon_Controller {
 	Events enable controllers to run shared pre- and post-processing code for its actions.
 	Every time a controller action is executed, two events are provided to check security conditions or modify the application control flow.
 	Those events are "beforeDispatch" and "afterDispatch". The first one is executed before the controller action is dispatched, developers
-	can change control flow by using a forward in that event. The second one is "afterDispatch" event but is execute after
+	can change control flow by using a forward in that event. The second one is "afterDispatch" event but is executed after
 	controller action.
 </div>
 
@@ -207,7 +207,7 @@ class PostsController extends Phalcon_Controller {
 <div class="doc-paragraph">
 	The response object is not usually used directly, but is built up during the execution of the
 	action and rendering of the data that is being sent back to the user,
-	but sometimes - like in an after dispatch event - it can be useful to access the response directly.
+	but sometimes - like in an after the dispatch event - it can be useful to access the response directly.
 </div>
 
 <?php
@@ -230,7 +230,7 @@ class PostsController extends Phalcon_Controller {
 
 <div class="doc-paragraph">
 	<h3><a href="session-data">Session Data</a></h3>
-	Sessions help us to mantain persistent data between requests. You could access a <?php echo Tag::classLink('Phalcon_Session_Namespace') ?>
+	Sessions help us to maintain persistent data between requests. You could access a <?php echo Tag::classLink('Phalcon_Session_Namespace') ?>
 	from any controller to encapsulate data that should be persistent.
 </div>
 

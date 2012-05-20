@@ -3,9 +3,9 @@ function initIndex(){
 	var github = document.getElementById("github");
 	if(github){
 		if(navigator.userAgent.toLowerCase().indexOf("win")!=-1){
-			github.style.display = "block";
-		} else {
 			github.style.width = "250px";
+		} else {
+			github.style.display = "block";
 		}
 	};
 	var s = document.createElement('SCRIPT');
