@@ -111,7 +111,7 @@ div.name p {
 #footer {
     background: url("../img/background.png") repeat-x scroll 0 0 #339A6B;
     clear: both;
-    color: #476FBE;
+    color: #FAFAFA;
     display: block;
     min-width: 978px;
     padding: 150px 10px 100px;
@@ -135,8 +135,20 @@ div.name p {
 
 #footer td.subscribe,
 #footer td.social {
-	width: 33%;
+	width: 25%;
 	line-height: 22px;
+}
+
+#footer td.tweets {
+	width: 40%;
+	padding-right: 60px;
+}
+
+#footer td.tweets li,
+#footer td.tweets ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none outside none;
 }
 
 #footer input[type="submit"] {

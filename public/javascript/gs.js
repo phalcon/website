@@ -1,4 +1,27 @@
 
+function listen(evnt, elem, func) {
+    if (elem.addEventListener){
+        elem.addEventListener(evnt, func, false);
+    } else {
+    	if (elem.attachEvent){
+			var r = elem.attachEvent("on"+evnt, func);
+    		return r;
+    	}
+    }
+    else window.alert('I\'m sorry Dave, I\'m afraid I can\'t do that.');
+}
+
+//Tweets
+listen("load", window, function(){
+	getTwitters("tweet", {
+		id: "phalconphp",
+		count: 1,
+		enableLinks: true,
+		ignoreReplies: true,
+		clearContents: true,
+		template: '"%text%" <a href="http://twitter.com/%user_screen_name%/statuses/%id%/">%time%</a>'
+	});
+});
 
 if(document.location.hostname!='localhost'){
 	var _gaq = _gaq || [];
