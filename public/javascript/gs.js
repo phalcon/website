@@ -10,8 +10,38 @@ function listen(evnt, elem, func) {
     }
 }
 
-//Tweets
 listen("load", window, function(){
+
+	//Github Badge
+	var github = document.getElementById("github");
+	if(github){
+		if(navigator.userAgent.toLowerCase().indexOf("win")==-1){
+			github.style.width = "250px";
+			github.style.display = "block";
+		}
+	};
+
+	//Speakerdeck
+	var speaker = document.getElementById("speakerdeck");
+	if(speaker){
+		var language = 'en';
+		if(typeof navigator.language != "undefined"){
+			language = navigator.language;
+		}
+		var s = document.createElement('SCRIPT');
+		if(language=='es'){
+			s.src = "http://speakerdeck.com/embed/4f5844faaaef0c002200beba.js";
+			var iframe = document.getElementsByTagName("iframe")[0]
+			if(iframe){
+				iframe.src = "http://speakerdeck.com/embed/4f5844faaaef0c002200beba?";
+			}
+		} else {
+			s.src = "http://speakerdeck.com/embed/4edf11f72a2b980050009919.js";
+		}
+		speaker.appendChild(s);
+	}
+
+	//Tweets
 	getTwitters("tweet", {
 		id: "phalconphp",
 		count: 1,
@@ -20,6 +50,7 @@ listen("load", window, function(){
 		clearContents: true,
 		template: '"%text%" <a href="http://twitter.com/%user_screen_name%/statuses/%id%/">%time%</a>'
 	});
+
 });
 
 if(document.location.hostname!='localhost'){
