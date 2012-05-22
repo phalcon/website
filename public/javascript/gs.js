@@ -8,7 +8,6 @@ function listen(evnt, elem, func) {
     		return r;
     	}
     }
-    else window.alert('I\'m sorry Dave, I\'m afraid I can\'t do that.');
 }
 
 //Tweets
