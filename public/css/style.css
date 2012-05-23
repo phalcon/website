@@ -667,3 +667,11 @@ iframe.present_iframe {
 	color: #fff;
 }
 
+div.about {
+	color: #222222;
+	width: 650px;
+	font-size: 16px;
+	text-align: left;
+	margin-left: 200px;
+	margin-top: 70px;
+}
