@@ -26,7 +26,7 @@ listen("load", window, function(){
 	if(speaker){
 		var language = 'en';
 		if(typeof navigator.language != "undefined"){
-			language = navigator.language;
+			language = navigator.language.substr(0, 2);
 		}
 		var s = document.createElement('SCRIPT');
 		if(language=='es'){
@@ -36,7 +36,15 @@ listen("load", window, function(){
 				iframe.src = "http://speakerdeck.com/embed/4f5844faaaef0c002200beba?";
 			}
 		} else {
-			s.src = "http://speakerdeck.com/embed/4edf11f72a2b980050009919.js";
+			if(language=='fr'){
+				s.src = "http://speakerdeck.com/embed/4fbd22044ff11c00540299c7.js";
+				var iframe = document.getElementsByTagName("iframe")[0]
+				if(iframe){
+					iframe.src = "http://speakerdeck.com/embed/4fbd22044ff11c00540299c7?";
+				}
+			} else {
+				s.src = "http://speakerdeck.com/embed/4edf11f72a2b980050009919.js";
+			}
 		}
 		speaker.appendChild(s);
 	}
