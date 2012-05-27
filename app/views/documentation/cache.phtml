@@ -16,9 +16,21 @@
 </div>
 
 <div class="doc-paragraph">
+	<h3><a name="when">When to implement cache?</a></h3>
+	Although this component is very fast, implementing it in unnecessary cases could lead to loss of
+	performance rather than get it. We recommend you check this cases before use cache:
+	<ul>
+		<li>You are making complex calculations that everytime returns the same result (changing infrequently)</li>
+		<li>You are using a lot of helpers and the output generated is almost always the same</li>
+		<li>You are accessing database data constantly and these data rarely change</li>
+	</ul>
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="output">Caching Output Fragments</a></h3>
 	The following example shows how to implement a cache using this component. It takes the output generated
 	by PHP and stores it into a file. The content of the file is refreshed each 172800 seconds (2 days).
-	The implementation of the cache avoids the continuous execution of the helper Phalcon_Tag::linkTo:
+	The implementation of the cache avoids the continuous execution of the helper Phalcon_Tag::linkTo.
 </div>
 
 <div class="doc-center">
@@ -44,6 +56,9 @@ $content = $cache->start("my-cache.html");
 //If $content is null then the content will be created or will refreshed
 if($content===null){
 
+  //Print date and time
+  echo date("r");
+
   //Generate a link to the sign-up action
   echo Phalcon_Tag::linkTo(array(
     "user/signup",
@@ -64,6 +79,48 @@ if($content===null){
 </div>
 
 <div class="doc-paragraph">
+	<h3><a name="data">Caching Arbitrary Data</a></h3>
+	Remember the situations mentioned above? Caching data is very useful to reduce access to
+	database systems or avoid avoid heavy processing frequently.
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('<?php
+
+//Cache data for one hour
+$frontendOptions = array(
+  "lifetime" => 3600
+);
+
+//Memcached connection settings
+$backendOptions = array(
+  "host" => "localhost",
+  "port" => "11211"
+);
+
+//Create a cache
+$cache = Phalcon_Cache::factory("Data", "File", $frontendOptions, $backendOptions);
+
+//Try to get cached records
+$robots = $cache->get("robots");
+if($robots===null){
+
+   //$robots are null due to cache expiration or data is nonexistent
+   //Only here, the database system is accessed
+   $robots = Robots::find(array("order" => "id"));
+
+   $cache->save("robots", $robots);
+}
+
+//Use $robots normally
+foreach($robots as $robot){
+   echo $robot->name, "\n";
+}
+
+', 'php'); ?>
+</div>
+
+<div class="doc-paragraph">
 	<h3><a name="frontend">Frontend Adapters</a></h3>
 	This component makes use of frontend adapters to encapsulate the different input sources to cache.
 </div>
@@ -78,12 +135,21 @@ if($content===null){
 			<td>Output</td>
 			<td>Read input data from standard PHP output</td>
 		</tr>
+		<tr>
+			<td>Data</td>
+			<td>It's used to cache any kind of PHP data (big arrays, objects, text, etc).
+				This adapter always serializes the data before store it into the backend.</td>
+		</tr>
+		<tr>
+			<td>None</td>
+			<td>It's used to cache any kind of PHP data without serializing them.</td>
+		</tr>
 	</table>
 </div>
 
 <div class="doc-paragraph">
 	<h3><a name="backend">Backend Adapters</a></h3>
-	This component also makes use of backend adapters to encapsulate storage related details of the cache.
+	This component also makes use of backend adapters to encapsulate storage details related to the cache.
 </div>
 
 <div class="doc-paragraph">
@@ -91,10 +157,22 @@ if($content===null){
 		<tr>
 			<th>Adapter</th>
 			<th>Description</th>
+			<th>Info</th>
 		</tr>
 		<tr>
 			<td>File</td>
-			<td>Stored cached data to local plain files</td>
+			<td>Stores data to local plain files</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Memcached</td>
+			<td>Stores data to a memcached server</td>
+			<td><a href="http://memcached.org/">Memcached</a></td>
+		</tr>
+		<tr>
+			<td>APC</td>
+			<td>Stores data to the Alternative PHP Cache (APC)</td>
+			<td><a href="http://php.net/manual/en/book.apc.php">APC</a></td>
 		</tr>
 	</table>
 </div>

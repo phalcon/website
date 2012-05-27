@@ -229,7 +229,7 @@ class PostsController extends Phalcon_Controller {
     $user = $this->_getUser();
 
     if(!$acl->isAllowed($user["Profile"], $controllerName, $actionName)){
-     //Forward flow to another controller if user does not have permission
+     //Forward flow to another controller if the user does not have permission
      $this->_forward("index/index");
      return false;
     }
@@ -240,6 +240,11 @@ class PostsController extends Phalcon_Controller {
 
 ', 'php');
 ?>
+
+<div class="doc-paragraph">
+	Also you can use the <?php echo Tag::classLink('Phalcon_Cache'); ?> to store ACL lists
+	to different backends such as Files, Memcached, Apc, etc.
+</div>
 
 <div class="nav-bar">
 	<table width="90%" align="center">
