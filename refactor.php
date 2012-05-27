@@ -450,7 +450,7 @@
           array (
             'type' => 'string',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -656,6 +656,162 @@
       ),
     ),
   ),
+  'Phalcon_Cache_Backend_Apc' => 
+  array (
+    'description' => 'Allows to cache output fragments using a memcache backend
+
+<pre class="source-code iphp"><span class="comment">//Cache data for 2 days
+</span><span class="tag">$<span class="identifier">frontendOptions</span></span> = <span class="keyword builtin">array</span>(
+	<span class="string">\'lifetime\'</span> =&gt; <span class="number">172800</span>
+);
+
+<span class="tag">$<span class="identifier">cache</span></span> = <span class="identifier">Phalcon_Cache</span>::<span class="identifier">factory</span>(<span class="string">\'Data\'</span>, <span class="string">\'Apc\'</span>, <span class="tag">$<span class="identifier">frontendOptions</span></span>, <span class="keyword builtin">array</span>());
+
+ <span class="comment">//Cache arbitrary data
+</span><span class="tag">$<span class="identifier">cache</span></span>-&gt;<span class="identifier">store</span>(<span class="string">\'my-data\'</span>, <span class="keyword builtin">array</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>));
+
+ <span class="comment">//Get data
+</span><span class="tag">$<span class="identifier">data</span></span> = <span class="tag">$<span class="identifier">cache</span></span>-&gt;<span class="identifier">get</span>(<span class="string">\'my-data\'</span>);</pre>',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
+      '__construct' => 
+      array (
+        'description' => 'Phalcon_Backend_Adapter_Apc constructor',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$frontendObject' => 
+          array (
+            'type' => 'mixed',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$backendOptions' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'start' => 
+      array (
+        'description' => 'Starts a cache. The $keyname allow to identify the created fragment',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$keyName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'mixed',
+      ),
+      'get' => 
+      array (
+        'description' => 'Returns a cached content',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$keyName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'mixed',
+      ),
+      'save' => 
+      array (
+        'description' => 'Stores cached content into the file backend',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$keyName' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$content' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$stopBuffer' => 
+          array (
+            'type' => 'boolean',
+            'optional' => true,
+            'default' => true,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'delete' => 
+      array (
+        'description' => 'Deletes a value from the cache by its key',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$keyName' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'boolean',
+      ),
+      'getFrontend' => 
+      array (
+        'description' => 'Returns front-end instance adapter related to the back-end',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'mixed',
+      ),
+    ),
+  ),
   'Phalcon_Cache_Backend_File' => 
   array (
     'description' => 'Allows to cache output fragments using a file backend
@@ -670,11 +826,11 @@
 	<span class="string">\'cacheDir\'</span> =&gt; <span class="string">\'../app/cache/\'</span>
 );
 
-<span class="tag">$<span class="identifier">cache</span></span> = <span class="identifier">Phalcon_Cache</span>::<span class="identifier">factory</span>(<span class="string">\'File\'</span>, <span class="tag">$<span class="identifier">frontendOptions</span></span>, <span class="tag">$<span class="identifier">backendOptions</span></span>);
+<span class="tag">$<span class="identifier">cache</span></span> = <span class="identifier">Phalcon_Cache</span>::<span class="identifier">factory</span>(<span class="string">\'Output\'</span>, <span class="string">\'File\'</span>, <span class="tag">$<span class="identifier">frontendOptions</span></span>, <span class="tag">$<span class="identifier">backendOptions</span></span>);
 
 <span class="tag">$<span class="identifier">content</span></span> = <span class="tag">$<span class="identifier">cache</span></span>-&gt;<span class="identifier">start</span>(<span class="string">\'my-cache\'</span>);
 <span class="keyword">if</span>(<span class="tag">$<span class="identifier">content</span></span>===<span class="keyword literal">null</span>){
-  <span class="keyword builtin">echo</span> <span class="identifier">time</span>();
+  <span class="keyword builtin">echo</span> <span class="string">\'&lt;h1&gt;\'</span>, <span class="identifier">time</span>(), <span class="string">\'&lt;/h1&gt;\'</span>;
   <span class="tag">$<span class="identifier">cache</span></span>-&gt;<span class="identifier">save</span>();
 } <span class="keyword">else</span> {
 	<span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">content</span></span>;
@@ -700,7 +856,7 @@
         array (
           '$frontendObject' => 
           array (
-            'type' => 'Phalcon_Cache_Backend_Output',
+            'type' => 'mixed',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -717,7 +873,26 @@
       ),
       'start' => 
       array (
-        'description' => 'Starts a cache. The $keyname lets us to identity the created fragment',
+        'description' => 'Starts a cache. The $keyname allow to identify the created fragment',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$keyName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'mixed',
+      ),
+      'get' => 
+      array (
+        'description' => 'Returns a cached content',
         'modifiers' => 
         array (
           0 => 'public',
@@ -736,7 +911,7 @@
       ),
       'save' => 
       array (
-        'description' => 'Stores cached content into file backend',
+        'description' => 'Stores cached content into the file backend',
         'modifiers' => 
         array (
           0 => 'public',
@@ -750,7 +925,7 @@
             'default' => NULL,
             'byReference' => false,
           ),
-          '$cachedContent' => 
+          '$content' => 
           array (
             'type' => 'string',
             'optional' => true,
@@ -764,6 +939,223 @@
             'default' => true,
             'byReference' => false,
           ),
+        ),
+        'return' => 'unknown',
+      ),
+      'delete' => 
+      array (
+        'description' => 'Deletes a value from the cache by its key',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$keyName' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'boolean',
+      ),
+      'getFrontend' => 
+      array (
+        'description' => 'Returns front-end instance adapter related to the back-end',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'mixed',
+      ),
+    ),
+  ),
+  'Phalcon_Cache_Backend_Memcache' => 
+  array (
+    'description' => 'Allows to cache output fragments using a memcache backend
+
+<pre class="source-code iphp"><span class="comment">//Cache data for 2 days
+</span><span class="tag">$<span class="identifier">frontendOptions</span></span> = <span class="keyword builtin">array</span>(
+	<span class="string">\'lifetime\'</span> =&gt; <span class="number">172800</span>
+);
+
+ <span class="comment">//Set memcached server connection settings
+</span><span class="tag">$<span class="identifier">backendOptions</span></span> = <span class="keyword builtin">array</span>(
+	<span class="string">\'host\'</span> =&gt; <span class="string">\'localhost\'</span>,
+  <span class="string">\'port\'</span> =&gt; <span class="number">11211</span>
+);
+
+<span class="tag">$<span class="identifier">cache</span></span> = <span class="identifier">Phalcon_Cache</span>::<span class="identifier">factory</span>(<span class="string">\'Data\'</span>, <span class="string">\'Memcache\'</span>, <span class="tag">$<span class="identifier">frontendOptions</span></span>, <span class="tag">$<span class="identifier">backendOptions</span></span>);
+
+ <span class="comment">//Cache arbitrary data
+</span><span class="tag">$<span class="identifier">cache</span></span>-&gt;<span class="identifier">store</span>(<span class="string">\'my-data\'</span>, <span class="keyword builtin">array</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>));
+
+ <span class="comment">//Get data
+</span><span class="tag">$<span class="identifier">data</span></span> = <span class="tag">$<span class="identifier">cache</span></span>-&gt;<span class="identifier">get</span>(<span class="string">\'my-data\'</span>);</pre>',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
+      '__construct' => 
+      array (
+        'description' => 'Phalcon_Backend_Adapter_Memcache constructor',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$frontendObject' => 
+          array (
+            'type' => 'mixed',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$backendOptions' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      '_connect' => 
+      array (
+        'description' => 'Create internal connection to memcached',
+        'modifiers' => 
+        array (
+          0 => 'protected',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
+      'start' => 
+      array (
+        'description' => 'Starts a cache. The $keyname allow to identify the created fragment',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$keyName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'mixed',
+      ),
+      'get' => 
+      array (
+        'description' => 'Returns a cached content',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$keyName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'mixed',
+      ),
+      'save' => 
+      array (
+        'description' => 'Stores cached content into the file backend',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$keyName' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$content' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$stopBuffer' => 
+          array (
+            'type' => 'boolean',
+            'optional' => true,
+            'default' => true,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'delete' => 
+      array (
+        'description' => 'Deletes a value from the cache by its key',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$keyName' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'boolean',
+      ),
+      'getFrontend' => 
+      array (
+        'description' => 'Returns front-end instance adapter related to the back-end',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'mixed',
+      ),
+      '__destruct' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
         ),
         'return' => 'unknown',
       ),
@@ -784,9 +1176,9 @@
     array (
     ),
   ),
-  'Phalcon_Cache_Frontend_Output' => 
+  'Phalcon_Cache_Frontend_Data' => 
   array (
-    'description' => 'Allows to cache output fragments using a file backend',
+    'description' => 'Allows to cache native PHP data in a serialized form',
     'extends' => NULL,
     'implements' => 
     array (
@@ -799,7 +1191,139 @@
     array (
       '__construct' => 
       array (
-        'description' => 'Phalcon_Cache_Frontend_Output constructor',
+        'description' => 'Phalcon_Cache_Frontend_Data constructor',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$frontendOptions' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'getLifetime' => 
+      array (
+        'description' => 'Returns cache lifetime',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'integer',
+      ),
+      'isBuffering' => 
+      array (
+        'description' => 'Check whether if frontend is buffering output',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
+      'start' => 
+      array (
+        'description' => 'Starts output frontend. Actually, does nothing',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
+      'getContent' => 
+      array (
+        'description' => 'Returns output cached content',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'string',
+      ),
+      'stop' => 
+      array (
+        'description' => 'Stops output frontend',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
+      'beforeStore' => 
+      array (
+        'description' => 'Serializes data before storing it',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$data' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'afterRetrieve' => 
+      array (
+        'description' => 'Unserializes data after retrieving it',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$data' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+    ),
+  ),
+  'Phalcon_Cache_Frontend_None' => 
+  array (
+    'description' => 'Discards any kind of frontend data input. This frontend does not have expiration time or any other options',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
+      '__construct' => 
+      array (
+        'description' => 'Phalcon_Cache_Frontend_None constructor',
         'modifiers' => 
         array (
           0 => 'public',
@@ -818,7 +1342,19 @@
       ),
       'getLifetime' => 
       array (
-        'description' => 'Returns cache lifetime',
+        'description' => 'Returns cache lifetime, always one second expiring content',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
+      'isBuffering' => 
+      array (
+        'description' => 'Check whether if frontend is buffering output, always false',
         'modifiers' => 
         array (
           0 => 'public',
@@ -864,11 +1400,181 @@
         ),
         'return' => 'unknown',
       ),
+      'beforeStore' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$data' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'afterRetrieve' => 
+      array (
+        'description' => 'Prepares data to be retrieved to user',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$data' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+    ),
+  ),
+  'Phalcon_Cache_Frontend_Output' => 
+  array (
+    'description' => 'Allows to cache output fragments captured with ob_* functions',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
+      '__construct' => 
+      array (
+        'description' => 'Phalcon_Cache_Frontend_Output constructor',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$frontendOptions' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'getLifetime' => 
+      array (
+        'description' => 'Returns cache lifetime',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'integer',
+      ),
+      'isBuffering' => 
+      array (
+        'description' => 'Check whether if frontend is buffering output',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
+      'start' => 
+      array (
+        'description' => 'Starts output frontend',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
+      'getContent' => 
+      array (
+        'description' => 'Returns output cached content',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'string',
+      ),
+      'stop' => 
+      array (
+        'description' => 'Stops output frontend',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
+      'beforeStore' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$data' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'afterRetrieve' => 
+      array (
+        'description' => 'Prepares data to be retrieved to user',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$data' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
     ),
   ),
   'Phalcon_Cache' => 
   array (
-    'description' => 'Phalcon_Cache can be used to caches output fragments to improve performance
+    'description' => 'Phalcon_Cache can be used to cache output fragments to improve performance
 
 <pre class="source-code iphp"><span class="comment">//Cache the file for 2 days
 </span><span class="tag">$<span class="identifier">frontendOptions</span></span> = <span class="keyword builtin">array</span>(
@@ -1014,25 +1720,6 @@
     'type' => 'public',
     'methods' => 
     array (
-      '__construct' => 
-      array (
-        'description' => 'Phalcon_Config_Exception constructor',
-        'modifiers' => 
-        array (
-          0 => 'public',
-        ),
-        'parameters' => 
-        array (
-          '$message' => 
-          array (
-            'type' => 'string',
-            'optional' => false,
-            'default' => NULL,
-            'byReference' => false,
-          ),
-        ),
-        'return' => 'unknown',
-      ),
     ),
   ),
   'Phalcon_Config' => 
@@ -1491,9 +2178,9 @@
   ),
   'Phalcon_Controller' => 
   array (
-    'description' => 'Every application controller should extends this class that encapsulates all the controller functionality
+    'description' => 'Every application controller should extend this class that encapsulates all the controller functionality
 
- Controllers provide the “flow” between models and views. Controllers are responsible
+ The controllers provide the “flow” between models and views. Controllers are responsible
  for processing the incoming requests from the web browser, interrogating the models for data,
  and passing that data on to the views for presentation.
 
@@ -1534,7 +2221,8 @@
         'description' => 'Constructor for Phalcon_Controller',
         'modifiers' => 
         array (
-          0 => 'public',
+          0 => 'final',
+          1 => 'public',
         ),
         'parameters' => 
         array (
@@ -1631,7 +2319,7 @@
 <span class="tag">$<span class="identifier">config</span></span>-&gt;<span class="identifier">collatio</span> = <span class="string">\'utf8_unicode_ci\'</span>;
 <span class="tag">$<span class="identifier">config</span></span>-&gt;<span class="identifier">compression</span> = <span class="keyword literal">true</span>;
 
- <span class="tag">$<span class="identifier">connection</span></span> = <span class="identifier">Phalcon_Db</span>::<span class="identifier">factory</span>(<span class="string">\'Mysql\'</span>, <span class="tag">$<span class="identifier">config</span></span>, <span class="keyword literal">true</span>);</pre>',
+ <span class="tag">$<span class="identifier">connection</span></span> = <span class="identifier">Phalcon_Db</span>::<span class="identifier">factory</span>(<span class="string">\'Mysql\'</span>, <span class="tag">$<span class="identifier">config</span></span>);</pre>',
     'extends' => NULL,
     'implements' => 
     array (
@@ -1658,14 +2346,7 @@
           array (
             'type' => 'stdClass',
             'optional' => true,
-            'default' => '',
-            'byReference' => false,
-          ),
-          '$persistent' => 
-          array (
-            'type' => 'boolean',
-            'optional' => true,
-            'default' => false,
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -1685,14 +2366,7 @@
           array (
             'type' => 'stdClass',
             'optional' => true,
-            'default' => '',
-            'byReference' => false,
-          ),
-          '$persistent' => 
-          array (
-            'type' => 'boolean',
-            'optional' => true,
-            'default' => false,
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -1753,7 +2427,7 @@
           array (
             'type' => 'resource',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -1774,7 +2448,7 @@
           array (
             'type' => 'resource',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -1824,7 +2498,7 @@
           array (
             'type' => 'resource',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -1868,7 +2542,7 @@
           array (
             'type' => 'string',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
           '$resultQuery' => 
@@ -1913,21 +2587,21 @@
           array (
             'type' => 'string',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
           '$primaryKey' => 
           array (
             'type' => 'string',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
           '$sequenceName' => 
           array (
             'type' => 'string',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -2000,7 +2674,7 @@
           array (
             'type' => 'string',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -2027,7 +2701,7 @@
           array (
             'type' => 'string',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -2467,7 +3141,7 @@
           array (
             'type' => 'unknown',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -2487,7 +3161,7 @@
           array (
             'type' => 'string',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -2540,7 +3214,7 @@
           array (
             'type' => 'string',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -2566,7 +3240,7 @@
           array (
             'type' => 'string',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -2574,7 +3248,7 @@
       ),
       'tableOptions' => 
       array (
-        'description' => 'Get creation options from a table',
+        'description' => 'Gets creation options from a table',
         'modifiers' => 
         array (
           0 => 'public',
@@ -2592,7 +3266,7 @@
           array (
             'type' => 'string',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -3266,7 +3940,7 @@
           array (
             'type' => 'string',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -3294,7 +3968,7 @@
           array (
             'type' => 'unknown',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -3315,7 +3989,7 @@
           array (
             'type' => 'string',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -3342,7 +4016,7 @@
           array (
             'type' => 'string',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -3369,7 +4043,7 @@
           array (
             'type' => 'string',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -3396,7 +4070,7 @@
           array (
             'type' => 'string',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -4043,7 +4717,7 @@
 
 <span class="keyword">try</span> {
 
-  <span class="tag">$<span class="identifier">connection</span></span> = <span class="identifier">Phalcon_Db</span>::<span class="identifier">factory</span>(<span class="string">\'Mysql\'</span>, <span class="tag">$<span class="identifier">config</span></span>, <span class="keyword literal">true</span>);
+  <span class="tag">$<span class="identifier">connection</span></span> = <span class="identifier">Phalcon_Db</span>::<span class="identifier">factory</span>(<span class="string">\'Mysql\'</span>, <span class="tag">$<span class="identifier">config</span></span>);
 
   <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">setFetchMode</span>(<span class="identifier">Phalcon_Db</span>::<span class="identifier">DB_NUM</span>);
   <span class="tag">$<span class="identifier">result</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"SELECT * FROM robots LIMIT 5"</span>);
@@ -4554,16 +5228,24 @@
             'default' => NULL,
             'byReference' => false,
           ),
-          '$persistent' => 
-          array (
-            'type' => 'boolean',
-            'optional' => true,
-            'default' => false,
-            'byReference' => false,
-          ),
         ),
         'return' => 'Phalcon_Db',
       ),
+    ),
+  ),
+  'Phalcon_Dispatcher_Exception' => 
+  array (
+    'description' => 'Exceptions thrown in Phalcon_Dispatcher will use this class',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
     ),
   ),
   'Phalcon_Dispatcher' => 
@@ -4677,7 +5359,7 @@
       ),
       'getControllerName' => 
       array (
-        'description' => 'Gets last dispacthed controller name',
+        'description' => 'Gets last dispatched controller name',
         'modifiers' => 
         array (
           0 => 'public',
@@ -4708,7 +5390,7 @@
       ),
       'getActionName' => 
       array (
-        'description' => 'Gets last dispacthed action name',
+        'description' => 'Gets last dispatched action name',
         'modifiers' => 
         array (
           0 => 'public',
@@ -4720,7 +5402,7 @@
       ),
       'setParams' => 
       array (
-        'description' => 'Sets action params to be dispatch',
+        'description' => 'Sets action params to be dispatched',
         'modifiers' => 
         array (
           0 => 'public',
@@ -4788,6 +5470,32 @@
           ),
         ),
         'return' => 'Phalcon_Controller',
+      ),
+      '_throwDispatchException' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$response' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$message' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
       ),
       'forward' => 
       array (
@@ -5043,7 +5751,7 @@
   ),
   'Phalcon_Flash' => 
   array (
-    'description' => 'Shows HTML notifications related to different circustances. Classes can be stylized using CSS',
+    'description' => 'Shows HTML notifications related to different circumstances. Classes can be stylized using CSS',
     'extends' => NULL,
     'implements' => 
     array (
@@ -5186,7 +5894,7 @@
  <span class="comment">//register autoloader
 </span> <span class="tag">$<span class="identifier">loader</span></span>-&gt;<span class="identifier">register</span>();
 
- <span class="comment">//Requiring class wil automatically include file vendor/example/adapter/Some.php
+ <span class="comment">//Requiring class will automatically include file vendor/example/adapter/Some.php
 </span> <span class="tag">$<span class="identifier">adapter</span></span> = <span class="identifier">Example</span>\\<span class="identifier">Adapter</span>\\<span class="identifier">Some</span>();</pre>',
     'extends' => NULL,
     'implements' => 
@@ -5920,7 +6628,8 @@
         'description' => 'Phalcon_Model_Base constructor',
         'modifiers' => 
         array (
-          0 => 'public',
+          0 => 'final',
+          1 => 'public',
         ),
         'parameters' => 
         array (
@@ -5934,9 +6643,42 @@
         ),
         'return' => 'unknown',
       ),
+      'setManager' => 
+      array (
+        'description' => 'Overwrites default model manager',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$manager' => 
+          array (
+            'type' => 'Phalcon_Model_Manager',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'getManager' => 
+      array (
+        'description' => 'Returns internal models manager',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'Phalcon_Model_Manager',
+      ),
       '_connect' => 
       array (
-        'description' => 'Internal method for make a connection. Automatically dumps mapped table meta-data',
+        'description' => 'Internal method to create a connection. Automatically dumps mapped table meta-data',
         'modifiers' => 
         array (
           0 => 'protected',
@@ -5946,84 +6688,84 @@
         ),
         'return' => 'unknown',
       ),
-      '_getAttributes' => 
+      'getAttributes' => 
       array (
-        'description' => 'Internal method to get table mapped attributes',
+        'description' => 'Return an array with the attributes names',
         'modifiers' => 
         array (
-          0 => 'protected',
+          0 => 'public',
         ),
         'parameters' => 
         array (
         ),
         'return' => 'array',
       ),
-      '_getPrimaryKeyAttributes' => 
+      'getPrimaryKeyAttributes' => 
       array (
-        'description' => 'Internal method to get attributes that are part of table mapped primary key',
+        'description' => 'Returns an array of attributes that are part of the related table primary key',
         'modifiers' => 
         array (
-          0 => 'protected',
+          0 => 'public',
         ),
         'parameters' => 
         array (
         ),
         'return' => 'array',
       ),
-      '_getNonPrimaryKeyAttributes' => 
+      'getNonPrimaryKeyAttributes' => 
       array (
-        'description' => 'Internal method to get attributes which are not part of table mapped primary key',
+        'description' => 'Returns an array of attributes that aren\'t part of the primary key',
         'modifiers' => 
         array (
-          0 => 'protected',
+          0 => 'public',
         ),
         'parameters' => 
         array (
         ),
         'return' => 'array',
       ),
-      '_getNotNullAttributes' => 
+      'getNotNullAttributes' => 
       array (
-        'description' => 'Internal method to get attributes that are part of table mapped primary key',
+        'description' => 'Returns an array of not-nullable attributes',
         'modifiers' => 
         array (
-          0 => 'protected',
+          0 => 'public',
         ),
         'parameters' => 
         array (
         ),
         'return' => 'array',
       ),
-      '_getDataTypesNumeric' => 
+      'getDataTypesNumeric' => 
       array (
-        'description' => 'Internal method to get numerical-typed attributes',
+        'description' => 'Returns an array of numeric attributes',
         'modifiers' => 
         array (
-          0 => 'protected',
+          0 => 'public',
         ),
         'parameters' => 
         array (
         ),
         'return' => 'array',
       ),
-      '_getDataTypes' => 
+      'getDataTypes' => 
       array (
-        'description' => 'Internal method to get data-types attributes',
+        'description' => 'Returns an array of data-types attributes',
         'modifiers' => 
         array (
-          0 => 'protected',
+          0 => 'public',
         ),
         'parameters' => 
         array (
         ),
         'return' => 'array',
       ),
-      '_getIdentityField' => 
+      'getIdentityField' => 
       array (
-        'description' => 'Internal method to get identity field',
+        'description' => 'Returns the name of the identity field',
         'modifiers' => 
         array (
-          0 => 'protected',
+          0 => 'public',
         ),
         'parameters' => 
         array (
@@ -6171,39 +6913,6 @@
           ),
         ),
         'return' => 'Phalcon_Model_Resultset',
-      ),
-      'setManager' => 
-      array (
-        'description' => 'Overwrites default model manager',
-        'modifiers' => 
-        array (
-          0 => 'public',
-          1 => 'static',
-        ),
-        'parameters' => 
-        array (
-          '$manager' => 
-          array (
-            'type' => 'Phalcon_Model_Manager',
-            'optional' => false,
-            'default' => NULL,
-            'byReference' => false,
-          ),
-        ),
-        'return' => 'unknown',
-      ),
-      'getManager' => 
-      array (
-        'description' => 'Returns internal models manager',
-        'modifiers' => 
-        array (
-          0 => 'public',
-          1 => 'static',
-        ),
-        'parameters' => 
-        array (
-        ),
-        'return' => 'Phalcon_Model_Manager',
       ),
       'setTransaction' => 
       array (
@@ -6458,6 +7167,40 @@
         ),
         'return' => 'unknown',
       ),
+      '_prepareGroupResult' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'protected',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$function' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$alias' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$parameters' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
       '_getGroupResult' => 
       array (
         'description' => '',
@@ -6519,11 +7262,115 @@
           array (
             'type' => 'unknown',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
         'return' => 'int',
+      ),
+      'sum' => 
+      array (
+        'description' => 'Allows to a calculate a summatory on a column that match the specified conditions
+ <pre class="source-code iphp"><span class="comment">//How much are all robots?
+</span> <span class="tag">$<span class="identifier">sum</span></span> = <span class="identifier">Robots</span>::<span class="identifier">sum</span>(<span class="keyword builtin">array</span>(<span class="string">\'column\'</span> =&gt; <span class="string">\'price\'</span>));
+ <span class="keyword builtin">echo</span> <span class="string">"The total price of robots is "</span>, <span class="tag">$<span class="identifier">sum</span></span>;
+ <span class="comment">//How much are mechanical robots?
+</span> <span class="tag">$<span class="identifier">sum</span></span> = <span class="identifier">Robots</span>::<span class="identifier">sum</span>(<span class="keyword builtin">array</span>(<span class="string">"type=\'mechanical\'"</span>, <span class="string">\'column\'</span> =&gt; <span class="string">\'price\'</span>));
+ <span class="keyword builtin">echo</span> <span class="string">"The total price of mechanical robots is  "</span>, <span class="tag">$<span class="identifier">sum</span></span>;</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$parameters' => 
+          array (
+            'type' => 'unknown',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'double',
+      ),
+      'maximum' => 
+      array (
+        'description' => 'Allows to get the maximum value of a column that match the specified conditions
+ <pre class="source-code iphp"><span class="comment">//What is the maximum robot id?
+</span> <span class="tag">$<span class="identifier">id</span></span> = <span class="identifier">Robots</span>::<span class="identifier">maximum</span>(<span class="keyword builtin">array</span>(<span class="string">\'column\'</span> =&gt; <span class="string">\'id\'</span>));
+ <span class="keyword builtin">echo</span> <span class="string">"The maximum robot id is: "</span>, <span class="tag">$<span class="identifier">id</span></span>;
+ <span class="comment">//What is the maximum id of mechanical robots?
+</span> <span class="tag">$<span class="identifier">sum</span></span> = <span class="identifier">Robots</span>::<span class="identifier">maximum</span>(<span class="keyword builtin">array</span>(<span class="string">"type=\'mechanical\'"</span>, <span class="string">\'column\'</span> =&gt; <span class="string">\'id\'</span>));
+ <span class="keyword builtin">echo</span> <span class="string">"The maximum robot id of mechanical robots is "</span>, <span class="tag">$<span class="identifier">id</span></span>;</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$parameters' => 
+          array (
+            'type' => 'unknown',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'mixed',
+      ),
+      'minimum' => 
+      array (
+        'description' => 'Allows to get the minimum value of a column that match the specified conditions
+ <pre class="source-code iphp"><span class="comment">//What is the minimum robot id?
+</span> <span class="tag">$<span class="identifier">id</span></span> = <span class="identifier">Robots</span>::<span class="identifier">minimum</span>(<span class="keyword builtin">array</span>(<span class="string">\'column\'</span> =&gt; <span class="string">\'id\'</span>));
+ <span class="keyword builtin">echo</span> <span class="string">"The minimum robot id is: "</span>, <span class="tag">$<span class="identifier">id</span></span>;
+ <span class="comment">//What is the minimum id of mechanical robots?
+</span> <span class="tag">$<span class="identifier">sum</span></span> = <span class="identifier">Robots</span>::<span class="identifier">minimum</span>(<span class="keyword builtin">array</span>(<span class="string">"type=\'mechanical\'"</span>, <span class="string">\'column\'</span> =&gt; <span class="string">\'id\'</span>));
+ <span class="keyword builtin">echo</span> <span class="string">"The minimum robot id of mechanical robots is "</span>, <span class="tag">$<span class="identifier">id</span></span>;</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$parameters' => 
+          array (
+            'type' => 'unknown',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'mixed',
+      ),
+      'average' => 
+      array (
+        'description' => 'Allows to calculate the average value on a column matching the specified conditions
+ <pre class="source-code iphp"><span class="comment">//What\'s the average price of robots?
+</span> <span class="tag">$<span class="identifier">average</span></span> = <span class="identifier">Robots</span>::<span class="identifier">average</span>(<span class="keyword builtin">array</span>(<span class="string">\'column\'</span> =&gt; <span class="string">\'price\'</span>));
+ <span class="keyword builtin">echo</span> <span class="string">"The average price is "</span>, <span class="tag">$<span class="identifier">average</span></span>;
+ <span class="comment">//What\'s the average price of mechanical robots?
+</span> <span class="tag">$<span class="identifier">average</span></span> = <span class="identifier">Robots</span>::<span class="identifier">average</span>(<span class="keyword builtin">array</span>(<span class="string">"type=\'mechanical\'"</span>, <span class="string">\'column\'</span> =&gt; <span class="string">\'price\'</span>));
+ <span class="keyword builtin">echo</span> <span class="string">"The average price of mechanical robots is "</span>, <span class="tag">$<span class="identifier">average</span></span>;</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$parameters' => 
+          array (
+            'type' => 'unknown',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'double',
       ),
       '_callEvent' => 
       array (
@@ -6667,6 +7514,30 @@
         ),
         'return' => 'array',
       ),
+      '_checkForeignKeys' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'protected',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
+      '_checkForeignKeysReverse' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'protected',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
       '_preSave' => 
       array (
         'description' => '',
@@ -6684,6 +7555,13 @@
             'byReference' => false,
           ),
           '$exists' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$identityField' => 
           array (
             'type' => 'unknown',
             'optional' => false,
@@ -6757,6 +7635,13 @@
             'byReference' => false,
           ),
           '$dataTypeNumeric' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$identityField' => 
           array (
             'type' => 'unknown',
             'optional' => false,
@@ -6927,6 +7812,13 @@
             'default' => NULL,
             'byReference' => false,
           ),
+          '$options' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
         ),
         'return' => 'unknown',
       ),
@@ -6965,6 +7857,15 @@
             'default' => NULL,
             'byReference' => false,
           ),
+          '$options' => 
+          array (
+            'type' => 'array',
+            'optional' => true,
+            'default' => 
+            array (
+            ),
+            'byReference' => false,
+          ),
         ),
         'return' => 'unknown',
       ),
@@ -7001,6 +7902,15 @@
             'type' => 'mixed',
             'optional' => false,
             'default' => NULL,
+            'byReference' => false,
+          ),
+          '$options' => 
+          array (
+            'type' => 'array',
+            'optional' => true,
+            'default' => 
+            array (
+            ),
             'byReference' => false,
           ),
         ),
@@ -7085,6 +7995,25 @@
             'default' => 
             array (
             ),
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'setBasePath' => 
+      array (
+        'description' => 'Sets base path',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$basePath' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -7281,6 +8210,15 @@
             'default' => NULL,
             'byReference' => false,
           ),
+          '$options' => 
+          array (
+            'type' => 'array',
+            'optional' => true,
+            'default' => 
+            array (
+            ),
+            'byReference' => false,
+          ),
         ),
         'return' => 'unknown',
       ),
@@ -7321,6 +8259,15 @@
             'default' => NULL,
             'byReference' => false,
           ),
+          '$options' => 
+          array (
+            'type' => 'array',
+            'optional' => true,
+            'default' => 
+            array (
+            ),
+            'byReference' => false,
+          ),
         ),
         'return' => 'unknown',
       ),
@@ -7359,6 +8306,15 @@
             'type' => 'mixed',
             'optional' => false,
             'default' => NULL,
+            'byReference' => false,
+          ),
+          '$options' => 
+          array (
+            'type' => 'array',
+            'optional' => true,
+            'default' => 
+            array (
+            ),
             'byReference' => false,
           ),
         ),
@@ -7594,6 +8550,82 @@
           ),
         ),
         'return' => 'Phalcon_Model_Resultset',
+      ),
+      'getBelongsTo' => 
+      array (
+        'description' => 'Gets belongsTo relations defined on a model',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$model' => 
+          array (
+            'type' => 'Phalcon_Model_Base',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'array',
+      ),
+      'getHasMany' => 
+      array (
+        'description' => 'Gets hasMany relations defined on a model',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$model' => 
+          array (
+            'type' => 'Phalcon_Model_Base',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'array',
+      ),
+      'getHasOne' => 
+      array (
+        'description' => 'Gets hasOne relations defined on a model',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$model' => 
+          array (
+            'type' => 'Phalcon_Model_Base',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'array',
+      ),
+      'getHasOneAndHasMany' => 
+      array (
+        'description' => 'Gets hasOne relations defined on a model',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$model' => 
+          array (
+            'type' => 'Phalcon_Model_Base',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'array',
       ),
       'autoload' => 
       array (
@@ -7850,7 +8882,7 @@
   ),
   'Phalcon_Model_MetaData_Session' => 
   array (
-    'description' => 'Stores model meta-data in session. Data will be erased when the session finishes.
+    'description' => 'Stores model meta-data in session. Data will erase when the session finishes.
  Meta-data are permanent while the session is active',
     'extends' => NULL,
     'implements' => 
@@ -8128,7 +9160,7 @@
  <span class="tag">$<span class="identifier">query</span></span>-&gt;<span class="identifier">setManager</span>(<span class="tag">$<span class="identifier">manager</span></span>);
  <span class="tag">$<span class="identifier">query</span></span>-&gt;<span class="identifier">from</span>(<span class="string">\'Robots\'</span>);
  <span class="tag">$<span class="identifier">query</span></span>-&gt;<span class="identifier">where</span>(<span class="string">\'id = ?0\'</span>);
- <span class="tag">$<span class="identifier">query</span></span>-&gt;<span class="identifier">where</span>(<span class="string">\'name LIKE ?%1\'</span>);
+ <span class="tag">$<span class="identifier">query</span></span>-&gt;<span class="identifier">where</span>(<span class="string">\'name LIKE ?1\'</span>);
  <span class="tag">$<span class="identifier">query</span></span>-&gt;<span class="identifier">setParameter</span>(<span class="keyword builtin">array</span>(<span class="number">0</span> =&gt; <span class="string">\'10\'</span>, <span class="number">1</span> =&gt; <span class="string">\'%Astro%\'</span>));
  <span class="keyword">foreach</span>(<span class="tag">$<span class="identifier">query</span></span>-&gt;<span class="identifier">getResultset</span>() <span class="keyword operator">as</span> <span class="tag">$<span class="identifier">robot</span></span>){
   <span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">robot</span></span>-&gt;<span class="identifier">name</span>, <span class="string">"\\n"</span>;
@@ -8316,9 +9348,10 @@
   ),
   'Phalcon_Model_Resultset' => 
   array (
-    'description' => 'This component allows to Phalcon_Model_Base returns large resulsets with the minimum memory comsuption
-
- Resulsets can be traversed using a standard foreach or a while statement.
+    'description' => 'This component allows to Phalcon_Model_Base returns large resulsets with the minimum memory consumption
+ Resulsets can be traversed using a standard foreach or a while statement. If a resultset is serialized
+ it will dump all the rows into a big array. Then unserialize will retrieve the rows as they were before
+ serializing.
 
  <pre class="source-code iphp"><span class="comment">//Using a standard foreach
 </span><span class="tag">$<span class="identifier">robots</span></span> = <span class="tag">$<span class="identifier">Robots</span></span>-&gt;<span class="identifier">find</span>(<span class="keyword builtin">array</span>(<span class="string">"type=\'virtual\'"</span>, <span class="string">"order"</span> =&gt; <span class="string">"name"</span>));
@@ -8341,6 +9374,8 @@
       1 => 'Traversable',
       2 => 'SeekableIterator',
       3 => 'Countable',
+      4 => 'ArrayAccess',
+      5 => 'Serializable',
     ),
     'constants' => 
     array (
@@ -8412,7 +9447,7 @@
       ),
       'key' => 
       array (
-        'description' => 'Gets pointer number to active row in the resultset',
+        'description' => 'Gets pointer number of active row in the resultset',
         'modifiers' => 
         array (
           0 => 'public',
@@ -8436,7 +9471,7 @@
       ),
       'seek' => 
       array (
-        'description' => 'Changes interal pointer to a specifically position in the resultset',
+        'description' => 'Changes internal pointer to a specific position in the resultset',
         'modifiers' => 
         array (
           0 => 'public',
@@ -8482,11 +9517,11 @@
             'byReference' => false,
           ),
         ),
-        'return' => 'unknown',
+        'return' => 'boolean',
       ),
       'offsetGet' => 
       array (
-        'description' => 'Gets row in a specifically position of the resultset',
+        'description' => 'Gets row in a specific position of the resultset',
         'modifiers' => 
         array (
           0 => 'public',
@@ -8501,11 +9536,11 @@
             'byReference' => false,
           ),
         ),
-        'return' => 'unknown',
+        'return' => 'Phalcon_Model_Base',
       ),
       'offsetSet' => 
       array (
-        'description' => 'Resulsets cannot be changed. It has only been implemented to meet the definition of the interface',
+        'description' => 'Resulsets cannot be changed. It has only been implemented to meet the definition of the ArrayAccess interface',
         'modifiers' => 
         array (
           0 => 'public',
@@ -8521,7 +9556,7 @@
           ),
           '$value' => 
           array (
-            'type' => 'unknown',
+            'type' => 'Phalcon_Model_Base',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -8531,7 +9566,7 @@
       ),
       'offsetUnset' => 
       array (
-        'description' => 'Resulsets cannot be changed. It has only been implemented to meet the definition of the interface',
+        'description' => 'Resulsets cannot be changed. It has only been implemented to meet the definition of the ArrayAccess interface',
         'modifiers' => 
         array (
           0 => 'public',
@@ -8572,9 +9607,9 @@
         ),
         'return' => 'Phalcon_Model_Base',
       ),
-      'getModel' => 
+      'serialize' => 
       array (
-        'description' => 'Get model which originates the resultset',
+        'description' => 'Serializing a resultset will dump all related rows into a big array',
         'modifiers' => 
         array (
           0 => 'public',
@@ -8582,7 +9617,26 @@
         'parameters' => 
         array (
         ),
-        'return' => 'Phalcon_Model_Base',
+        'return' => 'unknown',
+      ),
+      'unserialize' => 
+      array (
+        'description' => 'Unserializing a resultset will allow to only works on the rows present in the saved state',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$data' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
       ),
     ),
   ),
@@ -9035,14 +10089,14 @@
           array (
             'type' => 'string',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
           '$type' => 
           array (
             'type' => 'string',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -9421,7 +10475,7 @@
   ),
   'Phalcon_Request' => 
   array (
-    'description' => '<p>Encapsulates request information for easily and secure access from application controllers.</p>
+    'description' => '<p>Encapsulates request information for easy and secure access from application controllers.</p>
 
  <p>The request object is a simple value object that is passed between the dispatcher and controller classes.
  It packages the HTTP request environment.</p>
@@ -9476,7 +10530,7 @@
       ),
       'getFilter' => 
       array (
-        'description' => 'Returns active filter object used to sanitize input data',
+        'description' => 'Returns the active filter object used to sanitize input data',
         'modifiers' => 
         array (
           0 => 'protected',
@@ -9541,6 +10595,63 @@
       'getServer' => 
       array (
         'description' => 'Gets variable from $_SERVER superglobal',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$name' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'mixed',
+      ),
+      'hasPost' => 
+      array (
+        'description' => 'Checks whether $_POST superglobal has certain index',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$name' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'boolean',
+      ),
+      'hasQuery' => 
+      array (
+        'description' => 'Checks whether $_SERVER superglobal has certain index',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$name' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'boolean',
+      ),
+      'hasServer' => 
+      array (
+        'description' => 'Checks whether $_SERVER superglobal has certain index',
         'modifiers' => 
         array (
           0 => 'public',
@@ -9794,7 +10905,7 @@
       ),
       'getUploadedFiles' => 
       array (
-        'description' => 'Gets attached files as Phalcon_UploadFile clases',
+        'description' => 'Gets attached files as Phalcon_Request_File instances',
         'modifiers' => 
         array (
           0 => 'public',
@@ -9806,7 +10917,7 @@
       ),
       'getHTTPReferer' => 
       array (
-        'description' => 'Gets web page which refers active request',
+        'description' => 'Gets web page that refers active request',
         'modifiers' => 
         array (
           0 => 'public',
@@ -10426,6 +11537,123 @@ Rewrite rules using a hidden directory and a public/ document root:
       ),
     ),
   ),
+  'Phalcon_Tag_Select' => 
+  array (
+    'description' => '',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'abstract',
+    'methods' => 
+    array (
+      'select' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$parameters' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$data' => 
+          array (
+            'type' => 'unknown',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      '_optionsFromResultset' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'protected',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$resultset' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$using' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$value' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$closeOption' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      '_optionsFromArray' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'protected',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$data' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$value' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$closeOption' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+    ),
+  ),
   'Phalcon_Tag' => 
   array (
     'description' => 'Phalcon_Tag is designed to simplify building of HTML tags.
@@ -10443,7 +11671,7 @@ Rewrite rules using a hidden directory and a public/ document root:
     array (
       'setDispatcher' => 
       array (
-        'description' => 'Sets the request dispatcher. A valid dispatcher is required to generated absolute paths',
+        'description' => 'Sets the request dispatcher. A valid dispatcher is required to generate absolute paths',
         'modifiers' => 
         array (
           0 => 'public',
@@ -10532,13 +11760,13 @@ Rewrite rules using a hidden directory and a public/ document root:
         ),
         'return' => 'unknown',
       ),
-      '_getValueFromAction' => 
+      'getValue' => 
       array (
-        'description' => 'Every helper call this function to check whether a component has a predefined
+        'description' => 'Every helper calls this function to check whether a component has a predefined
  value using Phalcon_Tag::displayTo or value from $_POST',
         'modifiers' => 
         array (
-          0 => 'protected',
+          0 => 'public',
           1 => 'static',
         ),
         'parameters' => 
@@ -10555,7 +11783,7 @@ Rewrite rules using a hidden directory and a public/ document root:
       ),
       'resetInput' => 
       array (
-        'description' => 'Resets the request and internal values to avoid that fields will have any default value',
+        'description' => 'Resets the request and internal values to avoid those fields will have any default value',
         'modifiers' => 
         array (
           0 => 'public',
@@ -10705,6 +11933,27 @@ Rewrite rules using a hidden directory and a public/ document root:
         ),
         'return' => 'string',
       ),
+      'checkField' => 
+      array (
+        'description' => 'Builds a HTML input[type="check"] tag
+ <pre class="source-code iphp"><span class="keyword builtin">echo</span> <span class="identifier">Phalcon_Tag</span>::<span class="identifier">checkField</span>(<span class="keyword builtin">array</span>(<span class="string">"name"</span>, <span class="string">"size"</span> =&gt; <span class="number">30</span>))</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$parameters' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
       'submitButton' => 
       array (
         'description' => 'Builds a HTML input[type="submit"] tag
@@ -10728,7 +11977,7 @@ Rewrite rules using a hidden directory and a public/ document root:
       ),
       'selectStatic' => 
       array (
-        'description' => 'Builds a HTML SELECT tag using an array for options
+        'description' => 'Builds a HTML SELECT tag using a PHP array for options
  <pre class="source-code iphp"><span class="keyword builtin">echo</span> <span class="identifier">Phalcon_Tag</span>::<span class="identifier">selectStatic</span>(<span class="string">"status"</span>, <span class="keyword builtin">array</span>(<span class="string">"A"</span> =&gt; <span class="string">"Active"</span>, <span class="string">"I"</span> =&gt; <span class="string">"Inactive"</span>))</pre>',
         'modifiers' => 
         array (
@@ -10748,7 +11997,7 @@ Rewrite rules using a hidden directory and a public/ document root:
           array (
             'type' => 'unknown',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -10756,7 +12005,7 @@ Rewrite rules using a hidden directory and a public/ document root:
       ),
       'select' => 
       array (
-        'description' => 'Builds a HTML SELECT tag using a resultset as options
+        'description' => 'Builds a HTML SELECT tag using a Phalcon_Model resultset as options
  <pre class="source-code iphp"><span class="keyword builtin">echo</span> <span class="identifier">Phalcon_Tag</span>::<span class="identifier">selectStatic</span>(<span class="keyword builtin">array</span>(
 	<span class="string">"robotId"</span>,
 	<span class="identifier">Robots</span>::<span class="identifier">find</span>(<span class="string">"type = \'mechanical\'"</span>),
@@ -10780,7 +12029,7 @@ Rewrite rules using a hidden directory and a public/ document root:
           array (
             'type' => 'unknown',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -10823,7 +12072,7 @@ Rewrite rules using a hidden directory and a public/ document root:
           array (
             'type' => 'array',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -10931,7 +12180,7 @@ Rewrite rules using a hidden directory and a public/ document root:
           array (
             'type' => 'array',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
           '$local' => 
@@ -10960,7 +12209,7 @@ Rewrite rules using a hidden directory and a public/ document root:
           array (
             'type' => 'array',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
           '$local' => 
@@ -10987,7 +12236,84 @@ Rewrite rules using a hidden directory and a public/ document root:
           array (
             'type' => 'array',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+    ),
+  ),
+  'Phalcon_Text' => 
+  array (
+    'description' => '',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
+      'camelize' => 
+      array (
+        'description' => 'Converts strings to camelize style
+ <pre class="source-code iphp"><span class="identifier">Phalcon_Utils</span>::<span class="identifier">camelize</span>(<span class="string">\'coco_bongo\'</span>); //<span class="identifier">CocoBongo</span></pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$str' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'uncamelize' => 
+      array (
+        'description' => 'Uncamelize strings which are camelized
+ <pre class="source-code iphp"><span class="identifier">Phalcon_Utils</span>::<span class="identifier">camelize</span>(<span class="string">\'CocoBongo\'</span>); //<span class="identifier">coco_bongo</span></pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$str' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'lcfirst' => 
+      array (
+        'description' => 'Changes only first letter to lowercase',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$str' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -11378,7 +12704,7 @@ Rewrite rules using a hidden directory and a public/ document root:
           array (
             'type' => 'string',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
           '$rollbackRecord' => 
@@ -11555,6 +12881,238 @@ Rewrite rules using a hidden directory and a public/ document root:
       ),
     ),
   ),
+  'Phalcon_Translate_Adapter_Array' => 
+  array (
+    'description' => 'Allows to define translation lists using PHP arrays',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
+      '__construct' => 
+      array (
+        'description' => 'Phalcon_Translate_Adapter_Array constructor',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$data' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'query' => 
+      array (
+        'description' => 'Returns the translation related to the given key',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$index' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'exists' => 
+      array (
+        'description' => 'Check whether is defined a translation key in the internal array',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$index' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+    ),
+  ),
+  'Phalcon_Translate_Exception' => 
+  array (
+    'description' => 'Class for exceptions thrown by Phalcon_Translate',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
+    ),
+  ),
+  'Phalcon_Translate' => 
+  array (
+    'description' => 'Translate component allows the creation of multi-language applications using
+ different adapters for translation lists.',
+    'extends' => NULL,
+    'implements' => 
+    array (
+      0 => 'ArrayAccess',
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
+      '__construct' => 
+      array (
+        'description' => 'Phalcon_Translate constructor',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$adapter' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$data' => 
+          array (
+            'type' => 'mixed',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      '_' => 
+      array (
+        'description' => 'Returns the translation string of the given key',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$translateKey' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'offsetSet' => 
+      array (
+        'description' => 'Sets a translation value',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$offset' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$value' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'offsetExists' => 
+      array (
+        'description' => 'Check whether a translation key exists',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$translateKey' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'boolean',
+      ),
+      'offsetUnset' => 
+      array (
+        'description' => 'Elimina un indice del diccionario',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$offset' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'offsetGet' => 
+      array (
+        'description' => 'Returns the translation related to the given key',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$traslateKey' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+    ),
+  ),
   'Phalcon_Utils' => 
   array (
     'description' => 'Implements functionality used widely by the framework',
@@ -11570,8 +13128,7 @@ Rewrite rules using a hidden directory and a public/ document root:
     array (
       'camelize' => 
       array (
-        'description' => 'Converts strings to camelize style
- <pre class="source-code iphp"><span class="identifier">Phalcon_Utils</span>::<span class="identifier">camelize</span>(<span class="string">\'coco_bongo\'</span>); //<span class="identifier">CocoBongo</span></pre>',
+        'description' => 'This function is now deprecated, use Phalcon_Text::camelize instead',
         'modifiers' => 
         array (
           0 => 'public',
@@ -11591,8 +13148,7 @@ Rewrite rules using a hidden directory and a public/ document root:
       ),
       'uncamelize' => 
       array (
-        'description' => 'Uncamelize strings which are camelized
- <pre class="source-code iphp"><span class="identifier">Phalcon_Utils</span>::<span class="identifier">camelize</span>(<span class="string">\'CocoBongo\'</span>); //<span class="identifier">coco_bongo</span></pre>',
+        'description' => 'This function is now deprecated, use Phalcon_Text::uncamelize instead',
         'modifiers' => 
         array (
           0 => 'public',
@@ -11612,7 +13168,7 @@ Rewrite rules using a hidden directory and a public/ document root:
       ),
       'lcfirst' => 
       array (
-        'description' => 'Changes only first letter to lowercase',
+        'description' => 'This function is now deprecated, use Phalcon_Text::lcfirst instead',
         'modifiers' => 
         array (
           0 => 'public',
@@ -11640,11 +13196,11 @@ Rewrite rules using a hidden directory and a public/ document root:
         ),
         'parameters' => 
         array (
-          '$params' => 
+          '$uri' => 
           array (
             'type' => 'string',
-            'optional' => false,
-            'default' => NULL,
+            'optional' => true,
+            'default' => '',
             'byReference' => false,
           ),
         ),
@@ -11660,11 +13216,224 @@ Rewrite rules using a hidden directory and a public/ document root:
         ),
         'parameters' => 
         array (
+          '$extraPath' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => '',
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+    ),
+  ),
+  'Phalcon_View_Engine_Php' => 
+  array (
+    'description' => 'Adapter to use PHP itself as templating engine',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
+      '__construct' => 
+      array (
+        'description' => 'Phalcon_View_Engine_Php constructor',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$view' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
           '$params' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'render' => 
+      array (
+        'description' => 'Renders a view using the template engine',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$path' => 
           array (
             'type' => 'string',
             'optional' => false,
             'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+    ),
+  ),
+  'Phalcon_View_Engine' => 
+  array (
+    'description' => '',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
+      '__construct' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$view' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$params' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'initialize' => 
+      array (
+        'description' => 'Sets view component',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$view' => 
+          array (
+            'type' => 'Phalcon_View',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$params' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'getControllerName' => 
+      array (
+        'description' => 'Gets the name of the controller rendered',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'string',
+      ),
+      'getActionName' => 
+      array (
+        'description' => 'Gets the name of the action rendered',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'string',
+      ),
+      'getParams' => 
+      array (
+        'description' => 'Gets the extra params sent to request',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'array',
+      ),
+      'getContent' => 
+      array (
+        'description' => 'Returns cached ouput on another view stage',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'array',
+      ),
+      'url' => 
+      array (
+        'description' => 'Generates a external absolute path to an application uri',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$params' => 
+          array (
+            'type' => 'array|string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'path' => 
+      array (
+        'description' => 'Returns a local path',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$params' => 
+          array (
+            'type' => 'array|string',
+            'optional' => true,
+            'default' => '',
             'byReference' => false,
           ),
         ),
@@ -11751,6 +13520,25 @@ Rewrite rules using a hidden directory and a public/ document root:
         ),
         'return' => 'string',
       ),
+      'setBasePath' => 
+      array (
+        'description' => 'Sets base path',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$basePath' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
       'setRenderLevel' => 
       array (
         'description' => 'Sets the render level for the view',
@@ -11763,6 +13551,25 @@ Rewrite rules using a hidden directory and a public/ document root:
           '$level' => 
           array (
             'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'setMainView' => 
+      array (
+        'description' => 'Sets default view name. Must be a file without extension in the views directory',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$viewPath' => 
+          array (
+            'type' => 'unknown',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -11920,6 +13727,18 @@ Rewrite rules using a hidden directory and a public/ document root:
         ),
         'return' => 'string',
       ),
+      'getParams' => 
+      array (
+        'description' => 'Gets extra parameters of the action rendered',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
       'start' => 
       array (
         'description' => 'Starts rendering process',
@@ -11932,9 +13751,54 @@ Rewrite rules using a hidden directory and a public/ document root:
         ),
         'return' => 'unknown',
       ),
+      '_loadTemplateEngines' => 
+      array (
+        'description' => 'Loads registered template engines, if none is registered use Phalcon_View_Engine_Php',
+        'modifiers' => 
+        array (
+          0 => 'protected',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'array',
+      ),
+      '_engineRender' => 
+      array (
+        'description' => 'Checks whether view exists on registered extensions and render it',
+        'modifiers' => 
+        array (
+          0 => 'protected',
+        ),
+        'parameters' => 
+        array (
+          '$engines' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$viewPath' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$silence' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
       'render' => 
       array (
-        'description' => 'Executes render process from controller data',
+        'description' => 'Executes render process from request data',
         'modifiers' => 
         array (
           0 => 'public',
@@ -11953,6 +13817,15 @@ Rewrite rules using a hidden directory and a public/ document root:
             'type' => 'string',
             'optional' => false,
             'default' => NULL,
+            'byReference' => false,
+          ),
+          '$params' => 
+          array (
+            'type' => 'array',
+            'optional' => true,
+            'default' => 
+            array (
+            ),
             'byReference' => false,
           ),
         ),
@@ -11998,44 +13871,6 @@ Rewrite rules using a hidden directory and a public/ document root:
         ),
         'parameters' => 
         array (
-        ),
-        'return' => 'string',
-      ),
-      'url' => 
-      array (
-        'description' => 'Generates a external absolute path to an application uri',
-        'modifiers' => 
-        array (
-          0 => 'public',
-        ),
-        'parameters' => 
-        array (
-          '$params' => 
-          array (
-            'type' => 'array|string',
-            'optional' => true,
-            'default' => '',
-            'byReference' => false,
-          ),
-        ),
-        'return' => 'string',
-      ),
-      'path' => 
-      array (
-        'description' => 'Returns a local path',
-        'modifiers' => 
-        array (
-          0 => 'public',
-        ),
-        'parameters' => 
-        array (
-          '$params' => 
-          array (
-            'type' => 'array|string',
-            'optional' => true,
-            'default' => '',
-            'byReference' => false,
-          ),
         ),
         'return' => 'string',
       ),

@@ -80,7 +80,15 @@
 				<li><?php echo Phalcon_Tag::linkTo('documentation/models#creating', 'Creating Models') ?></li>
 				<li><?php echo Phalcon_Tag::linkTo('documentation/models#understanding', 'Understanding Record To Objects') ?></li>
 				<li><?php echo Phalcon_Tag::linkTo('documentation/models#finding', 'Finding Records') ?></li>
-				<li><?php echo Phalcon_Tag::linkTo('documentation/models#relationships', 'Relationships between Models') ?></li>
+				<li>
+					<?php echo Phalcon_Tag::linkTo('documentation/models#relationships', 'Relationships between Models') ?>
+					<ul>
+						<li><?php echo Phalcon_Tag::linkTo('documentation/models#unidirectional', 'Unidirectional relationships') ?></li>
+						<li><?php echo Phalcon_Tag::linkTo('documentation/models#bidirectional', 'Bidirectional relations') ?></li>
+						<li><?php echo Phalcon_Tag::linkTo('documentation/models#advantage-rels', 'Taking advantage of relationships') ?></li>
+						<li><?php echo Phalcon_Tag::linkTo('documentation/models#virtual-fkeys', 'Virtual Foreign Keys') ?></li>
+					</ul>
+				</li>
 				<li><?php echo Phalcon_Tag::linkTo('documentation/models#creating-updating', 'Creating Updating/Records') ?>
 					<ul>
 						<li><?php echo Phalcon_Tag::linkTo('documentation/models#validation-messages', 'Validation Messages') ?></li>

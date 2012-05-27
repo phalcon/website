@@ -69,6 +69,7 @@ class Robots extends Phalcon_Model_Base {
 
 <div class="doc-paragraph">
 	The model Robots now maps to "the_birds" table. The "initialize" method helps us to set up the model with custom behavior.
+	This method is only called once during the request.
 </div>
 
 <div class="doc-paragraph">
@@ -131,7 +132,7 @@ $robots = Robots::find();
 echo "There are ", count($robots), "\n";
 
 //How many mechanical robots are there?
-$robots = Robots::find("type=\'mechanical=\'");
+$robots = Robots::find("type=\'mechanical\'");
 echo "There are ", count($robots), "\n";
 
 //Get and print virtual robots ordered by name
@@ -246,15 +247,43 @@ The available query options are:
 </div>
 
 <div class="doc-paragraph">
-	<h4>Unidirectional relationships</h4>
+	<h4><a name="unidirectional">Unidirectional relationships</a></h4>
 	Unidirectional relations are those that are generated in relation to one another but not vice versa.
 	Using the methods belongsTo, hasOne or hasMany states that one or more fields refer to equivalents in
 	another model.
 </div>
 
 <div class="doc-paragraph">
-	<h4>Bidirectional relations</h4>
+	<h4><a name="bidirectional">Bidirectional relations</a></h4>
 	The bidirectional relations build relationships in which each has a complementary and vice versa.
+</div>
+
+<div class="doc-paragraph">
+	<h4><a name="defining-rels">Defining relationships</a></h4>
+	In Phalcon, relationships must be defined in the "initialize" method of a model. There are 3 methods to
+	define relationships, all of them requires 3 parameters, local fields, referenced model, referenced fields,
+	these methods are:
+</div>
+
+<div class="doc-paragraph">
+	<table width="95%" align="center" cellspacing="0">
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>hasMany</td>
+			<td>Defines a 1-n relationship</td>
+		</tr>
+		<tr>
+			<td>hasOne</td>
+			<td>Defines a 1-1 relationship</td>
+		</tr>
+		<tr>
+			<td>belongsTo</td>
+			<td>Defines a n-1 relationship</td>
+		</tr>
+	</table>
 </div>
 
 <div class="doc-paragraph">
@@ -275,6 +304,7 @@ CREATE TABLE `robots_parts` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `robots_id` int(10) NOT NULL,
   `parts_id` int(10) NOT NULL,
+  `created_at` DATE NOT NULL,
   PRIMARY KEY (`id`),
   KEY `robots_id` (`robots_id`),
   KEY `parts_id` (`parts_id`)
@@ -338,6 +368,10 @@ class RobotsParts extends Phalcon_Model_Base {
 	The first parameter indicates the field of the local model that is making the association;
 	the second indicates the name of the referenced model and the third field name in the referenced field.
 	You could also use arrays to define multiple fields in the relationship.
+</div>
+
+<div class="doc-paragraph">
+	<h4><a name="advantage-rels">Taking advantage of relationships</a></h4>
 	When explicitly define the relationships between models,
 	is easy to find records relating to a previously consulted.
 </div>
@@ -352,9 +386,127 @@ foreach($robot->getRobotsParts() as $robotPart){
 ', 'php'); ?>
 
 <div class="doc-paragraph">
+	Phalcon uses the magic method __call to take advantage of relationships in an easier way.
+	If the called method has a "get" prefix Phalcon_Model will return a findFirst/find result.
+	The following example compares the use of magic method and its respective code doing it manually:
+</div>
+
+<table class="compare">
+	<tr>
+		<td width="50%">
+<?php echo hyperlight('<?php
+
+$robot = Robots::findFirst(2);
+
+//Robots model has a 1-n (hasMany)
+//relationship to RobotsParts then
+$robotsParts = $robot->getRobotsParts();
+
+//Only parts that match conditions
+$robotsParts = $robot->getRobotsParts("created_at=\'2012-03-15\'");
+
+$robotPart = RobotsParts::findFirst(1);
+
+//RobotsParts model has a n-1 (belongsTo)
+//relationship to RobotsParts then
+$robot = $robotPart->getRobots();
+
+
+', 'php'); ?>
+		</td>
+		<td width="50%">
+<?php echo hyperlight('<?php
+
+$robot = Robots::findFirst(2);
+
+//Robots model has a 1-n (hasMany)
+//relationship to RobotsParts then
+$robotsParts = RobotsParts::find("robots_id=\'".$robot->id."\'");
+
+//Only parts that match conditions
+$robotsParts = RobotsParts::find("robots_id=\'".$robot->id."\' AND created_at=\'2012-03-15\'");
+
+$robotPart = RobotsParts::findFirst(1);
+
+//RobotsParts model has a n-1 (belongsTo)
+//relationship to RobotsParts then
+$robot = Robots::findFirst("id=\'".$robotPart->robots_id."\'");
+
+', 'php'); ?>
+		</td>
+	</tr>
+</table>
+
+<div class="doc-paragraph">
+	Prefix "get" is used to find/findFirst related records. You can also use "count" to return an integer value
+	result of count the related records:
+</div>
+
+<?php echo hyperlight('<?php
+
+$robot = Robots::findFirst(2);
+echo "The robot have ", $robot->countRobotsParts(), " parts\n";
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	<h4><a name="virtual-fkeys">Virtual Foreign Keys</a></h4>
+	By default, relationships does not act like database foreign keys, that is,
+	if you try to insert/update a value not having a valid value on its
+	referenced model, Phalcon will not throw a validation message or anything.
+	You can modify this behavior by adding a fourth parameter when defining a relationship.
+</div>
+
+<div class="doc-paragraph">
+	Let's change the RobotsPart model to use its relationships as foreign keys:
+</div>
+
+<?php echo hyperlight('<?php
+
+class RobotsParts extends Phalcon_Model_Base {
+
+  function initialize(){
+     $this->belongsTo("robots_id", "Robots", "id", array(
+       "foreignKey" => true
+     ));
+     $this->belongsTo("parts_id", "Parts", "id", array(
+       "foreignKey" => array(
+          "message" => "The part_id does not exist on the parts model"
+       )
+     ));
+  }
+
+}
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	If you alter a belongsTo relationship to act as foreign key, it will validate
+	that values inserted/updated on those fields have a valid value on the referenced model.
+	On the other hand, if a hasMany/hasOne is altered it will validate that records
+	cannot be deleted if that record is used on any referenced model.
+</div>
+
+<?php echo hyperlight('<?php
+
+class Parts extends Phalcon_Model_Base {
+
+  function initialize(){
+     $this->hasMany("id", "RobotsParts", "parts_id", array(
+     	"foreignKey" => array(
+     	   "message" => "The part cannot be deleted because other robots are using it"
+     	)
+     ));
+  }
+
+}
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
 	<h3><a name="creating-updating">Creating Updating/Records</a></h3>
 	The method Phalcon_Model_Base::save() allows you to create/update records according to whether they already exist in the table associated with a model.
-	The save method is called out internally by also create and update methods of Phalcon_Model. For this to
+	The save method is called out internally by create and update methods of Phalcon_Model. For this to
 	work as expected it is necessary to have properly defined a primary key in the entity to
 	determine whether a record should be updated or created.
 </div>
@@ -385,7 +537,7 @@ if($robot->save() == false){
 </div>
 
 <div class="doc-paragraph">
-	Each message provides extended information like the field name that generated the message or the message type.
+	Each message provides extended information like the field name that generated the message or the message type:
 </div>
 
 <?php echo hyperlight('
@@ -396,6 +548,32 @@ if($robot->save() == false){
       echo "Type: ", $message->getType();
    }
 }', 'iphp'); ?>
+
+<div class="doc-paragraph">
+	The following types of validation messages can be generated by Phalcon_Model:
+</div>
+
+<div class="doc-paragraph">
+	<table width="95%" align="center" cellspacing="0">
+		<tr>
+			<th>Type</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>PresenceOf</td>
+			<td>Generated when a field with a not-null attribute on the database is trying to insert/update a null value</td>
+		</tr>
+		<tr>
+			<td>ConstraintViolation</td>
+			<td>Generated when a field part of a virtual foreign key is trying to insert/update a value that doesn't
+			exist in the referenced model</td>
+		</tr>
+		<tr>
+			<td>InvalidValue</td>
+			<td>Generated when a validator failed due to an invalid value</td>
+		</tr>
+	</table>
+</div>
 
 <div class="doc-paragraph">
 	<h4><a name="validation-events">Validation Events</a></h4>
@@ -610,6 +788,27 @@ class Robots extends Phalcon_Model_Base {
 		</tr>
 	</table>
 </div>
+
+<div class="doc-paragraph">
+	In addition to the built-in validatiors, you can define your own validations using model events:
+</div>
+
+<?php echo hyperlight('<?php
+
+class Robots extends Phalcon_Model_Base {
+
+   function beforeSave(){
+       if($this->type=="Old"){
+          $message = new Phalcon_Model_Message("Sorry, old robots are not allowed anymore", "type", "MyType");
+          $this->appendMessage($message);
+          return false;
+       }
+       return true;
+   }
+
+}
+
+', 'php'); ?>
 
 <div class="doc-paragraph">
 	<h3><a name="deleting">Deleting Records</a></h3>

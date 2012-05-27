@@ -111,3 +111,8 @@ div.highlightb {
 	margin-top: 10px;
 	font-size: 15px;
 }
+
+table.compare pre.source-code {
+	width: 320px;
+	font-size: 13px;
+}
