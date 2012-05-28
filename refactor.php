@@ -12903,9 +12903,9 @@ Rewrite rules using a hidden directory and a public/ document root:
         ),
         'parameters' => 
         array (
-          '$data' => 
+          '$options' => 
           array (
-            'type' => 'array',
+            'type' => 'unknown',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -12999,9 +12999,9 @@ Rewrite rules using a hidden directory and a public/ document root:
             'default' => NULL,
             'byReference' => false,
           ),
-          '$data' => 
+          '$options' => 
           array (
-            'type' => 'mixed',
+            'type' => 'array',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -13252,7 +13252,7 @@ Rewrite rules using a hidden directory and a public/ document root:
         array (
           '$view' => 
           array (
-            'type' => 'unknown',
+            'type' => 'Phalcon_View',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -13383,7 +13383,74 @@ Rewrite rules using a hidden directory and a public/ document root:
         array (
           '$view' => 
           array (
-            'type' => 'unknown',
+            'type' => 'Phalcon_View',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$options' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$params' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'render' => 
+      array (
+        'description' => 'Renders a view using the template engine',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$path' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+    ),
+  ),
+  'Phalcon_View_Engine_Twig' => 
+  array (
+    'description' => 'Adapter to use Twig library as templating engine',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
+      '__construct' => 
+      array (
+        'description' => 'Phalcon_View_Engine_Twig constructor',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$view' => 
+          array (
+            'type' => 'Phalcon_View',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -13428,7 +13495,8 @@ Rewrite rules using a hidden directory and a public/ document root:
   ),
   'Phalcon_View_Engine' => 
   array (
-    'description' => '',
+    'description' => 'All the template engine adapters must inherit this class. This provides
+ basic interfacing between the engine and the Phalcon_View component.',
     'extends' => NULL,
     'implements' => 
     array (
@@ -13441,7 +13509,7 @@ Rewrite rules using a hidden directory and a public/ document root:
     array (
       '__construct' => 
       array (
-        'description' => '',
+        'description' => 'Phalcon_View_Engine constructor',
         'modifiers' => 
         array (
           0 => 'public',
@@ -13450,21 +13518,21 @@ Rewrite rules using a hidden directory and a public/ document root:
         array (
           '$view' => 
           array (
-            'type' => 'unknown',
+            'type' => 'Phalcon_View',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$options' => 
           array (
-            'type' => 'unknown',
+            'type' => 'array',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$params' => 
           array (
-            'type' => 'unknown',
+            'type' => 'array',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -13474,7 +13542,7 @@ Rewrite rules using a hidden directory and a public/ document root:
       ),
       'initialize' => 
       array (
-        'description' => 'Sets view component',
+        'description' => 'Initializes the engine adapter',
         'modifiers' => 
         array (
           0 => 'public',
@@ -13602,7 +13670,7 @@ Rewrite rules using a hidden directory and a public/ document root:
         array (
           '$partialPath' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
