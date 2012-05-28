@@ -11,14 +11,6 @@ class DocumentationController extends ControllerBase {
 		parent::initialize();
 	}
 
-	/*public function beforeDispatch($controllerName, $actionName){
-		$viewPath = '../app/views/documentation/'.$actionName.'.phtml';
-		$cachePath = '../app/cache/docs-'.$actionName;
-		if(filemtime($viewPath)<filemtime($cachePath)){
-			$this->view->setRenderLevel(Phalcon_View::LEVEL_LAYOUT);
-		}
-	}*/
-
 	public function indexAction(){
 
 	}
@@ -115,6 +107,10 @@ class DocumentationController extends ControllerBase {
 
 	}
 
+	public function translateAction(){
+
+	}
+
 	public function dbAction(){
 
 	}
@@ -135,8 +131,8 @@ class DocumentationController extends ControllerBase {
 
 	}
 
-	public function testAction(){
-		//$this->view->setParamToView('errors' , array('value1' => array('value1-1' => 'test'), 'value2' => 'test'));
+	public function licenseAction(){
+
 	}
 
 }

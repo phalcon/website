@@ -1044,6 +1044,11 @@ catch(Phalcon_Transaction_Failed $e){
 ', 'iphp'); ?>
 
 <div class="doc-paragraph">
+	Transactions are reused no matter from which part of the application is obtained the transaction object.
+	Only when performing a commit or rollback the transaction will generate a new one.
+</div>
+
+<div class="doc-paragraph">
 	<h3><a name="meta-data">Models Meta-Data</a></h3>
 	To speed up development Phalcon_Model helps you to query fields and constraints from tables related
 	to models. In this task, <?php echo Tag::classLink('Phalcon_Model_MetaData') ?>, plays an important role.
