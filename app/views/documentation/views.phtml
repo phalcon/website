@@ -164,7 +164,7 @@ class PostsController extends Phalcon_Controller {
 	As above, the final output sent to the browser will:
 </div>
 
-<div class="doc-paragraph" align="center">
+<div class="doc-center">
 	<?php echo Phalcon_Tag::image('img/views-1.png') ?>
 </div>
 
@@ -302,6 +302,10 @@ class PostsController extends Phalcon_Controller {
 </div>
 
 <div class="doc-paragraph">
+	The available render levels are:
+</div>
+
+<div class="doc-paragraph">
 	<table align="center" cellspacing="0">
 		<tr>
 			<th>Class Constant</th>
@@ -355,6 +359,173 @@ foreach(Catergories::find("status=1") as $category){
 ', 'iphp'); ?>
 </div>
 
+<div class="doc-paragraph">
+	Although you may perform insert or update operations at views, we only recommend
+	reading records at them because is not possible to forward the execution flow to another
+	controller in case of errors.
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="engines">Template Engines</a></h3>
+	From version 0.4.0, Phalcon_View allows you to use other template engines instead of plain PHP.
+	This helps non-developers create and design views with less effort. Actually, only
+	<a href="https://github.com/bobthecow/mustache.php">Mustache</a> and
+	<a href="http://twig.sensiolabs.org/">Twig</a> are supported.
+</div>
+
+<div class="doc-paragraph">
+	Other template engines different than PHP require text parsing and analyzing using external PHP libraries
+	in order to generate the final view, this could increase the resources that your application is currently using.
+</div>
+
+<div class="doc-paragraph">
+	If an external template engine is used, Phalcon_View provide you exactly the
+	same view hierarchy and it's still possible to access the API inside these templates.
+</div>
+
+<div class="doc-paragraph">
+	<h4><a name="changing-engine">Changing the Template Engine</a></h4>
+	You can replace or add more template engines from the controller as follows:
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('<?php
+
+class PostsController extends Phalcon_Controller {
+
+   function indexAction(){
+     //Changing PHP engine by Mustache
+     $this->view->registerEngines(array(
+       ".mhtml" => "Mustache"
+     ));
+   }
+
+   function showAction(){
+     //Using both PHP and Mustache engines
+     $this->view->registerEngines(array(
+       ".phtml" => "Php",
+       ".mhtml" => "Mustache"
+     ));
+   }
+
+}', 'php'); ?>
+</div>
+
+<div class="doc-paragraph">
+	It is possible to completely replace template engines or using more than one.
+	Phalcon_View::registerEngines receives an array with template engines.
+	The key of each engine is an extension that helps to differentiate one from another.
+	Templates related to that engines must have those extensions.
+</div>
+
+<div class="doc-paragraph">
+	The order in which templates are registered means more relevance than others. If Phalcon_View
+	finds two views with the same name but different extension only the first one will
+	render.
+</div>
+
+<div class="doc-paragraph">
+	<h4><a name="mustache">Using Mustache</a></h4>
+	<a href="http://mustache.github.com/">Mustache</a> is a logic-less template engine available for many platforms and languages.
+	A PHP implementation is available <a href="https://github.com/bobthecow/mustache.php">here</a>.
+</div>
+
+<div class="doc-paragraph">
+	You need to manually load the Mustache library before use its engine adapter. This could be done
+	by making a require instruction or registering an autoload function first.
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('require "path/to/Mustache.php";', 'iphp'); ?>
+</div>
+
+<div class="doc-paragraph">
+	Then, in the controller it's necessary to replace or add the Mustache adapter to the
+	view component. If all of your actions will use this engine register it in the
+	initialize method of the controller.
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('<?php
+
+class PostsController extends Phalcon_Controller {
+
+   function initialize(){
+     //Changing PHP engine by Mustache
+     $this->view->registerEngines(array(
+       ".mhtml" => "Mustache"
+     ));
+   }
+
+   function showAction(){
+
+     $this->view->setVar("showPost", true);
+     $this->view->setVar("title", "some title");
+     $this->view->setVar("content", "a cool content");
+
+   }
+
+}', 'php') ?>
+
+<div class="doc-paragraph">
+	A related view (views-dir/posts/show.mhtml) could be defined using the Mustache syntax:
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('
+
+{{#showPost}}
+  <h1>{{title}}</h1>
+  <p>{{content}}</p>
+{{/showPost}}
+
+', 'php') ?>
+</div>
+
+<div class="doc-paragraph">
+	Additionally, as seen above, you must call the method $this->getContent() inside a view to include the contents
+	of a view at a higher level. In Moustache, this can be done as follows:
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('
+
+<div class="some-menu">
+  <! -- the menu -->
+</div>
+
+<div class="some-main-content">
+  {{getContent}}
+</div>
+
+', 'php') ?>
+</div>
+
+<div class="doc-paragraph">
+	Finally, if you need more power, it's possible define your own Mustache instance instead of
+	the implicitly created by the adapter:
+</div>
+
+<?php echo hyperlight('<?php
+
+class PostsController extends Phalcon_Controller {
+
+   function showAction(){
+
+     //Instancing a mustache object or a sub-class of Mustache
+     $presenter = new CustomMustache();
+
+     // ... make some mustache stuff
+
+     //Registering the object as an option
+     $this->view->registerEngines(array(
+       ".mhtml" => array("Mustache", array(
+          "mustache" => $presenter
+       ))
+     ));
+   }
+
+}', 'php') ?>
 
 <div class="doc-paragraph">
 	<h3><a name="environment">View Environment</a></h3>
@@ -376,10 +547,6 @@ $.ajax({
   alert("Done!");
 });
 ', 'iphp'); ?>
-</div>
-
-<div class="doc-paragraph">
-	This method can be invoked from the controller or from a superior view layer to prevent that others will presented.
 </div>
 
 <div class="nav-bar">

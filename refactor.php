@@ -1877,7 +1877,7 @@
       ),
       'setControllersDir' => 
       array (
-        'description' => 'Sets controllers directory
+        'description' => 'Sets controllers directory. Depending of your platform, always add a trailing slash or backslash
  <pre class="source-code iphp"><span class="tag">$<span class="identifier">front</span></span>-&gt;<span class="identifier">setControllersDir</span>(<span class="string">"../app/controllers/"</span>);</pre>',
         'modifiers' => 
         array (
@@ -1897,7 +1897,7 @@
       ),
       'setModelsDir' => 
       array (
-        'description' => 'Sets models directory
+        'description' => 'Sets models directory. Depending of your platform, always add a trailing slash or backslash
  <pre class="source-code iphp"><span class="tag">$<span class="identifier">front</span></span>-&gt;<span class="identifier">setModelsDir</span>(<span class="string">"../app/models/"</span>);</pre>',
         'modifiers' => 
         array (
@@ -1917,7 +1917,7 @@
       ),
       'setViewsDir' => 
       array (
-        'description' => 'Sets views directory
+        'description' => 'Sets views directory. Depending of your platform, always add a trailing slash or backslash
  <pre class="source-code iphp"><span class="tag">$<span class="identifier">front</span></span>-&gt;<span class="identifier">setViewsDir</span>(<span class="string">"../app/views/"</span>);</pre>',
         'modifiers' => 
         array (
@@ -2033,7 +2033,7 @@
       ),
       'setBasePath' => 
       array (
-        'description' => 'Sets local path where app/ directory is located',
+        'description' => 'Sets local path where app/ directory is located. Depending of your platform, always add a trailing slash or backslash',
         'modifiers' => 
         array (
           0 => 'public',
@@ -4386,8 +4386,8 @@
   'Phalcon_Db_Profiler' => 
   array (
     'description' => 'Instances of Phalcon_Db can generate execution profiles
- on SQL statements sended to the relational database. Profiled
- information includes excution time in miliseconds.
+ on SQL statements sent to the relational database. Profiled
+ information includes execution time in miliseconds.
  This helps you to identify bottlenecks in your applications.',
     'extends' => NULL,
     'implements' => 
@@ -4744,7 +4744,7 @@
     array (
       '__construct' => 
       array (
-        'description' => 'Phalcon_Db contructor, this method should not be called directly. Use Phalcon_Db::factory instead',
+        'description' => 'Phalcon_Db constructor, this method should not be called directly. Use Phalcon_Db::factory instead',
         'modifiers' => 
         array (
           0 => 'protected',
@@ -4763,7 +4763,7 @@
       ),
       'setLogger' => 
       array (
-        'description' => 'Sets a logger class to log all SQL operations sended to database server',
+        'description' => 'Sets a logger class to log all SQL operations sent to database server',
         'modifiers' => 
         array (
           0 => 'public',
@@ -4892,7 +4892,7 @@
      <span class="keyword builtin">array</span>(<span class="string">"Astro Boy"</span>, <span class="number">1952</span>),
      <span class="keyword builtin">array</span>(<span class="string">"name"</span>, <span class="string">"year"</span>)
  );
- <span class="comment">//Next SQL sentence is sended to the database system
+ <span class="comment">//Next SQL sentence is sent to the database system
 </span> <span class="identifier">INSERT</span> <span class="identifier">INTO</span> `<span class="identifier">robots</span>` (`<span class="identifier">name</span>`, `<span class="identifier">year</span>`) <span class="identifier">VALUES</span> (<span class="string">"Astro boy"</span>, <span class="number">1952</span>);</pre>',
         'modifiers' => 
         array (
@@ -4941,7 +4941,7 @@
      <span class="keyword builtin">array</span>(<span class="string">"New Astro Boy"</span>),
      <span class="string">"id = 101"</span>
  );
- <span class="comment">//Next SQL sentence is sended to the database system
+ <span class="comment">//Next SQL sentence is sent to the database system
 </span> <span class="identifier">UPDATE</span> `<span class="identifier">robots</span>` <span class="identifier">SET</span> `<span class="identifier">name</span>` = <span class="string">"Astro boy"</span> <span class="identifier">WHERE</span> <span class="identifier">id</span> = <span class="number">101</span></pre>',
         'modifiers' => 
         array (
@@ -5168,7 +5168,7 @@
       ),
       '_beforeQuery' => 
       array (
-        'description' => 'This method is executed before every SQL statement sended to the database system',
+        'description' => 'This method is executed before every SQL statement sent to the database system',
         'modifiers' => 
         array (
           0 => 'protected',
@@ -5187,7 +5187,7 @@
       ),
       '_afterQuery' => 
       array (
-        'description' => 'This method is executed after every SQL statement sended to the database system',
+        'description' => 'This method is executed after every SQL statement sent to the database system',
         'modifiers' => 
         array (
           0 => 'protected',
@@ -5278,7 +5278,7 @@
     array (
       'setControllersDir' => 
       array (
-        'description' => 'Sets default controllers directory',
+        'description' => 'Sets default controllers directory. Depending of your platform, always add a trailing slash or backslash',
         'modifiers' => 
         array (
           0 => 'public',
@@ -5309,7 +5309,7 @@
       ),
       'setBasePath' => 
       array (
-        'description' => 'Sets base path for controllers dir',
+        'description' => 'Sets base path for controllers dir. Depending of your platform, always add a trailing slash or backslash',
         'modifiers' => 
         array (
           0 => 'public',
@@ -5349,7 +5349,7 @@
         array (
           '$controllerName' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -5433,7 +5433,7 @@
       ),
       'dispatch' => 
       array (
-        'description' => 'Dispatchs a action controller taking care of routing',
+        'description' => 'Dispatches a controller action taking into account the routing parameters',
         'modifiers' => 
         array (
           0 => 'public',
@@ -5473,23 +5473,23 @@
       ),
       '_throwDispatchException' => 
       array (
-        'description' => '',
+        'description' => 'Throws an internal exception',
         'modifiers' => 
         array (
-          0 => 'public',
+          0 => 'protected',
         ),
         'parameters' => 
         array (
           '$response' => 
           array (
-            'type' => 'unknown',
+            'type' => 'Phalcon_Response',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$message' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -6596,7 +6596,7 @@
  when interact with databases while is also easy to use.</p>
 
  <pre class="source-code iphp"><span class="tag">$<span class="identifier">manager</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Model_Manager</span>();
-<span class="tag">$<span class="identifier">manager</span></span>-&gt;<span class="identifier">setModelsDir</span>(<span class="string">\'app/models\'</span>);
+<span class="tag">$<span class="identifier">manager</span></span>-&gt;<span class="identifier">setModelsDir</span>(<span class="string">\'app/models/\'</span>);
 
 <span class="tag">$<span class="identifier">robot</span></span> = <span class="keyword operator">new</span> <span class="identifier">Robots</span>();
 <span class="tag">$<span class="identifier">robot</span></span>-&gt;<span class="identifier">type</span> = <span class="string">\'mechanical\'</span>
@@ -7963,11 +7963,11 @@
   ),
   'Phalcon_Model_Manager' => 
   array (
-    'description' => 'Manages the creation of models inside application and their relationships.
+    'description' => 'Manages the creation of models into applications and their relationships.
  Phacon_Model_Manager helps to control the creation of models across a request execution.
 
  <pre class="source-code iphp"><span class="tag">$<span class="identifier">manager</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Model_Manager</span>();
-<span class="tag">$<span class="identifier">manager</span></span>-&gt;<span class="identifier">setModelsDir</span>(<span class="string">\'../apps/models\'</span>);
+<span class="tag">$<span class="identifier">manager</span></span>-&gt;<span class="identifier">setModelsDir</span>(<span class="string">\'../apps/models/\'</span>);
 <span class="tag">$<span class="identifier">Robots</span></span> = <span class="keyword operator">new</span> <span class="identifier">Robots</span>(<span class="tag">$<span class="identifier">manager</span></span>);</pre>',
     'extends' => NULL,
     'implements' => 
@@ -8002,7 +8002,7 @@
       ),
       'setBasePath' => 
       array (
-        'description' => 'Sets base path',
+        'description' => 'Sets base path. Depending of your platform, always add a trailing slash or backslash',
         'modifiers' => 
         array (
           0 => 'public',
@@ -8040,7 +8040,7 @@
       ),
       'getMetaData' => 
       array (
-        'description' => 'Returns active meta-data manager. If no exist then it will be created',
+        'description' => 'Returns active meta-data manager. If not exist then one will be created',
         'modifiers' => 
         array (
           0 => 'public',
@@ -8052,7 +8052,7 @@
       ),
       'setModelsDir' => 
       array (
-        'description' => 'Sets the models directory',
+        'description' => 'Sets the models directory. Depending of your platform, always add a trailing slash or backslash',
         'modifiers' => 
         array (
           0 => 'public',
@@ -8083,7 +8083,7 @@
       ),
       'isModel' => 
       array (
-        'description' => 'Checks wheater given name is a existent model
+        'description' => 'Checks whether the given name is an existing model
  <pre class="source-code iphp"><span class="comment">//Is there a "Robots" model?
 </span> <span class="tag">$<span class="identifier">isModel</span></span> = <span class="tag">$<span class="identifier">manager</span></span>-&gt;<span class="identifier">isModel</span>(<span class="string">\'Robots\'</span>);</pre>',
         'modifiers' => 
@@ -8144,7 +8144,7 @@
       ),
       'getSource' => 
       array (
-        'description' => 'Gets the posibly source model name from its class name',
+        'description' => 'Gets the possible source model name from its class name',
         'modifiers' => 
         array (
           0 => 'public',
@@ -8163,7 +8163,7 @@
       ),
       'getConnection' => 
       array (
-        'description' => 'Gets default connection to database. All models by default will use connection returned by this method',
+        'description' => 'Gets default connection to the database. All models by default will use connection returned by this method',
         'modifiers' => 
         array (
           0 => 'public',
@@ -8322,7 +8322,7 @@
       ),
       'existsBelongsTo' => 
       array (
-        'description' => 'Checks whether a model have a belongsTo relation with other model',
+        'description' => 'Checks whether a model has a belongsTo relation with another model',
         'modifiers' => 
         array (
           0 => 'public',
@@ -8348,7 +8348,7 @@
       ),
       'existsHasMany' => 
       array (
-        'description' => 'Checks whether a model have a hasMany relation with other model',
+        'description' => 'Checks whether a model has a hasMany relation with another model',
         'modifiers' => 
         array (
           0 => 'public',
@@ -8374,7 +8374,7 @@
       ),
       'existsHasOne' => 
       array (
-        'description' => 'Checks whether a model have a hasOne relation with other model',
+        'description' => 'Checks whether a model has a hasOne relation with another model',
         'modifiers' => 
         array (
           0 => 'public',
@@ -8949,8 +8949,8 @@
   'Phalcon_Model_MetaData' => 
   array (
     'description' => '<p>Because Phalcon_Model requires meta-data like field names, data types, primary keys, etc.
- Phalcon_Model_MetaData recopiles them and store for further querying by Phalcon_Model_Base.
- This component can also use adapters to store temporarily or permanently the meta-data.</p>
+ this component collect them and store for further querying by Phalcon_Model_Base.
+ Phalcon_Model_MetaData can also use adapters to store temporarily or permanently the meta-data.</p>
 
  <p>A standard Phalcon_Model_MetaData can be used to query model attributes:</p>
 
@@ -9025,7 +9025,7 @@
       ),
       'getPrimaryKeyAttributes' => 
       array (
-        'description' => 'Returns table attributes which are part of primary key',
+        'description' => 'Returns an array of fields which are part of the primary key',
         'modifiers' => 
         array (
           0 => 'public',
@@ -9044,7 +9044,7 @@
       ),
       'getNonPrimaryKeyAttributes' => 
       array (
-        'description' => 'Returns table attributes which are not part of primary key',
+        'description' => 'Returns an arrau of fields which are not part of the primary key',
         'modifiers' => 
         array (
           0 => 'public',
@@ -9063,7 +9063,7 @@
       ),
       'getNotNullAttributes' => 
       array (
-        'description' => 'Returns not null attributes',
+        'description' => 'Returns an array of not null attributes',
         'modifiers' => 
         array (
           0 => 'public',
@@ -9175,25 +9175,6 @@
     'type' => 'public',
     'methods' => 
     array (
-      'setInputData' => 
-      array (
-        'description' => 'Set the data to use to make the conditions in query',
-        'modifiers' => 
-        array (
-          0 => 'public',
-        ),
-        'parameters' => 
-        array (
-          '$data' => 
-          array (
-            'type' => 'array',
-            'optional' => false,
-            'default' => NULL,
-            'byReference' => false,
-          ),
-        ),
-        'return' => 'unknown',
-      ),
       'setManager' => 
       array (
         'description' => 'Set the Phalcon_Model_Manager instance to use in a query
@@ -9274,6 +9255,25 @@
         ),
         'return' => 'unknown',
       ),
+      'setInputData' => 
+      array (
+        'description' => 'Set the data to use to make the conditions in query',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$data' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
       'setLimit' => 
       array (
         'description' => 'Set the limit of rows to show',
@@ -9319,7 +9319,7 @@
       ),
       'fromInput' => 
       array (
-        'description' => 'Get instace of model query',
+        'description' => 'Get instance of model query',
         'modifiers' => 
         array (
           0 => 'public',
@@ -13228,6 +13228,137 @@ Rewrite rules using a hidden directory and a public/ document root:
       ),
     ),
   ),
+  'Phalcon_View_Engine_Mustache' => 
+  array (
+    'description' => 'Adapter to use Mustache library as templating engine',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
+      '__construct' => 
+      array (
+        'description' => 'Phalcon_View_Engine_Mustache constructor',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$view' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$options' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$params' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'render' => 
+      array (
+        'description' => 'Renders a view using the template engine',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$path' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      '__isset' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$property' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      '__get' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$property' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      '__call' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$method' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$arguments' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+    ),
+  ),
   'Phalcon_View_Engine_Php' => 
   array (
     'description' => 'Adapter to use PHP itself as templating engine',
@@ -13253,6 +13384,13 @@ Rewrite rules using a hidden directory and a public/ document root:
           '$view' => 
           array (
             'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$options' => 
+          array (
+            'type' => 'array',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -13317,6 +13455,13 @@ Rewrite rules using a hidden directory and a public/ document root:
             'default' => NULL,
             'byReference' => false,
           ),
+          '$options' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
           '$params' => 
           array (
             'type' => 'unknown',
@@ -13343,9 +13488,16 @@ Rewrite rules using a hidden directory and a public/ document root:
             'default' => NULL,
             'byReference' => false,
           ),
+          '$options' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
           '$params' => 
           array (
-            'type' => 'unknown',
+            'type' => 'array',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -13439,6 +13591,25 @@ Rewrite rules using a hidden directory and a public/ document root:
         ),
         'return' => 'string',
       ),
+      'partial' => 
+      array (
+        'description' => 'Renders a partial inside another view',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$partialPath' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
     ),
   ),
   'Phalcon_View_Exception' => 
@@ -13491,7 +13662,7 @@ Rewrite rules using a hidden directory and a public/ document root:
     array (
       'setViewsDir' => 
       array (
-        'description' => 'Sets views directory',
+        'description' => 'Sets views directory. Depending of your platform, always add a trailing slash or backslash',
         'modifiers' => 
         array (
           0 => 'public',
@@ -13522,7 +13693,7 @@ Rewrite rules using a hidden directory and a public/ document root:
       ),
       'setBasePath' => 
       array (
-        'description' => 'Sets base path',
+        'description' => 'Sets base path. Depending of your platform, always add a trailing slash or backslash',
         'modifiers' => 
         array (
           0 => 'public',
@@ -13796,6 +13967,25 @@ Rewrite rules using a hidden directory and a public/ document root:
         ),
         'return' => 'unknown',
       ),
+      'registerEngines' => 
+      array (
+        'description' => 'Register templating engines',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$engines' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
       'render' => 
       array (
         'description' => 'Executes render process from request data',
@@ -13840,7 +14030,7 @@ Rewrite rules using a hidden directory and a public/ document root:
         ),
         'parameters' => 
         array (
-          '$partialName' => 
+          '$partialPath' => 
           array (
             'type' => 'string',
             'optional' => false,
@@ -13852,13 +14042,32 @@ Rewrite rules using a hidden directory and a public/ document root:
       ),
       'finish' => 
       array (
-        'description' => 'Finishes render process',
+        'description' => 'Finishes the render process',
         'modifiers' => 
         array (
           0 => 'public',
         ),
         'parameters' => 
         array (
+        ),
+        'return' => 'unknown',
+      ),
+      'setContent' => 
+      array (
+        'description' => 'Set externally the view content',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$content' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
         ),
         'return' => 'unknown',
       ),

@@ -504,6 +504,92 @@ class Parts extends Phalcon_Model_Base {
 ', 'php'); ?>
 
 <div class="doc-paragraph">
+	<h3><a name="calculations">Generating Calculations</a></h3>
+	Calculations are helpers for the well known functions of database systems such as COUNT, SUM, MAX, MIN or AVG.
+	Phalcon_Model allow to use this functions in an easier way.
+</div>
+
+<div class="doc-paragraph">
+	Count examples:
+</div>
+
+<?php echo hyperlight('<?php
+
+//How many employees are?
+$rowcount = Employees::count();
+
+//How many different areas are assigned to employees?
+$rowcount = Employees::count(array("distinct" => "area"));
+
+//How many employees are in the Testing area?
+$rowcount = Employees::count("area=\'Testing\'");
+
+//Count employees grouping results by their area
+$group = Employees::count(array("group" => "area"));
+foreach($group as $row){
+   echo "There are ", $group->rowcount, " in ", $group->area;
+}
+
+//Count employees grouping by their area and ordering the result by count
+$group = Employees::count(array("group" => "area", "order" => "rowcount"));
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	Sumatories examples:
+</div>
+
+<?php echo hyperlight('<?php
+
+//How much are the salaries of all employees?
+$total = Employees::sum(array("column" => "salary"));
+
+//How much are the salaries of all employees in the Sales area?
+$total = Employees::sum(array("column" => "salary", "conditions" => "area=\'Sales\'"));
+
+//Generate a grouping of the salaries of each area
+$group = Employees::sum(array("column" => "salary", "group" => "area"));
+foreach($group as $row){
+   echo "The sumatory of salaries of the ", $group->area, " is ", $group->sumatory;
+}
+
+//Generate a grouping of the salaries of each area ordering salaries from higher to lower
+$group = Employees::sum(array("column" => "salary", "group" => "area", "order" => "sumatory DESC"));
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	Averages examples:
+</div>
+
+<?php echo hyperlight('<?php
+
+//What is the average salary for all employees?
+$average = Employees::average(array("column" => "salary"));
+
+//What is the average salary for the Sales\'s area employees?
+$average = Employees::average(array("column" => "salary", "conditions" => "area=\'Sales\'"));
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	Maximum/Minimum examples:
+</div>
+
+<?php echo hyperlight('<?php
+
+//What is the oldest age of all employees?
+$age = Employees::maximum(array("column" => "age"));
+
+//What is the oldest of employees from the Sales area?
+$age = Employees::maximum(array("column" => "age", "conditions" => "area=\'Sales\'"));
+
+//What is the lowest salary of all employees?
+$salary = Employees::minimum(array("column" => "salary"));
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
 	<h3><a name="creating-updating">Creating Updating/Records</a></h3>
 	The method Phalcon_Model_Base::save() allows you to create/update records according to whether they already exist in the table associated with a model.
 	The save method is called out internally by create and update methods of Phalcon_Model. For this to
