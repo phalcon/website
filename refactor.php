@@ -2283,6 +2283,25 @@
         ),
         'return' => 'unknown',
       ),
+      '_getParam' => 
+      array (
+        'description' => 'Returns a param from the dispatching params',
+        'modifiers' => 
+        array (
+          0 => 'protected',
+        ),
+        'parameters' => 
+        array (
+          '$index' => 
+          array (
+            'type' => 'mixed',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
       '__get' => 
       array (
         'description' => 'Magic method __get',
@@ -5430,6 +5449,25 @@
         array (
         ),
         'return' => 'array',
+      ),
+      'getParam' => 
+      array (
+        'description' => 'Gets a param by its name or numeric index',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$index' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'mixed',
       ),
       'dispatch' => 
       array (
@@ -10473,6 +10511,76 @@
       ),
     ),
   ),
+  'Phalcon_Request_File' => 
+  array (
+    'description' => 'Provides OO wrappers to the $_FILES superglobal',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
+      '__construct' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$file' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'getSize' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
+      'getName' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
+      'getTempName' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
+    ),
+  ),
   'Phalcon_Request' => 
   array (
     'description' => '<p>Encapsulates request information for easy and secure access from application controllers.</p>
@@ -10917,7 +11025,7 @@
       ),
       'getHTTPReferer' => 
       array (
-        'description' => 'Gets web page that refers active request',
+        'description' => 'Gets web page that refers active request. ie: http://www.google.com',
         'modifiers' => 
         array (
           0 => 'public',
@@ -10927,9 +11035,61 @@
         ),
         'return' => 'string',
       ),
+      '_getQualityHeader' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'protected',
+        ),
+        'parameters' => 
+        array (
+          '$serverIndex' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$name' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      '_getBestQuality' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'protected',
+        ),
+        'parameters' => 
+        array (
+          '$qualityParts' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$name' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
       'getAcceptableContent' => 
       array (
-        'description' => 'Gets array with mime/types and their quality accepted by the browser/client.',
+        'description' => 'Gets array with mime/types and their quality accepted by the browser/client from $_SERVER[\'HTTP_ACCEPT\']',
         'modifiers' => 
         array (
           0 => 'public',
@@ -10939,9 +11099,9 @@
         ),
         'return' => 'array',
       ),
-      'getBestQualityAccept' => 
+      'getBestAccept' => 
       array (
-        'description' => 'Gets best mime/type accepted by the browser/client.',
+        'description' => 'Gets best mime/type accepted by the browser/client from $_SERVER[\'HTTP_ACCEPT\']',
         'modifiers' => 
         array (
           0 => 'public',
@@ -10953,7 +11113,7 @@
       ),
       'getClientCharsets' => 
       array (
-        'description' => 'Gets charsets array and their quality accepted by the browser/client.',
+        'description' => 'Gets charsets array and their quality accepted by the browser/client from $_SERVER[\'HTTP_ACCEPT_CHARSET\']',
         'modifiers' => 
         array (
           0 => 'public',
@@ -10963,9 +11123,33 @@
         ),
         'return' => 'array',
       ),
-      'getBestQualityCharset' => 
+      'getBestCharset' => 
       array (
-        'description' => 'Gets best charset accepted by the browser/client.',
+        'description' => 'Gets best charset accepted by the browser/client from $_SERVER[\'HTTP_ACCEPT_CHARSET\']',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'string',
+      ),
+      'getLanguages' => 
+      array (
+        'description' => 'Gets languages array and their quality accepted by the browser/client from $_SERVER[\'HTTP_ACCEPT_LANGUAGE\']',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'array',
+      ),
+      'getBestLanguage' => 
+      array (
+        'description' => 'Gets best language accepted by the browser/client from $_SERVER[\'HTTP_ACCEPT_LANGUAGE\']',
         'modifiers' => 
         array (
           0 => 'public',
@@ -11146,6 +11330,178 @@
       ),
     ),
   ),
+  'Phalcon_Router_Regex' => 
+  array (
+    'description' => '<p>Phalcon_Router_Regex is the standard framework router. Routing is the
+ process of taking a URI endpoint (that part of the URI which comes after the base URL) and
+ decomposing it into parameters to determine which module, controller, and
+ action of that controller should receive the request</p>
+
+<pre class="source-code iphp"><span class="tag">$<span class="identifier">router</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Router_Rewrite</span>();
+<span class="tag">$<span class="identifier">router</span></span>-&gt;<span class="identifier">handle</span>();
+<span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">router</span></span>-&gt;<span class="identifier">getControllerName</span>();</pre>
+
+ Settings baseUri first:
+
+<pre class="source-code iphp"><span class="tag">$<span class="identifier">router</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Router_Regex</span>(); 
+<span class="tag">$<span class="identifier">router</span></span>-&gt;<span class="identifier">handle</span>();
+<span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">router</span></span>-&gt;<span class="identifier">getControllerName</span>();</pre>
+</example>',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
+      '__construct' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
+      '_getRewriteUri' => 
+      array (
+        'description' => 'Get rewrite info',
+        'modifiers' => 
+        array (
+          0 => 'protected',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
+      'setBaseUri' => 
+      array (
+        'description' => 'Set the base of application',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$baseUri' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'compilePattern' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$pattern' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'add' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$pattern' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$parts' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'handle' => 
+      array (
+        'description' => 'Handles routing information received from the rewrite engine',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$uri' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'getControllerName' => 
+      array (
+        'description' => 'Returns proccesed controller name',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'string',
+      ),
+      'getActionName' => 
+      array (
+        'description' => 'Returns proccesed action name',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'string',
+      ),
+      'getParams' => 
+      array (
+        'description' => 'Returns proccesed extra params',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'array',
+      ),
+    ),
+  ),
   'Phalcon_Router_Rewrite' => 
   array (
     'description' => '<p>Phalcon_Router_Rewrite is the standard framework router. Routing is the
@@ -11176,14 +11532,7 @@ Rewrite rules using a hidden directory and a public/ document root:
 
  The component can be used as follows:
 
-<pre class="source-code iphp"><span class="tag">$<span class="identifier">router</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Router_Rewrite</span>();
-<span class="tag">$<span class="identifier">router</span></span>-&gt;<span class="identifier">handle</span>();
-<span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">router</span></span>-&gt;<span class="identifier">getControllerName</span>();</pre>
-
- Settings baseUri first:
-
-<pre class="source-code iphp"><span class="tag">$<span class="identifier">router</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Router_Rewrite</span>();
-<span class="tag">$<span class="identifier">router</span></span>-&gt;<span class="identifier">setBaseUri</span>(<span class="string">\'path/to/app\'</span>);
+<pre class="source-code iphp"><span class="tag">$<span class="identifier">router</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Router_Rewrite</span>(); 
 <span class="tag">$<span class="identifier">router</span></span>-&gt;<span class="identifier">handle</span>();
 <span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">router</span></span>-&gt;<span class="identifier">getControllerName</span>();</pre>
 </example>',
@@ -11197,18 +11546,30 @@ Rewrite rules using a hidden directory and a public/ document root:
     'type' => 'public',
     'methods' => 
     array (
-      'setBaseUri' => 
+      '_getRewriteUri' => 
       array (
-        'description' => 'Set the base of application',
+        'description' => 'Get rewrite info',
+        'modifiers' => 
+        array (
+          0 => 'protected',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
+      'setPrefix' => 
+      array (
+        'description' => 'Set a uri prefix. This will be replaced from the beginning of the uri',
         'modifiers' => 
         array (
           0 => 'public',
         ),
         'parameters' => 
         array (
-          '$baseUri' => 
+          '$prefix' => 
           array (
-            'type' => 'string',
+            'type' => 'unknown',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -11225,6 +11586,13 @@ Rewrite rules using a hidden directory and a public/ document root:
         ),
         'parameters' => 
         array (
+          '$uri' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
         ),
         'return' => 'unknown',
       ),
@@ -13264,13 +13632,6 @@ Rewrite rules using a hidden directory and a public/ document root:
             'default' => NULL,
             'byReference' => false,
           ),
-          '$params' => 
-          array (
-            'type' => 'array',
-            'optional' => false,
-            'default' => NULL,
-            'byReference' => false,
-          ),
         ),
         'return' => 'unknown',
       ),
@@ -13286,6 +13647,13 @@ Rewrite rules using a hidden directory and a public/ document root:
           '$path' => 
           array (
             'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$params' => 
+          array (
+            'type' => 'array',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -13395,13 +13763,6 @@ Rewrite rules using a hidden directory and a public/ document root:
             'default' => NULL,
             'byReference' => false,
           ),
-          '$params' => 
-          array (
-            'type' => 'array',
-            'optional' => false,
-            'default' => NULL,
-            'byReference' => false,
-          ),
         ),
         'return' => 'unknown',
       ),
@@ -13417,6 +13778,13 @@ Rewrite rules using a hidden directory and a public/ document root:
           '$path' => 
           array (
             'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$params' => 
+          array (
+            'type' => 'array',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -13462,13 +13830,6 @@ Rewrite rules using a hidden directory and a public/ document root:
             'default' => NULL,
             'byReference' => false,
           ),
-          '$params' => 
-          array (
-            'type' => 'array',
-            'optional' => false,
-            'default' => NULL,
-            'byReference' => false,
-          ),
         ),
         'return' => 'unknown',
       ),
@@ -13484,6 +13845,13 @@ Rewrite rules using a hidden directory and a public/ document root:
           '$path' => 
           array (
             'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$params' => 
+          array (
+            'type' => 'array',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -13530,13 +13898,6 @@ Rewrite rules using a hidden directory and a public/ document root:
             'default' => NULL,
             'byReference' => false,
           ),
-          '$params' => 
-          array (
-            'type' => 'array',
-            'optional' => false,
-            'default' => NULL,
-            'byReference' => false,
-          ),
         ),
         'return' => 'unknown',
       ),
@@ -13557,13 +13918,6 @@ Rewrite rules using a hidden directory and a public/ document root:
             'byReference' => false,
           ),
           '$options' => 
-          array (
-            'type' => 'array',
-            'optional' => false,
-            'default' => NULL,
-            'byReference' => false,
-          ),
-          '$params' => 
           array (
             'type' => 'array',
             'optional' => false,
@@ -13596,18 +13950,6 @@ Rewrite rules using a hidden directory and a public/ document root:
         array (
         ),
         'return' => 'string',
-      ),
-      'getParams' => 
-      array (
-        'description' => 'Gets the extra params sent to request',
-        'modifiers' => 
-        array (
-          0 => 'public',
-        ),
-        'parameters' => 
-        array (
-        ),
-        'return' => 'array',
       ),
       'getContent' => 
       array (

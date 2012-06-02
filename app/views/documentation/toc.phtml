@@ -73,6 +73,7 @@
 				<li><?php echo Phalcon_Tag::linkTo('documentation/controllers#dispatch-events', 'Dispatch Events') ?></li>
 				<li><?php echo Phalcon_Tag::linkTo('documentation/controllers#request-response', 'Request and Response') ?></li>
 				<li><?php echo Phalcon_Tag::linkTo('documentation/controllers#session-data', 'Session Data') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/controllers#environment', 'Controller Environment') ?></li>
 				<li><?php echo Phalcon_Tag::linkTo('documentation/controllers#controller-base', 'Creating a Base Controller') ?></li>
 			</ul>
 		</li>
@@ -168,7 +169,14 @@
 				<li><?php echo Phalcon_Tag::linkTo('documentation/cache#output', 'Caching Output Fragments') ?></li>
 				<li><?php echo Phalcon_Tag::linkTo('documentation/cache#data', 'Caching Arbitrary Data') ?></li>
 				<li><?php echo Phalcon_Tag::linkTo('documentation/cache#frontend', 'Frontend Adapters') ?></li>
-				<li><?php echo Phalcon_Tag::linkTo('documentation/cache#backend', 'Backend Adapters') ?></li>
+				<li>
+					<?php echo Phalcon_Tag::linkTo('documentation/cache#backend', 'Backend Adapters') ?>
+					<ul>
+						<li><?php echo Phalcon_Tag::linkTo('documentation/cache#files', 'Files backend') ?></li>
+						<li><?php echo Phalcon_Tag::linkTo('documentation/cache#memcache', 'Memcached backend') ?></li>
+						<li><?php echo Phalcon_Tag::linkTo('documentation/cache#apc', 'APC backend') ?></li>
+					</ul>
+				</li>
 			</ul>
 		</li>
 		<li>
@@ -190,6 +198,13 @@
 				<li><?php echo Phalcon_Tag::linkTo('documentation/intl#find', 'Find out best available Locale') ?></li>
 				<li><?php echo Phalcon_Tag::linkTo('documentation/intl#format', 'Formatting messages based on Locale') ?></li>
 				<li><?php echo Phalcon_Tag::linkTo('documentation/intl#collator', 'Locale-Sensitive comparision') ?></li>
+			</ul>
+		</li>
+		<li>
+			<?php echo Phalcon_Tag::linkTo('documentation/translate', 'Multi-lingual Support') ?>
+			<ul>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/translate#adapters', 'Adapters') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/translate#usage', 'Component Usage') ?></li>
 			</ul>
 		</li>
 		<li>

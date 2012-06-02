@@ -55,6 +55,10 @@ class DocumentationController extends ControllerBase {
 
 	}
 
+	public function routingAction(){
+
+	}
+
 	public function filterAction(){
 
 	}

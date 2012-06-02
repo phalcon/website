@@ -13,7 +13,7 @@
 
 <div class="doc-paragraph">
 	For example, when you access a URL like this: <i>http://localhost/blog/posts/show/2012/the-post-title</i>
-	Phalcon by default will process each part like this:
+	Phalcon by default will decompose each part like this:
 </div>
 
 <div class="doc-paragraph">
@@ -42,7 +42,7 @@
 </div>
 
 <div class="doc-paragraph">
-	A PostsController will handle this request. The controller will look up in the controllers directory.
+	In this case, the PostsController will handle this request. The controller file will be looked up in the controllers directory.
 	Controllers should have the suffix "Controller" while actions the suffix "Action". It would be like:
 </div>
 
@@ -61,7 +61,7 @@ class PostsController extends Phalcon_Controller {
 }', 'php'); ?>
 
 <div class="doc-paragraph">
-	As you can see additional URI parameters become method parameters. So you can access it easily as local variables.
+	As you can see, additional URI parameters become method parameters. So you can access it easily as local variables.
 </div>
 
 <div class="doc-paragraph">
@@ -106,8 +106,8 @@ class UsersController extends Phalcon_Controller {
 }', 'php'); ?>
 
 <div class="doc-paragraph">
-	You may do many "forwards" as you require. When there are not pendent actions and dispatch loop will reach the end,
-	Phalcon automatically will pull down the view part of MVC manages by <?php echo Tag::classLink('Phalcon_View') ?>.
+	You may do many "forwards" as you require. If there are not pendent action the dispatch loop will reach the end,
+	and automatically will pull down the view part of MVC managed by <?php echo Tag::classLink('Phalcon_View') ?>.
 </div>
 
 <div class="doc-paragraph">
@@ -129,7 +129,7 @@ class PostsController extends Phalcon_Controller {
   }
 
   function saveAction(){
-    if($this->_config["mySetting"] == "value"){
+    if($this->config["mySetting"] == "value"){
       ...
     }
   }
@@ -140,11 +140,11 @@ class PostsController extends Phalcon_Controller {
 
 <div class="doc-paragraph">
 	<h3><a name="dispatch-events">Dispatch Events</a></h3>
-	Events enable controllers to run shared pre- and post-processing code for its actions.
+	Events enable controllers to run shared pre- and post- processing code for its actions.
 	Every time a controller action is executed, two events are provided to check security conditions or modify the application control flow.
 	Those events are "beforeDispatch" and "afterDispatch". The first one is executed before the controller action is dispatched, developers
-	can change control flow by using a forward in that event. The second one is "afterDispatch" event but is executed after
-	controller action.
+	can change the control flow by using a forward in that event. The second one is the "afterDispatch" event, this one is executed after
+	the controller action.
 </div>
 
 <?php
@@ -172,9 +172,9 @@ class PostsController extends Phalcon_Controller {
 <div class="doc-paragraph">
 	<h3><a name="request-response">Request and Response</a></h3>
 	In every controller there are two public properties pointing to the request and the response
-	objects associated with the request cycle that is currently in execution. The `request` method
-	contains an instance of <?php echo Tag::classLink('Phalcon_Request') ?> and the `response` method contains the response
-	object representing what is going to be sent back to the client.
+	objects associated with the request cycle that is currently in execution. The "request" attribute
+	contains an instance of <?php echo Tag::classLink('Phalcon_Request') ?> and the "response" attribute contains a
+	<?php echo Tag::classLink('Phalcon_Response') ?> representing what is going to be sent back to the client.
 </div>
 
 <?php
@@ -206,8 +206,7 @@ class PostsController extends Phalcon_Controller {
 
 <div class="doc-paragraph">
 	The response object is not usually used directly, but is built up during the execution of the
-	action and rendering of the data that is being sent back to the user,
-	but sometimes - like in an after the dispatch event - it can be useful to access the response directly.
+	action, sometimes - like in an afterDispatch event - it can be useful to access the response directly.
 </div>
 
 <?php
@@ -251,6 +250,48 @@ class UserController extends Phalcon_Controller {
 }
 
 ', 'php'); ?>
+
+<div class="doc-paragraph">
+	<h3><a href="enviroment">Controller Environment</a></h3>
+	Phalcon_Controller provide you some useful public attributes to interact with other
+	active parts of the framework. Checking out the API of those components will give you
+	the knowledge to access important information you could need while executing an action:
+</div>
+
+<div class="doc-paragraph">
+	<table align="center" cellspacing="0">
+		<tr>
+			<th>Component</th>
+			<th>Description</th>
+			<th>Attribute</th>
+		</tr>
+		<tr>
+			<td><?php echo Tag::classLink('Phalcon_Request') ?></td>
+			<td>Encapsulate the request information, such as HTTP method, POST and GET variables, POST files, languages, charsets, etc</td>
+			<td>$this->request</td>
+		</tr>
+		<tr>
+			<td><?php echo Tag::classLink('Phalcon_Response') ?></td>
+			<td>Encapsulate the response information, such as response headers, response body, etc.</td>
+			<td>$this->response</td>
+		</tr>
+		<tr>
+			<td><?php echo Tag::classLink('Phalcon_View') ?></td>
+			<td>Encapsulate the view that will be displayed to the used</td>
+			<td>$this->view</td>
+		</tr>
+		<tr>
+			<td><?php echo Tag::classLink('Phalcon_Dispatcher') ?></td>
+			<td>Encapsulate details of the dispatching process</td>
+			<td>$this->dispatcher</td>
+		</tr>
+		<tr>
+			<td><?php echo Tag::classLink('Phalcon_Model_Manager') ?></td>
+			<td>Encapsulate the models initialization, meta-data, etc</td>
+			<td>$this->model</td>
+		</tr>
+	</table>
+</div>
 
 <div class="doc-paragraph">
 	<h3><a href="controller-base">Creating a Base Controller</a></h3>

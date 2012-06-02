@@ -644,13 +644,12 @@ class PostsController extends Phalcon_Controller {
 <div class="doc-paragraph">
 	A template adapter is only instantiated once across the execution of the request. Normally, it only
 	need to implement two methods: __construct and render. The first one receives the Phalcon_View instance
-	which creates the engine adapter, second, the options passed when the engine was registered and third, view-params
-	set using $this->view->setVar().
+	which creates the engine adapter and the options passed when the engine was registered.
 </div>
 
 <div class="doc-paragraph">
-	By the other hand, render receives an absolute path to the view file. You could read or require it if it's
-	necessary.
+	By the other hand, render receives an absolute path to the view file and the view-params
+	set using $this->view->setVar(). You could read or require it whether it's necessary.
 </div>
 
 <?php echo hyperlight('<?php
@@ -662,27 +661,24 @@ class MyTemplateAdapter extends Phalcon_View_Engine {
      *
      * @param Phalcon_View $view
      * @param array $options
-     * @param array $params
      */
-    function __construct($view, $options, $params){
-       parent::__construct($view, $options, $params);
+    function __construct($view, $options){
+       parent::__construct($view, $options);
     }
 
     /**
      * Renders a view using the template engine
      *
      * @param string $path
+     * @param array $params
      */
-    function render($path){
+    function render($path, $params){
 
         //Access view
         $view = $this->_view;
 
         //Access options
         $options = $this->_options;
-
-        //Access params
-        $params = $this->_params;
 
     }
 

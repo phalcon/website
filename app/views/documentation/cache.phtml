@@ -149,7 +149,7 @@ foreach($robots as $robot){
 
 <div class="doc-paragraph">
 	<h3><a name="backend">Backend Adapters</a></h3>
-	This component also makes use of backend adapters to encapsulate storage details related to the cache.
+	Also, this component makes use of backend adapters to encapsulate storage details related to the cache.
 </div>
 
 <div class="doc-paragraph">
@@ -158,24 +158,81 @@ foreach($robots as $robot){
 			<th>Adapter</th>
 			<th>Description</th>
 			<th>Info</th>
+			<th>Required Extensions</th>
 		</tr>
 		<tr>
 			<td>File</td>
 			<td>Stores data to local plain files</td>
+			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td>Memcached</td>
 			<td>Stores data to a memcached server</td>
 			<td><a href="http://memcached.org/">Memcached</a></td>
+			<td><a href="http://pecl.php.net/package/memcache">memcache</a></td>
 		</tr>
 		<tr>
 			<td>APC</td>
 			<td>Stores data to the Alternative PHP Cache (APC)</td>
 			<td><a href="http://php.net/manual/en/book.apc.php">APC</a></td>
+			<td><a href="http://pecl.php.net/package/APC">APC</a></td>
 		</tr>
 	</table>
 </div>
+
+<div class="doc-paragraph">
+	<h4><a name="backend">File Backend</a></h4>
+	This backend will store cached content into files in the local server. The available options for this
+	backend are:
+</div>
+
+<div class="doc-paragraph">
+	<table align="center" cellspacing="0">
+		<tr>
+			<th>Option</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>cacheDir</td>
+			<td>A writable directory on which cached files will be placed</td>
+		</tr>
+	</table>
+</div>
+
+<div class="doc-paragraph">
+	<h4><a name="memcached">Memcached Backend</a></h4>
+	This backend will store cached content on a memcached server. The available options for this
+	backend are:
+</div>
+
+<div class="doc-paragraph">
+	<table align="center" cellspacing="0">
+		<tr>
+			<th>Option</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>host</td>
+			<td>memcached host</td>
+		</tr>
+		<tr>
+			<td>port</td>
+			<td>memcached port</td>
+		</tr>
+		<tr>
+			<td>persistent</td>
+			<td>create a persitent connection to memcached?</td>
+		</tr>
+	</table>
+</div>
+
+<div class="doc-paragraph">
+	<h4><a name="apc">APC Backend</a></h4>
+	This backend will store cached content on Alternative PHP Cache (APC). This cache doesn't have any
+	configuration.
+</div>
+
 
 <div class="nav-bar">
 	<table width="90%" align="center">
