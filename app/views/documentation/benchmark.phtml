@@ -122,7 +122,7 @@ function drawChart() {
 </div>
 
 <div class="doc-paragraph highlight">
-	We allow you to clone the suite we use for testing. You can download it to check which code was used
+	We allow you to clone the suite we're using for testing. You can download it to check which code was used
 	to test the performance. If you have any additional optimizations or comments please <a href="http://phalcon.uservoice.com/">write us.</a> <a href="https://github.com/phalcon/framework-bench">Check out source at Github</a>
 </div>
 
@@ -139,6 +139,11 @@ function drawChart() {
 	<b>Update May-20-2012:</b> Fuel framework was added to benchmark.
 </div>
 
+<div class="doc-paragraph highlightb">
+	<b>Update Jun-4-2012:</b> Cake framework was added to benchmark. Actually, it isn't compared
+	in the graphics because it takes 30 seconds to run only 10 of 1000.
+</div>
+
 <div class="doc-paragraph">
 	<h3><a name="benchmark-made">How the benchmark was made?</a></h3>
 	We made a "Hello World" benchmark looking to identify the minimal load overhead of each framework.
@@ -146,6 +151,14 @@ function drawChart() {
 	need more complex features. However, these tests you will understand how much is the
 	minimum time spent by each framework to perform a simple task. A task like this, is the minimal task
 	that runs on every request made to an application.
+</div>
+
+<div class="doc-paragraph">
+	In particular, this benchmark is only measuring the time it takes for a framework to start, run any action and
+	freeing up resources to end the request. Any PHP application based on an MVC architecture will take as minimum those times.
+	Also, note that this benchmark does not implement any complex feature, so in case of make a more large benchmark the time will be
+	"hello world" (this) + complex features (db, templating, application logic, business rules, etc), so surely, these times
+	will not decrease.
 </div>
 
 <div class="doc-paragraph">
@@ -527,6 +540,59 @@ Percentage of the requests served within a certain time (ms)
   98%     43
   99%     59
  100%     81 (longest request)
+</pre>
+
+<div class="doc-paragraph">
+	<h3>Cake 1.2.2</h3>
+	<a href="http://cakephp.org/">CakePHP</a> makes building web applications simpler, faster and require less code.
+	<b>Unlike others, we are measuring only 10 requests of 1000, if you know how to improve this results please write us.</b>
+</div>
+
+<pre class="source-code php">
+[bench #] ab -n 10 -c 5 http://localhost/bench/cake/say/hello
+This is ApacheBench, Version 2.3 <$Revision: 655654 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient).....done
+
+
+Server Software:        Apache/2.2.21
+Server Hostname:        localhost
+Server Port:            80
+
+Document Path:          /bench/cake/say/hello
+Document Length:        16 bytes
+
+Concurrency Level:      5
+Time taken for tests:   30.033 seconds
+Complete requests:      10
+Failed requests:        0
+Write errors:           0
+Total transferred:      1680 bytes
+HTML transferred:       160 bytes
+Requests per second:    0.33 [#/sec] (mean)
+Time per request:       15016.261 [ms] (mean)
+Time per request:       3003.252 [ms] (mean, across all concurrent requests)
+Transfer rate:          0.05 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       0
+Processing: 15005 15013   8.2  15013   15027
+Waiting:        5   14   8.2     20      26
+Total:      15005 15013   8.2  15014   15027
+
+Percentage of the requests served within a certain time (ms)
+  50%  15014
+  66%  15016
+  75%  15020
+  80%  15023
+  90%  15027
+  95%  15027
+  98%  15027
+  99%  15027
+ 100%  15027 (longest request)
 </pre>
 
 <br/>
