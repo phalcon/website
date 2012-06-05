@@ -79,8 +79,7 @@ echo $router->getControllerName();
 <div class="doc-paragraph">
 	<h3><a name="advanced">Advanced Routing</a></h3>
 	Phalcon provides advanced routing capabilities by replacing the default router by a
-	<?php echo Tag::classLink('Phalcon_Router_Regex') ?> router. This router allow you
-	to add many routes as you need. A route is defined in the following way:
+	<?php echo Tag::classLink('Phalcon_Router_Regex') ?> router.
 </div>
 
 <div class="doc-paragraph">
@@ -94,6 +93,10 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ index.php?_url=/$1 [QSA,L]
 ', 'iphp'); ?>
+
+<div class="doc-paragraph">
+	This router allow you to add many routes as you need. A route is defined in the following way:
+</div>
 
 <?php echo hyperlight('<?php
 
