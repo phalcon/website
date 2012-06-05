@@ -83,6 +83,18 @@ echo $router->getControllerName();
 	to add many routes as you need. A route is defined in the following way:
 </div>
 
+<div class="doc-paragraph">
+When Phalcon_Router_Regex is used together with Apache, its necessary to prepend a slash / to the
+beggining of the rewrite subexpression ($1) to handle correctly the URIs:
+</div>
+
+<?php echo hyperlight('
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?_url=/$1 [QSA,L]
+', 'iphp'); ?>
+
 <?php echo hyperlight('<?php
 
 //Creating a router
@@ -270,6 +282,8 @@ try {
         "controller" => "users",
         "action" => "profile"
     ));
+
+    $router->handle();
 
     $front->setRouter($router);
 

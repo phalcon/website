@@ -2,3 +2,6 @@
 .DS_Store
 public/.DS_Store
 public/files/.DS_Store
+.idea
+.idea/*
+.idea/commandlinetools/Phalcon.xml
