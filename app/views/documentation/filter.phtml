@@ -57,13 +57,16 @@ $filter->sanitize("!100a019.01a", "float");
 
 <?php echo hyperlight('<?php
 
-class ProductsController extends Phalcon_Controller {
+class ProductsController extends Phalcon_Controller
+{
 
-  function indexAction(){
+  function indexAction()
+  {
 
   }
 
-  function saveAction(){
+  function saveAction()
+  {
 
     //Sanitizing price from input
     $price = $this->request->getPost("price", "double");
@@ -82,13 +85,16 @@ class ProductsController extends Phalcon_Controller {
 
 <?php echo hyperlight('<?php
 
-class ProductsController extends Phalcon_Controller {
+class ProductsController extends Phalcon_Controller
+{
 
-  function indexAction(){
+  function indexAction()
+  {
 
   }
 
-  function showAction($productId){
+  function showAction($productId)
+  {
     $productId = $this->filter->sanitize($productId, "int");
   }
 

@@ -48,13 +48,16 @@
 
 <?php echo hyperlight('<?php
 
-class PostsController extends Phalcon_Controller {
+class PostsController extends Phalcon_Controller
+{
 
-  function indexAction(){
+  function indexAction()
+  {
 
   }
 
-  function showAction($year, $postTitle){
+  function showAction($year, $postTitle)
+  {
 
   }
 
@@ -73,13 +76,16 @@ class PostsController extends Phalcon_Controller {
 
 <?php echo hyperlight('<?php
 
-class PostsController extends Phalcon_Controller {
+class PostsController extends Phalcon_Controller
+{
 
-  function indexAction(){
+  function indexAction()
+  {
 
   }
 
-  function showAction($year, $postTitle){
+  function showAction($year, $postTitle)
+  {
      Phalcon_Flash::error("You don\'t have permission to access this area");
      //Forward flow to another action
      $this->_forward("users/signin");
@@ -93,13 +99,16 @@ class PostsController extends Phalcon_Controller {
 
 <?php echo hyperlight('<?php
 
-class UsersController extends Phalcon_Controller {
+class UsersController extends Phalcon_Controller
+{
 
-  function indexAction(){
+  function indexAction()
+  {
 
   }
 
-  function signinAction(){
+  function signinAction()
+  {
 
   }
 
@@ -120,17 +129,19 @@ class UsersController extends Phalcon_Controller {
 
 echo hyperlight('<?php
 
-class PostsController extends Phalcon_Controller {
+class PostsController extends Phalcon_Controller
+{
 
-  function initialize(){
+  function initialize()
+  {
     $this->config = array(
        "mySetting" => "value"
     );
   }
 
   function saveAction(){
-    if($this->config["mySetting"] == "value"){
-      ...
+    if ($this->config["mySetting"] == "value") {
+      //...
     }
   }
 
@@ -151,9 +162,11 @@ class PostsController extends Phalcon_Controller {
 
 echo hyperlight('<?php
 
-class PostsController extends Phalcon_Controller {
+class PostsController extends Phalcon_Controller
+{
 
-  function beforeDispatch(){
+  function beforeDispatch()
+  {
     if (Phalcon_Session::get("hasAuth") == false) {
       //Check whether user is authenticated and forwards him to login if not
       $this->_forward("session/login");
@@ -161,7 +174,8 @@ class PostsController extends Phalcon_Controller {
     }
   }
 
-  function indexAction(){
+  function indexAction()
+  {
 
   }
 
@@ -181,13 +195,16 @@ class PostsController extends Phalcon_Controller {
 
 echo hyperlight('<?php
 
-class PostsController extends Phalcon_Controller {
+class PostsController extends Phalcon_Controller
+{
 
-  function indexAction(){
+  function indexAction()
+  {
 
   }
 
-  function saveAction(){
+  function saveAction()
+  {
 
     //Check if request has made with POST
     if ($this->request->isPost() == true) {
@@ -213,9 +230,11 @@ class PostsController extends Phalcon_Controller {
 
 echo hyperlight('<?php
 
-class PostsController extends Phalcon_Controller {
+class PostsController extends Phalcon_Controller
+{
 
-  function indexAction(){
+  function indexAction()
+  {
 
   }
 
@@ -237,13 +256,16 @@ class PostsController extends Phalcon_Controller {
 
 echo hyperlight('<?php
 
-class UserController extends Phalcon_Controller {
+class UserController extends Phalcon_Controller
+{
 
-  function indexAction(){
+  function indexAction()
+  {
 	$this->session->name = "Michael";
   }
 
-  function welcomeAction(){
+  function welcomeAction()
+  {
     echo "Welcome, ", $this->session->name;
   }
 
@@ -319,12 +341,14 @@ class UserController extends Phalcon_Controller {
 
 echo hyperlight('<?php
 
-class ControllerBase extends Phalcon_Controller {
+class ControllerBase extends Phalcon_Controller
+{
 
   /**
    * This action is available for multiple controllers
    */
-  function someAction(){
+  function someAction()
+  {
 
   }
 
@@ -340,7 +364,8 @@ class ControllerBase extends Phalcon_Controller {
 
 echo hyperlight('<?php
 
-class UsersController extends ControllerBase {
+class UsersController extends ControllerBase
+{
 
 }
 

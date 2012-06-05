@@ -146,9 +146,11 @@ echo Phalcon_Tag::selectStatic(array(
 
 <div class="doc-center">
 <?php echo hyperlight('
-class ProductsController extends Phalcon_Controller {
+class ProductsController extends Phalcon_Controller
+{
 
-  function indexAction(){
+  function indexAction()
+  {
     Phalcon_Tag::setDefaultValue("color", "Blue");
   }
 
@@ -211,11 +213,13 @@ echo Phalcon_Tag::selectStatic(array(
 
 class PostsController extends Phalcon_Controller {
 
-  function initialize(){
+  function initialize()
+  {
     Phalcon_Tag::setTitle(" Your Website");
   }
 
-  function indexAction(){
+  function indexAction()
+  {
     Phalcon_Tag::prependTitle("Index of Posts - ");
   }
 
@@ -316,7 +320,8 @@ echo Phalcon_Tag::javascriptInclude("javascript/jquery.min.js");
 <div class="doc-center">
 <?php echo hyperlight('<?php
 
-class MyTags extends Phalcon_Tag {
+class MyTags extends Phalcon_Tag
+{
 
   /**
    * Generates a widget to show a HTML5 audio tag
@@ -324,19 +329,21 @@ class MyTags extends Phalcon_Tag {
    * @param array
    * @return string
    */
-  static function audioField($parameters){
+  static function audioField($parameters)
+  {
 
      //Converting parameters to array if it is not
-     if(!is_array($parameters)){
+     if (!is_array($parameters)) {
         $parameters = array($parameters);
      }
 
      //Determining attributes "id" and "name"
-     if(!isset($parameters[0])){
+     if (!isset($parameters[0])) {
         $parameters[0] = $parameters["id"];
      }
+
      $id = $parameters[0];
-     if(!isset($parameters["name"])){
+     if (!isset($parameters["name"])) {
         $parameters["name"] = $id;
      } else {
         if(!$parameters["name"]){
@@ -346,17 +353,17 @@ class MyTags extends Phalcon_Tag {
 
      //Determining widget value,
      //Phalcon_Tag::setDefault() allows to set the widget value
-     if(isset($parameters["value"])){
+     if (isset($parameters["value"])) {
         $value = $parameters["value"];
         unset($parameters["value"]);
      } else {
-        $value = self::_getValueFromAction($id);
+        $value = self::getValue($id);
      }
 
      //Generate the tag code
      $code = \'<audio id="\'.$id.\'" value="\'.$value.\'" \';
-     foreach($parameters as $key => $attributeValue){
-        if(!is_integer($key)){
+     foreach ($parameters as $key => $attributeValue) {
+        if (!is_integer($key)) {
             $code.= $key.\'="\'.$attributeValue.\'" \';
         }
      }

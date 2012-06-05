@@ -90,15 +90,14 @@ $page = $paginator->getPaginate();
 </div>
 
 <div class="doc-center">
-<?php echo hyperlight('<?php
+<?php echo hyperlight('
+<a href="/robots/search">First</a>
+<a href="/robots/search?page=<?= $page->before ?>">Previous</a>
+<a href="/robots/search?page=<?= $page->next ?>">Next</a>
+<a href="/robots/search?page=<?= $page->last ?>">Last</a>
 
- <?= Phalcon_Tag::linkTo("robots/search", "First") ?>
- <?= Phalcon_Tag::linkTo("robots/search?page=".$page->before, "Previous") ?>
- <?= Phalcon_Tag::linkTo("robots/search?page=".$page->next, "Next") ?>
- <?= Phalcon_Tag::linkTo("robots/search?page=".$page->last, "Last") ?>
-
- <?php echo "You are in page ", $page->current, " of ", $page->total_pages ?>
- ', 'php') ?>
+<?php echo "You are in page ", $page->current, " of ", $page->total_pages ?>
+ ', 'iphp') ?>
 </div>
 
 <div class="doc-paragraph">

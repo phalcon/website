@@ -35,7 +35,8 @@
 <div class="doc-center">
 <?php echo hyperlight('<?php
 
-class Robots extends Phalcon_Model_Base {
+class Robots extends Phalcon_Model_Base
+{
 
 }
 
@@ -57,7 +58,8 @@ class Robots extends Phalcon_Model_Base {
 
 <?php echo hyperlight('<?php
 
-class Robots extends Phalcon_Model_Base {
+class Robots extends Phalcon_Model_Base
+{
 
   function initialize(){
      $this->setSource("the_robots");
@@ -329,7 +331,8 @@ CREATE TABLE `parts` (
 
 <?php echo hyperlight('<?php
 
-class Robots extends Phalcon_Model_Base {
+class Robots extends Phalcon_Model_Base
+{
 
   function initialize(){
      $this->hasMany("id", "RobotsParts", "robots_id");
@@ -341,7 +344,8 @@ class Robots extends Phalcon_Model_Base {
 
 <?php echo hyperlight('<?php
 
-class Parts extends Phalcon_Model_Base {
+class Parts extends Phalcon_Model_Base
+{
 
   function initialize(){
      $this->hasMany("id", "RobotsParts", "parts_id");
@@ -353,7 +357,8 @@ class Parts extends Phalcon_Model_Base {
 
 <?php echo hyperlight('<?php
 
-class RobotsParts extends Phalcon_Model_Base {
+class RobotsParts extends Phalcon_Model_Base
+{
 
   function initialize(){
      $this->belongsTo("robots_id", "Robots", "id");
@@ -379,7 +384,7 @@ class RobotsParts extends Phalcon_Model_Base {
 <?php echo hyperlight('<?php
 
 $robot = Robots::findFirst(2);
-foreach($robot->getRobotsParts() as $robotPart){
+foreach ($robot->getRobotsParts() as $robotPart) {
 	echo $robotPart->getParts()->name, "\n";
 }
 
@@ -463,9 +468,11 @@ echo "The robot have ", $robot->countRobotsParts(), " parts\n";
 
 <?php echo hyperlight('<?php
 
-class RobotsParts extends Phalcon_Model_Base {
+class RobotsParts extends Phalcon_Model_Base
+{
 
-  function initialize(){
+  function initialize()
+  {
      $this->belongsTo("robots_id", "Robots", "id", array(
        "foreignKey" => true
      ));
@@ -489,9 +496,11 @@ class RobotsParts extends Phalcon_Model_Base {
 
 <?php echo hyperlight('<?php
 
-class Parts extends Phalcon_Model_Base {
+class Parts extends Phalcon_Model_Base
+{
 
-  function initialize(){
+  function initialize()
+  {
      $this->hasMany("id", "RobotsParts", "parts_id", array(
      	"foreignKey" => array(
      	   "message" => "The part cannot be deleted because other robots are using it"
@@ -627,7 +636,7 @@ if($robot->save() == false){
 </div>
 
 <?php echo hyperlight('
-if($robot->save() == false){
+if ($robot->save() == false) {
    foreach ($robot->getMessages() as $message) {
       echo "Message: ", $message->getMessage();
       echo "Field: ", $message->getField();
@@ -778,10 +787,12 @@ if($robot->save() == false){
 
 <?php echo hyperlight('<?php
 
-class Robots extends Phalcon_Model_Base {
+class Robots extends Phalcon_Model_Base
+{
 
-    function beforeSave(){
-        if($this->year<0){
+    function beforeSave()
+    {
+        if ($this->year < 0) {
             echo "Year cannot be smaller than zero!";
             return false;
         }
@@ -805,9 +816,11 @@ class Robots extends Phalcon_Model_Base {
 
 <?php echo hyperlight('<?php
 
-class Robots extends Phalcon_Model_Base {
+class Robots extends Phalcon_Model_Base
+{
 
-    function validation(){
+    function validation()
+    {
        $this->validate("InclusionIn", array(
           "field" => "type",
           "domain" => array("Mechanical", "Virtual")
@@ -816,7 +829,7 @@ class Robots extends Phalcon_Model_Base {
           "field" => "name",
           "message" => "The robot name must be unique"
        ));
-       if($this->validationHasFailed()==true){
+       if ($this->validationHasFailed() == true) {
           return false;
        }
     }
@@ -881,10 +894,12 @@ class Robots extends Phalcon_Model_Base {
 
 <?php echo hyperlight('<?php
 
-class Robots extends Phalcon_Model_Base {
+class Robots extends Phalcon_Model_Base
+{
 
-   function beforeSave(){
-       if($this->type=="Old"){
+   function beforeSave()
+   {
+       if ($this->type == "Old") {
           $message = new Phalcon_Model_Message("Sorry, old robots are not allowed anymore", "type", "MyType");
           $this->appendMessage($message);
           return false;
@@ -904,8 +919,8 @@ class Robots extends Phalcon_Model_Base {
 <?php echo hyperlight('
 
 $robot = Robots::findFirst(11);
-if($robot!=false){
-   if($robot->delete() == false){
+if ($robot != false){
+   if ($robot->delete() == false) {
       echo "Sorry, we can\'t delete the robot right now: \n";
       foreach ($robot->getMessages() as $message) {
          echo $message, "\n";
@@ -923,8 +938,8 @@ if($robot!=false){
 
 <?php echo hyperlight('
 
-foreach(Robots::find("type=\'mechanical\'") as $robot){
-   if($robot->delete() == false){
+foreach (Robots::find("type=\'mechanical\'") as $robot) {
+   if ($robot->delete() == false) {
       echo "Sorry, we can\'t delete the robot right now: \n";
       foreach ($robot->getMessages() as $message) {
          echo $message, "\n";
@@ -988,22 +1003,21 @@ try {
  $robot->setTransaction($transaction);
  $robot->name = "WALL·E";
  $robot->created_at = date("Y-m-d");
- if($robot->save()==false){
+ if ($robot->save() == false) {
     $transaction->rollback("Cannot save robot");
  }
 
  $robotPart = new RobotParts();
  $robotPart->setTransaction($transaction);
  $robotPart->type = "head";
- if($robotPart->save()==false){
+ if ($robotPart->save() == false) {
     $transaction->rollback("Cannot save robot part");
  }
 
  //Everything goes fine, let\'s commit the transaction
  $transaction->commit();
 
-}
-catch(Phalcon_Transaction_Failed $e){
+} catch(Phalcon_Transaction_Failed $e) {
  echo "Failed, reason: ", $e->getMessage();
 }
 
@@ -1021,9 +1035,9 @@ try {
   $transaction = Phalcon_Transaction_Manager::get();
 
   //Get the robots will be deleted
-  foreach(Robots::find("type=\'mechanical\'") as $robot){
+  foreach (Robots::find("type=\'mechanical\'") as $robot) {
     $robot->setTransaction($transaction);
-    if($robot->delete() == false){
+    if ($robot->delete() == false) {
        //Something goes wrong, we should to rollback the transaction
        foreach ($robot->getMessages() as $message) {
           $transaction->rollback($message->getMessage());
@@ -1036,8 +1050,7 @@ try {
 
   echo "Robots were deleted successfully!";
 
-}
-catch(Phalcon_Transaction_Failed $e){
+} catch(Phalcon_Transaction_Failed $e){
   echo "Failed, reason: ", $e->getMessage();
 }
 
@@ -1096,7 +1109,7 @@ $robot->getConnection()->setLogger($logger);
 
 $robot->name = "Robby the Robot";
 $robot->created_at = "1956-07-21"
-if($robot->save()==false){
+if ($robot->save() == false) {
     echo "Cannot save robot";
 }
 

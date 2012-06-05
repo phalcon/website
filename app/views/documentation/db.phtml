@@ -142,13 +142,13 @@ $sql = "SELECT id,name FROM robots ORDER BY name";
 $result = $connection->query($sql);
 
 //Print each robot name
-while($robot = $connection->fetchArray($result)){
+while ($robot = $connection->fetchArray($result)) {
    echo $robot["name"];
 }
 
 //Dump all rows in an array
 $robots = $connection->fetchAll($sql);
-foreach($robots as $robot){
+foreach ($robots as $robot) {
    echo $robot["name"];
 }
 
@@ -190,7 +190,7 @@ $sql = "SELECT id,name FROM robots ORDER BY name";
 $result = $connection->query($sql);
 
 $connection->setFetchMode(Phalcon_Db::DB_NUM);
-while($robot = $connection->fetchArray($result)){
+while ($robot = $connection->fetchArray($result)) {
    echo $robot[0];
 }
 
@@ -356,19 +356,19 @@ $exists = $connection->tableExists("robots");
 
 //Get name, data types and special features of robots fields
 $fields = $connection->describeTable("robots");
-foreach($fields as $field){
+foreach ($fields as $field) {
    echo "Column Type: ", $field["Type"];
 }
 
 //Get indexes on the robots table
 $indexes = $connection->describeIndexes("robots");
-foreach($indexes as $index){
+foreach ($indexes as $index) {
   print_r($index->getColumns());
 }
 
 //Get foreign keys on the robots table
 $references = $connection->describeReferences("robots");
-foreach($references as $reference){
+foreach ($references as $reference) {
   //Print referenced columns
   print_r($reference->getReferencedColumns());
 }

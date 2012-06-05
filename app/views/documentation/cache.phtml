@@ -54,7 +54,7 @@ $cache = Phalcon_Cache::factory("Output", "File",
 $content = $cache->start("my-cache.html");
 
 //If $content is null then the content will be created or will refreshed
-if($content===null){
+if ($content === null) {
 
   //Print date and time
   echo date("r");

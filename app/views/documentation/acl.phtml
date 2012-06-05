@@ -143,7 +143,7 @@ $acl->addRole($roleAdmins, $roleGuests);
 <?php echo hyperlight('
 
 //Check whether acl data already exist
-if(!file_exists("app/security/acl.data")){
+if (!file_exists("app/security/acl.data")) {
 
  $acl = new Phalcon_Acl("Memory");
 
@@ -159,7 +159,7 @@ if(!file_exists("app/security/acl.data")){
 }
 
 //Use acl list as needed
-if($acl->isAllowed("Guests", "Customers", "edit")){
+if ($acl->isAllowed("Guests", "Customers", "edit")) {
  echo "Access granted!";
 } else {
  echo "Access denied :(";
@@ -176,14 +176,16 @@ if($acl->isAllowed("Guests", "Customers", "edit")){
 
 <?php echo hyperlight('<?php
 
-class PostsController extends Phalcon_Controller {
+class PostsController extends Phalcon_Controller
+{
 
   private $_acl = null;
 
   /**
    * Gets a Phalcon_Acl instance
    */
-  private function _getAcl(){
+  private function _getAcl()
+  {
 
      //Only create an ACL once by request
      if(!$this->_acl){
@@ -210,8 +212,9 @@ class PostsController extends Phalcon_Controller {
   /**
    * Returns the user profile in session
    */
-  private function _getUser(){
-    if(Phalcon_Session::has("authInfo")){
+  private function _getUser()
+  {
+    if (Phalcon_Session::has("authInfo")) {
       return Phalcon_Session::get("authInfo");
     } else {
       return array(
@@ -223,12 +226,13 @@ class PostsController extends Phalcon_Controller {
   /**
    * beforeDispatch is executed before every action in the controller
    */
-  function beforeDispatch($controllerName, $actionName){
+  function beforeDispatch($controllerName, $actionName)
+  {
 
     $acl = $this->_getAcl();
     $user = $this->_getUser();
 
-    if(!$acl->isAllowed($user["Profile"], $controllerName, $actionName)){
+    if (!$acl->isAllowed($user["Profile"], $controllerName, $actionName)) {
      //Forward flow to another controller if the user does not have permission
      $this->_forward("index/index");
      return false;

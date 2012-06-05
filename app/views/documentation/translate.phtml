@@ -78,15 +78,17 @@ $messages = array(
 
 echo hyperlight('<?php
 
-class UserController extends Phalcon_Controller {
+class UserController extends Phalcon_Controller
+{
 
-  function _getTranslation(){
+  protected function _getTranslation()
+  {
 
-    //Tell browser what is the best language
+    //Ask browser what is the best language
     $language = $this->request->getBestLanguage();
 
     //Check if we have a translation file for that lang
-    if(file_exists("app/messages/".$language.".php")){
+    if (file_exists("app/messages/".$language.".php")) {
        require "app/messages/".$language.".php";
     } else {
        // fallback to some default
@@ -100,7 +102,8 @@ class UserController extends Phalcon_Controller {
 
   }
 
-  function indexAction(){
+  function indexAction()
+  {
     $this->view->setVar("name", "Mike");
     $this->view->setVar("t", $this->_getTranslation());
   }

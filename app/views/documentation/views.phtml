@@ -63,13 +63,16 @@
 <div class="doc-center">
 <?php echo hyperlight('<?php
 
-class PostsController extends Phalcon_Controller {
+class PostsController extends Phalcon_Controller
+{
 
-  function indexAction(){
+  function indexAction()
+  {
 
   }
 
-  function showAction($postId){
+  function showAction($postId)
+  {
     //Pass the $postId parameter to the view
     $this->view->setVar("postId", $postId);
   }
@@ -232,13 +235,16 @@ class PostsController extends Phalcon_Controller {
 <div class="doc-center">
 <?php echo hyperlight('<?php
 
-class PostsController extends Phalcon_Controller {
+class PostsController extends Phalcon_Controller
+{
 
-   function indexAction(){
+   function indexAction()
+   {
 
    }
 
-   function showAction(){
+   function showAction()
+   {
       //Pass all the posts to the views
       $this->view->setVar("posts", Posts:find());
    }
@@ -279,13 +285,16 @@ class PostsController extends Phalcon_Controller {
 <div class="doc-center">
 <?php echo hyperlight('<?php
 
-class PostsController extends Phalcon_Controller {
+class PostsController extends Phalcon_Controller
+{
 
-   function indexAction(){
+   function indexAction()
+   {
 
    }
 
-   function findAction(){
+   function findAction()
+   {
 
      //This is an Ajax response so don\'t generate any kind of view
      $this->view->setRenderLevel(Phalcon_View::LEVEL_NO_RENDER);
@@ -293,7 +302,8 @@ class PostsController extends Phalcon_Controller {
      //...
    }
 
-   function showAction($postId){
+   function showAction($postId)
+   {
      //Shows only the view related to the
      $this->view->setRenderLevel(Phalcon_View::LEVEL_ACTION_VIEW);
    }
@@ -349,7 +359,7 @@ class PostsController extends Phalcon_Controller {
 <div class="categories">
 <?php
 
-foreach(Catergories::find("status=1") as $category){
+foreach (Catergories::find("status=1") as $category) {
    echo "<span class=\'category\'>", $category->name, "</span>";
 }
 
@@ -391,16 +401,19 @@ foreach(Catergories::find("status=1") as $category){
 <div class="doc-center">
 <?php echo hyperlight('<?php
 
-class PostsController extends Phalcon_Controller {
+class PostsController extends Phalcon_Controller
+{
 
-   function indexAction(){
+   function indexAction()
+   {
      //Changing PHP engine by Mustache
      $this->view->registerEngines(array(
        ".mhtml" => "Mustache"
      ));
    }
 
-   function showAction(){
+   function showAction()
+   {
      //Using both PHP and Mustache engines
      $this->view->registerEngines(array(
        ".phtml" => "Php",
@@ -448,16 +461,19 @@ class PostsController extends Phalcon_Controller {
 <div class="doc-center">
 <?php echo hyperlight('<?php
 
-class PostsController extends Phalcon_Controller {
+class PostsController extends Phalcon_Controller
+{
 
-   function initialize(){
+   function initialize()
+   {
      //Changing PHP engine by Mustache
      $this->view->registerEngines(array(
        ".mhtml" => "Mustache"
      ));
    }
 
-   function showAction(){
+   function showAction()
+   {
 
      $this->view->setVar("showPost", true);
      $this->view->setVar("title", "some title");
@@ -508,9 +524,11 @@ class PostsController extends Phalcon_Controller {
 
 <?php echo hyperlight('<?php
 
-class PostsController extends Phalcon_Controller {
+class PostsController extends Phalcon_Controller
+{
 
-   function showAction(){
+   function showAction()
+   {
 
      //Instancing a mustache object or a sub-class of Mustache
      $presenter = new CustomMustache();
@@ -549,16 +567,19 @@ Twig_Autoloader::register();', 'iphp'); ?>
 <div class="doc-center">
 <?php echo hyperlight('<?php
 
-class PostsController extends Phalcon_Controller {
+class PostsController extends Phalcon_Controller
+{
 
-   function initialize(){
+   function initialize()
+   {
      //Changing PHP engine by Twig
      $this->view->registerEngines(array(
        ".twig" => "Twig"
      ));
    }
 
-   function showAction(){
+   function showAction()
+   {
 
      $this->view->setVar("showPost", true);
      $this->view->setVar("title", "some title");
@@ -615,9 +636,11 @@ $twig = new Twig_Environment($loader);
 
 <?php echo hyperlight('<?php
 
-class PostsController extends Phalcon_Controller {
+class PostsController extends Phalcon_Controller
+{
 
-   function showAction(){
+   function showAction()
+   {
 
      //Creating manually the Twig object
      $loader = new Twig_Loader_Filesystem($this->view->getViewsDir());
@@ -631,6 +654,7 @@ class PostsController extends Phalcon_Controller {
           "twig" => $twig
        ))
      ));
+
    }
 
 }', 'php') ?>
@@ -654,7 +678,8 @@ class PostsController extends Phalcon_Controller {
 
 <?php echo hyperlight('<?php
 
-class MyTemplateAdapter extends Phalcon_View_Engine {
+class MyTemplateAdapter extends Phalcon_View_Engine
+{
 
     /**
      * Adapter constructor
@@ -662,7 +687,8 @@ class MyTemplateAdapter extends Phalcon_View_Engine {
      * @param Phalcon_View $view
      * @param array $options
      */
-    function __construct($view, $options){
+    function __construct($view, $options)
+    {
        parent::__construct($view, $options);
     }
 
@@ -672,7 +698,8 @@ class MyTemplateAdapter extends Phalcon_View_Engine {
      * @param string $path
      * @param array $params
      */
-    function render($path, $params){
+    function render($path, $params)
+    {
 
         //Access view
         $view = $this->_view;
@@ -690,9 +717,11 @@ class MyTemplateAdapter extends Phalcon_View_Engine {
 
 <?php echo hyperlight('<?php
 
-class SomeController extends Phalcon_Controller {
+class SomeController extends Phalcon_Controller
+{
 
-   function someAction(){
+   function someAction()
+   {
 
      //Registering the object as an engine
      $this->view->registerEngines(array(
