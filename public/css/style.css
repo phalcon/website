@@ -667,11 +667,28 @@ iframe.present_iframe {
 	color: #fff;
 }
 
+div.about-bg {
+	background: url("../img/watermark.png") no-repeat scroll 500px 50px #FFFFFF;
+	width: 99%;
+}
+
 div.about {
 	color: #222222;
 	width: 650px;
 	font-size: 16px;
 	text-align: left;
-	margin-left: 200px;
+	margin-left: 100px;
 	margin-top: 70px;
+	background: rgba(255, 255, 255, 0.7);
+	border-radius: 15px;
+	padding-top: 10px;
+	line-height: 22px;
+}
+
+div.about li {
+	color: #222222;
+	font-size: 16px;
+	text-align: left;
+	line-height: 25px;
+	margin: 5px;
 }

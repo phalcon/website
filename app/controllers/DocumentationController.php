@@ -135,6 +135,10 @@ class DocumentationController extends ControllerBase {
 
 	}
 
+	public function screencastsAction(){
+
+	}
+
 	public function licenseAction(){
 
 	}
