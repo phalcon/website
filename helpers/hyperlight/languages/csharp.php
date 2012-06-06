@@ -1,7 +1,9 @@
 <?php
 
-class CsharpLanguage extends HyperLanguage {
-    public function __construct() {
+class CsharpLanguage extends HyperLanguage
+{
+    public function __construct()
+    {
         $this->setInfo(array(
             parent::NAME => 'C#',
             parent::VERSION => '0.3',
@@ -76,4 +78,3 @@ class CsharpLanguage extends HyperLanguage {
     }
 }
 
-?>

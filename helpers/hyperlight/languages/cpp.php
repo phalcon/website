@@ -5,8 +5,10 @@
 // - Add 'TO DO', 'FIX ME', … tags
 // - (Add doc comments?)
 
-class CppLanguage extends HyperLanguage {
-    public function __construct() {
+class CppLanguage extends HyperLanguage
+{
+    public function __construct()
+    {
         $this->setInfo(array(
             parent::NAME => 'C++',
             parent::VERSION => '0.4',
@@ -81,4 +83,3 @@ class CppLanguage extends HyperLanguage {
     }
 }
 
-?>

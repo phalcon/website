@@ -1,7 +1,9 @@
 <?php
 
-class VbLanguage extends HyperLanguage {
-    public function __construct() {
+class VbLanguage extends HyperLanguage
+{
+    public function __construct()
+    {
         $this->setInfo(array(
             parent::NAME => 'VB',
             parent::VERSION => '1.4',
@@ -104,4 +106,3 @@ class VbLanguage extends HyperLanguage {
     }
 }
 
-?>

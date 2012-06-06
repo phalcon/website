@@ -9,8 +9,10 @@
 // - Heredoc et al.
 // - More complex nested variable names.
 
-class PhpLanguage extends HyperLanguage {
-    public function __construct() {
+class PhpLanguage extends HyperLanguage
+{
+    public function __construct()
+    {
         $this->setInfo(array(
             parent::NAME => 'PHP',
             parent::VERSION => '0.3',

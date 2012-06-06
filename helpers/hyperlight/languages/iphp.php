@@ -2,8 +2,10 @@
 
 require_once('php.php');
 
-class IphpLanguage extends PhpLanguage {
-    public function __construct() {
+class IphpLanguage extends PhpLanguage
+{
+    public function __construct()
+    {
         parent::__construct();
         $this->setExtensions(array()); // Not a whole file, just a fragment.
         $this->removeState('init');
@@ -11,4 +13,3 @@ class IphpLanguage extends PhpLanguage {
     }
 }
 
-?>

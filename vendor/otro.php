@@ -1,5 +1,6 @@
 <?php
 
-	function Phalcon_filter_alphanum($val){
-		return $val;
-	}
+    public function Phalcon_filter_alphanum($val)
+    {
+        return $val;
+    }
