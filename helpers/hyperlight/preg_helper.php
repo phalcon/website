@@ -64,7 +64,8 @@
  * @return string An string representing a regular expression equivalent to the
  *      merged expressions. Returns <var>FALSE</var> if an error occurred.
  */
-function preg_merge($glue, array $expressions, array $names = array()) {
+function preg_merge($glue, array $expressions, array $names = array())
+{
     // … then, a miracle occurs.
 
     // Sanity check …
@@ -75,6 +76,7 @@ function preg_merge($glue, array $expressions, array $names = array()) {
         $use_names and count($names) !== count($expressions) or
         !is_string($glue)
     )
+
         return false;
 
     $result = array();
@@ -92,6 +94,7 @@ function preg_merge($glue, array $expressions, array $names = array()) {
         $stripped = preg_strip($expression);
 
         if ($stripped === false)
+
             return false;
 
         list($sub_expr, $modifiers) = $stripped;
@@ -105,6 +108,7 @@ function preg_merge($glue, array $expressions, array $names = array()) {
         $number_of_captures = preg_match_all('/\([^?]|\(\?[^:]/', $sub_expr, $_);
 
         if ($number_of_captures === false)
+
             return false;
 
         if ($number_of_captures > 0) {
@@ -117,7 +121,7 @@ function preg_merge($glue, array $expressions, array $names = array()) {
                 $backref_expr,
                 create_function(
                     '$m',
-                    'return $m[1] . "\\\\" . ((int)$m[2] + ' . $capture_count . ');'
+                    'return $m[1] . "\\\\" . ((int) $m[2] + ' . $capture_count . ');'
                 ),
                 $sub_expr
             );
@@ -150,8 +154,10 @@ function preg_merge($glue, array $expressions, array $names = array()) {
  *      expression, returns <var>FALSE</var>.
  *
  */
-function preg_strip($expression) {
+function preg_strip($expression)
+{
     if (preg_match('/^(.)(.*)\\1([imsxeADSUXJu]*)$/s', $expression, $matches) !== 1)
+
         return false;
 
     $delim = $matches[1];

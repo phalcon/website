@@ -6,8 +6,10 @@
 # Add type “keywords”?
 # <http://docs.python.org/dev/3.0/reference/lexical_analysis.html>
 
-class PythonLanguage extends HyperLanguage {
-    public function __construct() {
+class PythonLanguage extends HyperLanguage
+{
+    public function __construct()
+    {
         $this->setInfo(array(
             parent::NAME => 'Python',
             parent::VERSION => '0.1',
@@ -61,4 +63,3 @@ class PythonLanguage extends HyperLanguage {
     }
 }
 
-?>

@@ -1,7 +1,9 @@
 <?php
 
-class XmlLanguage extends HyperLanguage {
-    public function __construct() {
+class XmlLanguage extends HyperLanguage
+{
+    public function __construct()
+    {
         $this->setInfo(array(
             parent::NAME => 'XML',
             parent::VERSION => '0.3',

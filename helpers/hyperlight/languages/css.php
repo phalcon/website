@@ -1,7 +1,9 @@
 <?php
 
-class CssLanguage extends HyperLanguage {
-    public function __construct() {
+class CssLanguage extends HyperLanguage
+{
+    public function __construct()
+    {
         $this->setInfo(array(
             parent::NAME => 'CSS',
             parent::VERSION => '0.8',
@@ -64,4 +66,3 @@ class CssLanguage extends HyperLanguage {
     }
 }
 
-?>
