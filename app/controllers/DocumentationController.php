@@ -60,6 +60,10 @@ class DocumentationController extends ControllerBase
     {
     }
 
+    public function dispatchingAction()
+    {
+    }
+
     public function filterAction()
     {
     }

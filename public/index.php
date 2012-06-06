@@ -1,8 +1,6 @@
 <?php
 
-count($_SERVER);
-
-error_reporting(E_ALL | E_NOTICE | E_STRICT);
+error_reporting(E_ALL);
 
 try {
 

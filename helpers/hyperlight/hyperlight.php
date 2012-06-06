@@ -55,7 +55,7 @@ if (!function_exists('array_peek')) {
     /**
      * @internal
      * This does exactly what you think it does. */
-    public function array_peek(array &$array)
+    function array_peek(array &$array)
     {
         $cnt = count($array);
 
@@ -1078,12 +1078,12 @@ function hyperlight_file($filename, $lang = null, $tag = 'pre', array $attribute
 }
 
 if (defined('HYPERLIGHT_SHORTCUT')) {
-    public function hy()
+    function hy()
     {
         $args = func_get_args();
         call_user_func_array('hyperlight', $args);
     }
-    public function hyf()
+    function hyf()
     {
         $args = func_get_args();
         call_user_func_array('hyperlight_file', $args);
