@@ -135,7 +135,7 @@ class UserController extends Phalcon_Controller
 <div class="doc-center">
 <?php echo hyperlight('
 <!-- welcome -->
-<p><?php echo $t->_("hi-name", array($name)); ?></p>', 'iphp') ?>
+<p><?php echo $t->_("hi-name", array("name" => $name)); ?></p>', 'iphp') ?>
 
 </div>
 
