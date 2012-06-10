@@ -4,6 +4,7 @@
     border-right: 1px solid #CCCCCC;
     padding: 0 22px;
     text-align: left;
+	max-width: 260px;
 }
 
 ul.icon {
@@ -77,6 +78,10 @@ ul.icon li {
 
 .api-second-box a {
 	color: #1155CC;
+}
+
+.api-second-box a:hover {
+	text-decoration: underline;
 }
 
 .api-second-box p {

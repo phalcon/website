@@ -1,7 +1,5 @@
 <?php
 
-require '../refactor.php';
-
 if(isset($refactor[$className])){
 
 	$refactorClass = $refactor[$className];
@@ -34,7 +32,11 @@ if(isset($refactor[$className])){
 		echo '<div class="method">';
 		echo '<h4>';
 		if($method['return']!='unknown'){
-			echo '<span class="return-value">', $method['return'], '</span> ';
+			if(substr($method['return'], 0, 7)=='Phalcon'){
+				echo '<span class="return-value">', Tag::classLink($method['return']), '</span> ';
+			} else {
+				echo '<span class="return-value">', $method['return'], '</span> ';
+			}
 		}
 		echo '<span class="visibility">', join(' ', $method['modifiers']), '</span> ', $name, '(';
 		$parameters = array();
@@ -61,6 +63,9 @@ if(isset($refactor[$className])){
 				}
 				$parameters[] = '[<span class="parameter-type">'.$parameter['type'].'</span> '.$parameterName.'='.$parameter['default'].']';
 			} else {
+				if(substr($parameter['type'], 0, 7)=='Phalcon'){
+					$parameter['type'] = Tag::classLink($parameter['type']);
+				}
 				$parameters[] = '<span class="parameter-type">'.$parameter['type'].'</span> '.$parameterName;
 			}
 		}
