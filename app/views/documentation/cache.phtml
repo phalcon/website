@@ -99,7 +99,7 @@ $backendOptions = array(
 );
 
 //Create a cache
-$cache = Phalcon_Cache::factory("Data", "File", $frontendOptions, $backendOptions);
+$cache = Phalcon_Cache::factory("Data", "Memcached", $frontendOptions, $backendOptions);
 
 //Try to get cached records
 $robots = $cache->get("robots");

@@ -139,19 +139,19 @@ echo "There are ", count($robots), "\n";
 
 //Get and print virtual robots ordered by name
 $robots = Robots::find(array("type=\'virtual\'", "order" => "name"));
-foreach($robots as $robot){
+foreach ($robots as $robot) {
    echo $robot->name, "\n";
 }
 
 //Get first 100 virtual robots ordered by name
 $robots = Robots::find(array("type=\'virtual\'", "order" => "name", "limit" => 100));
-foreach($robots as $robot){
-	echo $robot->name, "\n";
+foreach ($robots as $robot) {
+   echo $robot->name, "\n";
 }
 ', 'php'); ?>
 
 <div class="doc-paragraph">
-You could also use the findFirst method to get only the first record matching the given conditions:
+	You could also use the findFirst method to get only the first record matching the given conditions:
 </div>
 
 <?php echo hyperlight('<?php
@@ -171,23 +171,27 @@ echo "The first virtual robot name is ", $robot->name, "\n";
 ', 'php'); ?>
 
 <div class="doc-paragraph">
-Both "find" and "findFirst" can accept an associative array specifying the find options.
-The following example shows how it works:
+	Both "find" and "findFirst" can accept an associative array specifying the find options.
+	The following example shows how it works:
 </div>
 
 <?php echo hyperlight('<?php
 
 $robot = Robots::findFirst(array(
-	"type=\'virtual\'",
-	"order" => "name DESC",
-	"limit" => 30
+   "type=\'virtual\'",
+   "order" => "name DESC",
+   "limit" => 30
 ));
 
+$robots = Robots::find(array(
+   "conditions" => "type=?1",
+   "bind" => array(1 => "virtual")
+));
 
 ', 'php'); ?>
 
 <div class="doc-paragraph">
-The available query options are:
+	The available query options are:
 </div>
 
 <div class="doc-paragraph">
@@ -203,6 +207,11 @@ The available query options are:
 			specified criterion. By default
 			Phalcon_model assumes the first parameter are the conditions.</td>
 			<td>"conditions" => "name LIKE 'steve%'"</td>
+		</tr>
+		<tr>
+			<td>bind</td>
+			<td>Bind is used together with options by replacing placeholders, espacing values increasing the security</td>
+			<td>"bind" => array("status" => "A", "type" => "some-time")</td>
 		</tr>
 		<tr>
 			<td>order</td>
@@ -236,8 +245,285 @@ The available query options are:
 				on each row it reads</td>
 			<td>"shared_lock" => true</td>
 		</tr>
+		<tr>
+			<td>cache</td>
+			<td>Cache the resulset, reducing the continuous access to the relational system</td>
+			<td>"cache" => array("lifetime" => 3600, "key" => "my-find-key")</td>
+		</tr>
 	</table>
 </div>
+
+<div class="doc-paragraph">
+	<h4><a name="resultsets">Model Resultsets</a></h4>
+	While "findFirst" returns directly and instance of the called class in case of match some records, "find"
+	method returns a <?php echo Tag::classLink("Phalcon_Model_Resultset") ?>. This is a special object
+	that encapsulates all the resultset functionality like traversing, seek to a specific record, counting, etc.
+	These objects are more powerful than standard arrays. One of its greatest features is that it only have once record in memory at the same time.
+	This greatly helps reduce the amount of memory used by the application when working with large amounts of data.
+</div>
+
+<?php echo hyperlight('<?php
+
+//Get all robots
+$robots = Robots::find();
+
+//Traversing with a foreach
+foreach($robots as $robot){
+  echo $robot->name, "\n";
+}
+
+//Traversing with a while
+$robots->rewind();
+while($robots->valid()){
+  $robot = $robots->current();
+  echo $robot->name, "\n";
+  $robots->next();
+}
+
+//Count the resultset
+echo count($robots);
+
+//Alternative way to count the resultset
+echo $robots->count();
+
+//Move the internal cursor to the third robot
+$robots->seek(2);
+$robot = $robots->current()
+
+//Access a robot by its position in the resultset
+$robot = $robots[5];
+
+//Check if there is a record in certain position
+if (isset($robots[3]) {
+   $robot = $robots[3];
+}
+
+//Get the first record in the resultset
+$robot = robots->getFirst();
+
+//Get the last record
+$robot = robots->getLast();
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	Note that resultsets can be serialized to store it to a cache or some backend you want. But also note that
+	this forces to Phalcon_Model to unroll each row in the resultset into a big array consuming more memory,
+	at least for one moment.
+</div>
+
+<?php echo hyperlight('<?php
+
+//Query all records from model parts
+$parts = Parts::find();
+
+//Store the resultset into a file
+file_put_contents("cache.txt", serialize($parts));
+
+//Get parts from file
+$parts = unserialize(file_get_contents("cache.txt"));
+
+//Traverse the parts
+foreach ($parts as $part) {
+   echo $part->id;
+}
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	<h4><a name="binding">Binding Parameters</a></h4>
+	Binding parameters is also supported in Phalcon_Model. The binding process impact the performance minimally
+	but reduce the possibility to be attacked using SQL injection techniques. Both string and integer placeholders are supported.
+	Binding parameters can simply be achieved as follows:
+</div>
+
+<?php echo hyperlight('<?php
+
+//Query robots binding parameters with string placeholders
+$conditions = "name = :name: AND type = :type:";
+$parameters = array("name" => "Robotina", "type" => "maid");
+$robots = Robots::find(array($conditions, "bind" => $parameters));
+
+//Query robots binding parameters with integer placeholders
+$conditions = "name = ?1 AND type = ?2";
+$parameters = array(1 => "Robotina", 2 => "maid");
+$robots = Robots::find(array($conditions, "bind" => $parameters));
+
+//Query robots binding parameters with both string and integer placeholders
+$conditions = "name = :name: AND type = ?1";
+$parameters = array("name" => "Robotina", 1 => "maid");
+$robots = Robots::find(array($conditions, "bind" => $parameters));
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	When use numeric placeholders define it as integers, by example: 1 or 2.
+	In this case "1" or "2" are considered strings and not numbers, so the
+	placeholder could not be sucessfully replaced.
+</div>
+
+<div class="doc-paragraph">
+	With the MySQL adapter strings are automatically escaped using <a href="http://php.net/manual/en/mysqli.real-escape-string.php">mysqli_real_escape_string</a>.
+	That function takes into account the connection charset, so its recommended define it in the connection
+	parameters or in the MySQL server configuration.
+</div>
+
+<div class="doc-paragraph">
+	Binding parameters is available for all the query methods (like find and findFirst) also
+	the calculations methods (count, sum, average, etc).
+</div>
+
+<div class="doc-paragraph">
+	<h4><a name="caching">Caching Resultsets</a></h4>
+	Access to database systems is often one of the most common bottlenecks that reduces
+	the performance of web applications. This is because of the complex connection procedures,
+	among other things, that PHP must do in each request to obtain data from a database system.
+	A well known technique to avoid the continuos access to databases is cache the resultsets
+	obtained from the database in an intermediate and less crowded medium.
+</div>
+
+<div class="doc-paragraph">
+	Phalcon_Model is integrated with the <?php echo Tag::classLink("Phalcon_Cache") ?> component
+	to provide a fancy syntax caching resultsets. The first step to cache a resulset is
+	define a default cache backend in the model manager:
+</div>
+
+<?php echo hyperlight('<?php
+
+//Cache data for one day by default
+$frontendOptions = array(
+  "lifetime" => 86400
+);
+
+//Memcached connection settings
+$backendOptions = array(
+  "host" => "localhost",
+  "port" => "11211"
+);
+
+//Create a memcached cache
+$cache = Phalcon_Cache::factory("Data", "Memcached", $frontendOptions, $backendOptions);
+
+//Set the cache to the models manager
+Phalcon_Model_Manager::getDefault()->setCache($cache);
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	The above example gives you full control over the cache definition and customization.
+	But it could be very verbose for most cases.
+	If you are using models with <?php echo Tag::classLink("Phalcon_Controller_Front") ?>
+	you could setup the cache configuration as part of the bootstrap configuration:
+</div>
+
+<?php echo hyperlight('
+
+$front = Phalcon_Controller_Front::getInstance();
+
+//Setting up framework config
+$config = new Phalcon_Config(array(
+   "database" => array(
+      "adapter" => "Mysql",
+      "host" => "localhost",
+      "username" => "scott",
+      "password" => "cheetah",
+      "name" => "test_db"
+   ),
+   "models" => array(
+      "cache" => array(
+        "adapter" => "File",
+        "cacheDir" => "../app/cache/",
+        "lifetime" => 3600
+      )
+   ),
+   "phalcon" => array(
+      "controllersDir" => "../app/controllers/",
+      "modelsDir" => "../app/models/",
+      "viewsDir" => "../app/views/"
+   )
+));
+
+//Set the configuration
+$front->setConfig($config);
+
+', 'iphp'); ?>
+
+<div class="doc-paragraph">
+	This will define the default cache options for all the caches in the application.
+	Moreover, if you are using ini configuration files you need to add the following
+	section to setup the cache settings:
+</div>
+
+<?php echo hyperlight('
+[models]
+cache.adapter = "Memcached"
+cache.host = "localhost"
+cache.port = 11211
+cache.lifetime = 8600
+', 'iphp'); ?>
+
+<div class="doc-paragraph">
+	Once the cache setup is properly defined you could cache resultsets as follows:
+</div>
+
+<?php echo hyperlight('<?php
+
+//Get products without caching
+$products = Products::find();
+
+//Just cache the resultset. The cache will expire in 1 hour (3600 seconds)
+$products = Products::find(array("cache" => true));
+
+//Cache the resultset only for 5 minutes
+$products = Products::find(array("cache" => 300));
+
+//Cache the resultset only for 5 minutes
+$products = Products::find(array("cache" => 300));
+
+//Cache the resultset with a key pre-defined
+$products = Products::find(array("cache" => array("key" => "my-products-key")));
+
+//Cache the resultset with a key pre-defined and for 2 minutes
+$products = Products::find(array(
+   "cache" => array(
+      "key" => "my-products-key",
+      "lifetime" => 120
+   )
+));
+
+//Using a custom cache
+$products = Products::find(array("cache" => $myCache));
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	By default, Phalcon_Model will create a unique key to store the resultset
+	by generating a md5 hash of the SQL select statement generated internally.
+	This is very practical because it renews the resultset in case of some
+	of the condition's parameters have changed. If you want to control your own
+	cache keys you could use the "key" parameter as seen above.
+</div>
+
+<div class="doc-paragraph">
+	Note that not all resultsets must be cached. Results that change very frequently
+	should not be cached because of the records presented do not represent reality.
+	The same way, those with a lot of records should not be cached as this may
+	be counterproductive in terms of performance.
+</div>
+
+<div class="doc-paragraph">
+	Caching could be also applied to resultsets generated using relationships:
+</div>
+
+<?php echo hyperlight('
+
+//Query some post
+$post = Post::findFirst();
+
+//Get comments related to a post, also cache it
+$comments = $post->getComments(array("cache" => true));
+
+', 'iphp'); ?>
 
 <div class="doc-paragraph">
 	<h3><a name="relationships">Relationships between Models</a></h3>
@@ -334,7 +620,8 @@ CREATE TABLE `parts` (
 class Robots extends Phalcon_Model_Base
 {
 
-  function initialize(){
+  function initialize()
+  {
      $this->hasMany("id", "RobotsParts", "robots_id");
   }
 
@@ -515,7 +802,7 @@ class Parts extends Phalcon_Model_Base
 <div class="doc-paragraph">
 	<h3><a name="calculations">Generating Calculations</a></h3>
 	Calculations are helpers for the well known functions of database systems such as COUNT, SUM, MAX, MIN or AVG.
-	Phalcon_Model allow to use this functions in an easier way.
+	Phalcon_Model allow to use this functions in an easier way:
 </div>
 
 <div class="doc-paragraph">
@@ -1090,6 +1377,82 @@ print_r($dataTypes);
 
 ', 'iphp'); ?>
 
+
+<div class="doc-paragraph">
+	<h4><a name="caching-metadata">Caching Meta-Data</a></h4>
+	Once the application is in a production stage, it is not necessary to query the metadata of
+	the table from the database system each time you use the table. This could be done
+	caching the meta-data using any of the following adapters:
+</div>
+
+<div class="doc-paragraph">
+	<table width="95%" align="center" cellspacing="0">
+		<tr>
+			<th>Adapter</th>
+			<th>Description</th>
+			<th>API</th>
+		</tr>
+		<tr>
+			<td>Memory</td>
+			<td>This adapter is used by default in Phalcon. The meta-data is cached
+			only during the request. When it finishes, the meta-data are released as part
+			of the normal memory of the request. This adapter is perfect when the application
+			is in development so as to refresh the metadata in each request updating new fields added
+			or modifications to existing ones. </td>
+			<td><?php echo Tag::classLink('Phalcon_Model_MetaData_Memory') ?></td>
+		</tr>
+		<tr>
+			<td>Session</td>
+			<td>This adapter stores meta-data in the $_SESSION superglobal.
+			This adapter is recommended only when the application is actually using
+			a few number of models. The meta-data are refreshed everytime
+			a new session starts. This also requires to start the session
+			with session_start before use any of models.</td>
+			<td><?php echo Tag::classLink('Phalcon_Model_MetaData_Session') ?></td>
+		</tr>
+		<tr>
+			<td>Apc</td>
+			<td>The Apc adapter uses the <a href="http://www.php.net/manual/en/book.apc.php">
+			Alternative PHP Cache (APC)</a> to store
+			the table meta-data. You can specify the lifetime of the data with options.
+			This is the most recommended way to store meta-data when the application
+			is in production stage. </td>
+			<td><?php echo Tag::classLink('Phalcon_Model_MetaData_Apc') ?></td>
+		</tr>
+	</table>
+</div>
+
+<div class="doc-paragraph">
+	If you want to have full control over the meta-data caching process.
+	You could replace the active meta-data manager as follows:
+</div>
+
+<?php echo hyperlight('
+
+//Create a meta-data manager with APC
+$metaData = new Phalcon_Model_MetaData("Apc", array(
+   "lifetime" => 3600,
+   "suffix" => "my-suffix"
+));
+
+//Replace the active meta-data manager
+Phalcon_Model_Manager::getDefault()->setMetaData($metaData);
+
+', 'iphp'); ?>
+
+<div class="doc-paragraph">
+	If your application is using a ini configuration file together
+	with <?php echo Tag::classLink('Phalcon_Controller_Front') ?>, add the following section
+	to it:
+</div>
+
+<?php echo hyperlight('
+[models]
+metadata.adapter = "Apc"
+metadata.suffix = my-suffix
+metadata.lifetime = 3600
+', 'iphp'); ?>
+
 <div class="doc-paragraph">
 	<h3><a name="logging">Logging Low-Level SQL Statements</a></h3>
 	When we use high-level abstraction components to access databases (like this ORM),
@@ -1122,6 +1485,40 @@ $logger->close();
 </div>
 
 <?php echo hyperlight('[Mon, 30 Apr 12 13:47:18 -0500][DEBUG][Resource Id #77] INSERT INTO robots (name, created_at) VALUES (\'Robby the Robot\', \'1956-07-21\')', 'php') ?>
+
+<div class="doc-paragraph">
+	<h3><a name="profiling">Profiling SQL Statements</a></h3>
+	Thanks to the underlying component Phalcon_Model called <?php echo Phalcon_Tag::linkTo('documentation/db', 'Phalcon_Db') ?>,
+	it's possible to profile the SQL statements generated by the ORM in order to analyze the performance of database operations.
+	With this you can diagnose performance problems and to discover bottlenecks.
+</div>
+
+<?php echo hyperlight('<?php
+
+//Create a profiler
+$profiler = new Phalcon_Db_Profiler();
+
+//Set the connection profiler
+Phalcon_Db_Pool::getConnection()->setProfiler($profiler);
+
+//Send some SQL statements to the database
+Robots::find();
+Robots::find(array("order" => "name");
+Robots::find(array("limit" => 30);
+
+foreach($profiler->getProfiles() as $profile){
+   echo "SQL Statement: ", $profile->getSQLStatement(), "\n";
+   echo "Start Time: ", $profile->getInitialTime(), "\n";
+   echo "Final Time: ", $profile->getFinalTime(), "\n";
+   echo "Total Elapsed Time: ", $profile->getTotalElapsedSeconds(), "\n";
+}
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	Each generated profile contains the duration in miliseconds that takes
+	each instruction to be completed, and the SQL generated as well.
+</div>
 
 <div class="nav-bar">
 	<table width="90%" align="center">

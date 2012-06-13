@@ -13,7 +13,11 @@ if(isset($refactor[$className])){
 
 	if($refactorClass['implements']){
 		echo '<h3>Implements</h3>';
-		echo '<span class="icon-interface">', join(', ', $refactorClass['implements']), '</span>';
+		$implements = array();
+		foreach($refactorClass['implements'] as $implement){
+			$implements[] = '<a href="http://www.php.net/'.$implement.'">'.$implement.'</a>';
+		}
+		echo '<span class="icon-interface">', join(', ', $implements), '</span>';
 	}
 
 	if(isset($refactorClass['description'])){
@@ -30,10 +34,11 @@ if(isset($refactor[$className])){
 	echo '<h3>Methods</h3>';
 	foreach($refactorClass['methods'] as $name => $method){
 		echo '<div class="method">';
-		echo '<h4>';
+		echo '<h4><a name="', $method, '"></a>';
 		if($method['return']!='unknown'){
 			if(substr($method['return'], 0, 7)=='Phalcon'){
-				echo '<span class="return-value">', Tag::classLink($method['return']), '</span> ';
+				$className = str_replace('[]', '', $method['return']);
+				echo '<span class="return-value">', Tag::classLink($className, $method['return']), '</span> ';
 			} else {
 				echo '<span class="return-value">', $method['return'], '</span> ';
 			}

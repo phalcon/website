@@ -112,9 +112,10 @@ $router->add("/admin/:controller/a/:action/:params", array(
 ', 'php'); ?>
 
 <div class="doc-paragraph">
-	The method add() receives a pattern that could have predefined placeholders and regular expression
-	modifiers. All the routing patterns must start with a slash (/). Additionally, it is not necessary to add
-	regular expression delimiters. All routes patterns are case-insensitive.
+	The method add() receives a pattern that optionally could have predefined placeholders and regular expression
+	modifiers. All the routing patterns must start with a slash character (/). The regular expression syntax used is
+	the same as <a href="http://www.php.net/manual/en/book.pcre.php">PCRE regular expressions</a>.
+	Note that, it is not necessary to add regular expression delimiters, also all routes patterns are case-insensitive.
 </div>
 
 <div class="doc-paragraph">
@@ -215,7 +216,29 @@ class PostsController extends Phalcon_Controller
 }', 'php'); ?>
 
 <div class="doc-paragraph">
-	The following are more examples of custom routes:
+	<h4><a name="shortened-syntax">Shortened Syntax</a></h4>
+	You are not forced to use array as route paths as the alternative syntax is available,
+	any of the following two forms are equivalent:
+</div>
+
+<?php echo hyperlight('
+
+//Shortened form
+$router->add("/posts/{year:[0-9]+}/{title:[a-z\-]+}", "Posts::show");
+
+//Array form:
+$router->add("/posts/([0-9]+)/([a-z\-]+)", array(
+	"controller" => "posts",
+	"action" => "show",
+	"year" => 1,
+	"title" => 2
+));
+
+', 'iphp'); ?>
+
+<div class="doc-paragraph">
+	<h4><a name="examples">Examples</a></h4>
+	The following are examples of custom routes:
 </div>
 
 <?php echo hyperlight('
@@ -258,11 +281,14 @@ $router->add("/manual/([a-z]{2})/([a-z\.]+)\.html", array(
     "file" => 2
 ));
 
+//matches /feed/fr/le-robots-hot-news.atom
+$router->add("/feed/{lang:[a-z]+}/{blog:[a-z\-]+}\.{type:[a-z\-]+}", "Feed::get");
+
 ', 'iphp'); ?>
 
 
 <div class="doc-paragraph">
-	<h3><a name="advanced">Replacing Controller Front Router</a></h3>
+	<h3><a name="replacing-front">Replacing Controller-Front Router</a></h3>
 	If you are using the <?php echo Tag::classLink('Phalcon_Controller_Front') ?> to orquest
 	the MVC control flow, you could replace the default router to define custom routes
 	or alter its standard behavior:

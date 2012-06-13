@@ -82,7 +82,14 @@
 			<ul>
 				<li><?php echo Phalcon_Tag::linkTo('documentation/models#creating', 'Creating Models') ?></li>
 				<li><?php echo Phalcon_Tag::linkTo('documentation/models#understanding', 'Understanding Record To Objects') ?></li>
-				<li><?php echo Phalcon_Tag::linkTo('documentation/models#finding', 'Finding Records') ?></li>
+				<li>
+					<?php echo Phalcon_Tag::linkTo('documentation/models#finding', 'Finding Records') ?>
+					<ul>
+						<li><?php echo Phalcon_Tag::linkTo('documentation/models#resultsets', 'Model Resultsets') ?></li>
+						<li><?php echo Phalcon_Tag::linkTo('documentation/models#binding', 'Binding Parameters') ?></li>
+						<li><?php echo Phalcon_Tag::linkTo('documentation/models#caching', 'Caching Resultsets') ?></li>
+					</ul>
+				</li>
 				<li>
 					<?php echo Phalcon_Tag::linkTo('documentation/models#relationships', 'Relationships between Models') ?>
 					<ul>
@@ -104,6 +111,8 @@
 				<li><?php echo Phalcon_Tag::linkTo('documentation/models#deleting', 'Deleting Records') ?>
 				<li><?php echo Phalcon_Tag::linkTo('documentation/models#transactions', 'Transactions') ?>
 				<li><?php echo Phalcon_Tag::linkTo('documentation/models#meta-data', 'Models Meta-Data') ?>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/models#logging', 'Logging Low-Level SQL Statements') ?>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/models#profiling', 'Profiling SQL Statements') ?>
 			</ul>
 		</li>
 		<li>
@@ -136,6 +145,36 @@
 				<li><?php echo Phalcon_Tag::linkTo('documentation/tags#title', 'Changing dynamically the Document Title') ?></li>
 				<li><?php echo Phalcon_Tag::linkTo('documentation/tags#static', 'Static Content Helpers') ?></li>
 				<li><?php echo Phalcon_Tag::linkTo('documentation/tags#own', 'Creating your own helpers') ?></li>
+			</ul>
+		</li>
+		<li>
+			<?php echo Phalcon_Tag::linkTo('documentation/routing', 'Routing') ?>
+			<ul>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/routing#default', 'Default Behavior') ?></li>
+				<li>
+					<?php echo Phalcon_Tag::linkTo('documentation/routing#advanced', 'Advanced Routing') ?>
+					<ul>
+						<?php echo Phalcon_Tag::linkTo('documentation/routing#shortened-syntax', 'Shortened Syntax') ?>
+						<?php echo Phalcon_Tag::linkTo('documentation/routing#examples', 'Examples') ?>
+					</ul>
+				</li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/routing#replacing-front', 'Replacing Controller-Front Router') ?></li>
+			</ul>
+		</li>
+		<li>
+			<?php echo Phalcon_Tag::linkTo('documentation/dispatching', 'Orchestrating MVC') ?>
+			<ul>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/dispatching#understanding', 'Understanding the default behavior') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/dispatching#dispatch-loop', 'Dispatch Loop') ?></li>
+			</ul>
+		</li>
+		<li>
+			<?php echo Phalcon_Tag::linkTo('documentation/request', 'Request Environment') ?>
+			<ul>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/request#recovering', 'Recovering Values') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/request#controllers', 'Accesing Request from Controllers') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/request#uploading-files', 'Uploading Files') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/request#headers', 'Working with Headers') ?></li>
 			</ul>
 		</li>
 		<li>

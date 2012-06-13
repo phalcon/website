@@ -1,0 +1,199 @@
+
+<div class="nav-bar">
+	<?php echo Phalcon_Tag::linkTo('index', 'Home') ?> » Documentation
+</div>
+
+<div class="doc-paragraph">
+	<h2>Request Environment</h2>
+	Normally, the HTTP client (usually a browser) sends as part of the request headers, files, variables, etc.
+	Take advantage of that information is useful to return a better response to the user.
+	<?php echo Tag::classLink('Phalcon_Request') ?> encapsulates the most important information of the
+	request providing you object-oriented wrappers to access them.
+</div>
+
+<div class="doc-paragraph">
+	As there is only a request enviroment for each request, Phalcon_Requests implements the <a href="http://en.wikipedia.org/wiki/Singleton_pattern">singleton
+	pattern</a> with a lazy initialization. This means that you only have one instance of that class per request.
+</div>
+
+<?php echo hyperlight('<?php
+
+//Getting the singleton instance
+$request = Phalcon_Request::getInstance();
+
+//Check whether the request was made with method POST
+if ($request->isPost() == true) {
+  //Check whether the request was made with Ajax
+  if ($request->isAjax() == true) {
+     echo "Request was made using POST and AJAX";
+  }
+}
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	Phalcon_Request could be used in any part of the application, you only need to get
+	the internal instance of the class by calling Phalcon_Request::getInstance().
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="recovering">Recovering Values</a></h3>
+	PHP automatically fills the superglobals $_GET and $_POST. These variables contains
+	the values present in forms or the parameters sent in the URL. Although they do a very good work,
+	these values can contain extra characters and if aren't treated properly can lead
+	to receive common attacks like <a href="http://en.wikipedia.org/wiki/SQL_injection">SQL injection</a>
+	or <a href="http://en.wikipedia.org/wiki/Cross-site_scripting">Cross Site Scripting (XSS)</a>.
+</div>
+
+<div class="doc-paragraph">
+	For that reason, with Phalcon_Request you can access $_GET and $_POST and sanitize/filter the
+	received values together with <?php echo Tag::classLink('Phalcon_Filter') ?>. The following
+	examples have the same behavior:
+</div>
+
+<?php echo hyperlight('
+
+//Manually applying the filter
+$filter = new Phalcon_Filter();
+$email = $fiter->sanitize($_POST["user_email"], "email");
+
+//Manually applying the filter to the value
+$filter = new Phalcon_Filter();
+$email = $fiter->sanitize($request->getPost("user_email"), "email");
+
+//Automatically applying the filter
+$email = $request->getPost("user_email", "email");
+
+', 'iphp'); ?>
+
+<div class="doc-paragraph">
+	<h3><a name="controllers">Accesing Request from Controllers</a></h3>
+	A common place where surely you will need access the request environment is in the action controllers.
+	There are several reasons to need the Phalcon_Request instance in this stage of the execution.
+	You could access it simply by accesing the $this->request public property of the controller:
+</div>
+
+<?php
+
+echo hyperlight('<?php
+
+class PostsController extends Phalcon_Controller
+{
+
+  function indexAction()
+  {
+
+  }
+
+  function saveAction()
+  {
+
+    //Check if request has made with POST
+    if ($this->request->isPost() == true) {
+
+      //Access POST data
+      $customerName = $this->request->getPost("name");
+      $customerBorn = $this->request->getPost("born");
+
+    }
+
+  }
+
+}
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	<h3><a name="uploading-files">Uploading Files</a></h3>
+	Another common task is deal with file uploads. Phalcon_Request provides you
+	a object-oriented way to access the uploaded files:
+</div>
+
+<?php
+
+echo hyperlight('<?php
+
+class PostsController extends Phalcon_Controller
+{
+
+  function uploadAction()
+  {
+    //Check if the user has uploaded files
+    if ($this->request->hasFiles() == true) {
+       //Print the real file names and sizes
+       foreach ($this->request->getUploadedFiles() as $file){
+          echo $file->getName(), " ", $file->getSize(), "\n";
+       }
+    }
+  }
+
+}
+
+', 'php'); ?>
+
+<div class="doc-paragraph">
+	Each object returned by Phalcon_Request::getUploadedFiles() is an instance of the
+	<?php echo Tag::classLink('Phalcon_Request_File') ?> class. Using the $_FILES superglobal
+	will give you the same behavior. This class only encapsulates the information related
+	to each file uploaded with the request.
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="headers">Working with Headers</a></h3>
+	As mentioned above, request headers contains useful information that might help us
+	to send a better response the the users. The following examples shows how
+	to take advantage of that information:
+</div>
+
+<?php
+
+echo hyperlight('<?php
+
+//get the Http-X-Requested-With header
+$requestedWith = $response->getHeader("X_REQUESTED_WITH");
+if ($requestedWith == "XMLHttpRequest") {
+	echo "The request was made with Ajax";
+}
+
+//Same as above
+if ($request->isAjax()) {
+	echo "The request was made with Ajax";
+}
+
+//Check the request layer
+if ($request->isSecureRequest() == true) {
+    echo "The request was made using a secure layer";
+}
+
+//Get the servers\'s ip address. ie. 192.168.0.100
+$ipAddress = $request->getServerAddress();
+
+//Get the client\'s ip address ie. 201.245.53.51
+$ipAddress = $request->getClientAddress();
+
+//Get the User Agent (HTTP_USER_AGENT)
+$userAgent = $request->getUserAgent();
+
+//Get the best acceptable content by the browser. ie text/xml
+$contentType = $request->getAcceptableContent();
+
+//Get the best charset accepted by the browser. ie. utf-8
+$charset = $request->getBestCharset();
+
+//Get the best language accepted configured in the browser. ie. en-us
+$language = $request->getBestLanguage();
+
+', 'php'); ?>
+
+<div class="nav-bar">
+	<table width="90%" align="center">
+		<tr>
+			<td align="left">
+				<?php echo Phalcon_Tag::linkTo('documentation/dispatching', '← Orchestrating MVC') ?>
+			</td>
+			<td align="right">
+				<?php echo Phalcon_Tag::linkTo('documentation/filter', 'Filtering and Sanitizing →') ?>
+			</td>
+		</tr>
+	</table>
+</div>

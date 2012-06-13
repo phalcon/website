@@ -23,7 +23,7 @@
         array (
           '$defaultAccess' => 
           array (
-            'type' => 'unknown',
+            'type' => 'int',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -484,9 +484,7 @@
   ),
   'Phalcon_Acl_Role' => 
   array (
-    'description' => 'AclRole
-
- This class defines role entity and its description',
+    'description' => 'This class defines role entity and its description',
     'extends' => NULL,
     'implements' => 
     array (
@@ -719,7 +717,7 @@
         array (
           '$keyName' => 
           array (
-            'type' => 'string',
+            'type' => 'int|string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -738,8 +736,15 @@
         array (
           '$keyName' => 
           array (
-            'type' => 'string',
+            'type' => 'int|string',
             'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$lifetime' => 
+          array (
+            'type' => 'long',
+            'optional' => true,
             'default' => NULL,
             'byReference' => false,
           ),
@@ -757,7 +762,7 @@
         array (
           '$keyName' => 
           array (
-            'type' => 'string',
+            'type' => 'int|string',
             'optional' => true,
             'default' => NULL,
             'byReference' => false,
@@ -765,6 +770,13 @@
           '$content' => 
           array (
             'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$lifetime' => 
+          array (
+            'type' => 'long',
             'optional' => true,
             'default' => NULL,
             'byReference' => false,
@@ -790,7 +802,7 @@
         array (
           '$keyName' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string|int',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -882,7 +894,7 @@
         array (
           '$keyName' => 
           array (
-            'type' => 'string',
+            'type' => 'int|string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -901,8 +913,15 @@
         array (
           '$keyName' => 
           array (
-            'type' => 'string',
+            'type' => 'int|string',
             'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$lifetime' => 
+          array (
+            'type' => 'long',
+            'optional' => true,
             'default' => NULL,
             'byReference' => false,
           ),
@@ -920,7 +939,7 @@
         array (
           '$keyName' => 
           array (
-            'type' => 'string',
+            'type' => 'int|string',
             'optional' => true,
             'default' => NULL,
             'byReference' => false,
@@ -928,6 +947,13 @@
           '$content' => 
           array (
             'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$lifetime' => 
+          array (
+            'type' => 'long',
             'optional' => true,
             'default' => NULL,
             'byReference' => false,
@@ -953,7 +979,7 @@
         array (
           '$keyName' => 
           array (
-            'type' => 'unknown',
+            'type' => 'int|string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -1056,7 +1082,7 @@
         array (
           '$keyName' => 
           array (
-            'type' => 'string',
+            'type' => 'int|string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -1075,8 +1101,15 @@
         array (
           '$keyName' => 
           array (
-            'type' => 'string',
+            'type' => 'int|string',
             'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$lifetime' => 
+          array (
+            'type' => 'long',
+            'optional' => true,
             'default' => NULL,
             'byReference' => false,
           ),
@@ -1094,7 +1127,7 @@
         array (
           '$keyName' => 
           array (
-            'type' => 'string',
+            'type' => 'int|string',
             'optional' => true,
             'default' => NULL,
             'byReference' => false,
@@ -1102,6 +1135,13 @@
           '$content' => 
           array (
             'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$lifetime' => 
+          array (
+            'type' => 'long',
             'optional' => true,
             'default' => NULL,
             'byReference' => false,
@@ -1127,7 +1167,7 @@
         array (
           '$keyName' => 
           array (
-            'type' => 'unknown',
+            'type' => 'int|string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -1279,7 +1319,7 @@
         array (
           '$data' => 
           array (
-            'type' => 'unknown',
+            'type' => 'mixed',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -1298,7 +1338,7 @@
         array (
           '$data' => 
           array (
-            'type' => 'unknown',
+            'type' => 'mixed',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -1402,7 +1442,7 @@
       ),
       'beforeStore' => 
       array (
-        'description' => '',
+        'description' => 'Prepare data to be stored',
         'modifiers' => 
         array (
           0 => 'public',
@@ -1411,7 +1451,7 @@
         array (
           '$data' => 
           array (
-            'type' => 'unknown',
+            'type' => 'mixed',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -1430,7 +1470,7 @@
         array (
           '$data' => 
           array (
-            'type' => 'unknown',
+            'type' => 'mixed',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -1534,7 +1574,7 @@
       ),
       'beforeStore' => 
       array (
-        'description' => '',
+        'description' => 'Prepare data to be stored',
         'modifiers' => 
         array (
           0 => 'public',
@@ -1543,7 +1583,7 @@
         array (
           '$data' => 
           array (
-            'type' => 'unknown',
+            'type' => 'mixed',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -1562,7 +1602,7 @@
         array (
           '$data' => 
           array (
-            'type' => 'unknown',
+            'type' => 'mixed',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -1578,22 +1618,22 @@
 
 <pre class="source-code iphp"><span class="comment">//Cache the file for 2 days
 </span><span class="tag">$<span class="identifier">frontendOptions</span></span> = <span class="keyword builtin">array</span>(
-	<span class="string">\'lifetime\'</span> =&gt; <span class="number">172800</span>
+  <span class="string">\'lifetime\'</span> =&gt; <span class="number">172800</span>
 );
 
  <span class="comment">//Set the cache directory
 </span><span class="tag">$<span class="identifier">backendOptions</span></span> = <span class="keyword builtin">array</span>(
-	<span class="string">\'cacheDir\'</span> =&gt; <span class="string">\'../app/cache/\'</span>
+  <span class="string">\'cacheDir\'</span> =&gt; <span class="string">\'../app/cache/\'</span>
 );
 
 <span class="tag">$<span class="identifier">cache</span></span> = <span class="identifier">Phalcon_Cache</span>::<span class="identifier">factory</span>(<span class="string">\'Output\'</span>, <span class="string">\'File\'</span>, <span class="tag">$<span class="identifier">frontendOptions</span></span>, <span class="tag">$<span class="identifier">backendOptions</span></span>);
 
 <span class="tag">$<span class="identifier">content</span></span> = <span class="tag">$<span class="identifier">cache</span></span>-&gt;<span class="identifier">start</span>(<span class="string">\'my-cache\'</span>);
 <span class="keyword">if</span>(<span class="tag">$<span class="identifier">content</span></span>===<span class="keyword literal">null</span>){
-	<span class="keyword builtin">echo</span> <span class="identifier">time</span>();
+  <span class="keyword builtin">echo</span> <span class="identifier">time</span>();
   <span class="tag">$<span class="identifier">cache</span></span>-&gt;<span class="identifier">save</span>();
 } <span class="keyword">else</span> {
-	<span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">content</span></span>;
+  <span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">content</span></span>;
 }</pre>',
     'extends' => NULL,
     'implements' => 
@@ -1809,19 +1849,6 @@
     'type' => 'public',
     'methods' => 
     array (
-      'getInstance' => 
-      array (
-        'description' => 'Gets Phalcon_Controller_Front singleton instance',
-        'modifiers' => 
-        array (
-          0 => 'public',
-          1 => 'static',
-        ),
-        'parameters' => 
-        array (
-        ),
-        'return' => 'Phalcon_Controller_Front',
-      ),
       'setConfig' => 
       array (
         'description' => 'Modifies multipe general settings using a Phalcon_Config object or a stdClass filled with parameters
@@ -2073,7 +2100,7 @@
         array (
           '$request' => 
           array (
-            'type' => 'unknown',
+            'type' => 'Phalcon_Request',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -2174,6 +2201,32 @@
         ),
         'return' => 'Phalcon_View',
       ),
+      'getInstance' => 
+      array (
+        'description' => 'Gets Phalcon_Controller_Front singleton instance',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'Phalcon_Controller_Front',
+      ),
+      'reset' => 
+      array (
+        'description' => 'Resets the internal singleton',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
     ),
   ),
   'Phalcon_Controller' => 
@@ -2184,24 +2237,29 @@
  for processing the incoming requests from the web browser, interrogating the models for data,
  and passing that data on to the views for presentation.
 
-<pre class="source-code iphp"><span class="keyword">class</span> <span class="identifier">PeopleController</span> <span class="keyword">extends</span> <span class="identifier">Phalcon_Controller</span> {
+<pre class="source-code iphp"><span class="keyword">class</span> <span class="identifier">PeopleController</span> <span class="keyword">extends</span> <span class="identifier">Phalcon_Controller</span> 
+{
 
   <span class="comment">//This action will be executed by default
-</span>  <span class="keyword">public</span> <span class="keyword">function</span> <span class="identifier">indexAction</span>(){
+</span>  <span class="keyword">public</span> <span class="keyword">function</span> <span class="identifier">indexAction</span>()
+  {
 
   }
 
-  <span class="keyword">public</span> <span class="keyword">function</span> <span class="identifier">findAction</span>(){
+  <span class="keyword">public</span> <span class="keyword">function</span> <span class="identifier">findAction</span>()
+  {
 
   }
 
-  <span class="keyword">public</span> <span class="keyword">function</span> <span class="identifier">saveAction</span>(){
+  <span class="keyword">public</span> <span class="keyword">function</span> <span class="identifier">saveAction</span>()
+  {
    <span class="comment">//Forwards flow to the index action
 </span>   <span class="keyword">return</span> <span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">_forward</span>(<span class="string">\'people/index\'</span>);
   }
 
   <span class="comment">//This action will be executed when a non existent action is requested
-</span>  <span class="keyword">public</span> <span class="keyword">function</span> <span class="identifier">notFoundAction</span>(){
+</span>  <span class="keyword">public</span> <span class="keyword">function</span> <span class="identifier">notFoundAction</span>()
+  {
 
   }
 
@@ -2302,6 +2360,32 @@
         ),
         'return' => 'unknown',
       ),
+      '_setParam' => 
+      array (
+        'description' => 'Set a dispatching parameter',
+        'modifiers' => 
+        array (
+          0 => 'protected',
+        ),
+        'parameters' => 
+        array (
+          '$index' => 
+          array (
+            'type' => 'mixed',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$value' => 
+          array (
+            'type' => 'mixed',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
       '__get' => 
       array (
         'description' => 'Magic method __get',
@@ -2325,20 +2409,18 @@
   ),
   'Phalcon_Db_Adapter_Mysql' => 
   array (
-    'description' => 'Phalcon_Db_Mysql
-
- Phalcon_Db_Mysql is the Phalcon_Db adapter for MySQL database.
- <pre class="source-code iphp"><span class="comment">//Setting all posible parameters
-</span><span class="tag">$<span class="identifier">config</span></span> = <span class="keyword operator">new</span> <span class="identifier">stdClass</span>();
+    'description' => 'Phalcon_Db_Adapter_Mysql is the Phalcon_Db adapter for the MySQL database.
+ <pre class="source-code iphp">#<span class="identifier">Setting</span> <span class="identifier">all</span> <span class="identifier">posible</span> <span class="identifier">parameters</span>
+<span class="tag">$<span class="identifier">config</span></span> = <span class="keyword operator">new</span> <span class="identifier">stdClass</span>();
 <span class="tag">$<span class="identifier">config</span></span>-&gt;<span class="identifier">host</span> = <span class="string">\'localhost\'</span>;
 <span class="tag">$<span class="identifier">config</span></span>-&gt;<span class="identifier">username</span> = <span class="string">\'machine\'</span>;
 <span class="tag">$<span class="identifier">config</span></span>-&gt;<span class="identifier">password</span> = <span class="string">\'sigma\'</span>;
 <span class="tag">$<span class="identifier">config</span></span>-&gt;<span class="identifier">name</span> = <span class="string">\'swarm\'</span>;
 <span class="tag">$<span class="identifier">config</span></span>-&gt;<span class="identifier">charset</span> = <span class="string">\'utf8\'</span>;
-<span class="tag">$<span class="identifier">config</span></span>-&gt;<span class="identifier">collatio</span> = <span class="string">\'utf8_unicode_ci\'</span>;
+<span class="tag">$<span class="identifier">config</span></span>-&gt;<span class="identifier">collation</span> = <span class="string">\'utf8_unicode_ci\'</span>;
 <span class="tag">$<span class="identifier">config</span></span>-&gt;<span class="identifier">compression</span> = <span class="keyword literal">true</span>;
 
- <span class="tag">$<span class="identifier">connection</span></span> = <span class="identifier">Phalcon_Db</span>::<span class="identifier">factory</span>(<span class="string">\'Mysql\'</span>, <span class="tag">$<span class="identifier">config</span></span>);</pre>',
+<span class="tag">$<span class="identifier">connection</span></span> = <span class="identifier">Phalcon_Db</span>::<span class="identifier">factory</span>(<span class="string">\'Mysql\'</span>, <span class="tag">$<span class="identifier">config</span></span>);</pre>',
     'extends' => NULL,
     'implements' => 
     array (
@@ -2397,8 +2479,10 @@
  When the SQL sent have returned any row, the result is a PHP resource.
  <pre class="source-code iphp"><span class="comment">//Inserting data
 </span> <span class="tag">$<span class="identifier">success</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"INSERT INTO robots VALUES (1, \'Astro Boy\')"</span>);
+ <span class="tag">$<span class="identifier">success</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"INSERT INTO robots VALUES (?, ?)"</span>, <span class="keyword builtin">array</span>(<span class="number">1</span>, <span class="string">\'Astro Boy\'</span>));
  <span class="comment">//Querying data
-</span> <span class="tag">$<span class="identifier">resultset</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"SELECT * FROM robots"</span>);</pre>',
+</span> <span class="tag">$<span class="identifier">resultset</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"SELECT * FROM robots WHERE type=\'mechanical\'"</span>);</pre>
+ $resultset = $connection->query("SELECT * FROM robots WHERE type=?", array("mechanical"));</code>',
         'modifiers' => 
         array (
           0 => 'public',
@@ -2415,6 +2499,20 @@
         ),
         'return' => 'boolean',
       ),
+      'affectedRows' => 
+      array (
+        'description' => 'Returns number of affected rows by the last INSERT/UPDATE/DELETE repoted by MySQL
+ <pre class="source-code iphp"><span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"DELETE FROM robots"</span>);
+<span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">affectedRows</span>(), <span class="string">\' were deleted\'</span>;</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'int',
+      ),
       'close' => 
       array (
         'description' => 'Closes active connection returning success. Phalcon automatically closes and destroys active connections within Phalcon_Db_Pool',
@@ -2427,120 +2525,63 @@
         ),
         'return' => 'boolean',
       ),
-      'fetchArray' => 
+      'getConnectionId' => 
       array (
-        'description' => 'Returns an array of strings that corresponds to the fetched row, or FALSE if there are no more rows.
- This method is affected by the active fetch flag set using Phalcon_Db_Mysql::setFetchMode
- <pre class="source-code iphp"><span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">setFetchMode</span>(<span class="identifier">Phalcon_Db</span>::<span class="identifier">DB_NUM</span>);
-<span class="tag">$<span class="identifier">result</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"SELECT * FROM robots ORDER BY name"</span>);
-<span class="keyword">while</span>(<span class="tag">$<span class="identifier">robot</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">fetchArray</span>(<span class="tag">$<span class="identifier">result</span></span>)){
-  <span class="identifier">print_r</span>(<span class="tag">$<span class="identifier">robot</span></span>);
-}</pre>',
+        'description' => 'Gets the active connection unique identifier. A mysqli object',
         'modifiers' => 
         array (
           0 => 'public',
         ),
         'parameters' => 
         array (
-          '$resultQuery' => 
+          '$asString' => 
           array (
-            'type' => 'resource',
+            'type' => 'boolean',
             'optional' => true,
-            'default' => NULL,
+            'default' => false,
             'byReference' => false,
           ),
         ),
-        'return' => 'boolean',
+        'return' => 'string',
       ),
-      'numRows' => 
+      'escapeString' => 
       array (
-        'description' => 'Gets number of rows returned by a resulset
- <pre class="source-code iphp"><span class="tag">$<span class="identifier">result</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"SELECT * FROM robots ORDER BY name"</span>);
-<span class="keyword builtin">echo</span> <span class="string">\'There are \'</span>, <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">numRows</span>(<span class="tag">$<span class="identifier">result</span></span>), <span class="string">\' in resulset\'</span>;</pre>',
+        'description' => 'Escapes a value to avoid SQL injections',
         'modifiers' => 
         array (
           0 => 'public',
         ),
         'parameters' => 
         array (
-          '$resultQuery' => 
+          '$str' => 
           array (
-            'type' => 'resource',
-            'optional' => true,
-            'default' => NULL,
-            'byReference' => false,
-          ),
-        ),
-        'return' => 'int',
-      ),
-      'dataSeek' => 
-      array (
-        'description' => 'Moves internal resulset cursor to another position letting us to fetch a certain row
- <pre class="source-code iphp"><span class="tag">$<span class="identifier">result</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"SELECT * FROM robots ORDER BY name"</span>);
-<span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">dataSeek</span>(<span class="number">2</span>, <span class="tag">$<span class="identifier">result</span></span>); <span class="comment">// Move to third row on result
-</span> <span class="tag">$<span class="identifier">row</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">fetchArray</span>(<span class="tag">$<span class="identifier">result</span></span>); // <span class="identifier">Fetch</span> <span class="identifier">third</span> <span class="identifier">row</span></pre>',
-        'modifiers' => 
-        array (
-          0 => 'public',
-        ),
-        'parameters' => 
-        array (
-          '$number' => 
-          array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
-          '$resultQuery' => 
-          array (
-            'type' => 'resource',
-            'optional' => true,
-            'default' => NULL,
-            'byReference' => false,
-          ),
         ),
-        'return' => 'int',
+        'return' => 'string',
       ),
-      'affectedRows' => 
+      'bindParams' => 
       array (
-        'description' => 'Returns number of affected rows by the last INSERT/UPDATE/DELETE repoted by MySQL
- <pre class="source-code iphp"><span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"DELETE FROM robots"</span>);
-<span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">affectedRows</span>(), <span class="string">\' affected rows\'</span>;</pre>',
+        'description' => 'Bind params to SQL select',
         'modifiers' => 
         array (
           0 => 'public',
         ),
         'parameters' => 
         array (
-          '$resultQuery' => 
+          '$sqlSelect' => 
           array (
-            'type' => 'resource',
-            'optional' => true,
+            'type' => 'string',
+            'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
-        ),
-        'return' => 'int',
-      ),
-      'setFetchMode' => 
-      array (
-        'description' => 'Changes the fetching mode affecting Phalcon_Db_Mysql::fetchArray
- <pre class="source-code iphp"><span class="comment">//Return array with integer indexes
-</span> <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">setFetchMode</span>(<span class="identifier">Phalcon_Db</span>::<span class="identifier">DB_NUM</span>);
- <span class="comment">//Return associative array without integer indexes
-</span> <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">setFetchMode</span>(<span class="identifier">Phalcon_Db</span>::<span class="identifier">DB_ASSOC</span>);
- <span class="comment">//Return associative array together with integer indexes
-</span> <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">setFetchMode</span>(<span class="identifier">Phalcon_Db</span>::<span class="identifier">DB_BOTH</span>);</pre>',
-        'modifiers' => 
-        array (
-          0 => 'public',
-        ),
-        'parameters' => 
-        array (
-          '$fetchMode' => 
+          '$params' => 
           array (
-            'type' => 'int',
+            'type' => 'array',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -2560,13 +2601,6 @@
           '$errorString' => 
           array (
             'type' => 'string',
-            'optional' => true,
-            'default' => NULL,
-            'byReference' => false,
-          ),
-          '$resultQuery' => 
-          array (
-            'type' => 'resurce',
             'optional' => true,
             'default' => NULL,
             'byReference' => false,
@@ -2657,7 +2691,7 @@
         array (
           '$sqlQuery' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -2711,7 +2745,7 @@
         array (
           '$viewName' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -3151,14 +3185,14 @@
         array (
           '$table' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$schema' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => true,
             'default' => NULL,
             'byReference' => false,
@@ -3237,7 +3271,7 @@
             'byReference' => false,
           ),
         ),
-        'return' => 'array',
+        'return' => 'Phalcon_Db_Index[]',
       ),
       'describeReferences' => 
       array (
@@ -3263,7 +3297,7 @@
             'byReference' => false,
           ),
         ),
-        'return' => 'array',
+        'return' => 'Phalcon_Db_Reference[]',
       ),
       'tableOptions' => 
       array (
@@ -3297,14 +3331,18 @@
   array (
     'description' => 'Allows to define columns to be used on create or alter table operations
 
-<pre class="source-code iphp"><span class="keyword operator">new</span> <span class="identifier">Phalcon_Db_Column</span>(<span class="string">"id"</span>, <span class="keyword builtin">array</span>(
- <span class="string">"type"</span> =&gt;  <span class="identifier">Phalcon_Db_Column</span>::<span class="identifier">TYPE_INTEGER</span>,
- <span class="string">"size"</span> =&gt; <span class="number">10</span>,
- <span class="string">"unsigned"</span> =&gt; <span class="keyword literal">true</span>,
- <span class="string">"notNull"</span> =&gt; <span class="keyword literal">true</span>,
- <span class="string">"autoIncrement"</span> =&gt; <span class="keyword literal">true</span>,
- <span class="string">"first"</span> =&gt; <span class="keyword literal">true</span>
-)),</pre>',
+<pre class="source-code iphp"><span class="comment">//column definition
+</span> <span class="tag">$<span class="identifier">column</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Db_Column</span>(<span class="string">"id"</span>, <span class="keyword builtin">array</span>(
+   <span class="string">"type"</span> =&gt;  <span class="identifier">Phalcon_Db_Column</span>::<span class="identifier">TYPE_INTEGER</span>,
+   <span class="string">"size"</span> =&gt; <span class="number">10</span>,
+   <span class="string">"unsigned"</span> =&gt; <span class="keyword literal">true</span>,
+   <span class="string">"notNull"</span> =&gt; <span class="keyword literal">true</span>,
+   <span class="string">"autoIncrement"</span> =&gt; <span class="keyword literal">true</span>,
+   <span class="string">"first"</span> =&gt; <span class="keyword literal">true</span>
+ ));
+
+ <span class="comment">//add column to existing table
+</span> <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">addColumn</span>(<span class="string">"robots"</span>, <span class="keyword literal">null</span>, <span class="tag">$<span class="identifier">column</span></span>);</pre>',
     'extends' => NULL,
     'implements' => 
     array (
@@ -3480,7 +3518,7 @@
     'constants' => 
     array (
     ),
-    'type' => 'public',
+    'type' => 'abstract',
     'methods' => 
     array (
       'limit' => 
@@ -3495,7 +3533,7 @@
         array (
           '$sqlQuery' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -3644,7 +3682,7 @@
           ),
           '$columnName' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -3851,7 +3889,7 @@
       ),
       '_getTableOptions' => 
       array (
-        'description' => '',
+        'description' => 'Generates SQL to add the table creation options',
         'modifiers' => 
         array (
           0 => 'protected',
@@ -3861,13 +3899,13 @@
         array (
           '$definition' => 
           array (
-            'type' => 'unknown',
+            'type' => 'array',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
         ),
-        'return' => 'unknown',
+        'return' => 'array',
       ),
       'createTable' => 
       array (
@@ -3978,14 +4016,14 @@
         array (
           '$table' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$schema' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => true,
             'default' => NULL,
             'byReference' => false,
@@ -4114,7 +4152,9 @@
   ),
   'Phalcon_Db_Index' => 
   array (
-    'description' => 'Allows to define indexes to be used on tables',
+    'description' => 'Allows to define indexes to be used on tables
+
+ <pre class="source-code iphp"></pre>',
     'extends' => NULL,
     'implements' => 
     array (
@@ -4199,8 +4239,26 @@
   ),
   'Phalcon_Db_Pool' => 
   array (
-    'description' => 'Manages caching of database connections. With the help of Phalcon_Db_Pool, developers can be sure that no new database
- connections will made when calling multiple of times Phalcon_Db_Pool::getConnection.',
+    'description' => 'Manages the caching of database connections. With the help of Phalcon_Db_Pool, developers can be
+ sure that no new database connections will make when calling multiple of times Phalcon_Db_Pool::getConnection().
+
+<pre class="source-code iphp"><span class="tag">$<span class="identifier">configMysql</span></span> = <span class="keyword operator">new</span> <span class="identifier">stdClass</span>();
+<span class="tag">$<span class="identifier">configMysql</span></span>-&gt;<span class="identifier">adapter</span> = <span class="string">\'Mysql\'</span>;
+<span class="tag">$<span class="identifier">configMysql</span></span>-&gt;<span class="identifier">host</span> = <span class="string">\'127.0.0.1\'</span>;
+<span class="tag">$<span class="identifier">configMysql</span></span>-&gt;<span class="identifier">username</span> = <span class="string">\'root\'</span>;
+<span class="tag">$<span class="identifier">configMysql</span></span>-&gt;<span class="identifier">password</span> = <span class="string">\'\'</span>;
+<span class="tag">$<span class="identifier">configMysql</span></span>-&gt;<span class="identifier">name</span> = <span class="string">\'phalcon_test\'</span>;
+
+<span class="identifier">Phalcon_Db_Pool</span>::<span class="identifier">setDefaultDescriptor</span>(<span class="tag">$<span class="identifier">config</span></span>);
+
+#<span class="identifier">Returns</span> <span class="identifier">a</span> <span class="identifier">connection</span>
+<span class="tag">$<span class="identifier">connection</span></span> = <span class="identifier">Phalcon_Db_Pool</span>::<span class="identifier">getConnection</span>();
+
+#<span class="identifier">Returns</span> <span class="identifier">the</span> <span class="identifier">same</span> <span class="identifier">connection</span>
+<span class="tag">$<span class="identifier">connection</span></span> = <span class="identifier">Phalcon_Db_Pool</span>::<span class="identifier">getConnection</span>();
+
+#<span class="identifier">Returns</span> <span class="identifier">a</span> <span class="keyword operator">new</span> <span class="identifier">connection</span>
+<span class="tag">$<span class="identifier">connection</span></span> = <span class="identifier">Phalcon_Db_Pool</span>::<span class="identifier">getConnection</span>(<span class="keyword operator">new</span>);</pre>',
     'extends' => NULL,
     'implements' => 
     array (
@@ -4407,7 +4465,27 @@
     'description' => 'Instances of Phalcon_Db can generate execution profiles
  on SQL statements sent to the relational database. Profiled
  information includes execution time in miliseconds.
- This helps you to identify bottlenecks in your applications.',
+ This helps you to identify bottlenecks in your applications.
+
+<pre class="source-code iphp"><span class="tag">$<span class="identifier">profiler</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Db_Profiler</span>();
+
+ <span class="comment">//Set the connection profiler
+</span> <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">setProfiler</span>(<span class="tag">$<span class="identifier">profiler</span></span>);
+
+ <span class="tag">$<span class="identifier">sql</span></span> = <span class="string">"SELECT buyer_name, quantity, product_name
+ FROM buyers LEFT JOIN products ON
+ buyers.pid=products.id"</span>;
+
+ <span class="comment">//Execute a SQL statement
+</span> <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="tag">$<span class="identifier">sql</span></span>);
+
+ <span class="comment">//Get the last profile in the profiler
+</span> <span class="tag">$<span class="identifier">profile</span></span> = <span class="tag">$<span class="identifier">profiler</span></span>-&gt;<span class="identifier">getLastProfile</span>();
+
+ <span class="keyword builtin">echo</span> <span class="string">"SQL Statement: "</span>, <span class="tag">$<span class="identifier">profile</span></span>-&gt;<span class="identifier">getSQLStatement</span>(), <span class="string">"\\n"</span>;
+ <span class="keyword builtin">echo</span> <span class="string">"Start Time: "</span>, <span class="tag">$<span class="identifier">profile</span></span>-&gt;<span class="identifier">getInitialTime</span>(), <span class="string">"\\n"</span>;
+ <span class="keyword builtin">echo</span> <span class="string">"Final Time: "</span>, <span class="tag">$<span class="identifier">profile</span></span>-&gt;<span class="identifier">getFinalTime</span>(), <span class="string">"\\n"</span>;
+ <span class="keyword builtin">echo</span> <span class="string">"Total Elapsed Time: "</span>, <span class="tag">$<span class="identifier">profile</span></span>-&gt;<span class="identifier">getTotalElapsedSeconds</span>(), <span class="string">"\\n"</span>;</pre>',
     'extends' => NULL,
     'implements' => 
     array (
@@ -4483,7 +4561,7 @@
         'parameters' => 
         array (
         ),
-        'return' => 'array',
+        'return' => 'Phalcon_Db_Profiler_Item[]',
       ),
       'reset' => 
       array (
@@ -4608,14 +4686,14 @@
         array (
           '$referenceName' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$definition' => 
           array (
-            'type' => 'unknown',
+            'type' => 'array',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -4717,16 +4795,137 @@
       ),
     ),
   ),
+  'Phalcon_Db_Result_Mysql' => 
+  array (
+    'description' => 'Phalcon_Db_Result
+
+ Encapsulates the resultset internals
+
+ <pre class="source-code iphp"><span class="tag">$<span class="identifier">result</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"SELECT * FROM robots ORDER BY name"</span>);
+<span class="tag">$<span class="identifier">result</span></span>-&gt;<span class="identifier">setFetchMode</span>(<span class="identifier">Phalcon_Db</span>::<span class="identifier">DB_NUM</span>);
+<span class="keyword">while</span>(<span class="tag">$<span class="identifier">robot</span></span> = <span class="tag">$<span class="identifier">result</span></span>-&gt;<span class="identifier">fetchArray</span>()){
+  <span class="identifier">print_r</span>(<span class="tag">$<span class="identifier">robot</span></span>);
+}</pre>',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
+      '__construct' => 
+      array (
+        'description' => 'Phalcon_Db_Result constructor',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$result' => 
+          array (
+            'type' => 'resource',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'fetchArray' => 
+      array (
+        'description' => 'Returns an array of strings that corresponds to the fetched row, or FALSE if there are no more rows.
+ This method is affected by the active fetch flag set using Phalcon_Db_Result_Mysql::setFetchMode
+ <pre class="source-code iphp"><span class="tag">$<span class="identifier">result</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"SELECT * FROM robots ORDER BY name"</span>);
+<span class="tag">$<span class="identifier">result</span></span>-&gt;<span class="identifier">setFetchMode</span>(<span class="identifier">Phalcon_Db</span>::<span class="identifier">DB_NUM</span>);
+<span class="keyword">while</span>(<span class="tag">$<span class="identifier">robot</span></span> = <span class="tag">$<span class="identifier">result</span></span>-&gt;<span class="identifier">fetchArray</span>()){
+  <span class="identifier">print_r</span>(<span class="tag">$<span class="identifier">robot</span></span>);
+}</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'boolean',
+      ),
+      'numRows' => 
+      array (
+        'description' => 'Gets number of rows returned by a resulset
+ <pre class="source-code iphp"><span class="tag">$<span class="identifier">result</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"SELECT * FROM robots ORDER BY name"</span>);
+<span class="keyword builtin">echo</span> <span class="string">\'There are \'</span>, <span class="tag">$<span class="identifier">result</span></span>-&gt;<span class="identifier">numRows</span>(), <span class="string">\' rows in the resulset\'</span>;</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'int',
+      ),
+      'dataSeek' => 
+      array (
+        'description' => 'Moves internal resulset cursor to another position letting us to fetch a certain row
+ <pre class="source-code iphp"><span class="tag">$<span class="identifier">result</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"SELECT * FROM robots ORDER BY name"</span>);
+<span class="tag">$<span class="identifier">result</span></span>-&gt;<span class="identifier">dataSeek</span>(<span class="number">2</span>); <span class="comment">// Move to third row on result
+</span> <span class="tag">$<span class="identifier">row</span></span> = <span class="tag">$<span class="identifier">result</span></span>-&gt;<span class="identifier">fetchArray</span>(); // <span class="identifier">Fetch</span> <span class="identifier">third</span> <span class="identifier">row</span></pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$number' => 
+          array (
+            'type' => 'int',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'int',
+      ),
+      'setFetchMode' => 
+      array (
+        'description' => 'Changes the fetching mode affecting Phalcon_Db_Mysql::fetchArray
+ <pre class="source-code iphp"><span class="comment">//Return array with integer indexes
+</span> <span class="tag">$<span class="identifier">result</span></span>-&gt;<span class="identifier">setFetchMode</span>(<span class="identifier">Phalcon_Db</span>::<span class="identifier">DB_NUM</span>);
+ <span class="comment">//Return associative array without integer indexes
+</span> <span class="tag">$<span class="identifier">result</span></span>-&gt;<span class="identifier">setFetchMode</span>(<span class="identifier">Phalcon_Db</span>::<span class="identifier">DB_ASSOC</span>);
+ <span class="comment">//Return associative array together with integer indexes
+</span> <span class="tag">$<span class="identifier">result</span></span>-&gt;<span class="identifier">setFetchMode</span>(<span class="identifier">Phalcon_Db</span>::<span class="identifier">DB_BOTH</span>);</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$fetchMode' => 
+          array (
+            'type' => 'int',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+    ),
+  ),
   'Phalcon_Db' => 
   array (
     'description' => 'Phalcon_Db and its related classes provide a simple SQL database interface for Phalcon Framework.
- The Phalcon_Db is the basic class you use to connect your PHP application to a RDBMS.
+ The Phalcon_Db is the basic class you use to connect your PHP application to an RDBMS.
  There is a different adapter class for each brand of RDBMS.
 
- This component is intended to low level database operations. If you want to interact with databases using
+ This component is intended to lower level database operations. If you want to interact with databases using
  high level abstraction use Phalcon_Model.
 
- Phalcon_Db is an abstract class. You only can use it with a database adapter like Phalcon_Db_Mysql
+ Phalcon_Db is an abstract class. You only can use it with a database adapter like Phalcon_Db_Adapter_Mysql
 
  <pre class="source-code iphp"><span class="tag">$<span class="identifier">config</span></span> = <span class="keyword operator">new</span> <span class="identifier">stdClass</span>();
 <span class="tag">$<span class="identifier">config</span></span>-&gt;<span class="identifier">host</span> = <span class="string">\'localhost\'</span>;
@@ -4738,14 +4937,13 @@
 
   <span class="tag">$<span class="identifier">connection</span></span> = <span class="identifier">Phalcon_Db</span>::<span class="identifier">factory</span>(<span class="string">\'Mysql\'</span>, <span class="tag">$<span class="identifier">config</span></span>);
 
-  <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">setFetchMode</span>(<span class="identifier">Phalcon_Db</span>::<span class="identifier">DB_NUM</span>);
   <span class="tag">$<span class="identifier">result</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"SELECT * FROM robots LIMIT 5"</span>);
-  <span class="keyword">while</span>(<span class="tag">$<span class="identifier">robot</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">fetchArray</span>(<span class="tag">$<span class="identifier">result</span></span>)){
+  <span class="tag">$<span class="identifier">result</span></span>-&gt;<span class="identifier">setFetchMode</span>(<span class="identifier">Phalcon_Db</span>::<span class="identifier">DB_NUM</span>);
+  <span class="keyword">while</span>(<span class="tag">$<span class="identifier">robot</span></span> = <span class="tag">$<span class="identifier">result</span></span>-&gt;<span class="identifier">fetchArray</span>()){
     <span class="identifier">print_r</span>(<span class="tag">$<span class="identifier">robot</span></span>);
   }
 
-}
-<span class="keyword">catch</span>(<span class="identifier">Phalcon_Db_Exception</span> <span class="tag">$<span class="identifier">e</span></span>){
+} <span class="keyword">catch</span>(<span class="identifier">Phalcon_Db_Exception</span> <span class="tag">$<span class="identifier">e</span></span>){
 	<span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">e</span></span>-&gt;<span class="identifier">getMessage</span>(), <span class="identifier">PHP_EOL</span>;
 }</pre>',
     'extends' => NULL,
@@ -4861,6 +5059,9 @@
         'description' => 'Returns the first row in a SQL query result
  <pre class="source-code iphp"><span class="comment">//Getting first robot
 </span> <span class="tag">$<span class="identifier">robot</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">fecthOne</span>(<span class="string">"SELECT * FROM robots"</span>);
+ <span class="identifier">print_r</span>(<span class="tag">$<span class="identifier">robot</span></span>);
+ <span class="comment">//Getting first robot with associative indexes only
+</span> <span class="tag">$<span class="identifier">robot</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">fecthOne</span>(<span class="string">"SELECT * FROM robots"</span>, <span class="identifier">Phalcon_Db_Result</span>::<span class="identifier">DB_ASSOC</span>);
  <span class="identifier">print_r</span>(<span class="tag">$<span class="identifier">robot</span></span>);</pre>',
         'modifiers' => 
         array (
@@ -4875,6 +5076,13 @@
             'default' => NULL,
             'byReference' => false,
           ),
+          '$fetchMode' => 
+          array (
+            'type' => 'int',
+            'optional' => true,
+            'default' => 2,
+            'byReference' => false,
+          ),
         ),
         'return' => 'array',
       ),
@@ -4883,6 +5091,11 @@
         'description' => 'Dumps the complete result of a query into an array
  <pre class="source-code iphp"><span class="comment">//Getting all robots
 </span> <span class="tag">$<span class="identifier">robots</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">fetchAll</span>(<span class="string">"SELECT * FROM robots"</span>);
+ <span class="keyword">foreach</span>(<span class="tag">$<span class="identifier">robots</span></span> <span class="keyword operator">as</span> <span class="tag">$<span class="identifier">robot</span></span>){
+    <span class="identifier">print_r</span>(<span class="tag">$<span class="identifier">robot</span></span>);
+ }
+ <span class="comment">//Getting all robots with associative indexes only
+</span> <span class="tag">$<span class="identifier">robots</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">fetchAll</span>(<span class="string">"SELECT * FROM robots"</span>, <span class="identifier">Phalcon_Db_Result</span>::<span class="identifier">DB_ASSOC</span>);
  <span class="keyword">foreach</span>(<span class="tag">$<span class="identifier">robots</span></span> <span class="keyword operator">as</span> <span class="tag">$<span class="identifier">robot</span></span>){
     <span class="identifier">print_r</span>(<span class="tag">$<span class="identifier">robot</span></span>);
  }</pre>',
@@ -4897,6 +5110,13 @@
             'type' => 'string',
             'optional' => false,
             'default' => NULL,
+            'byReference' => false,
+          ),
+          '$fetchMode' => 
+          array (
+            'type' => 'int',
+            'optional' => true,
+            'default' => 2,
             'byReference' => false,
           ),
         ),
@@ -4921,7 +5141,7 @@
         array (
           '$table' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -4970,7 +5190,7 @@
         array (
           '$table' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -5024,7 +5244,7 @@
         array (
           '$table' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -5166,25 +5386,6 @@
         ),
         'return' => 'string',
       ),
-      'getConnectionId' => 
-      array (
-        'description' => 'Gets an active connection unique identifier',
-        'modifiers' => 
-        array (
-          0 => 'public',
-        ),
-        'parameters' => 
-        array (
-          '$asString' => 
-          array (
-            'type' => 'unknown',
-            'optional' => true,
-            'default' => false,
-            'byReference' => false,
-          ),
-        ),
-        'return' => 'string',
-      ),
       '_beforeQuery' => 
       array (
         'description' => 'This method is executed before every SQL statement sent to the database system',
@@ -5248,7 +5449,7 @@
             'byReference' => false,
           ),
         ),
-        'return' => 'Phalcon_Db',
+        'return' => 'Phalcon_Db_Adapter_Mysql|Phalcon_Db_Adapter_Postgresql',
       ),
     ),
   ),
@@ -5357,6 +5558,44 @@
         ),
         'return' => 'string',
       ),
+      'setDefaultController' => 
+      array (
+        'description' => 'Sets the default controller name',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$controllerName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'setDefaultAction' => 
+      array (
+        'description' => 'Sets the default action name',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$actionName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
       'setControllerName' => 
       array (
         'description' => 'Sets the controller name to be dispatched',
@@ -5449,6 +5688,32 @@
         array (
         ),
         'return' => 'array',
+      ),
+      'setParam' => 
+      array (
+        'description' => 'Set a param by its name or numeric index',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$param' => 
+          array (
+            'type' => 'mixed',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$value' => 
+          array (
+            'type' => 'mixed',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
       ),
       'getParam' => 
       array (
@@ -5554,6 +5819,18 @@
         ),
         'return' => 'unknown',
       ),
+      'isFinished' => 
+      array (
+        'description' => 'Checks if the dispatch loop is finished or have more pendent controller to disptach',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'boolean',
+      ),
       'getControllers' => 
       array (
         'description' => 'Returns all instantiated controllers whitin the dispatcher',
@@ -5615,7 +5892,7 @@
 <pre class="source-code iphp"><span class="tag">$<span class="identifier">filter</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Filter</span>();
 <span class="tag">$<span class="identifier">filter</span></span>-&gt;<span class="identifier">sanitize</span>(<span class="string">"some(one)@exa\\\\mple.com"</span>, <span class="string">"email"</span>); <span class="comment">// returns "someone@example.com"
 </span><span class="tag">$<span class="identifier">filter</span></span>-&gt;<span class="identifier">sanitize</span>(<span class="string">"hello&lt;&lt;"</span>, <span class="string">"string"</span>); <span class="comment">// returns "hello"
-</span><span class="tag">$<span class="identifier">filter</span></span>-&gt;<span class="identifier">sanitize</span>(<span class="string">"!100a019"</span>, <span class="string">"int"</span>); <span class="comment">// returns "!100a019"
+</span><span class="tag">$<span class="identifier">filter</span></span>-&gt;<span class="identifier">sanitize</span>(<span class="string">"!100a019"</span>, <span class="string">"int"</span>); <span class="comment">// returns "100019"
 </span><span class="tag">$<span class="identifier">filter</span></span>-&gt;<span class="identifier">sanitize</span>(<span class="string">"!100a019.01a"</span>, <span class="string">"float"</span>); // <span class="identifier">returns</span> <span class="string">"100019.01"</span></pre>',
     'extends' => NULL,
     'implements' => 
@@ -5737,7 +6014,7 @@
           ),
           '$filter' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -5770,7 +6047,7 @@
           ),
           '$filter' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -5789,7 +6066,11 @@
   ),
   'Phalcon_Flash' => 
   array (
-    'description' => 'Shows HTML notifications related to different circumstances. Classes can be stylized using CSS',
+    'description' => 'Shows HTML notifications related to different circumstances. Classes can be stylized using CSS
+
+<pre class="source-code iphp"><span class="identifier">Phalcon_Flash</span>::<span class="identifier">success</span>(<span class="string">"The record was successfully deleted"</span>);
+<span class="identifier">Phalcon_Flash</span>::<span class="identifier">error</span>(<span class="string">"Cannot open the file"</span>);
+<span class="identifier">Phalcon_Flash</span>::<span class="identifier">error</span>(<span class="string">"Cannot open the file"</span>, <span class="string">"alert alert-error"</span>);</pre>',
     'extends' => NULL,
     'implements' => 
     array (
@@ -5797,7 +6078,7 @@
     'constants' => 
     array (
     ),
-    'type' => 'public',
+    'type' => 'abstract',
     'methods' => 
     array (
       'error' => 
@@ -5920,14 +6201,14 @@
     'description' => 'This component helps to load your project classes automatically based on some conventions
 
 <pre class="source-code iphp"><span class="comment">//Creates the autoloader
-</span><span class="tag">$<span class="identifier">loader</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Loader</span>();
+</span> <span class="tag">$<span class="identifier">loader</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Loader</span>();
 
  <span class="comment">//Register some namespaces
-</span><span class="tag">$<span class="identifier">loader</span></span>-&gt;<span class="identifier">registerNamespaces</span>(<span class="keyword builtin">array</span>(
+</span> <span class="tag">$<span class="identifier">loader</span></span>-&gt;<span class="identifier">registerNamespaces</span>(<span class="keyword builtin">array</span>(
    <span class="string">\'Example\\\\Base\'</span> =&gt; <span class="string">\'vendor/example/base/\'</span>,
    <span class="string">\'Example\\\\Adapter\'</span> =&gt; <span class="string">\'vendor/example/adapter/\'</span>
    <span class="string">\'Example\'</span> =&gt; <span class="string">\'vendor/example/\'</span>
-));
+ ));
 
  <span class="comment">//register autoloader
 </span> <span class="tag">$<span class="identifier">loader</span></span>-&gt;<span class="identifier">register</span>();
@@ -5946,7 +6227,7 @@
     array (
       'registerNamespaces' => 
       array (
-        'description' => 'Register namespaces and its related directories',
+        'description' => 'Register namespaces and their related directories',
         'modifiers' => 
         array (
           0 => 'public',
@@ -5955,7 +6236,7 @@
         array (
           '$namespaces' => 
           array (
-            'type' => 'unknown',
+            'type' => 'array',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -5965,7 +6246,7 @@
       ),
       'registerDirs' => 
       array (
-        'description' => 'Register directories on which not found classes could be found',
+        'description' => 'Register directories on which "not found" classes could be found',
         'modifiers' => 
         array (
           0 => 'public',
@@ -5975,6 +6256,25 @@
           '$directories' => 
           array (
             'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'registerClasses' => 
+      array (
+        'description' => 'Register classes and their locations',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$classes' => 
+          array (
+            'type' => 'unknown',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -6017,7 +6317,13 @@
   ),
   'Phalcon_Logger_Adapter_File' => 
   array (
-    'description' => 'Adapter to store logs in plain text files',
+    'description' => 'Adapter to store logs in plain text files
+
+<pre class="source-code iphp"><span class="tag">$<span class="identifier">logger</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Logger</span>(<span class="string">"File"</span>, <span class="string">"app/logs/test.log"</span>);
+<span class="tag">$<span class="identifier">logger</span></span>-&gt;<span class="identifier">log</span>(<span class="string">"This is a message"</span>);
+<span class="tag">$<span class="identifier">logger</span></span>-&gt;<span class="identifier">log</span>(<span class="string">"This is an error"</span>, <span class="identifier">Phalcon_Logger</span>::<span class="identifier">ERROR</span>);
+<span class="tag">$<span class="identifier">logger</span></span>-&gt;<span class="identifier">error</span>(<span class="string">"This is another error"</span>);
+<span class="tag">$<span class="identifier">logger</span></span>-&gt;<span class="identifier">close</span>();</pre>',
     'extends' => NULL,
     'implements' => 
     array (
@@ -6131,14 +6437,14 @@
           ),
           '$type' => 
           array (
-            'type' => 'unknown',
+            'type' => 'int',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$time' => 
           array (
-            'type' => 'unknown',
+            'type' => 'int',
             'optional' => true,
             'default' => 0,
             'byReference' => false,
@@ -6205,7 +6511,7 @@
       ),
       'begin' => 
       array (
-        'description' => 'Starts a transaccion',
+        'description' => 'Starts a transaction',
         'modifiers' => 
         array (
           0 => 'public',
@@ -6253,7 +6559,7 @@
       ),
       '__wakeup' => 
       array (
-        'description' => 'Opens the internal file handler on unserialization',
+        'description' => 'Opens the internal file handler after unserialization',
         'modifiers' => 
         array (
           0 => 'public',
@@ -6822,7 +7128,7 @@
         ),
         'return' => 'Phalcon_Model_Base',
       ),
-      '_createSQLSelectMulti' => 
+      '_createSQLSelect' => 
       array (
         'description' => 'Creates SQL statement which returns many rows',
         'modifiers' => 
@@ -6863,9 +7169,9 @@
         ),
         'return' => 'array',
       ),
-      '_createSQLSelectOne' => 
+      '_getOrCreateResultset' => 
       array (
-        'description' => 'Creates SQL statement which returns many rows',
+        'description' => 'Gets a resulset from the cache or creates one',
         'modifiers' => 
         array (
           0 => 'protected',
@@ -6875,7 +7181,7 @@
         array (
           '$manager' => 
           array (
-            'type' => 'Phalcon_Manager',
+            'type' => 'Phalcon_Model_Manager',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -6890,13 +7196,6 @@
           '$connection' => 
           array (
             'type' => 'Phalcon_Db',
-            'optional' => false,
-            'default' => NULL,
-            'byReference' => false,
-          ),
-          '$select' => 
-          array (
-            'type' => 'unknown',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -6904,53 +7203,19 @@
           '$params' => 
           array (
             'type' => 'array',
-            'optional' => true,
-            'default' => '',
-            'byReference' => false,
-          ),
-        ),
-        'return' => 'array',
-      ),
-      '_createResultset' => 
-      array (
-        'description' => 'Creates a resultset from a SQL statement',
-        'modifiers' => 
-        array (
-          0 => 'protected',
-          1 => 'static',
-        ),
-        'parameters' => 
-        array (
-          '$model' => 
-          array (
-            'type' => 'Phalcon_Model_Base',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
-          '$connection' => 
+          '$unique' => 
           array (
-            'type' => 'Phalcon_Db',
-            'optional' => false,
-            'default' => NULL,
-            'byReference' => false,
-          ),
-          '$select' => 
-          array (
-            'type' => 'array',
-            'optional' => false,
-            'default' => NULL,
-            'byReference' => false,
-          ),
-          '$resultResource' => 
-          array (
-            'type' => 'resource',
+            'type' => 'boolean',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
         ),
-        'return' => 'Phalcon_Model_Resultset',
+        'return' => 'unknown',
       ),
       'setTransaction' => 
       array (
@@ -7195,19 +7460,26 @@
       ),
       '_exists' => 
       array (
-        'description' => '',
+        'description' => 'Checks if the current record already exists or not',
         'modifiers' => 
         array (
           0 => 'protected',
         ),
         'parameters' => 
         array (
+          '$connection' => 
+          array (
+            'type' => 'Phalcon_Db',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
         ),
-        'return' => 'unknown',
+        'return' => 'boolean',
       ),
       '_prepareGroupResult' => 
       array (
-        'description' => '',
+        'description' => 'Generate a SQL SELECT statement for an aggregate',
         'modifiers' => 
         array (
           0 => 'protected',
@@ -7217,21 +7489,21 @@
         array (
           '$function' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$alias' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$parameters' => 
           array (
-            'type' => 'unknown',
+            'type' => 'array',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -7241,7 +7513,7 @@
       ),
       '_getGroupResult' => 
       array (
-        'description' => '',
+        'description' => 'Generate a resulset from an aggreate SQL select',
         'modifiers' => 
         array (
           0 => 'protected',
@@ -7251,34 +7523,34 @@
         array (
           '$connection' => 
           array (
-            'type' => 'unknown',
+            'type' => 'Phalcon_Db',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$params' => 
           array (
-            'type' => 'unknown',
+            'type' => 'array',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
-          '$selectStatement' => 
+          '$sqlSelect' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$alias' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
         ),
-        'return' => 'unknown',
+        'return' => 'array|Phalcon_Model_Resultset',
       ),
       'count' => 
       array (
@@ -7298,7 +7570,7 @@
         array (
           '$parameters' => 
           array (
-            'type' => 'unknown',
+            'type' => 'array',
             'optional' => true,
             'default' => NULL,
             'byReference' => false,
@@ -7324,7 +7596,7 @@
         array (
           '$parameters' => 
           array (
-            'type' => 'unknown',
+            'type' => 'array',
             'optional' => true,
             'default' => NULL,
             'byReference' => false,
@@ -7350,7 +7622,7 @@
         array (
           '$parameters' => 
           array (
-            'type' => 'unknown',
+            'type' => 'array',
             'optional' => true,
             'default' => NULL,
             'byReference' => false,
@@ -7376,7 +7648,7 @@
         array (
           '$parameters' => 
           array (
-            'type' => 'unknown',
+            'type' => 'array',
             'optional' => true,
             'default' => NULL,
             'byReference' => false,
@@ -7402,7 +7674,7 @@
         array (
           '$parameters' => 
           array (
-            'type' => 'unknown',
+            'type' => 'array',
             'optional' => true,
             'default' => NULL,
             'byReference' => false,
@@ -7412,7 +7684,7 @@
       ),
       '_callEvent' => 
       array (
-        'description' => '',
+        'description' => 'Fires an internal event',
         'modifiers' => 
         array (
           0 => 'protected',
@@ -7421,17 +7693,17 @@
         array (
           '$eventName' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
         ),
-        'return' => 'unknown',
+        'return' => 'boolean',
       ),
       '_cancelOperation' => 
       array (
-        'description' => '',
+        'description' => 'Cancel the current operation',
         'modifiers' => 
         array (
           0 => 'protected',
@@ -7439,7 +7711,7 @@
         'parameters' => 
         array (
         ),
-        'return' => 'unknown',
+        'return' => 'boolean',
       ),
       'appendMessage' => 
       array (
@@ -7550,11 +7822,11 @@
         'parameters' => 
         array (
         ),
-        'return' => 'array',
+        'return' => 'Phalcon_Model_Message[]',
       ),
       '_checkForeignKeys' => 
       array (
-        'description' => '',
+        'description' => 'Reads "belongs to" relations and check the virtual foreign keys when inserting or updating records',
         'modifiers' => 
         array (
           0 => 'protected',
@@ -7562,11 +7834,11 @@
         'parameters' => 
         array (
         ),
-        'return' => 'unknown',
+        'return' => 'boolean',
       ),
       '_checkForeignKeysReverse' => 
       array (
-        'description' => '',
+        'description' => 'Reads both "hasMany" and "hasOne" relations and check the virtual foreign keys when deleting records',
         'modifiers' => 
         array (
           0 => 'protected',
@@ -7574,11 +7846,11 @@
         'parameters' => 
         array (
         ),
-        'return' => 'unknown',
+        'return' => 'boolean',
       ),
       '_preSave' => 
       array (
-        'description' => '',
+        'description' => 'Executes internal events before save a record',
         'modifiers' => 
         array (
           0 => 'protected',
@@ -7587,31 +7859,31 @@
         array (
           '$disableEvents' => 
           array (
-            'type' => 'unknown',
+            'type' => 'boolean',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$exists' => 
           array (
-            'type' => 'unknown',
+            'type' => 'boolean',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$identityField' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
         ),
-        'return' => 'unknown',
+        'return' => 'boolean',
       ),
       '_postSave' => 
       array (
-        'description' => '',
+        'description' => 'Executes internal events after save a record',
         'modifiers' => 
         array (
           0 => 'protected',
@@ -7620,31 +7892,31 @@
         array (
           '$disableEvents' => 
           array (
-            'type' => 'unknown',
+            'type' => 'boolean',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$success' => 
           array (
-            'type' => 'unknown',
+            'type' => 'boolean',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$exists' => 
           array (
-            'type' => 'unknown',
+            'type' => 'boolean',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
         ),
-        'return' => 'unknown',
+        'return' => 'boolean',
       ),
       '_doLowInsert' => 
       array (
-        'description' => '',
+        'description' => 'Sends a pre-build INSET SQL statement to the relational database system',
         'modifiers' => 
         array (
           0 => 'protected',
@@ -7653,45 +7925,45 @@
         array (
           '$connection' => 
           array (
-            'type' => 'unknown',
+            'type' => 'Phalcon_Db',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$table' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$dataType' => 
           array (
-            'type' => 'unknown',
+            'type' => 'array',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$dataTypeNumeric' => 
           array (
-            'type' => 'unknown',
+            'type' => 'array',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$identityField' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
         ),
-        'return' => 'unknown',
+        'return' => 'boolean',
       ),
       '_doLowUpdate' => 
       array (
-        'description' => '',
+        'description' => 'Sends a pre-build UPDATE SQL statement to the relational database system',
         'modifiers' => 
         array (
           0 => 'protected',
@@ -7700,38 +7972,38 @@
         array (
           '$connection' => 
           array (
-            'type' => 'unknown',
+            'type' => 'Phalcon_Db',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$table' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$dataType' => 
           array (
-            'type' => 'unknown',
+            'type' => 'array',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$dataTypeNumeric' => 
           array (
-            'type' => 'unknown',
+            'type' => 'array',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
         ),
-        'return' => 'unknown',
+        'return' => 'boolean',
       ),
       'save' => 
       array (
-        'description' => 'Inserts or updates a model instance. Returns true on success or else false .
+        'description' => 'Inserts or updates a model instance. Returning true on success or false otherwise.
  <pre class="source-code iphp"><span class="comment">//Creating a new robot
 </span><span class="tag">$<span class="identifier">robot</span></span> = <span class="keyword operator">new</span> <span class="identifier">Robots</span>();
 <span class="tag">$<span class="identifier">robot</span></span>-&gt;<span class="identifier">type</span> = <span class="string">\'mechanical\'</span>
@@ -7753,7 +8025,7 @@
       ),
       'delete' => 
       array (
-        'description' => 'Deletes a model instance. Returns true on success or else false .
+        'description' => 'Deletes a model instance. Returning true on success or false otherwise.
  <pre class="source-code iphp"><span class="tag">$<span class="identifier">robot</span></span> = <span class="identifier">Robots</span>::<span class="identifier">findFirst</span>(<span class="string">"id=100"</span>);
 <span class="tag">$<span class="identifier">robot</span></span>-&gt;<span class="identifier">delete</span>();
 <span class="keyword">foreach</span>(<span class="identifier">Robots</span>::<span class="identifier">find</span>(<span class="string">"type = \'mechanical\'"</span>) <span class="keyword operator">as</span> <span class="tag">$<span class="identifier">robot</span></span>){
@@ -8026,13 +8298,11 @@
         ),
         'parameters' => 
         array (
-          '$metaDataOptions' => 
+          '$options' => 
           array (
-            'type' => 'array',
+            'type' => 'Phalcon_Config|stdClass',
             'optional' => true,
-            'default' => 
-            array (
-            ),
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -8049,7 +8319,7 @@
         array (
           '$basePath' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -8068,7 +8338,7 @@
         array (
           '$metadata' => 
           array (
-            'type' => 'Phalcon_Model_Metadata',
+            'type' => 'object',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -8087,6 +8357,37 @@
         array (
         ),
         'return' => 'Phalcon_Model_Metadata',
+      ),
+      'setCache' => 
+      array (
+        'description' => 'Overwrites default meta-data manager',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$cache' => 
+          array (
+            'type' => 'object',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'getCache' => 
+      array (
+        'description' => 'Returns default cache backend. This cache will be used to store resultsets and generated SQL',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'Phalcon_Cache_Backend',
       ),
       'setModelsDir' => 
       array (
@@ -8665,6 +8966,18 @@
         ),
         'return' => 'array',
       ),
+      'getCompleteModelsPath' => 
+      array (
+        'description' => 'Returns the complete on which manager is looking for models',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'string',
+      ),
       'autoload' => 
       array (
         'description' => 'Autoload function for model lazy loading',
@@ -8684,16 +8997,44 @@
         ),
         'return' => 'unknown',
       ),
+      'getDefault' => 
+      array (
+        'description' => 'Get the default Phalcon_Model_Manager (usually this first instantiated)',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'Phalcon_Model_Manager',
+      ),
+      'reset' => 
+      array (
+        'description' => 'Resets internal default manager',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
     ),
   ),
   'Phalcon_Model_Message' => 
   array (
     'description' => 'Encapsulates validation info generated before save/delete records fails
 
- <pre class="source-code iphp"><span class="keyword">class</span> <span class="identifier">Robots</span> <span class="identifier">extens</span> <span class="identifier">Phalcon_Model_Base</span> {
+ <pre class="source-code iphp"><span class="keyword">class</span> <span class="identifier">Robots</span> <span class="identifier">extens</span> <span class="identifier">Phalcon_Model_Base</span> 
+{
 
-   <span class="keyword">function</span> <span class="identifier">beforeSave</span>(){
-     <span class="keyword">if</span>(<span class="keyword literal">this</span>-&gt;<span class="identifier">name</span>==<span class="string">\'Peter\'</span>){
+   <span class="keyword">public</span> <span class="keyword">function</span> <span class="identifier">beforeSave</span>()
+   {
+     <span class="keyword">if</span> (<span class="keyword literal">this</span>-&gt;<span class="identifier">name</span> == <span class="string">\'Peter\'</span>) {
         <span class="tag">$<span class="identifier">text</span></span> = <span class="string">"A robot cannot be named Peter"</span>;
         <span class="tag">$<span class="identifier">field</span></span> = <span class="string">"name"</span>;
         <span class="tag">$<span class="identifier">type</span></span> = <span class="string">"InvalidValue"</span>;
@@ -8701,6 +9042,7 @@
         <span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">appendMessage</span>(<span class="tag">$<span class="identifier">message</span></span>);
      }
    }
+
  }</pre>',
     'extends' => NULL,
     'implements' => 
@@ -8872,56 +9214,21 @@
       ),
     ),
   ),
-  'Phalcon_Model_MetaData_Memory' => 
+  'Phalcon_Model_MetaData_Apc' => 
   array (
-    'description' => 'Stores model meta-data in memory. Data will be erased when the request finishes',
-    'extends' => NULL,
-    'implements' => 
-    array (
-    ),
-    'constants' => 
-    array (
-    ),
-    'type' => 'public',
-    'methods' => 
-    array (
-      'read' => 
-      array (
-        'description' => '',
-        'modifiers' => 
-        array (
-          0 => 'public',
-        ),
-        'parameters' => 
-        array (
-        ),
-        'return' => 'unknown',
-      ),
-      'write' => 
-      array (
-        'description' => '',
-        'modifiers' => 
-        array (
-          0 => 'public',
-        ),
-        'parameters' => 
-        array (
-          '$data' => 
-          array (
-            'type' => 'unknown',
-            'optional' => false,
-            'default' => NULL,
-            'byReference' => false,
-          ),
-        ),
-        'return' => 'unknown',
-      ),
-    ),
-  ),
-  'Phalcon_Model_MetaData_Session' => 
-  array (
-    'description' => 'Stores model meta-data in session. Data will erase when the session finishes.
- Meta-data are permanent while the session is active',
+    'description' => 'Stores model meta-data in the APC cache. Data will erased if the web server is restarted
+
+ By default meta-data is stored 48 hours (172800 seconds)
+
+ You can query the meta-data by printing apc_fetch(\'$PMM$\') or apc_fetch(\'$PMM$my-local-app\')
+
+<pre class="source-code iphp"><span class="tag">$<span class="identifier">modelManager</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Model_Manager</span>();
+
+ <span class="tag">$<span class="identifier">metaData</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Model_Metadata</span>(<span class="string">\'Apc\'</span>, <span class="keyword builtin">array</span>(
+    <span class="string">\'sufix\'</span> =&gt; <span class="string">\'my-app-id\'</span>,
+    <span class="string">\'lifetime\'</span> =&gt; <span class="number">86400</span>
+ ));
+ <span class="tag">$<span class="identifier">modelManager</span></span>-&gt;<span class="identifier">setMetaData</span>(<span class="tag">$<span class="identifier">metaData</span></span>);</pre>',
     'extends' => NULL,
     'implements' => 
     array (
@@ -8934,7 +9241,7 @@
     array (
       '__construct' => 
       array (
-        'description' => '',
+        'description' => 'Phalcon_Model_MetaData_Apc constructor',
         'modifiers' => 
         array (
           0 => 'public',
@@ -8943,7 +9250,7 @@
         array (
           '$options' => 
           array (
-            'type' => 'unknown',
+            'type' => 'Phalcon_Config|stdClass',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -8953,7 +9260,7 @@
       ),
       'read' => 
       array (
-        'description' => '',
+        'description' => 'Reads meta-data from APC',
         'modifiers' => 
         array (
           0 => 'public',
@@ -8961,11 +9268,11 @@
         'parameters' => 
         array (
         ),
-        'return' => 'unknown',
+        'return' => 'array',
       ),
       'write' => 
       array (
-        'description' => '',
+        'description' => 'Writes the meta-data to APC',
         'modifiers' => 
         array (
           0 => 'public',
@@ -8974,7 +9281,133 @@
         array (
           '$data' => 
           array (
-            'type' => 'unknown',
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+    ),
+  ),
+  'Phalcon_Model_MetaData_Memory' => 
+  array (
+    'description' => 'Stores model meta-data in memory. Data will be erased when the request finishes
+
+ <pre class="source-code iphp"><span class="tag">$<span class="identifier">modelManager</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Model_Manager</span>();
+
+ <span class="tag">$<span class="identifier">metaData</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Model_Metadata</span>(<span class="string">\'Memory\'</span>);
+ <span class="tag">$<span class="identifier">modelManager</span></span>-&gt;<span class="identifier">setMetaData</span>(<span class="tag">$<span class="identifier">metaData</span></span>);</pre>',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
+      'read' => 
+      array (
+        'description' => 'Reads the meta-data from temporal memory',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'array',
+      ),
+      'write' => 
+      array (
+        'description' => 'Writes the meta-data to temporal memory',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$data' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+    ),
+  ),
+  'Phalcon_Model_MetaData_Session' => 
+  array (
+    'description' => 'Stores model meta-data in session. Data will erase when the session finishes.
+ Meta-data are permanent while the session is active.
+
+ You can query the meta-data by printing $_SESSION[\'$PMM$\']
+
+<pre class="source-code iphp"><span class="tag">$<span class="identifier">modelManager</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Model_Manager</span>();
+
+ <span class="tag">$<span class="identifier">metaData</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Model_Metadata</span>(<span class="string">\'Session\'</span>, <span class="keyword builtin">array</span>(
+    <span class="string">\'sufix\'</span> =&gt; <span class="string">\'my-app-id\'</span>
+ ));
+ <span class="tag">$<span class="identifier">modelManager</span></span>-&gt;<span class="identifier">setMetaData</span>(<span class="tag">$<span class="identifier">metaData</span></span>);</pre>',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
+      '__construct' => 
+      array (
+        'description' => 'Phalcon_Model_MetaData_Session constructor',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$options' => 
+          array (
+            'type' => 'Phalcon_Config|stdClass',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'read' => 
+      array (
+        'description' => 'Reads meta-data from $_SESSION',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'array',
+      ),
+      'write' => 
+      array (
+        'description' => 'Writes the meta-data to $_SESSION',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$data' => 
+          array (
+            'type' => 'array',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -9177,7 +9610,31 @@
       ),
       'storeMetaData' => 
       array (
-        'description' => 'Stores meta-data using an adapter',
+        'description' => 'Stores meta-data using to the internal adapter',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
+      'isEmpty' => 
+      array (
+        'description' => 'Checks if the internal meta-data container is empty',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'boolean',
+      ),
+      'reset' => 
+      array (
+        'description' => 'Resets internal meta-data in order to regenerate it',
         'modifiers' => 
         array (
           0 => 'public',
@@ -9380,7 +9837,7 @@
             'byReference' => false,
           ),
         ),
-        'return' => 'Phalcon_Model_Query $query',
+        'return' => 'Phalcon_Model_Query',
       ),
     ),
   ),
@@ -9437,9 +9894,9 @@
             'default' => NULL,
             'byReference' => false,
           ),
-          '$resultResource' => 
+          '$result' => 
           array (
-            'type' => 'resource',
+            'type' => 'Phalcon_Model_Result',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -9518,7 +9975,7 @@
         array (
           '$position' => 
           array (
-            'type' => 'unknown',
+            'type' => 'int',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -9613,7 +10070,7 @@
         array (
           '$offset' => 
           array (
-            'type' => 'unknown',
+            'type' => 'int',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -9645,6 +10102,18 @@
         ),
         'return' => 'Phalcon_Model_Base',
       ),
+      'isFresh' => 
+      array (
+        'description' => 'Tell if the resultset if fresh or an old cached',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'boolean',
+      ),
       'serialize' => 
       array (
         'description' => 'Serializing a resultset will dump all related rows into a big array',
@@ -9655,7 +10124,7 @@
         'parameters' => 
         array (
         ),
-        'return' => 'unknown',
+        'return' => 'string',
       ),
       'unserialize' => 
       array (
@@ -9668,7 +10137,7 @@
         array (
           '$data' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -9759,7 +10228,7 @@
         array (
           '$property' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -9798,7 +10267,22 @@
   ),
   'Phalcon_Model_Validator_Email' => 
   array (
-    'description' => 'Let to validate that email fields has correct values',
+    'description' => 'Allows to validate if email fields has correct values
+
+<pre class="source-code iphp"><span class="keyword">class</span> <span class="identifier">Subscriptors</span> <span class="keyword">extends</span> <span class="identifier">Phalcon_Model_Base</span> 
+{
+
+  <span class="keyword">public</span> <span class="keyword">function</span> <span class="identifier">validation</span>()
+  {
+      <span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">validate</span>(<span class="string">\'Email\'</span>, <span class="keyword builtin">array</span>(
+          <span class="string">\'field\'</span> =&gt; <span class="string">\'electronic_mail\'</span>
+      ));
+      <span class="keyword">if</span> (<span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">validationHasFailed</span>() == <span class="keyword literal">true</span>){
+          <span class="keyword">return</span> <span class="keyword literal">false</span>;
+      }
+  }
+
+}</pre>',
     'extends' => NULL,
     'implements' => 
     array (
@@ -9829,17 +10313,19 @@
 
  Check if a value is not included into a list of values
 
-<pre class="source-code iphp"><span class="keyword">class</span> <span class="identifier">Subscriptors</span> <span class="keyword">extends</span> <span class="identifier">Phalcon_Model_Base</span> {
+<pre class="source-code iphp"><span class="keyword">class</span> <span class="identifier">Subscriptors</span> <span class="keyword">extends</span> <span class="identifier">Phalcon_Model_Base</span> 
+{
 
-	<span class="keyword">function</span> <span class="identifier">validation</span>(){
- 		<span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">validate</span>(<span class="string">\'ExclusionIn\'</span>, <span class="keyword builtin">array</span>(
-			<span class="string">\'field\'</span> =&gt; <span class="string">\'status\'</span>,
-			<span class="string">\'domain\'</span> =&gt; <span class="keyword builtin">array</span>(<span class="string">\'A\'</span>, <span class="string">\'I\'</span>)
-		));
-		<span class="keyword">if</span>(<span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">validationHasFailed</span>()==<span class="keyword literal">true</span>){
-			<span class="keyword">return</span> <span class="keyword literal">false</span>;
-		}
-	}
+  <span class="keyword">public</span> <span class="keyword">function</span> <span class="identifier">validation</span>()
+  {
+      <span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">validate</span>(<span class="string">\'ExclusionIn\'</span>, <span class="keyword builtin">array</span>(
+          <span class="string">\'field\'</span> =&gt; <span class="string">\'status\'</span>,
+          <span class="string">\'domain\'</span> =&gt; <span class="keyword builtin">array</span>(<span class="string">\'A\'</span>, <span class="string">\'I\'</span>)
+      ));
+      <span class="keyword">if</span> (<span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">validationHasFailed</span>() == <span class="keyword literal">true</span>){
+          <span class="keyword">return</span> <span class="keyword literal">false</span>;
+      }
+  }
 
 }</pre>',
     'extends' => NULL,
@@ -9882,17 +10368,19 @@
   array (
     'description' => 'Check if a value is included into a list of values
 
-<pre class="source-code iphp"><span class="keyword">class</span> <span class="identifier">Subscriptors</span> <span class="keyword">extends</span> <span class="identifier">Phalcon_Model_Base</span> {
+<pre class="source-code iphp"><span class="keyword">class</span> <span class="identifier">Subscriptors</span> <span class="keyword">extends</span> <span class="identifier">Phalcon_Model_Base</span> 
+{
 
-	<span class="keyword">function</span> <span class="identifier">validation</span>(){
- 		<span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">validate</span>(<span class="string">\'InclusionIn\'</span>, <span class="keyword builtin">array</span>(
-			<span class="string">\'field\'</span> =&gt; <span class="string">\'status\'</span>,
-			<span class="string">\'domain\'</span> =&gt; <span class="keyword builtin">array</span>(<span class="string">\'P\'</span>, <span class="string">\'I\'</span>)
-		));
-		<span class="keyword">if</span>(<span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">validationHasFailed</span>()==<span class="keyword literal">true</span>){
-			<span class="keyword">return</span> <span class="keyword literal">false</span>;
-		}
-	}
+  <span class="keyword">public</span> <span class="keyword">function</span> <span class="identifier">validation</span>()
+  {
+      <span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">validate</span>(<span class="string">\'InclusionIn\'</span>, <span class="keyword builtin">array</span>(
+          <span class="string">\'field\'</span> =&gt; <span class="string">\'status\'</span>,
+          <span class="string">\'domain\'</span> =&gt; <span class="keyword builtin">array</span>(<span class="string">\'P\'</span>, <span class="string">\'I\'</span>)
+      ));
+      <span class="keyword">if</span> (<span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">validationHasFailed</span>()==<span class="keyword literal">true</span>) {
+          <span class="keyword">return</span> <span class="keyword literal">false</span>;
+      }
+  }
 
 }</pre>',
     'extends' => NULL,
@@ -9933,7 +10421,22 @@
   ),
   'Phalcon_Model_Validator_Numericality' => 
   array (
-    'description' => '',
+    'description' => 'Allows to validate if a field has a valid numeric format
+
+<pre class="source-code iphp"><span class="keyword">class</span> <span class="identifier">Posts</span> <span class="keyword">extends</span> <span class="identifier">Phalcon_Model_Base</span> 
+{
+
+  <span class="keyword">public</span> <span class="keyword">function</span> <span class="identifier">validation</span>()
+  {
+      <span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">validate</span>(<span class="string">\'Numericality\'</span>, <span class="keyword builtin">array</span>(
+          <span class="string">\'field\'</span> =&gt; <span class="string">\'year\'</span>
+      ));
+      <span class="keyword">if</span> (<span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">validationHasFailed</span>() == <span class="keyword literal">true</span>){
+          <span class="keyword">return</span> <span class="keyword literal">false</span>;
+      }
+  }
+
+}</pre>',
     'extends' => NULL,
     'implements' => 
     array (
@@ -9960,19 +10463,21 @@
   ),
   'Phalcon_Model_Validator_Regex' => 
   array (
-    'description' => 'Validate that the value of a field matches a regular expression
+    'description' => 'Allows to validate if the value of a field matches a regular expression
 
-<pre class="source-code iphp"><span class="keyword">class</span> <span class="identifier">Subscriptors</span> <span class="keyword">extends</span> <span class="identifier">Phalcon_Model_Base</span> {
+<pre class="source-code iphp"><span class="keyword">class</span> <span class="identifier">Subscriptors</span> <span class="keyword">extends</span> <span class="identifier">Phalcon_Model_Base</span> 
+{
 
-	<span class="keyword">function</span> <span class="identifier">validation</span>(){
-		<span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">validate</span>(<span class="string">\'Regex\'</span>, <span class="keyword builtin">array</span>(
-			<span class="string">\'field\'</span> =&gt; <span class="string">\'created_at\'</span>,
+  <span class="keyword">public</span> <span class="keyword">function</span> <span class="identifier">validation</span>()
+  {
+      <span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">validate</span>(<span class="string">\'Regex\'</span>, <span class="keyword builtin">array</span>(
+          <span class="string">\'field\'</span> =&gt; <span class="string">\'created_at\'</span>,
           <span class="string">\'pattern\'</span> =&gt; <span class="string">\'/^[0-9]{4}[-\\/](0[1-9]|1[12])[-\\/](0[1-9]|[12][0-9]|3[01])$/\'</span>
-		));
-		<span class="keyword">if</span>(<span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">validationHasFailed</span>()==<span class="keyword literal">true</span>){
-			<span class="keyword">return</span> <span class="keyword literal">false</span>;
-		}
-	}
+      ));
+      <span class="keyword">if</span> (<span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">validationHasFailed</span>() == <span class="keyword literal">true</span>){
+          <span class="keyword">return</span> <span class="keyword literal">false</span>;
+      }
+  }
 
 }</pre>',
     'extends' => NULL,
@@ -10016,16 +10521,18 @@
     'description' => 'Validates that a field or a combination of a set of fields are not
  present more than once in the existing records of the related table
 
-<pre class="source-code iphp"><span class="keyword">class</span> <span class="identifier">Subscriptors</span> <span class="keyword">extends</span> <span class="identifier">Phalcon_Model_Base</span> {
+<pre class="source-code iphp"><span class="keyword">class</span> <span class="identifier">Subscriptors</span> <span class="keyword">extends</span> <span class="identifier">Phalcon_Model_Base</span> 
+{
 
-	<span class="keyword">function</span> <span class="identifier">validation</span>(){
-		<span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">validate</span>(<span class="string">\'Uniqueness\'</span>, <span class="keyword builtin">array</span>(
-			<span class="string">\'field\'</span> =&gt; <span class="string">\'email\'</span>
-		));
-		<span class="keyword">if</span>(<span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">validationHasFailed</span>()==<span class="keyword literal">true</span>){
-			<span class="keyword">return</span> <span class="keyword literal">false</span>;
-		}
-	}
+  <span class="keyword">public</span> <span class="keyword">function</span> <span class="identifier">validation</span>()
+  {
+      <span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">validate</span>(<span class="string">\'Uniqueness\'</span>, <span class="keyword builtin">array</span>(
+          <span class="string">\'field\'</span> =&gt; <span class="string">\'email\'</span>
+      ));
+      <span class="keyword">if</span> (<span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">validationHasFailed</span>() == <span class="keyword literal">true</span>) {
+          <span class="keyword">return</span> <span class="keyword literal">false</span>;
+      }
+  }
 
 }</pre>',
     'extends' => NULL,
@@ -10054,7 +10561,7 @@
   ),
   'Phalcon_Model_Validator' => 
   array (
-    'description' => '',
+    'description' => 'This is the base class for all the Phalcon_Model buit-in validators',
     'extends' => NULL,
     'implements' => 
     array (
@@ -10083,7 +10590,7 @@
           ),
           '$fieldName' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -10248,7 +10755,7 @@
         'parameters' => 
         array (
         ),
-        'return' => 'ActiveRecord',
+        'return' => 'Phalcon_Model_Base',
       ),
       'checkOptions' => 
       array (
@@ -10434,42 +10941,48 @@
   array (
     'description' => 'Phalcon_Paginator is designed to simplify building of pagination on views
 
- <pre class="source-code iphp"><span class="keyword">use</span> <span class="identifier">Tag</span> <span class="keyword operator">as</span> <span class="identifier">Phalcon_Tag</span>;
+ <pre class="source-code iphp"><span class="comment">//Use an alias for Phalcon_Tag
+</span> <span class="keyword">use</span> <span class="identifier">Tag</span> <span class="keyword operator">as</span> <span class="identifier">Phalcon_Tag</span>;
 
-  <span class="tag">$<span class="identifier">numberPage</span></span> = (<span class="keyword type">int</span>) <span class="tag">$<span class="identifier">_GET</span></span>[<span class="string">\'page\'</span>];
+ <span class="comment">//Gets the active page number
+</span> <span class="tag">$<span class="identifier">numberPage</span></span> = (<span class="keyword type">int</span>) <span class="tag">$<span class="identifier">_GET</span></span>[<span class="string">\'page\'</span>];
 
-  <span class="tag">$<span class="identifier">paginator</span></span> = <span class="identifier">Phalcon_Paginator</span>::<span class="identifier">factory</span>(<span class="string">\'Model\'</span>, <span class="keyword builtin">array</span>(
-     <span class="string">\'data\'</span> =&gt; <span class="tag">$<span class="identifier">robots</span></span>,
-     <span class="string">\'limit\'</span> =&gt; <span class="number">10</span>,
-     <span class="string">\'page\'</span> =&gt; <span class="tag">$<span class="identifier">numberPage</span></span>
-  ));
-  <span class="tag">$<span class="identifier">page</span></span> = <span class="tag">$<span class="identifier">paginator</span></span>-&gt;<span class="identifier">getPaginate</span>();
- ?&gt;
+ <span class="comment">//Create a Model paginator
+</span> <span class="tag">$<span class="identifier">paginator</span></span> = <span class="identifier">Phalcon_Paginator</span>::<span class="identifier">factory</span>(<span class="string">\'Model\'</span>, <span class="keyword builtin">array</span>(
+   <span class="string">\'data\'</span> =&gt; <span class="tag">$<span class="identifier">robots</span></span>,
+   <span class="string">\'limit\'</span> =&gt; <span class="number">10</span>,
+   <span class="string">\'page\'</span> =&gt; <span class="tag">$<span class="identifier">numberPage</span></span>
+ ));
 
-  &lt;<span class="identifier">table</span>&gt;
-   &lt;<span class="identifier">tr</span>&gt;
-     &lt;<span class="identifier">th</span>&gt;<span class="identifier">Id</span>&lt;/<span class="identifier">th</span>&gt;
-     &lt;<span class="identifier">th</span>&gt;<span class="identifier">Name</span>&lt;/<span class="identifier">th</span>&gt;
-     &lt;<span class="identifier">th</span>&gt;<span class="identifier">Type</span>&lt;/<span class="identifier">th</span>&gt;
-   &lt;/<span class="identifier">tr</span>&gt;
-   <span class="keyword">foreach</span>(<span class="tag">$<span class="identifier">page</span></span>-&gt;<span class="identifier">items</span> <span class="keyword operator">as</span> <span class="tag">$<span class="identifier">item</span></span>){ ?&gt;
-    &lt;<span class="identifier">tr</span>&gt;
-     &lt;<span class="identifier">td</span>&gt; <span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">item</span></span>-&gt;<span class="identifier">id</span> ?&gt;&lt;/<span class="identifier">td</span>&gt;
-     &lt;<span class="identifier">td</span>&gt; <span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">item</span></span>-&gt;<span class="identifier">name</span> ?&gt;&lt;/<span class="identifier">td</span>&gt;
-     &lt;<span class="identifier">td</span>&gt; <span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">item</span></span>-&gt;<span class="identifier">type</span> ?&gt;&lt;/<span class="identifier">td</span>&gt;
-    &lt;/<span class="identifier">tr</span>&gt;
-   } ?&gt;
-  &lt;/<span class="identifier">table</span>&gt;
+ <span class="comment">//Get the active page
+</span> <span class="tag">$<span class="identifier">page</span></span> = <span class="tag">$<span class="identifier">paginator</span></span>-&gt;<span class="identifier">getPaginate</span>();
 
-  &lt;<span class="identifier">table</span>&gt;
-    &lt;<span class="identifier">tr</span>&gt;
-       &lt;<span class="identifier">td</span>&gt;&lt;?= <span class="identifier">Tag</span>::<span class="identifier">linkTo</span>(<span class="string">"robots/search"</span>, <span class="string">"First"</span>) ?&gt;&lt;/<span class="identifier">td</span>&gt;
-       &lt;<span class="identifier">td</span>&gt;&lt;?= <span class="identifier">Tag</span>::<span class="identifier">linkTo</span>(<span class="string">"robots/search?page="</span>.<span class="tag">$<span class="identifier">page</span></span>-&gt;<span class="identifier">before</span>, <span class="string">"Previous"</span>) ?&gt;&lt;/<span class="identifier">td</span>&gt;
-       &lt;<span class="identifier">td</span>&gt;&lt;?= <span class="identifier">Tag</span>::<span class="identifier">linkTo</span>(<span class="string">"robots/search?page="</span>.<span class="tag">$<span class="identifier">page</span></span>-&gt;<span class="identifier">next</span>, <span class="string">"Next"</span>) ?&gt;&lt;/<span class="identifier">td</span>&gt;
-       &lt;<span class="identifier">td</span>&gt;&lt;?= <span class="identifier">Tag</span>::<span class="identifier">linkTo</span>(<span class="string">"robots/search?page="</span>.<span class="tag">$<span class="identifier">page</span></span>-&gt;<span class="identifier">last</span>, <span class="string">"Last"</span>) ?&gt;&lt;/<span class="identifier">td</span>&gt;
-       &lt;<span class="identifier">td</span>&gt; <span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">page</span></span>-&gt;<span class="identifier">current</span>, <span class="string">"/"</span>, <span class="tag">$<span class="identifier">page</span></span>-&gt;<span class="identifier">total_pages</span> ?&gt;&lt;/<span class="identifier">td</span>&gt;
-    &lt;/<span class="identifier">tr</span>&gt;
-  &lt;/<span class="identifier">table</span>&gt;</pre>',
+?&gt;
+
+&lt;<span class="identifier">table</span>&gt;
+ &lt;<span class="identifier">tr</span>&gt;
+   &lt;<span class="identifier">th</span>&gt;<span class="identifier">Id</span>&lt;/<span class="identifier">th</span>&gt;
+   &lt;<span class="identifier">th</span>&gt;<span class="identifier">Name</span>&lt;/<span class="identifier">th</span>&gt;
+   &lt;<span class="identifier">th</span>&gt;<span class="identifier">Type</span>&lt;/<span class="identifier">th</span>&gt;
+ &lt;/<span class="identifier">tr</span>&gt;
+  <span class="keyword">foreach</span>(<span class="tag">$<span class="identifier">page</span></span>-&gt;<span class="identifier">items</span> <span class="keyword operator">as</span> <span class="tag">$<span class="identifier">item</span></span>){ ?&gt;
+  &lt;<span class="identifier">tr</span>&gt;
+   &lt;<span class="identifier">td</span>&gt; <span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">item</span></span>-&gt;<span class="identifier">id</span> ?&gt;&lt;/<span class="identifier">td</span>&gt;
+   &lt;<span class="identifier">td</span>&gt; <span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">item</span></span>-&gt;<span class="identifier">name</span> ?&gt;&lt;/<span class="identifier">td</span>&gt;
+   &lt;<span class="identifier">td</span>&gt; <span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">item</span></span>-&gt;<span class="identifier">type</span> ?&gt;&lt;/<span class="identifier">td</span>&gt;
+  &lt;/<span class="identifier">tr</span>&gt;
+  } ?&gt;
+&lt;/<span class="identifier">table</span>&gt;
+
+&lt;<span class="identifier">table</span>&gt;
+  &lt;<span class="identifier">tr</span>&gt;
+    &lt;<span class="identifier">td</span>&gt;&lt;?= <span class="identifier">Tag</span>::<span class="identifier">linkTo</span>(<span class="string">"robots/search"</span>, <span class="string">"First"</span>) ?&gt;&lt;/<span class="identifier">td</span>&gt;
+    &lt;<span class="identifier">td</span>&gt;&lt;?= <span class="identifier">Tag</span>::<span class="identifier">linkTo</span>(<span class="string">"robots/search?page="</span>.<span class="tag">$<span class="identifier">page</span></span>-&gt;<span class="identifier">before</span>, <span class="string">"Previous"</span>) ?&gt;&lt;/<span class="identifier">td</span>&gt;
+    &lt;<span class="identifier">td</span>&gt;&lt;?= <span class="identifier">Tag</span>::<span class="identifier">linkTo</span>(<span class="string">"robots/search?page="</span>.<span class="tag">$<span class="identifier">page</span></span>-&gt;<span class="identifier">next</span>, <span class="string">"Next"</span>) ?&gt;&lt;/<span class="identifier">td</span>&gt;
+    &lt;<span class="identifier">td</span>&gt;&lt;?= <span class="identifier">Tag</span>::<span class="identifier">linkTo</span>(<span class="string">"robots/search?page="</span>.<span class="tag">$<span class="identifier">page</span></span>-&gt;<span class="identifier">last</span>, <span class="string">"Last"</span>) ?&gt;&lt;/<span class="identifier">td</span>&gt;
+    &lt;<span class="identifier">td</span>&gt; <span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">page</span></span>-&gt;<span class="identifier">current</span>, <span class="string">"/"</span>, <span class="tag">$<span class="identifier">page</span></span>-&gt;<span class="identifier">total_pages</span> ?&gt;&lt;/<span class="identifier">td</span>&gt;
+  &lt;/<span class="identifier">tr</span>&gt;
+ &lt;/<span class="identifier">table</span>&gt;</pre>',
     'extends' => NULL,
     'implements' => 
     array (
@@ -10513,7 +11026,23 @@
   ),
   'Phalcon_Request_File' => 
   array (
-    'description' => 'Provides OO wrappers to the $_FILES superglobal',
+    'description' => 'Provides OO wrappers to the $_FILES superglobal
+
+<pre class="source-code iphp"><span class="keyword">class</span> <span class="identifier">PostsController</span> <span class="keyword">extends</span> <span class="identifier">Phalcon_Controller</span>
+{
+
+ <span class="keyword">function</span> <span class="identifier">uploadAction</span>()
+ {
+   <span class="comment">//Check if the user has uploaded files
+</span>   <span class="keyword">if</span> (<span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">request</span>-&gt;<span class="identifier">hasFiles</span>() == <span class="keyword literal">true</span>) {
+      <span class="comment">//Print the real file names and sizes
+</span>      <span class="keyword">foreach</span> (<span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">request</span>-&gt;<span class="identifier">getUploadedFiles</span>() <span class="keyword operator">as</span> <span class="tag">$<span class="identifier">file</span></span>){
+         <span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">file</span></span>-&gt;<span class="identifier">getName</span>(), <span class="string">" "</span>, <span class="tag">$<span class="identifier">file</span></span>-&gt;<span class="identifier">getSize</span>(), <span class="string">"\\n"</span>;
+      }
+   }
+ }
+
+}</pre>',
     'extends' => NULL,
     'implements' => 
     array (
@@ -10526,7 +11055,7 @@
     array (
       '__construct' => 
       array (
-        'description' => '',
+        'description' => 'Phalcon_Request_File constructor',
         'modifiers' => 
         array (
           0 => 'public',
@@ -10535,7 +11064,7 @@
         array (
           '$file' => 
           array (
-            'type' => 'unknown',
+            'type' => 'array',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -10545,7 +11074,7 @@
       ),
       'getSize' => 
       array (
-        'description' => '',
+        'description' => 'Returns the file size of the uploaded file',
         'modifiers' => 
         array (
           0 => 'public',
@@ -10553,11 +11082,11 @@
         'parameters' => 
         array (
         ),
-        'return' => 'unknown',
+        'return' => 'int',
       ),
       'getName' => 
       array (
-        'description' => '',
+        'description' => 'Returns the real name of the uploaded file',
         'modifiers' => 
         array (
           0 => 'public',
@@ -10565,11 +11094,11 @@
         'parameters' => 
         array (
         ),
-        'return' => 'unknown',
+        'return' => 'string',
       ),
       'getTempName' => 
       array (
-        'description' => '',
+        'description' => 'Returns the temporal name of the uploaded file',
         'modifiers' => 
         array (
           0 => 'public',
@@ -10577,7 +11106,7 @@
         'parameters' => 
         array (
         ),
-        'return' => 'unknown',
+        'return' => 'string',
       ),
     ),
   ),
@@ -10589,8 +11118,8 @@
  It packages the HTTP request environment.</p>
 
  <pre class="source-code iphp"><span class="tag">$<span class="identifier">request</span></span> = <span class="identifier">Phalcon_Request</span>::<span class="identifier">getInstance</span>();
-<span class="keyword">if</span> (<span class="tag">$<span class="identifier">request</span></span>-&gt;<span class="identifier">isPost</span>() == <span class="keyword literal">true</span>){
- <span class="keyword">if</span> (<span class="tag">$<span class="identifier">request</span></span>-&gt;<span class="identifier">isAjax</span>() == <span class="keyword literal">true</span>){
+<span class="keyword">if</span> (<span class="tag">$<span class="identifier">request</span></span>-&gt;<span class="identifier">isPost</span>() == <span class="keyword literal">true</span>) {
+ <span class="keyword">if</span> (<span class="tag">$<span class="identifier">request</span></span>-&gt;<span class="identifier">isAjax</span>() == <span class="keyword literal">true</span>) {
    <span class="keyword builtin">echo</span> <span class="string">\'Request was made using POST and AJAX\'</span>;
  }
 }</pre>',
@@ -10619,7 +11148,8 @@
       ),
       'setFilter' => 
       array (
-        'description' => 'Overwrites Phalcon_Filter object used to sanitize input data',
+        'description' => 'Overwrites Phalcon_Filter object used to sanitize input data
+<pre class="source-code iphp"><span class="tag">$<span class="identifier">request</span></span>-&gt;<span class="identifier">setFilter</span>(<span class="tag">$<span class="identifier">myFilter</span></span>);</pre>',
         'modifiers' => 
         array (
           0 => 'public',
@@ -10638,7 +11168,9 @@
       ),
       'getFilter' => 
       array (
-        'description' => 'Returns the active filter object used to sanitize input data',
+        'description' => 'Returns the active filter object used to sanitize input data
+<pre class="source-code iphp"><span class="comment">// returns "100019.01"
+</span> <span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">request</span></span>-&gt;<span class="identifier">getFilter</span>()-&gt;<span class="identifier">sanitize</span>(<span class="string">"!100a019.01a"</span>, <span class="string">"float"</span>);</pre>',
         'modifiers' => 
         array (
           0 => 'protected',
@@ -10650,7 +11182,11 @@
       ),
       'getPost' => 
       array (
-        'description' => 'Gets variable from $_POST superglobal applying filters if needed',
+        'description' => 'Gets variable from $_POST superglobal applying filters if needed
+<pre class="source-code iphp"><span class="comment">//Returns value from $_POST["user_email"] without sanitizing
+</span> <span class="tag">$<span class="identifier">userEmail</span></span> = <span class="tag">$<span class="identifier">request</span></span>-&gt;<span class="identifier">getPost</span>(<span class="string">"user_email"</span>);
+ <span class="comment">//Returns value from $_POST["user_email"] with sanitizing
+</span> <span class="tag">$<span class="identifier">userEmail</span></span> = <span class="tag">$<span class="identifier">request</span></span>-&gt;<span class="identifier">getPost</span>(<span class="string">"user_email"</span>, <span class="string">"email"</span>);</pre>',
         'modifiers' => 
         array (
           0 => 'public',
@@ -10676,7 +11212,11 @@
       ),
       'getQuery' => 
       array (
-        'description' => 'Gets variable from $_GET superglobal applying filters if needed',
+        'description' => 'Gets variable from $_GET superglobal applying filters if needed
+<pre class="source-code iphp"><span class="comment">//Returns value from $_GET["id"] without sanitizing
+</span> <span class="tag">$<span class="identifier">id</span></span> = <span class="tag">$<span class="identifier">request</span></span>-&gt;<span class="identifier">getQuery</span>(<span class="string">"id"</span>);
+ <span class="comment">//Returns value from $_GET["id"] with sanitizing
+</span> <span class="tag">$<span class="identifier">id</span></span> = <span class="tag">$<span class="identifier">request</span></span>-&gt;<span class="identifier">getQuery</span>(<span class="string">"id"</span>, <span class="string">"int"</span>);</pre>',
         'modifiers' => 
         array (
           0 => 'public',
@@ -10893,7 +11433,7 @@
       ),
       'getClientAddress' => 
       array (
-        'description' => 'Gets most possibly client IPv4 Address',
+        'description' => 'Gets most possibly client IPv4 Address. This methods search in $_SERVER[\'HTTP_X_FORWARDED_FOR\'] and $_SERVER[\'REMOTE_ADDR\']',
         'modifiers' => 
         array (
           0 => 'public',
@@ -10929,7 +11469,7 @@
       ),
       'isPost' => 
       array (
-        'description' => 'Checks whether HTTP method is POST',
+        'description' => 'Checks whether HTTP method is POST. if $_SERVER[\'REQUEST_METHOD\']==\'POST\'',
         'modifiers' => 
         array (
           0 => 'public',
@@ -10941,7 +11481,7 @@
       ),
       'isGet' => 
       array (
-        'description' => 'Checks whether HTTP method is GET',
+        'description' => 'Checks whether HTTP method is GET. if $_SERVER[\'REQUEST_METHOD\']==\'GET\'',
         'modifiers' => 
         array (
           0 => 'public',
@@ -10953,7 +11493,7 @@
       ),
       'isPut' => 
       array (
-        'description' => 'Checks whether HTTP method is PUT',
+        'description' => 'Checks whether HTTP method is PUT. if $_SERVER[\'REQUEST_METHOD\']==\'PUT\'',
         'modifiers' => 
         array (
           0 => 'public',
@@ -10965,7 +11505,7 @@
       ),
       'isHead' => 
       array (
-        'description' => 'Checks whether HTTP method is HEAD',
+        'description' => 'Checks whether HTTP method is HEAD. if $_SERVER[\'REQUEST_METHOD\']==\'HEAD\'',
         'modifiers' => 
         array (
           0 => 'public',
@@ -10977,7 +11517,7 @@
       ),
       'isDelete' => 
       array (
-        'description' => 'Checks whether HTTP method is DELETE',
+        'description' => 'Checks whether HTTP method is DELETE. if $_SERVER[\'REQUEST_METHOD\']==\'DELETE\'',
         'modifiers' => 
         array (
           0 => 'public',
@@ -10989,7 +11529,7 @@
       ),
       'isOptions' => 
       array (
-        'description' => 'Checks whether HTTP method is OPTIONS',
+        'description' => 'Checks whether HTTP method is OPTIONS. if $_SERVER[\'REQUEST_METHOD\']==\'OPTIONS\'',
         'modifiers' => 
         array (
           0 => 'public',
@@ -11021,7 +11561,7 @@
         'parameters' => 
         array (
         ),
-        'return' => 'array',
+        'return' => 'Phalcon_Request_File[]',
       ),
       'getHTTPReferer' => 
       array (
@@ -11037,7 +11577,7 @@
       ),
       '_getQualityHeader' => 
       array (
-        'description' => '',
+        'description' => 'Process a request header and return an array of values with their qualities',
         'modifiers' => 
         array (
           0 => 'protected',
@@ -11046,24 +11586,24 @@
         array (
           '$serverIndex' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$name' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
         ),
-        'return' => 'unknown',
+        'return' => 'array',
       ),
       '_getBestQuality' => 
       array (
-        'description' => '',
+        'description' => 'Process a request header and return the one with best quality',
         'modifiers' => 
         array (
           0 => 'protected',
@@ -11072,20 +11612,20 @@
         array (
           '$qualityParts' => 
           array (
-            'type' => 'unknown',
+            'type' => 'array',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$name' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
         ),
-        'return' => 'unknown',
+        'return' => 'string',
       ),
       'getAcceptableContent' => 
       array (
@@ -11158,6 +11698,19 @@
         array (
         ),
         'return' => 'string',
+      ),
+      'reset' => 
+      array (
+        'description' => 'Resets the internal singleton',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
       ),
     ),
   ),
@@ -11265,6 +11818,34 @@
         ),
         'return' => 'unknown',
       ),
+      'redirect' => 
+      array (
+        'description' => 'Redirect by HTTP to another action or URL
+<pre class="source-code iphp"><span class="tag">$<span class="identifier">response</span></span>-&gt;<span class="identifier">redirect</span>(<span class="string">"posts/index"</span>);
+<span class="tag">$<span class="identifier">response</span></span>-&gt;<span class="identifier">redirect</span>(<span class="string">"http://en.wikipedia.org"</span>, <span class="keyword literal">true</span>);</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$location' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$full' => 
+          array (
+            'type' => 'boolean',
+            'optional' => true,
+            'default' => false,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
       'setContent' => 
       array (
         'description' => 'Sets HTTP response body
@@ -11318,10 +11899,23 @@
       ),
       'send' => 
       array (
-        'description' => 'Sends HTTP response to the client',
+        'description' => 'Prints out HTTP response to the client',
         'modifiers' => 
         array (
           0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
+      'reset' => 
+      array (
+        'description' => 'Resets the internal singleton',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
         ),
         'parameters' => 
         array (
@@ -11343,7 +11937,7 @@
 
  Settings baseUri first:
 
-<pre class="source-code iphp"><span class="tag">$<span class="identifier">router</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Router_Regex</span>(); 
+<pre class="source-code iphp"><span class="tag">$<span class="identifier">router</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Router_Regex</span>();
 <span class="tag">$<span class="identifier">router</span></span>-&gt;<span class="identifier">handle</span>();
 <span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">router</span></span>-&gt;<span class="identifier">getControllerName</span>();</pre>
 </example>',
@@ -11402,7 +11996,7 @@
       ),
       'compilePattern' => 
       array (
-        'description' => '',
+        'description' => 'Replaces placeholders from pattern returning a valid PCRE regular expression',
         'modifiers' => 
         array (
           0 => 'public',
@@ -11411,17 +12005,17 @@
         array (
           '$pattern' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
         ),
-        'return' => 'unknown',
+        'return' => 'string',
       ),
       'add' => 
       array (
-        'description' => '',
+        'description' => 'Add a route to the router',
         'modifiers' => 
         array (
           0 => 'public',
@@ -11430,14 +12024,14 @@
         array (
           '$pattern' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
-          '$parts' => 
+          '$paths' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string/array',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -11499,6 +12093,18 @@
         array (
         ),
         'return' => 'array',
+      ),
+      'getCurrentRoute' => 
+      array (
+        'description' => 'Returns the route that matchs the handled URI',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'string',
       ),
     ),
   ),
@@ -11716,7 +12322,18 @@ Rewrite rules using a hidden directory and a public/ document root:
   ),
   'Phalcon_Session' => 
   array (
-    'description' => 'Session client-server persistent state data management.',
+    'description' => 'Session client-server persistent state data management. This component
+ allow you to separate your session data between application or modules.
+ With this, it\'s possible to use the same index to refer a variable
+ but they can be in different applications.
+
+ <pre class="source-code iphp"><span class="identifier">Phalcon_Session</span>::<span class="identifier">start</span>(<span class="keyword builtin">array</span>(
+    <span class="string">\'uniqueId\'</span> =&gt; <span class="string">\'my-private-app\'</span>
+ ));
+
+ <span class="identifier">Phalcon_Session</span>::<span class="identifier">set</span>(<span class="string">\'var\'</span>, <span class="string">\'some-value\'</span>);
+
+ <span class="keyword builtin">echo</span> <span class="identifier">Phalcon_Session</span>::<span class="identifier">set</span>(<span class="string">\'var\'</span>);</pre>',
     'extends' => NULL,
     'implements' => 
     array (
@@ -12667,26 +13284,6 @@ Rewrite rules using a hidden directory and a public/ document root:
         ),
         'return' => 'string',
       ),
-      'lcfirst' => 
-      array (
-        'description' => 'Changes only first letter to lowercase',
-        'modifiers' => 
-        array (
-          0 => 'public',
-          1 => 'static',
-        ),
-        'parameters' => 
-        array (
-          '$str' => 
-          array (
-            'type' => 'string',
-            'optional' => false,
-            'default' => NULL,
-            'byReference' => false,
-          ),
-        ),
-        'return' => 'string',
-      ),
     ),
   ),
   'Phalcon_Transaction_Failed' => 
@@ -13297,6 +13894,13 @@ Rewrite rules using a hidden directory and a public/ document root:
             'default' => NULL,
             'byReference' => false,
           ),
+          '$placeholders' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
         ),
         'return' => 'string',
       ),
@@ -13391,6 +13995,15 @@ Rewrite rules using a hidden directory and a public/ document root:
             'type' => 'string',
             'optional' => false,
             'default' => NULL,
+            'byReference' => false,
+          ),
+          '$placeholders' => 
+          array (
+            'type' => 'array',
+            'optional' => true,
+            'default' => 
+            array (
+            ),
             'byReference' => false,
           ),
         ),
@@ -13534,26 +14147,6 @@ Rewrite rules using a hidden directory and a public/ document root:
         ),
         'return' => 'string',
       ),
-      'lcfirst' => 
-      array (
-        'description' => 'This function is now deprecated, use Phalcon_Text::lcfirst instead',
-        'modifiers' => 
-        array (
-          0 => 'public',
-          1 => 'static',
-        ),
-        'parameters' => 
-        array (
-          '$str' => 
-          array (
-            'type' => 'string',
-            'optional' => false,
-            'default' => NULL,
-            'byReference' => false,
-          ),
-        ),
-        'return' => 'string',
-      ),
       'getUrl' => 
       array (
         'description' => 'Gets public URL to phalcon instance',
@@ -13568,7 +14161,7 @@ Rewrite rules using a hidden directory and a public/ document root:
           array (
             'type' => 'string',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -13588,7 +14181,7 @@ Rewrite rules using a hidden directory and a public/ document root:
           array (
             'type' => 'string',
             'optional' => true,
-            'default' => '',
+            'default' => NULL,
             'byReference' => false,
           ),
         ),
@@ -14103,7 +14696,8 @@ Rewrite rules using a hidden directory and a public/ document root:
       ),
       'setBasePath' => 
       array (
-        'description' => 'Sets base path. Depending of your platform, always add a trailing slash or backslash',
+        'description' => 'Sets base path. Depending of your platform, always add a trailing slash or backslash
+ <pre class="source-code iphp"><span class="tag">$<span class="identifier">view</span></span>-&gt;<span class="identifier">setBasePath</span>(<span class="identifier">__DIR__</span>.<span class="string">\'/\'</span>);</pre>',
         'modifiers' => 
         array (
           0 => 'public',
@@ -14112,7 +14706,7 @@ Rewrite rules using a hidden directory and a public/ document root:
         array (
           '$basePath' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -14122,7 +14716,9 @@ Rewrite rules using a hidden directory and a public/ document root:
       ),
       'setRenderLevel' => 
       array (
-        'description' => 'Sets the render level for the view',
+        'description' => 'Sets the render level for the view
+ <pre class="source-code iphp"><span class="comment">//Render the view related to the controller only
+</span> <span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">view</span>-&gt;<span class="identifier">setRenderLevel</span>(<span class="identifier">Phalcon_View</span>::<span class="identifier">LEVEL_VIEW</span>);</pre>',
         'modifiers' => 
         array (
           0 => 'public',
@@ -14141,7 +14737,9 @@ Rewrite rules using a hidden directory and a public/ document root:
       ),
       'setMainView' => 
       array (
-        'description' => 'Sets default view name. Must be a file without extension in the views directory',
+        'description' => 'Sets default view name. Must be a file without extension in the views directory
+ <pre class="source-code iphp"><span class="comment">//Renders as main view views-dir/inicio.phtml
+</span> <span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">view</span>-&gt;<span class="identifier">setMainView</span>(<span class="string">\'inicio\'</span>);</pre>',
         'modifiers' => 
         array (
           0 => 'public',
@@ -14322,7 +14920,7 @@ Rewrite rules using a hidden directory and a public/ document root:
       ),
       'start' => 
       array (
-        'description' => 'Starts rendering process',
+        'description' => 'Starts rendering process enabling the output buffering',
         'modifiers' => 
         array (
           0 => 'public',
@@ -14431,9 +15029,39 @@ Rewrite rules using a hidden directory and a public/ document root:
         ),
         'return' => 'unknown',
       ),
+      'pick' => 
+      array (
+        'description' => 'Choose a view different to render than last-controller/last-action
+ <pre class="source-code iphp"><span class="keyword">class</span> <span class="identifier">ProductsController</span> <span class="keyword">extends</span> <span class="identifier">Phalcon_Controller</span>
+ {
+    <span class="keyword">function</span> <span class="identifier">saveAction</span>()
+    {
+         <span class="comment">//Do some save stuff...
+</span>         <span class="comment">//Then show the list view
+</span>         <span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">view</span>-&gt;<span class="identifier">pick</span>(<span class="string">"products/list"</span>);
+    }
+ }</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$renderView' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
       'partial' => 
       array (
-        'description' => 'Renders a partial view',
+        'description' => 'Renders a partial view
+ <pre class="source-code iphp"><span class="comment">//Show a partial inside another view
+</span> <span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">partial</span>(<span class="string">\'shared/footer\'</span>);</pre>',
         'modifiers' => 
         array (
           0 => 'public',
@@ -14452,7 +15080,7 @@ Rewrite rules using a hidden directory and a public/ document root:
       ),
       'finish' => 
       array (
-        'description' => 'Finishes the render process',
+        'description' => 'Finishes the render process by stopping the output buffering',
         'modifiers' => 
         array (
           0 => 'public',
@@ -14464,7 +15092,7 @@ Rewrite rules using a hidden directory and a public/ document root:
       ),
       'setContent' => 
       array (
-        'description' => 'Set externally the view content',
+        'description' => 'Externally sets the view content',
         'modifiers' => 
         array (
           0 => 'public',
@@ -14483,7 +15111,7 @@ Rewrite rules using a hidden directory and a public/ document root:
       ),
       'getContent' => 
       array (
-        'description' => 'Returns cached ouput on another view stage',
+        'description' => 'Returns cached ouput from another view stage',
         'modifiers' => 
         array (
           0 => 'public',
@@ -14492,6 +15120,18 @@ Rewrite rules using a hidden directory and a public/ document root:
         array (
         ),
         'return' => 'string',
+      ),
+      'disable' => 
+      array (
+        'description' => 'Disable view. No show any view or template',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
       ),
     ),
   ),

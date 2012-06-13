@@ -11,7 +11,7 @@
 </div>
 
 <div class="doc-paragraph">
-	The View component is responsible for the managing of the standard way to generate the
+	The <?php echo Tag::classLink('Phalcon_View', 'View component') ?> is responsible for the managing of the standard way to generate the
 	final presentation to the browser.
 </div>
 
@@ -373,6 +373,32 @@ foreach (Catergories::find("status=1") as $category) {
 	Although you may perform insert or update operations at views, we only recommend
 	reading records at them because is not possible to forward the execution flow to another
 	controller in case of errors.
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="pick">Picking Views</a></h3>
+	As mentioned above, when Phalcon_View is managed by <?php echo Tag::classLink('Phalcon_Controller_Front') ?>
+	the view rendered is the one related with the last controller and action executed. You could
+	override this by using the Phalcon_View::pick method:
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('
+
+<?php
+
+class ProductsController extends Phalcon_Controller
+{
+
+   function listAction()
+   {
+      //Pick "views-dir/products/search" as view to render
+      $this->view->pick("products/search");
+   }
+
+}
+
+', 'iphp'); ?>
 </div>
 
 <div class="doc-paragraph">

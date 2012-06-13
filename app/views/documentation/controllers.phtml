@@ -222,8 +222,8 @@ class PostsController extends Phalcon_Controller
 ', 'php'); ?>
 
 <div class="doc-paragraph">
-	The response object is not usually used directly, but is built up during the execution of the
-	action, sometimes - like in an afterDispatch event - it can be useful to access the response directly.
+	Moreover, the response object is not usually used directly, but is built up before the execution of the
+	action, sometimes - like in an afterDispatch event - it can be useful to access the response directly:
 </div>
 
 <?php
@@ -238,13 +238,19 @@ class PostsController extends Phalcon_Controller
 
   }
 
-  function notFoundAction(){
+  function notFoundAction()
+  {
+    //Send a HTTP 404 response header
     $this->response->setStatusCode(404, "Not Found");
   }
 
 }
 
 ', 'php'); ?>
+
+<div class="doc-paragraph">
+	Learn more about the request environment in its <?php echo Phalcon_Tag::linkTo('documentation/request', 'documentation article.') ?>
+</div>
 
 <div class="doc-paragraph">
 	<h3><a href="session-data">Session Data</a></h3>
@@ -261,7 +267,7 @@ class UserController extends Phalcon_Controller
 
   function indexAction()
   {
-	$this->session->name = "Michael";
+    $this->session->name = "Michael";
   }
 
   function welcomeAction()

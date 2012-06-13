@@ -56,11 +56,13 @@
 			<th>Name</th>
 			<th>Description</th>
 			<th>API</th>
+			<th>Internal Driver</th>
 		</tr>
 		<tr>
-			<td>MySQL</td>
+			<td><?php echo Tag::classLink('Phalcon_Db_Adapter_Mysql', 'MySQL') ?></td>
 			<td>SQL specific dialect for MySQL database system</td>
 			<td><?php echo Tag::classLink('Phalcon_Db_Dialect_Mysql') ?></td>
+			<td><a href="http://www.php.net/manual/en/book.mysqli.php">mysqli</a></td>
 		</tr>
 	</table>
 </div>
@@ -74,7 +76,6 @@
 	should be created or not.
 	The below example shows how to create a connection passing both required and optional parameters.
 </div>
-<!-- Both the MySQL server software itself and the client libraries use -->
 
 <?php echo hyperlight('<?php
 
@@ -88,7 +89,7 @@ $config->name = "test_db";
 //Optional
 $config->persistent = false;
 $config->charset = "utf8";
-$config->collatio = "utf8_unicode_ci";
+$config->collation = "utf8_unicode_ci";
 $config->compression = true;
 
 //Create a connection
@@ -134,7 +135,7 @@ $connection2 = Phalcon_Db_Pool::getConnection(true);
 	database engine is required in this case:
 </div>
 
-<?php echo hyperlight('<?php
+<?php echo hyperlight('
 
 $sql = "SELECT id,name FROM robots ORDER BY name";
 
@@ -142,7 +143,7 @@ $sql = "SELECT id,name FROM robots ORDER BY name";
 $result = $connection->query($sql);
 
 //Print each robot name
-while ($robot = $connection->fetchArray($result)) {
+while ($robot = $result->fetchArray()) {
    echo $robot["name"];
 }
 
@@ -155,11 +156,11 @@ foreach ($robots as $robot) {
 //Dump only the first row
 $robot = $connection->fetchOne($sql);
 
-', 'php'); ?>
+', 'iphp'); ?>
 
 <div class="doc-paragraph">
 	By default it creates arrays with both associative and numeric indices. You can change this
-	behavior by using Phalcon_Db::setFetchMode(). This method receives a constant
+	behavior by using Phalcon_Db_Result::setFetchMode(). This method receives a constant
 	telling which kind of index is required.
 </div>
 
@@ -184,17 +185,77 @@ $robot = $connection->fetchOne($sql);
 	</table>
 </div>
 
-<?php echo hyperlight('<?php
+<?php echo hyperlight('
 
 $sql = "SELECT id,name FROM robots ORDER BY name";
 $result = $connection->query($sql);
 
-$connection->setFetchMode(Phalcon_Db::DB_NUM);
-while ($robot = $connection->fetchArray($result)) {
+$result->setFetchMode(Phalcon_Db::DB_NUM);
+while ($robot = $result->fetchArray()) {
    echo $robot[0];
 }
 
+', 'iphp'); ?>
+
+<div class="doc-paragraph">
+	The Phalcon_Db::query returns a special object depending of the database adapter you're using.
+	In the MySQL case that object is an instance of <?php echo Tag::classLink('Phalcon_Db_Result_Mysql') ?>.
+	Those objects encapsulate all the functionality related to resultsets. With them is easy traverse
+	the results, seek to a specific row, count records, etc.
+</div>
+
+<?php echo hyperlight('
+
+$sql = "SELECT id, name FROM robots";
+$result = $connection->query($sql);
+
+//Traverse the resultset
+while ($robot = $result->fetchArray()) {
+   echo $robot["name"];
+}
+
+//Seek to the third row
+$result->seek(2);
+$robot = $result->fetchArray();
+
+//Count the resultset
+echo $result->numRows();
+
+', 'iphp'); ?>
+
+<div class="doc-paragraph">
+	<h3><a name="binding">Binding Parameters</a></h3>
+	Binding parameters is also supported in Phalcon_Db.
+	The binding process impact the performance minimally but reduce the possibility to be attacked
+	using SQL injection techniques. Both string and integer placeholders are supported. Binding
+	parameters can simply be achieved as follows:
+</div>
+
+<?php echo hyperlight('<?php
+
+//Binding with numeric placeholders
+$sql = "SELECT * FROM robots WHERE name = ?1 ORDER BY name";
+$sql = $connection->bindParams($sql, array(1 => "Wall-E"));
+$result = $connection->query($sql);
+
+//Inserting data binding parameters
+$sql = "INSERT INTO `robots`(`name`, `year`) VALUES (:name:, :year:)";
+$sql = $connection->bindParams($sql, array("name" => "Astro Boy", "year" => 1952));
+$success = $connection->query($sql);
+
 ', 'php'); ?>
+
+<div class="doc-paragraph">
+	When use numeric placeholders define it as integers, by example: 1 or 2.
+	In this case "1" or "2" are considered strings and not numbers, so the
+	placeholder could not be sucessfully replaced.
+</div>
+
+<div class="doc-paragraph">
+	With the MySQL adapter strings are automatically escaped using <a href="http://php.net/manual/en/mysqli.real-escape-string.php">mysqli_real_escape_string</a>.
+	That function takes into account the connection charset, so its recommended define it in the connection
+	parameters or in the MySQL server configuration.
+</div>
 
 <div class="doc-paragraph">
 	<h3><a name="ins-upd-del">Inserting/Updating/Deleting Rows</a></h3>
@@ -232,10 +293,7 @@ $sql = "DELETE `robots` WHERE `id` = 101";
 $success = $connection->query($sql);
 
 //Generating dynamically the necessary SQL
-$success = $connection->delete(
-   "robots",
-   "`id` = 101"
-);
+$success = $connection->delete("robots", "id = 101");
 
 ', 'php'); ?>
 

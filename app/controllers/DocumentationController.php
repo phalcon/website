@@ -64,6 +64,10 @@ class DocumentationController extends ControllerBase
     {
     }
 
+    public function requestAction()
+    {
+    }
+
     public function filterAction()
     {
     }

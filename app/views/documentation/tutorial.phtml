@@ -19,7 +19,7 @@
 <?php echo hyperlight('<?php print_r(get_loaded_extensions()); ?>', 'php'); ?>
 
 <div class="doc-paragraph">
-Phalcon extension should appear in output:
+	Phalcon extension should appear as part of the output:
 </div>
 
 <?php echo hyperlight('Array
@@ -31,13 +31,14 @@ Phalcon extension should appear in output:
     [4] => standard
     [5] => phalcon
     [6] => mysql
+    [7] => mysqli
 )', 'php'); ?>
 
 <div class="doc-paragraph">
 	<h3><a href="creating-project">Creating a project</a></h3>
 	The best way to use this guide is to follow each step as it happens, no code or step needed to make
 	this example application has been left out, and so you can literally follow along step by step.
-	You can get the complete code <?php echo Phalcon_Tag::linkTo('files/phalcon-tutorial.zip', 'here') ?>.
+	You can get the complete code <a href="https://github.com/phalcon/tutorial">here</a>.
 </div>
 
 <div class="doc-paragraph">
@@ -54,7 +55,7 @@ Phalcon extension should appear in output:
  public/
   css/
   img/
-  javascript/
+  js/
 ', 'php'); ?>
 
 </div>
@@ -124,7 +125,8 @@ try {
 <div class="doc-paragraph">
 	The <?php echo Tag::classLink('Phalcon_Controller_Front') ?> purpose is to initialize the request environment, route the incoming request,
 	and then dispatch any discovered actions; it aggregates any responses and returns them when the
-	process is complete.
+	process is complete. The file is very simple, keep in mind we do not need include any file
+	or register an autoloader.
 </div>
 
 <div class="doc-paragraph">
@@ -146,7 +148,7 @@ class IndexController extends Phalcon_Controller
 
 <div class="doc-paragraph">
 	The controller classes should have the suffix "Controller" and controller actions have the suffix "Action".
-	Your browser will show something like this:
+	Now access the application from your browser, it will show something like this:
 </div>
 
 <div class="doc-paragraph" align="center">
@@ -159,7 +161,9 @@ class IndexController extends Phalcon_Controller
 
 <div class="doc-paragraph">
 	<h4><a name="moving-view">Moving output to a view</a></h4>
-	But doing output inside actions it's ugly for MVC lovers. Let's move it to a related view (app/views/index/index.phtml):
+	But doing output inside actions it's ugly for MVC lovers. Let's move it to a related view. Phalcon
+	will look for a view with the same name as the last executed action inside a directory
+	named as the last executed controller. In our case (app/views/index/index.phtml):
 </div>
 
 <?php echo hyperlight('<?php echo "<h1>Hello!</h1>"; ', 'php'); ?>
@@ -181,14 +185,14 @@ class IndexController extends Phalcon_Controller
 }', 'php'); ?>
 
 <div class="doc-paragraph">
-	The browser output should remain the same. The <?php echo Tag::classLink('Phalcon_View') ?> component will check for a view with the same name
-	of active action on a directory with the name of active controller.
+	The browser output should remain the same. The <?php echo Tag::classLink('Phalcon_View') ?> component
+	is automatically created when the action execution has ended.
 	Learn more about views usage <?php echo Tag::linkTo('documentation/views', 'here') ?>.
 </div>
 
 <div class="doc-paragraph">
 	<h4><a name="designing-form">Designing a sign up form</a></h4>
-	Now we'll change the index.phtml view to add a link to a new controller named "signup".
+	Now we will change the index.phtml view to add a link to a new controller named "signup".
 	Its goal is to allow users to sign up in some application.
 </div>
 
@@ -209,7 +213,8 @@ The generated HTML code brings an "A" html tag linking to a new controller:
 <?php echo hyperlight('<h1>Hello!</h1> <a href="/test/signup" >Sign Up Here!</a>', 'php'); ?>
 
 <div class="doc-paragraph">
-	A new class <?php echo Tag::classLink('Phalcon_Tag') ?> has made its entrance. Its purpose it's to help to build HTML tags with framework conventions in mind.
+	As you saw, the class <?php echo Tag::classLink('Phalcon_Tag') ?> has made its entrance. Its purpose it's to help us to
+	build HTML tags with framework conventions in mind.
 	A deeper article about HTML generation can be found <?php echo Phalcon_Tag::linkTo('documentation/tags', 'here') ?>
 </div>
 
@@ -218,7 +223,7 @@ The generated HTML code brings an "A" html tag linking to a new controller:
 </div>
 
 <div class="doc-paragraph">
-Here's the controller Signup (app/controllers/SignupController.php):
+	Here is the controller Signup (app/controllers/SignupController.php):
 </div>
 
 <?php echo hyperlight('<?php
@@ -258,10 +263,10 @@ class SignupController extends Phalcon_Controller
 </form>', 'php'); ?>
 
 <div class="doc-paragraph">
-	View the form in your browser will show something like this:
+	Viewing the form in your browser will show something like this:
 </div>
 
-<div class="doc-paragraph" align="center">
+<div class="doc-paragraph doc-center">
 	<?php echo Phalcon_Tag::image('img/tutorial-3.png') ?>
 </div>
 
@@ -271,14 +276,15 @@ class SignupController extends Phalcon_Controller
 
 <div class="doc-paragraph">
 	The Phalcon_Tag::form method receives only one parameter in the example. A relative uri
-	to a controller/action in the application. By doing click in the "Send" button will show you
-	an exception from the framework requesting for the missing "register" action in the controller "signup":
+	to a controller/action in the application. By doing click in the "Send" button will throw
+	an exception from the framework indicating that we are missing the "register" action in
+	the controller "signup":
 </div>
 
 <?php echo hyperlight('PhalconException: Action "register" was not found on controller "signup"', 'php'); ?>
 
 <div class="doc-paragraph">
-Implementing that method will fix the exception:
+	Implementing that method will solve the exception:
 </div>
 
 <div class="doc-center">
@@ -312,7 +318,7 @@ class SignupController extends Phalcon_Controller
 </div>
 
 <div class="doc-paragraph">
-	A simple table to store registered users can be created like this:
+	A simple table to store registered users can be defined like this:
 </div>
 
 <?php echo hyperlight('CREATE TABLE `users` (
@@ -373,7 +379,7 @@ try {
 
 <div class="doc-paragraph">
 	We previously replaced defined settings on a new <?php echo Tag::classLink('Phalcon_Config') ?> object with database configuration.
-	Also you may define settings on a file by separate using ini or xml formats.
+	Also you may define settings on a file by separate using ini or other formats.
 </div>
 
 <div class="doc-paragraph">
@@ -422,26 +428,39 @@ class SignupController extends Phalcon_Controller
 <div class="doc-paragraph">
 	When you receive a variable from input you can optionally apply a filter to
 	<?php echo Tag::linkTo('documentation/filter', 'validate/sanizite') ?> the values.
-	This will make your application more secure. In the example we apply "string" to the "name" variable
-	to ensure that user typed no malicious chars. The component <?php echo Tag::classLink('Phalcon_Filter') ?> makes the work in an implicit way.
+	This will make your application more secure because it's avoiding common attacks
+	like SQL injections. In the example we apply "string" to the "name" variable
+	to ensure that user typed no malicious chars. The component <?php echo Tag::classLink('Phalcon_Filter') ?>
+	makes the work in an implicit way.
 </div>
 
 <div class="doc-paragraph">
-	Then instantiates Users class will give us the possibility to assign values to public members with the same name as the fields in the table.
-	The save method ends the storing process. The returning true value tells us if saving was successful or not. If we don't type any of the required files
+	Then instantiates Users class will give us the possibility to assign values to public members with
+	the same name as the fields in the table.
+	The save method finishes the storing process. The returning true value tells us if saving was successful or not. If we don't type any of the required files
 	our screen will look like this:
 </div>
 
-<div class="doc-paragraph" align="center">
+<div class="doc-paragraph doc-center">
 	<?php echo Phalcon_Tag::image('img/tutorial-4.png') ?>
 </div>
 
 <div class="doc-paragraph">
-	<h4><a name="conclusion">Conclusion</a></h4>
-	As you can see, it's easy to start developing an application using Phalcon.
-	Check out the <?php echo Phalcon_Tag::linkTo(array('api/', 'Phalcon API')) ?> to get more details on the available functionality.
-	If you want to check a more complete example the
-	<a href="http://blog.phalconphp.com/post/20928554661/invo-a-sample-application">INVO application</a> is also available.
+	<h3><a name="conclusion">Conclusion</a></h3>
+	This is a very simple tutorial and as you can see, it's easy to start developing an application using Phalcon.
+	The fact that is an extension has not removed the ease of developing.
+	We invite you to continue reading the manual to know the other features the framework provides.
+</div>
+
+<div class="doc-paragraph">
+	<h4><a name="samples">Sample Applications</a></h4>
+	The following applications are also available to provide more complete examples to create applications with Phalcon:
+	<ul>
+		<li><a href="http://blog.phalconphp.com/post/20928554661/invo-a-sample-application">INVO application</a>: A simple application
+		to generate invoices. Allows to create products, companies, product types. etc. </li>
+		<li><a href="http://blog.phalconphp.com/post/24622423072/sample-application-php-alternative-site">PHP Alternative website</a>:
+		This sample application explains how to create a multi-lingual application, also shows how to implement advanced routes.</li>
+	</ul>
 </div>
 
 <div class="nav-bar">
