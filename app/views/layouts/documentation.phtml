@@ -1,21 +1,4 @@
-<?php
-
-/*$frontendOptions = array(
-	'lifetime' => 172800
-);
-
-$backendOptions = array(
-	'cacheDir' => '../app/cache/'
-);
-
-$cache = Phalcon_Cache::factory('File', $frontendOptions, $backendOptions);
-
-$content = $cache->start('docs-'.$this->getActionName());
-if($content===null){*/
-
-echo Phalcon_Tag::stylesheetLink("css/d.css");
-
-?>
+<?php echo Phalcon_Tag::stylesheetLink("css/d.css"); ?>
 
 <table width="90%" align="center">
 	<tr>
@@ -46,6 +29,7 @@ echo Phalcon_Tag::stylesheetLink("css/d.css");
 				<li><?php echo Phalcon_Tag::linkTo('documentation/logging', 'Logging') ?></li>
 				<li><?php echo Phalcon_Tag::linkTo('documentation/loader', 'Universal Class Loader') ?></li>
 				<li><?php echo Phalcon_Tag::linkTo('documentation/migrations', 'Database Migrations') ?></li>
+				<li><?php echo Phalcon_Tag::linkTo('documentation/debug', 'Debugging Applications') ?></li>
 				<li><?php echo Phalcon_Tag::linkTo('documentation/tools', 'Using Developer Tools') ?></li>
 				<li><?php echo Phalcon_Tag::linkTo('documentation/settings', 'Framework Settings') ?></li>
 				<li><?php echo Phalcon_Tag::linkTo('api', 'Framework API') ?></li>
@@ -58,9 +42,3 @@ echo Phalcon_Tag::stylesheetLink("css/d.css");
 		</td>
 	</tr>
 </table>
-
-<?php
-	/*$cache->save();
-} else {
-	echo $content;
-}*/

@@ -151,4 +151,8 @@ class DocumentationController extends ControllerBase
     public function licenseAction()
     {
     }
+
+    public function debugAction()
+    {
+    }
 }
