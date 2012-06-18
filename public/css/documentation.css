@@ -9,30 +9,31 @@ td.primary-box ul {
 }
 
 td.primary-box li {
-    font-size: 14x;
-    padding: 7px 0 5px 10px;
-    list-style: none outside none;
-    border-bottom: 1px solid #ababab;
-    text-align: left;
+	font-size: 14x;
+	padding: 7px 0 5px 10px;
+	list-style: none outside none;
+	border-bottom: 1px solid #ababab;
+	text-align: left;
 }
 
 td.primary-box li a {
 	color: #0088CC;
-    text-decoration: none;
-    font-size: 13px;
+	text-decoration: none;
+	font-size: 13px;
 }
 
 td.second-box {
-    padding: 10px 15px 10px 10px;
-    max-width: 650px;
+	padding: 10px 15px 10px 10px;
+	max-width: 650px;
 }
 
 div.doc-paragraph {
-    color: #333333;
-    font-size: 16px;
-    line-height: 24px;
-    padding: 10px;
-    text-align: left;
+	color: #333333;
+	font-size: 16px;
+	line-height: 24px;
+	padding: 10px;
+	text-align: left;
+	text-rendering: optimizelegibility;
 }
 
 div.doc-center {
