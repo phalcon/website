@@ -42,7 +42,7 @@ $loader = new Phalcon_Loader();
 //Register some namespaces
 $loader->registerNamespaces(array(
    "Example\\Base" => "vendor/example/base/",
-   "Example\\Adapter" => "vendor/example/adapter/"
+   "Example\\Adapter" => "vendor/example/adapter/",
    "Example" => "vendor/example/"
 ));
 
@@ -50,7 +50,7 @@ $loader->registerNamespaces(array(
 $loader->register();
 
 //Requiring class wil automatically include file vendor/example/adapter/Some.php
-$some = Example\Adapter\Some();
+$some = new Example\Adapter\Some();
 
 ', 'php'); ?>
 
@@ -70,7 +70,7 @@ $some = Example\Adapter\Some();
 $loader = new Phalcon_Loader();
 
 //Register some directories
-$loader->registerDirectories(array(
+$loader->registerDirs(array(
    "library/MyComponent/",
    "library/OtherComponent/Other/",
    "vendor/example/adapters/",
@@ -82,7 +82,7 @@ $loader->register();
 
 //Requiring a class will automatically load it from the first directory where it has been located
 //ie. library/OtherComponent/Other/Some.php
-$some = Some();
+$some = new Some();
 
 ', 'php'); ?>
 
@@ -111,7 +111,7 @@ $loader->register();
 
 //Requiring a class will automatically load it from the first directory where it has been located
 //ie. library/OtherComponent/Other/Some.php
-$some = Some();
+$some = new Some();
 
 ', 'php'); ?>
 

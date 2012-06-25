@@ -9,6 +9,7 @@ class DocumentationController extends ControllerBase
     {
         $this->view->setTemplateAfter('main');
         Phalcon_Tag::setTitle('Documentation');
+        $this->view->cache(array('key' => $this->dispatcher->getActionName().'-cache'));
         parent::initialize();
     }
 

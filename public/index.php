@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 
 try {
 
-    require '../app/controllers/ControllerBase.php';
+    require __DIR__.'/../app/controllers/ControllerBase.php';
 
     $config = new Phalcon_Config(array(
         'database' => array(
@@ -15,9 +15,15 @@ try {
             'name' => 'site'
         ),
         'phalcon' => array(
-            'controllersDir' => '../app/controllers/',
-            'modelsDir' => '../app/models/',
-            'viewsDir' => '../app/views/'
+            'controllersDir' => __DIR__.'/../app/controllers/',
+            'modelsDir' => __DIR__.'/../app/models/',
+            'viewsDir' => __DIR__.'/../app/views/'
+        ),
+        'views' => array(            
+            'cache' => array(
+                'adapter' => 'File',
+                'cacheDir' => __DIR__.'/../app/cache/'
+            )
         )
     ));
 
