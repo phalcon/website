@@ -656,7 +656,7 @@
   ),
   'Phalcon_Cache_Backend_Apc' => 
   array (
-    'description' => 'Allows to cache output fragments using a memcache backend
+    'description' => 'Allows to cache output fragments, PHP data and raw data using a memcache backend
 
 <pre class="source-code iphp"><span class="comment">//Cache data for 2 days
 </span><span class="tag">$<span class="identifier">frontendOptions</span></span> = <span class="keyword builtin">array</span>(
@@ -680,51 +680,6 @@
     'type' => 'public',
     'methods' => 
     array (
-      '__construct' => 
-      array (
-        'description' => 'Phalcon_Backend_Adapter_Apc constructor',
-        'modifiers' => 
-        array (
-          0 => 'public',
-        ),
-        'parameters' => 
-        array (
-          '$frontendObject' => 
-          array (
-            'type' => 'mixed',
-            'optional' => false,
-            'default' => NULL,
-            'byReference' => false,
-          ),
-          '$backendOptions' => 
-          array (
-            'type' => 'array',
-            'optional' => false,
-            'default' => NULL,
-            'byReference' => false,
-          ),
-        ),
-        'return' => 'unknown',
-      ),
-      'start' => 
-      array (
-        'description' => 'Starts a cache. The $keyname allow to identify the created fragment',
-        'modifiers' => 
-        array (
-          0 => 'public',
-        ),
-        'parameters' => 
-        array (
-          '$keyName' => 
-          array (
-            'type' => 'int|string',
-            'optional' => false,
-            'default' => NULL,
-            'byReference' => false,
-          ),
-        ),
-        'return' => 'mixed',
-      ),
       'get' => 
       array (
         'description' => 'Returns a cached content',
@@ -810,17 +765,24 @@
         ),
         'return' => 'boolean',
       ),
-      'getFrontend' => 
+      'queryKeys' => 
       array (
-        'description' => 'Returns front-end instance adapter related to the back-end',
+        'description' => 'Query the existing cached keys',
         'modifiers' => 
         array (
           0 => 'public',
         ),
         'parameters' => 
         array (
+          '$prefix' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => '',
+            'byReference' => false,
+          ),
         ),
-        'return' => 'mixed',
+        'return' => 'array',
       ),
     ),
   ),
@@ -883,25 +845,6 @@
         ),
         'return' => 'unknown',
       ),
-      'start' => 
-      array (
-        'description' => 'Starts a cache. The $keyname allow to identify the created fragment',
-        'modifiers' => 
-        array (
-          0 => 'public',
-        ),
-        'parameters' => 
-        array (
-          '$keyName' => 
-          array (
-            'type' => 'int|string',
-            'optional' => false,
-            'default' => NULL,
-            'byReference' => false,
-          ),
-        ),
-        'return' => 'mixed',
-      ),
       'get' => 
       array (
         'description' => 'Returns a cached content',
@@ -987,23 +930,32 @@
         ),
         'return' => 'boolean',
       ),
-      'getFrontend' => 
+      'queryKeys' => 
       array (
-        'description' => 'Returns front-end instance adapter related to the back-end',
+        'description' => 'Query the existing cached keys',
         'modifiers' => 
         array (
           0 => 'public',
         ),
         'parameters' => 
         array (
+          '$prefix' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
         ),
-        'return' => 'mixed',
+        'return' => 'array',
       ),
     ),
   ),
   'Phalcon_Cache_Backend_Memcache' => 
   array (
-    'description' => 'Allows to cache output fragments using a memcache backend
+    'description' => 'Allows to cache output fragments, PHP data or raw data to a memcache backend
+
+ This adapter uses the special memcached key "_PHCM" to store all the keys internally used by the adapter
 
 <pre class="source-code iphp"><span class="comment">//Cache data for 2 days
 </span><span class="tag">$<span class="identifier">frontendOptions</span></span> = <span class="keyword builtin">array</span>(
@@ -1013,7 +965,8 @@
  <span class="comment">//Set memcached server connection settings
 </span><span class="tag">$<span class="identifier">backendOptions</span></span> = <span class="keyword builtin">array</span>(
 	<span class="string">\'host\'</span> =&gt; <span class="string">\'localhost\'</span>,
-  <span class="string">\'port\'</span> =&gt; <span class="number">11211</span>
+  <span class="string">\'port\'</span> =&gt; <span class="number">11211</span>,
+  <span class="string">\'persistent\'</span> =&gt; <span class="keyword literal">false</span>
 );
 
 <span class="tag">$<span class="identifier">cache</span></span> = <span class="identifier">Phalcon_Cache</span>::<span class="identifier">factory</span>(<span class="string">\'Data\'</span>, <span class="string">\'Memcache\'</span>, <span class="tag">$<span class="identifier">frontendOptions</span></span>, <span class="tag">$<span class="identifier">backendOptions</span></span>);
@@ -1071,25 +1024,6 @@
         ),
         'return' => 'unknown',
       ),
-      'start' => 
-      array (
-        'description' => 'Starts a cache. The $keyname allow to identify the created fragment',
-        'modifiers' => 
-        array (
-          0 => 'public',
-        ),
-        'parameters' => 
-        array (
-          '$keyName' => 
-          array (
-            'type' => 'int|string',
-            'optional' => false,
-            'default' => NULL,
-            'byReference' => false,
-          ),
-        ),
-        'return' => 'mixed',
-      ),
       'get' => 
       array (
         'description' => 'Returns a cached content',
@@ -1175,6 +1109,98 @@
         ),
         'return' => 'boolean',
       ),
+      'queryKeys' => 
+      array (
+        'description' => 'Query the existing cached keys',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$prefix' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'array',
+      ),
+      '__destruct' => 
+      array (
+        'description' => 'Destructs the backend closing the memcached connection',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
+    ),
+  ),
+  'Phalcon_Cache_Backend' => 
+  array (
+    'description' => 'This class implements common functionality for backend adapters. All the backend cache adapter must
+ extend this class',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'abstract',
+    'methods' => 
+    array (
+      '__construct' => 
+      array (
+        'description' => 'Phalcon_Cache_Backend constructor',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$frontendObject' => 
+          array (
+            'type' => 'mixed',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$backendOptions' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'start' => 
+      array (
+        'description' => 'Starts a cache. The $keyname allow to identify the created fragment',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$keyName' => 
+          array (
+            'type' => 'int|string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'mixed',
+      ),
       'getFrontend' => 
       array (
         'description' => 'Returns front-end instance adapter related to the back-end',
@@ -1187,9 +1213,9 @@
         ),
         'return' => 'mixed',
       ),
-      '__destruct' => 
+      'isFresh' => 
       array (
-        'description' => '',
+        'description' => 'Checks whether the last cache is fresh or cached',
         'modifiers' => 
         array (
           0 => 'public',
@@ -1197,7 +1223,31 @@
         'parameters' => 
         array (
         ),
-        'return' => 'unknown',
+        'return' => 'boolean',
+      ),
+      'isStarted' => 
+      array (
+        'description' => 'Checks whether the cache has started buffering or not',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'boolean',
+      ),
+      'getLastKey' => 
+      array (
+        'description' => 'Gets the last key stored by the cache',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'string',
       ),
     ),
   ),
@@ -1614,7 +1664,7 @@
   ),
   'Phalcon_Cache' => 
   array (
-    'description' => 'Phalcon_Cache can be used to cache output fragments to improve performance
+    'description' => 'Phalcon_Cache can be used to cache output fragments, PHP data and raw data in order to improve performance
 
 <pre class="source-code iphp"><span class="comment">//Cache the file for 2 days
 </span><span class="tag">$<span class="identifier">frontendOptions</span></span> = <span class="keyword builtin">array</span>(
@@ -1647,7 +1697,7 @@
     array (
       'factory' => 
       array (
-        'description' => 'Factories different caches backends from its adapters',
+        'description' => 'Factories different caches backends from their adapters',
         'modifiers' => 
         array (
           0 => 'public',
@@ -2497,7 +2547,7 @@
             'byReference' => false,
           ),
         ),
-        'return' => 'boolean',
+        'return' => 'Phalcon_Db_Result_Mysql|boolean',
       ),
       'affectedRows' => 
       array (
@@ -2625,7 +2675,7 @@
             'byReference' => false,
           ),
         ),
-        'return' => 'string',
+        'return' => 'int',
       ),
       'lastInsertId' => 
       array (
@@ -2801,6 +2851,924 @@
       'createTable' => 
       array (
         'description' => 'Creates a table using MySQL SQL',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$definition' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'boolean',
+      ),
+      'dropTable' => 
+      array (
+        'description' => 'Drops a table from a schema/database',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$ifExists' => 
+          array (
+            'type' => 'boolean',
+            'optional' => true,
+            'default' => true,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'boolean',
+      ),
+      'addColumn' => 
+      array (
+        'description' => 'Adds a column to a table',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$column' => 
+          array (
+            'type' => 'Phalcon_Db_Column',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'boolean',
+      ),
+      'modifyColumn' => 
+      array (
+        'description' => 'Modifies a table column based on a definition',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$column' => 
+          array (
+            'type' => 'Phalcon_Db_Column',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'boolean',
+      ),
+      'dropColumn' => 
+      array (
+        'description' => 'Drops a column from a table',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$columnName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'boolean',
+      ),
+      'addIndex' => 
+      array (
+        'description' => 'Adds an index to a table',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$index' => 
+          array (
+            'type' => 'DbIndex',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'boolean',
+      ),
+      'dropIndex' => 
+      array (
+        'description' => 'Drop an index from a table',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$indexName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'boolean',
+      ),
+      'addPrimaryKey' => 
+      array (
+        'description' => 'Adds a primary key to a table',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$index' => 
+          array (
+            'type' => 'Phalcon_Db_Index',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'boolean',
+      ),
+      'dropPrimaryKey' => 
+      array (
+        'description' => 'Drops primary key from a table',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'boolean',
+      ),
+      'addForeignKey' => 
+      array (
+        'description' => 'Adds a foreign key to a table',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$reference' => 
+          array (
+            'type' => 'Phalcon_Db_Reference',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'boolean true',
+      ),
+      'dropForeignKey' => 
+      array (
+        'description' => 'Drops a foreign key from a table',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$referenceName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'boolean true',
+      ),
+      'getColumnDefinition' => 
+      array (
+        'description' => 'Returns the SQL column definition from a column',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$column' => 
+          array (
+            'type' => 'Phalcon_Db_Column',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'describeTable' => 
+      array (
+        'description' => 'Generates SQL describing a table
+ <pre class="source-code iphp"><span class="identifier">print_r</span>(<span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">describeTable</span>(<span class="string">"posts"</span>) ?&gt;</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$table' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schema' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'listTables' => 
+      array (
+        'description' => 'List all tables on a database
+ <pre class="source-code iphp"><span class="identifier">print_r</span>(<span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">listTables</span>(<span class="string">"blog"</span>) ?&gt;</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'array',
+      ),
+      'getDateUsingFormat' => 
+      array (
+        'description' => 'Returns a database date formatted
+ <pre class="source-code iphp"><span class="tag">$<span class="identifier">format</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">getDateUsingFormat</span>(<span class="string">"2011-02-01"</span>, <span class="string">"YYYY-MM-DD"</span>);</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$date' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$format' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => 'YYYY-MM-DD',
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'describeIndexes' => 
+      array (
+        'description' => 'Lists table indexes',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$table' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schema' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'Phalcon_Db_Index[]',
+      ),
+      'describeReferences' => 
+      array (
+        'description' => 'Lists table references',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$table' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schema' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'Phalcon_Db_Reference[]',
+      ),
+      'tableOptions' => 
+      array (
+        'description' => 'Gets creation options from a table',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'array',
+      ),
+    ),
+  ),
+  'Phalcon_Db_Adapter_Postgresql' => 
+  array (
+    'description' => 'Phalcon_Db_Adapter_Postgresql is the Phalcon_Db adapter for the PostgreSQL database.
+ <pre class="source-code iphp">#<span class="identifier">Setting</span> <span class="identifier">all</span> <span class="identifier">posible</span> <span class="identifier">parameters</span>
+<span class="tag">$<span class="identifier">config</span></span> = <span class="keyword operator">new</span> <span class="identifier">stdClass</span>();
+<span class="tag">$<span class="identifier">config</span></span>-&gt;<span class="identifier">host</span> = <span class="string">\'localhost\'</span>;
+<span class="tag">$<span class="identifier">config</span></span>-&gt;<span class="identifier">username</span> = <span class="string">\'postgres\'</span>;
+<span class="tag">$<span class="identifier">config</span></span>-&gt;<span class="identifier">password</span> = <span class="string">\'sigma\'</span>;
+<span class="tag">$<span class="identifier">config</span></span>-&gt;<span class="identifier">name</span> = <span class="string">\'swarm\'</span>;
+<span class="tag">$<span class="identifier">config</span></span>-&gt;<span class="identifier">charset</span> = <span class="string">\'UNICODE\'</span>;
+
+<span class="tag">$<span class="identifier">connection</span></span> = <span class="identifier">Phalcon_Db</span>::<span class="identifier">factory</span>(<span class="string">\'Postgresql\'</span>, <span class="tag">$<span class="identifier">config</span></span>);</pre>',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+      'DB_ASSOC' => 1,
+      'DB_BOTH' => 2,
+      'DB_NUM' => 3,
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
+      '__construct' => 
+      array (
+        'description' => 'Constructor for Phalcon_Db_Adapter_Postgresql. This method does not should to be called directly. Use Phalcon_Db::factory instead',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$descriptor' => 
+          array (
+            'type' => 'stdClass',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'connect' => 
+      array (
+        'description' => 'This method is automatically called in Phalcon_Db_Postgresql constructor.
+ Call it when you need to restore a database connection',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$descriptor' => 
+          array (
+            'type' => 'stdClass',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'boolean',
+      ),
+      'query' => 
+      array (
+        'description' => 'Sends SQL statements to the PostgreSQL database server returning success state.
+ When the SQL sent have returned any row, the result is a PHP resource.
+ <pre class="source-code iphp"><span class="comment">//Inserting data
+</span> <span class="tag">$<span class="identifier">success</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"INSERT INTO robots VALUES (1, \'Astro Boy\')"</span>);
+ <span class="tag">$<span class="identifier">success</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"INSERT INTO robots VALUES (?, ?)"</span>, <span class="keyword builtin">array</span>(<span class="number">1</span>, <span class="string">\'Astro Boy\'</span>));
+ <span class="comment">//Querying data
+</span> <span class="tag">$<span class="identifier">resultset</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"SELECT * FROM robots WHERE type=\'mechanical\'"</span>);</pre>
+ $resultset = $connection->query("SELECT * FROM robots WHERE type=?", array("mechanical"));</code>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$sqlStatement' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'Phalcon_Db_Result_Postgresql|boolean',
+      ),
+      'affectedRows' => 
+      array (
+        'description' => 'Returns number of affected rows by the last INSERT/UPDATE/DELETE repoted by PostgreSQL
+ <pre class="source-code iphp"><span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"DELETE FROM robots"</span>);
+<span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">affectedRows</span>(), <span class="string">\' were deleted\'</span>;</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'int',
+      ),
+      'close' => 
+      array (
+        'description' => 'Closes active connection returning success. Phalcon automatically closes and destroys active connections within Phalcon_Db_Pool',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'boolean',
+      ),
+      'getConnectionId' => 
+      array (
+        'description' => 'Gets the active connection unique identifier. A pgsql resource',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$asString' => 
+          array (
+            'type' => 'boolean',
+            'optional' => true,
+            'default' => false,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'escapeString' => 
+      array (
+        'description' => 'Escapes a value to avoid SQL injections',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$str' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'bindParams' => 
+      array (
+        'description' => 'Bind params to SQL select',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$sqlSelect' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$params' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'error' => 
+      array (
+        'description' => 'Returns last error message from PostgreSQL',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$errorString' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'noError' => 
+      array (
+        'description' => 'Returns last error code from PostgreSQL',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$resultQuery' => 
+          array (
+            'type' => 'resurce',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'int',
+      ),
+      'lastInsertId' => 
+      array (
+        'description' => 'Returns insert id for the auto_increment column inserted in the last SQL statement',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$table' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$primaryKey' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$sequenceName' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'int',
+      ),
+      'getColumnList' => 
+      array (
+        'description' => 'Gets a list of columns',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$columnList' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'limit' => 
+      array (
+        'description' => 'Appends a LIMIT clause to $sqlQuery argument
+ <pre class="source-code iphp"><span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">limit</span>(<span class="string">"SELECT * FROM robots"</span>, <span class="number">5</span>);</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$sqlQuery' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$number' => 
+          array (
+            'type' => 'int',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'tableExists' => 
+      array (
+        'description' => 'Generates SQL checking for the existence of a schema.table
+ <pre class="source-code iphp"><span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">tableExists</span>(<span class="string">"blog"</span>, <span class="string">"posts"</span>)</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'viewExists' => 
+      array (
+        'description' => 'Generates SQL checking for the existence of a schema.view
+ <pre class="source-code iphp"><span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">viewExists</span>(<span class="string">"active_users"</span>, <span class="string">"posts"</span>)</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$viewName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'forUpdate' => 
+      array (
+        'description' => 'Devuelve un FOR UPDATE valido para un SELECT del RBDM',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$sqlQuery' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'sharedLock' => 
+      array (
+        'description' => 'Devuelve un SHARED LOCK valido para un SELECT del RBDM',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$sqlQuery' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'createTable' => 
+      array (
+        'description' => 'Creates a table using PostgreSQL SQL',
         'modifiers' => 
         array (
           0 => 'public',
@@ -4135,6 +5103,633 @@
       ),
     ),
   ),
+  'Phalcon_Db_Dialect_Postgresql' => 
+  array (
+    'description' => 'Generates database specific SQL for the PostgreSQL RBDM',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'abstract',
+    'methods' => 
+    array (
+      'limit' => 
+      array (
+        'description' => 'Generates the SQL for a PostgreSQL LIMIT clause',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$sqlQuery' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$number' => 
+          array (
+            'type' => 'int',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'getColumnList' => 
+      array (
+        'description' => 'Gets a list of columns',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$columnList' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'getColumnDefinition' => 
+      array (
+        'description' => 'Gets the column name in PostgreSQL',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$column' => 
+          array (
+            'type' => 'Phalcon_Db_Column',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'addColumn' => 
+      array (
+        'description' => 'Generates SQL to add a column to a table',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$column' => 
+          array (
+            'type' => 'Phalcon_Db_Column',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'modifyColumn' => 
+      array (
+        'description' => 'Generates SQL to modify a column in a table',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$column' => 
+          array (
+            'type' => 'Phalcon_Db_Column',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'dropColumn' => 
+      array (
+        'description' => 'Generates SQL to delete a column from a table',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$columnName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'addIndex' => 
+      array (
+        'description' => 'Generates SQL to add an index to a table',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$index' => 
+          array (
+            'type' => 'Phalcon_Db_Index',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'dropIndex' => 
+      array (
+        'description' => 'Generates SQL to delete an index from a table',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$indexName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'addPrimaryKey' => 
+      array (
+        'description' => 'Generates SQL to add the primary key to a table',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$index' => 
+          array (
+            'type' => 'Phalcon_Db_Index',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'dropPrimaryKey' => 
+      array (
+        'description' => 'Generates SQL to delete primary key from a table',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'addForeignKey' => 
+      array (
+        'description' => 'Generates SQL to add an index to a table',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$reference' => 
+          array (
+            'type' => 'Phalcon_Db_Reference',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'dropForeignKey' => 
+      array (
+        'description' => 'Generates SQL to delete a foreign key from a table',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$referenceName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      '_getTableOptions' => 
+      array (
+        'description' => 'Generates SQL to add the table creation options',
+        'modifiers' => 
+        array (
+          0 => 'protected',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$definition' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'array',
+      ),
+      'createTable' => 
+      array (
+        'description' => 'Generates SQL to create a table in PostgreSQL',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$definition' => 
+          array (
+            'type' => 'array',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'dropTable' => 
+      array (
+        'description' => 'Generates SQL to drop a table',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$ifExists' => 
+          array (
+            'type' => 'boolean',
+            'optional' => true,
+            'default' => true,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'boolean',
+      ),
+      'tableExists' => 
+      array (
+        'description' => 'Generates SQL checking for the existence of a schema.table
+ <pre class="source-code iphp"><span class="keyword builtin">echo</span> <span class="identifier">Phalcon_Db_Dialect_Postgresql</span>::<span class="identifier">tableExists</span>(<span class="string">"posts"</span>, <span class="string">"blog"</span>)</pre>
+ <pre class="source-code iphp"><span class="keyword builtin">echo</span> <span class="identifier">Phalcon_Db_Dialect_Postgresql</span>::<span class="identifier">tableExists</span>(<span class="string">"posts"</span>)</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$tableName' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'describeTable' => 
+      array (
+        'description' => 'Generates a SQL describing a table
+ <pre class="source-code iphp"><span class="identifier">print_r</span>(<span class="identifier">Phalcon_Db_Dialect_Postgresql</span>::<span class="identifier">describeTable</span>(<span class="string">"posts"</span>) ?&gt;</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$table' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schema' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'listTables' => 
+      array (
+        'description' => 'List all tables on database
+ <pre class="source-code iphp"><span class="identifier">print_r</span>(<span class="identifier">Phalcon_Db_Dialect_Postgresql</span>::<span class="identifier">listTables</span>(<span class="string">"blog"</span>) ?&gt;</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$schemaName' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'array',
+      ),
+      'describeIndexes' => 
+      array (
+        'description' => 'Generates SQL to query indexes on a table',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$table' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schema' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'describeReferences' => 
+      array (
+        'description' => 'Generates SQL to query foreign keys on a table',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$table' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schema' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+      'tableOptions' => 
+      array (
+        'description' => 'Generates the SQL to describe the table creation options',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+          '$table' => 
+          array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$schema' => 
+          array (
+            'type' => 'string',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'string',
+      ),
+    ),
+  ),
   'Phalcon_Db_Exception' => 
   array (
     'description' => 'Exceptions thrown in Phalcon_Db will use this class',
@@ -4152,7 +5747,9 @@
   ),
   'Phalcon_Db_Index' => 
   array (
-    'description' => 'Allows to define indexes to be used on tables
+    'description' => 'Allows to define indexes to be used on tables. Indexes are a common way
+ to enhance database performance. An index allows the database server to find
+ and retrieve specific rows much faster than it could do without an index.
 
  <pre class="source-code iphp"></pre>',
     'extends' => NULL,
@@ -4337,6 +5934,19 @@
           ),
         ),
         'return' => 'Phalcon_Db',
+      ),
+      'reset' => 
+      array (
+        'description' => 'Resets default descriptor and connection',
+        'modifiers' => 
+        array (
+          0 => 'public',
+          1 => 'static',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
       ),
     ),
   ),
@@ -4797,9 +6407,7 @@
   ),
   'Phalcon_Db_Result_Mysql' => 
   array (
-    'description' => 'Phalcon_Db_Result
-
- Encapsulates the resultset internals
+    'description' => 'Encapsulates the resultset internals
 
  <pre class="source-code iphp"><span class="tag">$<span class="identifier">result</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"SELECT * FROM robots ORDER BY name"</span>);
 <span class="tag">$<span class="identifier">result</span></span>-&gt;<span class="identifier">setFetchMode</span>(<span class="identifier">Phalcon_Db</span>::<span class="identifier">DB_NUM</span>);
@@ -4818,7 +6426,7 @@
     array (
       '__construct' => 
       array (
-        'description' => 'Phalcon_Db_Result constructor',
+        'description' => 'Phalcon_Db_Result_Mysql constructor',
         'modifiers' => 
         array (
           0 => 'public',
@@ -4827,7 +6435,7 @@
         array (
           '$result' => 
           array (
-            'type' => 'resource',
+            'type' => 'object',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -4913,6 +6521,149 @@
           ),
         ),
         'return' => 'unknown',
+      ),
+      'getInternalResult' => 
+      array (
+        'description' => 'Gets the internal MySQLi result object',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'mysqli_result',
+      ),
+    ),
+  ),
+  'Phalcon_Db_Result_Postgresql' => 
+  array (
+    'description' => 'Encapsulates the resultset internals
+
+ <pre class="source-code iphp"><span class="tag">$<span class="identifier">result</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"SELECT * FROM robots ORDER BY name"</span>);
+<span class="tag">$<span class="identifier">result</span></span>-&gt;<span class="identifier">setFetchMode</span>(<span class="identifier">Phalcon_Db</span>::<span class="identifier">DB_NUM</span>);
+<span class="keyword">while</span>(<span class="tag">$<span class="identifier">robot</span></span> = <span class="tag">$<span class="identifier">result</span></span>-&gt;<span class="identifier">fetchArray</span>()){
+  <span class="identifier">print_r</span>(<span class="tag">$<span class="identifier">robot</span></span>);
+}</pre>',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
+      '__construct' => 
+      array (
+        'description' => 'Phalcon_Db_Result_Postgresql constructor',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$result' => 
+          array (
+            'type' => 'resource',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'fetchArray' => 
+      array (
+        'description' => 'Returns an array of strings that corresponds to the fetched row, or FALSE if there are no more rows.
+ This method is affected by the active fetch flag set using Phalcon_Db_Result_Postgresql::setFetchMode
+ <pre class="source-code iphp"><span class="tag">$<span class="identifier">result</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"SELECT * FROM robots ORDER BY name"</span>);
+<span class="tag">$<span class="identifier">result</span></span>-&gt;<span class="identifier">setFetchMode</span>(<span class="identifier">Phalcon_Db</span>::<span class="identifier">DB_NUM</span>);
+<span class="keyword">while</span>(<span class="tag">$<span class="identifier">robot</span></span> = <span class="tag">$<span class="identifier">result</span></span>-&gt;<span class="identifier">fetchArray</span>()){
+  <span class="identifier">print_r</span>(<span class="tag">$<span class="identifier">robot</span></span>);
+}</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'boolean',
+      ),
+      'numRows' => 
+      array (
+        'description' => 'Gets number of rows returned by a resulset
+ <pre class="source-code iphp"><span class="tag">$<span class="identifier">result</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"SELECT * FROM robots ORDER BY name"</span>);
+<span class="keyword builtin">echo</span> <span class="string">\'There are \'</span>, <span class="tag">$<span class="identifier">result</span></span>-&gt;<span class="identifier">numRows</span>(), <span class="string">\' rows in the resulset\'</span>;</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'int',
+      ),
+      'dataSeek' => 
+      array (
+        'description' => 'Moves internal resulset cursor to another position letting us to fetch a certain row
+ <pre class="source-code iphp"><span class="tag">$<span class="identifier">result</span></span> = <span class="tag">$<span class="identifier">connection</span></span>-&gt;<span class="identifier">query</span>(<span class="string">"SELECT * FROM robots ORDER BY name"</span>);
+<span class="tag">$<span class="identifier">result</span></span>-&gt;<span class="identifier">dataSeek</span>(<span class="number">2</span>); <span class="comment">// Move to third row on result
+</span> <span class="tag">$<span class="identifier">row</span></span> = <span class="tag">$<span class="identifier">result</span></span>-&gt;<span class="identifier">fetchArray</span>(); // <span class="identifier">Fetch</span> <span class="identifier">third</span> <span class="identifier">row</span></pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$number' => 
+          array (
+            'type' => 'int',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'int',
+      ),
+      'setFetchMode' => 
+      array (
+        'description' => 'Changes the fetching mode affecting Phalcon_Db_Postgresql::fetchArray
+ <pre class="source-code iphp"><span class="comment">//Return array with integer indexes
+</span> <span class="tag">$<span class="identifier">result</span></span>-&gt;<span class="identifier">setFetchMode</span>(<span class="identifier">Phalcon_Db</span>::<span class="identifier">DB_NUM</span>);
+ <span class="comment">//Return associative array without integer indexes
+</span> <span class="tag">$<span class="identifier">result</span></span>-&gt;<span class="identifier">setFetchMode</span>(<span class="identifier">Phalcon_Db</span>::<span class="identifier">DB_ASSOC</span>);
+ <span class="comment">//Return associative array together with integer indexes
+</span> <span class="tag">$<span class="identifier">result</span></span>-&gt;<span class="identifier">setFetchMode</span>(<span class="identifier">Phalcon_Db</span>::<span class="identifier">DB_BOTH</span>);</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$fetchMode' => 
+          array (
+            'type' => 'int',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'getInternalResult' => 
+      array (
+        'description' => 'Gets the internal MySQLi result object',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'mysqli_result',
       ),
     ),
   ),
@@ -5724,9 +7475,9 @@
         ),
         'parameters' => 
         array (
-          '$index' => 
+          '$param' => 
           array (
-            'type' => 'unknown',
+            'type' => 'mixed',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -6196,6 +7947,21 @@
       ),
     ),
   ),
+  'Phalcon_Loader_Exception' => 
+  array (
+    'description' => 'Exceptions thrown in Phalcon_Loader will use this class',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
+    ),
+  ),
   'Phalcon_Loader' => 
   array (
     'description' => 'This component helps to load your project classes automatically based on some conventions
@@ -6206,7 +7972,7 @@
  <span class="comment">//Register some namespaces
 </span> <span class="tag">$<span class="identifier">loader</span></span>-&gt;<span class="identifier">registerNamespaces</span>(<span class="keyword builtin">array</span>(
    <span class="string">\'Example\\\\Base\'</span> =&gt; <span class="string">\'vendor/example/base/\'</span>,
-   <span class="string">\'Example\\\\Adapter\'</span> =&gt; <span class="string">\'vendor/example/adapter/\'</span>
+   <span class="string">\'Example\\\\Adapter\'</span> =&gt; <span class="string">\'vendor/example/adapter/\'</span>,
    <span class="string">\'Example\'</span> =&gt; <span class="string">\'vendor/example/\'</span>
  ));
 
@@ -6311,7 +8077,7 @@
             'byReference' => false,
           ),
         ),
-        'return' => 'unknown',
+        'return' => 'boolean',
       ),
     ),
   ),
@@ -6584,25 +8350,6 @@
     'type' => 'public',
     'methods' => 
     array (
-      '__construct' => 
-      array (
-        'description' => 'Phalcon_Logger_Exception constructor',
-        'modifiers' => 
-        array (
-          0 => 'public',
-        ),
-        'parameters' => 
-        array (
-          '$message' => 
-          array (
-            'type' => 'string',
-            'optional' => false,
-            'default' => NULL,
-            'byReference' => false,
-          ),
-        ),
-        'return' => 'unknown',
-      ),
     ),
   ),
   'Phalcon_Logger_Item' => 
@@ -8258,7 +10005,7 @@
   ),
   'Phalcon_Model_Exception' => 
   array (
-    'description' => '',
+    'description' => 'Exceptions thrown in Phalcon_Model_* classes will use this class',
     'extends' => NULL,
     'implements' => 
     array (
@@ -8360,7 +10107,7 @@
       ),
       'setCache' => 
       array (
-        'description' => 'Overwrites default meta-data manager',
+        'description' => 'Set the cache object or cache parameters to make the view caching',
         'modifiers' => 
         array (
           0 => 'public',
@@ -8369,7 +10116,7 @@
         array (
           '$cache' => 
           array (
-            'type' => 'object',
+            'type' => 'Phalcon_Cache_Backend|object',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -9225,7 +10972,7 @@
 <pre class="source-code iphp"><span class="tag">$<span class="identifier">modelManager</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Model_Manager</span>();
 
  <span class="tag">$<span class="identifier">metaData</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Model_Metadata</span>(<span class="string">\'Apc\'</span>, <span class="keyword builtin">array</span>(
-    <span class="string">\'sufix\'</span> =&gt; <span class="string">\'my-app-id\'</span>,
+    <span class="string">\'suffix\'</span> =&gt; <span class="string">\'my-app-id\'</span>,
     <span class="string">\'lifetime\'</span> =&gt; <span class="number">86400</span>
  ));
  <span class="tag">$<span class="identifier">modelManager</span></span>-&gt;<span class="identifier">setMetaData</span>(<span class="tag">$<span class="identifier">metaData</span></span>);</pre>',
@@ -9352,7 +11099,7 @@
 <pre class="source-code iphp"><span class="tag">$<span class="identifier">modelManager</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Model_Manager</span>();
 
  <span class="tag">$<span class="identifier">metaData</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Model_Metadata</span>(<span class="string">\'Session\'</span>, <span class="keyword builtin">array</span>(
-    <span class="string">\'sufix\'</span> =&gt; <span class="string">\'my-app-id\'</span>
+    <span class="string">\'suffix\'</span> =&gt; <span class="string">\'my-app-id\'</span>
  ));
  <span class="tag">$<span class="identifier">modelManager</span></span>-&gt;<span class="identifier">setMetaData</span>(<span class="tag">$<span class="identifier">metaData</span></span>);</pre>',
     'extends' => NULL,
@@ -10521,7 +12268,7 @@
     'description' => 'Validates that a field or a combination of a set of fields are not
  present more than once in the existing records of the related table
 
-<pre class="source-code iphp"><span class="keyword">class</span> <span class="identifier">Subscriptors</span> <span class="keyword">extends</span> <span class="identifier">Phalcon_Model_Base</span> 
+<pre class="source-code iphp"><span class="keyword">class</span> <span class="identifier">Subscriptors</span> <span class="keyword">extends</span> <span class="identifier">Phalcon_Model_Base</span>
 {
 
   <span class="keyword">public</span> <span class="keyword">function</span> <span class="identifier">validation</span>()
@@ -10905,7 +12652,7 @@
   ),
   'Phalcon_Paginator_Exception' => 
   array (
-    'description' => '',
+    'description' => 'Exceptions thrown in Phalcon_Paginator will use this class',
     'extends' => NULL,
     'implements' => 
     array (
@@ -10916,25 +12663,6 @@
     'type' => 'public',
     'methods' => 
     array (
-      '__construct' => 
-      array (
-        'description' => 'Paginator Exception',
-        'modifiers' => 
-        array (
-          0 => 'public',
-        ),
-        'parameters' => 
-        array (
-          '$message' => 
-          array (
-            'type' => 'string',
-            'optional' => false,
-            'default' => NULL,
-            'byReference' => false,
-          ),
-        ),
-        'return' => 'unknown',
-      ),
     ),
   ),
   'Phalcon_Paginator' => 
@@ -11024,6 +12752,21 @@
       ),
     ),
   ),
+  'Phalcon_Request_Exception' => 
+  array (
+    'description' => 'Exceptions thrown in Phalcon_Request will use this class',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
+    ),
+  ),
   'Phalcon_Request_File' => 
   array (
     'description' => 'Provides OO wrappers to the $_FILES superglobal
@@ -11031,7 +12774,7 @@
 <pre class="source-code iphp"><span class="keyword">class</span> <span class="identifier">PostsController</span> <span class="keyword">extends</span> <span class="identifier">Phalcon_Controller</span>
 {
 
- <span class="keyword">function</span> <span class="identifier">uploadAction</span>()
+ <span class="keyword">public</span> <span class="keyword">function</span> <span class="identifier">uploadAction</span>()
  {
    <span class="comment">//Check if the user has uploaded files
 </span>   <span class="keyword">if</span> (<span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">request</span>-&gt;<span class="identifier">hasFiles</span>() == <span class="keyword literal">true</span>) {
@@ -11714,6 +13457,112 @@
       ),
     ),
   ),
+  'Phalcon_Response_Exception' => 
+  array (
+    'description' => 'Exceptions thrown in Phalcon_Response will use this class',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
+    ),
+  ),
+  'Phalcon_Response_Headers' => 
+  array (
+    'description' => '',
+    'extends' => NULL,
+    'implements' => 
+    array (
+    ),
+    'constants' => 
+    array (
+    ),
+    'type' => 'public',
+    'methods' => 
+    array (
+      'set' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$name' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$value' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'get' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$name' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'setRaw' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$header' => 
+          array (
+            'type' => 'unknown',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      'send' => 
+      array (
+        'description' => '',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
+    ),
+  ),
   'Phalcon_Response' => 
   array (
     'description' => 'Encapsulates the HTTP response message.
@@ -11769,7 +13618,19 @@
             'byReference' => false,
           ),
         ),
-        'return' => 'unknown',
+        'return' => 'Phalcon_Response',
+      ),
+      'getHeaders' => 
+      array (
+        'description' => 'Returns headers set by the user',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'Phalcon_Response_Headers',
       ),
       'setHeader' => 
       array (
@@ -11796,7 +13657,7 @@
             'byReference' => false,
           ),
         ),
-        'return' => 'unknown',
+        'return' => 'Phalcon_Response',
       ),
       'setRawHeader' => 
       array (
@@ -11810,8 +13671,66 @@
         array (
           '$header' => 
           array (
+            'type' => 'string',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'Phalcon_Response',
+      ),
+      'setExpires' => 
+      array (
+        'description' => 'Sets output expire time header',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$datetime' => 
+          array (
+            'type' => 'DateTime',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'Phalcon_Response',
+      ),
+      'setNotModified' => 
+      array (
+        'description' => 'Sends a Not-Modified response',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
+      ),
+      'setContentType' => 
+      array (
+        'description' => 'Sets the response content-type mime, optionally the charset
+<pre class="source-code iphp"><span class="tag">$<span class="identifier">response</span></span>-&gt;<span class="identifier">setContentType</span>(<span class="string">\'text/plain\'</span>, <span class="string">\'UTF-8\'</span>);</pre>',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$contentType' => 
+          array (
             'type' => 'unknown',
             'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$charset' => 
+          array (
+            'type' => 'unknown',
+            'optional' => true,
             'default' => NULL,
             'byReference' => false,
           ),
@@ -11822,7 +13741,8 @@
       array (
         'description' => 'Redirect by HTTP to another action or URL
 <pre class="source-code iphp"><span class="tag">$<span class="identifier">response</span></span>-&gt;<span class="identifier">redirect</span>(<span class="string">"posts/index"</span>);
-<span class="tag">$<span class="identifier">response</span></span>-&gt;<span class="identifier">redirect</span>(<span class="string">"http://en.wikipedia.org"</span>, <span class="keyword literal">true</span>);</pre>',
+<span class="tag">$<span class="identifier">response</span></span>-&gt;<span class="identifier">redirect</span>(<span class="string">"http://en.wikipedia.org"</span>, <span class="keyword literal">true</span>);
+<span class="tag">$<span class="identifier">response</span></span>-&gt;<span class="identifier">redirect</span>(<span class="string">"http://www.example.com/new-location"</span>, <span class="keyword literal">true</span>, <span class="number">301</span>);</pre>',
         'modifiers' => 
         array (
           0 => 'public',
@@ -11836,15 +13756,22 @@
             'default' => NULL,
             'byReference' => false,
           ),
-          '$full' => 
+          '$externalRedirect' => 
           array (
             'type' => 'boolean',
             'optional' => true,
             'default' => false,
             'byReference' => false,
           ),
+          '$statusCode' => 
+          array (
+            'type' => 'int',
+            'optional' => true,
+            'default' => 302,
+            'byReference' => false,
+          ),
         ),
-        'return' => 'unknown',
+        'return' => 'Phalcon_Response',
       ),
       'setContent' => 
       array (
@@ -11883,7 +13810,7 @@
             'byReference' => false,
           ),
         ),
-        'return' => 'unknown',
+        'return' => 'Phalcon_Response',
       ),
       'getContent' => 
       array (
@@ -11907,7 +13834,7 @@
         'parameters' => 
         array (
         ),
-        'return' => 'unknown',
+        'return' => 'Phalcon_Response',
       ),
       'reset' => 
       array (
@@ -12490,7 +14417,7 @@ Rewrite rules using a hidden directory and a public/ document root:
   ),
   'Phalcon_Tag_Exception' => 
   array (
-    'description' => '',
+    'description' => 'Exceptions thrown in Phalcon_Tag will use this class',
     'extends' => NULL,
     'implements' => 
     array (
@@ -12501,25 +14428,6 @@ Rewrite rules using a hidden directory and a public/ document root:
     'type' => 'public',
     'methods' => 
     array (
-      '__construct' => 
-      array (
-        'description' => 'Paginator Exception',
-        'modifiers' => 
-        array (
-          0 => 'public',
-        ),
-        'parameters' => 
-        array (
-          '$message' => 
-          array (
-            'type' => 'string',
-            'optional' => false,
-            'default' => NULL,
-            'byReference' => false,
-          ),
-        ),
-        'return' => 'unknown',
-      ),
     ),
   ),
   'Phalcon_Tag_Select' => 
@@ -14663,6 +16571,25 @@ Rewrite rules using a hidden directory and a public/ document root:
     'type' => 'public',
     'methods' => 
     array (
+      '__construct' => 
+      array (
+        'description' => 'Phalcon_View constructor',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$options' => 
+          array (
+            'type' => 'Phalcon_Config|stClass',
+            'optional' => true,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
       'setViewsDir' => 
       array (
         'description' => 'Sets views directory. Depending of your platform, always add a trailing slash or backslash',
@@ -14953,21 +16880,28 @@ Rewrite rules using a hidden directory and a public/ document root:
         array (
           '$engines' => 
           array (
-            'type' => 'unknown',
+            'type' => 'array',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$viewPath' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$silence' => 
           array (
-            'type' => 'unknown',
+            'type' => 'boolean',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$cache' => 
+          array (
+            'type' => 'Phalcon_Cache',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -14977,7 +16911,11 @@ Rewrite rules using a hidden directory and a public/ document root:
       ),
       'registerEngines' => 
       array (
-        'description' => 'Register templating engines',
+        'description' => 'Register templating engines
+<pre class="source-code iphp"><span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">view</span>-&gt;<span class="identifier">registerEngines</span>(<span class="keyword builtin">array</span>(
+  <span class="string">".phtml"</span> =&gt; <span class="string">"Php"</span>,
+  <span class="string">".mhtml"</span> =&gt; <span class="string">"Mustache"</span>
+));</pre>',
         'modifiers' => 
         array (
           0 => 'public',
@@ -14996,7 +16934,11 @@ Rewrite rules using a hidden directory and a public/ document root:
       ),
       'render' => 
       array (
-        'description' => 'Executes render process from request data',
+        'description' => 'Executes render process from request data
+<pre class="source-code iphp"><span class="tag">$<span class="identifier">view</span></span>-&gt;<span class="identifier">start</span>();
+ <span class="comment">//Shows recent posts view (app/views/posts/recent.phtml)
+</span> <span class="tag">$<span class="identifier">view</span></span>-&gt;<span class="identifier">render</span>(<span class="string">\'posts\'</span>, <span class="string">\'recent\'</span>);
+ <span class="tag">$<span class="identifier">view</span></span>-&gt;<span class="identifier">finish</span>();</pre>',
         'modifiers' => 
         array (
           0 => 'public',
@@ -15090,9 +17032,72 @@ Rewrite rules using a hidden directory and a public/ document root:
         ),
         'return' => 'unknown',
       ),
+      'setCache' => 
+      array (
+        'description' => 'Set the cache object or cache parameters to do the resultset caching',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$cache' => 
+          array (
+            'type' => 'Phalcon_Cache_Backend|object',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
+      '_createCache' => 
+      array (
+        'description' => 'Create a Phalcon_Cache based on the internal cache options',
+        'modifiers' => 
+        array (
+          0 => 'protected',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'Phalcon_Cache',
+      ),
+      'getCache' => 
+      array (
+        'description' => 'Returns the cache instance used to cache',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'Phalcon_Cache',
+      ),
+      'cache' => 
+      array (
+        'description' => 'Cache the actual view render to certain level',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$options' => 
+          array (
+            'type' => 'boolean|array',
+            'optional' => true,
+            'default' => true,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
+      ),
       'setContent' => 
       array (
-        'description' => 'Externally sets the view content',
+        'description' => 'Externally sets the view content
+<pre class="source-code iphp"><span class="tag">$<span class="identifier">this</span></span>-&gt;<span class="identifier">view</span>-&gt;<span class="identifier">setContent</span>(<span class="string">"&lt;h1&gt;hello&lt;/h1&gt;"</span>);</pre>',
         'modifiers' => 
         array (
           0 => 'public',

@@ -40,6 +40,13 @@
 				a server providing multi-user access to a number of databases</td>
 			<td><?php echo Tag::classLink('Phalcon_Db_Adapter_Mysql') ?></td>
 		</tr>
+		<tr>
+			<td><a href="http://en.wikipedia.org/wiki/PostgreSQL">PostgreSQL</a></td>
+			<td>PostgreSQL is a powerful, open source relational database system. It has more than 15 years
+			of active development and a proven architecture that has earned it a strong reputation
+			for reliability, data integrity, and correctness.</td>
+			<td><?php echo Tag::classLink('Phalcon_Db_Adapter_Postgresql') ?></td>
+		</tr>
 	</table>
 </div>
 
@@ -63,6 +70,12 @@
 			<td>SQL specific dialect for MySQL database system</td>
 			<td><?php echo Tag::classLink('Phalcon_Db_Dialect_Mysql') ?></td>
 			<td><a href="http://www.php.net/manual/en/book.mysqli.php">mysqli</a></td>
+		</tr>
+		<tr>
+			<td><?php echo Tag::classLink('Phalcon_Db_Adapter_Postgresql', 'PostgreSQL') ?></td>
+			<td>SQL specific dialect for PostgreSQL database system</td>
+			<td><?php echo Tag::classLink('Phalcon_Db_Dialect_Postgresql') ?></td>
+			<td><a href="http://www.php.net/manual/en/book.pgsql.php">pgsql</a></td>
 		</tr>
 	</table>
 </div>
