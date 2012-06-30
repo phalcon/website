@@ -121,6 +121,62 @@ foreach($robots as $robot){
 </div>
 
 <div class="doc-paragraph">
+	<h3><a name="querying">Querying the cache</a></h3>
+	Insofar as we add items to the cache, they are uniquely identified with the keys used to store them.
+	If the cached data has expired or the key is not existent in the cache the method get will return null.
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('
+
+//Retrieve products by key "myProducts"
+$products = $cache->get("myProducts");
+
+', 'iphp'); ?>
+</div>
+
+<div class="doc-paragraph">
+	If you want to know which keys are stored in the cache you could call the queryKeys method:
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('
+
+//Query all keys used in the cache
+$keys = $cache->queryKeys();
+foreach($keys as $key){
+	$data = $cache->get($key);
+	echo "Key=", $key, " Data=", $data;
+}
+
+//Query keys in the cache that begins with "my-prefix"
+$keys = $cache->queryKeys("my-prefix");
+
+', 'iphp'); ?>
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="deleting">Deleting from the Cache</a></h3>
+	Additionally, sometimes may be necessary to remove items from the cache, this in order to force
+	them to be refreshed from its origins. To delete an item you need to know the key with which it was created:
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('
+
+//Delete an item with a specific key
+$cache->queryKeys("someKey");
+
+//Delete all items from the cache
+$keys = $cache->queryKeys();
+foreach($keys as $key){
+	$cache->delete($key);
+}
+
+', 'iphp'); ?>
+</div>
+
+<div class="doc-paragraph">
 	<h3><a name="frontend">Frontend Adapters</a></h3>
 	This component makes use of frontend adapters to encapsulate the different input sources to cache.
 </div>

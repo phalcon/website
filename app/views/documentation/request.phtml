@@ -152,12 +152,12 @@ echo hyperlight('<?php
 //get the Http-X-Requested-With header
 $requestedWith = $response->getHeader("X_REQUESTED_WITH");
 if ($requestedWith == "XMLHttpRequest") {
-	echo "The request was made with Ajax";
+    echo "The request was made with Ajax";
 }
 
 //Same as above
 if ($request->isAjax()) {
-	echo "The request was made with Ajax";
+    echo "The request was made with Ajax";
 }
 
 //Check the request layer

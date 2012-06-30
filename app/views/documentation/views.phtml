@@ -409,15 +409,16 @@ class ProductsController extends Phalcon_Controller
 </div>
 
 <div class="doc-paragraph">
-	Phalcon_View is integrated with the <?php echo Tag::classLink("Phalcon_Cache") ?> component
-	to provide an easier way to cache output fragments. You could manually set:
+	Basically, Phalcon_View is integrated with the <?php echo Tag::classLink("Phalcon_Cache") ?>
+	component to provide an easier way to cache output fragments. You could manually set the cache
+	handler or set a global handler:
 </div>
 
 <?php echo hyperlight('<?php
 
 class PostsController extends Phalcon_Controller {
 
-    function showAction(){
+    function initialize(){
 
        //Cache data for one day by default
        $frontendOptions = array(
@@ -434,10 +435,37 @@ class PostsController extends Phalcon_Controller {
 
        //Set the cache to the view component
        $this->view->setCache($cache);
+    }
 
+    function showAction(){
+    	//Cache the view using the default settings
+        $this->view->cache(true);
+    }
+
+    function showArticleAction(){
+    	//Cache this view for 1 hour
+        $this->view->cache(array("lifetime" => 3600));
+    }
+
+    function resumeAction(){
+    	//Cache this view for 1 day with the key "resume-cache"
+        $this->view->cache(array("lifetime" => 86400, "key" => "resume-cache"));
     }
 
 }', 'php'); ?>
+
+<div class="doc-paragraph">
+	The example above a cache was implemented in the initialize method, this only applies
+	to the current controller. If you want to create a cache for all drivers it's better to set options
+	in the configuration file of the application:
+</div>
+
+<?php echo hyperlight('
+[views]
+cache.adapter = "File"
+cache.cacheDir = "cacheDir"
+cache.lifetime = 86400
+', 'iphp'); ?>
 
 <div class="doc-paragraph">
 	<h3><a name="engines">Template Engines</a></h3>
