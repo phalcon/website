@@ -19,10 +19,11 @@ try {
             'modelsDir' => __DIR__.'/../app/models/',
             'viewsDir' => __DIR__.'/../app/views/'
         ),
-        'views' => array(            
+        'views' => array(
             'cache' => array(
                 'adapter' => 'File',
-                'cacheDir' => __DIR__.'/../app/cache/'
+                'cacheDir' => __DIR__.'/../app/cache/',
+                'lifetime' => 172800
             )
         )
     ));

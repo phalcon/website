@@ -1,7 +1,7 @@
 <?php
 
 require "../helpers/hyperlight/hyperlight.php";
-require "../vendor/tags.php";
+require '../vendor/Website/Tag.php';
 
 class DocumentationController extends ControllerBase
 {
@@ -158,4 +158,5 @@ class DocumentationController extends ControllerBase
     public function debugAction()
     {
     }
+
 }

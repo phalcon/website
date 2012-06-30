@@ -87,7 +87,7 @@
 	settings, the third parameter tells if a
 	<a href="http://php.net/manual/en/features.persistent-connections.php">persistent connection</a>
 	should be created or not.
-	The below example shows how to create a connection passing both required and optional parameters.
+	The below example shows how to create a connection passing both required and optional parameters:
 </div>
 
 <?php echo hyperlight('<?php
@@ -107,6 +107,24 @@ $config->compression = true;
 
 //Create a connection
 $connection = Phalcon_Db::factory("Mysql", $config, true);
+
+', 'php'); ?>
+
+<?php echo hyperlight('<?php
+
+//Required
+$config = new stdClass();
+$config->host = "localhost";
+$config->username = "postgres";
+$config->password = "secret";
+$config->name = "template1";
+
+//Optional
+$config->persistent = false;
+$config->charset = "UNICODE";
+
+//Create a connection
+$connection = Phalcon_Db::factory("Postgresql", $config, true);
 
 ', 'php'); ?>
 
@@ -212,7 +230,8 @@ while ($robot = $result->fetchArray()) {
 
 <div class="doc-paragraph">
 	The Phalcon_Db::query returns a special object depending of the database adapter you're using.
-	In the MySQL case that object is an instance of <?php echo Tag::classLink('Phalcon_Db_Result_Mysql') ?>.
+	In the MySQL case that object is an instance of <?php echo Tag::classLink('Phalcon_Db_Result_Mysql') ?>,
+	for PostgreSQL is a <?php echo Tag::classLink('Phalcon_Db_Result_Postgresql') ?>.
 	Those objects encapsulate all the functionality related to resultsets. With them is easy traverse
 	the results, seek to a specific row, count records, etc.
 </div>
@@ -290,7 +309,7 @@ $success = $connection->insert(
 );
 
 //Updating data with a raw SQL statement
-$sql = "UPDATE `robots` SET `name` = "Astro boy" WHERE `id` = 101";
+$sql = "UPDATE `robots` SET `name` = \'Astro boy\' WHERE `id` = 101";
 $success = $connection->query($sql);
 
 //Generating dynamically the necessary SQL

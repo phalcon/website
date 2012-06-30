@@ -477,9 +477,6 @@ $products = Products::find(array("cache" => true));
 //Cache the resultset only for 5 minutes
 $products = Products::find(array("cache" => 300));
 
-//Cache the resultset only for 5 minutes
-$products = Products::find(array("cache" => 300));
-
 //Cache the resultset with a key pre-defined
 $products = Products::find(array("cache" => array("key" => "my-products-key")));
 
@@ -498,11 +495,31 @@ $products = Products::find(array("cache" => $myCache));
 
 <div class="doc-paragraph">
 	By default, Phalcon_Model will create a unique key to store the resultset
-	by generating a md5 hash of the SQL select statement generated internally.
-	This is very practical because it renews the resultset in case of some
-	of the condition's parameters have changed. If you want to control your own
+	using a md5 hash of the SQL select statement generated internally.
+	This is very practical because it generate a new key in case of some
+	of the condition's parameters have been changed. If you want to control your own
 	cache keys you could use the "key" parameter as seen above.
 </div>
+
+<div class="doc-paragraph">
+	For automatic generation of MD5 keys, could be useful to retrieve the generated key,
+	you may use it to remove the cached data from the cache bucket:
+</div>
+
+<?php echo hyperlight('<?php
+
+//Cache the resultset using an automatic key
+$products = Products::find(array("cache" => 3600));
+
+//Get last generated key
+$automaticKey = $products->getCache()->getLastKey();
+
+//Use resultset as normal
+foreach($products as $product){
+  //...
+}
+
+', 'php'); ?>
 
 <div class="doc-paragraph">
 	Note that not all resultsets must be cached. Results that change very frequently
@@ -523,7 +540,16 @@ $post = Post::findFirst();
 //Get comments related to a post, also cache it
 $comments = $post->getComments(array("cache" => true));
 
+//Get comments related to a post, setting lifetime
+$comments = $post->getComments(array("cache" => true, "lifetime" => 3600));
+
 ', 'iphp'); ?>
+
+<div class="doc-paragraph">
+	On the other hand, when you have knowledge that a resultset has been changed
+	you might require force a cache refresh. This could be done by deleting it
+	using the generated key.
+</div>
 
 <div class="doc-paragraph">
 	<h3><a name="relationships">Relationships between Models</a></h3>
@@ -911,6 +937,14 @@ if($robot->save() == false){
 }
 ', 'iphp'); ?>
 
+
+<div class="doc-paragraph">
+	<h4><a href="identity">Auto-generated identity columns</a></h4>
+	Some models may have identity columns. These columns usually are the primary key of the mapped table.
+	Phalcon_Model can recognize the identity column and will omit it from the internal SQL INSERT, so
+	the database system could generate an auto-generated value for it.
+</div>
+
 <div class="doc-paragraph">
 	<h4><a href="validation-messages">Validation Messages</a></h4>
 	Phalcon_Model has a message subsystem that allows a flexible way to output or store the validation messages generated
@@ -943,12 +977,13 @@ if ($robot->save() == false) {
 		</tr>
 		<tr>
 			<td>PresenceOf</td>
-			<td>Generated when a field with a not-null attribute on the database is trying to insert/update a null value</td>
+			<td>Generated when a field with a not-null attribute on the database is trying to insert/update
+			a null value</td>
 		</tr>
 		<tr>
 			<td>ConstraintViolation</td>
-			<td>Generated when a field part of a virtual foreign key is trying to insert/update a value that doesn't
-			exist in the referenced model</td>
+			<td>Generated when a field part of a virtual foreign key is trying to insert/update a value
+			that doesn't exist in the referenced model</td>
 		</tr>
 		<tr>
 			<td>InvalidValue</td>
@@ -1431,7 +1466,7 @@ print_r($dataTypes);
 
 //Create a meta-data manager with APC
 $metaData = new Phalcon_Model_MetaData("Apc", array(
-   "lifetime" => 3600,
+   "lifetime" => 86400,
    "suffix" => "my-suffix"
 ));
 
@@ -1449,8 +1484,8 @@ Phalcon_Model_Manager::getDefault()->setMetaData($metaData);
 <?php echo hyperlight('
 [models]
 metadata.adapter = "Apc"
-metadata.suffix = my-suffix
-metadata.lifetime = 3600
+metadata.suffix = "my-suffix"
+metadata.lifetime = 86400
 ', 'iphp'); ?>
 
 <div class="doc-paragraph">

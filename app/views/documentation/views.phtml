@@ -402,6 +402,44 @@ class ProductsController extends Phalcon_Controller
 </div>
 
 <div class="doc-paragraph">
+	<h4><a name="caching">Caching View Fragments</a></h4>
+	Sometimes when you develop dynamic websites and they aren’t updated very often,
+	the output of some pages are exactly the same between requests.
+	Phalcon_View allows caching a part of the rendered output or the entire one.
+</div>
+
+<div class="doc-paragraph">
+	Phalcon_View is integrated with the <?php echo Tag::classLink("Phalcon_Cache") ?> component
+	to provide an easier way to cache output fragments. You could manually set:
+</div>
+
+<?php echo hyperlight('<?php
+
+class PostsController extends Phalcon_Controller {
+
+    function showAction(){
+
+       //Cache data for one day by default
+       $frontendOptions = array(
+          "lifetime" => 86400
+       );
+
+       //File cache settings
+       $backendOptions = array(
+          "cacheDir" => "../app/cache/"
+       );
+
+       //Create a memcached cache
+       $cache = Phalcon_Cache::factory("Output", "Memcached", $frontendOptions, $backendOptions);
+
+       //Set the cache to the view component
+       $this->view->setCache($cache);
+
+    }
+
+}', 'php'); ?>
+
+<div class="doc-paragraph">
 	<h3><a name="engines">Template Engines</a></h3>
 	From version 0.4.0, Phalcon_View allows you to use other template engines instead of plain PHP.
 	This helps non-developers create and design views with less effort. Actually, only
@@ -778,6 +816,31 @@ $.ajax({
   alert("Done!");
 });
 ', 'iphp'); ?>
+</div>
+
+<div class="doc-paragraph">
+	<h3><a name="stand-alone">Stand-Alone Component</a></h3>
+	All components of the framework can be used individually by being loose coupled to each other.
+	Phalcon_View is not the exception, the following shows how to use it stand alone:
+</div>
+
+<div class="doc-center">
+<?php echo hyperlight('<?php
+
+$view = new Phalcon_View();
+$view->setViewsDir("../app/views/");
+
+//Passing variables to the views, these will be created as local variables
+$view->setVar("someProducts", $products);
+$view->setVar("someFeatureEnabled", true);
+
+$view->start();
+$view->render("products", "list");
+$view->finish();
+
+echo $view->getContent();
+
+', 'php'); ?>
 </div>
 
 <div class="nav-bar">
