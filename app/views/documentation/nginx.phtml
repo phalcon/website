@@ -137,7 +137,8 @@ try {
 
    $front = Phalcon_Controller_Front::getInstance();
 
-   $config = new Phalcon_Config_Adapter_Ini("path/config.ini");
+   $config = new Phalcon_Config_Adapter_Ini("../app/config/config.ini");
+   $front->setConfig($config);
 
    echo $front->dispatchLoop()->getContent();
 
