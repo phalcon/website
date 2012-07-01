@@ -1901,7 +1901,7 @@
     array (
       'setConfig' => 
       array (
-        'description' => 'Modifies multipe general settings using a Phalcon_Config object or a stdClass filled with parameters
+        'description' => 'Modifies multiple general settings using a Phalcon_Config object or a stdClass filled with parameters
  <pre class="source-code iphp"><span class="tag">$<span class="identifier">config</span></span> = <span class="keyword operator">new</span> <span class="identifier">Phalcon_Config</span>(<span class="keyword builtin">array</span>(
   <span class="string">"database"</span> =&gt; <span class="keyword builtin">array</span>(
     <span class="string">"adapter"</span> =&gt; <span class="string">"Mysql"</span>,
@@ -7596,7 +7596,7 @@
       ),
       'getLastController' => 
       array (
-        'description' => 'Returns last dispatched controller',
+        'description' => 'Returns the lastest dispatched controller',
         'modifiers' => 
         array (
           0 => 'public',
@@ -7608,7 +7608,7 @@
       ),
       'getReturnedValue' => 
       array (
-        'description' => 'Returns value returned by last dispacthed action',
+        'description' => 'Returns value returned by the lastest dispatched action',
         'modifiers' => 
         array (
           0 => 'public',
@@ -8740,7 +8740,6 @@
         'modifiers' => 
         array (
           0 => 'public',
-          1 => 'static',
         ),
         'parameters' => 
         array (
@@ -8760,7 +8759,6 @@
         'modifiers' => 
         array (
           0 => 'public',
-          1 => 'static',
         ),
         'parameters' => 
         array (
@@ -9256,7 +9254,7 @@
             'byReference' => false,
           ),
         ),
-        'return' => 'unknown',
+        'return' => 'Phalcon_Model_Resultset',
       ),
       '_getGroupResult' => 
       array (
@@ -10227,6 +10225,25 @@
           ),
         ),
         'return' => 'boolean',
+      ),
+      'initialize' => 
+      array (
+        'description' => 'Initializes a model in the model manager',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+          '$model' => 
+          array (
+            'type' => 'Phalcon_Model_Manager',
+            'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+        ),
+        'return' => 'unknown',
       ),
       'getSource' => 
       array (
@@ -11403,7 +11420,7 @@
  <span class="tag">$<span class="identifier">query</span></span>-&gt;<span class="identifier">from</span>(<span class="string">\'Robots\'</span>);
  <span class="tag">$<span class="identifier">query</span></span>-&gt;<span class="identifier">where</span>(<span class="string">\'id = ?0\'</span>);
  <span class="tag">$<span class="identifier">query</span></span>-&gt;<span class="identifier">where</span>(<span class="string">\'name LIKE ?1\'</span>);
- <span class="tag">$<span class="identifier">query</span></span>-&gt;<span class="identifier">setParameter</span>(<span class="keyword builtin">array</span>(<span class="number">0</span> =&gt; <span class="string">\'10\'</span>, <span class="number">1</span> =&gt; <span class="string">\'%Astro%\'</span>));
+ <span class="tag">$<span class="identifier">query</span></span>-&gt;<span class="identifier">setParameters</span>(<span class="keyword builtin">array</span>(<span class="number">0</span> =&gt; <span class="string">\'10\'</span>, <span class="number">1</span> =&gt; <span class="string">\'%Astro%\'</span>));
  <span class="keyword">foreach</span>(<span class="tag">$<span class="identifier">query</span></span>-&gt;<span class="identifier">getResultset</span>() <span class="keyword operator">as</span> <span class="tag">$<span class="identifier">robot</span></span>){
   <span class="keyword builtin">echo</span> <span class="tag">$<span class="identifier">robot</span></span>-&gt;<span class="identifier">name</span>, <span class="string">"\\n"</span>;
  }</pre>',
@@ -11645,6 +11662,13 @@
           array (
             'type' => 'Phalcon_Model_Result',
             'optional' => false,
+            'default' => NULL,
+            'byReference' => false,
+          ),
+          '$cache' => 
+          array (
+            'type' => 'Phalcon_Model_Cache',
+            'optional' => true,
             'default' => NULL,
             'byReference' => false,
           ),
@@ -11892,6 +11916,30 @@
         ),
         'return' => 'unknown',
       ),
+      'getCache' => 
+      array (
+        'description' => 'Returns the associated cache for the resultset',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'Phalcon_Cache_Backend',
+      ),
+      'getSourceModel' => 
+      array (
+        'description' => 'Returns an instance of the model that is used to generate each of the results',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'Phalcon_Model_Base',
+      ),
     ),
   ),
   'Phalcon_Model_Row' => 
@@ -11995,21 +12043,6 @@
         ),
         'return' => 'array',
       ),
-    ),
-  ),
-  'Phalcon_Model_Sanitize' => 
-  array (
-    'description' => '',
-    'extends' => NULL,
-    'implements' => 
-    array (
-    ),
-    'constants' => 
-    array (
-    ),
-    'type' => 'public',
-    'methods' => 
-    array (
     ),
   ),
   'Phalcon_Model_Validator_Email' => 
@@ -13474,7 +13507,12 @@
   ),
   'Phalcon_Response_Headers' => 
   array (
-    'description' => '',
+    'description' => 'This class is a bag to manage the response headers
+
+<pre class="source-code iphp"><span class="tag">$<span class="identifier">response</span></span> = <span class="identifier">Phalcon_Response</span>::<span class="identifier">getInstance</span>();
+<span class="tag">$<span class="identifier">response</span></span>-&gt;<span class="identifier">setStatusCode</span>(<span class="number">200</span>, <span class="string">"OK"</span>);
+<span class="tag">$<span class="identifier">response</span></span>-&gt;<span class="identifier">setContent</span>(<span class="string">"&lt;html&gt;&lt;body&gt;Hello&lt;/body&gt;&lt;/html&gt;"</span>);
+<span class="tag">$<span class="identifier">response</span></span>-&gt;<span class="identifier">send</span>();</pre>',
     'extends' => NULL,
     'implements' => 
     array (
@@ -13487,7 +13525,7 @@
     array (
       'set' => 
       array (
-        'description' => '',
+        'description' => 'Sets a header to be sent at the end of the request',
         'modifiers' => 
         array (
           0 => 'public',
@@ -13496,14 +13534,14 @@
         array (
           '$name' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
           '$value' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -13513,7 +13551,7 @@
       ),
       'get' => 
       array (
-        'description' => '',
+        'description' => 'Sets a header value from the internal bag',
         'modifiers' => 
         array (
           0 => 'public',
@@ -13522,17 +13560,17 @@
         array (
           '$name' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
           ),
         ),
-        'return' => 'unknown',
+        'return' => 'string',
       ),
       'setRaw' => 
       array (
-        'description' => '',
+        'description' => 'Sets a raw header to be sent at the end of the request',
         'modifiers' => 
         array (
           0 => 'public',
@@ -13541,7 +13579,7 @@
         array (
           '$header' => 
           array (
-            'type' => 'unknown',
+            'type' => 'string',
             'optional' => false,
             'default' => NULL,
             'byReference' => false,
@@ -13551,7 +13589,7 @@
       ),
       'send' => 
       array (
-        'description' => '',
+        'description' => 'Sends the headers to the client',
         'modifiers' => 
         array (
           0 => 'public',
@@ -13823,6 +13861,18 @@
         array (
         ),
         'return' => 'string',
+      ),
+      'sendHeaders' => 
+      array (
+        'description' => 'Sends headers to the client',
+        'modifiers' => 
+        array (
+          0 => 'public',
+        ),
+        'parameters' => 
+        array (
+        ),
+        'return' => 'unknown',
       ),
       'send' => 
       array (

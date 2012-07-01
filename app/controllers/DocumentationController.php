@@ -11,7 +11,7 @@ class DocumentationController extends ControllerBase
         Phalcon_Tag::setTitle('Documentation');
 
         //Cache all documentation pages with a action-cache key
-        $this->view->cache(array('key' => $this->dispatcher->getActionName().'-cache'));
+        //$this->view->cache(array('key' => $this->dispatcher->getActionName().'-cache'));
         parent::initialize();
     }
 
@@ -156,6 +156,10 @@ class DocumentationController extends ControllerBase
     }
 
     public function debugAction()
+    {
+    }
+
+    public function nginxAction()
     {
     }
 
