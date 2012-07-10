@@ -2,11 +2,13 @@
 
 error_reporting(E_ALL);
 
+//echo __DIR__.'/../app/controllers/';
+
 try {
 
     require __DIR__.'/../app/controllers/ControllerBase.php';
 
-    $config = new Phalcon_Config(array(
+    $config = new Phalcon\Config(array(
         'database' => array(
             'adapter' => 'Mysql',
             'host' => 'localhost',
@@ -28,10 +30,10 @@ try {
         )
     ));
 
-    $front = Phalcon_Controller_Front::getInstance();
+    $front = Phalcon\Controller\Front::getInstance();
     $front->setConfig($config);
     echo $front->dispatchLoop()->getContent();
 
-} catch (Phalcon_Exception $e) {
-    echo 'PhalconException: '.$e->getMessage(), PHP_EOL;
+} catch (Phalcon\Exception $e) {
+    echo 'PhalconException: ', $e->getMessage(), PHP_EOL;
 }
