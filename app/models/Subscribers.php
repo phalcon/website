@@ -1,6 +1,8 @@
 <?php
 
-class Subscribers extends Phalcon_Model_Base
+use Phalcon\Model\Base as Model;
+
+class Subscribers extends Model
 {
     public function initialize()
     {
