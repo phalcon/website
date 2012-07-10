@@ -1,6 +1,6 @@
 
 <div class="nav-bar">
-	<?php echo Phalcon_Tag::linkTo('index', 'Home') ?> » Documentation
+	<?php echo Phalcon\Tag::linkTo('index', 'Home') ?> » Documentation
 </div>
 
 <div class="doc-paragraph">
@@ -27,7 +27,7 @@
 </div>
 
 <div class="doc-paragraph">
-	For example, a request is made to the next URL <i>http://127.0.0.1/blog/posts/show/301</i>, by default Phalcon
+	For instance, a request is made to the next URL <i>http://127.0.0.1/blog/posts/show/301</i>, by default Phalcon
 	will split the URL as is follows:
 </div>
 
@@ -168,7 +168,7 @@ class PostsController extends Phalcon_Controller
 </div>
 
 <div class="doc-center">
-	<?php echo Phalcon_Tag::image('img/views-1.png') ?>
+	<?php echo Phalcon\Tag::image('img/views-1.png') ?>
 </div>
 
 <div class="doc-paragraph">
@@ -875,10 +875,10 @@ echo $view->getContent();
 	<table width="90%" align="center">
 		<tr>
 			<td align="left">
-				<?php echo Phalcon_Tag::linkTo('documentation/models', '← Working with Models') ?>
+				<?php echo Phalcon\Tag::linkTo('documentation/models', '← Working with Models') ?>
 			</td>
 			<td align="right">
-				<?php echo Phalcon_Tag::linkTo('documentation/tags', 'View Helpers →') ?>
+				<?php echo Phalcon\Tag::linkTo('documentation/tags', 'View Helpers →') ?>
 			</td>
 		</tr>
 	</table>

@@ -8,7 +8,7 @@ class IndexController extends ControllerBase
     public function initialize()
     {
         $this->view->setTemplateAfter('main');
-        Phalcon_Tag::setTitle('High performance PHP framework');
+        Phalcon\Tag::setTitle('High performance PHP framework');
         parent::initialize();
     }
 
@@ -20,7 +20,7 @@ class IndexController extends ControllerBase
     {
         $email = $this->request->getPost('email', 'email');
         if (!$email) {
-            Phalcon_Flash::error('Please provide a valid email');
+            Phalcon\Flash::error('Please provide a valid email');
 
             return $this->_forwardToAction('index');
         }
@@ -35,10 +35,10 @@ class IndexController extends ControllerBase
                     Phalcon_Flash::error("At this moment you can\'t subscribe");
                 }
             } else {
-                Phalcon_Flash::success('Thanks for subscribing!');
+                Phalcon\Flash::success('Thanks for subscribing!');
             }
         } else {
-            Phalcon_Flash::success("You are already subscribed!");
+            Phalcon\Flash::success("You are already subscribed!");
         }
 
         return $this->_forward('index/index');

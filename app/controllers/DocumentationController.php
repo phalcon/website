@@ -8,7 +8,7 @@ class DocumentationController extends ControllerBase
     public function initialize()
     {
         $this->view->setTemplateAfter('main');
-        Phalcon_Tag::setTitle('Documentation');
+        Phalcon\Tag::setTitle('Documentation');
 
         //Cache all documentation pages with a action-cache key
         //$this->view->cache(array('key' => $this->dispatcher->getActionName().'-cache'));

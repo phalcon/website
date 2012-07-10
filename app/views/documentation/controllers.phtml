@@ -1,6 +1,6 @@
 
 <div class="nav-bar">
-	<?php echo Phalcon_Tag::linkTo('index', 'Home') ?> » Documentation
+	<?php echo Phalcon\Tag::linkTo('index', 'Home') ?> » Documentation
 </div>
 
 <div class="doc-paragraph">
@@ -12,7 +12,7 @@
 </div>
 
 <div class="doc-paragraph">
-	For example, when you access a URL like this: <i>http://localhost/blog/posts/show/2012/the-post-title</i>
+	For instance, when you access a URL like this: <i>http://localhost/blog/posts/show/2012/the-post-title</i>
 	Phalcon by default will decompose each part like this:
 </div>
 
@@ -249,7 +249,7 @@ class PostsController extends Phalcon_Controller
 ', 'php'); ?>
 
 <div class="doc-paragraph">
-	Learn more about the request environment in its <?php echo Phalcon_Tag::linkTo('documentation/request', 'documentation article.') ?>
+	Learn more about the request environment in its <?php echo Phalcon\Tag::linkTo('documentation/request', 'documentation article.') ?>
 </div>
 
 <div class="doc-paragraph">
@@ -386,10 +386,10 @@ class UsersController extends ControllerBase
 	<table width="90%" align="center">
 		<tr>
 			<td align="left">
-				<?php echo Phalcon_Tag::linkTo('documentation/mvc', '← The MVC Architecture') ?>
+				<?php echo Phalcon\Tag::linkTo('documentation/mvc', '← The MVC Architecture') ?>
 			</td>
 			<td align="right">
-				<?php echo Phalcon_Tag::linkTo('documentation/models', 'Working with Models →') ?>
+				<?php echo Phalcon\Tag::linkTo('documentation/models', 'Working with Models →') ?>
 			</td>
 		</tr>
 	</table>

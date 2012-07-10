@@ -1,6 +1,6 @@
 
 <div class="nav-bar">
-	<?php echo Phalcon_Tag::linkTo('index', 'Home') ?> » Documentation
+	<?php echo Phalcon\Tag::linkTo('index', 'Home') ?> » Documentation
 </div>
 
 <div class="doc-paragraph">
@@ -30,7 +30,7 @@
 	<h3><a name="output">Caching Output Fragments</a></h3>
 	The following example shows how to implement a cache using this component. It takes the output generated
 	by PHP and stores it into a file. The content of the file is refreshed each 172800 seconds (2 days).
-	The implementation of the cache avoids the continuous execution of the helper Phalcon_Tag::linkTo.
+	The implementation of the cache avoids the continuous execution of the helper Phalcon\Tag::linkTo.
 </div>
 
 <div class="doc-center">
@@ -60,7 +60,7 @@ if ($content === null) {
   echo date("r");
 
   //Generate a link to the sign-up action
-  echo Phalcon_Tag::linkTo(array(
+  echo Phalcon\Tag::linkTo(array(
     "user/signup",
     "Sign Up",
     "class" => "signup-button"
@@ -294,10 +294,10 @@ foreach($keys as $key){
 	<table width="90%" align="center">
 		<tr>
 			<td align="left">
-				<?php echo Phalcon_Tag::linkTo('documentation/pagination', '← Data Pagination') ?>
+				<?php echo Phalcon\Tag::linkTo('documentation/pagination', '← Data Pagination') ?>
 			</td>
 			<td align="right">
-				<?php echo Phalcon_Tag::linkTo('documentation/acl', 'Access Control Lists (ACL) →') ?>
+				<?php echo Phalcon\Tag::linkTo('documentation/acl', 'Access Control Lists (ACL) →') ?>
 			</td>
 		</tr>
 	</table>

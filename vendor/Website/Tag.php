@@ -1,6 +1,6 @@
 <?php
 
-abstract class Tag extends Phalcon_Tag
+abstract class Tag extends Phalcon\Tag
 {
 
     public static function classLink($className, $text=null)

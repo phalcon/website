@@ -7,7 +7,7 @@ class ApiController extends ControllerBase
     public function initialize()
     {
         $this->view->setTemplateAfter('main');
-        Phalcon_Tag::setTitle('Framework API');
+        Phalcon\Tag::setTitle('Framework API');
         parent::initialize();
     }
 

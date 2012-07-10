@@ -1,6 +1,6 @@
 
 <div class="nav-bar">
-	<?php echo Phalcon_Tag::linkTo('index', 'Home') ?> » Documentation
+	<?php echo Phalcon\Tag::linkTo('index', 'Home') ?> » Documentation
 </div>
 
 <div class="doc-paragraph">
@@ -25,7 +25,7 @@
 <div class="doc-paragraph">
 	<h3>Download</h3>
 	You can download a cross platform package containing the developer tools from the
-	<?php echo Phalcon_Tag::linkTo('download', 'download page') ?>. Also you can clone it
+	<?php echo Phalcon\Tag::linkTo('download', 'download page') ?>. Also you can clone it
 	from <a href="https://github.com/phalcon/phalcon-devtools">Github</a>.
 </div>
 
@@ -33,9 +33,9 @@
 	<h4><a name="installation">Installation</a></h4>
 	These are detailed instructions on how to install the developer tools on different platforms:
 	<ul>
-		<li><?php echo Phalcon_Tag::linkTo('documentation/wintools', 'Installation on Windows') ?></li>
-		<li><?php echo Phalcon_Tag::linkTo('documentation/mactools', 'Installation on OS X') ?></li>
-		<li><?php echo Phalcon_Tag::linkTo('documentation/linuxtools', 'Installation on Linux') ?></li>
+		<li><?php echo Phalcon\Tag::linkTo('documentation/wintools', 'Installation on Windows') ?></li>
+		<li><?php echo Phalcon\Tag::linkTo('documentation/mactools', 'Installation on OS X') ?></li>
+		<li><?php echo Phalcon\Tag::linkTo('documentation/linuxtools', 'Installation on Linux') ?></li>
 	</ul>
 </div>
 
@@ -45,7 +45,7 @@
 </div>
 
 <div class="doc-paragraph image-center">
-	<?php echo Phalcon_Tag::image('img/tools-4.png') ?>
+	<?php echo Phalcon\Tag::image('img/tools-4.png') ?>
 </div>
 
 <div class="doc-paragraph">
@@ -59,7 +59,7 @@
 </div>
 
 <div class="doc-paragraph image-center">
-	<?php echo Phalcon_Tag::image('img/tools-1.png') ?>
+	<?php echo Phalcon\Tag::image('img/tools-1.png') ?>
 </div>
 
 <div class="doc-paragraph">
@@ -67,7 +67,7 @@
 </div>
 
 <div class="doc-paragraph image-center">
-	<?php echo Phalcon_Tag::image('img/tools-2.png') ?>
+	<?php echo Phalcon\Tag::image('img/tools-2.png') ?>
 </div>
 
 <div class="doc-paragraph">
@@ -75,7 +75,7 @@
 </div>
 
 <div class="doc-paragraph image-center">
-	<?php echo Phalcon_Tag::image('img/tools-3.png') ?>
+	<?php echo Phalcon\Tag::image('img/tools-3.png') ?>
 </div>
 
 <div class="doc-paragraph">
@@ -83,7 +83,7 @@
 </div>
 
 <div class="doc-paragraph image-center">
-	<?php echo Phalcon_Tag::image('img/tools-6.png') ?>
+	<?php echo Phalcon\Tag::image('img/tools-6.png') ?>
 </div>
 
 <div class="doc-paragraph">
@@ -93,7 +93,7 @@
 </div>
 
 <div class="doc-paragraph image-center">
-	<?php echo Phalcon_Tag::image('img/tools-5.png') ?>
+	<?php echo Phalcon\Tag::image('img/tools-5.png') ?>
 </div>
 
 <div class="doc-paragraph">
@@ -116,7 +116,7 @@ class TestController extends Phalcon_Controller {
 	<h3><a name="settings">Preparing Database Settings</a></h3>
 	When a project is generated using developer tools. A configuration file can be found in <i>app/config/config.ini</i>
 	To generate models or scaffold is necessary to modify these settings to acomomdate to your database configuration.
-	A complete guide to the settings supported by Phalcon can be found <?php echo Phalcon_Tag::linkTo('documentation/settings', 'here') ?>
+	A complete guide to the settings supported by Phalcon can be found <?php echo Phalcon\Tag::linkTo('documentation/settings', 'here') ?>
 </div>
 
 <div class="doc-paragraph">
@@ -151,7 +151,7 @@ baseUri = "/store/"
 </div>
 
 <div class="doc-paragraph image-center">
-	<?php echo Phalcon_Tag::image('img/tools-7.png') ?>
+	<?php echo Phalcon\Tag::image('img/tools-7.png') ?>
 </div>
 
 <div class="doc-paragraph">
@@ -297,7 +297,7 @@ class Products extends Phalcon_Model_Base {
 </div>
 
 <div class="doc-paragraph image-center">
-	<?php echo Phalcon_Tag::image('img/tools-9.png') ?>
+	<?php echo Phalcon\Tag::image('img/tools-9.png') ?>
 </div>
 
 <div class="doc-paragraph">
@@ -347,7 +347,7 @@ class Products extends Phalcon_Model_Base {
 </div>
 
 <div class="doc-paragraph image-center">
-	<?php echo Phalcon_Tag::image('img/tools-10.png') ?>
+	<?php echo Phalcon\Tag::image('img/tools-10.png') ?>
 </div>
 
 <div class="doc-paragraph">
@@ -356,7 +356,7 @@ class Products extends Phalcon_Model_Base {
 </div>
 
 <div class="doc-paragraph image-center">
-	<?php echo Phalcon_Tag::image('img/tools-11.png') ?>
+	<?php echo Phalcon\Tag::image('img/tools-11.png') ?>
 </div>
 
 <div class="doc-paragraph">
@@ -364,7 +364,7 @@ class Products extends Phalcon_Model_Base {
 </div>
 
 <div class="doc-paragraph image-center">
-	<?php echo Phalcon_Tag::image('img/tools-12.png') ?>
+	<?php echo Phalcon\Tag::image('img/tools-12.png') ?>
 </div>
 
 <div class="doc-paragraph">
@@ -414,10 +414,10 @@ class Products extends Phalcon_Model_Base {
 	<table width="90%" align="center">
 		<tr>
 			<td align="left">
-				<?php echo Phalcon_Tag::linkTo('documentation/debug', '← Debugging Applications') ?>
+				<?php echo Phalcon\Tag::linkTo('documentation/debug', '← Debugging Applications') ?>
 			</td>
 			<td align="right">
-				<?php echo Phalcon_Tag::linkTo('documentation/settings', 'Framework Settings →') ?>
+				<?php echo Phalcon\Tag::linkTo('documentation/settings', 'Framework Settings →') ?>
 			</td>
 		</tr>
 	</table>

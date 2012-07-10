@@ -1,5 +1,5 @@
 <div class="nav-bar">
-	<?php echo Phalcon_Tag::linkTo('index', 'Home') ?> » Documentation
+	<?php echo Phalcon\Tag::linkTo('index', 'Home') ?> » Documentation
 </div>
 
 <div class="doc-paragraph">
@@ -8,7 +8,7 @@
 </div>
 
 <div class="doc-paragraph highlightb">
-	<b>Important:</b> Migrations are available on <?php echo Phalcon_Tag::linkTo('documentation/tools', 'Phalcon Developer Tools.') ?>
+	<b>Important:</b> Migrations are available on <?php echo Phalcon\Tag::linkTo('documentation/tools', 'Phalcon Developer Tools.') ?>
 	You need at least Phalcon Framework version 0.3.5 to use developer tools.
 	Also is recommended to have installed PHP 5.3.6 as minimum.
 </div>
@@ -38,7 +38,7 @@
 </div>
 
 <div class="doc-paragraph image-center">
-	<?php echo Phalcon_Tag::image(array('img/migrations-1.png', 'width' => '550')) ?>
+	<?php echo Phalcon\Tag::image(array('img/migrations-1.png', 'width' => '550')) ?>
 </div>
 
 <div class="doc-paragraph">
@@ -53,7 +53,7 @@
 </div>
 
 <div class="doc-paragraph image-center">
-	<?php echo Phalcon_Tag::image(array('img/migrations-2.png', 'width' => '550')) ?>
+	<?php echo Phalcon\Tag::image(array('img/migrations-2.png', 'width' => '550')) ?>
 </div>
 
 <div class="doc-paragraph">
@@ -69,7 +69,7 @@
 </div>
 
 <div class="doc-paragraph image-center">
-	<?php echo Phalcon_Tag::image(array('img/migrations-3.png', 'width' => '550')) ?>
+	<?php echo Phalcon\Tag::image(array('img/migrations-3.png', 'width' => '550')) ?>
 </div>
 
 <div class="doc-paragraph">
@@ -310,7 +310,7 @@ receive an associative array with 4 possible sections:
 	Migrations aren't only designed to "morph" table. A migration is just a regular PHP class so you’re not
 	limited to these functions. For example after adding a column you could write code to set the value
 	of that column for existing records. For more details and examples of individual methods, check the
-	<?php echo Phalcon_Tag::linkTo('documentation/db', 'database component') ?>.
+	<?php echo Phalcon\Tag::linkTo('documentation/db', 'database component') ?>.
 </div>
 
 <?php echo hyperlight('<?php
@@ -335,11 +335,11 @@ class ProductsMigration_100 extends Phalcon_Model_Migration {
 </div>
 
 <div class="doc-paragraph image-center">
-	<?php echo Phalcon_Tag::image(array('img/migrations-4.png', 'width' => '550')) ?>
+	<?php echo Phalcon\Tag::image(array('img/migrations-4.png', 'width' => '550')) ?>
 </div>
 
 <div class="doc-paragraph image-center">
-	<?php echo Phalcon_Tag::image(array('img/migrations-5.png', 'width' => '550')) ?>
+	<?php echo Phalcon\Tag::image(array('img/migrations-5.png', 'width' => '550')) ?>
 </div>
 
 <div class="doc-paragraph">
@@ -356,10 +356,10 @@ class ProductsMigration_100 extends Phalcon_Model_Migration {
 	<table width="90%" align="center">
 		<tr>
 			<td align="left">
-				<?php echo Phalcon_Tag::linkTo('documentation/loader', '← Universal Class Loader') ?>
+				<?php echo Phalcon\Tag::linkTo('documentation/loader', '← Universal Class Loader') ?>
 			</td>
 			<td align="right">
-				<?php echo Phalcon_Tag::linkTo('documentation/debug', 'Debugging Applications →') ?>
+				<?php echo Phalcon\Tag::linkTo('documentation/debug', 'Debugging Applications →') ?>
 			</td>
 		</tr>
 	</table>

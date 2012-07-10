@@ -1,5 +1,5 @@
 <div class="nav-bar">
-	<?php echo Phalcon_Tag::linkTo('index', 'Home') ?> » Documentation
+	<?php echo Phalcon\Tag::linkTo('index', 'Home') ?> » Documentation
 </div>
 
 <div class="doc-paragraph">
@@ -171,7 +171,7 @@ if ($acl->isAllowed("Guests", "Customers", "edit")) {
 <div class="doc-paragraph">
 	<h3><a name="controllers">Integrating ACL with Controllers</a></h3>
 	The following example shows how to do a simple integration between ACL and
-	<?php echo Phalcon_Tag::linkTo('documentation/controllers', 'Phalcon_Controller') ?>:
+	<?php echo Phalcon\Tag::linkTo('documentation/controllers', 'Phalcon_Controller') ?>:
 </div>
 
 <?php echo hyperlight('<?php
@@ -254,10 +254,10 @@ class PostsController extends Phalcon_Controller
 	<table width="90%" align="center">
 		<tr>
 			<td align="left">
-				<?php echo Phalcon_Tag::linkTo('documentation/cache', '← Improving Performance with Cache') ?>
+				<?php echo Phalcon\Tag::linkTo('documentation/cache', '← Improving Performance with Cache') ?>
 			</td>
 			<td align="right">
-				<?php echo Phalcon_Tag::linkTo('documentation/intl', 'Internationalization →') ?>
+				<?php echo Phalcon\Tag::linkTo('documentation/intl', 'Internationalization →') ?>
 			</td>
 		</tr>
 	</table>

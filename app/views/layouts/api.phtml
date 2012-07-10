@@ -1,5 +1,5 @@
 
-<?php echo Phalcon_Tag::stylesheetLink("css/a.css") ?>
+<?php echo Phalcon\Tag::stylesheetLink("css/a.css") ?>
 
 <table width="90%" align="center">
 	<tr>
@@ -10,9 +10,9 @@
 				ksort($refactor);
 				foreach($refactor as $className => $value){
 					if(preg_match('/_Exception$/', $className)){
-						echo '<li>', Phalcon_Tag::linkTo(array('api/class/'.$className, $className, 'class' => 'icon-exception')), '</li>';
+						echo '<li>', Phalcon\Tag::linkTo(array('api/class/'.$className, $className, 'class' => 'icon-exception')), '</li>';
 					} else {
-						echo '<li>', Phalcon_Tag::linkTo(array('api/class/'.$className, $className, 'class' => 'icon-class')), '</li>';
+						echo '<li>', Phalcon\Tag::linkTo(array('api/class/'.$className, $className, 'class' => 'icon-class')), '</li>';
 					}
 				}
 				echo '</ul>';
