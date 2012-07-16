@@ -16,6 +16,16 @@ class IndexController extends ControllerBase
     {
     }
 
+    public function docsAction($name=null){
+        $name = $this->_getParam("name");
+        $name = $this->filter->sanitize($name, "string");
+        if($name){
+            $this->response->redirect("http://docs.phalconphp.com/en/latest/reference/".$name.".html", true);
+        } else {
+            $this->response->redirect("http://docs.phalconphp.com/", true);
+        }
+    }
+
     public function subscribeAction()
     {
         $email = $this->request->getPost('email', 'email');

@@ -2,8 +2,6 @@
 
 error_reporting(E_ALL);
 
-//echo __DIR__.'/../app/controllers/';
-
 try {
 
     require __DIR__.'/../app/controllers/ControllerBase.php';
@@ -30,7 +28,23 @@ try {
         )
     ));
 
+    $router = new Phalcon\Router\Regex();
+
+    $router->add("/documentation/([a-zA-Z0-9_]+)", array(
+        "controller" => "index",
+        "action" => "docs",
+        "name" => 1,
+    ));
+
+    $router->add("/documentation", array(
+        "controller" => "index",
+        "action" => "docs"        
+    ));
+
+    $router->handle();
+
     $front = Phalcon\Controller\Front::getInstance();
+    $front->setRouter($router);
     $front->setConfig($config);
     echo $front->dispatchLoop()->getContent();
 
