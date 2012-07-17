@@ -1,5 +1,7 @@
 <?php
 
+use Phalcon\Flash as Flash;
+
 /**
  * IndexController
  */
@@ -30,8 +32,7 @@ class IndexController extends ControllerBase
     {
         $email = $this->request->getPost('email', 'email');
         if (!$email) {
-            Phalcon\Flash::error('Please provide a valid email');
-
+            Flash::error('Please provide a valid email');
             return $this->_forwardToAction('index');
         }
 
@@ -39,16 +40,16 @@ class IndexController extends ControllerBase
         if ($exists==false) {
             $subscriber = new Subscribers();
             $subscriber->email = $email;
-            $subscriber->created_at = new Phalcon_Db_RawValue('now()');
+            $subscriber->created_at = new Phalcon\Db\RawValue('now()');
             if ($subscriber->save()==false) {
                 foreach ($subscriber->getMessages() as $message) {
-                    Phalcon_Flash::error("At this moment you can\'t subscribe");
+                    Flash::error("At this moment you can\'t subscribe");
                 }
             } else {
-                Phalcon\Flash::success('Thanks for subscribing!');
+                Flash::success('Thanks for subscribing!');
             }
         } else {
-            Phalcon\Flash::success("You are already subscribed!");
+            Flash::success("You are already subscribed!");
         }
 
         return $this->_forward('index/index');

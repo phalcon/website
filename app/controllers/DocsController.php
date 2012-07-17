@@ -3,7 +3,7 @@
 require "../helpers/hyperlight/hyperlight.php";
 require '../vendor/Website/Tag.php';
 
-class DocumentationController extends ControllerBase
+class DocsController extends ControllerBase
 {
     public function initialize()
     {
@@ -11,7 +11,7 @@ class DocumentationController extends ControllerBase
         Phalcon\Tag::setTitle('Documentation');
 
         //Cache all documentation pages with a action-cache key
-        //$this->view->cache(array('key' => $this->dispatcher->getActionName().'-cache'));
+        $this->view->cache(array('key' => $this->dispatcher->getActionName().'-cache'));
         parent::initialize();
     }
 
