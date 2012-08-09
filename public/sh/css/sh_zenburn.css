@@ -1,4 +1,5 @@
-pre.sh_sourceCode {
+
+#wrapper #content .post .copy pre.sh_sourceCode {
   background-color: #212121;
   color: #DCDCCC;
   font-family: Consolas,"Lucida Console",monospace;
@@ -6,140 +7,140 @@ pre.sh_sourceCode {
   line-height: 18px;
 }
 
-pre.sh_sourceCode .sh_keyword {
+#wrapper #content .post .copy pre.sh_sourceCode .sh_keyword {
    color: #F0DFAF;
   font-weight: bold;
 }
 
-pre.sh_sourceCode .sh_type {
+#wrapper #content .post .copy pre.sh_sourceCode .sh_type {
   color: #a52a2a;
   font-weight: bold;
   font-style: normal;
 }
 
-pre.sh_sourceCode .sh_string {
+#wrapper #content .post .copy pre.sh_sourceCode .sh_string {
+  color: #CC9393;
+  font-weight: normal;
+  font-style: normal;
+}
+
+#wrapper #content .post .copy pre.sh_sourceCode .sh_regexp {
   color: #006400;
   font-weight: normal;
   font-style: normal;
 }
 
-pre.sh_sourceCode .sh_regexp {
-  color: #006400;
-  font-weight: normal;
-  font-style: normal;
-}
-
-pre.sh_sourceCode .sh_specialchar {
+#wrapper #content .post .copy pre.sh_sourceCode .sh_specialchar {
   color: #2e8b57;
   font-weight: normal;
   font-style: normal;
 }
 
-pre.sh_sourceCode .sh_comment {
+#wrapper #content .post .copy pre.sh_sourceCode .sh_comment {
   color: #7F9F7F;
   font-style: italic;
 }
 
-pre.sh_sourceCode .sh_number {
+#wrapper #content .post .copy pre.sh_sourceCode .sh_number {
   color: #006400;
   font-weight: normal;
   font-style: normal;
 }
 
-pre.sh_sourceCode .sh_preproc {
+#wrapper #content .post .copy pre.sh_sourceCode .sh_preproc {
   color: #27408b;
   font-weight: normal;
   font-style: normal;
 }
 
-pre.sh_sourceCode .sh_symbol {
+#wrapper #content .post .copy pre.sh_sourceCode .sh_symbol {
   color: #DCDCCC;
 }
 
-pre.sh_sourceCode .sh_function {
+#wrapper #content .post .copy pre.sh_sourceCode .sh_function {
   color: #FAFAFA;
   font-weight: bold;
 }
 
-pre.sh_sourceCode .sh_cbracket {
+#wrapper #content .post .copy pre.sh_sourceCode .sh_cbracket {
   color: #000000;
   font-weight: bold;
   font-style: normal;
 }
 
-pre.sh_sourceCode .sh_url {
+#wrapper #content .post .copy pre.sh_sourceCode .sh_url {
   color: #006400;
   font-weight: normal;
   font-style: normal;
 }
 
-pre.sh_sourceCode .sh_date {
+#wrapper #content .post .copy pre.sh_sourceCode .sh_date {
   color: #000000;
   font-weight: bold;
   font-style: normal;
 }
 
-pre.sh_sourceCode .sh_time {
+#wrapper #content .post .copy pre.sh_sourceCode .sh_time {
   color: #000000;
   font-weight: bold;
   font-style: normal;
 }
 
-pre.sh_sourceCode .sh_file {
+#wrapper #content .post .copy pre.sh_sourceCode .sh_file {
   color: #000000;
   font-weight: bold;
   font-style: normal;
 }
 
-pre.sh_sourceCode .sh_ip {
+#wrapper #content .post .copy pre.sh_sourceCode .sh_ip {
   color: #006400;
   font-weight: normal;
   font-style: normal;
 }
 
-pre.sh_sourceCode .sh_name {
+#wrapper #content .post .copy pre.sh_sourceCode .sh_name {
   color: #006400;
   font-weight: normal;
   font-style: normal;
 }
 
-pre.sh_sourceCode .sh_variable {
+#wrapper #content .post .copy pre.sh_sourceCode .sh_variable {
   color: #EFDCBC;
   font-weight: bold;
   font-style: normal;
 }
 
-pre.sh_sourceCode .sh_oldfile {
+#wrapper #content .post .copy pre.sh_sourceCode .sh_oldfile {
   color: #2e8b57;
   font-weight: normal;
   font-style: normal;
 }
 
-pre.sh_sourceCode .sh_newfile {
+#wrapper #content .post .copy pre.sh_sourceCode .sh_newfile {
   color: #006400;
   font-weight: normal;
   font-style: normal;
 }
 
-pre.sh_sourceCode .sh_difflines {
+#wrapper #content .post .copy pre.sh_sourceCode .sh_difflines {
   color: #000000;
   font-weight: bold;
   font-style: normal;
 }
 
-pre.sh_sourceCode .sh_selector {
+#wrapper #content .post .copy pre.sh_sourceCode .sh_selector {
   color: #dda0dd;
   font-weight: bold;
   font-style: normal;
 }
 
-pre.sh_sourceCode .sh_property {
+#wrapper #content .post .copy pre.sh_sourceCode .sh_property {
   color: #000000;
   font-weight: bold;
   font-style: normal;
 }
 
-pre.sh_sourceCode .sh_value {
+#wrapper #content .post .copy pre.sh_sourceCode .sh_value {
   color: #006400;
   font-weight: normal;
   font-style: normal;
