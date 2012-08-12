@@ -3,7 +3,7 @@
   background-color: #212121;
   color: #DCDCCC;
   font-family: Consolas,"Lucida Console",monospace;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 18px;
 }
 
@@ -42,7 +42,7 @@
 }
 
 #wrapper #content .post .copy pre.sh_sourceCode .sh_number {
-  color: #006400;
+  color: #8CD0D3;
   font-weight: normal;
   font-style: normal;
 }
@@ -63,7 +63,7 @@
 }
 
 #wrapper #content .post .copy pre.sh_sourceCode .sh_cbracket {
-  color: #000000;
+  color: #DCDCCC;
   font-weight: bold;
   font-style: normal;
 }
@@ -75,31 +75,31 @@
 }
 
 #wrapper #content .post .copy pre.sh_sourceCode .sh_date {
-  color: #000000;
+  color: #DCDCCC;
   font-weight: bold;
   font-style: normal;
 }
 
 #wrapper #content .post .copy pre.sh_sourceCode .sh_time {
-  color: #000000;
+  color: #DCDCCC;
   font-weight: bold;
   font-style: normal;
 }
 
 #wrapper #content .post .copy pre.sh_sourceCode .sh_file {
-  color: #000000;
+  color: #DCDCCC;
   font-weight: bold;
   font-style: normal;
 }
 
 #wrapper #content .post .copy pre.sh_sourceCode .sh_ip {
-  color: #006400;
+  color: #DCDCCC;
   font-weight: normal;
   font-style: normal;
 }
 
 #wrapper #content .post .copy pre.sh_sourceCode .sh_name {
-  color: #006400;
+  color: #DCDCCC;
   font-weight: normal;
   font-style: normal;
 }
