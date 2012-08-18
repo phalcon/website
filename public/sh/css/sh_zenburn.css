@@ -48,9 +48,9 @@
 }
 
 #wrapper #content .post .copy pre.sh_sourceCode .sh_preproc {
-  color: #27408b;
-  font-weight: normal;
+  color: #F0DFAF;
   font-style: normal;
+  font-weight: normal;
 }
 
 #wrapper #content .post .copy pre.sh_sourceCode .sh_symbol {

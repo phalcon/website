@@ -36,7 +36,7 @@ class IndexController extends ControllerBase
             return $this->_forwardToAction('index');
         }
 
-        $exists = $this->Subscribers->count("email='$email'");
+        $exists = Subscribers::count("email='$email'");
         if ($exists==false) {
             $subscriber = new Subscribers();
             $subscriber->email = $email;
@@ -52,6 +52,6 @@ class IndexController extends ControllerBase
             Flash::success("You are already subscribed!");
         }
 
-        return $this->_forward('index/index');
+        return $this->dispatcher->forward(array('controller' => 'index', 'action' => 'index'));
     }
 }

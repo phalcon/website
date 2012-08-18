@@ -2,33 +2,15 @@
 
 error_reporting(E_ALL);
 
-try {
+$loader = new \Phalcon\Loader();        
 
-    require __DIR__.'/../app/controllers/ControllerBase.php';
+$loader->registerDirs(array('../app/controllers/', '../app/models/'))->register();
 
-    $config = new Phalcon\Config(array(
-        'database' => array(
-            'adapter' => 'Mysql',
-            'host' => 'localhost',
-            'username' => 'user',
-            'password' => 'password',
-            'name' => 'site'
-        ),
-        'phalcon' => array(
-            'controllersDir' => __DIR__.'/../app/controllers/',
-            'modelsDir' => __DIR__.'/../app/models/',
-            'viewsDir' => __DIR__.'/../app/views/'
-        ),
-        'views' => array(
-            'cache' => array(
-                'adapter' => 'File',
-                'cacheDir' => __DIR__.'/../app/cache/',
-                'lifetime' => 172800
-            )
-        )
-    ));
+$di = new \Phalcon\DI();
 
-    $router = new Phalcon\Router\Regex();
+$di->set('router', function(){
+
+    $router = new Phalcon\Mvc\Router();
 
     $router->add("/documentation/([a-zA-Z0-9_]+)", array(
         "controller" => "index",
@@ -41,13 +23,50 @@ try {
         "action" => "docs"        
     ));
 
-    $router->handle();
+    return $router;
+});   
 
-    $front = Phalcon\Controller\Front::getInstance();
-    $front->setRouter($router);
-    $front->setConfig($config);
-    echo $front->dispatchLoop()->getContent();
+$di->set('dispatcher', function(){
+    return new Phalcon\Mvc\Dispatcher();
+});
 
-} catch (Phalcon\Exception $e) {
-    echo 'PhalconException: ', $e->getMessage(), PHP_EOL;
+$di->set('url', function(){
+    return new Phalcon\Mvc\Url();
+});
+
+$di->set('filter', function(){
+    return new Phalcon\Filter();
+});
+
+$di->set('response', 'Phalcon\Http\Response');
+
+$di->set('request', 'Phalcon\Http\Request');
+
+$di->set('view', function(){
+    $view = new \Phalcon\Mvc\View();
+    $view->setViewsDir('../app/views/');
+    return $view;
+});
+        
+$di->set('db', function(){
+    return new \Phalcon\Db\Adapter\Pdo\Mysql(array(
+        "host" => "localhost",
+        "username" => "root",
+        "password" => "secret",
+        "dbname" => "phalcon_site"
+    ));
+});
+
+$di->set('modelsMetadata', 'Phalcon\Mvc\Model\Metadata\Memory');
+
+$di->set('modelsManager', 'Phalcon\Mvc\Model\Manager');
+
+try {
+    $application = new \Phalcon\Mvc\Application();
+    $application->setDI($di);
+    echo $application->handle()->getContent();
 }
+catch(Phalcon\Exception $e){
+    echo $e->getMessage();
+}
+
