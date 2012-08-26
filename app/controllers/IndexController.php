@@ -33,7 +33,7 @@ class IndexController extends ControllerBase
         $email = $this->request->getPost('email', 'email');
         if (!$email) {
             Flash::error('Please provide a valid email');
-            return $this->_forwardToAction('index');
+            return $this->dispatcher->forward(array('action' => 'index'));
         }
 
         $exists = Subscribers::count("email='$email'");
