@@ -2,11 +2,11 @@
 
 error_reporting(E_ALL);
 
-$loader = new \Phalcon\Loader();        
+$loader = new \Phalcon\Loader();
 
 $loader->registerDirs(array('../app/controllers/', '../app/models/'))->register();
 
-$di = new \Phalcon\DI();
+$di = new \Phalcon\DI\FactoryDefault();
 
 $di->set('router', function(){
 
@@ -20,34 +20,24 @@ $di->set('router', function(){
 
     $router->add("/documentation", array(
         "controller" => "index",
-        "action" => "docs"        
+        "action" => "docs"
     ));
 
     return $router;
-});   
-
-$di->set('dispatcher', function(){
-    return new Phalcon\Mvc\Dispatcher();
 });
 
 $di->set('url', function(){
-    return new Phalcon\Mvc\Url();
+    $url = new Phalcon\Mvc\Url();
+    $url->setBaseUri('/phalconphp/');
+    return $url;
 });
-
-$di->set('filter', function(){
-    return new Phalcon\Filter();
-});
-
-$di->set('response', 'Phalcon\Http\Response');
-
-$di->set('request', 'Phalcon\Http\Request');
 
 $di->set('view', function(){
     $view = new \Phalcon\Mvc\View();
     $view->setViewsDir('../app/views/');
     return $view;
 });
-        
+
 $di->set('db', function(){
     return new \Phalcon\Db\Adapter\Pdo\Mysql(array(
         "host" => "localhost",
@@ -57,16 +47,15 @@ $di->set('db', function(){
     ));
 });
 
-$di->set('modelsMetadata', 'Phalcon\Mvc\Model\Metadata\Memory');
-
-$di->set('modelsManager', 'Phalcon\Mvc\Model\Manager');
-
 try {
+
     $application = new \Phalcon\Mvc\Application();
     $application->setDI($di);
     echo $application->handle()->getContent();
-}
-catch(Phalcon\Exception $e){
+
+} catch(Phalcon\Exception $e){
+    echo $e->getMessage();
+} catch(PDOException $e){
     echo $e->getMessage();
 }
 
