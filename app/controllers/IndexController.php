@@ -1,7 +1,5 @@
 <?php
 
-use Phalcon\Flash as Flash;
-
 /**
  * IndexController
  */
@@ -32,7 +30,7 @@ class IndexController extends ControllerBase
     {
         $email = $this->request->getPost('email', 'email');
         if (!$email) {
-            Flash::error('Please provide a valid email');
+            $this->flash->error('Please provide a valid email');
             return $this->dispatcher->forward(array('action' => 'index'));
         }
 
@@ -43,13 +41,13 @@ class IndexController extends ControllerBase
             $subscriber->created_at = new Phalcon\Db\RawValue('now()');
             if ($subscriber->save()==false) {
                 foreach ($subscriber->getMessages() as $message) {
-                    Flash::error("At this moment you can\'t subscribe");
+                    $this->flash->error("At this moment you can\'t subscribe");
                 }
             } else {
-                Flash::success('Thanks for subscribing!');
+                $this->flash->success('Thanks for subscribing!');
             }
         } else {
-            Flash::success("You are already subscribed!");
+            $this->flash->success("You are already subscribed!");
         }
 
         return $this->dispatcher->forward(array('controller' => 'index', 'action' => 'index'));
