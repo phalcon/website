@@ -11,5 +11,17 @@ class DocumentationController extends ControllerBase
 
     public function indexAction()
     {
+
     }
+
+    public function redirectAction($name=null){
+        $name = $this->dispatcher->getParam("name");
+        $name = $this->filter->sanitize($name, "string");
+        if($name){
+            $this->response->redirect("http://docs.phalconphp.com/en/latest/reference/".$name.".html", true);
+        } else {
+            $this->response->redirect("http://docs.phalconphp.com/", true);
+        }
+    }
+
 }

@@ -4,7 +4,10 @@ error_reporting(E_ALL);
 
 $loader = new \Phalcon\Loader();
 
-$loader->registerDirs(array('../app/controllers/', '../app/models/'))->register();
+$loader->registerDirs(array(
+    __DIR__.'/../app/controllers/',
+    __DIR__.'/../app/models/'
+))->register();
 
 $di = new \Phalcon\DI\FactoryDefault();
 
@@ -12,16 +15,21 @@ $di->set('router', function(){
 
     $router = new Phalcon\Mvc\Router();
 
-//    $router->add("/documentation/([a-zA-Z0-9_]+)", array(
-//        "controller" => "index",
-//        "action" => "docs",
-//        "name" => 1,
-//    ));
-//
-//    $router->add("/documentation", array(
-//        "controller" => "index",
-//        "action" => "docs"
-//    ));
+    $router->add("/documentation/([a-zA-Z0-9_]+)", array(
+        "controller" => "documentation",
+        "action" => "redirect",
+        "name" => 1,
+    ));
+
+    $router->add("/documentation/index", array(
+        "controller" => "documentation",
+        "action" => "index"
+    ));
+
+    $router->add("/documentation", array(
+        "controller" => "documentation",
+        "action" => "index"
+    ));
 
     return $router;
 });
@@ -34,7 +42,7 @@ $di->set('url', function(){
 
 $di->set('view', function(){
     $view = new \Phalcon\Mvc\View();
-    $view->setViewsDir('../app/views/');
+    $view->setViewsDir(__DIR__.'/../app/views/');
     return $view;
 });
 
