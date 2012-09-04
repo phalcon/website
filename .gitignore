@@ -1,5 +1,8 @@
-
 .DS_Store
 public/.DS_Store
 public/files/.DS_Store
 app/cache/*cache
+.settings/
+*.komodoproject
+*.sublime-*
+.idea/
