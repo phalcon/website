@@ -12,16 +12,16 @@ $di->set('router', function(){
 
     $router = new Phalcon\Mvc\Router();
 
-    $router->add("/documentation/([a-zA-Z0-9_]+)", array(
-        "controller" => "index",
-        "action" => "docs",
-        "name" => 1,
-    ));
-
-    $router->add("/documentation", array(
-        "controller" => "index",
-        "action" => "docs"
-    ));
+//    $router->add("/documentation/([a-zA-Z0-9_]+)", array(
+//        "controller" => "index",
+//        "action" => "docs",
+//        "name" => 1,
+//    ));
+//
+//    $router->add("/documentation", array(
+//        "controller" => "index",
+//        "action" => "docs"
+//    ));
 
     return $router;
 });
