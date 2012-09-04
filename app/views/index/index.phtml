@@ -1,3 +1,4 @@
+<?php use Phalcon\Tag as Tag; ?>
 <?php echo $this->getContent() ?>
 
 <div align="left">
@@ -16,10 +17,10 @@
                         <table align="center">
                             <tr>
                                 <td align="center">
-                                    <?php echo Phalcon\Tag::linkTo(array('documentation', '<div class="documentation">See documentation</div>', 'class' => 'no-decoration')) ?>
+                                    <?php echo Tag::linkTo(array('documentation', '<div class="documentation">See documentation</div>', 'class' => 'no-decoration')) ?>
                                 </td>
                                 <td align="center">
-                                    <?php echo Phalcon\Tag::linkTo(array('download', '<div class="download">Download</div>', 'class' => 'no-decoration')) ?>
+                                    <?php echo Tag::linkTo(array('download', '<div class="download">Download</div>', 'class' => 'no-decoration')) ?>
                                 </td>
                             </tr>
                         </table>
@@ -38,15 +39,15 @@
 <div align="center">
     <div class="sub-content">
         <div class="sub">
-            <?php echo Phalcon\Tag::linkTo('download', Phalcon\Tag::image(array('img/download.png', 'border' => '0')).
+            <?php echo Tag::linkTo('download', Tag::image(array('img/download.png', 'border' => '0')).
             '<br/>Download and Try<br/><span>C extensions are available for many platforms</span>') ?><br/>
         </div>
         <div class="sub">
-            <?php echo Phalcon\Tag::linkTo('documentation', Phalcon\Tag::image(array('img/book.png', 'border' => '0')).
+            <?php echo Tag::linkTo('documentation', Tag::image(array('img/book.png', 'border' => '0')).
             '<br/>Learn and Enjoy<br/><span>Read updated documentation and guides</span>') ?>
         </div>
         <div class="sub">
-            <a href="https://twitter.com/phalconphp"><?php echo Phalcon\Tag::image(array('img/chat.png', 'border' => '0')).
+            <a href="https://twitter.com/phalconphp"><?php echo Tag::image(array('img/chat.png', 'border' => '0')).
             '<br/>Share and Socialize<br/><span>Tell your friends about the Phalcon framework in social networks</span>' ?></a>
         </div>
     </div>
