@@ -1,18 +1,23 @@
+<?php use Phalcon\Tag as Tag; ?>
+
 <div id="header">
 	<h1>
-		<?php echo Phalcon\Tag::linkTo('index', Phalcon\Tag::image(array('img/logo-small.png', 'border' => 0))) ?>
+		<?php echo Tag::linkTo('index', Tag::image(array('img/logo-small.png', 'border' => 0))) ?>
 	</h1>
 	<div align="center">
 		<div id="nav-main" role="navigation">
 			<div class="menubar">
 				<div class="nav-main-features nav-first">
-					<?php echo Phalcon\Tag::linkTo('index', 'HOME'); ?>
+					<?php echo Tag::linkTo('index', 'HOME'); ?>
 				</div>
 				<div class="nav-main-features nav-first">
-					<?php echo Phalcon\Tag::linkTo('download', 'DOWNLOAD'); ?>
+					<?php echo Tag::linkTo('download', 'DOWNLOAD'); ?>
 				</div>
 				<div class="nav-main-features">
-					<?php echo Phalcon\Tag::linkTo('documentation', 'DOCUMENTATION'); ?>
+					<?php echo Tag::linkTo('documentation', 'DOCUMENTATION'); ?>
+				</div>
+				<div class="nav-main-features">
+					<?php echo Tag::linkTo('support', 'SUPPORT1'); ?>
 				</div>
 				<div class="nav-main-features">
 					<a href="https://groups.google.com/forum/#!forum/phalcon">SUPPORT</a>
@@ -58,18 +63,18 @@
 				</p>
 				<p>
 					<label>Get Involved</label><br/>
-					<?php echo Phalcon\Tag::linkTo('about', 'About') ?><br/>
+					<?php echo Tag::linkTo('about', 'About') ?><br/>
 					<a href="https://github.com/phalcon/cphalcon/wiki/Roadmap">Roadmap</a>
 				</p>
 			</td>
 			<td class="subscribe" align="left" valign="top">
 				<p>
 					<label>Get Monthly News</label><br/>
-					<?php echo Phalcon\Tag::form('index/subscribe') ?>
+					<?php echo Tag::form('index/subscribe') ?>
 						<table>
 							<tr>
-								<td><?php echo Phalcon\Tag::textField(array('email', 'placeholder' => 'Your email address', 'size' => 25)) ?></td>
-								<td><?php echo Phalcon\Tag::submitButton('Subscribe') ?></td>
+								<td><?php echo Tag::textField(array('email', 'placeholder' => 'Your email address', 'size' => 25)) ?></td>
+								<td><?php echo Tag::submitButton('Subscribe') ?></td>
 							</tr>
 						</table>
 					</form>
