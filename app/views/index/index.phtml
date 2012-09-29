@@ -17,10 +17,11 @@
                         <table align="center">
                             <tr>
                                 <td align="center">
-                                    <?php echo Tag::linkTo(array('documentation', '<div class="documentation">See documentation</div>', 'class' => 'no-decoration')) ?>
-                                </td>
+                                    <a href="http://try.phalconphp.com" class="no-decoration">
+                                        <div class="btn btn-try">Try it Online</div>
+                                    </a>
                                 <td align="center">
-                                    <?php echo Tag::linkTo(array('download', '<div class="download">Download</div>', 'class' => 'no-decoration')) ?>
+                                    <?php echo Tag::linkTo(array('download', '<div class="btn btn-download">Download</div>', 'class' => 'no-decoration')) ?>
                                 </td>
                             </tr>
                         </table>
@@ -55,6 +56,6 @@
 
 <div id="github-con">
     <div id="github" style="display:none">
-        <a href="https://github.com/phalcon/cphalcon">Watch me on Github</a>
+        <a href="https://github.com/phalcon/cphalcon">Star me on Github</a>
     </div>
 </div>
