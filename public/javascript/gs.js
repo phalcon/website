@@ -72,9 +72,9 @@ if(document.location.hostname!='localhost'){
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	})();
 	var uvOptions = {};
-	(function() {
+	/*(function() {
 		var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
 		uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/jycT5U7k39Mm2D8wJIaEyg.js';
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
-	})();
+	})();*/
 }

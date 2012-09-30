@@ -18,8 +18,42 @@
 	<tr>
 		<td valign="top">
 			<table align="center" class="tableFormat1" valign="top" cellpadding="5" cellspacing="0">
+
+
 				<tr>
-					<th colspan="3"><div class="titleContent">Phalcon PHP</div></th>
+					<th colspan="3"><b>Phalcon PHP</b></th>
+				</tr>
+				<tr class="cellDown">
+					<td align="left">Phalcon 0.5.0 - Windows x86 for PHP &gt; 5.3.9 (VC9)</td>
+					<td align="center"><?php echo Phalcon\Tag::linkTo(array('files/phalcon-win-x86-php5.3-0.5-VC9.zip', 'download', 'target'=>'_download')); ?></td>
+				</tr>
+				<tr class="cellDown">
+					<td align="left">Phalcon 0.5.0 - Windows x86 for PHP &lt;= 5.3.9 (VC9)</td>
+					<td align="center"><?php echo Phalcon\Tag::linkTo(array('files/phalcon-win-x86-php5.3.9-0.5-VC9.zip', 'download', 'target'=>'_download')); ?></td>
+				</tr>
+				<tr class="cellDown">
+					<td align="left">Phalcon 0.5.0 - Windows x86 for PHP &gt; 5.3.9 NTS (VC9)</td>
+					<td align="center"><?php echo Phalcon\Tag::linkTo(array('files/phalcon-win-x86-php5.3-nts-0.5-VC9.zip', 'download', 'target'=>'_download')); ?></td>
+				</tr>
+				<tr class="cellDown">
+					<td align="left">Phalcon 0.5.0 - Windows x64 for PHP &gt; 5.3.9 (VC9)</td>
+					<td align="center"><?php echo Phalcon\Tag::linkTo(array('files/phalcon-win-x64-php5.3-0.5-VC9.zip', 'download', 'target'=>'_download')); ?></td>
+				</tr>
+				<tr class="cellDown">
+					<td align="left">Phalcon 0.5.0 - Windows x64 for PHP &lt;= 5.3.9 (VC9)</td>
+					<td align="center"><?php echo Phalcon\Tag::linkTo(array('files/phalcon-win-x64-php5.3.9-0.5-VC9.zip', 'download', 'target'=>'_download')); ?></td>
+				</tr>
+				<tr class="cellDown">
+					<td align="left">Phalcon 0.5.0 - Windows x86 for PHP 5.4 (VC9)</td>
+					<td align="center"><?php echo Phalcon\Tag::linkTo(array('files/phalcon-win-x86-php5.4-0.5-VC9.zip', 'download', 'target'=>'_download')); ?></td>
+				</tr>
+				<tr class="cellDown">
+					<td align="left">Phalcon 0.5.0 - Source-Code</td>
+					<td align="center"><a target="_download" href="https://github.com/phalcon/cphalcon/">clone</a></td>
+				</tr>
+				<tr><td><br><br></td></tr>
+				<tr>
+					<th colspan="3"><div class="titleContent">Phalcon PHP (old stable)</div></th>
 				</tr>
 				<tr class="cellDown">
 					<td align="left">Phalcon 0.4.5 - Windows x86 for PHP 5.3 (VC9)</td>
@@ -35,26 +69,6 @@
 				</tr>
 				<tr class="cellDown">
 					<td align="left">Phalcon 0.4.5 - Source-Code</td>
-					<td align="center"><a target="_download" href="https://github.com/phalcon/cphalcon/">clone</a></td>
-				</tr>
-				<tr><td><br><br></td></tr>
-				<tr>
-					<th colspan="3"><b>Phalcon PHP (beta)</b></th>
-				</tr>
-				<tr class="cellDown">
-					<td align="left">Phalcon 0.5.0b2 - Windows x86 for PHP &gt; 5.3.8 (VC9)</td>
-					<td align="center"><?php echo Phalcon\Tag::linkTo(array('files/phalcon-win-x86-php5.3-0.5-VC9.zip','download','target'=>'_download')); ?></td>
-				</tr>
-				<tr class="cellDown">
-					<td align="left">Phalcon 0.5.0b2 - Windows x86 for PHP &lt;= 5.3.8 (VC9)</td>
-					<td align="center"><?php echo Phalcon\Tag::linkTo(array('files/phalcon-win-x86-php5.3.8-0.5-VC9.zip','download','target'=>'_download')); ?></td>
-				</tr>
-				<tr class="cellDown">
-					<td align="left">Phalcon 0.5.0b1 - Windows x86 for PHP 5.4 (VC9)</td>
-					<td align="center"><?php echo Phalcon\Tag::linkTo(array('files/phalcon-win-x86-php5.4-0.5-VC9.zip','download','target'=>'_download')); ?></td>
-				</tr>
-				<tr class="cellDown">
-					<td align="left">Phalcon 0.5.0b2 - Source-Code</td>
 					<td align="center"><a target="_download" href="https://github.com/phalcon/cphalcon/">clone</a></td>
 				</tr>
 				<tr>
@@ -117,12 +131,13 @@ yast2 -i php5-pear php5-dev php5-mysql gcc</pre>
 			    <h4>Compilation</h4>
 			    To create the extension from C source follow the next steps:
 			    <pre class="source-code php">
-# git clone git://github.com/phalcon/cphalcon.git
-# cd cphalcon/release
-# export CFLAGS="-O2 -fno-delete-null-pointer-checks"
-# phpize
-# ./configure --enable-phalcon
-# make && sudo make install
+git clone git://github.com/phalcon/cphalcon.git
+cd cphalcon/release
+export CC="gcc"
+export CFLAGS="-O2 -fno-delete-null-pointer-checks"
+phpize
+./configure --enable-phalcon
+make && sudo make install
 </pre>
 
 Add the extension to your php.ini:
