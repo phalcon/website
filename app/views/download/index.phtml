@@ -28,7 +28,7 @@
 					<td align="left">
                         <?php echo $file['name']; ?>
                         <br />
-                        Updated: <?php echo $file['date']; ?>
+                        <span>Updated: <?php echo $file['date']; ?></span>
                     </td>
 					<td align="center">
                         <?php echo Tag::linkTo(array($file['file'], 'download', 'target'=>'_download')); ?>

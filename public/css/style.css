@@ -497,3 +497,8 @@ div.highlightb {
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.33);
 	-webkit-font-smoothing: antialiased;
 }
+
+tr.cellDown span {
+	font-size: 11px;
+	color: #333333;
+}
