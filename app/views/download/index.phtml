@@ -1,4 +1,7 @@
 <?php use \Phalcon\Tag as Tag; ?>
+<?php $dlIcon = Tag::image('img/download30x30.png'); ?>
+<?php $githubIcon = Tag::image('img/github30x30.png'); ?>
+<?php $pearIcon = Tag::image('img/pear32x32.gif'); ?>
 <?php echo Tag::stylesheetLink("css/colors/zenburn.css"); ?>
 
 <div class="doc-box">
@@ -19,61 +22,92 @@
 		<td valign="top">
 			<table align="center" class="tableFormat1" valign="top" cellpadding="5" cellspacing="0">
 
-
 				<tr>
-					<th colspan="3"><b>Phalcon PHP</b></th>
+					<th colspan="3" class="titleContent">Phalcon PHP</th>
 				</tr>
-                <?php foreach ($files as $file) { ?>
+                <?php foreach ($current as $version_key => $version) { ?>
+				<tr class="cellDown">
+					<td align="left" colspan="2">
+                        <strong><?php echo $version_key; ?></strong>
+                    </td>
+				</tr>
+                <?php foreach ($version as $file) { ?>
 				<tr class="cellDown">
 					<td align="left">
+                        <?php echo Tag::linkTo(array($file['file'], $dlIcon, 'target' => '_download')); ?>
+                    </td>
+                    <td align="left">
                         <?php echo $file['name']; ?>
                         <br />
                         Updated: <?php echo $file['date']; ?>
                     </td>
-					<td align="center">
-                        <?php echo Tag::linkTo(array($file['file'], 'download', 'target'=>'_download')); ?>
+				</tr>
+                <?php } ?>
+                <?php } ?>
+				<tr class="cellDown">
+                    <td align="left">
+                        <a target="_download" href="https://github.com/phalcon/cphalcon/"><?php echo $githubIcon; ?></a>
+                    </td>
+                    <td align="left">
+					    Phalcon 0.5.0 - Source-Code
+                    </td>
+				</tr>
+
+                <tr><td><br /></td></tr>
+
+                <tr>
+                    <th colspan="3" class="titleContent">Developer Tools</th>
+                </tr>
+                <tr class="cellDown">
+                    <td align="left">
+                        <a target="_download" href="https://github.com/phalcon/phalcon-devtools/zipball/master"><?php echo $githubIcon; ?></a>
+                        <a href="http://pear.phalconphp.com/"><?php echo $pearIcon; ?></a>
+                    </td>
+                    <td align="left">
+                        Phalcon Developer Tools
+                    </td>
+                </tr>
+
+                <tr><td><br /><br /></td></tr>
+
+                <tr>
+                    <th colspan="3" class="titleContent">Older versions</th>
+                </tr>
+                <?php foreach ($old as $version_key => $version) { ?>
+				<tr class="cellDown">
+					<td align="left" colspan="2">
+                        <strong><?php echo $version_key; ?></strong>
+                    </td>
+				</tr>
+                <?php foreach ($version as $file) { ?>
+				<tr class="cellDown">
+					<td align="left">
+                        <?php echo Tag::linkTo(array($file['file'], $dlIcon, 'target' => '_download')); ?>
+                    </td>
+                    <td align="left">
+                        <?php echo $file['name']; ?>
+                        <br />
+                        Updated: <?php echo $file['date']; ?>
                     </td>
 				</tr>
                 <?php } ?>
+                <?php } ?>
 				<tr class="cellDown">
-					<td align="left">Phalcon 0.5.0 - Source-Code</td>
-					<td align="center"><a target="_download" href="https://github.com/phalcon/cphalcon/">clone</a></td>
+                    <td align="left">
+                        <a target="_download" href="https://github.com/phalcon/cphalcon/"><?php echo $githubIcon; ?></a>
+                    </td>
+                    <td align="left">
+					    Phalcon 0.4.5 - Source-Code
+                    </td>
 				</tr>
-                <tr><td><br /></td></tr>
                 <tr>
-                    <th colspan="3"><b>Developer Tools</b></th>
+                    <td colspan="2">
+                        <div class="highlightb">
+                            We highly recommend you to use the latest version of PHP 5.3 to achieve
+                            maximum stability with Phalcon.
+                        </div>
+                    </td>
                 </tr>
-                <tr class="cellDown">
-                    <td align="left">Phalcon Developer Tools</td>
-                    <td align="center">Available via <a href="http://pear.phalconphp.com">PEAR</a> or <a href="https://github.com/phalcon/phalcon-devtools/zipball/master">Github</a></td>
-                </tr>
-				<tr><td><br /><br /></td></tr>
-				<tr>
-					<th colspan="3"><div class="titleContent">Phalcon PHP (old stable)</div></th>
-				</tr>
-				<tr class="cellDown">
-					<td align="left">Phalcon 0.4.5 - Windows x86 for PHP 5.3 (VC9)</td>
-					<td align="center"><?php echo Tag::linkTo(array('files/phalcon-win-x86-php5.3-0.4-VC9.zip','download','target'=>'_download')); ?></td>
-				</tr>
-				<tr class="cellDown">
-					<td align="left">Phalcon 0.4.5 - Windows x86 for PHP 5.4 (VC9)</td>
-					<td align="center"><?php echo Tag::linkTo(array('files/phalcon-win-x86-php5.4-0.4-VC9.zip','download','target'=>'_download')); ?></td>
-				</tr>
-				<tr class="cellDown">
-					<td align="left">Phalcon 0.4.5 - Windows x64 for PHP 5.3 (VC9)</td>
-					<td align="center"><?php echo Tag::linkTo(array('files/phalcon-win-x64-php5.3-0.4-VC9.zip','download','target'=>'_download')); ?></td>
-				</tr>
-				<tr class="cellDown">
-					<td align="left">Phalcon 0.4.5 - Source-Code</td>
-					<td align="center"><a target="_download" href="https://github.com/phalcon/cphalcon/">clone</a></td>
-				</tr>
-				<tr>
-					<td colspan="2">
-						<div class="highlightb">
-							We highly recommend you to use the latest version of PHP 5.3 to achieve maximum stability with Phalcon.
-						</div>
-					</td>
-				</tr>
 			</table>
 		</td>
 		<td width="50%" valign="top" style="padding-left:15px">
