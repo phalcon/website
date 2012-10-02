@@ -33,23 +33,23 @@
 				</tr>
                 <?php foreach ($version as $file) { ?>
 				<tr class="cellDown">
-					<td align="left">
-                        <?php echo Tag::linkTo(array($file['file'], $dlIcon, 'target' => '_download')); ?>
-                    </td>
                     <td align="left">
                         <?php echo $file['name']; ?>
                         <br />
                         <span>Updated: <?php echo $file['date']; ?></span>
+                    </td>
+                    <td align="right">
+                        <?php echo Tag::linkTo(array($file['file'], $dlIcon, 'target' => '_download')); ?>
                     </td>
 				</tr>
                 <?php } ?>
                 <?php } ?>
 				<tr class="cellDown">
                     <td align="left">
-                        <a target="_download" href="https://github.com/phalcon/cphalcon/"><?php echo $githubIcon; ?></a>
-                    </td>
-                    <td align="left">
 					    Phalcon 0.5.0 - Source-Code
+                    </td>
+                    <td align="right">
+                        <a target="_download" href="https://github.com/phalcon/cphalcon/"><?php echo $githubIcon; ?></a>
                     </td>
 				</tr>
 
@@ -60,11 +60,11 @@
                 </tr>
                 <tr class="cellDown">
                     <td align="left">
+                        Phalcon Developer Tools
+                    </td>
+                    <td align="right">
                         <a target="_download" href="https://github.com/phalcon/phalcon-devtools/zipball/master"><?php echo $githubIcon; ?></a>
                         <a href="http://pear.phalconphp.com/"><?php echo $pearIcon; ?></a>
-                    </td>
-                    <td align="left">
-                        Phalcon Developer Tools
                     </td>
                 </tr>
 
@@ -81,23 +81,23 @@
 				</tr>
                 <?php foreach ($version as $file) { ?>
 				<tr class="cellDown">
-					<td align="left">
-                        <?php echo Tag::linkTo(array($file['file'], $dlIcon, 'target' => '_download')); ?>
-                    </td>
                     <td align="left">
                         <?php echo $file['name']; ?>
                         <br />
                         Updated: <?php echo $file['date']; ?>
+                    </td>
+                    <td align="right">
+                        <?php echo Tag::linkTo(array($file['file'], $dlIcon, 'target' => '_download')); ?>
                     </td>
 				</tr>
                 <?php } ?>
                 <?php } ?>
 				<tr class="cellDown">
                     <td align="left">
-                        <a target="_download" href="https://github.com/phalcon/cphalcon/"><?php echo $githubIcon; ?></a>
-                    </td>
-                    <td align="left">
 					    Phalcon 0.4.5 - Source-Code
+                    </td>
+                    <td align="right">
+                        <a target="_download" href="https://github.com/phalcon/cphalcon/"><?php echo $githubIcon; ?></a>
                     </td>
 				</tr>
                 <tr>
