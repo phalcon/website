@@ -42,7 +42,7 @@ class DownloadController extends ControllerBase
 
         $dll_11 = array(
             'name' => 'Phalcon 0.5.0 - Windows x64 for PHP &gt; 5.3.9 (VC9)',
-            'file' => 'http://phalconphp.com/files/phalcon-win-x64-php5.3-0.5-VC9.zip',
+            'file' => 'files/phalcon-win-x64-php5.3-0.5-VC9.zip',
             'date' => '',
         );
 
