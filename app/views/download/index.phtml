@@ -39,7 +39,7 @@
                         <span>Updated: <?php echo $file['date']; ?></span>
                     </td>
                     <td align="right">
-                        <?php echo Tag::linkTo(array($file['file'], $dlIcon, 'target' => '_download')); ?>
+                        <?php echo Tag::linkTo(array($file['file'], $dlIcon, 'target' => '_download', 'title' => $file['name'])); ?>
                     </td>
 				</tr>
                 <?php } ?>
@@ -49,7 +49,7 @@
 					    Phalcon 0.5.0 - Source-Code
                     </td>
                     <td align="right">
-                        <a target="_download" href="https://github.com/phalcon/cphalcon/"><?php echo $githubIcon; ?></a>
+                        <a target="_download" href="https://github.com/phalcon/cphalcon/" title="GitHub Repo"><?php echo $githubIcon; ?></a>
                     </td>
 				</tr>
 
@@ -63,8 +63,8 @@
                         Phalcon Developer Tools
                     </td>
                     <td align="right">
-                        <a target="_download" href="https://github.com/phalcon/phalcon-devtools/zipball/master"><?php echo $githubIcon; ?></a>
-                        <a href="http://pear.phalconphp.com/"><?php echo $pearIcon; ?></a>
+                        <a target="_download" href="https://github.com/phalcon/phalcon-devtools/zipball/master" title="GitHub Repo"><?php echo $githubIcon; ?></a>
+                        <a href="http://pear.phalconphp.com/" title="PEAR Channel"><?php echo $pearIcon; ?></a>
                     </td>
                 </tr>
 
@@ -84,10 +84,10 @@
                     <td align="left">
                         <?php echo $file['name']; ?>
                         <br />
-                        Updated: <?php echo $file['date']; ?>
+                        <span>Updated: <?php echo $file['date']; ?></span>
                     </td>
                     <td align="right">
-                        <?php echo Tag::linkTo(array($file['file'], $dlIcon, 'target' => '_download')); ?>
+                        <?php echo Tag::linkTo(array($file['file'], $dlIcon, 'target' => '_download', 'title' => $file['name'])); ?>
                     </td>
 				</tr>
                 <?php } ?>
@@ -97,7 +97,7 @@
 					    Phalcon 0.4.5 - Source-Code
                     </td>
                     <td align="right">
-                        <a target="_download" href="https://github.com/phalcon/cphalcon/"><?php echo $githubIcon; ?></a>
+                        <a target="_download" href="https://github.com/phalcon/cphalcon/" title="GitHub Repo"><?php echo $githubIcon; ?></a>
                     </td>
 				</tr>
                 <tr>
@@ -119,9 +119,9 @@
     			As a result, Phalcon PHP is available on
 			    <a href="http://www.microsoft.com/windows">Microsoft Windows</a>,
 			    <a href="http://kernel.org">GNU/Linux</a>,
-			    <a href="http://www.freebsd.org/">FreeBSD</a>
-			    <a href="http://www.apple.com">Mac OS X</a>,
-			    You can either download a binary package for the system of your choice or
+			    <a href="http://www.freebsd.org/">FreeBSD</a> and
+			    <a href="http://www.apple.com">Mac OS X</a>. You can either
+                download a binary package for the system of your choice or
 			    build it from sources.</p>
 
 			    <h3>Windows</h3>
