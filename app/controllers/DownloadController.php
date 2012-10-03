@@ -13,26 +13,26 @@ class DownloadController extends ControllerBase
     {
         $dll_01 = array(
             'name' => 'Phalcon 0.5.0 - Windows x86 for PHP 5.4 (VC9)',
-            'file' => 'files/phalcon-win-x86-php5.4-0.5-VC9.zip',
+            'file' => 'files/phalcon-x86-VC9-php5.4.0-0.5.zip',
             'date' => '',
         );
 
         $dll_02 = array(
             'name' => 'Phalcon 0.5.0 - Windows x86 for PHP &gt; 5.3.9 (VC9)',
-            'file' => 'files/phalcon-win-x86-php5.3-0.5-VC9.zip',
+            'file' => 'files/phalcon-x86-VC9-php5.3.9-0.5.zip',
             'date' => '',
         );
 
         $dll_03 = array(
             'name' => 'Phalcon 0.5.0 - Windows x86 for PHP &gt; 5.3.9 NTS (VC9)',
-            'file' => 'files/phalcon-win-x86-php5.3-nts-0.5-VC9.zip',
+            'file' => 'files/phalcon-x86-VC9-php5.3.9-0.5-nts.zip',
             'date' => '',
         );
-//        $dll_04 = array(
-//            'name' => 'Phalcon 0.5.0 - Windows x86 for PHP &lt;= 5.3.9 (VC9)',
-//            'file' => '',
-//            'date' => '',
-//        );
+        $dll_04 = array(
+            'name' => 'Phalcon 0.5.0 - Windows x86 for PHP &lt;= 5.3.9 (VC9)',
+            'file' => 'files/phalcon-x86-VC9-php5.3.8-0.5.zip',
+            'date' => '',
+        );
 //
 //        $dll_10 = array(
 //            'name' => 'Phalcon 0.5.0 - Windows x64 for PHP 5.4 (VC9)',
@@ -47,7 +47,7 @@ class DownloadController extends ControllerBase
         );
 
         $current = array(
-            'x86' => array($dll_01, $dll_02, $dll_03),
+            'x86' => array($dll_01, $dll_02, $dll_03, $dll_04),
             'x64' => array($dll_11),
         );
 //        $current = array(
