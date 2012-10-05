@@ -11,96 +11,95 @@ class DownloadController extends ControllerBase
 
     public function indexAction()
     {
-        $dll_01 = array(
-            'name' => 'Phalcon 0.5.1 - Windows x86 for PHP 5.4 (VC9)',
-            'file' => 'files/phalcon-x86-VC9-php5.4.0-0.5.1.zip',
-            'date' => '',
-        );
 
-        $dll_02 = array(
-            'name' => 'Phalcon 0.5.1 - Windows x86 for PHP &gt; 5.3.9 (VC9)',
-            'file' => 'files/phalcon-x86-VC9-php5.3.9-0.5.1.zip',
-            'date' => '',
-        );
+        $path     = dirname(dirname(dirname(__FILE__)));
+        $path    .= '/public/files/';
+        $template = "Phalcon %s - Windows %s for PHP %s %s(%s)";
+        $files    = array();
 
-        $dll_03 = array(
-            'name' => 'Phalcon 0.5.1 - Windows x86 for PHP &gt; 5.3.9 NTS (VC9)',
-            'file' => 'files/phalcon-x86-VC9-php5.3.9-0.5.1-nts.zip',
-            'date' => '',
-        );
-        $dll_04 = array(
-            'name' => 'Phalcon 0.5.1 - Windows x86 for PHP &lt;= 5.3.9 (VC9)',
-            'file' => 'files/phalcon-x86-VC9-php5.3.8-0.5.1.zip',
-            'date' => '',
-        );
-//
-//        $dll_10 = array(
-//            'name' => 'Phalcon 0.5.0 - Windows x64 for PHP 5.4 (VC9)',
-//            'file' => '',
-//            'date' => '',
-//        );
+        foreach (glob($path . '*.zip') as $file) {
 
-        $dll_11 = array(
-            'name' => 'Phalcon 0.5.0 - Windows x64 for PHP &gt; 5.3.9 (VC9)',
-            'file' => 'files/phalcon-win-x64-php5.3-0.5-VC9.zip',
-            'date' => '',
-        );
+            $fileDate = filemtime($file);
+            $date     = '';
+            if ($fileDate) {
+                $date = date("F d Y H:i:s T", $fileDate);
+            }
+            $fileName = str_replace($path, '', $file);
 
-        $current = array(
-            'x86' => array($dll_01, $dll_02, $dll_03, $dll_04),
-            'x64' => array($dll_11),
-        );
-//        $current = array(
-//            'x86' => array($dll_01, $dll_02, $dll_03, $dll_04),
-//            'x64' => array($dll_10, $dll_11),
-//        );
+            if (strpos($fileName, '_') > 0) {
 
-        // Get the last modified date of each file
-        foreach ($current as $versionKey => $version) {
+                $chunks = explode('_', str_replace('.zip', '', $fileName));
 
-            foreach ($version as $key => $file) {
-                $fileName = $file['file'];
-                $fileDate = filemtime($fileName);
+                /**
+                 * The $chunks contains the information we need
+                 *
+                 * 0 -> phalcon
+                 * 1 = architecture x86, x64
+                 * 2 - VC9
+                 * 3 - php version prefixed with "php"
+                 * 4 - Phalcon version
+                 * 5 - NTS or empty
+                 */
+                $version = $chunks[4];
+                $arch    = $chunks[1];
+                $vc      = $chunks[2];
 
-                if ($fileDate) {
-                    $current[$versionKey][$key]['date'] = date("F d Y H:i:s", $fileDate);
+                $phpVersion = str_replace('php', '', $chunks[3]);
+                $key        = $version;
+                if (substr($phpVersion, -1) == "+") {
+                    $php  = "&gt; " . substr($phpVersion, 0, -1);
+                    $key .= substr($phpVersion, 0, -1) . '1';
+                } elseif (substr($phpVersion, -1) == "-") {
+                    $php  = "&lt;= " . substr($phpVersion, 0, -1);
+                    $key .= substr($phpVersion, 0, -1) . '0';
+                } else {
+                    $php  = $phpVersion;
+                    $key .= $phpVersion . '0';
                 }
+
+                $nts = (isset($chunks[5])) ? 'NTS ' : '';
+                $key = str_replace('.', '', $key);
+                $key .= ($nts) ? '0' : '1';
+
+                $files[$version][$arch][$key] = array(
+                    'name' => sprintf($template, $version, $arch, $php, $nts, $vc),
+                    'file' => 'files/' . $fileName,
+                    'date' => $date,
+                );
             }
         }
 
-        $dll_01 = array(
-            'name' => 'Phalcon 0.4.5 - Windows x86 for PHP 5.4 (VC9)',
-            'file' => 'files/phalcon-win-x86-php5.4-0.4-VC9.zip',
-            'date' => '',
-        );
+        /**
+         * The $files contains all the data we need based on architecture
+         * We need to sort it though so a new array will be created for this
+         */
+        $results = array();
+        foreach ($files as $arch => $data) {
 
-        $dll_02 = array(
-            'name' => 'Phalcon 0.4.5 - Windows x86 for PHP 5.3 (VC9)',
-            'file' => 'files/phalcon-win-x86-php5.3-0.4-VC9.zip',
-            'date' => '',
-        );
+            // $data is an array which needs to be sorted by key
+            krsort($data);
+            $results[$arch] = $data;
+        }
 
-        $dll_10 = array(
-            'name' => 'Phalcon 0.4.5 - Windows x64 for PHP 5.3 (VC9)',
-            'file' => 'files/phalcon-win-x64-php5.3-0.4-VC9.zip',
-            'date' => '',
-        );
+        krsort($results);
 
-        $old = array(
-            'x86' => array($dll_01, $dll_02),
-            'x64' => array($dll_10),
-        );
+        /**
+         * The first element in the array is the latest version. The rest
+         * are older versions. We need to sort the older versions based
+         * on architecture
+         */
+        reset($results);
+        $key     = key($results);
+        $current = $results[$key];
 
-        // Get the last modified date of each file
-        foreach ($old as $versionKey => $version) {
+        // Remove the latest version
+        unset($results[$key]);
 
-            foreach ($version as $key => $file) {
-                $fileName = $file['file'];
-                $fileDate = filemtime($fileName);
-
-                if ($fileDate) {
-                    $old[$versionKey][$key]['date'] = date("F d Y H:i:s", $fileDate);
-                }
+        // Now sort everything for the last time.
+        $old = array('x86' => array(), 'x64' => array());
+        foreach ($results as $result) {
+            foreach ($result as $arch => $data) {
+                $old[$arch] = array_merge($old[$arch], $data);
             }
         }
 
