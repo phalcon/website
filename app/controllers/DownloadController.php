@@ -12,24 +12,24 @@ class DownloadController extends ControllerBase
     public function indexAction()
     {
         $dll_01 = array(
-            'name' => 'Phalcon 0.5.1 - Windows x86 for PHP 5.4 (VC9)',
+            'name' => 'Phalcon 0.5.1 - PHP 5.4 (VC9)',
             'file' => 'files/phalcon-x86-VC9-php5.4.0-0.5.1.zip',
             'date' => '',
         );
 
         $dll_02 = array(
-            'name' => 'Phalcon 0.5.1 - Windows x86 for PHP &gt; 5.3.9 (VC9)',
+            'name' => 'Phalcon 0.5.1 - PHP &gt; 5.3.9 (VC9)',
             'file' => 'files/phalcon-x86-VC9-php5.3.9-0.5.1.zip',
             'date' => '',
         );
 
         $dll_03 = array(
-            'name' => 'Phalcon 0.5.1 - Windows x86 for PHP &gt; 5.3.9 NTS (VC9)',
+            'name' => 'Phalcon 0.5.1 - PHP &gt; 5.3.9 NTS (VC9)',
             'file' => 'files/phalcon-x86-VC9-php5.3.9-0.5.1-nts.zip',
             'date' => '',
         );
         $dll_04 = array(
-            'name' => 'Phalcon 0.5.1 - Windows x86 for PHP &lt;= 5.3.9 (VC9)',
+            'name' => 'Phalcon 0.5.1 - PHP &lt;= 5.3.9 (VC9)',
             'file' => 'files/phalcon-x86-VC9-php5.3.8-0.5.1.zip',
             'date' => '',
         );
@@ -41,7 +41,7 @@ class DownloadController extends ControllerBase
 //        );
 
         $dll_11 = array(
-            'name' => 'Phalcon 0.5.0 - Windows x64 for PHP &gt; 5.3.9 (VC9)',
+            'name' => 'Phalcon 0.5.0 - PHP &gt; 5.3.9 (VC9)',
             'file' => 'files/phalcon-win-x64-php5.3-0.5-VC9.zip',
             'date' => '',
         );
@@ -69,19 +69,19 @@ class DownloadController extends ControllerBase
         }
 
         $dll_01 = array(
-            'name' => 'Phalcon 0.4.5 - Windows x86 for PHP 5.4 (VC9)',
+            'name' => 'Phalcon 0.4.5 - PHP 5.4 (VC9)',
             'file' => 'files/phalcon-win-x86-php5.4-0.4-VC9.zip',
             'date' => '',
         );
 
         $dll_02 = array(
-            'name' => 'Phalcon 0.4.5 - Windows x86 for PHP 5.3 (VC9)',
+            'name' => 'Phalcon 0.4.5 - PHP 5.3 (VC9)',
             'file' => 'files/phalcon-win-x86-php5.3-0.4-VC9.zip',
             'date' => '',
         );
 
         $dll_10 = array(
-            'name' => 'Phalcon 0.4.5 - Windows x64 for PHP 5.3 (VC9)',
+            'name' => 'Phalcon 0.4.5 - PHP 5.3 (VC9)',
             'file' => 'files/phalcon-win-x64-php5.3-0.4-VC9.zip',
             'date' => '',
         );
