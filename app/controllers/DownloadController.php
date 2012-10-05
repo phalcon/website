@@ -87,8 +87,8 @@ class DownloadController extends ControllerBase
         );
 
         $old = array(
-            'x86' => array($dll_01, $dll_02),
-            'x64' => array($dll_10),
+            'Windows x86' => array($dll_01, $dll_02),
+            'Windows x64' => array($dll_10),
         );
 
         // Get the last modified date of each file
