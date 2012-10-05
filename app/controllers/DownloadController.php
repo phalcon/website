@@ -12,25 +12,25 @@ class DownloadController extends ControllerBase
     public function indexAction()
     {
         $dll_01 = array(
-            'name' => 'Phalcon 0.5.0 - Windows x86 for PHP 5.4 (VC9)',
-            'file' => 'files/phalcon-x86-VC9-php5.4.0-0.5.zip',
+            'name' => 'Phalcon 0.5.1 - Windows x86 for PHP 5.4 (VC9)',
+            'file' => 'files/phalcon-x86-VC9-php5.4.0-0.5.1.zip',
             'date' => '',
         );
 
         $dll_02 = array(
-            'name' => 'Phalcon 0.5.0 - Windows x86 for PHP &gt; 5.3.9 (VC9)',
-            'file' => 'files/phalcon-x86-VC9-php5.3.9-0.5.zip',
+            'name' => 'Phalcon 0.5.1 - Windows x86 for PHP &gt; 5.3.9 (VC9)',
+            'file' => 'files/phalcon-x86-VC9-php5.3.9-0.5.1.zip',
             'date' => '',
         );
 
         $dll_03 = array(
-            'name' => 'Phalcon 0.5.0 - Windows x86 for PHP &gt; 5.3.9 NTS (VC9)',
-            'file' => 'files/phalcon-x86-VC9-php5.3.9-0.5-nts.zip',
+            'name' => 'Phalcon 0.5.1 - Windows x86 for PHP &gt; 5.3.9 NTS (VC9)',
+            'file' => 'files/phalcon-x86-VC9-php5.3.9-0.5.1-nts.zip',
             'date' => '',
         );
         $dll_04 = array(
-            'name' => 'Phalcon 0.5.0 - Windows x86 for PHP &lt;= 5.3.9 (VC9)',
-            'file' => 'files/phalcon-x86-VC9-php5.3.8-0.5.zip',
+            'name' => 'Phalcon 0.5.1 - Windows x86 for PHP &lt;= 5.3.9 (VC9)',
+            'file' => 'files/phalcon-x86-VC9-php5.3.8-0.5.1.zip',
             'date' => '',
         );
 //
