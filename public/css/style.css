@@ -502,3 +502,9 @@ tr.cellDown span {
 	font-size: 11px;
 	color: #333333;
 }
+
+tr.downloadCell a {
+	font-size: 13px;
+	float: right;
+	padding-left: 5px;
+}
