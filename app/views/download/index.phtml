@@ -61,6 +61,30 @@
                     </td>
                 </tr>
 
+                <?php if (count($alpha) > 0) { ?>
+                <tr><td><br /><br /></td></tr>
+                <tr>
+                    <th class="titleContent">Alpha versions</th>
+                </tr>
+                <?php foreach ($alpha as $version_key => $version) { ?>
+                <tr class="cellDown">
+                    <td align="left">
+                        <strong><?php echo $version_key; ?></strong>
+                    </td>
+                </tr>
+                <?php foreach ($version as $file) { ?>
+                <tr class="cellDown downloadCell">
+                    <td align="left">
+                        <?php echo $file['name']; ?>
+                        <br />
+                        <span>Updated: <?php echo $file['date']; ?></span>
+                        <?php echo Tag::linkTo(array($file['file'], 'download', 'target' => '_download', 'title' => $file['name'])); ?>
+                    </td>
+                </tr>
+                <?php } ?>
+                <?php } ?>
+                <?php } ?>
+
                 <tr><td><br /><br /></td></tr>
 
                 <tr>
