@@ -1,13 +1,14 @@
-<?php use \Phalcon\Tag as Tag; ?>
-<?php $dlIcon = Tag::image('img/download30x30.png'); ?>
-<?php $githubIcon = Tag::image('img/github30x30.png'); ?>
-<?php $pearIcon = Tag::image('img/pear32x32.gif'); ?>
-<?php echo Tag::stylesheetLink("css/colors/zenburn.css"); ?>
+<?php
+
+use \Phalcon\Tag as Tag;
+echo Tag::stylesheetLink("css/colors/zenburn.css");
+
+?>
 
 <div class="doc-box">
 	<table width="60%" align="center">
 		<tr>
-			<td><?php echo Tag::image('img/download.png') ?></td>
+			<td><?php echo Tag::image('img/download-sp.png') ?></td>
 			<td>
 				<h2>Downloads</h2>
 				Phalcon is a C extension so you need to download a binary for your platform or compile
@@ -84,6 +85,13 @@
                 <?php } ?>
                 <?php } ?>
                 <?php } ?>
+                <tr class="cellDown downloadCell">
+                    <td align="left">
+					    Phalcon 0.6.0 - Source-Code
+                        <a target="_download" href="https://github.com/phalcon/cphalcon/tree/0.6.0" title="GitHub Repo">github</a>
+                    </td>
+				</tr>
+
 
                 <tr><td><br /><br /></td></tr>
 
