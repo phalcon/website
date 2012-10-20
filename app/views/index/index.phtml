@@ -1,5 +1,9 @@
-<?php use Phalcon\Tag as Tag; ?>
-<?php echo $this->getContent() ?>
+<?php
+
+use Phalcon\Tag;
+echo $this->getContent();
+
+?>
 
 <div align="left">
     <div id="main-content">
@@ -40,7 +44,7 @@
 <div align="center">
     <div class="sub-content">
         <div class="sub">
-            <?php echo Tag::linkTo('download', Tag::image(array('img/download.png', 'border' => '0')).
+            <?php echo Tag::linkTo('download', Tag::image(array('img/download-sp.png', 'border' => '0')).
             '<br/>Download and Try<br/><span>C extensions are available for many platforms</span>') ?><br/>
         </div>
         <div class="sub">
