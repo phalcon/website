@@ -43,4 +43,9 @@ class IndexController extends ControllerBase
 
         return $this->dispatcher->forward(array('controller' => 'index', 'action' => 'index'));
     }
+
+    public function show404Action()
+    {
+        $this->response->setHeader(404, 'Not Found');
+    }
 }

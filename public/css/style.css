@@ -1,12 +1,12 @@
 html {
-    background: url("../img/background-sp.png") repeat-x scroll 0 -730px #FFFFFF;
+	background: url("../img/background-sp.png") repeat-x scroll 0 -730px #FFFFFF;
 }
 
 body {
 	color: #333333;
 	font-family: "Open Sans",sans-serif;
-	font-size: 13px;
-	line-height: 1.231;
+	font-size: 14px;
+    line-height: 22px;
 	border-top: 2px solid #686868;
 	margin: 0;
 	min-width: 990px;
@@ -37,7 +37,9 @@ body {
     font-weight: bold;
     text-align: left;
     text-transform: uppercase;
-    background: #262626;
+    background-color: #2C2C2C;
+	background-image: -moz-linear-gradient(center top , #333333, #222222);
+	padding-bottom: 5px;
 }
 
 #nav-main div.menubar {
@@ -55,18 +57,18 @@ body {
 }
 
 #nav-main div.nav-main-features a {
-    color: #dadada;
+    color: #DADADA;
     display: block;
     float: left;
     height: 18px;
-    padding: 15px 20px 7px 7px;
+    padding: 10px 25px 7px 7px;
     position: relative;
     text-decoration: none;
     z-index: 100;
 }
 
 #nav-main div.nav-main-features a:hover {
-	color: #349968;
+	color: #ffffff;
 }
 
 div#main-content {

@@ -9,9 +9,27 @@ $loader->registerDirs(array(
     __DIR__.'/../app/models/'
 ))->register();
 
+//Create an EventsManager
+$eventsManager = new Phalcon\Events\Manager();
+
+//Use the FullStack DI
 $di = new \Phalcon\DI\FactoryDefault();
 
-$di->set('router', function(){
+$eventsManager->attach("dispatch", function($event, $dispatcher, $exception) {
+    if ($event->getType() == 'beforeException') {
+        switch ($exception->getCode()) {
+            case Phalcon\Dispatcher::EXCEPTION_HANDLER_NOT_FOUND:
+            case Phalcon\Dispatcher::EXCEPTION_ACTION_NOT_FOUND:
+                $dispatcher->forward(array(
+                    'controller' => 'index',
+                    'action' => 'show404'
+                ));
+                return false;
+            }
+    }
+});
+
+$di->set('router', function() {
 
     $router = new Phalcon\Mvc\Router();
 
@@ -34,19 +52,25 @@ $di->set('router', function(){
     return $router;
 });
 
-$di->set('url', function(){
+$di->set('dispatcher', function() use ($eventsManager) {
+    $dispatcher = new Phalcon\Mvc\Dispatcher();
+    $dispatcher->setEventsManager($eventsManager);
+    return $dispatcher;
+});
+
+$di->set('url', function() {
     $url = new Phalcon\Mvc\Url();
     $url->setBaseUri('/phalconphp/');
     return $url;
 });
 
-$di->set('view', function(){
+$di->set('view', function() {
     $view = new \Phalcon\Mvc\View();
     $view->setViewsDir(__DIR__.'/../app/views/');
     return $view;
 });
 
-$di->set('db', function(){
+$di->set('db', function() {
     return new \Phalcon\Db\Adapter\Pdo\Mysql(array(
         "host" => "localhost",
         "username" => "root",
