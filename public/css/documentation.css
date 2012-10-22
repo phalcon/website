@@ -106,11 +106,17 @@ div.highlight {
 }
 
 div.highlightb {
-	background: #D5E9F6;
+	color: #414141;
+	font-family: "Open Sans",sans-serif;
+	background: none repeat scroll 0 0 #D5E9F6;
+	line-height: 24px;
+	padding: 10px;
+	text-align: left;
+	text-rendering: optimizelegibility;
+	font-size: 15px;
 	margin-left: 20px;
 	margin-right: 20px;
 	margin-top: 10px;
-	font-size: 15px;
 }
 
 table.compare pre.source-code {

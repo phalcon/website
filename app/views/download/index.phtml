@@ -1,9 +1,4 @@
-<?php
-
-use \Phalcon\Tag as Tag;
-echo Tag::stylesheetLink("css/colors/zenburn.css");
-
-?>
+<?php use \Phalcon\Tag as Tag; ?>
 
 <div class="doc-box">
 	<table width="60%" align="center">
@@ -204,7 +199,7 @@ or
 
 			    <h4>Need help?</h4>
 			    Please send us a ticket at <a href="https://github.com/phalcon/cphalcon/issues">Github</a>
-			    or contact us at our <a href="http://phalcon.uservoice.com/">Help Desk</a> and let us to help you.
+			    or contact us at our <?php echo Tag::linkTo('support', 'Help Desk') ?> and let us to help you.
 
 			</div>
 		</td>

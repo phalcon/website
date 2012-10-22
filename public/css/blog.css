@@ -200,12 +200,12 @@ a img {
 #wrapper #content .post .title {
 	color: #000000;
     display: block;
-    font: italic 32px Georgia,"Times New Roman",Times,serif;
-    letter-spacing: -3px;
+    font: 400 30px/44px 'Open Sans','Lucida Sans Unicode','Lucida Grande',sans-serif;
+    margin: 0;
 }
 
 #wrapper #content .post img {
-max-width: 500px;
+	max-width: 500px;
 }
 
 #wrapper #content .post .chat {
