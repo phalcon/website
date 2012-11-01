@@ -21,6 +21,7 @@ a img {
 	font-weight: bold;
 	text-shadow: 1px 3px 5px rgba(0,0,0, 0.5);
 	letter-spacing: -1px;
+	word-spacing: -2px;
 }
 
 #wrapper #title a {
@@ -200,12 +201,12 @@ a img {
 #wrapper #content .post .title {
 	color: #000000;
     display: block;
-    font: italic 32px Georgia,"Times New Roman",Times,serif;
-    letter-spacing: -3px;
+    font: 400 30px/44px 'Open Sans','Lucida Sans Unicode','Lucida Grande',sans-serif;
+    margin: 0;
 }
 
 #wrapper #content .post img {
-max-width: 500px;
+	max-width: 500px;
 }
 
 #wrapper #content .post .chat {

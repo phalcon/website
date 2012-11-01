@@ -1,4 +1,3 @@
-{{ stylesheet_link("css/colors/zenburn.css") }}
 
 <div class="doc-box">
     <table width="60%" align="center">
@@ -6,7 +5,7 @@
             <td>{{ image('img/book.png') }}</td>
             <td>
                 <h2>Documentation</h2>
-                Searching for the latest documentation for PhalconPHP? How does it
+                Searching for the latest documentation for Phalcon? How does it
                 work internally? Any examples available? This is the place for you!
             </td>
         </tr>
@@ -28,9 +27,9 @@
             if you want to add/modify an area that is not clear.
             <br />
             <br />
-            Documentation regarding PhalconPHP and its usage can be found at:
+            Documentation regarding Phalcon and its usage can be found at:
             <br />
-            <a href="http://docs.phalconphp.com/en/latest/index.html">Latest PhalconPHP Documentation</a>
+            <a href="http://docs.phalconphp.com/en/latest/index.html">Latest Phalcon Documentation</a>
             [<a href="https://github.com/phalcon/docs">Github Repo</a>]
             <ul>
                 <li><a href="http://docs.phalconphp.com/en/0.5.0/index.html">0.5.0 (stable) Documentation (English)</a></li>

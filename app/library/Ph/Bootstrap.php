@@ -61,6 +61,7 @@ class Bootstrap
             'timezone',
             'flash',
             'url',
+            'dispathcer',
             'router',
             'view',
             'logger',
@@ -232,6 +233,36 @@ class Bootstrap
                 $url = new PhUrl();
                 $url->setBaseUri($config->app->baseUri);
                 return $url;
+            }
+        );
+    }
+
+    /**
+     * Initializes the dispatcher
+     *
+     * @param array $options
+     */
+    protected function initDispatcher($options = array())
+    {
+        // Create an EventsManager
+        $eventsManager = new PhEventsManager();
+
+        $eventsManager->attach(
+            "dispatch:beforeException",
+            function($event, $dispatcher, $exception)
+            {
+                switch ($exception->getCode())
+                {
+                    case PhDispatcher::EXCEPTION_HANDLER_NOT_FOUND:
+                    case PhDispatcher::EXCEPTION_ACTION_NOT_FOUND:
+                        $dispatcher->forward(
+                            array(
+                                'controller' => 'index',
+                                'action' => 'show404'
+                            )
+                        );
+                        return false;
+                }
             }
         );
     }

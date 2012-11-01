@@ -1,12 +1,8 @@
-html {
-    background: url("../img/background-sp.png") repeat-x scroll 0 -730px #FFFFFF;
-}
-
 body {
 	color: #333333;
 	font-family: "Open Sans",sans-serif;
-	font-size: 13px;
-	line-height: 1.231;
+	font-size: 14px;
+    line-height: 22px;
 	border-top: 2px solid #686868;
 	margin: 0;
 	min-width: 990px;
@@ -37,7 +33,9 @@ body {
     font-weight: bold;
     text-align: left;
     text-transform: uppercase;
-    background: #262626;
+    background-color: #2C2C2C;
+	background-image: -moz-linear-gradient(center top , #333333, #222222);
+	padding-bottom: 5px;
 }
 
 #nav-main div.menubar {
@@ -55,18 +53,18 @@ body {
 }
 
 #nav-main div.nav-main-features a {
-    color: #dadada;
+    color: #DADADA;
     display: block;
     float: left;
     height: 18px;
-    padding: 15px 20px 7px 7px;
+    padding: 10px 25px 7px 7px;
     position: relative;
     text-decoration: none;
     z-index: 100;
 }
 
 #nav-main div.nav-main-features a:hover {
-	color: #349968;
+	color: #D3EBE3;
 }
 
 div#main-content {
@@ -109,12 +107,12 @@ div.name p {
 }
 
 #footer {
-	background: url("../img/background-sp.png") repeat-x scroll 0 0 #339A6B;
+	background: none repeat scroll 0 0 #252525;
 	clear: both;
 	color: #FAFAFA;
 	display: block;
-	min-width: 978px;
-	padding: 150px 10px 100px;
+	margin-top: 50px;
+	padding: 50px 10px 50px;
 }
 
 #footer label {
@@ -309,9 +307,11 @@ div.subheader {
 h2 {
 	color: #000000;
 	display: block;
-	font: italic 36px Georgia,"Times New Roman",Times,serif;
+	/*font: italic 36px Georgia,"Times New Roman",Times,serif;
 	letter-spacing: -3px;
-	text-rendering: optimizelegibility;
+	text-rendering: optimizelegibility;*/
+	font: 400 30px/44px 'Open Sans','Lucida Sans Unicode','Lucida Grande',sans-serif;
+	margin: 0;
 }
 
 .titleContent {
@@ -352,7 +352,7 @@ a {
 }
 
 div.doc-box {
-	background-color: #F5FAFA;
+	background-color: #F5F5F5;
 	border-radius: 10px 10px 10px 10px;
 	padding: 32px;
 	font-family: "Open Sans", sans-serif;
@@ -459,9 +459,17 @@ div.about li {
 }
 
 div.highlightb {
-	background: #D5E9F6;
+	color: #414141;
+	font-family: "Open Sans",sans-serif;
+	background: none repeat scroll 0 0 #D5E9F6;
+	line-height: 24px;
+	padding: 10px;
+	text-align: left;
+	text-rendering: optimizelegibility;
 	font-size: 15px;
-	margin: 5px;
+	background-color: #D9EDF7;
+    border-color: #BCE8F1;
+    color: #3A87AD;
 }
 
 .btn-download {
@@ -507,4 +515,18 @@ tr.downloadCell a {
 	font-size: 13px;
 	float: right;
 	padding-left: 5px;
+}
+
+pre.source-code {
+	font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+	background-color: #F5F5F5;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px 4px 4px 4px;
+    display: block;
+    font-size: 13px;
+    line-height: 17px;
+    padding: 5px;
+    padding-left: 10px;
+    word-wrap: break-word;
+    margin-top: 10px;
 }

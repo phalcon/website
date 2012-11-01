@@ -1,4 +1,3 @@
-{{ stylesheet_link("css/colors/zenburn.css") }}
 
 <div class="doc-box">
 	<table width="60%" align="center">
@@ -171,12 +170,7 @@ yast2 -i php5-pear php5-devel php5-mysql gcc</pre>
 			    <pre class="source-code php">
 git clone git://github.com/phalcon/cphalcon.git
 cd cphalcon/build
-export CC="gcc"
-export CFLAGS="-O2 -fno-delete-null-pointer-checks"
-phpize --clean
-phpize
-./configure --enable-phalcon
-make && sudo make install
+sudo ./install
 </pre>
 
 Add the extension to your php.ini:
@@ -199,7 +193,7 @@ or
 
 			    <h4>Need help?</h4>
 			    Please send us a ticket at <a href="https://github.com/phalcon/cphalcon/issues">Github</a>
-			    or contact us at our <a href="http://phalcon.uservoice.com/">Help Desk</a> and let us to help you.
+			    or contact us at our <?php echo Tag::linkTo('support', 'Help Desk') ?> and let us to help you.
 
 			</div>
 		</td>

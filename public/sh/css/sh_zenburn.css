@@ -1,5 +1,5 @@
 
-#wrapper #content .post .copy pre.sh_sourceCode {
+/*#wrapper #content .post .copy pre.sh_sourceCode {
   background-color: #212121;
   color: #DCDCCC;
   font-family: Consolas,"Lucida Console",monospace;
@@ -146,3 +146,43 @@
   font-style: normal;
 }
 
+*/
+
+#wrapper #content .post .copy pre.sh_sourceCode {
+    font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+    background-color: #F5F5F5;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px 4px 4px 4px;
+    display: block;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0 0 11px;
+    padding: 5px;
+    padding-left: 10px;
+    word-wrap: break-word;
+}
+
+#wrapper #content .post .copy pre.sh_sourceCode span.sh_comment {
+    color: #93A1A1;
+}
+
+#wrapper #content .post .copy pre.sh_sourceCode span.sh_keyword {
+    color: #1E347B;
+}
+
+#wrapper #content .post .copy pre.sh_sourceCode span.sh_string {
+    color: #DD1144;
+}
+
+#wrapper #content .post .copy pre.sh_sourceCode span.sh_symbol,
+#wrapper #content .post .copy pre.sh_sourceCode span.sh_cbracket {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+#wrapper #content .post .copy pre.sh_sourceCode span.sh_number {
+    color: teal;
+}
+
+#wrapper #content .post .copy pre.sh_sourceCode span.sh_function {
+    color: teal;
+}
