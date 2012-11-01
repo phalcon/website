@@ -1,9 +1,8 @@
-<?php use Phalcon\Tag as Tag; ?>
 
 <div class="doc-box">
     <table width="60%" align="center">
         <tr>
-            <td><?php echo Tag::image('img/book.png') ?></td>
+            <td>{{ image('img/book.png') }}</td>
             <td>
                 <h2>Documentation</h2>
                 Searching for the latest documentation for Phalcon? How does it
@@ -30,19 +29,29 @@
             <br />
             Documentation regarding Phalcon and its usage can be found at:
             <br />
-            <a href="http://docs.phalconphp.com/en/latest/index.html">Latest Phalcon Documentation</a>
-            [<a href="https://github.com/phalcon/docs">Github Repo</a>]
             <ul>
-                <li><a href="http://docs.phalconphp.com/en/0.6.0/index.html">0.6.0 (stable) Documentation (English)</a></li>
-                <li><a href="http://docs.phalconphp.com/en/0.5.0/index.html">0.5.0 (old-stable) Documentation (English)</a></li>
-                <li><a href="http://docs.phalconphp.com/en/0.4.4/index.html">0.4.4 (old-stable) Documentation (English)</a></li>
+                <li><a href="http://docs.phalconphp.com/en/latest/index.html">Latest Phalcon Documentation (0.6.0)</a>
+                [<a href="https://github.com/phalcon/docs">Github Repo</a>]</li>
             </ul>
             There is also documentation outlining the internal API of PhalconPHP.
             It can be found at:
             <br />
-            <a href="http://internals.phalconphp.com/en/latest/index.html">Latest Internal API Documentation</a>
-            [<a href="https://github.com/phalcon/docs-internals">Github Repo</a>]
+            <ul>
+                <li><a href="http://internals.phalconphp.com/en/latest/index.html">Latest Internal API Documentation</a>
+                [<a href="https://github.com/phalcon/docs-internals">Github Repo</a>]
+                </li>
+            </ul>
+            Documentation for older versions:
             <br />
+            <ul>
+                <li><a href="http://docs.phalconphp.com/en/0.5.0/index.html">0.5.0 (stable) Documentation (English)</a></li>
+                <li><a href="http://docs.phalconphp.com/en/0.4.4/index.html">0.4.4 (stable) Documentation (English)</a></li>
+            </ul>
+
+            <h3>Other resources</h3>
+            <ul>
+                <li><a href="https://github.com/phalcon/cphalcon/wiki/PhalconPHP-Examples">List of examples</a></li>
+            </ul>
 
         </td>
     </tr>

@@ -1,11 +1,10 @@
 <?php
 
-class DownloadController extends ControllerBase
+class DownloadController extends \Ph\Controller
 {
     public function initialize()
     {
-        $this->view->setTemplateAfter('main');
-        Phalcon\Tag::setTitle('Downloads');
+        \Phalcon\Tag::setTitle('Downloads');
         parent::initialize();
     }
 
@@ -107,10 +106,17 @@ class DownloadController extends ControllerBase
             $experimental[$arch] = $data;
         }
 
-        krsort($experimental);
-        reset($experimental);
-        $key   = key($experimental);
-        $alpha = $experimental[$key];
+        if (count($experimental) > 0)
+        {
+            krsort($experimental);
+            reset($experimental);
+            $key   = key($experimental);
+            $alpha = $experimental[$key];
+        }
+        else
+        {
+            $alpha = false;
+        }
 
         /**
          * The first element in the array is the latest version. The rest
@@ -130,6 +136,16 @@ class DownloadController extends ControllerBase
             foreach ($result as $arch => $data) {
                 $old[$arch] = array_merge($old[$arch], $data);
             }
+        }
+
+        if (count($old['x86']) == 0)
+        {
+            unset($old['x86']);
+        }
+
+        if (count($old['x64']) == 0)
+        {
+            unset($old['x64']);
         }
 
         $this->view->setVar('current', $current);

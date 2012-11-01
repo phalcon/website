@@ -1,9 +1,8 @@
-<?php use \Phalcon\Tag as Tag; ?>
 
 <div class="doc-box">
 	<table width="60%" align="center">
 		<tr>
-			<td><?php echo Tag::image('img/download-sp.png') ?></td>
+			<td>{{ image('img/download-sp.png') }}</td>
 			<td>
 				<h2>Downloads</h2>
 				Phalcon is a C extension so you need to download a binary for your platform or compile
@@ -27,23 +26,23 @@
                         <strong><?php echo $version_key; ?></strong>
                     </td>
 				</tr>
-                <?php foreach ($version as $file) { ?>
-				<tr class="cellDown downloadCell">
-                    <td align="left">
-                        <?php echo $file['name']; ?>
-                        <br />
-                        <span>Updated: <?php echo $file['date']; ?></span>
-                        <?php echo Tag::linkTo(array($file['file'], 'download', 'target' => '_download', 'title' => $file['name'])); ?>
-                    </td>
-				</tr>
-                <?php } ?>
-                <?php } ?>
+                {% for file in version %}
                 <tr class="cellDown downloadCell">
                     <td align="left">
-                        Phalcon 0.6.0 - Source-Code
-                        <a target="_download" href="https://github.com/phalcon/cphalcon/tree/0.6.0" title="GitHub Repo">github</a>
+                        {{ file['name'] }}
+                        <br />
+                        <span>Updated: {{ file['date'] }}</span>
+                        {{ link_to(file['file'], 'download', 'target': '_download', 'title': file['name']) }}
                     </td>
-                </tr>
+				</tr>
+                {% endfor %}
+                <?php } ?>
+				<tr class="cellDown downloadCell">
+                    <td align="left">
+					    Phalcon 0.6.0 - Source-Code
+                        <a target="_download" href="https://github.com/phalcon/cphalcon/" title="GitHub Repo">github</a>
+                    </td>
+				</tr>
 
                 <tr><td><br /></td></tr>
 
@@ -57,7 +56,7 @@
                     </td>
                 </tr>
 
-                <?php if (count($alpha) > 0) { ?>
+                {% if (alpha) %}
                 <tr><td><br /><br /></td></tr>
                 <tr>
                     <th class="titleContent">Alpha versions</th>
@@ -68,18 +67,25 @@
                         <strong><?php echo $version_key; ?></strong>
                     </td>
                 </tr>
-                <?php foreach ($version as $file) { ?>
+                {% for file in version %}
                 <tr class="cellDown downloadCell">
                     <td align="left">
-                        <?php echo $file['name']; ?>
+                        {{ file['name'] }}
                         <br />
-                        <span>Updated: <?php echo $file['date']; ?></span>
-                        <?php echo Tag::linkTo(array($file['file'], 'download', 'target' => '_download', 'title' => $file['name'])); ?>
+                        <span>Updated: {{ file['date'] }}</span>
+                        {{ link_to(file['file'], 'download', 'target': '_download', 'title': file['name']) }}
                     </td>
                 </tr>
+                {% endfor %}
                 <?php } ?>
-                <?php } ?>
-                <?php } ?>
+                <tr class="cellDown downloadCell">
+                    <td align="left">
+                        Phalcon 0.6.0 - Source-Code
+                        <a target="_download" href="https://github.com/phalcon/cphalcon/tree/0.6.0" title="GitHub Repo">github</a>
+                    </td>
+                </tr>
+                {% endif %}
+
 
                 <tr><td><br /><br /></td></tr>
 
@@ -92,26 +98,20 @@
                         <strong><?php echo $version_key; ?></strong>
                     </td>
 				</tr>
-                <?php foreach ($version as $file) { ?>
+                {% for file in version %}
 				<tr class="cellDown downloadCell">
                     <td align="left">
                         <?php echo $file['name']; ?>
                         <br />
                         <span>Updated: <?php echo $file['date']; ?></span>
-                        <?php echo Tag::linkTo(array($file['file'], 'download', 'target' => '_download', 'title' => $file['name'])); ?>
+                        {{ link_to(file[file], 'download', 'target': '_download', 'title': file[name]) }}
                     </td>
 				</tr>
+                {% endfor %}
                 <?php } ?>
-                <?php } ?>
-                <tr class="cellDown downloadCell">
-                    <td align="left">
-                        Phalcon 0.5.2 - Source-Code
-                        <a target="_download" href="https://github.com/phalcon/cphalcon/" title="GitHub Repo">github</a>
-                    </td>
-                </tr>
 				<tr class="cellDown downloadCell">
                     <td align="left">
-					    Phalcon 0.4.5 - Source-Code
+					    Phalcon 0.5.2 - Source-Code
                         <a target="_download" href="https://github.com/phalcon/cphalcon/" title="GitHub Repo">github</a>
                     </td>
 				</tr>
@@ -192,9 +192,8 @@ or
 				</pre>
 
 			    <h4>Need help?</h4>
-			    Please send us a ticket at <a href="https://github.com/phalcon/cphalcon/issues">Github</a>
-			    or contact us at our <?php echo Tag::linkTo('support', 'Help Desk') ?> and let us to help you.
-
+			    Have a look at our {{ link_to('support', 'support page') }} for
+                ways to get support. We will do our best to help you.
 			</div>
 		</td>
 	</tr>

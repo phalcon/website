@@ -3,12 +3,11 @@
 /**
  * IndexController
  */
-class IndexController extends ControllerBase
+class IndexController extends \Ph\Controller
 {
     public function initialize()
     {
-        $this->view->setTemplateAfter('main');
-        Phalcon\Tag::setTitle('High performance PHP framework');
+        \Phalcon\Tag::setTitle('High performance PHP framework');
         parent::initialize();
     }
 
@@ -29,7 +28,7 @@ class IndexController extends ControllerBase
         if ($exists==false) {
             $subscriber = new Subscribers();
             $subscriber->email = $email;
-            $subscriber->created_at = new Phalcon\Db\RawValue('now()');
+            $subscriber->created_at = new \Phalcon\Db\RawValue('now()');
             if ($subscriber->save()==false) {
                 foreach ($subscriber->getMessages() as $message) {
                     $this->flash->error("At this moment you can\'t subscribe");
