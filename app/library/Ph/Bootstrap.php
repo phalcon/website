@@ -61,7 +61,7 @@ class Bootstrap
             'timezone',
             'flash',
             'url',
-            'dispathcer',
+            'dispatcher',
             'router',
             'view',
             'logger',
@@ -72,29 +72,17 @@ class Bootstrap
         );
 
 
-        try {
-
-            foreach ($loaders as $service)
-            {
-                $function = 'init' . ucfirst($service);
-
-                $this->$function($options);
-            }
-
-            $application = new PhApplication();
-            $application->setDI($this->_di);
-
-            return $application->handle()->getContent();
-
-        }
-        catch (PhException $e)
+        foreach ($loaders as $service)
         {
-            echo $e->getMessage();
+            $function = 'init' . ucfirst($service);
+
+            $this->$function($options);
         }
-        catch (\PDOException $e)
-        {
-            echo $e->getMessage();
-        }
+
+        $application = new PhApplication();
+        $application->setDI($this->_di);
+
+        return $application->handle()->getContent();
     }
 
     // Protected functions
@@ -244,28 +232,43 @@ class Bootstrap
      */
     protected function initDispatcher($options = array())
     {
-        // Create an EventsManager
-        $eventsManager = new PhEventsManager();
+        $di = $this->_di;
 
-        $eventsManager->attach(
-            "dispatch:beforeException",
-            function($event, $dispatcher, $exception)
-            {
-                switch ($exception->getCode())
-                {
-                    case PhDispatcher::EXCEPTION_HANDLER_NOT_FOUND:
-                    case PhDispatcher::EXCEPTION_ACTION_NOT_FOUND:
-                        $dispatcher->forward(
-                            array(
-                                'controller' => 'index',
-                                'action' => 'show404'
-                            )
-                        );
-                        return false;
-                }
+        $this->_di->set(
+            'dispatcher',
+            function() use ($di) {
+
+                $evManager = $di->getShared('eventsManager');
+
+                /**
+                 * Listening to events in the dispatcher using the
+                 * Acl plugin
+                 */
+                $evManager->attach(
+                    "dispatch:beforeException",
+                    function($event, $dispatcher, $exception)
+                    {
+                        switch ($exception->getCode())
+                        {
+                            case PhDispatcher::EXCEPTION_HANDLER_NOT_FOUND:
+                            case PhDispatcher::EXCEPTION_ACTION_NOT_FOUND:
+
+                            // Get the 404 page
+                            $page = file_get_contents(ROOT_PATH . '/app/views/404/404.html');
+                            $page = str_replace('[ERROR]', $exception->getMessage(), $page);
+
+                            echo $page;
+                        }
+                    }
+                );
+                $dispatcher = new PhDispatcher();
+                $dispatcher->setEventsManager($evManager);
+
+                return $dispatcher;
             }
         );
     }
+
 
     public function initRouter($options = array())
     {
