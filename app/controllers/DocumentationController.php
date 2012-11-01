@@ -1,11 +1,10 @@
 <?php
 
-class DocumentationController extends ControllerBase
+class DocumentationController extends \Ph\Controller
 {
     public function initialize()
     {
-        $this->view->setTemplateAfter('main');
-        Phalcon\Tag::setTitle('Documentation');
+        \Phalcon\Tag::setTitle('Documentation');
         parent::initialize();
     }
 
@@ -14,12 +13,16 @@ class DocumentationController extends ControllerBase
 
     }
 
-    public function redirectAction($name=null){
+    public function redirectAction($name = null)
+    {
         $name = $this->dispatcher->getParam("name");
         $name = $this->filter->sanitize($name, "string");
-        if($name){
+        if ($name)
+        {
             $this->response->redirect("http://docs.phalconphp.com/en/latest/reference/".$name.".html", true);
-        } else {
+        }
+        else
+        {
             $this->response->redirect("http://docs.phalconphp.com/", true);
         }
     }
