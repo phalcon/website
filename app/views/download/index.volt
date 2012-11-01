@@ -192,9 +192,8 @@ or
 				</pre>
 
 			    <h4>Need help?</h4>
-			    Please send us a ticket at <a href="https://github.com/phalcon/cphalcon/issues">Github</a>
-			    or contact us at our <?php echo Tag::linkTo('support', 'Help Desk') ?> and let us to help you.
-
+			    Have a look at our {{ link_to('support', 'support page') }} for
+                ways to get support. We will do our best to help you.
 			</div>
 		</td>
 	</tr>

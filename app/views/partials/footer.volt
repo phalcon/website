@@ -45,4 +45,5 @@
             </td>
         </tr>
     </table>
+    <span style='float:right; font-size: small'>Powered by Phalcon {{ version() }}</span>
 </div>

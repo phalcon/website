@@ -24,10 +24,13 @@
                 <div class="nav-main-features">
                     <a target="blog" href="http://blog.phalconphp.com/">BLOG</a>
                 </div>
-                <div class="nav-main-features">
-                    {{ link_to('about', 'ABOUT') }}
-                </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="github-fork-ribbon-wrapper right">
+    <div class="github-fork-ribbon">
+        <a href="https://github.com/phalcon/cphalcon">Fork me on GitHub</a>
     </div>
 </div>
