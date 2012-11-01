@@ -1,7 +1,8 @@
 .DS_Store
 public/.DS_Store
 public/files/.DS_Store
-app/cache/*cache
+app/var/cache/*
+app/var/volt/*.php
 .settings/
 *.komodoproject
 *.sublime-*

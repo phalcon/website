@@ -1,10 +1,9 @@
-<?php use Phalcon\Tag as Tag; ?>
-<?php echo Tag::stylesheetLink("css/colors/zenburn.css") ?>
+{{ stylesheet_link("css/colors/zenburn.css") }}
 
 <div class="doc-box">
     <table width="60%" align="center">
         <tr>
-            <td><?php echo Tag::image('img/book.png') ?></td>
+            <td>{{ image('img/book.png') }}</td>
             <td>
                 <h2>Documentation</h2>
                 Searching for the latest documentation for PhalconPHP? How does it
@@ -34,8 +33,7 @@
             <a href="http://docs.phalconphp.com/en/latest/index.html">Latest PhalconPHP Documentation</a>
             [<a href="https://github.com/phalcon/docs">Github Repo</a>]
             <ul>
-                <li><a href="http://docs.phalconphp.com/en/0.6.0/index.html">0.6.0 (beta) Documentation (English)</a></li>
-                <li><a href="http://docs.phalconphp.com/en/latest/index.html">0.5.0 (stable) Documentation (English)</a></li>
+                <li><a href="http://docs.phalconphp.com/en/0.5.0/index.html">0.5.0 (stable) Documentation (English)</a></li>
                 <li><a href="http://docs.phalconphp.com/en/0.4.4/index.html">0.4.4 (old-stable) Documentation (English)</a></li>
             </ul>
             There is also documentation outlining the internal API of PhalconPHP.
@@ -48,7 +46,6 @@
             <h3>Other resources</h3>
             <ul>
                 <li><a href="https://github.com/phalcon/cphalcon/wiki/PhalconPHP-Examples">List of examples</a></li>
-                <li><a href="https://github.com/phalcon/cphalcon/wiki/Projects-using-PhalconPHP">Projects using PhalconPHP</a></li>
             </ul>
 
         </td>
