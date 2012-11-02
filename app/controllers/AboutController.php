@@ -1,11 +1,10 @@
 <?php
 
-class AboutController extends ControllerBase
+class AboutController extends \Ph\Controller
 {
     public function initialize()
     {
-        $this->view->setTemplateAfter('main');
-        Phalcon\Tag::setTitle('About');
+        \Phalcon\Tag::setTitle('About');
         parent::initialize();
     }
 

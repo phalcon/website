@@ -530,3 +530,14 @@ pre.source-code {
     word-wrap: break-word;
     margin-top: 10px;
 }
+
+#fourohfour {
+    padding-top: 40px;
+}
+
+#fourohfour .sub-content {
+    font-family:Courier;
+    text-align: center;
+    background-color: #0000ff;
+    color: #FFFFFF;
+}

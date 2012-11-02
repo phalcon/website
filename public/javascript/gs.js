@@ -52,7 +52,7 @@ listen("load", window, function(){
 	//Tweets
 	getTwitters("tweet", {
 		id: "phalconphp",
-		count: 1,
+		count: 2,
 		enableLinks: true,
 		ignoreReplies: true,
 		clearContents: true,

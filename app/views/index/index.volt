@@ -1,9 +1,4 @@
-<?php
-
-use Phalcon\Tag;
-echo $this->getContent();
-
-?>
+{{ content() }}
 
 <div align="left">
     <div id="main-content">
@@ -25,7 +20,7 @@ echo $this->getContent();
                                         <div class="btn btn-try">Try it Online</div>
                                     </a>
                                 <td align="center">
-                                    <?php echo Tag::linkTo(array('download', '<div class="btn btn-download">Download</div>', 'class' => 'no-decoration')) ?>
+                                    {{ link_to('download', '<div class="btn btn-download">Download</div>', 'class': 'no-decoration') }}
                                 </td>
                             </tr>
                         </table>
@@ -44,16 +39,20 @@ echo $this->getContent();
 <div align="center">
     <div class="sub-content">
         <div class="sub">
-            <?php echo Tag::linkTo('download', Tag::image(array('img/download-sp.png', 'border' => '0')).
-            '<br/>Download and Try<br/><span>C extensions are available for many platforms</span>') ?><br/>
+            {% set dl_image = image('img/download-sp.png', 'border': '0') %}
+            {{ link_to('download', dl_image ~ '<br/>Download and Try<br/><span>C extensions are available for many platforms</span><br />') }}
         </div>
         <div class="sub">
-            <?php echo Tag::linkTo('documentation', Tag::image(array('img/book.png', 'border' => '0')).
-            '<br/>Learn and Enjoy<br/><span>Read updated documentation and guides</span>') ?>
+            {% set book_image = image('img/book.png', 'border': '0') %}
+            {{ link_to('documentation', book_image ~ '<br/>Learn and Enjoy<br/><span>Read updated documentation and guides</span>') }}
         </div>
         <div class="sub">
-            <a href="https://twitter.com/phalconphp"><?php echo Tag::image(array('img/chat.png', 'border' => '0')).
-            '<br/>Share and Socialize<br/><span>Tell your friends about the Phalcon framework in social networks</span>' ?></a>
+            <a href="https://twitter.com/phalconphp">
+                {{ image('img/chat.png', 'border': '0') }}
+                <br/>
+                Share and Socialize<br/>
+                <span>Tell your friends about the Phalcon framework in social networks</span>
+            </a>
         </div>
     </div>
 </div>

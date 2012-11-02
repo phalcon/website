@@ -1,11 +1,10 @@
 <?php
 
-class SupportController extends ControllerBase
+class SupportController extends \Ph\Controller
 {
     public function initialize()
     {
-        $this->view->setTemplateAfter('main');
-        Phalcon\Tag::setTitle('Support');
+        \Phalcon\Tag::setTitle('Support');
         parent::initialize();
     }
 

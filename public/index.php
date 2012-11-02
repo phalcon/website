@@ -2,90 +2,18 @@
 
 error_reporting(E_ALL);
 
-$loader = new \Phalcon\Loader();
-
-$loader->registerDirs(array(
-	__DIR__.'/../app/controllers/',
-	__DIR__.'/../app/models/'
-))->register();
-
-//Create an EventsManager
-$eventsManager = new Phalcon\Events\Manager();
-
-//Use the FullStack DI
-$di = new \Phalcon\DI\FactoryDefault();
-
-$eventsManager->attach("dispatch:beforeException", function($event, $dispatcher, $exception) {
-	switch ($exception->getCode()) {
-		case Phalcon\Dispatcher::EXCEPTION_HANDLER_NOT_FOUND:
-		case Phalcon\Dispatcher::EXCEPTION_ACTION_NOT_FOUND:
-			$dispatcher->forward(array(
-				'controller' => 'index',
-				'action' => 'show404'
-			));
-			return false;
-	}
-});
-
-$di->set('router', function() {
-
-	$router = new Phalcon\Mvc\Router();
-
-	$router->add("/documentation/([a-zA-Z0-9_]+)", array(
-		"controller" => "documentation",
-		"action" => "redirect",
-		"name" => 1,
-	));
-
-	$router->add("/documentation/index", array(
-		"controller" => "documentation",
-		"action" => "index"
-	));
-
-	$router->add("/documentation", array(
-		"controller" => "documentation",
-		"action" => "index"
-	));
-
-	return $router;
-});
-
-$di->set('dispatcher', function() use ($eventsManager) {
-	$dispatcher = new Phalcon\Mvc\Dispatcher();
-	$dispatcher->setEventsManager($eventsManager);
-	return $dispatcher;
-});
-
-$di->set('url', function() {
-	$url = new Phalcon\Mvc\Url();
-	$url->setBaseUri('/phalconphp/');
-	return $url;
-});
-
-$di->set('view', function() {
-	$view = new \Phalcon\Mvc\View();
-	$view->setViewsDir(__DIR__.'/../app/views/');
-	return $view;
-});
-
-$di->set('db', function() {
-	return new \Phalcon\Db\Adapter\Pdo\Mysql(array(
-		"host" => "localhost",
-		"username" => "root",
-		"password" => "secret",
-		"dbname" => "phalcon_site"
-	));
-});
-
-try {
-
-	$application = new \Phalcon\Mvc\Application();
-	$application->setDI($di);
-	echo $application->handle()->getContent();
-
-} catch(Phalcon\Exception $e){
-	echo $e->getMessage();
-} catch(PDOException $e){
-	echo $e->getMessage();
+if (!defined('ROOT_PATH')) {
+    define('ROOT_PATH', dirname(dirname(__FILE__)));
 }
+
+// Using require once because I want to get the specific
+// bootloader class here. The loader will be initialized
+// in my bootstrap class
+require_once ROOT_PATH . '/app/library/Ph/Bootstrap.php';
+require_once ROOT_PATH . '/app/library/Ph/Error.php';
+
+$di  = new \Phalcon\DI\FactoryDefault();
+$app = new \Ph\Bootstrap($di);
+
+echo $app->run(array());
 

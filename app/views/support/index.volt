@@ -1,10 +1,9 @@
-<?php use Phalcon\Tag as Tag; ?>
-<?php echo Tag::stylesheetLink("css/colors/zenburn.css") ?>
+{{ stylesheet_link("css/colors/zenburn.css") }}
 
 <div class="doc-box">
     <table width="60%" align="center">
         <tr>
-            <td><?php echo Tag::image('img/chat.png') ?></td>
+            <td>{{ image('img/chat.png') }}</td>
             <td>
                 <h2>Support</h2>
                 Got stuck somewhere? Usage questions? Curious about the project or a feature? You are in the right place!
@@ -22,12 +21,12 @@
 
             <h3>Latest version</h3>
             Many bugs raised because users are not running the latest version.
-            Please visit the <?php echo Tag::linkTo('download', 'download'); ?> page
+            Please visit the {{ link_to('download', 'download') }} page
             and confirm if the issue you are experiencing is indeed a bug.
             <br />
 
             <h3>Documentation</h3>
-            Please use the <?php echo Tag::linkTo('documentation', 'documentation'); ?>
+            Please use the {{ link_to('documentation', 'documentation') }}
             before anything else. You can also use the search feature in our documents
             to find what you are looking for. If your question is still not answered,
             there are more options below.
