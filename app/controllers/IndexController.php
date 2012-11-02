@@ -46,5 +46,6 @@ class IndexController extends \Ph\Controller
     public function show404Action()
     {
         $this->response->setHeader(404, 'Not Found');
+        $this->view->pick('404/404');
     }
 }

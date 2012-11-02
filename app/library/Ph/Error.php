@@ -1,4 +1,5 @@
 <?php
+
 /**
  * \Ph\Error.php
  * Error
@@ -8,7 +9,6 @@
  * @author      Nikos Dimopoulos <nikos@niden.net>
  * @since       7/22/12
  * @category    Library
- * @license     MIT - https://github.com/NDN/phalcon-angular-harryhogfootball/blob/master/LICENSE
  *
  */
 
@@ -71,16 +71,14 @@ class Error
         $di        = Di::getDefault();
         $template = "[%s] %s (File: %s Line: [%s])";
         if ($trace) {
-                $template . PHP_EOL . $trace;
-            }
+            $template . PHP_EOL . $trace;
+        }
 
         $logMessage = sprintf($template, $type, $message, $file, $line);
 
         if ($di->has('logger')) {
-
             $logger = $di->get('logger');
             if ($logger) {
-
                 $logger->error($logMessage);
             } else {
                 throw new PhException($logMessage);

@@ -1,7 +1,6 @@
 <div id="header">
     <h1>
-        {% set logo = image('img/logo-small-sp.png', 'border': 0) %}
-        {{ link_to('', logo) }}
+        {{ link_to('', image('img/logo-small-sp.png', 'border': 0)) }}
     </h1>
     <div align="center">
         <div id="nav-main" role="navigation">
@@ -26,11 +25,5 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
-<div class="github-fork-ribbon-wrapper right">
-    <div class="github-fork-ribbon">
-        <a href="https://github.com/phalcon/cphalcon">Fork me on GitHub</a>
     </div>
 </div>

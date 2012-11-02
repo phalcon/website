@@ -37,7 +37,7 @@ class Bootstrap
 
     /**
      * Constructor
-     * 
+     *
      * @param $di
      */
     public function __construct($di)
@@ -47,7 +47,7 @@ class Bootstrap
 
     /**
      * Runs the application performing all initializations
-     * 
+     *
      * @param $options
      *
      * @return mixed
@@ -58,7 +58,6 @@ class Bootstrap
             'config',
             'loader',
             'environment',
-            'timezone',
             'flash',
             'url',
             'dispatcher',
@@ -68,13 +67,12 @@ class Bootstrap
             'database',
             'session',
             'cache',
-            'debug',
         );
 
 
         foreach ($loaders as $service)
         {
-            $function = 'init' . ucfirst($service);
+            $function = 'init' . $service;
 
             $this->$function($options);
         }
@@ -139,44 +137,8 @@ class Bootstrap
      */
     protected function initEnvironment($options = array())
     {
-        $config = $this->_di->get('config');
-
-        $debug = (isset($config->app->debug)) ?
-                 (bool) $config->app->debug   :
-                 false;
-
-        if ($debug)
-        {
-            ini_set('display_errors', true);
-            error_reporting(E_ALL);
-        }
-        else
-        {
-            ini_set('display_errors', false);
-//            error_reporting( -1 );
-        }
-
         set_error_handler(array('\Ph\Error', 'normal'));
         set_exception_handler(array('\Ph\Error', 'exception'));
-        register_shutdown_function(array('\Ph\Error', 'shutdown'));
-    }
-
-    /**
-     * Initializes the timezone
-     *
-     * @param array $options
-     */
-    protected function initTimezone($options = array())
-    {
-        $config = $this->_di->get('config');
-
-        $timezone = (isset($config->app->timezone)) ?
-                    $config->app->timezone      :
-                    'US/Eastern';
-
-        date_default_timezone_set($timezone);
-
-        $this->_di->set('timezone_default', $timezone);
     }
 
     /**
@@ -252,12 +214,11 @@ class Bootstrap
                         {
                             case PhDispatcher::EXCEPTION_HANDLER_NOT_FOUND:
                             case PhDispatcher::EXCEPTION_ACTION_NOT_FOUND:
-
-                            // Get the 404 page
-                            $page = file_get_contents(ROOT_PATH . '/app/views/404/404.html');
-                            $page = str_replace('[ERROR]', $exception->getMessage(), $page);
-
-                            echo $page;
+                                $dispatcher->forward(array(
+                                    'controller' => 'index',
+                                    'action' => 'show404'
+                                ));
+                                return false;
                         }
                     }
                 );
@@ -378,32 +339,11 @@ class Bootstrap
     {
         $config = $this->_di->get('config');
         $logger = $this->_di->get('logger');
-        $debug  = (isset($config->app->debug)) ?
-                  (bool) $config->app->debug   :
-                  false;
 
         $this->_di->set(
             'db',
-            function() use ($debug, $config, $logger)
+            function() use ($config, $logger)
             {
-
-                if ($debug)
-                {
-                    $eventsManager = new PhEventsManager();
-
-                    // Listen all the database events
-                    $eventsManager->attach(
-                        'db',
-                        function($event, $connection) use ($logger) {
-                            if ($event->getType() == 'beforeQuery') {
-                                $logger->log(
-                                    $connection->getSQLStatement(),
-                                    PhLogger::INFO
-                                );
-                            }
-                        }
-                    );
-                }
 
                 $params = array(
                     "host"     => $config->database->host,
@@ -412,15 +352,9 @@ class Bootstrap
                     "dbname"   => $config->database->name,
                 );
 
-                $conn = new PhMysql($params);
+                $connection = new PhMysql($params);
 
-                if ($debug)
-                {
-                    // Assign the eventsManager to the db adapter instance
-                    $conn->setEventsManager($eventsManager);
-                }
-
-                return $conn;
+                return $connection;
             }
         );
 
@@ -495,21 +429,4 @@ class Bootstrap
 
     }
 
-    /**
-     * Initializes the debugging functions
-     *
-     * @param array $options
-     */
-    protected function initDebug($options = array())
-    {
-        $config = $this->_di->get('config');
-        $debug  = (isset($config->app->debug)) ?
-                  (bool) $config->app->debug   :
-                  false;
-
-        if ($debug)
-        {
-            require_once ROOT_PATH . '/app/library/Ph/Debug.php';
-        }
-    }
 }

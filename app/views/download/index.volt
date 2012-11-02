@@ -56,7 +56,7 @@
                     </td>
                 </tr>
 
-                {% if (alpha) %}
+                {% if alpha %}
                 <tr><td><br /><br /></td></tr>
                 <tr>
                     <th class="titleContent">Alpha versions</th>
@@ -86,7 +86,6 @@
                 </tr>
                 {% endif %}
 
-
                 <tr><td><br /><br /></td></tr>
 
                 <tr>
@@ -101,10 +100,10 @@
                 {% for file in version %}
 				<tr class="cellDown downloadCell">
                     <td align="left">
-                        <?php echo $file['name']; ?>
+                        {{ file['name'] }}
                         <br />
-                        <span>Updated: <?php echo $file['date']; ?></span>
-                        {{ link_to(file[file], 'download', 'target': '_download', 'title': file[name]) }}
+                        <span>Updated: {{ file['date'] }}</span>
+                        {{ link_to(file['file'], 'download', 'target': '_download', 'title': file['name']) }}
                     </td>
 				</tr>
                 {% endfor %}
