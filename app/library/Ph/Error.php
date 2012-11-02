@@ -42,28 +42,7 @@ class Error
             $exception->getLine(),
             $exception->getTraceAsString()
         );
-
         // Display it
-    }
-
-    public static function shutdown()
-    {
-        $error = error_get_last();
-        if ($error) {
-
-            // Log it
-            self::logError(
-                $error['type'],
-                $error['message'],
-                $error['file'],
-                $error['line']
-            );
-
-            // Display it
-
-        } else {
-            return true;
-        }
     }
 
     protected static function logError($type, $message, $file, $line, $trace = '')

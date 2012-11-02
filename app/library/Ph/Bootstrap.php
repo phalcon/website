@@ -1,4 +1,5 @@
 <?php
+
 /**
  * \Ph\Bootstrap
  * Bootstrap.php
