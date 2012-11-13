@@ -91,7 +91,7 @@
                 <tr>
                     <th class="titleContent">Older versions</th>
                 </tr>
-                <?php foreach ($old as $version_key => $version) { ?>
+                <!--<?php foreach ($old as $version_key => $version) { ?>
                 <tr class="cellDown">
                     <td align="left">
                         <strong><?php echo $version_key; ?></strong>
@@ -107,10 +107,10 @@
                     </td>
                 </tr>
                 {% endfor %}
-                <?php } ?>
+                <?php } ?>-->
                 <tr class="cellDown downloadCell">
                     <td align="left">
-                        Phalcon 0.5.2 - Source-Code
+                        Phalcon 0.5.3 - Source-Code
                         <a target="_download" href="https://github.com/phalcon/cphalcon/" title="GitHub Repo">github</a>
                     </td>
                 </tr>
