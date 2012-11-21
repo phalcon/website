@@ -11,8 +11,7 @@ class DownloadController extends \Ph\Controller
     public function indexAction()
     {
 
-        $path     = dirname(dirname(dirname(__FILE__)));
-        $path    .= '/public/files/';
+        $path     = 'files/';
         $template = "Phalcon %s - Windows %s for PHP %s %s(%s)";
         $files    = array();
         $alpha    = array();
@@ -151,5 +150,15 @@ class DownloadController extends \Ph\Controller
         $this->view->setVar('current', $current);
         $this->view->setVar('old', $old);
         $this->view->setVar('alpha', $alpha);
+    }
+
+    public function oldAction()
+    {
+        $files    = array();
+        $path     = 'files/';
+        foreach (glob($path . '*.zip') as $file) {
+            $files[] = $file;
+        }
+        $this->view->setVar('files', $files);
     }
 }
