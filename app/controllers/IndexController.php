@@ -40,7 +40,10 @@ class IndexController extends \Ph\Controller
             $this->flash->success("You are already subscribed!");
         }
 
-        return $this->dispatcher->forward(array('controller' => 'index', 'action' => 'index'));
+        return $this->dispatcher->forward(array(
+            'controller' => 'index',
+            'action' => 'index'
+        ));
     }
 
     public function show404Action()

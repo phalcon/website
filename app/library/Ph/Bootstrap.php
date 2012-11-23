@@ -16,7 +16,7 @@ namespace Ph;
 
 use \Phalcon\Config\Adapter\Ini as PhConfig;
 use \Phalcon\Loader as PhLoader;
-use \Phalcon\Flash\Session as PhFlash;
+use \Phalcon\Flash\Direct as PhFlash;
 use \Phalcon\Logger\Adapter\File as PhLogger;
 use \Phalcon\Db\Adapter\Pdo\Mysql as PhMysql;
 use \Phalcon\Session\Adapter\Files as PhSession;
@@ -59,7 +59,6 @@ class Bootstrap
             'config',
             'loader',
             'environment',
-            'flash',
             'url',
             'dispatcher',
             'router',
@@ -140,28 +139,6 @@ class Bootstrap
     {
         set_error_handler(array('\Ph\Error', 'normal'));
         set_exception_handler(array('\Ph\Error', 'exception'));
-    }
-
-    /**
-     * Initializes the flash messenger
-     *
-     * @param array $options
-     */
-    protected function initFlash($options = array())
-    {
-        $this->_di->set(
-            'flash',
-            function()
-            {
-                $params = array(
-                    'error'   => 'alert alert-error',
-                    'success' => 'alert alert-success',
-                    'notice'  => 'alert alert-info',
-                );
-
-                return new PhFlash($params);
-            }
-        );
     }
 
     /**
@@ -427,7 +404,6 @@ class Bootstrap
                 return $cache;
             }
         );
-
     }
 
 }
