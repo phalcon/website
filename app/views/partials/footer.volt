@@ -34,13 +34,13 @@
                 <p>
                     <label>Get Monthly News</label><br />
                     {{ form('index/subscribe') }}
-                <table>
-                    <tr>
-                        <td>{{ text_field('email', 'placeholder': 'Your email address', 'size': 25) }}</td>
-                        <td>{{ submit_button('Subscribe') }}</td>
-                    </tr>
-                </table>
-                {{ end_form() }}
+                    <table>
+                        <tr>
+                            <td>{{ text_field('email', 'placeholder': 'Your email address', 'size': 25) }}</td>
+                            <td>{{ submit_button('Subscribe') }}</td>
+                        </tr>
+                    </table>
+                    </form>
                 </p>
             </td>
         </tr>

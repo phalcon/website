@@ -18,26 +18,15 @@ class IndexController extends \Ph\Controller
 
     public function subscribeAction()
     {
-        $email = $this->request->getPost('email', 'email');
-        if (!$email) {
-            $this->flash->error('Please provide a valid email');
-            return $this->dispatcher->forward(array('action' => 'index'));
-        }
-
-        $exists = Subscribers::count("email='$email'");
-        if ($exists==false) {
-            $subscriber = new Subscribers();
-            $subscriber->email = $email;
-            $subscriber->created_at = new \Phalcon\Db\RawValue('now()');
-            if ($subscriber->save()==false) {
-                foreach ($subscriber->getMessages() as $message) {
-                    $this->flash->error("At this moment you can\'t subscribe");
-                }
-            } else {
-                $this->flash->success('Thanks for subscribing!');
+        $subscriber = new Subscribers();
+        $subscriber->email = $this->request->getPost('email', 'email');
+        if ($subscriber->save() == false) {
+            $this->flash->error("At this moment you can't subscribe, the following problem happen:");
+            foreach($subscriber->getMessages() as $message){
+                $this->flash->error($message);
             }
         } else {
-            $this->flash->success("You are already subscribed!");
+            $this->flash->success('Thanks for subscribing!');
         }
 
         return $this->dispatcher->forward(array(

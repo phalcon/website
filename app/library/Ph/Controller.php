@@ -1,15 +1,15 @@
 <?php
 
 /**
-* Controller.php
-* \Ph\Controller
-*
-* The base controller and its actions
-*
-* @author Nikos Dimopoulos <nikos@niden.net>
-* @since 2012-11-01
-* @category Controllers
-*/
+ * Controller.php
+ * \Ph\Controller
+ *
+ * The base controller and its actions
+ *
+ * @author Nikos Dimopoulos <nikos@niden.net>
+ * @since 2012-11-01
+ * @category Controllers
+ */
 
 namespace Ph;
 

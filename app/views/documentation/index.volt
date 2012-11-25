@@ -44,6 +44,7 @@
             Documentation for older versions:
             <br />
             <ul>
+                <li><a href="http://docs.phalconphp.com/en/0.7.0/index.html">0.7.0 (beta) Documentation (English)</a></li>
                 <li><a href="http://docs.phalconphp.com/en/0.5.0/index.html">0.5.0 (stable) Documentation (English)</a></li>
                 <li><a href="http://docs.phalconphp.com/en/0.4.4/index.html">0.4.4 (stable) Documentation (English)</a></li>
             </ul>

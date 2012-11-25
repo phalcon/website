@@ -17,12 +17,9 @@ class DocumentationController extends \Ph\Controller
     {
         $name = $this->dispatcher->getParam("name");
         $name = $this->filter->sanitize($name, "string");
-        if ($name)
-        {
-            $this->response->redirect("http://docs.phalconphp.com/en/latest/reference/".$name.".html", true);
-        }
-        else
-        {
+        if ($name){
+            $this->response->redirect("http://docs.phalconphp.com/en/latest/reference/".$name.".html", true, 302);
+        } else {
             $this->response->redirect("http://docs.phalconphp.com/", true);
         }
     }

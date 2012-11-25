@@ -34,376 +34,295 @@ use \Phalcon\Exception as PhException;
 
 class Bootstrap
 {
-    private $_di;
+	private $_di;
 
-    /**
-     * Constructor
-     *
-     * @param $di
-     */
-    public function __construct($di)
-    {
-        $this->_di = $di;
-    }
+	private $_config;
 
-    /**
-     * Runs the application performing all initializations
-     *
-     * @param $options
-     *
-     * @return mixed
-     */
-    public function run($options)
-    {
-        $loaders = array(
-            'config',
-            'loader',
-            'environment',
-            'url',
-            'dispatcher',
-            'router',
-            'view',
-            'logger',
-            'database',
-            'session',
-            'cache',
-        );
+	/**
+	 * Constructor
+	 *
+	 * @param $di
+	 */
+	public function __construct($di)
+	{
 
+		$configFile = ROOT_PATH . '/app/config/config.ini';
 
-        foreach ($loaders as $service)
-        {
-            $function = 'init' . $service;
+		// Create the new object
+		$config = new PhConfig($configFile);
 
-            $this->$function($options);
-        }
+		// Store it in the Di container
+		$di->setShared('config', $config);
 
-        $application = new PhApplication();
-        $application->setDI($this->_di);
+		$this->_di = $di;
+		$this->_config = $config;
+	}
 
-        return $application->handle()->getContent();
-    }
+	/**
+	 * Runs the application performing all initializations
+	 *
+	 * @param $options
+	 *
+	 * @return mixed
+	 */
+	public function run($options)
+	{
 
-    // Protected functions
+		$config = $this->_config;
 
-    /**
-     * Initializes the config. Reads it from its location and
-     * stores it in the Di container for easier access
-     *
-     * @param array $options
-     */
-    protected function initConfig($options = array())
-    {
-        $configFile = ROOT_PATH . '/app/config/config.ini';
+		$loaders = array(
+			'loader',
+			'environment',
+			'url',
+			'dispatcher',
+			'router',
+			'view',
+			'logger',
+			'database',
+			'session',
+			'cache',
+		);
+		foreach ($loaders as $service){
+			$this->{'init' . $service}($config, $options);
+		}
 
-        // Create the new object
-        $config = new PhConfig($configFile);
+		$application = new PhApplication();
+		$application->setDI($this->_di);
 
-        // Store it in the Di container
-        $this->_di->set('config', $config);
-    }
+		return $application->handle()->getContent();
+	}
 
-    /**
-     * Initializes the loader
-     *
-     * @param array $options
-     */
-    protected function initLoader($options = array())
-    {
-        $config = $this->_di->get('config');
+	// Protected functions
 
-        // Creates the autoloader
-        $loader = new PhLoader();
+	/**
+	 * Initializes the loader
+	 *
+	 * @param array $options
+	 */
+	protected function initLoader($config)
+	{
+		// Creates the autoloader
+		$loader = new PhLoader();
 
-        $loader->registerDirs(
-            array(
-                ROOT_PATH . $config->app->path->controllers,
-                ROOT_PATH . $config->app->path->models,
-                ROOT_PATH . $config->app->path->library,
-            )
-        );
+		$loader->registerDirs(
+			array(
+				ROOT_PATH . $config->app->path->controllers,
+				ROOT_PATH . $config->app->path->models,
+				ROOT_PATH . $config->app->path->library,
+			)
+		);
 
-        // Register the namespace
-        $loader->registerNamespaces(
-            array("Ph" => $config->app->path->library)
-        );
+		// Register the namespace
+		$loader->registerNamespaces(
+			array("Ph" => $config->app->path->library)
+		);
 
-        $loader->register();
-    }
+		$loader->register();
+	}
 
-    /**
-     * Initializes the environment
-     *
-     * @param array $options
-     */
-    protected function initEnvironment($options = array())
-    {
-        set_error_handler(array('\Ph\Error', 'normal'));
-        set_exception_handler(array('\Ph\Error', 'exception'));
-    }
+	/**
+	 * Initializes the environment
+	 *
+	 * @param Phalcon\Config $config
+	 */
+	protected function initEnvironment($config)
+	{
+		//set_error_handler(array('\Ph\Error', 'normal'));
+		//set_exception_handler(array('\Ph\Error', 'exception'));
+	}
 
-    /**
-     * Initializes the baseUrl
-     *
-     * @param array $options
-     */
-    protected function initUrl($options = array())
-    {
-        $config = $this->_di->get('config');
+	/**
+	 * Initializes the baseUrl
+	 *
+	 * @param Phalcon\Config $config
+	 */
+	protected function initUrl($config)
+	{
+		/**
+		 * The URL component is used to generate all kind of urls in the
+		 * application
+		 */
+		$this->_di->set('url', function() use ($config) {
+			$url = new PhUrl();
+			$url->setBaseUri($config->app->baseUri);
+			return $url;
+		});
+	}
 
-        /**
-         * The URL component is used to generate all kind of urls in the
-         * application
-         */
-        $this->_di->set(
-            'url',
-            function() use ($config)
-            {
-                $url = new PhUrl();
-                $url->setBaseUri($config->app->baseUri);
-                return $url;
-            }
-        );
-    }
+	/**
+	 * Initializes the dispatcher
+	 *
+	 * @param Phalcon\Config $config
+	 */
+	protected function initDispatcher($config)
+	{
+		$di = $this->_di;
 
-    /**
-     * Initializes the dispatcher
-     *
-     * @param array $options
-     */
-    protected function initDispatcher($options = array())
-    {
-        $di = $this->_di;
+		$di->set('dispatcher', function() use ($di) {
 
-        $this->_di->set(
-            'dispatcher',
-            function() use ($di) {
+			$evManager = $di->getShared('eventsManager');
 
-                $evManager = $di->getShared('eventsManager');
+			$evManager->attach(
+				"dispatch:beforeException", function($event, $dispatcher, $exception){
+					switch ($exception->getCode()) {
+						case PhDispatcher::EXCEPTION_HANDLER_NOT_FOUND:
+						case PhDispatcher::EXCEPTION_ACTION_NOT_FOUND:
+							$dispatcher->forward(array(
+								'controller' => 'index',
+								'action' => 'show404'
+							));
+							return false;
+					}
+			});
+			$dispatcher = new PhDispatcher();
+			$dispatcher->setEventsManager($evManager);
 
-                /**
-                 * Listening to events in the dispatcher using the
-                 * Acl plugin
-                 */
-                $evManager->attach(
-                    "dispatch:beforeException",
-                    function($event, $dispatcher, $exception)
-                    {
-                        switch ($exception->getCode())
-                        {
-                            case PhDispatcher::EXCEPTION_HANDLER_NOT_FOUND:
-                            case PhDispatcher::EXCEPTION_ACTION_NOT_FOUND:
-                                $dispatcher->forward(array(
-                                    'controller' => 'index',
-                                    'action' => 'show404'
-                                ));
-                                return false;
-                        }
-                    }
-                );
-                $dispatcher = new PhDispatcher();
-                $dispatcher->setEventsManager($evManager);
+			return $dispatcher;
+		});
+	}
 
-                return $dispatcher;
-            }
-        );
-    }
+	public function initRouter()
+	{
+		$this->_di->set('router', function() {
 
+			$router = new PhRouter();
 
-    public function initRouter($options = array())
-    {
-        $this->_di->set(
-            'router',
-            function()
-            {
-                $router = new PhRouter();
+			$router->add("/documentation/([a-zA-Z0-9_]+)",
+				array(
+					"controller" => "documentation",
+					"action" => "redirect",
+					"name" => 1,
+				)
+			);
 
-                $router->add(
-                    "/documentation/([a-zA-Z0-9_]+)",
-                    array(
-                        "controller" => "documentation",
-                        "action" => "redirect",
-                        "name" => 1,
-                    )
-                );
+			$router->add("/documentation/index", array(
+				"controller" => "documentation",
+				"action" => "index"
+			));
 
-                $router->add(
-                    "/documentation/index",
-                    array(
-                        "controller" => "documentation",
-                        "action" => "index"
-                    )
-                );
+			$router->add("/documentation", array(
+				"controller" => "documentation",
+				"action" => "index"
+			));
 
-                $router->add(
-                    "/documentation",
-                    array(
-                        "controller" => "documentation",
-                        "action" => "index"
-                    )
-                );
+			return $router;
+		});
+	}
 
-                return $router;
-            }
-        );
-    }
+	/**
+	 * Initializes the view
+	 *
+	 * @param Phalcon\Config $config
+	 */
+	protected function initView($config)
+	{
+		$di     = $this->_di;
 
-    /**
-     * Initializes the view
-     *
-     * @param array $options
-     */
-    protected function initView($options = array())
-    {
-        $config = $this->_di->get('config');
-        $di     = $this->_di;
+		/**
+		 * Setup the view service
+		 */
+		$this->_di->set('view', function() use ($config, $di) {
+			$view = new PhView();
+			$view->setViewsDir(ROOT_PATH . $config->app->path->views);
+			$view->registerEngines(array(
+				'.volt' => function($view, $di) use ($config) {
+					$volt = new PhVolt($view, $di);
+					$volt->setOptions(
+						array(
+							'compiledPath'      => ROOT_PATH . $config->app->volt->path,
+							'compiledExtension' => $config->app->volt->extension,
+							'compiledSeparator' => $config->app->volt->separator,
+							'stat'              => (bool) $config->app->volt->stat,
+						)
+					);
+					return $volt;
+				}));
+				return $view;
+			}
+		);
+	}
+	/**
+	 * Initializes the logger
+	 *
+	 * @param Phalcon\Config $config
+	 */
+	protected function initLogger($config)
+	{
+		$this->_di->set('logger', function() use ($config) {
+			$logger = new PhLogger(ROOT_PATH . $config->app->logger->file);
+			$logger->setFormat($config->app->logger->format);
+			return $logger;
+		});
+	}
 
-        $this->_di->set(
-            'volt',
-            function($view, $di) use($config)
-            {
-                $volt = new PhVolt($view, $di);
-                $volt->setOptions(
-                    array(
-                        'compiledPath'      => ROOT_PATH . $config->app->volt->path,
-                        'compiledExtension' => $config->app->volt->extension,
-                        'compiledSeparator' => $config->app->volt->separator,
-                        'stat'              => (bool) $config->app->volt->stat,
-                    )
-                );
-                return $volt;
-            }
-        );
+	/**
+	 * Initializes the database and netadata adapter
+	 *
+	 * @param array $options
+	 */
+	protected function initDatabase($config)
+	{
 
-        /**
-         * Setup the view service
-         */
-        $this->_di->set(
-            'view',
-            function() use ($config, $di)
-            {
-                $view = new PhView();
-                $view->setViewsDir(ROOT_PATH . $config->app->path->views);
-                $view->registerEngines(array('.volt' => 'volt'));
-                return $view;
-            }
-        );
-    }
-    /**
-     * Initializes the logger
-     *
-     * @param array $options
-     */
-    protected function initLogger($options = array())
-    {
-        $config = $this->_di->get('config');
+		$this->_di->set('db', function() use ($config) {
 
-        $this->_di->set(
-            'logger',
-            function() use ($config)
-            {
-                $logger = new PhLogger(ROOT_PATH . $config->app->logger->file);
-                $logger->setFormat($config->app->logger->format);
-                return $logger;
-            }
-        );
-    }
+			$connection = new PhMysql(array(
+				"host"     => $config->database->host,
+				"username" => $config->database->username,
+				"password" => $config->database->password,
+				"dbname"   => $config->database->name,
+			));
 
-    /**
-     * Initializes the database and netadata adapter
-     *
-     * @param array $options
-     */
-    protected function initDatabase($options = array())
-    {
-        $config = $this->_di->get('config');
-        $logger = $this->_di->get('logger');
+			return $connection;
+		});
 
-        $this->_di->set(
-            'db',
-            function() use ($config, $logger)
-            {
+		/**
+		 * If the configuration specify the use of metadata adapter use it or use memory otherwise
+		 */
+		$this->_di->set('modelsMetadata', function() use ($config) {
+			if (isset($config->models->metadata)) {
+				$metaDataConfig  = $config->models->metadata;
+				$metadataAdapter = 'Phalcon\Mvc\Model\Metadata\\'.$metaDataConfig->adapter;
+				return new $metadataAdapter();
+			} else {
+				return new PhMetadataMemory();
+			}
+		}, true);
+	}
 
-                $params = array(
-                    "host"     => $config->database->host,
-                    "username" => $config->database->username,
-                    "password" => $config->database->password,
-                    "dbname"   => $config->database->name,
-                );
+	/**
+	 * Initializes the session
+	 *
+	 * @param array $options
+	 */
+	protected function initSession()
+	{
+		$this->_di->set('session', function() {
+			$session = new PhSession();
+			$session->start();
+			return $session;
+		}, true);
+	}
 
-                $connection = new PhMysql($params);
+	/**
+	 * Initializes the cache
+	 *
+	 * @param array $options
+	 */
+	protected function initCache($config)
+	{
+		$this->_di->set('viewCache', function() use ($config) {
 
-                return $connection;
-            }
-        );
+			// Get the parameters
+			$lifetime        = $config->app->cache->lifetime;
+			$cacheDir        = $config->app->cache->cacheDir;
+			$frontEndOptions = array('lifetime' => $lifetime);
+			$backEndOptions  = array('cacheDir' => ROOT_PATH . $cacheDir);
 
-        /**
-         * If the configuration specify the use of metadata adapter use it or use memory otherwise
-         */
-        $this->_di->set(
-            'modelsMetadata',
-            function() use ($config)
-            {
-                if (isset($config->models->metadata))
-                {
-                    $metaDataConfig  = $config->models->metadata;
-                    $metadataAdapter = 'Phalcon\Mvc\Model\Metadata\\'
-                                     . $metaDataConfig->adapter;
-                    return new $metadataAdapter();
-                }
-                else
-                {
-                    return new PhMetadataMemory();
-                }
-            }
-        );
-    }
+			$frontCache = new PhCacheFront($frontEndOptions);
+			$cache      = new PhCacheBack($frontCache, $backEndOptions);
 
-    /**
-     * Initializes the session
-     *
-     * @param array $options
-     */
-    protected function initSession($options = array())
-    {
-        $this->_di->set(
-            'session',
-            function()
-            {
-                $session = new PhSession();
-                if (!$session->isStarted())
-                {
-                    $session->start();
-                }
-                return $session;
-            }
-        );
-    }
-
-    /**
-     * Initializes the cache
-     *
-     * @param array $options
-     */
-    protected function initCache($options = array())
-    {
-        $config = $this->_di->get('config');
-
-        $this->_di->set(
-            'cache',
-            function() use ($config)
-            {
-                // Get the parameters
-                $lifetime        = $config->app->cache->lifetime;
-                $cacheDir        = $config->app->cache->cacheDir;
-                $frontEndOptions = array('lifetime' => $lifetime);
-                $backEndOptions  = array('cacheDir' => ROOT_PATH . $cacheDir);
-
-                $frontCache = new PhCacheFront($frontEndOptions);
-                $cache      = new PhCacheBack($frontCache, $backEndOptions);
-
-                return $cache;
-            }
-        );
-    }
+			return $cache;
+		});
+	}
 
 }
