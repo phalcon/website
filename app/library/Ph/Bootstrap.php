@@ -20,7 +20,7 @@ use \Phalcon\Flash\Direct as PhFlash;
 use \Phalcon\Logger\Adapter\File as PhLogger;
 use \Phalcon\Db\Adapter\Pdo\Mysql as PhMysql;
 use \Phalcon\Session\Adapter\Files as PhSession;
-use \Phalcon\Cache\Frontend\Data as PhCacheFront;
+use \Phalcon\Cache\Frontend\Output as PhCacheFront;
 use \Phalcon\Cache\Backend\File as PhCacheBack;
 use \Phalcon\Mvc\Application as PhApplication;
 use \Phalcon\Mvc\Dispatcher as PhDispatcher;

@@ -155,7 +155,7 @@ class DownloadController extends \Ph\Controller
 
         }
 
-        $this->view->cache(true);
+        $this->view->cache(array('key' => 'download'));
     }
 
     public function oldAction()
