@@ -39,7 +39,7 @@
                 <?php } ?>
                 <tr class="cellDown downloadCell">
                     <td align="left">
-                        Phalcon 0.6.1 - Source-Code
+                        Phalcon 0.7.0 - Source-Code
                         <a target="_download" href="https://github.com/phalcon/cphalcon/" title="GitHub Repo">github</a>
                     </td>
                 </tr>
