@@ -30,7 +30,7 @@
             Documentation regarding Phalcon and its usage can be found at:
             <br />
             <ul>
-                <li><a href="http://docs.phalconphp.com/en/latest/index.html">Latest Phalcon Documentation (0.6.0)</a>
+                <li><a href="http://docs.phalconphp.com/en/latest/index.html">Latest Phalcon Documentation (0.7.0)</a>
                 [<a href="https://github.com/phalcon/docs">Github Repo</a>]</li>
             </ul>
             There is also documentation outlining the internal API of PhalconPHP.
@@ -44,7 +44,8 @@
             Documentation for older versions:
             <br />
             <ul>
-                <li><a href="http://docs.phalconphp.com/en/0.7.0/index.html">0.7.0 (beta) Documentation (English)</a></li>
+                <li><a href="http://docs.phalconphp.com/en/0.7.0/index.html">0.7.0 (stable) Documentation (English)</a></li>
+                <li><a href="http://docs.phalconphp.com/en/0.6.0/index.html">0.6.0 (stable) Documentation (English)</a></li>
                 <li><a href="http://docs.phalconphp.com/en/0.5.0/index.html">0.5.0 (stable) Documentation (English)</a></li>
                 <li><a href="http://docs.phalconphp.com/en/0.4.4/index.html">0.4.4 (stable) Documentation (English)</a></li>
             </ul>

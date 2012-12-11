@@ -127,8 +127,8 @@ class Bootstrap
 	 */
 	protected function initEnvironment($config)
 	{
-		//set_error_handler(array('\Ph\Error', 'normal'));
-		//set_exception_handler(array('\Ph\Error', 'exception'));
+		set_error_handler(array('\Ph\Error', 'normal'));
+		set_exception_handler(array('\Ph\Error', 'exception'));
 	}
 
 	/**
