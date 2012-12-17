@@ -56,7 +56,6 @@
                     </td>
                 </tr>
 
-                {% if alpha %}
                 <tr><td><br /><br /></td></tr>
                 <tr>
                     <th class="titleContent">Alpha versions</th>
@@ -84,7 +83,6 @@
                         <a target="_download" href="https://github.com/phalcon/cphalcon/tree/0.6.0" title="GitHub Repo">github</a>
                     </td>
                 </tr>
-                {% endif %}
 
                 <tr><td><br /><br /></td></tr>
 
@@ -110,7 +108,7 @@
                 <?php } ?>
                 <tr class="cellDown downloadCell">
                     <td align="left">
-                        Phalcon 0.5.3 - Source-Code
+                        Phalcon 0.6.1 - Source-Code
                         <a target="_download" href="https://github.com/phalcon/cphalcon/" title="GitHub Repo">github</a>
                     </td>
                 </tr>
