@@ -10,8 +10,7 @@ class DownloadController extends \Ph\Controller
 
     public function indexAction()
     {
-
-        if(!$this->view->getCache()->exists('download')){
+//        if($this->view->getCache()->exists('download')){
 
             $path     = 'files/';
             $template = "Phalcon %s - Windows %s for PHP %s %s(%s)";
@@ -46,17 +45,8 @@ class DownloadController extends \Ph\Controller
                     $vc      = $chunks[2];
 
                     $phpVersion = str_replace('php', '', $chunks[3]);
-                    $key        = $version;
-                    if (substr($phpVersion, -1) == "+") {
-                        $php  = "&gt; " . substr($phpVersion, 0, -1);
-                        $key .= substr($phpVersion, 0, -1) . '1';
-                    } elseif (substr($phpVersion, -1) == "-") {
-                        $php  = "&lt;= " . substr($phpVersion, 0, -1);
-                        $key .= substr($phpVersion, 0, -1) . '0';
-                    } else {
-                        $php  = $phpVersion;
-                        $key .= $phpVersion . '0';
-                    }
+                    $php        = $phpVersion;
+                    $key        = $version . $phpVersion . '0';
 
                     $nts = (isset($chunks[5])) ? 'NTS ' : '';
                     $key = str_replace('.', '', $key);
@@ -148,12 +138,11 @@ class DownloadController extends \Ph\Controller
             {
                 unset($old['x64']);
             }
-
             $this->view->setVar('current', $current);
             $this->view->setVar('old', $old);
             $this->view->setVar('alpha', $alpha);
 
-        }
+//        }
 
         $this->view->cache(array('key' => 'download'));
     }
