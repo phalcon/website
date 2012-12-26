@@ -44,6 +44,7 @@
             Documentation for older versions:
             <br />
             <ul>
+                <li><a href="http://docs.phalconphp.com/en/0.8.0/index.html">0.8.0 (alpha) Documentation (English)</a></li>
                 <li><a href="http://docs.phalconphp.com/en/0.7.0/index.html">0.7.0 (stable) Documentation (English)</a></li>
                 <li><a href="http://docs.phalconphp.com/en/0.6.0/index.html">0.6.0 (stable) Documentation (English)</a></li>
                 <li><a href="http://docs.phalconphp.com/en/0.5.0/index.html">0.5.0 (stable) Documentation (English)</a></li>
@@ -52,7 +53,7 @@
 
             <h3>Other resources</h3>
             <ul>
-                <li><a href="https://github.com/phalcon/cphalcon/wiki/PhalconPHP-Examples">List of examples</a></li>
+                <li><a href="https://github.com/phalcon/cphalcon/wiki/Phalcon-Framework-Examples">List of examples</a></li>
             </ul>
 
         </td>

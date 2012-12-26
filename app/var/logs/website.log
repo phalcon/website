@@ -1,6 +1,0 @@
-[Sun, 25 Nov 12 16:10:08 -0500][ERROR] [Exception] SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES) (File: /Applications/MAMP/htdocs/phalconphp/app/library/Ph/Bootstrap.php Line: [326])
-[Sun, 25 Nov 12 16:16:34 -0500][ERROR] [8] Undefined property: Phalcon\Config::$cache (File: /Applications/MAMP/htdocs/phalconphp/app/library/Ph/Bootstrap.php Line: [389])
-[Sun, 25 Nov 12 16:16:34 -0500][ERROR] [8] Trying to get property of non-object (File: /Applications/MAMP/htdocs/phalconphp/app/library/Ph/Bootstrap.php Line: [389])
-[Sun, 25 Nov 12 16:16:34 -0500][ERROR] [8] Undefined property: Phalcon\Config::$cache (File: /Applications/MAMP/htdocs/phalconphp/app/library/Ph/Bootstrap.php Line: [390])
-[Sun, 25 Nov 12 16:16:34 -0500][ERROR] [8] Trying to get property of non-object (File: /Applications/MAMP/htdocs/phalconphp/app/library/Ph/Bootstrap.php Line: [390])
-[Sun, 25 Nov 12 16:16:56 -0500][ERROR] [Exception] Service 'viewCache' wasn't found in the dependency injection container (File: /Applications/MAMP/htdocs/phalconphp/app/controllers/DownloadController.php Line: [14])

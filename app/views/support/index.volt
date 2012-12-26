@@ -58,7 +58,8 @@
             <h3>Reporting a bug</h3>
             Please report bugs when you've exhausted all of the above options, using
             the <a href="https://github.com/phalcon/cphalcon/issues">issue tracker</a>
-            in Github.
+            in Github. Please use our Google Group o Stackoverflow to request support
+            on the usage of the framework.
 
         </td>
     </tr>
