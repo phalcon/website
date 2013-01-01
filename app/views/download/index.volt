@@ -20,10 +20,10 @@
                 <tr>
                     <th class="titleContent">Phalcon PHP</th>
                 </tr>
-                <?php foreach ($current as $version_key => $version) { ?>
+                {% for version_key, version in current %}
                 <tr class="cellDown">
                     <td align="left" colspan="2">
-                        <strong><?php echo $version_key; ?></strong>
+                        <strong>{{ version_key }}</strong>
                     </td>
                 </tr>
                 {% for file in version %}
@@ -36,10 +36,10 @@
                     </td>
                 </tr>
                 {% endfor %}
-                <?php } ?>
+                {% endfor %}
                 <tr class="cellDown downloadCell">
                     <td align="left">
-                        Phalcon 0.7.0 - Source-Code
+                        Phalcon 0.8.0.BETA.1 - Source-Code
                         <a target="_download" href="https://github.com/phalcon/cphalcon/" title="GitHub Repo">github</a>
                     </td>
                 </tr>
@@ -56,14 +56,15 @@
                     </td>
                 </tr>
 
+                {% if alpha %}
                 <tr><td><br /><br /></td></tr>
                 <tr>
                     <th class="titleContent">Alpha versions</th>
                 </tr>
-                <?php foreach ($alpha as $version_key => $version) { ?>
+                {% for version_key, version in alpha %}
                 <tr class="cellDown">
                     <td align="left">
-                        <strong><?php echo $version_key; ?></strong>
+                        <strong>{{ version_key }}</strong>
                     </td>
                 </tr>
                 {% for file in version %}
@@ -76,23 +77,24 @@
                     </td>
                 </tr>
                 {% endfor %}
-                <?php } ?>
+                {% endfor %}
                 <tr class="cellDown downloadCell">
                     <td align="left">
                         Phalcon 0.6.0 - Source-Code
                         <a target="_download" href="https://github.com/phalcon/cphalcon/tree/0.6.0" title="GitHub Repo">github</a>
                     </td>
                 </tr>
+                {% endif %}
 
                 <tr><td><br /><br /></td></tr>
 
                 <tr>
                     <th class="titleContent">Older versions</th>
                 </tr>
-                <?php foreach ($old as $version_key => $version) { ?>
+                {% for version_key, version in old %}
                 <tr class="cellDown">
                     <td align="left">
-                        <strong><?php echo $version_key; ?></strong>
+                        <strong>{{ version_key }}</strong>
                     </td>
                 </tr>
                 {% for file in version %}
@@ -105,10 +107,10 @@
                     </td>
                 </tr>
                 {% endfor %}
-                <?php } ?>
+                {% endfor %}
                 <tr class="cellDown downloadCell">
                     <td align="left">
-                        Phalcon 0.6.1 - Source-Code
+                        Phalcon 0.7.0 - Source-Code
                         <a target="_download" href="https://github.com/phalcon/cphalcon/" title="GitHub Repo">github</a>
                     </td>
                 </tr>

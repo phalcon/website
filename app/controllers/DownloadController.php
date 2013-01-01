@@ -60,9 +60,7 @@ class DownloadController extends \Ph\Controller
                             'date' => $date,
                         );
 
-                    }
-                    else
-                    {
+                    } else {
                         $files[$version][$arch][$key] = array(
                             'name' => sprintf($template, $version, $arch, $php, $nts, $vc),
                             'file' => 'files/' . $fileName,
@@ -97,16 +95,13 @@ class DownloadController extends \Ph\Controller
                 $experimental[$arch] = $data;
             }
 
-            if (count($experimental) > 0)
-            {
+            if (count($experimental) > 0) {
                 krsort($experimental);
                 reset($experimental);
                 $key   = key($experimental);
                 $alpha = $experimental[$key];
-            }
-            else
-            {
-                $alpha = false;
+            } else {
+                $alpha = null;
             }
 
             /**
@@ -129,15 +124,14 @@ class DownloadController extends \Ph\Controller
                 }
             }
 
-            if (count($old['x86']) == 0)
-            {
+            if (count($old['x86']) == 0) {
                 unset($old['x86']);
             }
 
-            if (count($old['x64']) == 0)
-            {
+            if (count($old['x64']) == 0) {
                 unset($old['x64']);
             }
+
             $this->view->setVar('current', $current);
             $this->view->setVar('old', $old);
             $this->view->setVar('alpha', $alpha);
