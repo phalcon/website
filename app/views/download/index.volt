@@ -39,7 +39,7 @@
                 <?php } ?>
                 <tr class="cellDown downloadCell">
                     <td align="left">
-                        Phalcon 0.7.0 - Source-Code
+                        Phalcon 0.8.0 - Source-Code
                         <a target="_download" href="https://github.com/phalcon/cphalcon/" title="GitHub Repo">github</a>
                     </td>
                 </tr>
@@ -58,7 +58,7 @@
 
                 <tr><td><br /><br /></td></tr>
                 <tr>
-                    <th class="titleContent">Alpha versions</th>
+                    <th class="titleContent">Alpha/Beta versions</th>
                 </tr>
                 <?php foreach ($alpha as $version_key => $version) { ?>
                 <tr class="cellDown">
@@ -79,8 +79,8 @@
                 <?php } ?>
                 <tr class="cellDown downloadCell">
                     <td align="left">
-                        Phalcon 0.6.0 - Source-Code
-                        <a target="_download" href="https://github.com/phalcon/cphalcon/tree/0.6.0" title="GitHub Repo">github</a>
+                        Phalcon 0.9.0 - Source-Code
+                        <a target="_download" href="https://github.com/phalcon/cphalcon/tree/0.9.0" title="GitHub Repo">github</a>
                     </td>
                 </tr>
 
@@ -108,7 +108,7 @@
                 <?php } ?>
                 <tr class="cellDown downloadCell">
                     <td align="left">
-                        Phalcon 0.6.1 - Source-Code
+                        Phalcon 0.7.0 - Source-Code
                         <a target="_download" href="https://github.com/phalcon/cphalcon/" title="GitHub Repo">github</a>
                     </td>
                 </tr>

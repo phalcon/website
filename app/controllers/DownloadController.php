@@ -10,7 +10,7 @@ class DownloadController extends \Ph\Controller
 
     public function indexAction()
     {
-        if($this->view->getCache()->exists('download')){
+        if ($this->view->getCache()->exists('download')) {
 
             $path     = 'files/';
             $template = "Phalcon %s - Windows %s for PHP %s %s(%s)";
@@ -53,7 +53,8 @@ class DownloadController extends \Ph\Controller
                     $key .= ($nts) ? '0' : '1';
 
                     // Check if we have an alpha here
-                    if (strpos(strtolower($version), 'alpha') > 0) {
+                    if (strpos(strtolower($version), 'alpha') > 0 ||
+                        strpos(strtolower($version), 'beta') > 0) {
                         $alpha[$version][$arch][$key] = array(
                             'name' => sprintf($template, $version, $arch, $php, $nts, $vc),
                             'file' => 'files/' . $fileName,
