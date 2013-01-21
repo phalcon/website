@@ -59,7 +59,7 @@
                 {% if alpha %}
                 <tr><td><br /><br /></td></tr>
                 <tr>
-                    <th class="titleContent">Alpha versions</th>
+                    <th class="titleContent">Alpha/Beta versions</th>
                 </tr>
                 {% for version_key, version in alpha %}
                 <tr class="cellDown">
