@@ -21,6 +21,7 @@
                 <p>
                     <label>Support</label><br />
                     <a href="https://github.com/phalcon/cphalcon/issues">Issues on Github</a><br />
+                    <a href="http://forum.phalconphp.com">Support, Community, Discussion</a>
                     <a href="http://stackoverflow.com/questions/tagged/phalcon">StackOverflow</a><br />
                     <a href="https://groups.google.com/forum/#!forum/phalcon">Support and Community</a>
                 </p>
