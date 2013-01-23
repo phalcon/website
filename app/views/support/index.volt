@@ -31,6 +31,10 @@
             to find what you are looking for. If your question is still not answered,
             there are more options below.
 
+            <h3>PhalconPHP Forum</h3>
+            You can ask a question in our
+            <a href="http://forum.phalconphp.com">Discussion Forum</a>.
+
             <h3>Google Groups</h3>
             You can also ask a question in our
             <a href="https://groups.google.com/forum/#!forum/phalcon">Google Group</a>.
