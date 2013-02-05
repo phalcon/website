@@ -10,7 +10,7 @@ class DownloadController extends \Ph\Controller
 
     public function indexAction()
     {
-        if ($this->view->getCache()->exists('download')) {
+        if (!$this->view->getCache()->exists('download')) {
 
             $path     = 'files/';
             $template = "Phalcon %s - Windows %s for PHP %s %s(%s)";

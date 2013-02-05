@@ -250,13 +250,13 @@ class Bootstrap
 	{
 		$this->_di->set('logger', function() use ($config) {
 			$logger = new PhLogger(ROOT_PATH . $config->app->logger->file);
-			$logger->setFormat($config->app->logger->format);
+			//$logger->setFormat($config->app->logger->format);
 			return $logger;
-		});
+		}, true);
 	}
 
 	/**
-	 * Initializes the database and netadata adapter
+	 * Initializes the database and metadata adapter
 	 *
 	 * @param array $options
 	 */
