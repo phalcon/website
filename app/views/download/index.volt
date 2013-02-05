@@ -39,7 +39,7 @@
                 {% endfor %}
                 <tr class="cellDown downloadCell">
                     <td align="left">
-                        Phalcon 0.8.0 - Source-Code
+                        Phalcon 0.9.0 - Source-Code
                         <a target="_download" href="https://github.com/phalcon/cphalcon/" title="GitHub Repo">github</a>
                     </td>
                 </tr>
@@ -110,7 +110,7 @@
                 {% endfor %}
                 <tr class="cellDown downloadCell">
                     <td align="left">
-                        Phalcon 0.7.0 - Source-Code
+                        Phalcon 0.8.0 - Source-Code
                         <a target="_download" href="https://github.com/phalcon/cphalcon/" title="GitHub Repo">github</a>
                     </td>
                 </tr>
