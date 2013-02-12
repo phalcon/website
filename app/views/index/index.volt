@@ -57,6 +57,18 @@
     </div>
 </div>
 
+<div align="center">
+
+    <a href="https://twitter.com/phalconphp" class="twitter-follow-button" data-show-count="false">Follow @phalconphp</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+    <iframe src="http://ghbtns.com/github-btn.html?user=phalcon&repo=cphalcon&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="87" height="20"></iframe>
+
+    <a href="http://flattr.com/thing/1134206/Phalcon-PHP-Framework" target="_blank">
+        <img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" />
+    </a>
+</div>
+
 <div id="github-con">
     <div id="github" style="display:none">
         <a href="https://github.com/phalcon/cphalcon">Star me on Github</a>

@@ -1,154 +1,6 @@
 
-/*#wrapper #content .post .copy pre.sh_sourceCode {
-  background-color: #212121;
-  color: #DCDCCC;
-  font-family: Consolas,"Lucida Console",monospace;
-  font-size: 13px;
-  line-height: 18px;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_keyword {
-   color: #F0DFAF;
-  font-weight: bold;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_type {
-  color: #a52a2a;
-  font-weight: bold;
-  font-style: normal;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_string {
-  color: #CC9393;
-  font-weight: normal;
-  font-style: normal;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_regexp {
-  color: #006400;
-  font-weight: normal;
-  font-style: normal;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_specialchar {
-  color: #2e8b57;
-  font-weight: normal;
-  font-style: normal;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_comment {
-  color: #7F9F7F;
-  font-style: italic;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_number {
-  color: #8CD0D3;
-  font-weight: normal;
-  font-style: normal;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_preproc {
-  color: #F0DFAF;
-  font-style: normal;
-  font-weight: normal;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_symbol {
-  color: #DCDCCC;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_function {
-  color: #FAFAFA;
-  font-weight: bold;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_cbracket {
-  color: #DCDCCC;
-  font-weight: bold;
-  font-style: normal;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_url {
-  color: #006400;
-  font-weight: normal;
-  font-style: normal;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_date {
-  color: #DCDCCC;
-  font-weight: bold;
-  font-style: normal;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_time {
-  color: #DCDCCC;
-  font-weight: bold;
-  font-style: normal;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_file {
-  color: #DCDCCC;
-  font-weight: bold;
-  font-style: normal;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_ip {
-  color: #DCDCCC;
-  font-weight: normal;
-  font-style: normal;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_name {
-  color: #DCDCCC;
-  font-weight: normal;
-  font-style: normal;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_variable {
-  color: #EFDCBC;
-  font-weight: bold;
-  font-style: normal;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_oldfile {
-  color: #2e8b57;
-  font-weight: normal;
-  font-style: normal;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_newfile {
-  color: #006400;
-  font-weight: normal;
-  font-style: normal;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_difflines {
-  color: #000000;
-  font-weight: bold;
-  font-style: normal;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_selector {
-  color: #dda0dd;
-  font-weight: bold;
-  font-style: normal;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_property {
-  color: #000000;
-  font-weight: bold;
-  font-style: normal;
-}
-
-#wrapper #content .post .copy pre.sh_sourceCode .sh_value {
-  color: #006400;
-  font-weight: normal;
-  font-style: normal;
-}
-
-*/
-
-#wrapper #content .post .copy pre.sh_sourceCode {
+#wrapper #content .post .copy pre.sh_sourceCode,
+pre.sh_sourceCode {
     font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
     background-color: #F5F5F5;
     border: 1px solid rgba(0, 0, 0, 0.15);
@@ -162,27 +14,34 @@
     word-wrap: break-word;
 }
 
-#wrapper #content .post .copy pre.sh_sourceCode span.sh_comment {
+#wrapper #content .post .copy pre.sh_sourceCode span.sh_comment,
+pre.sh_sourceCode span.sh_comment {
     color: #93A1A1;
 }
 
-#wrapper #content .post .copy pre.sh_sourceCode span.sh_keyword {
+#wrapper #content .post .copy pre.sh_sourceCode span.sh_keyword,
+pre.sh_sourceCode span.sh_keyword {
     color: #1E347B;
 }
 
-#wrapper #content .post .copy pre.sh_sourceCode span.sh_string {
+#wrapper #content .post .copy pre.sh_sourceCode span.sh_string,
+pre.sh_sourceCode span.sh_string {
     color: #DD1144;
 }
 
 #wrapper #content .post .copy pre.sh_sourceCode span.sh_symbol,
-#wrapper #content .post .copy pre.sh_sourceCode span.sh_cbracket {
+#wrapper #content .post .copy pre.sh_sourceCode span.sh_cbracket,
+pre.sh_sourceCode span.sh_symbol,
+pre.sh_sourceCode span.sh_cbracket {
     color: rgba(0, 0, 0, 0.4);
 }
 
-#wrapper #content .post .copy pre.sh_sourceCode span.sh_number {
+#wrapper #content .post .copy pre.sh_sourceCode span.sh_number,
+pre.sh_sourceCode span.sh_number {
     color: teal;
 }
 
-#wrapper #content .post .copy pre.sh_sourceCode span.sh_function {
+#wrapper #content .post .copy pre.sh_sourceCode span.sh_function,
+pre.sh_sourceCode span.sh_function {
     color: teal;
 }
