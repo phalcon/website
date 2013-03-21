@@ -21,7 +21,7 @@
                     </div>
                 </div>
 
-                {% set doc_path = '{{ doc_path }}/reference' %}
+                {% set doc_path = 'http://docs.phalconphp.com/en/latest/reference' %}
                 <div class="featured row-fluid">
                     <div class="featured-specs span6">
                         <h5>Main Features</h5>
