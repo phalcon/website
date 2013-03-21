@@ -23,20 +23,22 @@
                                 programming world.
                             </p>
                             <p>
-                            His main drive is to always choose and implement or use the right tool
-                            for the job, mostly focused on performance. Therefore in 2011 a new
-                            idea was in the works; to create a new kind of framework for PHP
-                            developers, one that focuses on usability, features and mostly
-                            performance.
+                                A <a href='http://en.wikipedia.org/wiki/TR35'>TR</a>
+                                <a href='http://www.technologyreview.es/tr35colombia/profile.aspx?trid=1281'>winner</a>,
+                                Andres's main drive is to always choose and implement or use the right tool
+                                for the job, mostly focused on performance. Therefore in 2011 a new
+                                idea was in the works; to create a new kind of framework for PHP
+                                developers, one that focuses on usability, features and mostly
+                                performance.
                             </p>
                             <p>
-                            Through this new innovative approach Phalcon was born. A PHP
-                            framework written in C that can offer a wealth of features to
-                            developers while maximizing performance and keeping resource
-                            utilization low.
+                                Through this new innovative approach Phalcon was born. A PHP
+                                framework written in C that can offer a wealth of features to
+                                developers while maximizing performance and keeping resource
+                                utilization low.
                             </p>
                             <p>
-                            Andres is one of the core developers of Phalcon PHP and its inspiration.
+                                Andres is one of the core developers of Phalcon PHP and its inspiration.
                             </p>
                         </div>
                     </div>
@@ -48,25 +50,25 @@
                             <h4 class="media-heading">Nikolaos (Nikos) Dimopoulos</h4>
                             </p>
                             <p>
-                            Nikos has been in the IT industry for over 20 years. He was
-                            introduced to the PHP world in 2000 and has been using it ever
-                            since in personal projects as well as projects for his employers.
+                                Nikos has been in the IT industry for over 20 years. He was
+                                introduced to the PHP world in 2000 and has been using it ever
+                                since in personal projects as well as projects for his employers.
                             </p>
                             <p>
-                            He loves discovering new technologies and ways to integrate them
-                            with existing applications and thus reap the benefits they offer.
+                                He loves discovering new technologies and ways to integrate them
+                                with existing applications and thus reap the benefits they offer.
                             </p>
                             <p>
-                            He is an avid supporter of Test Driven Development (TDD) and always
-                            tries to get 100% coverage in his code.
+                                He is an avid supporter of Test Driven Development (TDD) and always
+                                tries to get 100% coverage in his code.
                             </p>
                             <p>
-                            Nikos's continuing interest in new and innovative technologies breaking
-                            out of the norm introduced him to Phalcon PHP. He joined the core team
-                            and his tasks mainly involve coordination of NFRs and bug fixes, help
-                            with tests, documentation and the incubator. Nikos is also responsible
-                            for maintaining the Windows DLLs for the project and offers support
-                            whenever possible.
+                                Nikos's continuing interest in new and innovative technologies breaking
+                                out of the norm introduced him to Phalcon PHP. He joined the core team
+                                and his tasks mainly involve coordination of NFRs and bug fixes, help
+                                with tests, documentation and the incubator. Nikos is also responsible
+                                for maintaining the Windows DLLs for the project and offers support
+                                whenever possible.
                             </p>
                         </div>
                     </div>
