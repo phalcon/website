@@ -4,11 +4,26 @@
     <body>
         {{ partial('partials/navbar') }}
 
-        {{ content() }}
+        <div id="content" class="container-fluid">
+            <div class="row-fluid">
+                <section class="span9">
+                    <div class="hero-unit">
+                        {{ content() }}
+                    </div>
+                    <div class="clearfix"></div>
+                </section>
+                {{ partial('partials/sidebar') }}
+            </div>
+        </div>
 
         {{ partial('partials/footer') }}
 
-        {{ javascript_include(config.app.js.gs, config.app.js.local) }}
-        {{ javascript_include(config.app.js.twitter, config.app.js.local) }}
+        {{ javascript_include(config.app.js.jquery, false) }}
+        {{ javascript_include(config.app.js.bootstrap, false) }}
+        {{ javascript_include(config.app.js.bootstrap_tab, false) }}
+        {{ javascript_include(config.app.js.highlight, false) }}
+        {{ javascript_include(config.app.js.helper, false) }}
+
+        <script>format()</script>
 	</body>
 </html>

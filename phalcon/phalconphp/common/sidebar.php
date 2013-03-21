@@ -1,0 +1,46 @@
+<aside class="span3">
+	<div id="sidebar" class="well sidebar-nav">
+	    <ul class="nav nav-list">
+	        <li class="nav-header">Donate</li>
+	        <li>
+	            <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+	                <input type="hidden" name="cmd" value="_s-xclick">
+	                <input type="hidden" name="hosted_button_id" value="7LSYMNMFZNG8W">
+	                <input type="image" src="img/btn_donate_LG.gif" border="0" name="submit" alt="PayPal — The safer, easier way to pay online.">
+	                <img alt="" border="0" src="img/pixel.gif" width="1" height="1">
+	            </form>
+	        </li>
+	        <li>
+	            <a href="http://flattr.com/thing/1134206/Phalcon-PHP-Framework" target="_blank">
+	                <img src="img/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0">
+	            </a>
+	        </li>
+	        <li class="nav-header">Services</li>
+	        <li><a href="#">Consulting</a></li>
+	        <li class="nav-header">Social</li>
+	        <li>
+				<div class="btn-group">
+	            <a href="http://phalcon-website.niden.ld/https://plus.google.com/102376109340560896457"><img border="0" src="img/google_plus_32.png"></a>
+				<a href="http://phalcon-website.niden.ld/http://www.facebook.com/pages/Phalcon/134230726685897"><img border="0" src="img/facebook_32.png"></a>
+				<a href="http://phalcon-website.niden.ld/https://twitter.com/phalconphp"><img border="0" src="img/twitter_32.png"></a>
+				</div>
+	        </li>
+	        <li class="nav-header">Support</li>
+	        <li><a href="#">Forum/Community</a></li>
+	        <li><a href="#">Stack Overflow</a></li>
+	        <li><a href="#">Issue Tracker</a></li>
+	        <li class="nav-header">Get Involved</li>
+	        <li><a href="#">About</a></li>
+	        <li><a href="#">Roadmap</a></li>
+	        <li class="nav-header">Get Updates</li>
+	        <li>
+				<div class="input-append">
+		            <form method="post" action="http://phalcon-website.niden.ld/index/subscribe">
+		                <input class="span8" type="text" placeholder="Your email address" name="email" id="email" value="">
+		                <input class="btn" type="submit" value="Subscribe">
+		            </form>
+
+	        </li>
+	    </ul>
+	</div><!--/.well -->
+</aside>

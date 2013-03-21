@@ -1,29 +1,27 @@
-<div id="header">
-    <h1>
-        {{ link_to('', image('img/logo-small-sp.png', 'border': 0)) }}
-    </h1>
-    <div align="center">
-        <div id="nav-main" role="navigation">
-            <div class="menubar">
-                <div class="nav-main-features nav-first">
-                    {{ link_to('', 'HOME') }}
-                </div>
-                <div class="nav-main-features">
-                    {{ link_to('download', 'DOWNLOAD') }}
-                </div>
-                <div class="nav-main-features">
-                    {{ link_to('documentation', 'DOCUMENTATION') }}
-                </div>
-                <div class="nav-main-features">
-                    {{ link_to('support', 'SUPPORT') }}
-                </div>
-                <div class="nav-main-features">
-                    <a href="https://github.com/phalcon/cphalcon">GITHUB</a>
-                </div>
-                <div class="nav-main-features">
-                    <a target="blog" href="http://blog.phalconphp.com/">BLOG</a>
+<header>
+    <div id="github-con">
+        <div id="github" style="display: block; width: 250px;">
+            <a href="https://github.com/phalcon/cphalcon">Star me on Github</a>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a class="brand" href="/">
+                    <img src="img/logo-small-sp.png" alt="Logo Small Sp">
+                </a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav nav-pills">
+                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="/download">Download</a></li>
+                        <li><a href="/documentation">Documentation</a></li>
+                        <li><a href="/support">Support</a></li>
+                        <li><a href="https://github.com/phalcon/cphalcon">Github</a></li>
+                        <li><a href="http://blog.phalconphp.com/">Blog</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</header>
