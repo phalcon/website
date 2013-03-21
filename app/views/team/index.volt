@@ -14,16 +14,13 @@
                             <img class="media-object" data-src="/img/team/andres.jpg" style="width: 128px;" src="/img/team/andres.jpg">
                         </a>
                         <div class="media-body">
-                            <h4 class="media-heading">Andres Felipe Gutierrez</h4>
+                            <h4 class="media-heading">Andres Gutierrez</h4>
                             <p>
-                                Andres is no stranger to open source projects. He has designed
-                                and released in 2005 the KumbiaPHP framework, in order to help young
-                                developers who were just starting out in the programming world. The
-                                framework was written in Spanish and aimed at the Spanish speaking
-                                programming world.
+                                Andres is no stranger to open source projects. In the last nine years, he has designed and released 
+                                frameworks for PHP and has been involved in web development his main passion.
                             </p>
                             <p>
-                                A <a href='http://en.wikipedia.org/wiki/TR35'>TR</a>
+                                A <a href='http://en.wikipedia.org/wiki/TR35'>TR35</a>
                                 <a href='http://www.technologyreview.es/tr35colombia/profile.aspx?trid=1281'>winner</a>,
                                 Andres's main drive is to always choose and implement or use the right tool
                                 for the job, mostly focused on performance. Therefore in 2011 a new

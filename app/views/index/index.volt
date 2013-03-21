@@ -1,4 +1,4 @@
-{% set doc_path = 'http://docs.phalconphp.com/en/latest/reference' %}
+{% set doc_path = 'http://docs.phalconphp.com/en/latest' %}
 
                 <h4 class="text-center">Welcome to</h5>
                 <h2 class="text-center">THE FASTEST PHP FRAMEWORK</h3>
