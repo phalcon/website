@@ -1,10 +1,11 @@
 <header>
+    <!--
     <div id="github-con">
         <div id="github" style="display: block; width: 250px;">
             <a href="https://github.com/phalcon/cphalcon">Star me on Github</a>
         </div>
     </div>
-
+    -->
     <div class="navbar">
         <div class="navbar-inner">
             <div class="container-fluid">
