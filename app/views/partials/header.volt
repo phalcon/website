@@ -1,8 +1,8 @@
 <head>
     <meta charset="utf-8">
     {{ get_title() }}
-    {{ stylesheet_link(config.app.css.font_sans, false) }}
-    {{ stylesheet_link(config.app.css.font_rosario, false) }}
+    {{ stylesheet_link(config.app.css.bootstrap, false) }}
+    {{ stylesheet_link(config.app.css.highlight, false) }}
     {{ stylesheet_link(config.app.css.site) }}
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
