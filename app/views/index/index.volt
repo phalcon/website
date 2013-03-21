@@ -33,7 +33,7 @@
                                 <a href='{{ doc_path }}/applications.html#multi-module'>Multi-Module</a> and
                                 <a href='{{ doc_path }}/micro.html'>Micro</a> Applications)
                             </li>
-                            <li>`
+                            <li>
                                 ORM (
                                 <a href='{{ doc_path }}/models.html#transactions'>Transactions</a>,
                                 <a href='{{ doc_path }}/models.html#behaviors'>Behaviors</a>,
