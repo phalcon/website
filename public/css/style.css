@@ -40,7 +40,7 @@
 
 /* ---------- Sidebar */
 	aside {}
-	aside .sidebar-nav { background: #fff; border-radius: 0px; box-shadow: 0px 3px 5px rgba(0,0,0, 0.095); }
+	aside .sidebar-nav { float: right; max-width: 150px; background: #fff; border-radius: 0px; box-shadow: 0px 3px 5px rgba(0,0,0, 0.095); }
 	
 
 /* ---------- Footer */
