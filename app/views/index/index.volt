@@ -1,3 +1,5 @@
+{% set doc_path = 'http://docs.phalconphp.com/en/latest/reference' %}
+
                 <h4 class="text-center">Welcome to</h5>
                 <h2 class="text-center">THE FASTEST PHP FRAMEWORK</h3>
                 <h4 class="text-center">
@@ -21,7 +23,6 @@
                     </div>
                 </div>
 
-                {% set doc_path = 'http://docs.phalconphp.com/en/latest/reference' %}
                 <div class="featured row-fluid">
                     <div class="featured-specs span6">
                         <h5>Main Features</h5>
