@@ -4,7 +4,7 @@
                     PhalconPHP is a web framework implemented as a C extension
                     <br />
                     offering
-                    <a href="http://docs.phalconphp.com/en/latest/reference/benchmark.html">high performance</a>
+                    <a href="{{ doc_path }}/benchmark.html">high performance</a>
                     and lower resource consumption.
                 </h4>
 
@@ -21,7 +21,7 @@
                     </div>
                 </div>
 
-                {% set doc_path = 'http://docs.phalconphp.com/en/latest/reference' %}
+                {% set doc_path = '{{ doc_path }}/reference' %}
                 <div class="featured row-fluid">
                     <div class="featured-specs span6">
                         <h5>Main Features</h5>
@@ -32,23 +32,68 @@
                                 <a href='{{ doc_path }}/applications.html#multi-module'>Multi-Module</a> and
                                 <a href='{{ doc_path }}/micro.html'>Micro</a> Applications)
                             </li>
-                            <li>ORM (Transactions, Behaviors, Relations, PHQL, Events, Validations, Hydration, Logging, Profiling, Sharding)</li>
-                            <li>HTTP Enviroment</li>
-                            <li>ODM for Mongo</li>
-                            <li>Template Engine (Volt)</li>
-                            <li>DI/Ioc</li>
-                            <li>Events Management</li>
-                            <li>Escaping/Filtering</li>
-                            <li>Forms Builder/Validation</li>
-                            <li>Flash Messages</li>
-                            <li>Caching</li>
-                            <li>Pagination</li>
-                            <li>Annotations</li>
-                            <li>Security</li>
-                            <li>Translation</li>
-                            <li>Universal Auto-Loader</li>
-                            <li>Logging</li>
-                            <li>CLI (Command Line Interface)</li>
+                            <li>`
+                                ORM (
+                                <a href='{{ doc_path }}/models.html#transactions'>Transactions</a>,
+                                <a href='{{ doc_path }}/models.html#behaviors'>Behaviors</a>,
+                                <a href='{{ doc_path }}/models.html#relationships-between-models'>Relations</a>,
+                                <a href='{{ doc_path }}/phql.html'>PHQL</a>,
+                                <a href='{{ doc_path }}/models.html#events-and-events-manager'>Events</a>,
+                                <a href='{{ doc_path }}/models.html#validation-failed-events'>Validations</a>,
+                                <a href='{{ doc_path }}/models.html#hydration-modes'>Hydration</a>,
+                                <a href='{{ doc_path }}/models.html#logging-low-level-sql-statements'>Logging</a>,
+                                <a href='{{ doc_path }}/models.html#profiling-sql-statements'>Profiling</a>,
+                                Sharding)
+                            </li>
+                            <li>
+                                <a href='{{ doc_path }}/reference/request.html'>HTTP Request</a>/
+                                <a href='{{ doc_path }}/reference/response.html'>Response</a>,
+                            </li>
+                            <li>
+                                <a href='{{ doc_path }}/reference/odm.html'>ODM for Mongo</a>,
+                            </li>
+                            <li>
+                                <a href='{{ doc_path }}/reference/volt.html'>Template Engine (Volt)</a>,
+                            </li>
+                            <li>
+                                <a href='{{ doc_path }}/reference/di.html'>DI/IOC</a>,
+                            </li>
+                            <li>
+                                <a href='{{ doc_path }}/reference/events.html'>Events Management</a>,
+                            </li>
+                            <li>
+                                <a href='{{ doc_path }}/reference/escaper.html'>Escaping/Filtering</a>,
+                            </li>
+                            <li>
+                                <a href='{{ doc_path }}/reference/forms.html'>Forms Builder/Validation</a>,
+                            </li>
+                            <li>
+                                <a href='{{ doc_path }}/reference/flash.html'>Flash Messages</a>,
+                            </li>
+                            <li>
+                                <a href='{{ doc_path }}/reference/cache.html'>Caching</a>,
+                            </li>
+                            <li>
+                                <a href='{{ doc_path }}/reference/pagination.html'>Pagination</a>,
+                            </li>
+                            <li>
+                                <a href='{{ doc_path }}/reference/annotations.html'>Annotations</a>,
+                            </li>
+                            <li>
+                                <a href='{{ doc_path }}/reference/security.html'>Security</a>,
+                            </li>
+                            <li>
+                                <a href='{{ doc_path }}/reference/translate.html'>Translations</a>,
+                            </li>
+                            <li>
+                                <a href='{{ doc_path }}/reference/loader.html'>Universal Auto-Loader</a>,
+                            </li>
+                            <li>
+                                <a href='{{ doc_path }}/reference/logging.html'>Logging</a>,
+                            </li>
+                            <li>
+                                <a href='{{ doc_path }}/reference/cli.html'>CLI (Command Line Interface)</a>
+                            </li>
                         </ul>
                     </div>
 
