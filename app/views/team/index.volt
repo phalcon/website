@@ -14,7 +14,7 @@
                             <img class="media-object" data-src="/img/team/andres.jpg" style="width: 128px;" src="/img/team/andres.jpg">
                         </a>
                         <div class="media-body">
-                            <h4 class="media-heading">Andres Felipe Gutierrez</h4>
+                            <h4 class="media-heading">Andres Gutierrez</h4>
                             <p>
                                 Andres is no stranger to open source projects. In the last nine years, he has designed and released 
                                 frameworks for PHP and has been involved in web development his main passion.
