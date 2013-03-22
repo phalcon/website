@@ -41,7 +41,7 @@
 /* ---------- Sidebar */
 	aside {}
 	aside .sidebar-nav { float: right; max-width: 150px; background: #fff; border-radius: 0px; box-shadow: 0px 3px 5px rgba(0,0,0, 0.095); }
-	
+
 
 /* ---------- Footer */
 	footer { background: url('/img/navy_blue.png') repeat top left; color: #fff; margin-top: 0px; padding: 20px 20px; position: relative; }
