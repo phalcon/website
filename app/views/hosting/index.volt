@@ -1,6 +1,6 @@
             <div class="row-fluid featured-specs text-center">
                 <div>
-                    <h4>Hosting</h4>
+                    <h1>Hosting</h1>
                     Reputable companies that offer hosting services supporting
                     Phalcon. Of course you can always roll your own VPS and
                     compile Phalcon but for those that want it easy...

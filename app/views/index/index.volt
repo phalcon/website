@@ -1,8 +1,8 @@
 {% set doc_path = 'http://docs.phalconphp.com/en/latest/reference' %}
 
-                <h4 class="text-center">Welcome to</h5>
+                <h5 class="text-center">Welcome to</h5>
                 <h2 class="text-center">THE FASTEST PHP FRAMEWORK</h3>
-                <h4 class="text-center">
+                <h5 class="text-center">
                     PhalconPHP is a web framework implemented as a C extension
                     <br />
                     offering
@@ -12,11 +12,11 @@
 
                 <div class="row-fluid">
                     <div class="text-center span12">
-                        <div class="btn-group">
+                        <div class="btn-group">                            
                             <a href='http://try.phalconphp.com'>
                                 <button class="btn btn-large btn-primary">Try it Online</button>
                             </a>
-                            <a href='/download'>
+                            <a href='{{ url('download') }}'>
                                 <button class="btn btn-large btn-success">Download</button>
                             </a>
                         </div>
@@ -48,49 +48,49 @@
                             </li>
                             <li>
                                 <a href='{{ doc_path }}/reference/request.html'>HTTP Request</a>/
-                                <a href='{{ doc_path }}/reference/response.html'>Response</a>,
+                                <a href='{{ doc_path }}/reference/response.html'>Response</a>
                             </li>
                             <li>
-                                <a href='{{ doc_path }}/reference/odm.html'>ODM for Mongo</a>,
+                                <a href='{{ doc_path }}/reference/odm.html'>ODM for Mongo</a>
                             </li>
                             <li>
-                                <a href='{{ doc_path }}/reference/volt.html'>Template Engine (Volt)</a>,
+                                <a href='{{ doc_path }}/reference/volt.html'>Template Engine (Volt)</a>
                             </li>
                             <li>
-                                <a href='{{ doc_path }}/reference/di.html'>DI/IOC</a>,
+                                <a href='{{ doc_path }}/reference/di.html'>DI/IOC</a>
                             </li>
                             <li>
-                                <a href='{{ doc_path }}/reference/events.html'>Events Management</a>,
+                                <a href='{{ doc_path }}/reference/events.html'>Events Management</a>
                             </li>
                             <li>
-                                <a href='{{ doc_path }}/reference/escaper.html'>Escaping/Filtering</a>,
+                                <a href='{{ doc_path }}/reference/escaper.html'>Escaping/Filtering</a>
                             </li>
                             <li>
-                                <a href='{{ doc_path }}/reference/forms.html'>Forms Builder/Validation</a>,
+                                <a href='{{ doc_path }}/reference/forms.html'>Forms Builder/Validation</a>
                             </li>
                             <li>
-                                <a href='{{ doc_path }}/reference/flash.html'>Flash Messages</a>,
+                                <a href='{{ doc_path }}/reference/flash.html'>Flash Messages</a>
                             </li>
                             <li>
-                                <a href='{{ doc_path }}/reference/cache.html'>Caching</a>,
+                                <a href='{{ doc_path }}/reference/cache.html'>Caching</a>
                             </li>
                             <li>
-                                <a href='{{ doc_path }}/reference/pagination.html'>Pagination</a>,
+                                <a href='{{ doc_path }}/reference/pagination.html'>Pagination</a>
                             </li>
                             <li>
-                                <a href='{{ doc_path }}/reference/annotations.html'>Annotations</a>,
+                                <a href='{{ doc_path }}/reference/annotations.html'>Annotations</a>
                             </li>
                             <li>
-                                <a href='{{ doc_path }}/reference/security.html'>Security</a>,
+                                <a href='{{ doc_path }}/reference/security.html'>Security</a>
                             </li>
                             <li>
-                                <a href='{{ doc_path }}/reference/translate.html'>Translations</a>,
+                                <a href='{{ doc_path }}/reference/translate.html'>Translations</a>
                             </li>
                             <li>
-                                <a href='{{ doc_path }}/reference/loader.html'>Universal Auto-Loader</a>,
+                                <a href='{{ doc_path }}/reference/loader.html'>Universal Auto-Loader</a>
                             </li>
                             <li>
-                                <a href='{{ doc_path }}/reference/logging.html'>Logging</a>,
+                                <a href='{{ doc_path }}/reference/logging.html'>Logging</a>
                             </li>
                             <li>
                                 <a href='{{ doc_path }}/reference/cli.html'>CLI (Command Line Interface)</a>

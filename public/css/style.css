@@ -25,6 +25,7 @@
 /* ---------- Containers */
 	#content { padding-top: 0px; text-shadow: 0px 1px 0px rgba(255,255,255, 1); }
 	#content .hero-unit { background: transparent; }
+	#content .hero-unit h1 { font-size: 32px; }
 	#content .hero-unit .btn-group { margin-top: 30px; }
 	#content .hero-unit .btn-group button { padding: 20px 70px; }
 	#content .hero-unit .featured { margin-top: 50px; }

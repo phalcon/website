@@ -14,10 +14,10 @@
                 </a>
                 <div class="nav-collapse collapse">
                     <ul class="nav nav-pills">
-                        <li class="active"><a href="/">Home</a></li>
-                        <li><a href="/download">Download</a></li>
-                        <li><a href="/documentation">Documentation</a></li>
-                        <li><a href="/support">Support</a></li>
+                        <li class="active"><a href="{{ url('') }}">Home</a></li>
+                        <li><a href="{{ url('download') }}">Download</a></li>
+                        <li><a href="{{ url('documentation') }}">Documentation</a></li>
+                        <li><a href="{{ url('support') }}">Support</a></li>
                         <li><a href="https://github.com/phalcon/cphalcon">Github</a></li>
                         <li><a href="http://blog.phalconphp.com/">Blog</a></li>
                     </ul>

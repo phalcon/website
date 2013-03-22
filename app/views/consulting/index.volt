@@ -1,6 +1,6 @@
             <div class="row-fluid featured-specs text-center">
                 <div>
-                    <h4>Consulting</h4>
+                    <h1>Consulting</h1>
                     Looking for consulting for your project? You are in the right place!
                 </div>
             </div>

@@ -1,6 +1,6 @@
             <div class="row-fluid featured-specs text-center">
                 <div>
-                    <h4>Downloads</h4>
+                    <h1>Downloads</h1>
                     Phalcon is a C extension so you need to download a binary for your platform or compile
                     it from source code.
                 </div>

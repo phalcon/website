@@ -10,7 +10,7 @@
                     <div class="span12 featured-specs">
 
                         <h3>Support</h3>
-                        Having problems using PhalconPHP? You're in the right place!
+                        Having problems using Phalcon? You're in the right place!
                         <br />
 
                         <h3>Latest version</h3>
@@ -26,7 +26,7 @@
                         to find what you are looking for. If your question is still not answered,
                         there are more options below.
 
-                        <h3>PhalconPHP Forum</h3>
+                        <h3>Phalcon Forum</h3>
                         You can ask a question in our
                         <a href="http://forum.phalconphp.com">Discussion Forum</a>.
 

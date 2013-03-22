@@ -1,6 +1,6 @@
             <div class="row-fluid featured-specs text-center">
                 <div>
-                    <h4>Documentation</h4>
+                    <h1>Documentation</h1>
                     Looking for the latest documentation for Phalcon? How does it
                     work internally? Any examples available? This is the place for you!
                 </div>
@@ -27,7 +27,7 @@
                         <li><a href="http://docs.phalconphp.com/en/latest/index.html">Latest Phalcon Documentation (1.0.0)</a>
                         [<a href="https://github.com/phalcon/docs">Github Repo</a>]</li>
                     </ul>
-                    There is also documentation outlining the internal API of PhalconPHP.
+                    There is also documentation outlining the internal API of Phalcon.
                     It can be found at:
                     <br />
                     <ul>
