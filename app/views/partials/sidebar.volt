@@ -18,8 +18,8 @@
             </li>
 
             <li class="nav-header">Services</li>
-            <li><a href="#">Consulting</a></li>
-            <li><a href="#">Hosting</a></li>
+            <li><a href="/consulting">Consulting</a></li>
+            <li><a href="/hosting">Hosting</a></li>
 
             <li class="nav-header">Social</li>
             <li>
