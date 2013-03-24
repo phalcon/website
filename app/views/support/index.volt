@@ -1,12 +1,12 @@
                 <div class="row-fluid featured-specs text-center">
                     <div>
-                        <h4>Support</h4>
+                        <h1>Support</h1>
                         Got stuck somewhere? Usage questions? Curious about the
                         project or a feature? You are in the right place!
                     </div>
                 </div>
 
-                <div class="row-fluid featured">
+                <div class="row-fluid secondary-block">
                     <div class="span12 featured-specs">
 
                         <h3>Support</h3>

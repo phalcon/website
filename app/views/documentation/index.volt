@@ -6,7 +6,7 @@
                 </div>
             </div>
 
-            <div class="row-fluid featured">
+            <div class="row-fluid secondary-block">
                 <div class="span12 featured-specs">
 
                     <h3>Documentation</h3>
@@ -48,7 +48,7 @@
 
                     <h3>Other resources</h3>
                     <ul>
-                        <li><a href="https://github.com/phalcon/cphalcon/wiki/PhalconPHP-Examples">List of examples</a></li>
+                        <li><a href="https://github.com/phalcon/cphalcon/wiki/Phalcon-Framework-Examples">List of examples</a></li>
                     </ul>
 
                 </div>

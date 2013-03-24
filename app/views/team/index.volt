@@ -6,7 +6,7 @@
                 </div>
             </div>
 
-            <div class="row-fluid featured">
+            <div class="row-fluid secondary-block">
                 <div class="span12 featured-specs">
 
                     <div class="media">
@@ -16,7 +16,7 @@
                         <div class="media-body">
                             <h4 class="media-heading">Andres Gutierrez</h4>
                             <p>
-                                Andres is no stranger to open source projects. In the last nine years, he has designed and released 
+                                Andres is no stranger to open source projects. In the last nine years, he has designed and released
                                 frameworks for PHP and has been involved in web development his main passion.
                             </p>
                             <p>

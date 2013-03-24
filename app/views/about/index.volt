@@ -32,7 +32,7 @@
 			as a guide</li>
 			<li><b>Improving the Framework</b> If you're a C programmer and want to lend us a hand, all the source code is available on <a href="https://github.com/phalcon/cphalcon">github</a>.
 			We invite you to make a fork and send some improvements. But, if you're a PHP programmer, and want to
-			see some amazing feature in Phalcon then post an idea in <a href="http://phalcon.uservoice.com/">Uservoice</a> and help us to
+			see some amazing feature in Phalcon then post an idea in <a href="http://github.com/phalcon/cphalcon/issues">Github/a> and help us to
 			implement it in the better shape.</li>
 			<li><b>Testing</b> No software is free of bugs, if you find out any, please do not hesitate to <a href="https://github.com/phalcon/cphalcon/issues/">tell us</a>.
 			Also running the <a href="https://github.com/phalcon/cphalcon/blob/master/unit-tests/README.md">unit-test suite</a> in your machine would discover some strange bug or configuration we have not taken into account</li>
@@ -44,12 +44,7 @@
 	</p>
 
 	<p>
-	Also, we’re a tiny core team of developers working our tails off, all the support you can provide to the project is really appreciate.
-	</p>
-
-	<p>
-	PS: We love travel, know other people and cultures, also work in interesting projects across the world. If you have something interesting for us,
-	please write us to <a href="mailto:team@phalconphp.com">team@phalconphp.com</a> or mention us on twitter <a href="http://twitter.com/phalconphp">@phalconphp</a>.
+	Also, we’re a tiny core team of developers working our tails off, all the support you can provide to the project is really appreciated.
 	</p>
 
 	<p>

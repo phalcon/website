@@ -6,7 +6,7 @@
                 </div>
             </div>
 
-            <div class="row-fluid featured">
+            <div class="row-fluid secondary-block">
                 <div class="span12">
 
                     <div class="featured-specs tabbable tabs-left">

@@ -9,12 +9,11 @@
     <div class="navbar">
         <div class="navbar-inner">
             <div class="container-fluid">
-                <a class="brand" href="/">
+                <a class="brand" href="{{ url('') }}">
                     <img src="img/logo-small-sp.png" alt="Logo Small Sp">
                 </a>
-                <div class="nav-collapse collapse">
-                    <ul class="nav nav-pills">
-                        <li class="active"><a href="{{ url('') }}">Home</a></li>
+                <div class="nav-collapse collapse pull-right">
+                    <ul class="nav">
                         <li><a href="{{ url('download') }}">Download</a></li>
                         <li><a href="{{ url('documentation') }}">Documentation</a></li>
                         <li><a href="{{ url('support') }}">Support</a></li>
