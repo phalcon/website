@@ -6,13 +6,13 @@
 
         <div id="content" class="container-fluid">
             <div class="row-fluid">
-                <section class="span9">
+                <section>
                     <div class="hero-unit">
                         {{ content() }}
                     </div>
                     <div class="clearfix"></div>
                 </section>
-                {{ partial('partials/sidebar') }}
+                {# {{ partial('partials/sidebar') }} #}
             </div>
         </div>
 

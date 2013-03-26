@@ -1,16 +1,16 @@
                 <div class="row-fluid featured-specs text-center">
                     <div>
-                        <h4>Support</h4>
+                        <h1>Support</h1>
                         Got stuck somewhere? Usage questions? Curious about the
                         project or a feature? You are in the right place!
                     </div>
                 </div>
 
-                <div class="row-fluid featured">
+                <div class="row-fluid secondary-block">
                     <div class="span12 featured-specs">
 
                         <h3>Support</h3>
-                        Having problems using PhalconPHP? You're in the right place!
+                        Having problems using Phalcon? You're in the right place!
                         <br />
 
                         <h3>Latest version</h3>
@@ -26,7 +26,7 @@
                         to find what you are looking for. If your question is still not answered,
                         there are more options below.
 
-                        <h3>PhalconPHP Forum</h3>
+                        <h3>Phalcon Forum</h3>
                         You can ask a question in our
                         <a href="http://forum.phalconphp.com">Discussion Forum</a>.
 

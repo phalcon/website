@@ -9,7 +9,6 @@
                     <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal — The safer, easier way to pay online.">
                     <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
                 </form>
-                </form>
             </li>
             <li>
                 <a href="http://flattr.com/thing/1134206/Phalcon-PHP-Framework" target="_blank">
@@ -18,8 +17,8 @@
             </li>
 
             <li class="nav-header">Services</li>
-            <li><a href="#">Consulting</a></li>
-            <li><a href="#">Hosting</a></li>
+            <li><a href="{{ url('consulting') }}">Consulting</a></li>
+            <li><a href="{{ url('hosting') }}">Hosting</a></li>
 
             <li class="nav-header">Social</li>
             <li>
@@ -36,14 +35,14 @@
             <li><a href="https://github.com/phalcon/cphalcon/issues">Issue Tracker</a></li>
 
             <li class="nav-header">Get Involved</li>
-            <li><a href="/team">Team</a></li>
+            <li><a href="{{ url('team') }}">Team</a></li>
             <li><a href="#">About</a></li>
             <li><a href="https://github.com/phalcon/cphalcon/wiki/Roadmap">Roadmap</a></li>
 
             <li class="nav-header">Get Updates</li>
             <li>
                 <div class="input-append">
-                    <form method="post" action="index/subscribe">
+                    <form method="post" action="{{ url('index/subscribe') }}">
                         <input class="span8" type="text" placeholder="Your email address" name="email" id="email" value="">
                         <br />
                         <input class="btn" type="submit" value="Subscribe">
