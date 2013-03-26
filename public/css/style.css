@@ -1,5 +1,5 @@
 /* ---------- Default */
-	body { background: #ffffff repeat top left; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
+	body { background: url('../img/noise-f1.gif') repeat top left; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
 
 /* ---------- Github */
 	#github-con { position: absolute; top: 0; right: 0; width: 220px; height: 180px; overflow: hidden; padding-top: 40px; z-index: 1031; }
@@ -30,7 +30,7 @@
 	#content .hero-unit .btn-group { margin-top: 20px; }
 	#content .hero-unit .btn-group button { padding: 20px 70px; }
 	#content .hero-unit .featured { margin-top: 40px; }
-	#content .hero-unit .featured-specs { font-size: 15px; }
+	#content .hero-unit .featured-specs { font-size: 15px; margin-top: 20px; margin-bottom: 15px; }
 	#content .hero-unit .featured-specs li { line-height: 23px; }
 	#content .featured-points { margin-top: 70px; }
 	#content .featured-points img { height: 96px; margin-bottom: 5px; position: relative; width: 96px; }
@@ -82,11 +82,11 @@ div.carousel-inner {
 }
 
 div.carousel-inner div.first-item {
-	background: #A4D8C2;
+	background: #ABD9D2;
 }
 
 div.carousel-inner div.second-item {
-	background: #98ACA9;
+	background: #8FC7C5;
 }
 
 div.carousel-inner div.item {
@@ -127,12 +127,12 @@ div.featured {
 	padding: 20px;
 	width: 91%;
 	padding-left: 70px;
-	height: 315px;
+	padding-bottom: 10px;
 }
 
 div.features {
-	color: #ffffff;
-	background: #DC7163;
+	color: #616161;
+	background: #EFEFEF;
 	border-radius: 5px;
 	padding: 20px;
 	padding-left: 50px;
@@ -141,17 +141,18 @@ div.features {
 	margin-top: 30px;
 }
 
-div.features a {
-	color: #ffffff;
+/*div.features a {
+	color: #84BCCC;
+	background: #e1e1e1;
 	font-weight: normal;
 	text-shadow: none;
-	background: #D35545;
 	padding: 10px;
 	line-height: 50px;
 	border-radius: 5px;
-}
+}*/
 
-div.featured div.span6 {
+div.featured div.span6,
+div.features div.span4 {
 	text-align: left;
 }
 
@@ -170,9 +171,9 @@ div.featured iframe {
 }
 
 div.features h2 {
-	color: #dadada;
+	color: #616161;
 	font-weight: bold;
-	font-size: 42px;
+	font-size: 36px;
 	margin-top: 20px;
 	margin-bottom: 15px;
 }
@@ -187,8 +188,8 @@ div.featured h2 {
 }
 
 div.main-footer {
-	color: #ffffff;
-	background: #303145;
+	color: #717171;
+	/*background: #303145;*/
 	border-radius: 5px;
 	padding: 20px;
 	padding-left: 50px;
@@ -207,7 +208,7 @@ div.main-footer div.block {
 }
 
 div.main-footer div.info {
-	background: #364E60;
+	background: #DFDFDF;
 }
 
 div.main-footer div.info input {
@@ -223,7 +224,7 @@ div.main-footer div.info input {
 	color: #ffffff;
 }
 
-div.main-footer div.info a {
+div.main-footer div.info a.flattr {
 	background: #3A896F;
 	border: none;
 	padding: 10px;
@@ -232,10 +233,18 @@ div.main-footer div.info a {
 	color: #ffffff;
 }
 
-div.main-footer div.block a { color: #ffffff; }
+div.main-footer div.block a {
+	color: rgba(0, 0, 0, 0.6);
+	font-size: 15px;
+	line-height: 18px;
+}
+
+div.main-footer div.block li {
+	line-height: 18px;
+}
 
 div.main-footer h4 {
-	color: #dadada;
+	color: rgba(0, 0, 0, 0.6);
 }
 
 div.main-footer div.info form {
