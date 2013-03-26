@@ -37,11 +37,11 @@
 		<div class="item second-item">
 
 			<h5 class="text-center">Develop faster websites that</h5>
-			<h2 class="text-center">MAKE YOUR USERS HAPPY</h3>
+			<h2 class="text-center">ENHANCE USER EXPERIENCE</h3>
 			<h5 class="text-center">
-				Faster websites increase the satisfaction of your users<br/>
-				also reduce the hardware requirements needed to run your
-				applications.
+				A user will stay on the same site less than 8 seconds<br>
+				so delivering your content as fast as possible keeps users interested<br>
+				and improves SEO applications.
 			</h5>
 
 			<div class="row-fluid">
@@ -66,9 +66,9 @@
 	<div class="featured-specs span6">
 		<h2>A framework as <br/>
 			C-extension.<br/>
-			Really?
+			Interesting!!
 		</h2>
-		<h4>Checkout this presentation</h4>
+		<h4>Check this presentation out for more:</h4>
 	</div>
 
 	<div class="featured-specs span6">
@@ -122,8 +122,8 @@
 
 	<div class="span4 block info">
 		<h4>Sponsor our work</h4>
-		Phalcon is open-sourced software licensed under the New BSD License also driven by voluntary effort.
-		Help us to maintain active the development donating to the project.
+		Phalcon is open-sourced software, licensed under the New BSD License.
+		You can help us keep the development active by donating to the project
 		<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 			<input type="hidden" name="cmd" value="_s-xclick">
 			<input type="hidden" name="hosted_button_id" value="7LSYMNMFZNG8W">
