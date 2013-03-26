@@ -25,7 +25,7 @@
 
 /* ---------- Containers */
 	#content { padding-top: 0px; text-shadow: 0px 1px 0px rgba(255,255,255, 1); text-align: center; }
-	#content .hero-unit { background: transparent; padding: 60px; padding-top: 25px; }
+	#content .hero-unit { background: transparent; margin: 0px; padding: 0px; }
 	#content .hero-unit h1 { font-size: 32px; }
 	#content .hero-unit .btn-group { margin-top: 20px; }
 	#content .hero-unit .btn-group button { padding: 20px 70px; }
@@ -79,6 +79,7 @@
 div.carousel-inner {
 	border-radius: 5px;
 	border: 1px solid #eaeaea;
+	margin-top: 20px;
 }
 
 div.carousel-inner div.first-item {
@@ -249,4 +250,9 @@ div.main-footer h4 {
 
 div.main-footer div.info form {
 	margin-top: 10px;
+}
+
+div.main-footer-inner {
+	width: 90%;
+	margin-left: 100px;
 }
