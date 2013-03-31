@@ -83,7 +83,7 @@ div.carousel-inner {
 }
 
 div.carousel-inner div.first-item {
-	background: #ABD9D2;
+	background: #ADD8C7;
 }
 
 div.carousel-inner div.second-item {
@@ -97,14 +97,14 @@ div.carousel-inner div.item {
 }
 
 div.carousel-inner div.first-item h2 {
-	color: #335742;
+	color: #303032;
 	letter-spacing: -1px;
-	font-size: 42px;
+	font-size: 52px;
 	text-shadow: none;
 }
 
 div.carousel-inner div.first-item h5 {
-	color: #335742;
+	color: #303032;
 	font-size: 18px;
 	text-shadow: none;
 }
@@ -112,7 +112,7 @@ div.carousel-inner div.first-item h5 {
 div.carousel-inner div.second-item h2 {
 	color: #111111;
 	letter-spacing: -1px;
-	font-size: 42px;
+	font-size: 52px;
 	text-shadow: none;
 }
 
@@ -155,6 +155,10 @@ div.features {
 div.featured div.span6,
 div.features div.span4 {
 	text-align: left;
+}
+
+div.features div.span4:first-child {
+	text-align: right;
 }
 
 div.featured h2 {
@@ -255,4 +259,9 @@ div.main-footer div.info form {
 div.main-footer-inner {
 	width: 90%;
 	margin-left: 100px;
+}
+
+#content pre,
+#content code {
+	text-shadow: none;
 }
