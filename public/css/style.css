@@ -265,3 +265,34 @@ div.main-footer-inner {
 #content code {
 	text-shadow: none;
 }
+
+div.main-footer {
+	background-image: -webkit-linear-gradient(top, #f2f2f2 0%, #fff 100%);
+	background-image: -moz-linear-gradient(top, #f2f2f2 0%, #fff 100%);
+	background-image: -o-linear-gradient(top, #f2f2f2 0%, #fff 100%);
+	background-image: -ms-linear-gradient(top, #f2f2f2 0%, #fff 100%);
+	background-image: #f2f2f2;
+	width: 100%;
+	color: #999;
+	min-height: 70px;
+	border-top: 1px solid rgba(0,0,0,0.1);
+	margin-top: 40px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-bottom: 20px;
+}
+
+.tabs-left > .nav-tabs {
+	margin-right: 0px;
+}
+
+.tab-content {
+	padding-left: 15px;
+	background: #fff;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	border-right: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
