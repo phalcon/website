@@ -5,7 +5,7 @@
                 </div>
             </div>
 
-            <div class="row-fluid secondary-block">
+            <div class="row-fluid secondary-block main-block">
                 <div class="span12 featured-specs">
 
                     <h3>Consulting</h3>

@@ -7,7 +7,7 @@
                 </div>
 
                 <div class="row-fluid secondary-block">
-                    <div class="span12 featured-specs">
+                    <div class="span12 featured-specs main-block">
 
                         <h3>Support</h3>
                         Having problems using Phalcon? You're in the right place!
