@@ -7,13 +7,13 @@
             </div>
 
             <div class="row-fluid secondary-block">
-                <div class="span12 featured-specs">
+                <div class="span12 featured-specs author">
 
                     <div class="media">
                         <a class="pull-left" href="#">
                             <img class="media-object img-circle" data-src="{{ url('img/team/andres.jpg') }}" style="width: 96px;" src="{{ url('img/team/andres.jpg') }}">
                         </a>
-                        <div class="media-body">
+                        <div class="media-body bio">
                             <h4 class="media-heading">Andres Gutierrez</h4>
                             <p>
                                 Andres is no stranger to open source projects. In the last nine years, he has designed and released
@@ -42,7 +42,7 @@
                         <a class="pull-left" href="#">
                             <img class="media-object img-circle" data-src="{{ url('img/team/nikos.jpg') }}" style="width: 96px;" src="{{ url('img/team/nikos.jpg') }}">
                         </a>
-                        <div class="media-body">
+                        <div class="media-body bio">
                             <h4 class="media-heading">Nikolaos (Nikos) Dimopoulos</h4>
                             </p>
                             <p>
@@ -72,7 +72,3 @@
                 </div>
             </div>
 
-
-<div class='team'>
-
-</div>

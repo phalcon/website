@@ -26,7 +26,7 @@
 /* ---------- Containers */
 	#content { padding-top: 0px; text-shadow: 0px 1px 0px rgba(255,255,255, 1); text-align: center; }
 	#content .hero-unit { background: transparent; margin: 0px; padding: 0px; }
-	#content .hero-unit h1 { font-size: 32px; }
+	#content .hero-unit h1 { font-size: 38px; }
 	#content .hero-unit .btn-group { margin-top: 20px; }
 	#content .hero-unit .btn-group button { padding: 20px 70px; }
 	#content .hero-unit .featured { margin-top: 40px; }
@@ -83,7 +83,7 @@ div.carousel-inner {
 }
 
 div.carousel-inner div.first-item {
-	background: #ABD9D2;
+	background: #ADD8C7;
 }
 
 div.carousel-inner div.second-item {
@@ -97,14 +97,14 @@ div.carousel-inner div.item {
 }
 
 div.carousel-inner div.first-item h2 {
-	color: #335742;
+	color: #303032;
 	letter-spacing: -1px;
-	font-size: 42px;
+	font-size: 52px;
 	text-shadow: none;
 }
 
 div.carousel-inner div.first-item h5 {
-	color: #335742;
+	color: #303032;
 	font-size: 18px;
 	text-shadow: none;
 }
@@ -112,7 +112,7 @@ div.carousel-inner div.first-item h5 {
 div.carousel-inner div.second-item h2 {
 	color: #111111;
 	letter-spacing: -1px;
-	font-size: 42px;
+	font-size: 52px;
 	text-shadow: none;
 }
 
@@ -155,6 +155,10 @@ div.features {
 div.featured div.span6,
 div.features div.span4 {
 	text-align: left;
+}
+
+div.features div.span4:first-child {
+	text-align: right;
 }
 
 div.featured h2 {
@@ -255,4 +259,64 @@ div.main-footer div.info form {
 div.main-footer-inner {
 	width: 90%;
 	margin-left: 100px;
+}
+
+#content pre,
+#content code {
+	text-shadow: none;
+}
+
+div.main-footer {
+	background: rgba(77, 77, 77, 0.2);
+	width: 100%;
+	color: #999;
+	min-height: 70px;
+	border-top: 1px solid rgba(0,0,0,0.1);
+	margin-top: 40px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-bottom: 20px;
+}
+
+.tabs-left > .nav-tabs {
+	margin-right: 0px;
+}
+
+.tab-content {
+	padding-left: 15px;
+	background: #fff;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	border-right: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+.author {
+	background: #fff;
+	padding: 25px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding-right: 50px;
+}
+
+.author h4 {
+	color: #333;
+}
+
+.bio p {
+	color: #717171;
+}
+
+pre code {
+	background: #333;
+}
+
+.main-block {
+	background: #fff;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding-left: 15px;
 }
