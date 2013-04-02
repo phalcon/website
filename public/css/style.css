@@ -54,7 +54,6 @@
 	footer ul li a:active { position: relative; top: 1px; }
 	footer ul li.nav-header { color: #fff; font-size: 15px; padding-left: 0px; text-shadow: none; }
 	footer h5 { margin-top: 0px; text-transform: uppercase; }
-	footer .credits { position: absolute; bottom: 0px; right: 20px; }
 
 .btn {
 	margin: 5px;
@@ -76,49 +75,26 @@
 	background: #23838F;
 }
 
-div.carousel-inner {
+div.intro-review {
 	border-radius: 5px;
 	border: 1px solid #eaeaea;
 	margin-top: 20px;
+	background: #fff;
+	padding: 10px;
+	padding-top: 25px;
+	padding-left: 30px;
 }
 
-div.carousel-inner div.first-item {
-	background: #ADD8C7;
-}
-
-div.carousel-inner div.second-item {
-	background: #8FC7C5;
-}
-
-div.carousel-inner div.item {
-	height: 315px;
-	padding-top: 70px;
-	padding-bottom: 20px;
-}
-
-div.carousel-inner div.first-item h2 {
+div.intro-review h2 {
 	color: #303032;
 	letter-spacing: -1px;
-	font-size: 52px;
+	font-size: 44px;
 	text-shadow: none;
 }
 
-div.carousel-inner div.first-item h5 {
-	color: #303032;
-	font-size: 18px;
-	text-shadow: none;
-}
-
-div.carousel-inner div.second-item h2 {
-	color: #111111;
-	letter-spacing: -1px;
-	font-size: 52px;
-	text-shadow: none;
-}
-
-div.carousel-inner div.second-item h5 {
-	color: 111111;
-	font-size: 18px;
+div.intro-review h5 {
+	color: #333333;
+	font-size: 16px;
 	text-shadow: none;
 }
 
@@ -157,7 +133,7 @@ div.features div.span4 {
 	text-align: left;
 }
 
-div.features div.span4:first-child {
+div.features div.span3:first-child {
 	text-align: right;
 }
 
@@ -214,6 +190,7 @@ div.main-footer div.block {
 
 div.main-footer div.info {
 	background: #DFDFDF;
+	color: #717171;
 }
 
 div.main-footer div.info input {
@@ -239,7 +216,7 @@ div.main-footer div.info a.flattr {
 }
 
 div.main-footer div.block a {
-	color: rgba(0, 0, 0, 0.6);
+	color: #fff;
 	font-size: 15px;
 	line-height: 18px;
 }
@@ -248,8 +225,8 @@ div.main-footer div.block li {
 	line-height: 18px;
 }
 
-div.main-footer h4 {
-	color: rgba(0, 0, 0, 0.6);
+div.main-footer div.info h4 {
+	color: #717171;
 }
 
 div.main-footer div.info form {
@@ -267,9 +244,9 @@ div.main-footer-inner {
 }
 
 div.main-footer {
-	background: rgba(77, 77, 77, 0.2);
+	background: rgba(11, 11, 11, 0.9);
 	width: 100%;
-	color: #999;
+	color: #fff;
 	min-height: 70px;
 	border-top: 1px solid rgba(0,0,0,0.1);
 	margin-top: 40px;
@@ -319,4 +296,8 @@ pre code {
 	border: 1px solid #ddd;
 	border-radius: 4px;
 	padding-left: 15px;
+}
+
+.hero-unit li {
+	line-height: 24px;
 }
