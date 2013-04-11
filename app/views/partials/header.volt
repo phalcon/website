@@ -4,10 +4,9 @@
 
     {% if config.app.env.devel %}
     {{ stylesheet_link(config.app.css.bootstrap, false) }}
-    {{ stylesheet_link(config.app.css.highlight, false) }}
-    {{ stylesheet_link(config.app.css.site) }}
+    {{ stylesheet_link(config.app.css.site, false) }}
     {% else %}
-    {{ stylesheet_link(config.app.css.compiled) }}
+    {{ stylesheet_link(config.app.css.compiled, false) }}
     {% endif %}
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
