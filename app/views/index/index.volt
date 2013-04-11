@@ -10,7 +10,7 @@
 			Phalcon is a web framework implemented as a C extension
 			<br />
 			offering
-			<a href="{{ doc_path }}/benchmark.html">high performance</a>
+			<a href="{{ doc_path }}/reference/benchmark.html">high performance</a>
 			and lower resource consumption.
 		</h5>
 
