@@ -1,3 +1,9 @@
+@import url("styles/ir_black.css");
+
+pre .title {
+    font-family: Courier;
+}
+
 /* ---------- Default */
 	body { background: url('../img/noise-f1.gif') repeat top left; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
 
