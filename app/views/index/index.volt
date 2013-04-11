@@ -67,8 +67,7 @@
 		<a href='{{ doc_path }}/reference/applications.html#multi-module'>Multi-Module</a> and
 		<a href='{{ doc_path }}/reference/micro.html'>Micro</a> Applications)</li>
 
-	<li>ORM (
-		<a href='{{ doc_path }}/reference//models.html#transactions'>Transactions</a>,
+	<li>ORM (<a href='{{ doc_path }}/reference//models.html#transactions'>Transactions</a>,
 		<a href='{{ doc_path }}/reference//models.html#behaviors'>Behaviors</a>,
 		<a href='{{ doc_path }}/reference//models.html#relationships-between-models'>Relations</a>,
 		<a href='{{ doc_path }}/reference//phql.html'>PHQL</a>,

@@ -64,6 +64,10 @@ sudo ./install</code></pre>
 
                                 Finally restart the webserver
 
+                                <h3>Debian</h3>
+                                There is a repo graciously offered by <a href='http://www.fortrabbit.com'>FortRabbit</a>
+                                <a href="http://debrepo.frbit.com/">here</a>
+
                                 <h3>Arch Linux</h3>
                                 There is a PKGBUILD for ArchLinux, available
                                 <a href="http://aur.archlinux.org/packages.php?ID=61950">here</a>
