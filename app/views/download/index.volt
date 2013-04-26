@@ -27,6 +27,27 @@
                                 download a binary package for the system of your choice or
                                 build it from sources.</p>
 
+                                <h3>Dependencies</h3>
+                                Although Phalcon does not binary link to other extensions it does
+                                use some of them to offer functionality. The extensions used are:
+                                <ul>
+                                    <li>mbstring</li>
+                                    <li>mcrypt</li>
+                                    <li>openssl</li>
+                                    <li>PDO</li>
+                                    <li>PDO/Mysql</li>
+                                    <li>PDO/Postgresql</li>
+                                    <li>PDO/Sqlite</li>
+                                    <li>PDO/Oracle</li>
+                                    <li>Mongo</li>
+                                </ul>
+                                It is not necessary for all the above extensions to be present
+                                in the system that has Phalcon installed. You can only install
+                                the ones that meet your needs. For instance if you use a MySQL
+                                database, then you can only load PDO and PDO/MySQL ignoring the
+                                Oracle, SQlite, Postgresql and Mongo.
+
+
                                 <h3>Windows</h3>
                                 To use phalcon on Windows you can download a DLL library.
                                 Edit your php.ini and append at the end:
