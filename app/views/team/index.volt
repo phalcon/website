@@ -104,8 +104,8 @@
                                 Russian (<a href='http://docs.phalconphp.ru'>http://docs.phalconphp.ru</a>),
                                 ongoing changes and corrections to the documentation in English, a group
                                 in the social network Vkontakte
-                                (<a href='http://vk.con/phalconphp'>http://vk.con/phalconphp</a>).
-                            </p> 
+                                (<a href='http://vk.com/phalconphp'>http://vk.com/phalconphp</a>).
+                            </p>
                         </div>
                     </div>
 
