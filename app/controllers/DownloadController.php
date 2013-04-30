@@ -10,7 +10,7 @@ class DownloadController extends \Ph\Controller
 
     public function indexAction()
     {
-        //if ($this->view->getCache()->exists('download')) {
+        if ($this->view->getCache()->exists('download')) {
 
             $path     = 'files/';
             $template = "Phalcon %s - Windows %s for PHP %s %s(%s)";
@@ -143,9 +143,9 @@ class DownloadController extends \Ph\Controller
             $this->view->setVar('old', $old);
             $this->view->setVar('alpha', $alpha);
 
-        //}
+        }
 
-        //$this->view->cache(array('key' => 'download'));
+        $this->view->cache(array('key' => 'download'));
     }
 
     public function oldAction()

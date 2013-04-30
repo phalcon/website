@@ -1,66 +1,40 @@
 {% set doc_path = 'http://docs.phalconphp.com/en/latest' %}
 
+<div class="intro-review row-fluid">
 
-<div id="myCarousel" class="carousel slide">
-	<ol class="carousel-indicators">
-		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-		<li data-target="#myCarousel" data-slide-to="1"></li>
-	</ol>
-	<!-- Carousel items -->
-	<div class="carousel-inner">
-		<div class="active item first-item">
+	<div class="span6" align="left">
 
-			<h5 class="text-center">Welcome to</h5>
-			<h2 class="text-center">THE FASTEST PHP FRAMEWORK</h3>
-			<h5 class="text-center">
-				Phalcon is a web framework implemented as a C extension
-				<br />
-				offering
-				<a href="{{ doc_path }}/benchmark.html">high performance</a>
-				and lower resource consumption.
-			</h5>
+		<h5>Welcome to</h5>
+		<h2>THE FASTEST PHP FRAMEWORK</h3>
+		<h5>
+			Phalcon is a web framework implemented as a C extension
+			<br />
+			offering
+			<a href="{{ doc_path }}/reference/benchmark.html">high performance</a>
+			and lower resource consumption.
+		</h5>
 
-			<div class="row-fluid">
-				<div class="text-center span12">
-					<div class="btn-group">
-						<a href='http://try.phalconphp.com'>
-							<button class="btn btn-large btn-primary">Try it Online</button>
-						</a>
-						<a href='{{ url('download') }}'>
-							<button class="btn btn-large btn-success">Download</button>
-						</a>
-					</div>
-				</div>
-			</div>
-
-		</div>
-		<div class="item second-item">
-
-			<h5 class="text-center">Develop faster websites that</h5>
-			<h2 class="text-center">ENHANCE USER EXPERIENCE</h3>
-			<h5 class="text-center">
-				A user will stay on the same site less than 8 seconds<br>
-				so delivering your content as fast as possible keeps users interested<br>
-				and improves SEO applications.
-			</h5>
-
-			<div class="row-fluid">
-				<div class="text-center span12">
-					<div class="btn-group">
-						<a href='http://try.phalconphp.com'>
-							<button class="btn btn-large btn-primary">Interactive Tutorial</button>
-						</a>
-
-					</div>
+		<div class="row-fluid">
+			<div class="text-center span12">
+				<div class="btn-group">
+					<a href='http://try.phalconphp.com'>
+						<button class="btn btn-large btn-primary">Try it Online</button>
+					</a>
+					<a href='{{ url('download') }}'>
+						<button class="btn btn-large btn-success">Download</button>
+					</a>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- Carousel nav -->
-	<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-	<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+
+	<div class="span6">
+		<iframe src="http://player.vimeo.com/video/63022489?portrait=0&amp;color=94bfab" width="450" height="282" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+	</div>
+
 </div>
 
+<!--
 <div class="featured row-fluid">
 
 	<div class="featured-specs span6">
@@ -77,10 +51,11 @@
 		</div>
 	</div>
 </div>
+-->
 
 <div class="features row-fluid">
 
-	<div class="span4">
+	<div class="span3">
 		<h2>Everything you need</h2>
 	</div>
 
@@ -92,8 +67,7 @@
 		<a href='{{ doc_path }}/reference/applications.html#multi-module'>Multi-Module</a> and
 		<a href='{{ doc_path }}/reference/micro.html'>Micro</a> Applications)</li>
 
-	<li>ORM (
-		<a href='{{ doc_path }}/reference//models.html#transactions'>Transactions</a>,
+	<li>ORM (<a href='{{ doc_path }}/reference//models.html#transactions'>Transactions</a>,
 		<a href='{{ doc_path }}/reference//models.html#behaviors'>Behaviors</a>,
 		<a href='{{ doc_path }}/reference//models.html#relationships-between-models'>Relations</a>,
 		<a href='{{ doc_path }}/reference//phql.html'>PHQL</a>,

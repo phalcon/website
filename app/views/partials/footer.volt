@@ -51,10 +51,10 @@
 		</div>
 	</div>
 
-	<div class="row">
+	<!--<div class="row">
 		<div class="credits">
 			<p>Powered by Phalcon {{ version() }}</p>
 		</div>
-	</div>
+	</div>-->
 
 </footer>
