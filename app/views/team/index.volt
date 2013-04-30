@@ -105,7 +105,7 @@
                                 ongoing changes and corrections to the documentation in English, a group
                                 in the social network Vkontakte
                                 (<a href='http://vk.con/phalconphp'>http://vk.con/phalconphp</a>).
-                            </p>
+                            </p> 
                         </div>
                     </div>
 
