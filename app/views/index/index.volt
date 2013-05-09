@@ -78,11 +78,12 @@
 		<a href='{{ doc_path }}/reference//models.html#profiling-sql-statements'>Profiling</a>,
 		Sharding)</li>
 
-		<li><a href='{{ doc_path }}/reference/request.html'>HTTP Request</a>/<a href='{{ doc_path }}/reference/response.html'>Response</a></li>
+		<li><a href='{{ doc_path }}/reference/request.html'>HTTP Request</a>/<a href='{{ doc_path }}/reference/response.html'>Response</a>/<a href='{{ doc_path }}/reference/cookies.html'>Cookies</a></li>
 		<li><a href='{{ doc_path }}/reference/odm.html'>ODM for Mongo</a></li>
 		<li><a href='{{ doc_path }}/reference/volt.html'>Template Engine (Volt)</a></li>
 		<li><a href='{{ doc_path }}/reference/di.html'>DI/IOC</a></li>
 		<li><a href='{{ doc_path }}/reference/events.html'>Events Management</a></li>
+		<li><a href='{{ doc_path }}/reference/crypt.html'>Encryption</a></li>
 	</div>
 
 	<div class="span4">
@@ -90,11 +91,12 @@
 			<li><a href='{{ doc_path }}/reference/escaper.html'>Escaping/Filtering</a></li>
 			<li><a href='{{ doc_path }}/reference/forms.html'>Forms Builder/Validation</a></li>
 			<li><a href='{{ doc_path }}/reference/flash.html'>Flash Messages</a></li>
-			<li><a href='{{ doc_path }}/reference/cache.html'>Caching</a></li>
+			<li><a href='{{ doc_path }}/reference/cache.html'>Cache</a></li>
 			<li><a href='{{ doc_path }}/reference/pagination.html'>Pagination</a></li>
 			<li><a href='{{ doc_path }}/reference/annotations.html'>Annotations</a></li>
 			<li><a href='{{ doc_path }}/reference/security.html'>Security</a></li>
 			<li><a href='{{ doc_path }}/reference/translate.html'>Translations</a></li>
+			<li><a href='{{ doc_path }}/reference/assets.html'>Assets Management</a></li>
 			<li><a href='{{ doc_path }}/reference/loader.html'>Universal Auto-Loader</a></li>
 			<li><a href='{{ doc_path }}/reference/logging.html'>Logging</a></li>
 			<li><a href='{{ doc_path }}/reference/cli.html'>CLI</a></li>

@@ -12,7 +12,7 @@
                 <a class="brand" href="{{ url('') }}">
                     <img src="img/logo-small-sp.png" alt="Logo Small Sp">
                 </a>
-                <div class="nav-collapse collapse pull-right">
+                <div class="nav-collapse collapse">
                     <ul class="nav">
                         <li><a href="{{ url('download') }}">Download</a></li>
                         <li><a href="{{ url('documentation') }}">Documentation</a></li>
