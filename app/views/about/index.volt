@@ -14,7 +14,7 @@ Here at Phalcon, we’re building a new generation framework for PHP, we want to
 
 <p><b>Screencasts</b> We all love screencasts, if you have some extra time and want to support the community with some nice videos teaching any framework's feature, it's very welcome. Check out our <a href="https://vimeo.com/user10964377">Vimeo Channel</a> as a guide.</p>
 
-<p><b>Testing</b> No software is free of bugs, if you find out any, please do not hesitate to tell us. We have a testsuite with more than <a href="travis-ci.org/phalcon/cphalcon">8000 tests</a>. However, unit-tests are never enough. Help us to improve our testsuite by adding more tests or improve the current ones. Every added test make the framework more stable and avoid introduce bugs by mistake or break something that is currently working. The overall stability of the frameworks highly depends on our tests.</p>
+<p><b>Testing</b> No software is free of bugs, if you find out any, please do not hesitate to tell us. We have a testsuite with more than <a href="https://travis-ci.org/phalcon/cphalcon">8000 tests</a>. However, unit-tests are never enough. Help us to improve our testsuite by adding more tests or improve the current ones. Every added test make the framework more stable and avoid introduce bugs by mistake or break something that is currently working. The overall stability of the frameworks highly depends on our tests.</p>
 
 <p><b>Sample Applications</b> Big examples help others to better understand how big things can be created with Phalcon, feel free to share repositories to sample applications helping others with their work, allow others to give you feedback about your work too!</p>
 
