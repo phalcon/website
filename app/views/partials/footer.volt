@@ -35,6 +35,7 @@
 		</div>
 
 		<div class="span3 block">
+
 			<h4>Support</h4>
 			<ul>
 				<li><a href="http://forum.phalconphp.com/">Forum/Community</a></li>
@@ -45,7 +46,7 @@
 			<h4>Get Involved</h4>
 			<ul>
 				<li><a href="{{ url('team') }}">Team</a></li>
-				<li><a href="#">About</a></li>
+				<li><a href="{{ url('about') }}">About</a></li>
 				<li><a href="https://github.com/phalcon/cphalcon/wiki/Roadmap">Roadmap</a></li>
 			</ul>
 		</div>

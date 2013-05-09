@@ -27,4 +27,13 @@ class Controller extends \Phalcon\Mvc\Controller
         $this->view->setVar('config', $this->config);
     }
 
+    public function beforeExecuteRoute($dispatcher)
+    {
+    	$this->view->cache(array('key' => $dispatcher->getControllerName()));
+
+    	if ($this->view->getCache()->exists($dispatcher->getControllerName())) {
+    		return false;
+    	}
+    }
+
 }

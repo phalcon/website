@@ -67,6 +67,46 @@
                                 whenever possible.
                             </p>
                         </div>
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object img-circle" data-src="{{ url('img/team/nikolay.jpg') }}" style="width: 96px;" src="{{ url('img/team/nikolay.jpg') }}">
+                        </a>
+                        <div class="media-body bio">
+                            <h4 class="media-heading">Nikolay (boston) Kirsh</h4>
+                            </p>
+                            <p>
+                                Nikolay has been developing web applications for over 10 years. He has
+                                been involved in high performance as well as complex websites and designs.
+                            </p>
+                            <p>
+                                Nikolay has been working with Open Source projects for a long time, utilizing
+                                them whenever requirements allow. He thus started using his personal time
+                                to give back to the community, by forking projects, offering architectural
+                                changes and suggestions, as well as performance ones. He has been instrumental
+                                in improving Open Source CMS projects receiving positive feedback from the
+                                community.
+                            </p>
+                            <p>
+                                His continuous involvement with open source project has helped him
+                                advance his technical knowledge while abiding by the give back to the
+                                community mentality.
+                            </p>
+                            <p>
+                                Nikolay is an avid supporter of maximizing performance in web applications.
+                                After his introduction to Phalcon, he decided to pursue and use the project
+                                and become an Evangelist for it. He is leading the effort toward the Russian
+                                community and offers resources for Russian speaking developers.
+                            </p>
+                            <p>
+                                His contributions include: A mirror of the main website in Russian
+                                (<a href='http://www.phalconphp.ru'>http://www.phalconphp.ru</a>),
+                                a mirror of the documentation repository in
+                                Russian (<a href='http://docs.phalconphp.ru'>http://docs.phalconphp.ru</a>),
+                                ongoing changes and corrections to the documentation in English, a group
+                                in the social network Vkontakte
+                                (<a href='http://vk.com/phalconphp'>http://vk.com/phalconphp</a>).
+                            </p>
+                        </div>
                     </div>
 
                 </div>
