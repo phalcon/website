@@ -7,7 +7,7 @@
                 </div>
             </div>
 
-            <div class="row-fluid featured">
+            <div class="row-fluid secondary-block">
                 <div class="span12 featured-specs">
 
                     <h3>Fortrabbit</h3>

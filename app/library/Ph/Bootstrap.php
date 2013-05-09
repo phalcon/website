@@ -21,7 +21,8 @@ use \Phalcon\Logger\Adapter\File as PhLogger;
 use \Phalcon\Db\Adapter\Pdo\Mysql as PhMysql;
 use \Phalcon\Session\Adapter\Files as PhSession;
 use \Phalcon\Cache\Frontend\Output as PhCacheFront;
-use \Phalcon\Cache\Backend\File as PhCacheBack;
+use \Phalcon\Cache\Backend\File as PhCacheFiles;
+use \Phalcon\Cache\Backend\Apc as PhCacheApc;
 use \Phalcon\Mvc\Application as PhApplication;
 use \Phalcon\Mvc\Dispatcher as PhDispatcher;
 use \Phalcon\Mvc\Router as PhRouter;
@@ -316,10 +317,14 @@ class Bootstrap
 			$lifetime        = $config->app->cache->lifetime;
 			$cacheDir        = $config->app->cache->cacheDir;
 			$frontEndOptions = array('lifetime' => $lifetime);
-			$backEndOptions  = array('cacheDir' => ROOT_PATH . $cacheDir);
-
 			$frontCache = new PhCacheFront($frontEndOptions);
-			$cache      = new PhCacheBack($frontCache, $backEndOptions);
+
+			if (function_exists('apc_store')) {
+				$cache      = new PhCacheApc($frontCache);
+			} else {
+				$backEndOptions  = array('cacheDir' => ROOT_PATH . $cacheDir);
+				$cache      = new PhCacheFiles($frontCache, $backEndOptions);
+			}
 
 			return $cache;
 		});

@@ -2,7 +2,7 @@
                 <div>
                     <h1>Downloads</h1>
                     Phalcon is a C extension so you need to download a binary for your platform or compile
-                    it from source code.
+                    it from source code.</p>
                 </div>
             </div>
 
@@ -11,53 +11,15 @@
 
                     <div class="featured-specs tabbable tabs-left">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="#compiling" data-toggle="tab">Compiling</a></li>
+                            <li class="active"><a href="#compiling" data-toggle="tab">Linux/Unix/Mac</a></li>
                             <li><a href="#windows" data-toggle="tab">Windows DLLs</a></li>
+                            <li><a href="#devtools" data-toggle="tab">Developer Tools</a></li>
                         </ul>
                         <div class="tab-content">
 
                             <div class="tab-pane active" id="compiling">
 
-                                Phalcon PHP is written in C with platform independence in mind.
-                                As a result, Phalcon PHP is available on
-                                <a href="http://www.microsoft.com/windows">Microsoft Windows</a>,
-                                <a href="http://kernel.org">GNU/Linux</a>,
-                                <a href="http://www.freebsd.org/">FreeBSD</a> and
-                                <a href="http://www.apple.com">Mac OS X</a>. You can either
-                                download a binary package for the system of your choice or
-                                build it from sources.</p>
-
-                                <h3>Dependencies</h3>
-                                Although Phalcon does not binary link to other extensions it does
-                                use some of them to offer functionality. The extensions used are:
-                                <ul>
-                                    <li>mbstring</li>
-                                    <li>mcrypt</li>
-                                    <li>openssl</li>
-                                    <li>PDO</li>
-                                    <li>PDO/Mysql</li>
-                                    <li>PDO/Postgresql</li>
-                                    <li>PDO/Sqlite</li>
-                                    <li>PDO/Oracle</li>
-                                    <li>Mongo</li>
-                                </ul>
-                                It is not necessary for all the above extensions to be present
-                                in the system that has Phalcon installed. You can only install
-                                the ones that meet your needs. For instance if you use a MySQL
-                                database, then you can only load PDO and PDO/MySQL ignoring the
-                                Oracle, SQlite, Postgresql and Mongo.
-
-
-                                <h3>Windows</h3>
-                                To use phalcon on Windows you can download a DLL library.
-                                Edit your php.ini and append at the end:
-
-                                <pre><code>extension=php_phalcon.dll</code></pre>
-
-                                Restart your webserver to load the extension.
-                                (Click the Windows DLL link on the left to download the latest DLLs)
-
-                                <h3>Linux</h3>
+                                <h3>Compilation</h3>
                                 On platform Linux you can easily compile and install the extension from source code.
 
                                 <h4>Requirements</h4>
@@ -100,12 +62,42 @@ sudo ./install</code></pre>
                                 or
                                 <pre><code># cd /usr/ports/www/phalcon && make install clean</code></pre>
 
+                                <h3>Dependencies</h3>
+                                Although Phalcon does not binary link to other extensions it does
+                                use some of them to offer functionality. The extensions used are:
+                                <ul>
+                                    <li>mbstring</li>
+                                    <li>mcrypt</li>
+                                    <li>openssl</li>
+                                    <li>PDO</li>
+                                    <li>PDO/Mysql</li>
+                                    <li>PDO/Postgresql</li>
+                                    <li>PDO/Sqlite</li>
+                                    <li>PDO/Oracle</li>
+                                    <li>Mongo</li>
+                                </ul>
+                                It is not necessary for all the above extensions to be present
+                                in the system that has Phalcon installed. You can only install
+                                the ones that meet your needs. For instance if you use a MySQL
+                                database, then you can only load PDO and PDO/MySQL ignoring the
+                                Oracle, SQlite, Postgresql and Mongo.
+
                                 <h3>Need help?</h3>
                                 Have a look at our {{ link_to('support', 'support page') }} for
                                 ways to get support. We will do our best to help you.
 
                             </div>
                             <div class="tab-pane" id="windows">
+
+                                <h3>Windows</h3>
+                                To use phalcon on Windows you can download a DLL library.
+                                Edit your php.ini and append at the end:
+
+                                <pre><code>extension=php_phalcon.dll</code></pre>
+
+                                Restart your webserver to load the extension.
+
+                                <hr>
 
                                 <div class="alert alert-info">
                                     We highly recommend you to use the latest version of PHP so as
@@ -142,25 +134,6 @@ sudo ./install</code></pre>
                                         </td>
                                     </tr>
 
-
-                                    <tr><td colspan='2'><br /></td></tr>
-
-
-                                    <tr>
-                                        <td colspan="2">
-                                            <strong>Developer Tools</strong>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Phalcon Developer Tools
-                                        </td>
-                                        <td class="text-right">
-                                            <a target="_download" href="https://github.com/phalcon/phalcon-devtools/zipball/master" title="GitHub Repo">github</a> <a href="http://pear.phalconphp.com/" title="PEAR Channel">pear</a>
-                                        </td>
-                                    </tr>
-
-
                                     <tr><td colspan='2'><br /></td></tr>
 
                                     {% if alpha|length > 0 %}
@@ -170,10 +143,10 @@ sudo ./install</code></pre>
                                         </td>
                                     </tr>
 
-                                    <?php foreach ($alpha as $version_key => $version) { ?>
+                                    {% for version_key, version in alpha %}
                                     <tr>
                                         <td colspan="2">
-                                            <strong><?php echo $version_key; ?></strong>
+                                            <strong>{{ version_key }}</strong>
                                         </td>
                                     </tr>
                                     {% for file in version %}
@@ -188,7 +161,7 @@ sudo ./install</code></pre>
                                         </td>
                                     </tr>
                                     {% endfor %}
-                                    <?php } ?>
+                                    {% endfor %}
                                     <tr>
                                         <td>
                                             Source Code (please switch to the relevant branch)
@@ -205,10 +178,10 @@ sudo ./install</code></pre>
                                             <strong>Older versions</strong>
                                         </td>
                                     </tr>
-                                    <?php foreach ($old as $version_key => $version) { ?>
+                                    {% for version_key, version in old %}
                                     <tr>
                                         <td colspan='2'>
-                                            <strong><?php echo $version_key; ?></strong>
+                                            <strong>{{ version_key }}</strong>
                                         </td>
                                     </tr>
                                     {% for file in version %}
@@ -223,7 +196,7 @@ sudo ./install</code></pre>
                                         </td>
                                     </tr>
                                     {% endfor %}
-                                    <?php } ?>
+                                    {% endfor %}
                                     <tr>
                                         <td>
                                             Source Code
@@ -236,6 +209,39 @@ sudo ./install</code></pre>
                                 </table>
 
                             </div>
+
+                            <div class="tab-pane" id="devtools">
+
+                                <h3>Developer Tools</h3>
+
+                                <p>This tools provide you useful scripts to generate code helping to develop faster and easy applications that use with Phalcon framework.</p>
+
+                                <h4>Installing via Composer</h4>
+                                <p>Install composer in a common location or in your project:</p>
+
+<pre><code>curl -s http://getcomposer.org/installer | php</code></pre>
+
+Create the composer.json file as follows:
+
+<pre><code>{
+    "require": {
+        "phalcon/devtools": "1.*"
+    }
+}
+</code></pre>
+
+Run the composer installer:
+
+<pre><code>php composer.phar install</code></pre>
+
+Create a symbolink link to the phalcon.php script:
+
+<pre><code>ln -s ~/devtools/phalcon.php /usr/bin/phalcon
+chmod ugo+x /usr/bin/phalcon
+</code></pre>
+
+                            </div>
+
                         </div>
                     </div> <!-- /tabbable -->
 
