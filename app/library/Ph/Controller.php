@@ -29,9 +29,12 @@ class Controller extends \Phalcon\Mvc\Controller
 
     public function beforeExecuteRoute($dispatcher)
     {
-    	$this->view->cache(array('key' => $dispatcher->getControllerName()));
 
-    	if ($this->view->getCache()->exists($dispatcher->getControllerName())) {
+        $key = preg_replace('/[^a-zA-Z0-9\_]/', '', $dispatcher->getControllerName() . '-' . $dispatcher->getActionName());
+
+    	$this->view->cache(array('key' => $key));
+
+    	if ($this->view->getCache()->exists($key)) {
     		return false;
     	}
     }
