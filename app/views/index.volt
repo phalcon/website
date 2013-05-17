@@ -24,7 +24,7 @@
         {{ javascript_include(config.app.js.bootstrap_tab, false) }}
         {{ javascript_include(config.app.js.highlight, false) }}
         {{ javascript_include(config.app.js.helper, false) }}
-        {% else %}
+        {%- else -%}
         {{ javascript_include(config.app.js.compiled) }}
         {% endif %}
 

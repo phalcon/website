@@ -14,24 +14,24 @@
 
 namespace Ph;
 
-use \Phalcon\Config\Adapter\Ini as PhConfig;
-use \Phalcon\Loader as PhLoader;
-use \Phalcon\Flash\Direct as PhFlash;
-use \Phalcon\Logger\Adapter\File as PhLogger;
-use \Phalcon\Db\Adapter\Pdo\Mysql as PhMysql;
-use \Phalcon\Session\Adapter\Files as PhSession;
-use \Phalcon\Cache\Frontend\Output as PhCacheFront;
-use \Phalcon\Cache\Backend\File as PhCacheFiles;
-use \Phalcon\Cache\Backend\Apc as PhCacheApc;
-use \Phalcon\Mvc\Application as PhApplication;
-use \Phalcon\Mvc\Dispatcher as PhDispatcher;
-use \Phalcon\Mvc\Router as PhRouter;
-use \Phalcon\Mvc\Url as PhUrl;
-use \Phalcon\Mvc\View as PhView;
-use \Phalcon\Mvc\View\Engine\Volt as PhVolt;
-use \Phalcon\Mvc\Model\Metadata\Memory as PhMetadataMemory;
-use \Phalcon\Events\Manager as PhEventsManager;
-use \Phalcon\Exception as PhException;
+use Phalcon\Config\Adapter\Ini as PhConfig,
+	Phalcon\Loader as PhLoader,
+	Phalcon\Flash\Direct as PhFlash,
+	Phalcon\Logger\Adapter\File as PhLogger,
+	Phalcon\Db\Adapter\Pdo\Mysql as PhMysql,
+	Phalcon\Session\Adapter\Files as PhSession,
+	Phalcon\Cache\Frontend\Output as PhCacheFront,
+	Phalcon\Cache\Backend\File as PhCacheFiles,
+	Phalcon\Cache\Backend\Apc as PhCacheApc,
+	Phalcon\Mvc\Application as PhApplication,
+	Phalcon\Mvc\Dispatcher as PhDispatcher,
+	Phalcon\Mvc\Router as PhRouter,
+	Phalcon\Mvc\Url as PhUrl,
+	Phalcon\Mvc\View as PhView,
+	Phalcon\Mvc\View\Engine\Volt as PhVolt,
+	Phalcon\Mvc\Model\Metadata\Memory as PhMetadataMemory,
+	Phalcon\Events\Manager as PhEventsManager,
+	Phalcon\Exception as PhException;
 
 class Bootstrap
 {
@@ -46,6 +46,7 @@ class Bootstrap
 	 */
 	public function __construct($di)
 	{
+
 
 		$configFile = ROOT_PATH . '/app/config/config.ini';
 
@@ -71,21 +72,15 @@ class Bootstrap
 
 		$config = $this->_config;
 
-		$loaders = array(
-			'loader',
-			'environment',
-			'url',
-			'dispatcher',
-			'router',
-			'view',
-			'logger',
-			'database',
-			'session',
-			'cache',
-		);
-		foreach ($loaders as $service){
-			$this->{'init' . $service}($config, $options);
-		}
+		$this->initloader($config, $options);
+		$this->initenvironment($config, $options);
+		$this->initurl($config, $options);
+		$this->initdispatcher($config, $options);
+		$this->initrouter($config, $options);
+		$this->initview($config, $options);
+		$this->initlogger($config, $options);
+		$this->initdatabase($config, $options);
+		$this->initcache($config, $options);
 
 		$application = new PhApplication();
 		$application->setDI($this->_di);
@@ -161,23 +156,22 @@ class Bootstrap
 
 		$di->set('dispatcher', function() use ($di) {
 
-			$evManager = $di->getShared('eventsManager');
+			$evManager = new PhEventsManager();
 
-			$evManager->attach(
-				"dispatch:beforeException", function($event, $dispatcher, $exception){
-					switch ($exception->getCode()) {
-						case PhDispatcher::EXCEPTION_HANDLER_NOT_FOUND:
-						case PhDispatcher::EXCEPTION_ACTION_NOT_FOUND:
-							$dispatcher->forward(array(
-								'controller' => 'index',
-								'action' => 'show404'
-							));
-							return false;
-					}
+			$evManager->attach("dispatch:beforeException", function($event, $dispatcher, $exception){
+				switch ($exception->getCode()) {
+					case PhDispatcher::EXCEPTION_HANDLER_NOT_FOUND:
+					case PhDispatcher::EXCEPTION_ACTION_NOT_FOUND:
+						$dispatcher->forward(array(
+							'controller' => 'index',
+							'action' => 'show404'
+						));
+						return false;
+				}
 			});
+
 			$dispatcher = new PhDispatcher();
 			$dispatcher->setEventsManager($evManager);
-
 			return $dispatcher;
 		});
 	}
@@ -188,13 +182,11 @@ class Bootstrap
 
 			$router = new PhRouter();
 
-			$router->add("/documentation/([a-zA-Z0-9_]+)",
-				array(
-					"controller" => "documentation",
-					"action" => "redirect",
-					"name" => 1,
-				)
-			);
+			$router->add("/documentation/([a-zA-Z0-9_]+)", array(
+				"controller" => "documentation",
+				"action" => "redirect",
+				"name" => 1,
+			));
 
 			$router->add("/documentation/index", array(
 				"controller" => "documentation",
@@ -251,7 +243,6 @@ class Bootstrap
 	{
 		$this->_di->set('logger', function() use ($config) {
 			$logger = new PhLogger(ROOT_PATH . $config->app->logger->file);
-			//$logger->setFormat($config->app->logger->format);
 			return $logger;
 		}, true);
 	}
@@ -275,19 +266,6 @@ class Bootstrap
 
 			return $connection;
 		});
-
-		/**
-		 * If the configuration specify the use of metadata adapter use it or use memory otherwise
-		 */
-		$this->_di->set('modelsMetadata', function() use ($config) {
-			if (isset($config->models->metadata)) {
-				$metaDataConfig  = $config->models->metadata;
-				$metadataAdapter = 'Phalcon\Mvc\Model\Metadata\\'.$metaDataConfig->adapter;
-				return new $metadataAdapter();
-			} else {
-				return new PhMetadataMemory();
-			}
-		}, true);
 	}
 
 	/**
@@ -314,15 +292,12 @@ class Bootstrap
 		$this->_di->set('viewCache', function() use ($config) {
 
 			// Get the parameters
-			$lifetime        = $config->app->cache->lifetime;
-			$cacheDir        = $config->app->cache->cacheDir;
-			$frontEndOptions = array('lifetime' => $lifetime);
-			$frontCache = new PhCacheFront($frontEndOptions);
+			$frontCache = new PhCacheFront(array('lifetime' => $config->app->cache->lifetime));
 
 			if (function_exists('apc_store')) {
 				$cache      = new PhCacheApc($frontCache);
 			} else {
-				$backEndOptions  = array('cacheDir' => ROOT_PATH . $cacheDir);
+				$backEndOptions  = array('cacheDir' => ROOT_PATH . $config->app->cache->cacheDir);
 				$cache      = new PhCacheFiles($frontCache, $backEndOptions);
 			}
 

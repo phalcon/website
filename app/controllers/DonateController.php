@@ -4,7 +4,7 @@ class DonateController extends \Ph\Controller
 {
     public function initialize()
     {
-        \Phalcon\Tag::setTitle('Team');
+        \Phalcon\Tag::setTitle('Donate');
         parent::initialize();
     }
 

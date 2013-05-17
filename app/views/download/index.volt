@@ -225,7 +225,7 @@ Create the composer.json file as follows:
 
 <pre><code>{
     "require": {
-        "phalcon/devtools": "1.*"
+        "phalcon/devtools": "dev-master"
     }
 }
 </code></pre>

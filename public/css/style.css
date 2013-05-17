@@ -86,9 +86,8 @@ div.intro-review {
 	border: 1px solid #eaeaea;
 	margin-top: 20px;
 	background: #fff;
-	padding: 5px;
-	padding-top: 25px;
-	padding-top: 10px;
+	padding-left: 15px;
+    padding-top: 25px;
 }
 
 div.intro-review h2 {

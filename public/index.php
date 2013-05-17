@@ -16,4 +16,3 @@ $di  = new \Phalcon\DI\FactoryDefault();
 $app = new \Ph\Bootstrap($di);
 
 echo $app->run(array());
-
