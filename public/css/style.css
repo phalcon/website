@@ -5,19 +5,56 @@ pre .title {
 }
 
 /* ---------- Default */
-body { background: url('../img/noise-f1.gif') repeat top left; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
+body {
+	background: url('../img/noise-f1.gif') repeat top left;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
 
 /* ---------- Github */
-#github-con { position: absolute; top: 0; right: 0; width: 280px; height: 180px; overflow: hidden; padding-top: 40px; z-index: 1031; }
-#github-con #github { background-color: #6FB52E; -webkit-transform: rotate(60deg); -moz-transform: rotate(60deg); transform: rotate(60deg); -webkit-box-shadow: 0 0 0 1px #1d212e inset,0 0 2px 1px #fff inset,0 0 1em #333333; -moz-box-shadow: 0 0 0 1px #1d212e inset,0 0 2px 1px #fff inset,0 0 1em #333333; box-shadow: 0 0 0 1px #1d212e inset,0 0 2px 1px #fff inset,0 0 1em #333333; color: rgba(255,255,255,0.90); padding: .6em 3.5em; font: bold 12px sans-serif; text-align: center; text-decoration: none; text-shadow: 1px -1px 8px rgba(0,0,0,0.60); -webkit-user-select: none; -moz-user-select: none; user-select: none; }
-#github-con #github a { color: #fff; }
-#github-con #github a:hover { text-decoration: none; }
+#github-con {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 230px;
+	height: 180px;
+	overflow: hidden;
+	padding-top: 40px;
+	z-index: 1031;
+}
+
+#github-con #github {
+	background-color: #6FB52E;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
+	-webkit-box-shadow: 0 0 0 1px #1d212e inset,0 0 2px 1px #fff inset,0 0 1em #333333;
+	-moz-box-shadow: 0 0 0 1px #1d212e inset,0 0 2px 1px #fff inset,0 0 1em #333333;
+	box-shadow: 0 0 0 1px #1d212e inset,0 0 2px 1px #fff inset,0 0 1em #333333;
+	color: rgba(255,255,255,0.90);
+	padding: .6em 3.5em;
+	font: bold 12px sans-serif;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 1px -1px 8px rgba(0,0,0,0.60);
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+#github-con #github a {
+	color: #fff;
+}
+
+#github-con #github a:hover {
+	text-decoration: none;
+}
 
 /* ---------- Header */
 header {}
 header .navbar { margin-bottom: 0px; }
 header .navbar-inner { border: none; border-bottom: 1px solid #000; border-radius: 0px; }
-/*header .navbar-inner { background-color: #2c2c2c; background-image: linear-gradient(top,#333,#222); background-image: -webkit-linear-gradient(top,#333,#222); background-image: -moz-linear-gradient(top,#333,#222); height: 50px; }*/
 header .navbar-inner { background: #1A1A1A; }
 header .navbar-inner .brand img { height: 30px; }
 header .navbar-inner .nav { margin-top: 5px; margin-right: 100px; }
@@ -314,4 +351,8 @@ div.about {
 
 div.ribbon {
 	width: 50px;
+}
+
+.main-footer h4 {
+
 }

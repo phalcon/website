@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-    {{ partial('partials/header') }}
+    {% include 'partials/header.volt' %}
     <body>
+
         {{ partial('partials/navbar') }}
 
         <div id="content" class="container-fluid">
@@ -12,11 +13,10 @@
                     </div>
                     <div class="clearfix"></div>
                 </section>
-                {# {{ partial('partials/sidebar') }} #}
             </div>
         </div>
 
-        {{ partial('partials/footer') }}
+        {% include 'partials/footer.volt' %}
 
         {% if config.app.env.devel %}
         {{ javascript_include(config.app.js.jquery, false) }}

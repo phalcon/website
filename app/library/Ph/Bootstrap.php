@@ -82,8 +82,7 @@ class Bootstrap
 		$this->initdatabase($config, $options);
 		$this->initcache($config, $options);
 
-		$application = new PhApplication();
-		$application->setDI($this->_di);
+		$application = new PhApplication($this->_di);
 
 		return $application->handle()->getContent();
 	}
