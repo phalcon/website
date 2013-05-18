@@ -34,25 +34,6 @@
 
 </div>
 
-<!--
-<div class="featured row-fluid">
-
-	<div class="featured-specs span6">
-		<h2>A framework as <br/>
-			C-extension.<br/>
-			Interesting!!
-		</h2>
-		<h4>Check this presentation out for more:</h4>
-	</div>
-
-	<div class="featured-specs span6">
-		<div id="speakerdeck_presentation_wrapper_4edf11f72a2b980050009919">
-			<iframe class="present_iframe" frameBorder="0" allowTransparency="true" mozallowfullscreen="true" webkitallowfullscreen="true" id="presentation_frame_4edf11f72a2b980050009919" src="//speakerdeck.com/embed/4edf11f72a2b980050009919?size=preview&slide=1" width="370" height="305"></iframe>
-		</div>
-	</div>
-</div>
--->
-
 <div class="features row-fluid">
 
 	<div class="span3">

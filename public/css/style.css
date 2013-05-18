@@ -57,7 +57,6 @@ header .navbar-inner .nav { margin-top: 5px; margin-right: 100px; }
 header .navbar-inner .nav li { text-transform: uppercase; font-size: 12px; font-weight: bold; margin-right: 5px; }
 header .navbar-inner .nav li > a { color: #dadada; text-shadow: none; }
 header .navbar-inner .nav li > a:hover { color: #d3ebe3; }
-header .navbar-inner .nav li > a:active { position: relative; top: 2px; }
 header .navbar-inner .nav li.active {}
 header .navbar-inner .nav li.active > a { color: #dadada; background: none; box-shadow: none; }
 header .navbar-inner .nav li.active > a:hover { background: none; box-shadow: none; color: #d3ebe3; }
@@ -350,5 +349,5 @@ div.ribbon {
 }
 
 .main-footer h4 {
-
+	color: #d3ebe3;
 }
