@@ -1,4 +1,4 @@
-            <div class="row-fluid featured-specs text-center">
+            <div class="text-center ">
                 <div>
                     <h1>Downloads</h1>
                     Phalcon is a C extension so you need to download a binary for your platform or compile
@@ -6,14 +6,14 @@
                 </div>
             </div>
 
-            <div class="row-fluid secondary-block">
-                <div class="span12">
+            <div class="main-block">
 
-                    <div class="featured-specs tabbable tabs-left">
+                    <div class="tabbable tabs">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#compiling" data-toggle="tab">Linux/Unix/Mac</a></li>
                             <li><a href="#windows" data-toggle="tab">Windows DLLs</a></li>
                             <li><a href="#devtools" data-toggle="tab">Developer Tools</a></li>
+                            <li><a href="#stubs" data-toggle="tab">IDE Stubs</a></li>
                         </ul>
                         <div class="tab-content">
 
@@ -22,6 +22,8 @@
                                 <h3>Compilation</h3>
                                 On platform Linux you can easily compile and install the extension from source code.
 
+                                Full documentation for <a href="http://docs.phalconphp.com/en/latest/reference/install.html#linux-solaris-mac">Linux/Solaris/Mac</a>
+                                
                                 <h4>Requirements</h4>
                                 We need some packages previously installed
 
@@ -97,6 +99,18 @@ sudo ./install</code></pre>
 
                                 Restart your webserver to load the extension.
 
+                                Full documentation: <a href="http://docs.phalconphp.com/en/latest/reference/install.html#installation">Installation on Windows</a>
+                                <div class="section" id="related-guides">
+                                    <h3>Related Guides</h3>
+                                    <div class="toctree-wrapper compound">
+                                        <ul>
+                                            <li class="toctree-l1"><a class="reference internal" href="http://docs.phalconphp.com/en/latest/reference/xampp.html">Installation on XAMPP</a></li>
+                                            <li class="toctree-l1"><a class="reference internal" href="http://docs.phalconphp.com/en/latest/reference/wamp.html">Installation on WAMP</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                
                                 <hr>
 
                                 <div class="alert alert-info">
@@ -242,9 +256,30 @@ chmod ugo+x /usr/bin/phalcon
 
                             </div>
 
+                            <div class="tab-pane" id="stubs">
+
+                                <h3>Phalcon stubs for IDE autocompletion</h3>
+
+                                <p>Intrinsicly procrastinate innovative growth strategies vis-a-vis backend resources. Interactively deploy ethical partnerships and error-free information. Enthusiastically supply e-business alignments after leveraged best practices. Authoritatively empower adaptive best practices and web-enabled data. Completely expedite high standards in technology whereas cooperative core competencies.
+                                    Synergistically morph web-enabled markets rather than seamless bandwidth. Completely transition 24/365 channels with unique results. Professionally simplify timely interfaces via end-to-end information. Collaboratively e-enable parallel e-business without error-free interfaces. Seamlessly whiteboard plug-and-play value via 24/365 outsourcing.
+                                    Progressively e-enable interoperable internal or "organic" sources vis-a-vis interdependent web services. Competently provide access to orthogonal models whereas tactical testing procedures. Energistically syndicate an expanded array of quality vectors and emerging leadership skills. Globally underwhelm corporate information without premium products. Interactively network robust initiatives rather than professional portals.
+                                <br />
+                                <h4>Current stubs:</h4>
+                                <ul>
+                                    <li><a href="#">Stubs for Phalcon 1.1.0 (stable)</a></li>
+                                    <li><a href="#">Stubs for Phalcon 1.0.1 (stable)</a></li>
+                                    <li><a href="#">Stubs for Phalcon 0.9.1 (stable)</a></li>
+                                </ul>
+                                <img src="/img/phalcon-ide-stubs.png" />
+                                
+                                <br />
+                                <br />
+                                Old version stubs for Phalcon: <a href="#">0.8.0 (stable)</a>, <a href="#">0.7.0</a>, <a href="#">0.6.1</a>
+                                
+                            </div>
+                        
                         </div>
                     </div> <!-- /tabbable -->
 
                 </div>
-            </div>
 

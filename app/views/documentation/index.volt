@@ -1,4 +1,4 @@
-            <div class="row-fluid featured-specs text-center">
+            <div class="text-center">
                 <div>
                     <h1>Documentation</h1>
                     Looking for the latest documentation for Phalcon? How does it
@@ -6,8 +6,7 @@
                 </div>
             </div>
 
-            <div class="row-fluid secondary-block">
-                <div class="span12 featured-specs main-block">
+            <div class="main-block">
 
                     <h3>Documentation</h3>
                     We are using <a href="http://readthedocs.org">Read The Docs</a> for our
@@ -53,4 +52,3 @@
                     </ul>
 
                 </div>
-            </div>

@@ -1,4 +1,4 @@
-                <div class="row-fluid featured-specs text-center">
+                <div class="text-center">
                     <div>
                         <h1>Support</h1>
                         Got stuck somewhere? Usage questions? Curious about the
@@ -6,8 +6,7 @@
                     </div>
                 </div>
 
-                <div class="row-fluid secondary-block">
-                    <div class="span12 featured-specs main-block">
+                <div class="main-block">
 
                         <h3>Support</h3>
                         Having problems using Phalcon? You're in the right place!
@@ -51,5 +50,4 @@
                         the <a href="https://github.com/phalcon/cphalcon/issues">issue tracker</a>
                         in Github.
 
-                    </div>
                 </div>

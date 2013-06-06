@@ -7,7 +7,7 @@
             </div>
 
             <div class="row-fluid secondary-block">
-                <div class="span12 featured-specs author">
+                <div class="featured-specs">
 
                     <div class="media">
                         <a class="pull-left" href="#">

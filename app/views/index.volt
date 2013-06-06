@@ -3,21 +3,21 @@
     {% include 'partials/header.volt' %}
     <body>
 
-        {{ partial('partials/navbar') }}
-
-        <div id="content" class="container-fluid">
-            <div class="row-fluid">
+        <div id="content" class="container">
+    
+            <div class="row main-block">
+            {{ partial('partials/navbar') }}
+    
                 <section>
-                    <div class="hero-unit">
                         {{ content() }}
-                    </div>
                     <div class="clearfix"></div>
                 </section>
+            
+             {% include 'partials/footer.volt' %}
             </div>
+
         </div>
-
-        {% include 'partials/footer.volt' %}
-
+        
         {% if config.app.env.devel %}
         {{ javascript_include(config.app.js.jquery, false) }}
         {{ javascript_include(config.app.js.bootstrap, false) }}

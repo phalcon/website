@@ -1,8 +1,11 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,700);
 @import url("styles/ir_black.css");
 
 pre .title {
     font-family: Courier;
 }
+
+html,body{font-family:Ubuntu,"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;margin:0;}
 
 /* ---------- Default */
 body {
@@ -50,12 +53,12 @@ body {
 /* ---------- Header */
 header {}
 header .navbar { margin-bottom: 0px; }
-header .navbar-inner { border: none; border-bottom: 1px solid #000; border-radius: 0px; }
-header .navbar-inner { background: #1A1A1A; }
-header .navbar-inner .brand img { height: 30px; }
+header .navbar-inner { border: none; }
+header .navbar-inner { background: #ffffff; color: #000 }
+header .navbar-inner1 .brand img { height: 30px; }
 header .navbar-inner .nav { margin-top: 5px; margin-right: 100px; }
 header .navbar-inner .nav li { text-transform: uppercase; font-size: 12px; font-weight: bold; margin-right: 5px; }
-header .navbar-inner .nav li > a { color: #dadada; text-shadow: none; }
+header .navbar-inner1 .nav li > a { color: #000; text-shadow: none; }
 header .navbar-inner .nav li > a:hover { color: #d3ebe3; }
 header .navbar-inner .nav li.active {}
 header .navbar-inner .nav li.active > a { color: #dadada; background: none; box-shadow: none; }
@@ -73,7 +76,7 @@ header .navbar-inner .nav li.active > a:hover { background: none; box-shadow: no
 #content .featured-points { margin-top: 70px; }
 #content .featured-points img { height: 96px; margin-bottom: 5px; position: relative; width: 96px; }
 #content .featured-points > div > a:hover > img { top: -8px; transition: top .3s; -moz-transition: top .3s; -webkit-transition: top .3s; -o-transition: top .3s; }
-#content .secondary-block { text-align: left; margin-bottom: 30px; }
+#content { text-align: left; margin-bottom: 30px; }
 
 /* ---------- Section Images */
 img .header-image { width: 32px; height: 32px; border: none }
@@ -114,12 +117,9 @@ footer h5 { margin-top: 0px; text-transform: uppercase; }
 }
 
 div.intro-review {
-	border-radius: 5px;
-	border: 1px solid #eaeaea;
 	margin-top: 20px;
 	background: #fff;
 	padding: 0px;
-	padding-left: 15px;
 	padding-top: 25px;
 }
 
@@ -210,11 +210,6 @@ div.main-footer {
 	color: #717171;
 	/*background: #303145;*/
 	border-radius: 5px;
-	padding: 20px;
-	padding-left: 50px;
-	padding-right: 50px;
-	width:  90%;
-	margin-top: 30px;
 }
 
 div.main-footer div.block {
@@ -298,16 +293,6 @@ div.main-footer {
 	margin-right: 0px;
 }
 
-.tab-content {
-	padding-left: 15px;
-	background: #fff;
-	padding-top: 15px;
-	padding-bottom: 10px;
-	border-right: 1px solid #ddd;
-	border-top: 1px solid #ddd;
-	border-bottom: 1px solid #ddd;
-}
-
 .author {
 	background: #fff;
 	padding: 25px;
@@ -331,8 +316,6 @@ pre code {
 .main-block {
 	background: #fff;
 	padding: 10px;
-	border: 1px solid #ddd;
-	border-radius: 4px;
 	padding-left: 15px;
 }
 

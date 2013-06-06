@@ -2,7 +2,7 @@
 
 <div class="intro-review row-fluid">
 
-	<div class="span6" align="left">
+	<div class="span6" align="center">
 
 		<h5>Welcome to</h5>
 		<h2>THE FASTEST PHP FRAMEWORK</h3>

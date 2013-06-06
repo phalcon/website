@@ -80,7 +80,7 @@ class Bootstrap
 		$this->initview($config, $options);
 		$this->initlogger($config, $options);
 		$this->initdatabase($config, $options);
-		$this->initcache($config, $options);
+		//$this->initcache($config, $options);
 
 		$application = new PhApplication($this->_di);
 

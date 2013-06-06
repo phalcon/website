@@ -1,23 +1,4 @@
-<div class="main-footer row-fluid" align="center">
-
-	<div class="main-footer-inner">
-		<div class="span4 block info">
-			<h4>Sponsor our work</h4>
-			Phalcon is open-sourced software, licensed under the New BSD License.
-			Please donate to help us to make Phalcon even better.
-			Every donation is very welcome!
-			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-				<input type="hidden" name="cmd" value="_s-xclick">
-				<input type="hidden" name="hosted_button_id" value="7LSYMNMFZNG8W">
-				<div align="right">
-					<a href="http://flattr.com/thing/1134206/Phalcon-PHP-Framework" target="_blank" class="flattr">
-						Flattr
-					</a>
-					or
-					<input type="submit" value="Donate via Paypal" title="PayPal — The safer, easier way to pay online.">
-				</div>
-			</form>
-		</div>
+<div style="background-color: #24748c">
 
 		<div class="span3 block">
 			<h4>Services</h4>
@@ -51,6 +32,23 @@
 				<li><a href="https://github.com/phalcon/cphalcon/wiki/Roadmap">Roadmap</a></li>
 			</ul>
 		</div>
-	</div>
 
+    <div class="span4 block info">
+        <h4>Sponsor our work</h4>
+        Phalcon is open-sourced software, licensed under the New BSD License.
+        Please donate to help us to make Phalcon even better.
+        Every donation is very welcome!
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="7LSYMNMFZNG8W">
+            <div align="right">
+                <a href="http://flattr.com/thing/1134206/Phalcon-PHP-Framework" target="_blank" class="flattr">
+                    Flattr
+                </a>
+                or
+                <input type="submit" value="Donate via Paypal" title="PayPal — The safer, easier way to pay online.">
+            </div>
+        </form>
+    </div>
+    
 </div>
