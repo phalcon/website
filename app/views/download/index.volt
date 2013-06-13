@@ -55,6 +55,11 @@ sudo ./install</code></pre>
                                 There is a PKGBUILD for ArchLinux, available
                                 <a href="http://aur.archlinux.org/packages.php?ID=61950">here</a>
 
+                                <h3>OpenSUSE</h3>
+                                There is package available
+                                <a href="http://software.opensuse.org/package/php5-phalcon">here</a>
+                                (thanks to <a href='https://github.com/mruz'>Mariusz Łączak</a>
+
                                 <h3>FreeBSD</h3>
                                 A port is available for FreeBSD. Just only need these
                                 simple line commands to install it:
