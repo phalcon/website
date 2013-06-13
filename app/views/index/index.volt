@@ -2,7 +2,7 @@
 
 <div class="intro-review row-fluid">
 
-	<div class="span6" align="center">
+	<div class="span12" align="center">
 
 		<h5>Welcome to</h5>
 		<h2>THE FASTEST PHP FRAMEWORK</h3>
@@ -26,10 +26,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<div class="span6">
-		<iframe src="http://player.vimeo.com/video/63022489?portrait=0&amp;color=94bfab" width="450" height="282" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 	</div>
 
 </div>

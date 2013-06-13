@@ -23,7 +23,7 @@
                                 On platform Linux you can easily compile and install the extension from source code.
 
                                 Full documentation for <a href="http://docs.phalconphp.com/en/latest/reference/install.html#linux-solaris-mac">Linux/Solaris/Mac</a>
-                                
+
                                 <h4>Requirements</h4>
                                 We need some packages previously installed
 
@@ -109,8 +109,8 @@ sudo ./install</code></pre>
                                         </ul>
                                     </div>
                                 </div>
-                                
-                                
+
+
                                 <hr>
 
                                 <div class="alert alert-info">
@@ -261,8 +261,6 @@ chmod ugo+x /usr/bin/phalcon
                                 <h3>Phalcon stubs for IDE autocompletion</h3>
 
                                 <p>Intrinsicly procrastinate innovative growth strategies vis-a-vis backend resources. Interactively deploy ethical partnerships and error-free information. Enthusiastically supply e-business alignments after leveraged best practices. Authoritatively empower adaptive best practices and web-enabled data. Completely expedite high standards in technology whereas cooperative core competencies.
-                                    Synergistically morph web-enabled markets rather than seamless bandwidth. Completely transition 24/365 channels with unique results. Professionally simplify timely interfaces via end-to-end information. Collaboratively e-enable parallel e-business without error-free interfaces. Seamlessly whiteboard plug-and-play value via 24/365 outsourcing.
-                                    Progressively e-enable interoperable internal or "organic" sources vis-a-vis interdependent web services. Competently provide access to orthogonal models whereas tactical testing procedures. Energistically syndicate an expanded array of quality vectors and emerging leadership skills. Globally underwhelm corporate information without premium products. Interactively network robust initiatives rather than professional portals.
                                 <br />
                                 <h4>Current stubs:</h4>
                                 <ul>
@@ -271,13 +269,13 @@ chmod ugo+x /usr/bin/phalcon
                                     <li><a href="#">Stubs for Phalcon 0.9.1 (stable)</a></li>
                                 </ul>
                                 <img src="/img/phalcon-ide-stubs.png" />
-                                
+
                                 <br />
                                 <br />
                                 Old version stubs for Phalcon: <a href="#">0.8.0 (stable)</a>, <a href="#">0.7.0</a>, <a href="#">0.6.1</a>
-                                
+
                             </div>
-                        
+
                         </div>
                     </div> <!-- /tabbable -->
 
