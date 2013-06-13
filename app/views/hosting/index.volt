@@ -26,6 +26,19 @@
                         <a href='http://fortrabbit.com/'><i class="icon-globe"></i> Fortrabbit</a>
                     </p>
 
+                    <h3>WebFaction</h3>
+                    <p>
+                        WebFaction Hosting for developers. Full shell access to fast servers
+                        with all your favorite tools pre-installed and maintained for the user.
+                    </p>
+                    <p>
+                        To install PhalconPHP in WebFaction, follow the instructions outlined
+                        <a href='http://community.webfaction.com/questions/13689/phalcon-php'>here</a>
+                    </p>
+                    <p>
+                        <a href='http://webfaction.com/'><i class="icon-globe"></i> WebFaction</a>
+                    </p>
+
                     <h3>Phalcon Team</h3>
                     <p>
                         We also offer limited hosting at competitive rates. Our
