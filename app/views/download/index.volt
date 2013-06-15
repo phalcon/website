@@ -122,7 +122,7 @@ sudo ./install</code></pre>
                                         <td>
                                             {{ file['name'] }}
                                             <br />
-                                            <span>Updated: {{ file['date'] }}</span>
+                                            <span style="font-size:10px">{{ file['date'] }} / sha1:{{ file['checksum'] }}</span>
                                         </td>
                                         <td class="text-right">
                                             {{ link_to(file['file'], 'download', 'target': '_download', 'title': file['name']) }}
@@ -159,7 +159,7 @@ sudo ./install</code></pre>
                                         <td>
                                             {{ file['name'] }}
                                             <br />
-                                            <span>Updated: {{ file['date'] }}</span>
+                                            <span style="font-size:10px">{{ file['date'] }} / sha1:{{ file['checksum'] }}</span>
                                         </td>
                                         <td class="text-right">
                                             {{ link_to(file['file'], 'download', 'target': '_download', 'title': file['name']) }}
@@ -194,7 +194,7 @@ sudo ./install</code></pre>
                                         <td>
                                             {{ file['name'] }}
                                             <br />
-                                            <span>Updated: {{ file['date'] }}</span>
+                                            <span style="font-size:10px">{{ file['date'] }} / sha1:{{ file['checksum'] }}</span>
                                         </td>
                                         <td class="text-right">
                                             {{ link_to(file['file'], 'download', 'target': '_download', 'title': file['name']) }}

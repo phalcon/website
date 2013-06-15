@@ -58,6 +58,7 @@ class DownloadController extends \Ph\Controller
                             'name' => sprintf($template, $version, $arch, $php, $nts, $vc),
                             'file' => 'files/' . $fileName,
                             'date' => $date,
+                            'checksum' => sha1_file($file)
                         );
 
                     }
@@ -67,6 +68,7 @@ class DownloadController extends \Ph\Controller
                             'name' => sprintf($template, $version, $arch, $php, $nts, $vc),
                             'file' => 'files/' . $fileName,
                             'date' => $date,
+                            'checksum' => sha1_file($file)
                         );
                     }
                 }
@@ -97,15 +99,12 @@ class DownloadController extends \Ph\Controller
                 $experimental[$arch] = $data;
             }
 
-            if (count($experimental) > 0)
-            {
+            if (count($experimental) > 0) {
                 krsort($experimental);
                 reset($experimental);
                 $key   = key($experimental);
                 $alpha = $experimental[$key];
-            }
-            else
-            {
+            } else {
                 $alpha = false;
             }
 
@@ -129,15 +128,14 @@ class DownloadController extends \Ph\Controller
                 }
             }
 
-            if (count($old['x86']) == 0)
-            {
+            if (count($old['x86']) == 0) {
                 unset($old['x86']);
             }
 
-            if (count($old['x64']) == 0)
-            {
+            if (count($old['x64']) == 0) {
                 unset($old['x64']);
             }
+
             $this->view->setVar('current', $current);
             $this->view->setVar('old', $old);
             $this->view->setVar('alpha', $alpha);
@@ -145,13 +143,4 @@ class DownloadController extends \Ph\Controller
         //}
     }
 
-    public function oldAction()
-    {
-        $files    = array();
-        $path     = 'files/';
-        foreach (glob($path . '*.zip') as $file) {
-            $files[] = $file;
-        }
-        $this->view->setVar('files', $files);
-    }
 }
