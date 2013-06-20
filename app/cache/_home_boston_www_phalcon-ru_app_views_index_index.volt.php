@@ -126,10 +126,10 @@
         <div class="services-block">
             <div class="services-block-title">Services</div>
 
-            {{ link_to(['for': 'pages', 'pageSlug': 'consulting'], 'Consulting', 'class' : 'services-block-link') }}<br/>
+            <?php echo Phalcon\Tag::linkTo(array(array('for' => 'pages', 'pageSlug' => 'consulting'), 'Consulting', 'class' => 'services-block-link')); ?><br/>
             Requirements Analysis<br/>Implementation<br/>Ongoing Support<br/>
-            <p>{{ link_to(['for': 'pages', 'pageSlug': 'support'], 'Read more', 'class' : 'button button-small orange') }}</p>
-            {{ link_to(['for': 'pages', 'pageSlug': 'hosting'], 'Hosting', 'class' : 'services-block-link') }}
+            <p><?php echo Phalcon\Tag::linkTo(array(array('for' => 'pages', 'pageSlug' => 'support'), 'Read more', 'class' => 'button button-small orange')); ?></p>
+            <?php echo Phalcon\Tag::linkTo(array(array('for' => 'pages', 'pageSlug' => 'hosting'), 'Hosting', 'class' => 'services-block-link')); ?>
 
         </div>
 

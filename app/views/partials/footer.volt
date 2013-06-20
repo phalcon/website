@@ -1,61 +1,52 @@
-<div class="main-footer row-fluid" align="center">
+<div class="size-wrap footer-wrap">
 
-	<div class="main-footer-inner">
-		<div class="span4 block info">
-			<h4>Sponsor our work</h4>
-			Phalcon is open-sourced software, licensed under the New BSD License.
-			You can help us keep the development active by donating to the project
-			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-				<input type="hidden" name="cmd" value="_s-xclick">
-				<input type="hidden" name="hosted_button_id" value="7LSYMNMFZNG8W">
-				<div align="right">
-					<a href="http://flattr.com/thing/1134206/Phalcon-PHP-Framework" target="_blank" class="flattr">
-						Flattr
-					</a>
-					or
-					<input type="submit" value="Donate via Paypal" title="PayPal — The safer, easier way to pay online.">
-				</div>
-			</form>
-		</div>
+    <table class="footer-links">
+        <tr>
+            <td>
+                <div class="footer-links-title">Main</div>
+                <ul class="footer-links-list unstyled">
+                    <li>{{ link_to(['for': 'download'], 'Download', 'class' : 'link-black') }}</li>
+                    <li>{{ link_to(['for': 'documentation'], 'Documentation', 'class' : 'link-black') }}</li>
+                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'github'], 'Blog', 'class' : 'link-black') }}</li>
+                </ul>
+            </td>
+            <td>
+                <div class="footer-links-title">Services</div>
+                <ul class="footer-links-list unstyled">
+                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'consulting'], 'Consulting', 'class' : 'link-black') }}</li>
+                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'hosting'], 'Hosting', 'class' : 'link-black') }}</li>
+                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'support'], 'Support', 'class' : 'link-black') }}</li>
 
-		<div class="span3 block">
-			<h4>Services</h4>
-			<ul>
-				<li><a href="{{ url('consulting') }}">Consulting</a></li>
-				<li><a href="{{ url('hosting') }}">Hosting</a></li>
-			</ul>
+                </ul>
+            </td>
+            <td>
+                <div class="footer-links-title">Support</div>
+                <ul class="footer-links-list unstyled">
+                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'github'], 'Forum/Community', 'class' : 'link-black') }}</li>
+                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'github'], 'Stack Overflow', 'class' : 'link-black') }}</li>
+                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'github'], 'Issue Tracker', 'class' : 'link-black') }}</li>
+                </ul>
+            </td>
+            <td>
+                <div class="footer-links-title">Get Involved</div>
+                <ul class="footer-links-list unstyled">
+                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'team'], 'Team', 'class' : 'link-black') }}</li>
+                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'about'], 'About', 'class' : 'link-black') }}</li>
+                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'roadmap'], 'Roadmap', 'class' : 'link-black') }}</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
 
-			<h4>Social</h4>
-			<ul>
-				<li><a href="https://plus.google.com/102376109340560896457">Google+</a></li>
-				<li><a href="https://twitter.com/phalconphp">Twitter</a></li>
-				<li><a href="http://www.facebook.com/pages/Phalcon/134230726685897">Facebook</a></li>
-			</ul>
+    <div class="donate-wrap">
+        Donate to Phalcon: <a href="#" class="button button-small orange">Flattr</a> or <a href="#" class="button button-small orange">via PayPal</a>
+    </div>
 
-		</div>
+    <div class="social-links">
+        <a href="#" class="social-link tw">Twitter</a>
+        <a href="#" class="social-link fb">Facebook</a>
+        <a href="#" class="social-link gp">Google Plus</a>
+        <a href="#" class="social-link vm">Vimeo</a>
+    </div>
 
-		<div class="span3 block">
-
-			<h4>Support</h4>
-			<ul>
-				<li><a href="http://forum.phalconphp.com/">Forum/Community</a></li>
-				<li><a href="http://stackoverflow.com/questions/tagged/phalcon">Stack Overflow</a></li>
-				<li><a href="https://github.com/phalcon/cphalcon/issues">Issue Tracker</a></li>
-			</ul>
-
-			<h4>Get Involved</h4>
-			<ul>
-				<li><a href="{{ url('team') }}">Team</a></li>
-				<li><a href="{{ url('about') }}">About</a></li>
-				<li><a href="https://github.com/phalcon/cphalcon/wiki/Roadmap">Roadmap</a></li>
-			</ul>
-		</div>
-	</div>
-
-	<!--<div class="row">
-		<div class="credits">
-			<p>Powered by Phalcon {{ version() }}</p>
-		</div>
-	</div>-->
-
-</footer>
+</div>

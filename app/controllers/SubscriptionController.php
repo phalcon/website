@@ -1,6 +1,6 @@
 <?php
 
-class IndexController extends \ControllerBase
+class SubscriptionController extends \ControllerBase
 {
 
     public function indexAction()
