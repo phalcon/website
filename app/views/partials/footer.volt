@@ -22,9 +22,9 @@
             <td>
                 <div class="footer-links-title">Support</div>
                 <ul class="footer-links-list unstyled">
-                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'github'], 'Forum/Community', 'class' : 'link-black') }}</li>
-                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'github'], 'Stack Overflow', 'class' : 'link-black') }}</li>
-                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'github'], 'Issue Tracker', 'class' : 'link-black') }}</li>
+                    <li><a href="http://forum.phalconphp.com/" class="link-black">Forum / Community</a></li>
+                    <li><a href="http://stackoverflow.com/questions/tagged/phalcon" class="link-black">Stack Overflow</a></li>
+                    <li><a href="https://github.com/phalcon/cphalcon/issues" class="link-black">Issue Tracker</a></li>
                 </ul>
             </td>
             <td>
@@ -43,10 +43,10 @@
     </div>
 
     <div class="social-links">
-        <a href="#" class="social-link tw">Twitter</a>
-        <a href="#" class="social-link fb">Facebook</a>
-        <a href="#" class="social-link gp">Google Plus</a>
-        <a href="#" class="social-link vm">Vimeo</a>
+        <a href="https://twitter.com/phalconphp" class="social-link tw">Twitter</a>
+        <a href="http://www.facebook.com/pages/Phalcon/134230726685897" class="social-link fb">Facebook</a>
+        <a href="https://plus.google.com/102376109340560896457" class="social-link gp">Google Plus</a>
+        <a href="http://vimeo.com/user10964377" class="social-link vm">Vimeo</a>
     </div>
 
 </div>

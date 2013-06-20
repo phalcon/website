@@ -7,7 +7,7 @@ $router->removeExtraSlashes(true);
 
 $router->add('/' , 'Index::index')->setName('index');
 
-$router->add('/{pageSlug:(about|reference|team|roadmap|consulting|hosting|examples|support)}' , [ 'controller' => 'Pages','action'=>'page'])->setName('pages');
+$router->add('/{pageSlug:(about|reference|team|roadmap|consulting|hosting|examples|support|api|ui)}' , [ 'controller' => 'Pages','action'=>'page'])->setName('pages');
 $router->add('/download' , [ 'controller' => 'download' ])->setName('download');
 $router->add('/documentation' , [ 'controller' => 'documentation' ])->setName('documentation');
 

@@ -10,7 +10,7 @@
                 <img src="assets/chart.png" alt="" />
             </div>
 
-            <span class="button-large">Download</span>
+            <a href="/download"><span class="button-large">Download</span></a>
 
         </div>
 
@@ -19,7 +19,7 @@
             <div class="teaser-video-wrap">
                 <img src="assets/video.png" alt=""/>
             </div>
-            <span class="button-medium">Try It Online</span>
+            <a href="http://try.phalconphp.com/"><span class="button-medium">Try It Online</span></a>
             <span class="button-medium">See Screencasts</span>
         </div>
 
