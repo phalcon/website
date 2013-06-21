@@ -17,7 +17,7 @@
         <div class="main-teaser-right">
 
             <div class="teaser-video-wrap">
-                <img src="assets/video.png" alt=""/>
+                <a href="http://vimeo.com/63022489"><img src="assets/video.png" alt=""/></a>
             </div>
             <a href="http://try.phalconphp.com/"><span class="button-medium">Try It Online</span></a>
             <a href="http://vimeo.com/user10964377" target="_blank"><span class="button-medium">See Screencasts</span></a>

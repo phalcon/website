@@ -1,18 +1,16 @@
-<div class="size-wrap">
-    <div class="features-wrap">
-
-        <div class="title-huge">List of examples</div>
+<div class="header-line">
+    <div class="size-wrap">
+        <h1 class="header-line-title title-white">List of examples</h1>
     </div>
+</div>
+<div class="size-wrap">
 
     <div class="markdown-body">
-        <h2>
-            <a name="list-of-examples---blog-posts---gists" class="anchor" href="#list-of-examples---blog-posts---gists"><span class="octicon octicon-link"></span></a>List of examples - blog posts -
-            gists</h2>
+        <h3>Phalcon examples</h3>
 
-        <h3>
-            <a name="100" class="anchor" href="#100"><span class="octicon octicon-link"></span></a>1.0.0</h3>
+        <h2>1.0.0</h2>
 
-        <ul>
+        <ul class="dash-list">
             <li>
                 <a href="https://github.com/phalcon/website">https://github.com/phalcon/website</a> - Official Phalcon website
             </li>
@@ -32,6 +30,9 @@
                 <a href="https://github.com/phalcon/vokuro">https://github.com/phalcon/vokuro</a> - Vökuró - Sample Application
             </li>
             <li>
+                <a href="https://github.com/phalcon/mvc">https://github.com/phalcon/mvc</a> - Phalcon MVC Examples
+            </li>
+            <li>
                 <a href="https://github.com/phalcon/mvc/blob/master/micro/index.php">https://github.com/phalcon/mvc/blob/master/micro/index.php</a> - Micro Framework App
             </li>
             <li>
@@ -45,10 +46,10 @@
                 <a href="https://github.com/chaban/city_site">https://github.com/chaban/city_site</a> - Sample City Website
             </li>
         </ul>
-        <h3>
-            <a name="050" class="anchor" href="#050"><span class="octicon octicon-link"></span></a>0.5.0</h3>
 
-        <ul>
+        <h2>0.5.0</h2>
+
+        <ul class="dash-list">
             <li>
                 <a href="https://gist.github.com/3658914">https://gist.github.com/3658914</a> - Command line applications (usage/example)
             </li>
@@ -56,6 +57,8 @@
                 <a href="https://github.com/kenjikobe/cellar">https://github.com/kenjikobe/cellar</a> - RESTful services with micro framework - Wine cellar
             </li>
         </ul>
+
+        <br />
         <p>For sites currently running Phalcon, see the <a href="https://github.com/phalcon/cphalcon/wiki/Powered-by-Phalcon">Powered by Phalcon</a> page.</p>
     </div>
 
