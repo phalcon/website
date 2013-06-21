@@ -1,20 +1,20 @@
 <div class="header-line">
     <div class="size-wrap">
-        <div class="header-line-title title-white">Documentation</div>
+        <h1 class="header-line-title title-white">Documentation</h1>
     </div>
 </div>
 
 <div class="size-wrap">
 
-    <div class="note">Phalcon's documentation is maintained in <a href="#">Github repositories</a>. You are more than welcome to send us pull requests if you found an error or if </div>
+    <div class="note">Phalcon's documentation is maintained in <a href="#">Github repositories</a>. You are more than welcome to send us pull requests if you found an error or if</div>
 
     <div class="content-wrap clear-fix">
 
         <div class="sidebar">
 
             <div class="searchbox-wrap">
-                <input type="text" name="q" id="searchbox" class="searchbox" placeholder="Search" />
-                <input type="submit"  class="search-button" />
+                <input type="text" name="q" id="searchbox" class="searchbox" placeholder="Search"/>
+                <input type="submit" class="search-button"/>
             </div>
 
             <div class="table-of-contents">
@@ -123,11 +123,14 @@
 
             <div id="checking-your-installation">
                 <h2>Checking your installation</h2>
+
                 <p>We’ll assume you have Phalcon installed already. Check your phpinfo() output for a section referencing “Phalcon” or execute the code snippet below:</p>
+
                 <div class="highlight">
                     <pre> print_r(get_loaded_extensions());</pre>
                 </div>
                 <p>The Phalcon extension should appear as part of the output:</p>
+
                 <div class="highlight">
 <pre>Array
 (
@@ -143,62 +146,8 @@
             </div>
 
 
-
-
-
         </div>
 
-    </div>
-
-</div>
-
-<div class="size-wrap footer-wrap">
-
-    <table class="footer-links">
-        <tr>
-            <td>
-                <div class="footer-links-title">Main</div>
-                <ul class="footer-links-list unstyled">
-                    <li><a href="#" class="link-black">Download</a></li>
-                    <li><a href="#" class="link-black">Documentation</a></li>
-                    <li><a href="#" class="link-black">Blog</a></li>
-                </ul>
-            </td>
-            <td>
-                <div class="footer-links-title">Services</div>
-                <ul class="footer-links-list unstyled">
-                    <li><a href="#" class="link-black">Consulting</a></li>
-                    <li><a href="#" class="link-black">Hosting</a></li>
-                </ul>
-            </td>
-            <td>
-                <div class="footer-links-title">Support</div>
-                <ul class="footer-links-list unstyled">
-                    <li><a href="#" class="link-black">Forum/Community</a></li>
-                    <li><a href="#" class="link-black">Stack Overflow</a></li>
-                    <li><a href="#" class="link-black">Issue Tracker</a></li>
-                </ul>
-            </td>
-            <td>
-                <div class="footer-links-title">Get Involved</div>
-                <ul class="footer-links-list unstyled">
-                    <li><a href="#" class="link-black">Team</a></li>
-                    <li><a href="#" class="link-black">About</a></li>
-                    <li><a href="#" class="link-black">Roadmap</a></li>
-                </ul>
-            </td>
-        </tr>
-    </table>
-
-    <div class="donate-wrap">
-        Donate to Phalcon: <a href="#" class="button button-small orange">Flattr</a> or <a href="#" class="button button-small orange">via PayPal</a>
-    </div>
-
-    <div class="social-links">
-        <a href="#" class="social-link tw">Twitter</a>
-        <a href="#" class="social-link fb">Facebook</a>
-        <a href="#" class="social-link gp">Google Plus</a>
-        <a href="#" class="social-link vm">Vimeo</a>
     </div>
 
 </div>

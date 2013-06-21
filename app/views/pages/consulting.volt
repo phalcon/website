@@ -1,7 +1,7 @@
 <div class="size-wrap">
     <div class="features-wrap">
 
-        <div class="title-huge"> Consulting</div>
+        <h1 class="title-huge">Consulting</h1>
     </div>
 
     <h3>Consulting</h3>
