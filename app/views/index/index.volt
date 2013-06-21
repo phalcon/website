@@ -20,7 +20,7 @@
                 <img src="assets/video.png" alt=""/>
             </div>
             <a href="http://try.phalconphp.com/"><span class="button-medium">Try It Online</span></a>
-            <span class="button-medium">See Screencasts</span>
+            <a href="http://vimeo.com/user10964377" target="_blank"><span class="button-medium">See Screencasts</span></a>
         </div>
 
     </div>
@@ -35,64 +35,66 @@
         <table class="features-table">
             <tr>
                 <td>
-                    <div class="h4">Full MVC applications</div>
+                    <div class="h4">Full <a href="http://docs.phalconphp.com/en/latest/reference/applications.html">MVC</a> applications</div>
                     <ul class="dash-list small">
-                        <li><a class="link-black" href="#">Single-Module</a></li>
-                        <li><a class="link-black" href="#">Multi-Module</a></li>
-                        <li><a class="link-black" href="#">Micro Applications</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/applications.html#single-module">Single-Module</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/applications.html#multi-module">Multi-Module</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/micro.html">Micro Applications</a></li>
                     </ul>
                     <div class="h4">ORM</div>
                     <ul class="two-columns dash-list small">
-                        <li><a class="link-black" href="#">Transactions</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#transactions">Transactions</a></li>
 
-                        <li><a class="link-black" href="#">Behaviors</a></li>
-                        <li><a class="link-black" href="#">Relations</a></li>
-                        <li><a class="link-black" href="#">PHQL</a></li>
-                        <li><a class="link-black" href="#">Events</a></li>
-
-                        <li><a class="link-black" href="#">Validations</a></li>
-                        <li><a class="link-black" href="#">Hydration</a></li>
-                        <li><a class="link-black" href="#">Logging</a></li>
-                        <li><a class="link-black" href="#">Profiling</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#behaviors">Behaviors</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#relationships-between-models">Relations</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference//phql.html">PHQL</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#events-and-events-manager">Events</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#validation-failed-events">Validations</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#hydration-modes">Hydration</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#logging-low-level-sql-statements">Logging</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#profiling-sql-statements">Profiling</a></li>
                         <li><a class="link-black" href="#">Sharding</a></li>
                     </ul>
                 </td>
                 <td>
                     <ul class="unstyled">
-                        <li><a class="link-black" href="#">ODM for Mongo</a></li>
-                        <li><a class="link-black" href="#">Template Engine (Volt)</a></li>
-                        <li><a class="link-black" href="#">DI/IOC</a></li>
-                        <li><a class="link-black" href="#">Events Management</a></li>
-                        <li><a class="link-black" href="#">Encryption</a></li>
-                        <li><a class="link-black" href="#">HTTP Request / Response / Cookies</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/odm.html">ODM for Mongo</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/volt.html">Template Engine (Volt)</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/di.html">DI/IOC</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/events.html">Events Management</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/crypt.html">Encryption</a></li>
+                        <li>
+                            <a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/request.html">HTTP Request</a>
+                            / <a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/response.html">Response</a>
+                            / <a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/cookies.html">Cookies</a></li>
                     </ul>
                 </td>
                 <td>
 
                     <ul class="unstyled">
-                        <li><a class="link-black" href="#">Escaping/Filtering</a></li>
-                        <li><a class="link-black" href="#">Forms Builder/Validation</a></li>
-                        <li><a class="link-black" href="#">Flash Messages</a></li>
-                        <li><a class="link-black" href="#">Cache</a></li>
-                        <li><a class="link-black" href="#">Pagination</a></li>
-                        <li><a class="link-black" href="#">Annotations</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/escaper.html">Escaping/Filtering</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/forms.html">Forms Builder/Validation</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/flash.html">Flash Messages</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/cache.html">Cache</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/pagination.html">Pagination</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/annotations.html">Annotations</a></li>
                     </ul>
 
                 </td>
                 <td>
                     <ul class="unstyled">
-                        <li><a class="link-black" href="#">Security</a></li>
-                        <li><a class="link-black" href="#">Translations</a></li>
-                        <li><a class="link-black" href="#">Assets Management</a></li>
-                        <li><a class="link-black" href="#">Universal Auto-Loader</a></li>
-                        <li><a class="link-black" href="#">Logging</a></li>
-                        <li><a class="link-black" href="#">CLI</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/security.html">Security</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/translate.html">Translations</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/assets.html">Assets Management</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/loader.html">Universal Auto-Loader</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/logging.html">Logging</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/cli.html">CLI</a></li>
                     </ul>
                 </td>
             </tr>
         </table>
         <div class="documentation-button-wrap">
-            <span class="button black">Documentation</span>
+            <a href="/reference"><span class="button black">Documentation</span></a>
         </div>
     </div>
 
@@ -136,7 +138,7 @@
     </div>
 </div>
 
-
+<!--
 <div class="size-wrap">
     <div class="blog-post-wrap">
         <div class="title-huge">Latest Blog Post</div>
@@ -151,3 +153,4 @@
         </div>
     </div>
 </div>
+-->

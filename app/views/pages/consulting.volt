@@ -1,15 +1,18 @@
-<div class="size-wrap">
-    <div class="features-wrap">
-
-        <h1 class="title-huge">Consulting</h1>
+<div class="header-line">
+    <div class="size-wrap">
+        <h1 class="header-line-title title-white">Consulting</h1>
     </div>
+</div>
+<div class="size-wrap">
 
-    <h3>Consulting</h3>
-    We are offering consulting services for Phalcon and/or PHP
-    implementations.
+    <h2>
+        We are offering consulting services for Phalcon and/or PHP
+        implementations.
+    </h2>
 
-    <h5>Requirements Analysis</h5>
+    <br />
 
+    <h4>Requirements Analysis</h4>
     <p>
         One of the biggest problems that developers face is the fact
         that a lot of projects do not have adequately defined
@@ -23,16 +26,16 @@
         the clients and translating their vision to exact
         specifications for developers.
     </p>
-    <h5>Implementation</h5>
 
+    <h4>Implementation</h4>
     <p>
         If you wish to hire us to develop your application, we
         would be more than happy to do so. Using the latest
         technologies, we can offer a robust solution for your task
         or project, complete with tests and documentation.
     </p>
-    <h5>Ongoing Support</h5>
 
+    <h4>Ongoing Support</h4>
     <p>
         For customers that are interested in an ongoing support
         contract we can offer support for their projects on an
@@ -46,8 +49,7 @@
         we offer flexible plans that would suit their needs better.
     </p>
 
-    <h3>Sponsors</h3>
-
+    <h4>Sponsors</h4>
     <p>
         For those that wish to sponsor our work and further the
         development of Phalcon PHP, we offer various sponsorship
@@ -61,10 +63,9 @@
         accommodate such requests at our normal rates.
     </p>
 
-    <h3>Contact</h3>
-
+    <h4>Contact</h4>
     <p>
-        Feel free to <a href='mailto:team@phalconphp.com'><i class="icon-envelope"></i> contact us</a> to
+        Feel free to <a href='mailto:team@phalconphp.com'>contact us</a> to
         discuss your requirements and offer a solution that would
         best fit your needs and your budget. No project is too big
         or too small.

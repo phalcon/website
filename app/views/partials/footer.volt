@@ -39,7 +39,13 @@
     </table>
 
     <div class="donate-wrap">
-        Donate to Phalcon: <a href="#" class="button button-small orange">Flattr</a> or <a href="#" class="button button-small orange">via PayPal</a>
+        Donate to Phalcon: <a href="http://flattr.com/thing/1134206/Phalcon-PHP-Framework" target="_blank" class="button button-small orange">Flattr</a>
+        or
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="display: inline">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="7LSYMNMFZNG8W">
+            <input class="button button-small orange" style="border: inherit; display: inline; font-weight: bold" type="submit" value="via Paypal" title="PayPal — The safer, easier way to pay online.">
+        </form>
     </div>
 
     <div class="social-links">
