@@ -2,17 +2,32 @@
 
 error_reporting(E_ALL);
 
-if (!defined('ROOT_PATH')) {
-    define('ROOT_PATH', dirname(dirname(__FILE__)));
+try {
+
+	/**
+	 * Read the configuration
+	 */
+	$config = include __DIR__ . "/../app/config/config.php";
+
+	/**
+	 * Read auto-loader
+	 */
+	include __DIR__ . "/../app/config/loader.php";
+
+	/**
+	 * Read services
+	 */
+	include __DIR__ . "/../app/config/services.php";
+
+	/**
+	 * Handle the request
+	 */
+	$application = new \Phalcon\Mvc\Application();
+	$application->setDI($di);
+	echo $application->handle()->getContent();
+
+} catch (Phalcon\Exception $e) {
+	echo $e->getMessage();
+} catch (PDOException $e){
+	echo $e->getMessage();
 }
-
-// Using require once because I want to get the specific
-// bootloader class here. The loader will be initialized
-// in my bootstrap class
-require_once ROOT_PATH . '/app/library/Ph/Bootstrap.php';
-require_once ROOT_PATH . '/app/library/Ph/Error.php';
-
-$di  = new \Phalcon\DI\FactoryDefault();
-$app = new \Ph\Bootstrap($di);
-
-echo $app->run(array());
