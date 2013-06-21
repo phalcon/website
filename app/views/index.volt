@@ -1,33 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-    {% include 'partials/header.volt' %}
-    <body>
+<html lang="ru">
+{% include 'partials/head.volt' %}
+<body>
 
-        {{ partial('partials/navbar') }}
+<div class="wrapper">
 
-        <div id="content" class="container-fluid">
-            <div class="row-fluid">
-                <section>
-                    <div class="hero-unit">
-                        {{ content() }}
-                    </div>
-                    <div class="clearfix"></div>
-                </section>
+    <div class="size-wrap">
+
+        <div class="header">
+            <a class="header-logo" href="/">Phalcon</a>
+
+            <div class="header-right">
+                <iframe src="http://ghbtns.com/github-btn.html?user=phalcon&amp;repo=cphalcon&amp;type=watch&amp;count=true&amp;size=large"
+                        allowtransparency="true" frameborder="0" scrolling="0" width="130px" height="30px"></iframe>
             </div>
+
+            {% include 'partials/topmenu.volt' %}
+
         </div>
 
-        {% include 'partials/footer.volt' %}
-
-        {% if config.app.env.devel %}
-        {{ javascript_include(config.app.js.jquery, false) }}
-        {{ javascript_include(config.app.js.bootstrap, false) }}
-        {{ javascript_include(config.app.js.bootstrap_tab, false) }}
-        {{ javascript_include(config.app.js.highlight, false) }}
-        {{ javascript_include(config.app.js.helper, false) }}
-        {%- else -%}
-        {{ javascript_include(config.app.js.compiled) }}
+        {% if this.getDi().get('router').getControllerName() == 'index' %}
+        <blockquote class="header-intro">
+            <strong>Phalcon</strong> is a web framework implemented as a C extension offering <a href="#">high performance</a> and lower resource consumption
+        </blockquote>
         {% endif %}
 
-        <script>format()</script>
-	</body>
+    </div>
+
+    {{ content() }}
+
+    {% include 'partials/footer.volt' %}
+
+</div>
+
+</body>
 </html>
