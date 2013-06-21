@@ -2,7 +2,7 @@
 
     <div class="size-wrap clear-fix">
 
-        <div class="main-teaser-title">The fastest<br/>PHP Framework</div>
+        <div class="main-teaser-title title-white">The fastest<br/>PHP Framework</div>
 
         <div class="main-teaser-left">
 
