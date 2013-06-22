@@ -52,8 +52,7 @@ class DownloadController extends \Ph\Controller
                     $key .= ($nts) ? '0' : '1';
 
                     // Check if we have an alpha here
-                    if (strpos(strtolower($version), 'alpha') > 0 ||
-                        strpos(strtolower($version), 'beta') > 0) {
+                    if (strpos(strtolower($version), 'alpha') > 0 || strpos(strtolower($version), 'beta') > 0) {
                         $alpha[$version][$arch][$key] = array(
                             'name' => sprintf($template, $version, $arch, $php, $nts, $vc),
                             'file' => 'files/' . $fileName,
@@ -61,9 +60,7 @@ class DownloadController extends \Ph\Controller
                             'checksum' => sha1_file($file)
                         );
 
-                    }
-                    else
-                    {
+                    } else {
                         $files[$version][$arch][$key] = array(
                             'name' => sprintf($template, $version, $arch, $php, $nts, $vc),
                             'file' => 'files/' . $fileName,

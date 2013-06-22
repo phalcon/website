@@ -2,10 +2,7 @@
 
 	<div class="main-footer-inner">
 		<div class="span4 block info">
-			<h4>Sponsor our work</h4>
-			Phalcon is open-sourced software, licensed under the New BSD License.
-			Please donate to help us to make Phalcon even better.
-			Every donation is very welcome!
+			<h4>Donate to Phalcon</h4>
 			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 				<input type="hidden" name="cmd" value="_s-xclick">
 				<input type="hidden" name="hosted_button_id" value="7LSYMNMFZNG8W">

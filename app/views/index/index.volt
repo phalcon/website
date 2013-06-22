@@ -1,35 +1,38 @@
 {% set doc_path = 'http://docs.phalconphp.com/en/latest' %}
 
-<div class="intro-review row-fluid">
+<div align="center">
+	<div class="intro-review row-fluid">
 
-	<div class="span6" align="left">
+		<div class="span6" align="left">
 
-		<h5>Welcome to</h5>
-		<h2>THE FASTEST PHP FRAMEWORK</h3>
-		<h5>
-			Phalcon is a web framework implemented as a C extension
-			<br />
-			offering
-			<a href="{{ doc_path }}/reference/benchmark.html">high performance</a>
-			and lower resource consumption.
-		</h5>
+			<h5>Welcome to</h5>
+			<h2>THE FASTEST PHP FRAMEWORK</h3>
+			<h5>
+				Phalcon is a web framework implemented as a C extension
+				<br />
+				offering
+				<a href="{{ doc_path }}/reference/benchmark.html">high performance</a>
+				and lower resource consumption.
+			</h5>
 
-		<div class="row-fluid">
-			<div class="text-center span12">
-				<div class="btn-group">
-					<a href='http://try.phalconphp.com'>
-						<button class="btn btn-large btn-primary">Try it Online</button>
-					</a>
-					<a href='{{ url('download') }}'>
-						<button class="btn btn-large btn-success">Download</button>
-					</a>
+			<div class="row-fluid">
+				<div class="text-center span12">
+					<div class="btn-group">
+						<a href='http://try.phalconphp.com'>
+							<button class="btn btn-large btn-primary">Try it Online</button>
+						</a>
+						<a href='{{ url('download') }}'>
+							<button class="btn btn-large btn-success">Download</button>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="span6">
-		<iframe src="http://player.vimeo.com/video/63022489?portrait=0&amp;color=94bfab" width="450" height="282" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+		<div class="span6">
+			<iframe src="http://player.vimeo.com/video/63022489?portrait=0&amp;color=94bfab" width="450" height="282" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+		</div>
+
 	</div>
 
 </div>

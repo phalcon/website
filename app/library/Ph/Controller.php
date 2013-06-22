@@ -34,9 +34,9 @@ class Controller extends \Phalcon\Mvc\Controller
 
     	$this->view->cache(array('key' => $key));
 
-    	/*if ($this->view->getCache()->exists($key)) {
+    	if ($this->view->getCache()->exists($key)) {
     		return false;
-    	}*/
+    	}
 
         return true;
     }
