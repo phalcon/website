@@ -6,8 +6,8 @@
 <div class="size-wrap">
 
     <h2>
-        We are offering consulting services for Phalcon and/or PHP
-        implementations.
+        We are offering consulting services for Phalcon<br/>
+        and/or PHP implementations
     </h2>
 
     <br />

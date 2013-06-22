@@ -38,16 +38,33 @@
         <a href='http://community.webfaction.com/questions/13689/phalcon-php'>here</a>
     </p>
 
+    <h2><a target="_blank" href='http://webfaction.com/'>Amazon EC2</a></h2>
+
+    <p>
+        Amazon Elastic Compute Cloud delivers scalable, pay-as-you-go compute capacity in the cloud.
+    </p>
+
+    <p>
+        Select a pre-configured, templated Amazon Machine Image (AMI) to get up and running immediately.
+        Or create an AMI containing your applications, libraries, data, and associated configuration settings.
+        <a href='http://aws.amazon.com/ec2/'>See more</a>
+    </p>
+
+    <h2><a target="_blank" href='https://www.linode.com/'>Linode</a></h2>
+
+    <p>
+        Deploy and Manage Linux Virtual Servers in the Linode Cloud.
+        Get a server running in seconds with your choice of Linux distro, resources, and node location.
+        <a href='http://aws.amazon.com/ec2/'>See more</a>
+    </p>
 
     <h2>Phalcon Team</h2>
 
     <p>
-        We also offer limited hosting at competitive rates. Our
-        hosting plans are aimed toward very demanding and high
-        traffic applications. Our service is focused on the
-        web/database/application stack, thus we do not offer
-        any additional services such as user accounts, mail
-        servers etc..
+        We also offer limited hosting at competitive rates. Our hosting plans are aimed toward very demanding and high
+        traffic applications. Our service is focused on the web/database/application stack, thus we do not offer
+        any additional services such as user accounts, mail servers, etc. We can give you advice on hosting requeriments
+        for Phalcon.
     </p>
 
     <p>
