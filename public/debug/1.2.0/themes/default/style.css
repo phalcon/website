@@ -1,3 +1,4 @@
+
 /*
   +------------------------------------------------------------------------+
   | Phalcon Framework                                                      |
@@ -20,7 +21,7 @@
 
 body
 {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 	/*background: #423a4a;*/
 	margin: 0px;
 }
@@ -125,6 +126,8 @@ li.highlight {
 	margin: 0px;
 	text-shadow: 1px 0px #111111;
 	font-weight: normal;
+	box-shadow: 2px 5px 10px -7px #000;
+	border-left: 5px solid #444444;
 }
 
 .error-scroll
@@ -273,7 +276,7 @@ li.highlight {
 
 .ui-widget-header
 {
-	background: #dadada;
+	background: #414141;
 }
 
 .ui-widget
