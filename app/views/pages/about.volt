@@ -103,6 +103,6 @@
         We would like to thank all of our contributors and members of the community for pushing us to make Phalcon the best framework of its kind. Your kind words and engagement is what drives us
         to do better. We hope to meet and exceed the trust you put in Phalcon.</p>
 
-    <p>Thanks for flying with Phalcon!&lt;3</p>
+    <p>Thanks for flying with Phalcon! &lt;3</p>
 
 </div>

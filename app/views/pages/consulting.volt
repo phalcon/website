@@ -52,7 +52,7 @@
     <h4>Sponsors</h4>
     <p>
         For those that wish to sponsor our work and further the
-        development of Phalcon PHP, we offer various sponsorship
+        development of Phalcon, we offer various sponsorship
         options that will fit any budget.
     </p>
 

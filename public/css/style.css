@@ -119,8 +119,8 @@ a.tab-link {color: #000;}
 .wrapper {}
 .size-wrap {margin: 0 auto; min-width: 940px; padding: 0 20px; width: 85%;}
 
-.sidebar {width:260px; padding:8px; float: left; border: 1px solid #a6a6a6;}
-.sidebar + .content {margin-left:300px; overflow: hidden; }
+.sidebar {width:260px; padding:8px; float: left; border: 1px solid #dadada;}
+.sidebar + .content {margin-left:300px; overflow: hidden; padding-left: 15px; padding-top: 15px;}
 
 /* elements */
 
