@@ -27,7 +27,8 @@ blockquote:after {bottom: 0;}
 
 .highlight {padding: 20px 10px 10px; border-left: 3px solid #0ec281; background:#f2f2f2; color: #000; font: 14px/18px "Courier New", serif; }
 
-
+.strong {font-weight: bold;}
+.lighter {color:#747474;}
 
 .title-huge {font-size: 48px; line-height: 50px; font-weight: bold; text-align: center; text-transform: uppercase; margin:30px 0; }
 h1, .h1 {font-size: 36px; line-height: 38px; font-weight: normal; margin: 15px 0 10px; padding: 0;}
@@ -50,8 +51,8 @@ ul {margin: 15px 0; padding: 0 0 0 26px;}
 ul.unstyled {list-style: none; padding: 0;}
 
 ul.dash-list {list-style:none; padding: 0; }
-ul.dash-list li {padding: 0 0 0 20px; position: relative;}
-ul.dash-list li:before {content: '\2013'; position: absolute; top:0; left: 3px;}
+ul.dash-list > li {padding: 0 0 0 20px; position: relative;}
+ul.dash-list > li:before {content: '\2013'; position: absolute; top:0; left: 3px;}
 
 .small {font-size: 85%; line-height: 85%;}
 
@@ -235,6 +236,36 @@ a.services-block-link {color: #fff;}
 .table-of-contents .h4 {text-transform: uppercase;}
 .table-of-contents ul {font-size: 14px; margin-bottom: 30px;}
 .table-of-contents ul li {margin: 0 0 5px;}
+
+
+.api-table-of-contents {list-style: none; margin: 0 -8px; padding: 0;}
+.api-table-of-contents > li {margin: 0; padding: 0;}
+
+.api-top-level-link {display: block; text-decoration: none;  color: #000; padding: 10px 10px 10px 8px; border-left: 9px solid transparent; }
+.api-top-level-link:hover, .api-top-level-link.active {background: #f5f5f5; border-left-color: #0ec281;}
+
+.api-top-level-link.active {position: relative;}
+.api-top-level-link.active:before {content: ''; display: block; position:absolute; right: 7px; top: 18px; border-width: 6px;border-style: solid solid none; border-color: #666666 transparent; border-color: #666666 rgba(255,255,255,0); }
+
+.api-sublist {margin-left:20px; list-style: none; padding: 0; }
+
+
+
+.api-info-table {border-collapse: collapse; width: 100%;}
+.api-info-table td, .api-info-table th {vertical-align: top; text-align: left; padding: 8px 5px 8px 20px; border-bottom: 1px solid #c0c0c0; }
+.api-info-table th {font-weight: bold; text-align: right; width: 100px;}
+
+.api-methods-table {width: 100%; border-collapse: collapse;}
+.api-methods-table td {vertical-align: top; text-align: left; padding: 8px 5px; border-top: 1px solid #c0c0c0;}
+.api-methods-table tr:first-child td {border-top: none;}
+.api-methods-table .method {width: 200px;}
+.api-methods-table .description {font-size: 14px;}
+
+.api-methods-table tr:hover td {background: #f2f2f2;}
+
+.method-type {display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 15px; }
+.method-type.public {background: #0ec281; }
+
 
 .footer-wrap { margin-top: 50px; }
 .footer-wrap:before {content: ''; display: block; height: 2px;  border-color:#525252; border-width:3px 0 1px; border-style: solid none; margin-bottom:24px;}
