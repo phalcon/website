@@ -1,6 +1,6 @@
 <div class="main-teaser">
 
-    <div class="size-wrap clear-fix">
+    <div class="size-wrap fixed clear-fix">
 
         <div class="main-teaser-title title-white">The fastest<br/>PHP Framework</div>
 
