@@ -43,6 +43,8 @@ h4, .h4 {font-size: 16px; line-height: 18px; font-weight: bold; margin: 3px 0 2p
 
 p + h2, p + .h2 {margin-top: 50px;}
 
+h2 + h3 {margin-top: 20px;}
+
 
 .title-white {color: #fff; text-shadow: 0 0 2px rgba(0,0,0,0.7); font-weight: bold;}
 .section-title {color:#525252; text-transform: uppercase;}
@@ -289,7 +291,7 @@ a.services-block-link {color: #fff;}
 .member-name {font-size:24px; line-height: 26px; text-transform:uppercase; margin:0 0 10px; padding: 0;  }
 .member-links {margin: 10px 0;}
 
-.method-description {padding-left: 26px;}
+.method-description {padding-left: 26px; margin: 0 0 30px;}
 
 
 .footer-wrap { margin-top: 50px; }
