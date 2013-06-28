@@ -43,9 +43,12 @@ h4, .h4 {font-size: 16px; line-height: 18px; font-weight: bold; margin: 3px 0 2p
 
 p + h2, p + .h2 {margin-top: 50px;}
 
+
 .title-white {color: #fff; text-shadow: 0 0 2px rgba(0,0,0,0.7); font-weight: bold;}
 .section-title {color:#525252; text-transform: uppercase;}
 
+.with-hash {position: relative; padding-right: 20px; }
+.hash-link { text-decoration: none; font-size: 16px; position: absolute; top:0; right: 5px;}
 
 ul {margin: 15px 0; padding: 0 0 0 26px;}
 
@@ -273,7 +276,6 @@ a.services-block-link {color: #fff;}
 .api-table.methods-table .description {font-size: 14px;}
 .api-table.methods-table tr:hover td {background: #f2f2f2;}
 
-
 .api-table.constants-table .type {width: 1px; color:#118a65; }
 
 .method-type {display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 15px; }
@@ -286,6 +288,8 @@ a.services-block-link {color: #fff;}
 .member-info {margin-left: 324px; }
 .member-name {font-size:24px; line-height: 26px; text-transform:uppercase; margin:0 0 10px; padding: 0;  }
 .member-links {margin: 10px 0;}
+
+.method-description {padding-left: 26px;}
 
 
 .footer-wrap { margin-top: 50px; }
