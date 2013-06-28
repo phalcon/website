@@ -1,0 +1,38 @@
+
+
+
+<div class="body">
+
+  <div class="section" id="the-mvc-architecture">
+<h1>The MVC Architecture<a class="headerlink" href="#the-mvc-architecture" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Phalcon offers the object-oriented classes, necessary to implement the Model, View, Controller architecture
+(often referred to as <a class="reference external" href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC</a>) in your application. This design pattern is widely used by other web frameworks
+and desktop applications.</p>
+<p>MVC benefits include:</p>
+<ul class="simple">
+<li>Isolation of business logic from the user interface and the database layer</li>
+<li>Making it clear where different types of code belong for easier maintenance</li>
+</ul>
+<p>If you decide to use MVC, every request to your application resources will be managed by the <a class="reference external" href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC</a> architecture.
+Phalcon classes are written in C language, offering a high performance approach of this pattern in a PHP based application.</p>
+<div class="section" id="models">
+<h2>Models<a class="headerlink" href="#models" title="Ссылка на этот заголовок">¶</a></h2>
+<p>A model represents the information (data) of the application and the rules to manipulate that data. Models are primarily used for
+managing the rules of interaction with a corresponding database table. In most cases, each table in your database will correspond
+to one model in your application. The bulk of your application&#8217;s business logic will be concentrated in the models. <a class="reference internal" href="models.html"><em>Learn more</em></a></p>
+</div>
+<div class="section" id="views">
+<h2>Views<a class="headerlink" href="#views" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Views represent the user interface of your application. Views are often HTML files with embedded PHP code that perform tasks
+related solely to the presentation of the data. Views handle the job of providing data to the web browser or other tool that
+is used to make requests from your application. <a class="reference internal" href="views.html"><em>Learn more</em></a></p>
+</div>
+<div class="section" id="controllers">
+<h2>Controllers<a class="headerlink" href="#controllers" title="Ссылка на этот заголовок">¶</a></h2>
+<p>The controllers provide the &#8220;flow&#8221; between models and views. Controllers are responsible for processing the incoming requests
+from the web browser, interrogating the models for data, and passing that data on to the views for presentation. <a class="reference internal" href="controllers.html"><em>Learn more</em></a></p>
+</div>
+</div>
+
+
+</div>

@@ -1,0 +1,96 @@
+
+
+
+<div class="body">
+
+  <div class="section" id="apache-installation-notes">
+<h1>Apache Installation Notes<a class="headerlink" href="#apache-installation-notes" title="Ссылка на этот заголовок">¶</a></h1>
+<p><a class="reference external" href="http://httpd.apache.org/">Apache</a> is a popular and well known web server available on many platforms.</p>
+<div class="section" id="configuring-apache-for-phalcon">
+<h2>Configuring Apache for Phalcon<a class="headerlink" href="#configuring-apache-for-phalcon" title="Ссылка на этот заголовок">¶</a></h2>
+<p>The following are potential configurations you can use to setup Apache with Phalcon. These notes are primarily
+focused on the configuration of the mod-rewrite module allowing to use friendly urls and the
+<a class="reference internal" href="routing.html"><em>router component</em></a>. Commonly an application has the following structure:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">test/</span>
+<span class="x">  app/</span>
+<span class="x">    controllers/</span>
+<span class="x">    models/</span>
+<span class="x">    views/</span>
+<span class="x">  public/</span>
+<span class="x">    css/</span>
+<span class="x">    img/</span>
+<span class="x">    js/</span>
+<span class="x">    index.php</span>
+</pre></div>
+</div>
+<div class="section" id="directory-under-the-main-document-root">
+<h3>Directory under the main Document Root<a class="headerlink" href="#directory-under-the-main-document-root" title="Ссылка на этот заголовок">¶</a></h3>
+<p>This being the most common case, the application is installed in any directory under the document root.
+In this case, we use two .htaccess files, the first one to hide the application code forwarding all requests
+to the application&#8217;s document root (public/).</p>
+<div class="highlight-apacheconf"><div class="highlight"><pre><span class="c"># test/.htaccess</span>
+
+<span class="nt">&lt;IfModule</span> <span class="s">mod_rewrite.c</span><span class="nt">&gt;</span>
+    <span class="nb">RewriteEngine</span> <span class="k">on</span>
+    <span class="nb">RewriteRule</span>  ^$ public/    [L]
+    <span class="nb">RewriteRule</span>  (.*) public/$1 [L]
+<span class="nt">&lt;/IfModule&gt;</span>
+</pre></div>
+</div>
+<p>Now a second .htaccess file is located in the public/ directory, this re-writes all the URIs to the public/index.php file:</p>
+<div class="highlight-apacheconf"><div class="highlight"><pre><span class="c"># test/public/.htaccess</span>
+
+<span class="nt">&lt;IfModule</span> <span class="s">mod_rewrite.c</span><span class="nt">&gt;</span>
+    <span class="nb">RewriteEngine</span> <span class="k">On</span>
+    <span class="nb">RewriteCond</span> %{REQUEST_FILENAME} !-d
+    <span class="nb">RewriteCond</span> %{REQUEST_FILENAME} !-f
+    <span class="nb">RewriteRule</span> ^(.*)$ index.php?_url=/$1 [QSA,L]
+<span class="nt">&lt;/IfModule&gt;</span>
+</pre></div>
+</div>
+<p>If you do not want to use .htaccess files you can move these configurations to the apache&#8217;s main configuration file:</p>
+<div class="highlight-apacheconf"><div class="highlight"><pre><span class="nt">&lt;IfModule</span> <span class="s">mod_rewrite.c</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;Directory</span> <span class="s">&quot;/var/www/test&quot;</span><span class="nt">&gt;</span>
+        <span class="nb">RewriteEngine</span> <span class="k">on</span>
+        <span class="nb">RewriteRule</span>  ^$ public/    [L]
+        <span class="nb">RewriteRule</span>  (.*) public/$1 [L]
+    <span class="nt">&lt;/Directory&gt;</span>
+
+    <span class="nt">&lt;Directory</span> <span class="s">&quot;/var/www/test/public&quot;</span><span class="nt">&gt;</span>
+        <span class="nb">RewriteEngine</span> <span class="k">On</span>
+        <span class="nb">RewriteCond</span> %{REQUEST_FILENAME} !-d
+        <span class="nb">RewriteCond</span> %{REQUEST_FILENAME} !-f
+        <span class="nb">RewriteRule</span> ^(.*)$ index.php?_url=/$1 [QSA,L]
+    <span class="nt">&lt;/Directory&gt;</span>
+
+<span class="nt">&lt;/IfModule&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="virtual-hosts">
+<h3>Virtual Hosts<a class="headerlink" href="#virtual-hosts" title="Ссылка на этот заголовок">¶</a></h3>
+<p>And this second configuration allows you to install a Phalcon application in a virtual host:</p>
+<div class="highlight-apacheconf"><div class="highlight"><pre><span class="nt">&lt;VirtualHost</span> <span class="s">*:80</span><span class="nt">&gt;</span>
+
+    <span class="nb">ServerAdmin</span> admin@example.host
+    <span class="nb">DocumentRoot</span> <span class="s2">&quot;/var/vhosts/test/public&quot;</span>
+    <span class="nb">DirectoryIndex</span> index.php
+    <span class="nb">ServerName</span> example.host
+    <span class="nb">ServerAlias</span> www.example.host
+
+    <span class="nt">&lt;Directory</span> <span class="s">&quot;/var/vhosts/test/public&quot;</span><span class="nt">&gt;</span>
+        <span class="nb">Options</span> <span class="k">All</span>
+        <span class="nb">AllowOverride</span> <span class="k">All</span>
+        <span class="nb">Allow</span> from <span class="k">all</span>
+    <span class="nt">&lt;/Directory&gt;</span>
+
+<span class="nt">&lt;/VirtualHost&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>

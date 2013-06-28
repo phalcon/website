@@ -1,0 +1,49 @@
+
+
+
+<div class="body">
+
+  <div class="section" id="command-line-applications">
+<h1>Command Line Applications<a class="headerlink" href="#command-line-applications" title="Ссылка на этот заголовок">¶</a></h1>
+<p>CLI applications are executed from the command line. They are useful to create cron jobs, scripts, command utilities and more.</p>
+<div class="section" id="tasks">
+<h2>Tasks<a class="headerlink" href="#tasks" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Tasks are similar to controllers, on them can be implemented</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">class</span> <span class="nc">MonitoringTask</span> <span class="k">extends</span> <span class="nx">\Phalcon\CLI\Task</span>
+<span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">mainAction</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-a-bootstrap">
+<h2>Creating a Bootstrap<a class="headerlink" href="#creating-a-bootstrap" title="Ссылка на этот заголовок">¶</a></h2>
+<p>As MVC applications, a bootstrap is available to</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\DI\FactoryDefault\CLI</span> <span class="k">as</span> <span class="nx">CliDI</span><span class="p">,</span>
+    <span class="nx">Phalcon\CLI\Console</span> <span class="k">as</span> <span class="nx">ConsoleApp</span><span class="p">;</span>
+
+<span class="c1">//Using the CLI factory default services container</span>
+<span class="nv">$di</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CliDI</span><span class="p">();</span>
+
+<span class="c1">//Create a console application</span>
+<span class="nv">$console</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ConsoleApp</span><span class="p">();</span>
+<span class="nv">$console</span><span class="o">-&gt;</span><span class="na">setDI</span><span class="p">(</span><span class="nv">$di</span><span class="p">);</span>
+
+<span class="c1">//</span>
+<span class="nv">$console</span><span class="o">-&gt;</span><span class="na">handle</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;task&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;shell_script_name&#39;</span><span class="p">,</span> <span class="s1">&#39;action&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;echo&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+</div>

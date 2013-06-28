@@ -1,0 +1,174 @@
+
+
+
+<div class="body">
+
+  <div class="section" id="request-environment">
+<h1>Request Environment<a class="headerlink" href="#request-environment" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Every HTTP request (usually originated by a browser) contains additional information regarding the request such as header data,
+files, variables, etc. A web based application needs to parse that information so as to provide the correct
+response back to the requester. <tt class="xref doc docutils literal"><span class="pre">Phalcon\Http\Request</span></tt> encapsulates the
+information of the request, allowing you to access it in an object-oriented way.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">// Getting a request instance</span>
+<span class="nv">$request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Phalcon\Http\Request</span><span class="p">();</span>
+
+<span class="c1">// Check whether the request was made with method POST</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">isPost</span><span class="p">()</span> <span class="o">==</span> <span class="k">true</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// Check whether the request was made with Ajax</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">isAjax</span><span class="p">()</span> <span class="o">==</span> <span class="k">true</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;Request was made using POST and AJAX&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="getting-values">
+<h2>Getting Values<a class="headerlink" href="#getting-values" title="Ссылка на этот заголовок">¶</a></h2>
+<p>PHP automatically fills the superglobal arrays $_GET and $_POST depending on the type of the request. These arrays
+contain the values present in forms submitted or the parameters sent via the URL. The variables in the arrays are
+never sanitized and can contain illegal characters or even malicious code, which can lead to <a class="reference external" href="http://en.wikipedia.org/wiki/SQL_injection">SQL injection</a> or
+<a class="reference external" href="http://en.wikipedia.org/wiki/Cross-site_scripting">Cross Site Scripting (XSS)</a> attacks.</p>
+<p><tt class="xref doc docutils literal"><span class="pre">Phalcon\Http\Request</span></tt> allows you to access the values stored in the $_REQUEST,
+$_GET and $_POST arrays and sanitize or filter them with the &#8216;filter&#8217; service, (by default
+<a class="reference internal" href="filter.html"><em>Phalcon\Filter</em></a>). The following examples offer the same behavior:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">// Manually applying the filter</span>
+<span class="nv">$filter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phalcon\Filter</span><span class="p">();</span>
+
+<span class="nv">$email</span>  <span class="o">=</span> <span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">sanitize</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s2">&quot;user_email&quot;</span><span class="p">],</span> <span class="s2">&quot;email&quot;</span><span class="p">);</span>
+
+<span class="c1">// Manually applying the filter to the value</span>
+<span class="nv">$filter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phalcon\Filter</span><span class="p">();</span>
+<span class="nv">$email</span>  <span class="o">=</span> <span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">sanitize</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getPost</span><span class="p">(</span><span class="s2">&quot;user_email&quot;</span><span class="p">),</span> <span class="s2">&quot;email&quot;</span><span class="p">);</span>
+
+<span class="c1">// Automatically applying the filter</span>
+<span class="nv">$email</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getPost</span><span class="p">(</span><span class="s2">&quot;user_email&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">);</span>
+
+<span class="c1">// Setting a default value if the param is null</span>
+<span class="nv">$email</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getPost</span><span class="p">(</span><span class="s2">&quot;user_email&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="s2">&quot;some@example.com&quot;</span><span class="p">);</span>
+
+<span class="c1">// Setting a default value if the param is null without filtering</span>
+<span class="nv">$email</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getPost</span><span class="p">(</span><span class="s2">&quot;user_email&quot;</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="s2">&quot;some@example.com&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="accessing-the-request-from-controllers">
+<h2>Accessing the Request from Controllers<a class="headerlink" href="#accessing-the-request-from-controllers" title="Ссылка на этот заголовок">¶</a></h2>
+<p>The most common place to access the request environment is in an action of a controller. To access the
+<tt class="xref doc docutils literal"><span class="pre">Phalcon\Http\Request</span></tt> object from a controller you will need to use
+the $this-&gt;request public property of the controller:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Controller</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">PostsController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">saveAction</span><span class="p">()</span>
+    <span class="p">{</span>
+
+        <span class="c1">// Check if request has made with POST</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">isPost</span><span class="p">()</span> <span class="o">==</span> <span class="k">true</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="c1">// Access POST data</span>
+            <span class="nv">$customerName</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getPost</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">);</span>
+            <span class="nv">$customerBorn</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getPost</span><span class="p">(</span><span class="s2">&quot;born&quot;</span><span class="p">);</span>
+
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="uploading-files">
+<h2>Uploading Files<a class="headerlink" href="#uploading-files" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Another common task is file uploading. <tt class="xref doc docutils literal"><span class="pre">Phalcon\Http\Request</span></tt> offers
+an object-oriented way to achieve this task:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Controller</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">PostsController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">uploadAction</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// Check if the user has uploaded files</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">hasFiles</span><span class="p">()</span> <span class="o">==</span> <span class="k">true</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="c1">// Print the real file names and sizes</span>
+            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getUploadedFiles</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$file</span><span class="p">)</span> <span class="p">{</span>
+
+                <span class="c1">//Print file details</span>
+                <span class="k">echo</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">(),</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getSize</span><span class="p">(),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+
+                <span class="c1">//Move the file into the application</span>
+                <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">moveTo</span><span class="p">(</span><span class="s1">&#39;files/&#39;</span> <span class="o">.</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">());</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Each object returned by Phalcon\Http\Request::getUploadedFiles() is an instance of the
+<tt class="xref doc docutils literal"><span class="pre">Phalcon\Http\Request\File</span></tt> class. Using the $_FILES superglobal
+array offers the same behavior. <tt class="xref doc docutils literal"><span class="pre">Phalcon\Http\Request\File</span></tt> encapsulates
+only the information related to each file uploaded with the request.</p>
+</div>
+<div class="section" id="working-with-headers">
+<h2>Working with Headers<a class="headerlink" href="#working-with-headers" title="Ссылка на этот заголовок">¶</a></h2>
+<p>As mentioned above, request headers contain useful information that allow us to send the proper response back to
+the user. The following examples show usages of that information:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">// get the Http-X-Requested-With header</span>
+<span class="nv">$requestedWith</span> <span class="o">=</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getHeader</span><span class="p">(</span><span class="s2">&quot;X_REQUESTED_WITH&quot;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$requestedWith</span> <span class="o">==</span> <span class="s2">&quot;XMLHttpRequest&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;The request was made with Ajax&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Same as above</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">isAjax</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;The request was made with Ajax&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Check the request layer</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">isSecureRequest</span><span class="p">()</span> <span class="o">==</span> <span class="k">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;The request was made using a secure layer&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Get the servers&#39;s ip address. ie. 192.168.0.100</span>
+<span class="nv">$ipAddress</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getServerAddress</span><span class="p">();</span>
+
+<span class="c1">// Get the client&#39;s ip address ie. 201.245.53.51</span>
+<span class="nv">$ipAddress</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getClientAddress</span><span class="p">();</span>
+
+<span class="c1">// Get the User Agent (HTTP_USER_AGENT)</span>
+<span class="nv">$userAgent</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getUserAgent</span><span class="p">();</span>
+
+<span class="c1">// Get the best acceptable content by the browser. ie text/xml</span>
+<span class="nv">$contentType</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getAcceptableContent</span><span class="p">();</span>
+
+<span class="c1">// Get the best charset accepted by the browser. ie. utf-8</span>
+<span class="nv">$charset</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getBestCharset</span><span class="p">();</span>
+
+<span class="c1">// Get the best language accepted configured in the browser. ie. en-us</span>
+<span class="nv">$language</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getBestLanguage</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+</div>

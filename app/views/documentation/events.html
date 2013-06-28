@@ -1,0 +1,359 @@
+
+
+
+<div class="body">
+
+  <div class="section" id="events-manager">
+<h1>Events Manager<a class="headerlink" href="#events-manager" title="Ссылка на этот заголовок">¶</a></h1>
+<p>The purpose of this component is to intercept the execution of most of the components of the framework by creating “hooks point”. These hook
+points allow the developer to obtain status information, manipulate data or change the flow of execution during the process of a component.</p>
+<div class="section" id="usage-example">
+<h2>Usage Example<a class="headerlink" href="#usage-example" title="Ссылка на этот заголовок">¶</a></h2>
+<p>In the following example, we use the EventsManager to listen for events produced in a MySQL connection managed by <tt class="xref doc docutils literal"><span class="pre">Phalcon\Db</span></tt>.
+First, we need a listener object to do this. We created a class whose methods are the events we want to listen:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">class</span> <span class="nc">MyDbListener</span>
+<span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterConnect</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeQuery</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterQuery</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This new class can be as verbose as we need it to. The EventsManager will interface between the component and our listener class,
+offering hook points based on the methods we defined in our listener class:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Events\Manager</span> <span class="k">as</span> <span class="nx">EventsManager</span><span class="p">,</span>
+    <span class="nx">Phalcon\Db\Adapter\Pdo\Mysql</span> <span class="k">as</span> <span class="nx">DbAdapter</span><span class="p">;</span>
+
+<span class="nv">$eventsManager</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventsManager</span><span class="p">();</span>
+
+<span class="c1">//Create a database listener</span>
+<span class="nv">$dbListener</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyDbListener</span><span class="p">();</span>
+
+<span class="c1">//Listen all the database events</span>
+<span class="nv">$eventsManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="nv">$dbListener</span><span class="p">);</span>
+
+<span class="nv">$connection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DbAdapter</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+    <span class="s2">&quot;host&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;username&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;password&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;secret&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dbname&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;invo&quot;</span>
+<span class="p">));</span>
+
+<span class="c1">//Assign the eventsManager to the db adapter instance</span>
+<span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">setEventsManager</span><span class="p">(</span><span class="nv">$eventsManager</span><span class="p">);</span>
+
+<span class="c1">//Send a SQL command to the database server</span>
+<span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM products p WHERE p.status = 1&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>In order to log all the SQL statements executed by our application, we need to use the event “afterQuery”. The first parameter passed to
+the event listener contains contextual information about the event that is running, the second is the connection itself.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Logger\Adapter\File</span> <span class="k">as</span> <span class="nx">Logger</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MyDbListener</span>
+<span class="p">{</span>
+
+    <span class="k">protected</span> <span class="nv">$_logger</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_logger</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Logger</span><span class="p">(</span><span class="s2">&quot;../apps/logs/db.log&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterQuery</span><span class="p">(</span><span class="nv">$event</span><span class="p">,</span> <span class="nv">$connection</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_logger</span><span class="o">-&gt;</span><span class="na">log</span><span class="p">(</span><span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">getSQLStatement</span><span class="p">(),</span> <span class="nx">\Phalcon\Logger</span><span class="o">::</span><span class="na">INFO</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>As part of this example, we will also implement the Phalcon\Db\Profiler to detect the SQL statements that are taking longer to execute than expected:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Db\Profiler</span><span class="p">,</span>
+    <span class="nx">Phalcon\Logger</span><span class="p">,</span>
+    <span class="nx">Phalcon\Logger\Adapter\File</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MyDbListener</span>
+<span class="p">{</span>
+
+    <span class="k">protected</span> <span class="nv">$_profiler</span><span class="p">;</span>
+
+    <span class="k">protected</span> <span class="nv">$_logger</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Creates the profiler and starts the logger</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_profiler</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Profiler</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_logger</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Logger</span><span class="p">(</span><span class="s2">&quot;../apps/logs/db.log&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * This executed if the event triggered is &#39;beforeQuery&#39;</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeQuery</span><span class="p">(</span><span class="nv">$event</span><span class="p">,</span> <span class="nv">$connection</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_profiler</span><span class="o">-&gt;</span><span class="na">startProfile</span><span class="p">(</span><span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">getSQLStatement</span><span class="p">());</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * This executed if the event triggered is &#39;afterQuery&#39;</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterQuery</span><span class="p">(</span><span class="nv">$event</span><span class="p">,</span> <span class="nv">$connection</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_logger</span><span class="o">-&gt;</span><span class="na">log</span><span class="p">(</span><span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">getSQLStatement</span><span class="p">(),</span> <span class="nx">Logger</span><span class="o">::</span><span class="na">INFO</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_profiler</span><span class="o">-&gt;</span><span class="na">stopProfile</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getProfiler</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_profiler</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The resulting profile data can be obtained from the listener:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">//Send a SQL command to the database server</span>
+<span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM products p WHERE p.status = 1&quot;</span><span class="p">);</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$dbListener</span><span class="o">-&gt;</span><span class="na">getProfiler</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getProfiles</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$profile</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;SQL Statement: &quot;</span><span class="p">,</span> <span class="nv">$profile</span><span class="o">-&gt;</span><span class="na">getSQLStatement</span><span class="p">(),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">&quot;Start Time: &quot;</span><span class="p">,</span> <span class="nv">$profile</span><span class="o">-&gt;</span><span class="na">getInitialTime</span><span class="p">(),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">&quot;Final Time: &quot;</span><span class="p">,</span> <span class="nv">$profile</span><span class="o">-&gt;</span><span class="na">getFinalTime</span><span class="p">(),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s2">&quot;Total Elapsed Time: &quot;</span><span class="p">,</span> <span class="nv">$profile</span><span class="o">-&gt;</span><span class="na">getTotalElapsedSeconds</span><span class="p">(),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In a similar manner we can register an lambda function to perform the task instead of a separate listener class (as seen above):</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">//Listen all the database events</span>
+<span class="nv">$eventManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="nv">$event</span><span class="p">,</span> <span class="nv">$connection</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$event</span><span class="o">-&gt;</span><span class="na">getType</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;afterQuery&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">getSQLStatement</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-components-that-trigger-events">
+<h2>Creating components that trigger Events<a class="headerlink" href="#creating-components-that-trigger-events" title="Ссылка на этот заголовок">¶</a></h2>
+<p>You can create components in your application that trigger events to an EventsManager. As a consequence, there may exist listeners
+that react to these events when generated. In the following example we&#8217;re creating a component called &#8220;MyComponent&#8221;.
+This component is EventsManager aware; when its method &#8220;someTask&#8221; is executed it triggers two events to any listener in the EventsManager:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Events\EventsAwareInterface</span>
+
+<span class="k">class</span> <span class="nc">MyComponent</span> <span class="k">implements</span> <span class="nx">EventsAwareInterface</span>
+<span class="p">{</span>
+
+    <span class="k">protected</span> <span class="nv">$_eventsManager</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setEventsManager</span><span class="p">(</span><span class="nv">$eventsManager</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_eventsManager</span> <span class="o">=</span> <span class="nv">$eventsManager</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getEventsManager</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_eventsManager</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">someTask</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_eventsManager</span><span class="o">-&gt;</span><span class="na">fire</span><span class="p">(</span><span class="s2">&quot;my-component:beforeSomeTask&quot;</span><span class="p">,</span> <span class="nv">$this</span><span class="p">);</span>
+
+        <span class="c1">// do some task</span>
+
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_eventsManager</span><span class="o">-&gt;</span><span class="na">fire</span><span class="p">(</span><span class="s2">&quot;my-component:afterSomeTask&quot;</span><span class="p">,</span> <span class="nv">$this</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Note that events produced by this component are prefixed with &#8220;my-component&#8221;. This is a unique word that helps us
+identify events that are generated from certain component. You can even generate events outside the component with
+the same name. Now let&#8217;s create a listener to this component:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">class</span> <span class="nc">SomeListener</span>
+<span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeSomeTask</span><span class="p">(</span><span class="nv">$event</span><span class="p">,</span> <span class="nv">$myComponent</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;Here, beforeSomeTask</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterSomeTask</span><span class="p">(</span><span class="nv">$event</span><span class="p">,</span> <span class="nv">$myComponent</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;Here, afterSomeTask</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>A listener is simply a class that implements any of all the events triggered by the component. Now let&#8217;s make everything work together:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">//Create an Events Manager</span>
+<span class="nv">$eventsManager</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phalcon\Events\Manager</span><span class="p">();</span>
+
+<span class="c1">//Create the MyComponent instance</span>
+<span class="nv">$myComponent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyComponent</span><span class="p">();</span>
+
+<span class="c1">//Bind the eventsManager to the instance</span>
+<span class="nv">$myComponent</span><span class="o">-&gt;</span><span class="na">setEventsManager</span><span class="p">(</span><span class="nv">$myComponent</span><span class="p">);</span>
+
+<span class="c1">//Attach the listener to the EventsManager</span>
+<span class="nv">$eventsManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;my-component&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nx">SomeListener</span><span class="p">());</span>
+
+<span class="c1">//Execute methods in the component</span>
+<span class="nv">$myComponent</span><span class="o">-&gt;</span><span class="na">someTask</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>As &#8220;someTask&#8221; is executed, the two methods in the listener will be executed, producing the following output:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">Here, beforeSomeTask</span>
+<span class="x">Here, afterSomeTask</span>
+</pre></div>
+</div>
+<p>Additional data may also passed when triggering an event using the third parameter of &#8220;fire&#8221;:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$eventsManager</span><span class="o">-&gt;</span><span class="na">fire</span><span class="p">(</span><span class="s2">&quot;my-component:afterSomeTask&quot;</span><span class="p">,</span> <span class="nv">$this</span><span class="p">,</span> <span class="nv">$extraData</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>In a listener the third parameter also receives this data:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">//Receiving the data in the third parameter</span>
+<span class="nv">$eventManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;my-component&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="nv">$event</span><span class="p">,</span> <span class="nv">$component</span><span class="p">,</span> <span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">//Receiving the data from the event context</span>
+<span class="nv">$eventManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;my-component&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="nv">$event</span><span class="p">,</span> <span class="nv">$component</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$event</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">());</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>If a listener it is only interested in listening a specific type of event you can attach a listener directly:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">//The handler will only be executed if the event triggered is &quot;beforeSomeTask&quot;</span>
+<span class="nv">$eventManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;my-component:beforeSomeTask&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="nv">$event</span><span class="p">,</span> <span class="nv">$component</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//...</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="event-propagation-cancelation">
+<h2>Event Propagation/Cancelation<a class="headerlink" href="#event-propagation-cancelation" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Many listeners may be added to the same event manager, this means that for the same type of event many listeners can be notified.
+The listeners are notified in the order they were registered in the EventsManager. Some events are cancelable, indicating that
+these may be stopped preventing other listeners are notified about the event:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$eventsManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="nv">$event</span><span class="p">,</span> <span class="nv">$connection</span><span class="p">){</span>
+
+    <span class="c1">//We stop the event if it is cancelable</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$event</span><span class="o">-&gt;</span><span class="na">isCancelable</span><span class="p">())</span> <span class="p">{</span>
+        <span class="c1">//Stop the event, so other listeners will not be notified about this</span>
+        <span class="nv">$event</span><span class="o">-&gt;</span><span class="na">stop</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="c1">//...</span>
+
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>By default events are cancelable, even most of events produced by the framework are cancelables. You can fire a not-cancelable event
+by passing &#8220;false&#8221; in the fourth parameter of fire:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$eventsManager</span><span class="o">-&gt;</span><span class="na">fire</span><span class="p">(</span><span class="s2">&quot;my-component:afterSomeTask&quot;</span><span class="p">,</span> <span class="nv">$this</span><span class="p">,</span> <span class="nv">$extraData</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="listener-priorities">
+<h2>Listener Priorities<a class="headerlink" href="#listener-priorities" title="Ссылка на этот заголовок">¶</a></h2>
+<p>When attaching listeners you can set a specific priority. With this feature you can attach listeners indicating the order
+in which they must be called:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$evManager</span><span class="o">-&gt;</span><span class="na">enablePriorities</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+
+<span class="nv">$evManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nx">DbListener</span><span class="p">(),</span> <span class="mi">150</span><span class="p">);</span> <span class="c1">//More priority</span>
+<span class="nv">$evManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nx">DbListener</span><span class="p">(),</span> <span class="mi">100</span><span class="p">);</span> <span class="c1">//Normal priority</span>
+<span class="nv">$evManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nx">DbListener</span><span class="p">(),</span> <span class="mi">50</span><span class="p">);</span> <span class="c1">//Less priority</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="collecting-responses">
+<h2>Collecting Responses<a class="headerlink" href="#collecting-responses" title="Ссылка на этот заголовок">¶</a></h2>
+<p>The events manager can collect every response returned by every notified listener, this example explains how it works:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Events\Manager</span> <span class="k">as</span> <span class="nx">EventsManager</span><span class="p">;</span>
+
+<span class="nv">$evManager</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventsManager</span><span class="p">();</span>
+
+<span class="c1">//Set up the events manager to collect responses</span>
+<span class="nv">$evManager</span><span class="o">-&gt;</span><span class="na">collectResponses</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+
+<span class="c1">//Attach a listener</span>
+<span class="nv">$evManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;custom:custom&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s1">&#39;first response&#39;</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="c1">//Attach a listener</span>
+<span class="nv">$evManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;custom:custom&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s1">&#39;second response&#39;</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="c1">//Fire the event</span>
+<span class="nv">$evManager</span><span class="o">-&gt;</span><span class="na">fire</span><span class="p">(</span><span class="s1">&#39;custom:custom&#39;</span><span class="p">,</span> <span class="k">null</span><span class="p">);</span>
+
+<span class="c1">//Get all the collected responses</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$evManager</span><span class="o">-&gt;</span><span class="na">getResponses</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>The above example produces:</p>
+<div class="highlight-html"><div class="highlight"><pre>Array ( [0] =&gt; first response [1] =&gt; second response )
+</pre></div>
+</div>
+</div>
+<div class="section" id="implementing-your-own-eventsmanager">
+<h2>Implementing your own EventsManager<a class="headerlink" href="#implementing-your-own-eventsmanager" title="Ссылка на этот заголовок">¶</a></h2>
+<p>The <tt class="xref doc docutils literal"><span class="pre">Phalcon\Events\ManagerInterface</span></tt> interface must be implemented to create your own
+EventsManager replacing the one provided by Phalcon.</p>
+</div>
+</div>
+
+
+</div>

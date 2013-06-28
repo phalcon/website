@@ -1,0 +1,57 @@
+
+
+
+<div class="body">
+
+  <div class="section" id="cherokee-installation-notes">
+<h1>Cherokee Installation Notes<a class="headerlink" href="#cherokee-installation-notes" title="Ссылка на этот заголовок">¶</a></h1>
+<p><a class="reference external" href="http://www.cherokee-project.com/">Cherokee</a> is a high-performance web server. It is very fast, flexible and easy to configure.</p>
+<div class="section" id="configuring-cherokee-for-phalcon">
+<h2>Configuring Cherokee for Phalcon<a class="headerlink" href="#configuring-cherokee-for-phalcon" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Cherokee provides a friendly graphical interface to configure almost every setting available in the web server.
+Start the cherokee administrator by executing with root /path-to-cherokee/sbin/cherokee-admin</p>
+<div class="figure align-center">
+<img alt="../_images/cherokee-1.jpg" src="../_images/cherokee-1.jpg" />
+</div>
+<p>Create a new virtual host by clicking on &#8216;vServers&#8217;, then add a new virtual server:</p>
+<div class="figure align-center">
+<img alt="../_images/cherokee-2.jpg" src="../_images/cherokee-2.jpg" />
+</div>
+<p>The recently added virtual server must appear at the left bar of the screen. In the &#8216;Behaviors&#8217; tab
+you will see a set of default behaviors for this virtual server. Click the &#8216;Rule Management&#8217; button.
+Remove those labeled as &#8216;Directory /cherokee_themes&#8217; and &#8216;Directory /icons&#8217;:</p>
+<div class="figure align-center">
+<img alt="../_images/cherokee-3.jpg" src="../_images/cherokee-3.jpg" />
+</div>
+<p>Add the &#8216;PHP Language&#8217; behavior using the wizard. This behavior allow you to run PHP applications:</p>
+<div class="figure align-center">
+<img alt="../_images/cherokee-4.jpg" src="../_images/cherokee-4.jpg" />
+</div>
+<p>Normally this behavior does not require additional settings. Add another behavior,
+this time in the &#8216;Manual Configuration&#8217; section. In &#8216;Rule Type&#8217; choose &#8216;File Exists&#8217;,
+then make sure the option &#8216;Match any file&#8217; is enabled:</p>
+<div class="figure align-center">
+<img alt="../_images/cherokee-55.jpg" src="../_images/cherokee-55.jpg" />
+</div>
+<p>In the &#8216;Handler&#8217; tab choose &#8216;List &amp; Send&#8217; as handler:</p>
+<div class="figure align-center">
+<img alt="../_images/cherokee-7.jpg" src="../_images/cherokee-7.jpg" />
+</div>
+<p>Edit the &#8216;Default&#8217; behavior in order to enable the URL-rewrite engine. Change the handler to &#8216;Redirection&#8217;,
+then add the following regular expression to the engine ^(.*)$:</p>
+<div class="figure align-center">
+<img alt="../_images/cherokee-6.jpg" src="../_images/cherokee-6.jpg" />
+</div>
+<p>Finally, make sure the behaviors have the following order:</p>
+<div class="figure align-center">
+<img alt="../_images/cherokee-8.jpg" src="../_images/cherokee-8.jpg" />
+</div>
+<p>Execute the application in a browser:</p>
+<div class="figure align-center">
+<img alt="../_images/cherokee-9.jpg" src="../_images/cherokee-9.jpg" />
+</div>
+</div>
+</div>
+
+
+</div>

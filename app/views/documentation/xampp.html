@@ -1,0 +1,56 @@
+
+
+
+<div class="body">
+
+  <div class="section" id="installation-on-xampp">
+<h1>Installation on XAMPP<a class="headerlink" href="#installation-on-xampp" title="Ссылка на этот заголовок">¶</a></h1>
+<p><a class="reference external" href="http://www.apachefriends.org/en/xampp-windows.html">XAMPP</a> is an easy to install Apache distribution containing MySQL, PHP and Perl. Once you download XAMPP, all you have to do is extract it and start using it. Below are detailed instructions on how to install Phalcon on XAMPP for Windows. Using the latest XAMPP version is highly recommended.</p>
+<div class="section" id="download-the-right-version-of-phalcon">
+<h2>Download the right version of Phalcon<a class="headerlink" href="#download-the-right-version-of-phalcon" title="Ссылка на этот заголовок">¶</a></h2>
+<p>XAMPP is always releasing 32 bit versions of Apache and PHP. You will need to download the x86 version of Phalcon for Windows from the download section.</p>
+<p>After downloading the Phalcon library you will have a zip file like the one shown below:</p>
+<div class="figure align-center">
+<img alt="../_images/xampp-1.png" src="../_images/xampp-1.png" />
+</div>
+<p>Extract the library from the archive to get the Phalcon DLL:</p>
+<div class="figure align-center">
+<img alt="../_images/xampp-2.png" src="../_images/xampp-2.png" />
+</div>
+<p>Copy the file php_phalcon.dll to the PHP extensions. If you have installed XAMPP in the c:\xampp folder, the extension needs to be in c:\xampp\php\ext</p>
+<div class="figure align-center">
+<img alt="../_images/xampp-3.png" src="../_images/xampp-3.png" />
+</div>
+<p>Edit the php.ini file, it is located at ﻿C:\xampp\php\php.ini. It can be edited with Notepad or a similar program. We recommend Notepad++ to avoid issues with line endings. Append at the end of the file: extension=php_phalcon.dll and save it.</p>
+<div class="figure align-center">
+<img alt="../_images/xampp-4.png" src="../_images/xampp-4.png" />
+</div>
+<p>Restart the Apache Web Server from the XAMPP Control Center. This will load the new PHP configuration.</p>
+<div class="figure align-center">
+<img alt="../_images/xampp-5.png" src="../_images/xampp-5.png" />
+</div>
+<p>Open your browser to navigate to <a class="reference external" href="http://localhost">http://localhost</a>. The XAMPP welcome page will appear. Click on the link phpinfo().</p>
+<div class="figure align-center">
+<img alt="../_images/xampp-6.png" src="../_images/xampp-6.png" />
+</div>
+<p>phpinfo() will output a significant amount of information on screen about the current state of PHP. Scroll down to check if the phalcon extension has been loaded correctly.</p>
+<div class="figure align-center">
+<img alt="../_images/xampp-7.png" src="../_images/xampp-7.png" />
+</div>
+<p>If you can see the phalcon version in the phpinfo() output, congrats!, You are now flying with Phalcon.</p>
+</div>
+<div class="section" id="screencast">
+<h2>Screencast<a class="headerlink" href="#screencast" title="Ссылка на этот заголовок">¶</a></h2>
+<p>The following screencast is a step by step guide to install Phalcon on Windows:</p>
+<div align="center"><iframe src="http://player.vimeo.com/video/40265988" width="500" height="266" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div></div>
+<div class="section" id="related-guides">
+<h2>Related Guides<a class="headerlink" href="#related-guides" title="Ссылка на этот заголовок">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="install.html"><em>General Installation</em></a></li>
+<li><a class="reference internal" href="wamp.html"><em>Detailed Installation on WAMP for Windows</em></a></li>
+</ul>
+</div>
+</div>
+
+
+</div>

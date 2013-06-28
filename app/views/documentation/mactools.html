@@ -1,0 +1,65 @@
+
+
+
+<div class="body">
+
+  <div class="section" id="phalcon-developer-tools-on-mac-os-x">
+<h1>Phalcon Developer Tools on Mac OS X<a class="headerlink" href="#phalcon-developer-tools-on-mac-os-x" title="Ссылка на этот заголовок">¶</a></h1>
+<p>These steps will guide you through the process of installing Phalcon Developer Tools for OS/X.</p>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Ссылка на этот заголовок">¶</a></h2>
+<p>The Phalcon PHP extension is required to run Phalcon Tools. If you haven&#8217;t installed it yet, please see the <a class="reference internal" href="install.html"><em>Installation</em></a> section for instructions.</p>
+</div>
+<div class="section" id="download">
+<h2>Download<a class="headerlink" href="#download" title="Ссылка на этот заголовок">¶</a></h2>
+<p>You can download a cross platform package containing the developer tools from the <a class="reference external" href="http://phalconphp.com/download&gt;">Download</a> section. You can also clone it from <a class="reference external" href="https://github.com/phalcon/phalcon-devtools">Github</a>.</p>
+<p>Open the terminal application:</p>
+<div class="figure align-center">
+<img alt="../_images/mac-1.png" src="../_images/mac-1.png" />
+</div>
+<p>Copy &amp; Paste the commands below in your terminal:</p>
+<div class="highlight-bash"><div class="highlight"><pre>wget -q --no-check-certificate -O phalcon-tools.zip http://github.com/phalcon/phalcon-devtools/zipball/master
+unzip -q phalcon-tools.zip
+mv phalcon-phalcon-devtools-* phalcon-tools
+</pre></div>
+</div>
+<p>Check where the phalcon-tools directory was installed using a <em>pwd</em> command in your terminal:</p>
+<div class="figure align-center">
+<img alt="../_images/mac-2.png" src="../_images/mac-2.png" />
+</div>
+<p>On the Mac platform, you need to configure your user PATH to include Phalcon tools. Edit your .profile and append the Phalcon tools path to the environment variable PATH:</p>
+<div class="figure align-center">
+<img alt="../_images/mac-3.png" src="../_images/mac-3.png" />
+</div>
+<p>Insert these two lines at the end of the file:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/Users/scott/phalcon-tools
+<span class="nb">export </span><span class="nv">PTOOLSPATH</span><span class="o">=</span>/Users/scott/phalcon-tools
+</pre></div>
+</div>
+<p>The .profile should look like this:</p>
+<div class="figure align-center">
+<img alt="../_images/mac-4.png" src="../_images/mac-4.png" />
+</div>
+<p>Save your changes and close the editor. In the terminal window, type the following commands to create a symbolic link to the phalcon.sh script:</p>
+<div class="highlight-bash"><div class="highlight"><pre>ln -s ~/phalcon-tools/phalcon.sh ~/phalcon-tools/phalcon
+chmod +x ~/phalcon-tools/phalcon
+</pre></div>
+</div>
+<p>Type the command &#8220;phalcon&#8221; and you will see something like this:</p>
+<div class="figure align-center">
+<img alt="../_images/mac-5.png" src="../_images/mac-5.png" />
+</div>
+<p>Congratulations you now have Phalcon tools installed!</p>
+<div class="section" id="related-guides">
+<h3>Related Guides<a class="headerlink" href="#related-guides" title="Ссылка на этот заголовок">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="tools.html"><em>Using Developer Tools</em></a></li>
+<li><a class="reference internal" href="wintools.html"><em>Installation on Windows</em></a></li>
+<li><a class="reference internal" href="linuxtools.html"><em>Installation on Linux</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+</div>
