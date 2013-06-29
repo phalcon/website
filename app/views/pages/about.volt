@@ -6,6 +6,11 @@
 
 <div class="size-wrap">
 
+    <ul class="tabs clear-fix">
+        <li><a class="tab-link" href="{{ url(['for': 'pages', 'pageSlug': 'team']) }}"><u>Team</u></a></li>
+        <li><a class="tab-link active" href="{{ url(['for': 'pages', 'pageSlug': 'about']) }}"><u>About</u></a></li>
+    </ul>
+
     <p>Amazing projects need amazing hands. We might not know you just yet, but we think you'd be a great fit for building a better web. Together, we're ready to change the world!
         Here at Phalcon, we’re building a new generation framework for PHP, we want to give you an amazing performance while helping you to develop easy and fun.</p>
 

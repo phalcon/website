@@ -5,13 +5,7 @@
 </div>
 <div class="size-wrap">
 
-    <h3>Latest version</h3>
-
-    <p>Many bugs are raised because users are not running the
-        latest version. Please visit the {{ link_to('download', 'download') }}
-        page, download the latest version (or compile it) and confirm
-        if the issue you are experiencing is indeed a bug.
-    </p>
+    <div class="note-orange">Many bugs are raised because users are not running the latest version. Please visit the {{ link_to('download', 'download page') }}, download the latest version (or compile it) and confirm if the issue you are experiencing is indeed a bug.</div>
 
     <br />
     <h3>Documentation</h3>

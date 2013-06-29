@@ -1,8 +1,0 @@
-{%- set reldelim1 = reldelim1 is not defined and ' &raquo;' or reldelim1 %}
-{%- set reldelim2 = reldelim2 is not defined and ' |' or reldelim2 %}
-{%- set url_root = pathto('', 1) %}
-{%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
-
-{{ toc }}
-{% block body %} {% endblock %}
-

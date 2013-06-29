@@ -8,10 +8,10 @@ class DownloadController extends \ControllerBase
 
     }
 
-    public function aboutAction()
+    public function typeAction($type)
     {
 
-        $this->view->setContent("sdfds");
+        $this->view->pick('download/' . $type);
     }
 
 }
