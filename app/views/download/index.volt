@@ -1,15 +1,19 @@
-<div class="header-line"></div>
+<div class="header-line">
+    <div class="size-wrap">
+        <h1 class="header-line-title title-white">Download Phalcon</h1>
+    </div>
+</div>
 
-<div class="size-wrap content-wrap">
-
-    <div class="note">Phalcon is a C extension so you need to download a binary for your platform or compile it from source code.</div>
+<div class="size-wrap">
 
     <ul class="tabs clear-fix">
-        <li><a class="tab-link active" href="#true"><u>Linux/Unix/Mac</u></a></li>
-        <li><a class="tab-link" href="#windows"><u>Windows DLLs</u></a></li>
-        <li><a class="tab-link" href="#devtools"><u>Developer Tools</u></a></li>
-        <li><a class="tab-link" href="#stubs"><u>IDE stubs</u></a></li>
+        <li><a class="tab-link active" href="{{ url(['for': 'download']) }}"><u>Linux/Unix/Mac</u></a></li>
+        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'windows']) }}"><u>Windows DLLs</u></a></li>
+        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'tools']) }}"><u>Developer Tools</u></a></li>
+        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'stubs']) }}"><u>IDE stubs</u></a></li>
     </ul>
+
+    <div class="note">Phalcon is a C extension so you need to download a binary for your platform or compile it from source code.</div>
 
     <h2>Compilation</h2>
 

@@ -1,6 +1,6 @@
 <?php
 
-class ExamplesController extends \Ph\Controller
+class ExamplesController extends \ControllerBase
 {
     public function initialize()
     {

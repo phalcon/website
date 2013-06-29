@@ -1,0 +1,81 @@
+
+
+
+<ul>
+<li><a class="reference internal" href="#">Our motivation</a><ul>
+<li><a class="reference internal" href="#the-question">The Question</a></li>
+<li><a class="reference internal" href="#why">Why?</a></li>
+<li><a class="reference internal" href="#inner-workings-of-php">Inner workings of PHP?</a></li>
+<li><a class="reference internal" href="#how-traditional-php-frameworks-work">How traditional PHP frameworks work?</a></li>
+<li><a class="reference internal" href="#how-does-a-php-c-extension-work">How does a PHP C-extension work?</a></li>
+<li><a class="reference internal" href="#how-does-phalcon-work">How does Phalcon work?</a></li>
+<li><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+
+
+  <div class="section" id="our-motivation">
+<h1>Our motivation<a class="headerlink" href="#our-motivation" title="Ссылка на этот заголовок">¶</a></h1>
+<p>There are many PHP frameworks nowadays, but none of them is like Phalcon (Really, trust us on this one).</p>
+<p>Almost all programmers prefer to use a framework. This is primarily because it provides a lot of functionality that is already tested and
+ready to use, therefore keeping code DRY (Don&#8217;t Repeat Yourself). However, the framework itself demands a lot of file inclusions and
+hundreds of lines of code to be interpreted and executed on each request from the actual application. This operation slows the application
+down and subsequently impacts the end user experience.</p>
+<div class="section" id="the-question">
+<h2>The Question<a class="headerlink" href="#the-question" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Why can&#8217;t we have a framework with all of its advantages but with none or very few disadvantages?</p>
+<p>This is why Phalcon was born!</p>
+<p>During the last few months, we have extensively researched PHP&#8217;s behavior, investigating areas for significant optimizations (big or small).
+Through understanding of the Zend Engine, we managed to remove unnecessary validations, compacted code, performed optimizations and generated
+low-level solutions so as to achieve maximum performance from Phalcon.</p>
+</div>
+<div class="section" id="why">
+<h2>Why?<a class="headerlink" href="#why" title="Ссылка на этот заголовок">¶</a></h2>
+<ul class="simple">
+<li>The use of frameworks has become mandatory in professional development with PHP</li>
+<li>Frameworks offer a structured philosophy to easily maintain projects writing less code and making work more fun</li>
+</ul>
+</div>
+<div class="section" id="inner-workings-of-php">
+<h2>Inner workings of PHP?<a class="headerlink" href="#inner-workings-of-php" title="Ссылка на этот заголовок">¶</a></h2>
+<ul class="simple">
+<li>PHP has dynamic and weak variable types. Every time a binary operation is made (ex. 2 + &#8220;2&#8221;), PHP checks the operand types to perform potential conversions</li>
+<li>PHP is interpreted and not compiled. The major disadvantage is performance loss</li>
+<li>Every time a script is requested it must be first interpreted.</li>
+<li>If a bytecode cache (like APC) isn&#8217;t used, syntax checking is performed every time for every file in the request</li>
+</ul>
+</div>
+<div class="section" id="how-traditional-php-frameworks-work">
+<h2>How traditional PHP frameworks work?<a class="headerlink" href="#how-traditional-php-frameworks-work" title="Ссылка на этот заголовок">¶</a></h2>
+<ul class="simple">
+<li>Many files with classes and functions are read on every request made. Disk reading is expensive in terms of performance, especially when the file structure includes deep folders</li>
+<li>Modern frameworks use lazy loading (autoload) to increase performance (for load and execute only the code needed)</li>
+<li>Continuous loading or interpreting is expensive and impacts performance</li>
+<li>The framework code does not change very often, therefore an application needs to load and interpret it every time a request is made</li>
+</ul>
+</div>
+<div class="section" id="how-does-a-php-c-extension-work">
+<h2>How does a PHP C-extension work?<a class="headerlink" href="#how-does-a-php-c-extension-work" title="Ссылка на этот заголовок">¶</a></h2>
+<ul class="simple">
+<li>C extensions are loaded together with PHP one time on the web server&#8217;s daemon start process</li>
+<li>Classes and functions provided by the extension are ready to use for any application</li>
+<li>The code isn&#8217;t interpreted because is already compiled to a specific platform and processor</li>
+</ul>
+</div>
+<div class="section" id="how-does-phalcon-work">
+<h2>How does Phalcon work?<a class="headerlink" href="#how-does-phalcon-work" title="Ссылка на этот заголовок">¶</a></h2>
+<ul class="simple">
+<li>Components are loosely coupled. With Phalcon, nothing is imposed on you: you&#8217;re free to use the full framework, or just some parts of it as a glue components.</li>
+<li>Low-level optimizations provides the lowest overhead for MVC-based applications</li>
+<li>Interact with databases with maximum performance by using a C-language ORM for PHP</li>
+<li>Phalcon directly accesses internal PHP structures optimizing execution in that way as well</li>
+</ul>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Phalcon is an effort to build the fastest framework for PHP. You now have an even easier and robust way to develop applications without be worrying about performance. Enjoy!</p>
+</div>
+</div>
+
+
