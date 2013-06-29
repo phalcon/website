@@ -5,7 +5,6 @@
 </div>
 <div class="size-wrap">
 
-    <div class="markdown-body">
         <h3>Phalcon examples</h3>
 
         <h2>1.0.0</h2>
@@ -58,8 +57,8 @@
             </li>
         </ul>
 
-        <br />
-        <p>For sites currently running Phalcon, see the <a href="https://github.com/phalcon/cphalcon/wiki/Powered-by-Phalcon">Powered by Phalcon</a> page.</p>
-    </div>
+        <br/>
+
+        <p>For sites currently running Phalcon, see the {{ link_to(['for': 'pages', 'pageSlug': 'powered'], 'Powered by Phalcon') }} page.</p>
 
 </div>

@@ -14,10 +14,12 @@
     <h4>H4 Heading (tag h4 or class .h4)</h4>
     <br/>
 
-    <p>Normal text</p>
+    <div class="note-orange">Big orange message</div>
 
-    <br/>
-    <br/>
+    <p>Normal text: Intrinsicly build vertical models via client-focused innovation. Collaboratively myocardinate professional technology whereas highly efficient bandwidth. Globally underwhelm enterprise best
+        practices and B2B e-business. Continually fashion bricks-and-clicks vortals via functionalized "outside the box" thinking. Energistically deploy client-based vortals whereas inexpensive
+        processes.</p>
+
     <br/>
 
     <p><a href="#">Defaul link</a></p>

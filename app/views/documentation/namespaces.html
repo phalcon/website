@@ -1,0 +1,97 @@
+
+
+
+<ul>
+<li><a class="reference internal" href="#">Working with Namespaces</a><ul>
+<li><a class="reference internal" href="#setting-up-the-framework">Setting up the framework</a></li>
+<li><a class="reference internal" href="#controllers-with-namespaces">Controllers with Namespaces</a></li>
+</ul>
+</li>
+</ul>
+
+
+  <div class="section" id="working-with-namespaces">
+<h1>Working with Namespaces<a class="headerlink" href="#working-with-namespaces" title="Ссылка на этот заголовок">¶</a></h1>
+<p><a class="reference external" href="http://php.net/manual/en/language.namespaces.php">Namespaces</a> can be used to avoid class name collisions; this means that if you have two controllers in an application with the same name,
+a namespace can be used to differentiate them. Namespaces are also useful for creating bundles or modules.</p>
+<div class="section" id="setting-up-the-framework">
+<h2>Setting up the framework<a class="headerlink" href="#setting-up-the-framework" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Using namespaces has some implications when loading the appropriate controller. To adjust the framework behavior to namespaces is necessary
+to perform one or all of the following tasks:</p>
+<p>Use an autoload strategy that takes into account the namespaces, for example with Phalcon\Loader:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$loader</span><span class="o">-&gt;</span><span class="na">registerNamespaces</span><span class="p">(</span>
+    <span class="k">array</span><span class="p">(</span>
+       <span class="s1">&#39;Store\Admin\Controllers&#39;</span>    <span class="o">=&gt;</span> <span class="s2">&quot;../bundles/admin/controllers/&quot;</span><span class="p">,</span>
+       <span class="s1">&#39;Store\Admin\Models&#39;</span>    <span class="o">=&gt;</span> <span class="s2">&quot;../bundles/admin/models/&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>Specify it in the routes as a separate parameter in the route&#8217;s paths:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$router</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span>
+    <span class="s1">&#39;/admin/users/my-profile&#39;</span><span class="p">,</span>
+    <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;namespace&quot;  =&gt; &#39;</span><span class="nx">Store\Admin</span><span class="s1">&#39;,</span>
+<span class="s1">        &#39;</span><span class="nx">controller</span><span class="s2">&quot; =&gt; &#39;Users&#39;,</span>
+<span class="s2">        &#39;action&quot;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;profile&#39;</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>Passing it as part of the route:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$router</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span>
+    <span class="s1">&#39;/:namespace/admin/users/my-profile&#39;</span><span class="p">,</span>
+    <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;namespace&quot;  =&gt; 1,</span>
+<span class="s1">        &#39;</span><span class="nx">controller</span><span class="s2">&quot; =&gt; &#39;Users&#39;,</span>
+<span class="s2">        &#39;action&quot;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;profile&#39;</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>If you are only working with the same namespace for every controller in your application, then you can define a default namespace
+in the Dispatcher, by doing this, you don&#8217;t need to specify a full class name in the router path:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">//Registering a dispatcher</span>
+<span class="nv">$di</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;dispatcher&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nv">$dispatcher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Phalcon\Mvc\Dispatcher</span><span class="p">();</span>
+    <span class="nv">$dispatcher</span><span class="o">-&gt;</span><span class="na">setDefaultNamespace</span><span class="p">(</span><span class="s1">&#39;Store\Admin\Controllers&#39;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nv">$dispatcher</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="controllers-with-namespaces">
+<h2>Controllers with Namespaces<a class="headerlink" href="#controllers-with-namespaces" title="Ссылка на этот заголовок">¶</a></h2>
+<p>The following example shows how to implement a controller that use namespaces:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Store\Admin\Controllers</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">UsersController</span> <span class="k">extends</span> <span class="nx">\Phalcon\Mvc\Controller</span>
+<span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">profileAction</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+

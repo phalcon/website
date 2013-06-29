@@ -1,0 +1,157 @@
+
+
+
+<ul>
+<li><a class="reference internal" href="#">Encryption/Decryption</a><ul>
+<li><a class="reference internal" href="#basic-usage">Basic Usage</a></li>
+<li><a class="reference internal" href="#encryption-options">Encryption Options</a></li>
+<li><a class="reference internal" href="#base64-support">Base64 Support</a></li>
+<li><a class="reference internal" href="#setting-up-an-encryption-service">Setting up an Encryption service</a></li>
+</ul>
+</li>
+</ul>
+
+
+  <div class="section" id="encryption-decryption">
+<h1>Encryption/Decryption<a class="headerlink" href="#encryption-decryption" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Phalcon provides encryption facilities via the <tt class="xref doc docutils literal"><span class="pre">Phalcon\Crypt</span></tt> component.
+This class offers simple object-oriented wrappers to the <a class="reference external" href="http://www.php.net/manual/en/book.mcrypt.php">mcrypt</a> php&#8217;s encryption library.</p>
+<p>By default, this component provides secure encryption using AES-256 (rijndael-256-cbc).</p>
+<div class="section" id="basic-usage">
+<h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Ссылка на этот заголовок">¶</a></h2>
+<p>This component is designed to provide a very simple usage:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">//Create an instance</span>
+<span class="nv">$crypt</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phalcon\Crypt</span><span class="p">();</span>
+
+<span class="nv">$key</span> <span class="o">=</span> <span class="s1">&#39;le password&#39;</span><span class="p">;</span>
+<span class="nv">$text</span> <span class="o">=</span> <span class="s1">&#39;This is a secret text&#39;</span><span class="p">;</span>
+
+<span class="nv">$encrypted</span> <span class="o">=</span> <span class="nv">$crypt</span><span class="o">-&gt;</span><span class="na">encrypt</span><span class="p">(</span><span class="nv">$text</span><span class="p">,</span> <span class="nv">$key</span><span class="p">);</span>
+
+<span class="k">echo</span> <span class="nv">$crypt</span><span class="o">-&gt;</span><span class="na">decrypt</span><span class="p">(</span><span class="nv">$encrypted</span><span class="p">,</span> <span class="nv">$key</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>You can use the same instance to encrypt/decrypt several times:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">//Create an instance</span>
+<span class="nv">$crypt</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phalcon\Crypt</span><span class="p">();</span>
+
+<span class="nv">$texts</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;my-key&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;This is a secret text&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;other-key&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;This is a very secret&#39;</span>
+<span class="p">);</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$texts</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$text</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">//Perform the encryption</span>
+    <span class="nv">$encrypted</span> <span class="o">=</span> <span class="nv">$crypt</span><span class="o">-&gt;</span><span class="na">encrypt</span><span class="p">(</span><span class="nv">$text</span><span class="p">,</span> <span class="nv">$key</span><span class="p">);</span>
+
+    <span class="c1">//Now decrypt</span>
+    <span class="k">echo</span> <span class="nv">$crypt</span><span class="o">-&gt;</span><span class="na">decrypt</span><span class="p">(</span><span class="nv">$encrypted</span><span class="p">,</span> <span class="nv">$key</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="encryption-options">
+<h2>Encryption Options<a class="headerlink" href="#encryption-options" title="Ссылка на этот заголовок">¶</a></h2>
+<p>The following options are available to change the encryption behavior:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="89%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Cipher</td>
+<td>The cipher is one of the encryption algorithms supported by libmcrypt. You can see a list <a class="reference external" href="http://www.php.net/manual/en/mcrypt.ciphers.php">here</a></td>
+</tr>
+<tr class="row-odd"><td>Mode</td>
+<td>One of the encryption modes supported by libmcrypt (ecb, cbc, cfb, ofb)</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">//Create an instance</span>
+<span class="nv">$crypt</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phalcon\Crypt</span><span class="p">();</span>
+
+<span class="c1">//Use blowfish</span>
+<span class="nv">$crypt</span><span class="o">-&gt;</span><span class="na">setCipher</span><span class="p">(</span><span class="s1">&#39;blowfish&#39;</span><span class="p">);</span>
+
+<span class="nv">$key</span> <span class="o">=</span> <span class="s1">&#39;le password&#39;</span><span class="p">;</span>
+<span class="nv">$text</span> <span class="o">=</span> <span class="s1">&#39;This is a secret text&#39;</span><span class="p">;</span>
+
+<span class="k">echo</span> <span class="nv">$crypt</span><span class="o">-&gt;</span><span class="na">encrypt</span><span class="p">(</span><span class="nv">$text</span><span class="p">,</span> <span class="nv">$key</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="base64-support">
+<h2>Base64 Support<a class="headerlink" href="#base64-support" title="Ссылка на этот заголовок">¶</a></h2>
+<p>In order that encryption is properly transmited (emails) or displayed (browsers) <a class="reference external" href="http://www.php.net/manual/en/function.base64-encode.php">base64</a> encoding is usually applied to encrypted texts:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">//Create an instance</span>
+<span class="nv">$crypt</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phalcon\Crypt</span><span class="p">();</span>
+
+<span class="nv">$key</span> <span class="o">=</span> <span class="s1">&#39;le password&#39;</span><span class="p">;</span>
+<span class="nv">$text</span> <span class="o">=</span> <span class="s1">&#39;This is a secret text&#39;</span><span class="p">;</span>
+
+<span class="nv">$encrypt</span> <span class="o">=</span> <span class="nv">$crypt</span><span class="o">-&gt;</span><span class="na">encryptBase64</span><span class="p">(</span><span class="nv">$text</span><span class="p">,</span> <span class="nv">$key</span><span class="p">);</span>
+
+<span class="k">echo</span> <span class="nv">$crypt</span><span class="o">-&gt;</span><span class="na">decryptBase64</span><span class="p">(</span><span class="nv">$text</span><span class="p">,</span> <span class="nv">$key</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-up-an-encryption-service">
+<h2>Setting up an Encryption service<a class="headerlink" href="#setting-up-an-encryption-service" title="Ссылка на этот заголовок">¶</a></h2>
+<p>You can set up the encryption component in the services container in order to use it from any part of the application:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$di</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;crypt&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="nv">$crypt</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phalcon\Crypt</span><span class="p">();</span>
+
+    <span class="c1">//Set a global encryption key</span>
+    <span class="nv">$crypt</span><span class="o">-&gt;</span><span class="na">setKey</span><span class="p">(</span><span class="s1">&#39;%31.1e$i86e$f!8jz&#39;</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="nv">$crypt</span><span class="p">;</span>
+<span class="p">},</span> <span class="k">true</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Then, for example, in a controller you can use it as follows:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Controller</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">SecretsController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">saveAction</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$secret</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Secrets</span><span class="p">();</span>
+
+        <span class="nv">$text</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getPost</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">);</span>
+
+        <span class="nv">$secret</span><span class="o">-&gt;</span><span class="na">content</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">crypt</span><span class="o">-&gt;</span><span class="na">encrypt</span><span class="p">(</span><span class="nv">$text</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$secret</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">())</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">flash</span><span class="o">-&gt;</span><span class="na">success</span><span class="p">(</span><span class="s1">&#39;Secret was successfully created!&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+

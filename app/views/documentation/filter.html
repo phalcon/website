@@ -1,0 +1,211 @@
+
+
+
+<ul>
+<li><a class="reference internal" href="#">Filtering and Sanitizing</a><ul>
+<li><a class="reference internal" href="#sanitizing-data">Sanitizing data</a></li>
+<li><a class="reference internal" href="#sanitizing-from-controllers">Sanitizing from Controllers</a></li>
+<li><a class="reference internal" href="#filtering-action-parameters">Filtering Action Parameters</a></li>
+<li><a class="reference internal" href="#filtering-data">Filtering data</a></li>
+<li><a class="reference internal" href="#types-of-built-in-filters">Types of Built-in Filters</a></li>
+<li><a class="reference internal" href="#creating-your-own-filters">Creating your own Filters</a></li>
+<li><a class="reference internal" href="#complex-sanitizing-and-filtering">Complex Sanitizing and Filtering</a></li>
+<li><a class="reference internal" href="#implementing-your-own-filter">Implementing your own Filter</a></li>
+</ul>
+</li>
+</ul>
+
+
+  <div class="section" id="filtering-and-sanitizing">
+<h1>Filtering and Sanitizing<a class="headerlink" href="#filtering-and-sanitizing" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Sanitizing user input is a critical part of software development. Trusting or neglecting to sanitize user input could lead to unauthorized
+access to the content of your application, mainly user data, or even the server your application is hosted on.</p>
+<div class="figure align-center">
+<img alt="../_images/sql.png" src="../_images/sql.png" />
+</div>
+<p><a class="reference external" href="http://xkcd.com/327/">Full image (from xkcd)</a></p>
+<p>The <tt class="xref doc docutils literal"><span class="pre">Phalcon\Filter</span></tt> component provides a set of commonly used filters and data sanitizing helpers. It provides object-oriented wrappers around the PHP filter extension.</p>
+<div class="section" id="sanitizing-data">
+<h2>Sanitizing data<a class="headerlink" href="#sanitizing-data" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Sanitizing is the process which removes specific characters from a value, that are not required or desired by the user or application.
+By sanitizing input we ensure that application integrity will be intact.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$filter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Phalcon\Filter</span><span class="p">();</span>
+
+<span class="c1">// returns &quot;someone@example.com&quot;</span>
+<span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">sanitize</span><span class="p">(</span><span class="s2">&quot;some(one)@exa\mple.com&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">);</span>
+
+<span class="c1">// returns &quot;hello&quot;</span>
+<span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">sanitize</span><span class="p">(</span><span class="s2">&quot;hello&lt;&lt;&quot;</span><span class="p">,</span> <span class="s2">&quot;string&quot;</span><span class="p">);</span>
+
+<span class="c1">// returns &quot;100019&quot;</span>
+<span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">sanitize</span><span class="p">(</span><span class="s2">&quot;!100a019&quot;</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">);</span>
+
+<span class="c1">// returns &quot;100019.01&quot;</span>
+<span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">sanitize</span><span class="p">(</span><span class="s2">&quot;!100a019.01a&quot;</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sanitizing-from-controllers">
+<h2>Sanitizing from Controllers<a class="headerlink" href="#sanitizing-from-controllers" title="Ссылка на этот заголовок">¶</a></h2>
+<p>You can access a <tt class="xref doc docutils literal"><span class="pre">Phalcon\Filter</span></tt> object from your controllers when accessing GET or POST input data
+(through the request object). The first parameter is the name of the variable to be obtained; the second is the filter to be applied on it.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">class</span> <span class="nc">ProductsController</span> <span class="k">extends</span> <span class="nx">\Phalcon\Mvc\Controller</span>
+<span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">saveAction</span><span class="p">()</span>
+    <span class="p">{</span>
+
+        <span class="c1">// Sanitizing price from input</span>
+        <span class="nv">$price</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getPost</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="s2">&quot;double&quot;</span><span class="p">);</span>
+
+        <span class="c1">// Sanitizing email from input</span>
+        <span class="nv">$email</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getPost</span><span class="p">(</span><span class="s2">&quot;customerEmail&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">);</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="filtering-action-parameters">
+<h2>Filtering Action Parameters<a class="headerlink" href="#filtering-action-parameters" title="Ссылка на этот заголовок">¶</a></h2>
+<p>The next example shows you how to sanitize the action parameters within a controller action:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">class</span> <span class="nc">ProductsController</span> <span class="k">extends</span> <span class="nx">\Phalcon\Mvc\Controller</span>
+<span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">showAction</span><span class="p">(</span><span class="nv">$productId</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$productId</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">filter</span><span class="o">-&gt;</span><span class="na">sanitize</span><span class="p">(</span><span class="nv">$productId</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="filtering-data">
+<h2>Filtering data<a class="headerlink" href="#filtering-data" title="Ссылка на этот заголовок">¶</a></h2>
+<p>In addition to sanitizing, <tt class="xref doc docutils literal"><span class="pre">Phalcon\Filter</span></tt> also provides filtering by removing or modifying input data to
+the format we expect.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$filter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Phalcon\Filter</span><span class="p">();</span>
+
+<span class="c1">// returns &quot;Hello&quot;</span>
+<span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">filter</span><span class="p">(</span><span class="s2">&quot;&lt;h1&gt;Hello&lt;/h1&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;striptags&quot;</span><span class="p">);</span>
+
+<span class="c1">// returns &quot;Hello&quot;</span>
+<span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">filter</span><span class="p">(</span><span class="s2">&quot;  Hello   &quot;</span><span class="p">,</span> <span class="s2">&quot;trim&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="types-of-built-in-filters">
+<h2>Types of Built-in Filters<a class="headerlink" href="#types-of-built-in-filters" title="Ссылка на этот заголовок">¶</a></h2>
+<p>The following are the built-in filters provided by this component:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="87%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>string</td>
+<td>Strip tags</td>
+</tr>
+<tr class="row-odd"><td>email</td>
+<td>Remove all characters except letters, digits and !#$%&amp;*+-/=?^_`{|}~&#64;.[].</td>
+</tr>
+<tr class="row-even"><td>int</td>
+<td>Remove all characters except digits, plus and minus sign.</td>
+</tr>
+<tr class="row-odd"><td>float</td>
+<td>Remove all characters except digits, dot, plus and minus sign.</td>
+</tr>
+<tr class="row-even"><td>alphanum</td>
+<td>Remove all characters except [a-zA-Z0-9]</td>
+</tr>
+<tr class="row-odd"><td>striptags</td>
+<td>Applies the <a class="reference external" href="http://www.php.net/manual/en/function.strip-tags.php">strip_tags</a> function</td>
+</tr>
+<tr class="row-even"><td>trim</td>
+<td>Applies the <a class="reference external" href="http://www.php.net/manual/en/function.trim.php">trim</a> function</td>
+</tr>
+<tr class="row-odd"><td>lower</td>
+<td>Applies the <a class="reference external" href="http://www.php.net/manual/en/function.strtolower.php">strtolower</a> function</td>
+</tr>
+<tr class="row-even"><td>upper</td>
+<td>Applies the <a class="reference external" href="http://www.php.net/manual/en/function.strtoupper.php">strtoupper</a> function</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="creating-your-own-filters">
+<h2>Creating your own Filters<a class="headerlink" href="#creating-your-own-filters" title="Ссылка на этот заголовок">¶</a></h2>
+<p>You can add your own filters to <tt class="xref doc docutils literal"><span class="pre">Phalcon\Filter</span></tt>. The filter function could be an anonomyous function:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$filter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Phalcon\Filter</span><span class="p">();</span>
+
+<span class="c1">//Using an anonymous function</span>
+<span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="s1">&#39;md5&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">preg_replace</span><span class="p">(</span><span class="s1">&#39;/[^0-9a-f]/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nv">$value</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">//Sanitize with the &quot;md5&quot; filter</span>
+<span class="nv">$filtered</span> <span class="o">=</span> <span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">sanitize</span><span class="p">(</span><span class="nv">$possibleMd5</span><span class="p">,</span> <span class="s2">&quot;md5&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Or, if you prefer, you can implement the filter in a class:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">class</span> <span class="nc">IPv4Filter</span>
+<span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">filter</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">filter_var</span><span class="p">(</span><span class="nv">$value</span><span class="p">,</span> <span class="nx">FILTER_VALIDATE_IP</span><span class="p">,</span> <span class="nx">FILTER_FLAG_IPV4</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="nv">$filter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Phalcon\Filter</span><span class="p">();</span>
+
+<span class="c1">//Using an object</span>
+<span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="s1">&#39;ipv4&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nx">IPv4Filter</span><span class="p">());</span>
+
+<span class="c1">//Sanitize with the &quot;ipv4&quot; filter</span>
+<span class="nv">$filteredIp</span> <span class="o">=</span> <span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">sanitize</span><span class="p">(</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="s2">&quot;ipv4&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="complex-sanitizing-and-filtering">
+<h2>Complex Sanitizing and Filtering<a class="headerlink" href="#complex-sanitizing-and-filtering" title="Ссылка на этот заголовок">¶</a></h2>
+<p>PHP itself provides an excellent filter extension you can use. Check out its documentation: <a class="reference external" href="http://www.php.net/manual/en/book.filter.php">Data Filtering at PHP Documentation</a></p>
+</div>
+<div class="section" id="implementing-your-own-filter">
+<h2>Implementing your own Filter<a class="headerlink" href="#implementing-your-own-filter" title="Ссылка на этот заголовок">¶</a></h2>
+<p>The <tt class="xref doc docutils literal"><span class="pre">Phalcon\FilterInterface</span></tt> interface must be implemented to create your own filtering service
+replacing the one provided by Phalcon.</p>
+</div>
+</div>
+
+
