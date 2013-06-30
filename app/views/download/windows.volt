@@ -21,8 +21,8 @@
     To use phalcon on Windows you can download a DLL library.
     Edit your php.ini and append at the end:
 
-    <div class="highlight">
-        <pre class="ini">extension=php_phalcon.dll</pre>
+    <div class="highlight1">
+        <pre class="language-ini">extension=php_phalcon.dll</pre>
     </div>
 
     Restart your webserver to load the extension.

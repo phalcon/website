@@ -32,6 +32,6 @@
     {% include 'partials/footer.volt' %}
 
 </div>
-
+<script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
