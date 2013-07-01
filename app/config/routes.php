@@ -10,7 +10,9 @@ $router->add('/' , 'index::index')->setName('index');
 $router->add('/{pageSlug:(models|about|reference|team|roadmap|consulting|hosting|examples|support|api|ui|powered)}' , [ 'controller' => 'pages' , 'action' => 'page' ])->setName('pages');
 
 $router->add('/download' , [ 'controller' => 'download' ])->setName('download');
-$router->add('/download/{type:(windows|tools|stubs)}' , [ 'controller' => 'download' , 'action' => 'type' ])->setName('download-type');
+$router->add('/download/{type:(tools|stubs)}' , [ 'controller' => 'download' , 'action' => 'index' ])->setName('download-type');
+$router->add('/download/windows' , [ 'controller' => 'download' , 'action' => 'windows' ])->setName('download-windows');
+
 
 
 $router->add('/documentation' , [ 'controller' => 'documentation' , 'action' => 'index' ])->setName('documentation');
