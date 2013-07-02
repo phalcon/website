@@ -61,17 +61,29 @@ sudo ./install
 
     <h2>Debian</h2>
 
-    <p>There is a repo graciously offered by <a href="#">FortRabbit here</a></p>
+    <p>There is a repo graciously offered by <a href="http://www.fortrabbit.com/">FortRabbit</a> <a href="http://debrepo.frbit.com/">here</a></p>
 
     <h2>Arch Linux</h2>
 
-    <p>There is a PKGBUILD for ArchLinux, available <a href="#">here</a></p>
+    <p>There is a PKGBUILD for ArchLinux, available <a href="http://aur.archlinux.org/packages.php?ID=61950">here</a></p>
 
     <pre><code class="bash"># pkg_add -r phalcon</code></pre>
 
     <p>or</p>
 
-    <pre><code class="bash"># cd /usr/ports/www/phalcon && make install clean</code></pre>
+    <p>
+        <pre><code class="bash"># cd /usr/ports/www/phalcon && make install clean</code></pre>
+    </p>
+
+    <h2>OpenSUSE</h2>
+    <p>There is package available <a href="http://software.opensuse.org/package/php5-phalcon">here</a> (thanks to <a href='https://github.com/mruz'>Mariusz Łączak</a></p>
+
+    <h2>FreeBSD</h2>
+    <p>A port is available for FreeBSD. Just only need these simple line commands to install it:
+        <pre><code># pkg_add -r phalcon</code></pre>
+        or
+        <pre><code># cd /usr/ports/www/phalcon && make install clean</code></pre>
+    </p>
 
     <h2>Dependencies</h2>
 

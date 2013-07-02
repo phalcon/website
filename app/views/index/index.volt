@@ -53,7 +53,7 @@
                         <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#hydration-modes">Hydration</a></li>
                         <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#logging-low-level-sql-statements">Logging</a></li>
                         <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#profiling-sql-statements">Profiling</a></li>
-                        <li><a class="link-black" href="#">Sharding</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#setting-multiple-databases">Sharding</a></li>
                     </ul>
                 </td>
                 <td>
@@ -118,7 +118,7 @@
                     <i class="icon-large icon-github"></i>
                     <span class="service-link-text">Github</span>
                 </a>
-                <a class="service-link" href="#">
+                <a class="service-link" href="mailto:team@phalconphp.com">
                     <i class="icon-large icon-email"></i>
                     <span class="service-link-text">Email Us</span>
                 </a>
