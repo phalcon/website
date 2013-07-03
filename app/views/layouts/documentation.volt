@@ -6,7 +6,7 @@
 
 <div class="size-wrap">
 
-    <div class="note">Phalcon's documentation is maintained in <a href="#">Github repositories</a>. You are more than welcome to send us pull requests if you found an error or if</div>
+    <div class="note">Phalcon's documentation is maintained in <a href="https://github.com/phalcon/docs">Github repositories</a>. You are more than welcome to send us pull requests if you found an error or if</div>
 
     <div class="content-wrap clear-fix">
 

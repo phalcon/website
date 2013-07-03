@@ -4,6 +4,13 @@
 class DocumentationController extends \ControllerBase
 {
 
+    public function initialize()
+    {
+
+        $this->response->redirect('http://docs.phalconphp.com/en/latest/index.html',true,302);
+
+    }
+
     public function indexAction()
     {
 

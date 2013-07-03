@@ -26,7 +26,7 @@
 
     <p><a href="#" class="link-green">green link</a></p>
 
-    <p><a href="#" class="link-black">green link</a></p>
+    <p><a href="#" class="link-black">black link</a></p>
 
     <br/>
     <br/>
