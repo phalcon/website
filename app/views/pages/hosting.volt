@@ -38,7 +38,7 @@
         <a href='http://community.webfaction.com/questions/13689/phalcon-php'>here</a>
     </p>
 
-    <h2><a target="_blank" href='http://webfaction.com/'>Amazon EC2</a></h2>
+    <h2><a target="_blank" href='http://aws.amazon.com/'>Amazon EC2</a></h2>
 
     <p>
         Amazon Elastic Compute Cloud delivers scalable, pay-as-you-go compute capacity in the cloud.
@@ -55,7 +55,6 @@
     <p>
         Deploy and Manage Linux Virtual Servers in the Linode Cloud.
         Get a server running in seconds with your choice of Linux distro, resources, and node location.
-        <a href='http://aws.amazon.com/ec2/'>See more</a>
     </p>
 
     <h2>Phalcon Team</h2>

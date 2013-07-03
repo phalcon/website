@@ -81,7 +81,7 @@
     <p>We have a presence in most of the popular social networks. By following us, you are helping increase the project visibility:</p>
 
     <ul class="dash-list">
-        <li><a href="http://twitter.com/phalconph">Follow us on Twitter</a></li>
+        <li><a href="http://twitter.com/phalconphp">Follow us on Twitter</a></li>
         <li><a href="http://www.facebook.com/pages/Phalcon/134230726685897">Facebook Page</a></li>
         <li><a href="https://plus.google.com/102376109340560896457">Google+ Page</a></li>
         <li><a href="http://blog.phalconphp.com">Official Blog</a></li>

@@ -30,14 +30,13 @@
 
     <p>
 
-    <div class="highlight">
-            <pre>
-#Ubuntu
+    <div class="highlight1">
+<pre><code class="bash">#Ubuntu
 sudo apt-get install php5-dev php5-mysql gcc
 
 #Suse
 yast2 -i php5-pear php5-devel php5-mysql gcc
-            </pre>
+</code></pre>
     </div>
     </p>
 
@@ -48,57 +47,42 @@ yast2 -i php5-pear php5-devel php5-mysql gcc
 
     <p>
 
-    <div class="highlight">
-            <pre>
-git clone git://github.com/phalcon/cphalcon.git
-
+<pre><code class="bash">git clone git://github.com/phalcon/cphalcon.git
 cd cphalcon/build
-
 sudo ./install
-            </pre>
-    </div>
+</code></pre>
     </p>
 
     <p>2. Add the extension to your php.ini:</p>
-
-    <p>
-
-    <div class="highlight">
-            <pre>
-extension=phalcon.so
-            </pre>
-    </div>
-    </p>
-
+    <pre><code class="ini">extension=phalcon.so</code></pre>
 
     <p>3. Finally restart the webserver</p>
 
+
     <h2>Debian</h2>
 
-    <p>There is a repo graciously offered by <a href="#">FortRabbit here</a></p>
+    <p>There is a repo graciously offered by <a href="http://www.fortrabbit.com/">FortRabbit</a> <a href="http://debrepo.frbit.com/">here</a></p>
 
     <h2>Arch Linux</h2>
 
-    <p>There is a PKGBUILD for ArchLinux, available <a href="#">here</a></p>
+    <p>There is a PKGBUILD for ArchLinux, available <a href="http://aur.archlinux.org/packages.php?ID=61950">here</a></p>
 
-    <p>
-
-    <div class="highlight">
-            <pre>
-# pkg_add -r phalcon
-            </pre>
-    </div>
-    </p>
+    <pre><code class="bash"># pkg_add -r phalcon</code></pre>
 
     <p>or</p>
 
     <p>
+        <pre><code class="bash"># cd /usr/ports/www/phalcon && make install clean</code></pre>
+    </p>
 
-    <div class="highlight">
-            <pre>
-# cd /usr/ports/www/phalcon && make install clean
-            </pre>
-    </div>
+    <h2>OpenSUSE</h2>
+    <p>There is package available <a href="http://software.opensuse.org/package/php5-phalcon">here</a> (thanks to <a href='https://github.com/mruz'>Mariusz Łączak</a></p>
+
+    <h2>FreeBSD</h2>
+    <p>A port is available for FreeBSD. Just only need these simple line commands to install it:
+        <pre><code># pkg_add -r phalcon</code></pre>
+        or
+        <pre><code># cd /usr/ports/www/phalcon && make install clean</code></pre>
     </p>
 
     <h2>Dependencies</h2>
@@ -122,7 +106,7 @@ extension=phalcon.so
 
     <h2>Need help?</h2>
 
-    <p>Have a look at our <a href="#">support page</a> for ways to get support. We will do our best to help you.</p>
+    <p>Have a look at our <a href="{{ url(['for': 'pages', 'pageSlug': 'support']) }}">support page</a> for ways to get support. We will do our best to help you.</p>
 
 
 </div>

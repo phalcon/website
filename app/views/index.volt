@@ -21,7 +21,7 @@
 
         {% if this.getDi().get('router').getControllerName() == 'index' %}
         <blockquote class="header-intro">
-            <strong>Phalcon</strong> is a web framework implemented as a C extension offering <a href="#">high performance</a> and lower resource consumption
+            <strong>Phalcon</strong> is a web framework implemented as a C extension offering <a href="http://docs.phalconphp.com/en/latest/reference/benchmark.html">high performance</a> and lower resource consumption
         </blockquote>
         {% endif %}
 
@@ -32,6 +32,6 @@
     {% include 'partials/footer.volt' %}
 
 </div>
-
+<script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
