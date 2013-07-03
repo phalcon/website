@@ -47,7 +47,7 @@
 
                         <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#behaviors">Behaviors</a></li>
                         <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#relationships-between-models">Relations</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference//phql.html">PHQL</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/phql.html">PHQL</a></li>
                         <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#events-and-events-manager">Events</a></li>
                         <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#validation-failed-events">Validations</a></li>
                         <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#hydration-modes">Hydration</a></li>
@@ -72,8 +72,8 @@
                 <td>
 
                     <ul class="unstyled">
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/escaper.html">Escaping/Filtering</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/forms.html">Forms Builder/Validation</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/escaper.html">Escaping</a> / <a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/filter.html">Filtering</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/forms.html">Forms Builder</a> / <a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/validation.html">Validation</a></li>
                         <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/flash.html">Flash Messages</a></li>
                         <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/cache.html">Cache</a></li>
                         <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/pagination.html">Pagination</a></li>

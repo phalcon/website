@@ -7,7 +7,7 @@
                 <ul class="footer-links-list unstyled">
                     <li>{{ link_to(['for': 'download'], 'Download', 'class' : 'link-black') }}</li>
                     <li>{{ link_to(['for': 'documentation'], 'Documentation', 'class' : 'link-black') }}</li>
-                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'github'], 'Blog', 'class' : 'link-black') }}</li>
+                    <a class="link-black" href="http://blog.phalconphp.com/">Blog</a>
                 </ul>
             </td>
             <td>
