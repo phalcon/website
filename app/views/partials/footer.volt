@@ -6,7 +6,7 @@
                 <div class="footer-links-title">Main</div>
                 <ul class="footer-links-list unstyled">
                     <li>{{ link_to(['for': 'download'], 'Download', 'class' : 'link-black') }}</li>
-                    <li>{{ link_to(['for': 'documentation'], 'Documentation', 'class' : 'link-black') }}</li>
+                    <a class="link-black" href="http://docs.phalconphp.com/en/latest/index.html">Documentation</a>
                     <a class="link-black" href="http://blog.phalconphp.com/">Blog</a>
                 </ul>
             </td>

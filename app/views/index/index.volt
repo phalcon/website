@@ -94,7 +94,7 @@
             </tr>
         </table>
         <div class="documentation-button-wrap">
-            <a href="/reference"><span class="button black">Documentation</span></a>
+            <a href="http://docs.phalconphp.com/en/latest/index.html"><span class="button black">Documentation</span></a>
         </div>
     </div>
 
