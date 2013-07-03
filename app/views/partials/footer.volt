@@ -6,8 +6,8 @@
                 <div class="footer-links-title">Main</div>
                 <ul class="footer-links-list unstyled">
                     <li>{{ link_to(['for': 'download'], 'Download', 'class' : 'link-black') }}</li>
-                    <a class="link-black" href="http://docs.phalconphp.com/en/latest/index.html">Documentation</a>
-                    <a class="link-black" href="http://blog.phalconphp.com/">Blog</a>
+                    <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/index.html">Documentation</a></li>
+                    <li><a class="link-black" href="http://blog.phalconphp.com/">Blog</a></li>
                 </ul>
             </td>
             <td>
@@ -41,7 +41,7 @@
     <div class="donate-wrap">
         Donate to Phalcon: <a href="http://flattr.com/thing/1134206/Phalcon-PHP-Framework" target="_blank" class="button button-small orange">Flattr</a>
         or
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="display: inline">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="display: inline" target="_blank">
             <input type="hidden" name="cmd" value="_s-xclick">
             <input type="hidden" name="hosted_button_id" value="7LSYMNMFZNG8W">
             <input class="button button-small orange" style="border: inherit; display: inline; font-weight: bold" type="submit" value="via Paypal" title="PayPal — The safer, easier way to pay online.">
@@ -49,10 +49,10 @@
     </div>
 
     <div class="social-links">
-        <a href="https://twitter.com/phalconphp" class="social-link tw">Twitter</a>
-        <a href="http://www.facebook.com/pages/Phalcon/134230726685897" class="social-link fb">Facebook</a>
-        <a href="https://plus.google.com/102376109340560896457" class="social-link gp">Google Plus</a>
-        <a href="http://vimeo.com/user10964377" class="social-link vm">Vimeo</a>
+        <a target="_blank" href="https://twitter.com/phalconphp" class="social-link tw">Twitter</a>
+        <a target="_blank" href="http://www.facebook.com/pages/Phalcon/134230726685897" class="social-link fb">Facebook</a>
+        <a target="_blank" href="https://plus.google.com/102376109340560896457" class="social-link gp">Google Plus</a>
+        <a target="_blank" href="http://vimeo.com/phalconphp" class="social-link vm">Vimeo</a>
     </div>
 
 </div>
