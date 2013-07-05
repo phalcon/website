@@ -6,13 +6,30 @@ class DownloadController extends \ControllerBase
     public function indexAction($type = 'index')
     {
 
+        switch ( $type ) {
+
+            default:
+            case 'index':
+                $title = 'Download Phalcon for Linux/Unix/Mac';
+                break;
+
+            case 'tools':
+                $title = 'Download Phalcon Developer Tools';
+                break;
+
+            case 'stubs':
+                $title = 'Download Phalcon IDE Stubs';
+                break;
+        }
+
+        \Phalcon\Tag::setTitle($title);
         $this->view->pick('download/' . $type);
     }
 
     public function windowsAction()
     {
 
-        \Phalcon\Tag::setTitle('Phalcon for Windows');
+        \Phalcon\Tag::setTitle('Download Phalcon for Windows');
 
         $path     = 'files/';
         $template = "Phalcon %s - Windows %s for PHP %s %s(%s)";
@@ -135,16 +152,12 @@ class DownloadController extends \ControllerBase
         if ( count($old['x64']) == 0 ) {
             unset($old['x64']);
         }
-/*
-        echo '<pre>';
-        print_r($current);
-        die;
-*/
+
         $this->view->setVars(
             [
             'current' => $current ,
-            'old'     => $old ,
-            'alpha'   => $alpha
+            'alpha'   => $alpha ,
+            'old'     => $old
             ]
         );
 
