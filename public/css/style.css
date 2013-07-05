@@ -155,14 +155,16 @@ a.header-logo {color: #000;}
 .header-nav-link {color:#000; font-size: 16px; line-height: 18px;}
 a.header-nav-link {color:#000;}
 
-.header-line {min-width:980px; height: 87px; background: #5da49e url('../images/header-line.jpg') 50% 0 no-repeat; margin: 0 0 20px; overflow: hidden;}
+.header-line {min-width:980px; height: 87px; background: #42aaa9  url('../images/header-line.jpg') 50% 0 no-repeat; margin: 0 0 20px; overflow: hidden;}
 
 .header-line-title {font-size:48px; line-height: 50px; padding: 20px 0; margin: 0; }
 
-.main-teaser {margin: 15px 0 45px; background: #5da49e url('../images/bg.jpg') 50% 0 no-repeat; height: 694px; text-align: center; position: relative;}
+.main-teaser {margin: 15px 0 45px; background: #42aaa9 url('../images/bg.jpg') 50% 0 no-repeat; height: 694px; text-align: center; position: relative;}
+
 .main-teaser:after {
-    content: ''; display: block; position: absolute; top:100%; left:50%; margin-left:-13px;
-    border-width: 34px 26px; border-style: solid solid none; border-color: #5da49e transparent; border-color: #5da49e rgba(255,255,255,0);
+    content: ''; display: block; position: absolute; top:100%; left:50%; margin-left:-26px; width: 53px; height: 34px;
+/*    border-width: 34px 26px; border-style: solid solid none; border-color: #5da49e transparent; border-color: #5da49e rgba(255,255,255,0);*/
+    background: url('../images/teaser-pointer.png');
 }
 
 .main-teaser-title {  font-size: 72px; line-height: 74px;  padding: 30px 0;}
