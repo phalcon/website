@@ -1,20 +1,23 @@
 <?php
 
-return new \Phalcon\Config(array(
-	'database' => array(
+return new \Phalcon\Config([
+	'database' => [
 		'adapter'     => 'Mysql',
 		'host'        => 'localhost',
 		'username'    => 'root',
 		'password'    => '',
 		'dbname'      => 'test',
-	),
-	'application' => array(
-		'controllersDir' => __DIR__ . '/../../app/controllers/',
-		'modelsDir'      => __DIR__ . '/../../app/models/',
-		'viewsDir'       => __DIR__ . '/../../app/views/',
-		'pluginsDir'     => __DIR__ . '/../../app/plugins/',
-		'libraryDir'     => __DIR__ . '/../../app/library/',
-		'cacheDir'       => __DIR__ . '/../../app/cache/',
+	],
+	'application' => [
+		'controllersDir' => ROOT_PATH . '/app/controllers/',
+		'modelsDir'      => ROOT_PATH . '/app/models/',
+		'viewsDir'       => ROOT_PATH . '/app/views/',
+		'pluginsDir'     => ROOT_PATH . '/app/plugins/',
+		'libraryDir'     => ROOT_PATH . '/app/library/',
 		'baseUri'        => '/',
-	)
-));
+	],
+    'cache' => [
+        'lifetime' => 86400 ,
+        'cacheDir' => ROOT_PATH . '/app/cache/' ,
+    ]
+]);
