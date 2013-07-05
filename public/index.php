@@ -2,6 +2,10 @@
 
 error_reporting(E_ALL);
 
+if (!defined('ROOT_PATH')) {
+    define('ROOT_PATH', dirname(dirname(__FILE__)));
+}
+
 try {
 
 	/**
@@ -22,8 +26,7 @@ try {
 	/**
 	 * Handle the request
 	 */
-	$application = new \Phalcon\Mvc\Application();
-	$application->setDI($di);
+	$application = new \Phalcon\Mvc\Application($di);
 	echo $application->handle()->getContent();
 
 } catch (Phalcon\Exception $e) {
