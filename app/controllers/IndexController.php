@@ -36,5 +36,9 @@ class IndexController extends \ControllerBase
         );
     }
 
-}
+    public function donateAction()
+    {
+        \Phalcon\Tag::setTitle('Donate');
+    }
 
+}
