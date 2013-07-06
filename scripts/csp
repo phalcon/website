@@ -1,6 +1,0 @@
-java -jar scripts/yuicompressor-2.4.7.jar public/css/style.css > public/css/s.css
-java -jar scripts/yuicompressor-2.4.7.jar public/css/documentation.css > public/css/d.css
-java -jar scripts/yuicompressor-2.4.7.jar public/css/colors/zenburn.css >> public/css/d.css
-java -jar scripts/yuicompressor-2.4.7.jar public/css/api.css > public/css/a.css
-java -jar scripts/yuicompressor-2.4.7.jar public/css/colors/zenburn.css >> public/css/a.css
-java -jar scripts/yuicompressor-2.4.7.jar public/css/blog.css > public/css/b.css

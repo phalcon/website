@@ -1,11 +1,17 @@
 <?php
 
-class DocumentationController extends \Ph\Controller
+
+class DocumentationController extends \ControllerBase
 {
+
+    /**
+     *  later..........
+     */
     public function initialize()
     {
-        \Phalcon\Tag::setTitle('Documentation');
-        parent::initialize();
+
+        $this->response->redirect('http://docs.phalconphp.com/en/latest/index.html',true,302);
+
     }
 
     public function indexAction()
@@ -13,15 +19,14 @@ class DocumentationController extends \Ph\Controller
 
     }
 
-    public function redirectAction($name = null)
+    public function showAction($pageSlug)
     {
-        $name = $this->dispatcher->getParam("name");
-        $name = $this->filter->sanitize($name, "string");
-        if ($name){
-            $this->response->redirect("http://docs.phalconphp.com/en/latest/reference/" . $name . ".html", true, 302);
-        } else {
-            $this->response->redirect("http://docs.phalconphp.com/", true);
-        }
+
+        $pageTitle = \Phalcon\Text::camelize($pageSlug);
+        \Phalcon\Tag::setTitle($pageTitle);
+
+        $this->view->pick('documentation/'.$pageSlug);
     }
 
 }
+

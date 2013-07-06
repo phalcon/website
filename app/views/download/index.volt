@@ -1,255 +1,112 @@
-            <div class="row-fluid featured-specs text-center">
-                <div>
-                    <h1>Downloads</h1>
-                    Phalcon is a C extension so you need to download a binary for your platform or compile
-                    it from source code.</p>
-                </div>
-            </div>
+<div class="header-line">
+    <div class="size-wrap">
+        <h1 class="header-line-title title-white">Download Phalcon</h1>
+    </div>
+</div>
 
-            <div class="row-fluid secondary-block">
-                <div class="span12">
+<div class="size-wrap">
 
-                    <div class="featured-specs tabbable tabs-left">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#compiling" data-toggle="tab">Linux/Unix/Mac</a></li>
-                            <li><a href="#windows" data-toggle="tab">Windows DLLs</a></li>
-                            <li><a href="#devtools" data-toggle="tab">Developer Tools</a></li>
-                        </ul>
-                        <div class="tab-content">
+    <ul class="tabs clear-fix">
+        <li><a class="tab-link active" href="{{ url(['for': 'download']) }}"><u>Linux/Unix/Mac</u></a></li>
+        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'windows']) }}"><u>Windows DLLs</u></a></li>
+        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'tools']) }}"><u>Developer Tools</u></a></li>
+        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'stubs']) }}"><u>IDE stubs</u></a></li>
+    </ul>
 
-                            <div class="tab-pane active" id="compiling">
+    <div class="note">Phalcon is a C extension so you need to download a binary for your platform or compile it from source code.</div>
 
-                                <h3>Compilation</h3>
-                                On platform Linux you can easily compile and install the extension from source code.
+    <h2>Compilation</h2>
 
-                                <h4>Requirements</h4>
-                                We need some packages previously installed
+    <p>On platform Linux you can easily compile and install the extension from source code.</p>
 
-                                <ul>
-                                    <li>PHP 5.x development resources</li>
-                                    <li>GCC compiler</li>
-                                </ul>
+    <h3>Requirements</h3>
 
-                                <pre><code>#Ubuntu
+    <p class="strong">We need some packages previously installed:</p>
+
+    <ul>
+        <li>PHP 5.x development resources</li>
+        <li>GCC compiler</li>
+    </ul>
+
+    <p>
+
+    <div class="highlight1">
+<pre><code class="bash">#Ubuntu
 sudo apt-get install php5-dev php5-mysql gcc
 
 #Suse
-yast2 -i php5-pear php5-devel php5-mysql gcc</code></pre>
+yast2 -i php5-pear php5-devel php5-mysql gcc
+</code></pre>
+    </div>
+    </p>
 
-                                <h4>Compilation</h4>
-                                To create the extension from C source follow the next steps:
-                                <pre><code>git clone git://github.com/phalcon/cphalcon.git
+
+    <h3>Compilation</h3>
+
+    <p>1. To create the extension from C source follow the next steps:</p>
+
+    <p>
+
+<pre><code class="bash">git clone git://github.com/phalcon/cphalcon.git
 cd cphalcon/build
-sudo ./install</code></pre>
-
-                                Add the extension to your php.ini:
-                                <pre><code>extension=phalcon.so</code></pre>
-
-                                Finally restart the webserver
-
-                                <h3>Debian</h3>
-                                There is a repo graciously offered by <a href='http://www.fortrabbit.com'>FortRabbit</a>
-                                <a href="http://debrepo.frbit.com/">here</a>
-
-                                <h3>Arch Linux</h3>
-                                There is a PKGBUILD for ArchLinux, available
-                                <a href="http://aur.archlinux.org/packages.php?ID=61950">here</a>
-
-                                <h3>OpenSUSE</h3>
-                                There is package available
-                                <a href="http://software.opensuse.org/package/php5-phalcon">here</a>
-                                (thanks to <a href='https://github.com/mruz'>Mariusz Łączak</a>
-
-                                <h3>FreeBSD</h3>
-                                A port is available for FreeBSD. Just only need these
-                                simple line commands to install it:
-                                <pre><code># pkg_add -r phalcon</code></pre>
-                                or
-                                <pre><code># cd /usr/ports/www/phalcon && make install clean</code></pre>
-
-                                <h3>Dependencies</h3>
-                                Although Phalcon does not binary link to other extensions it does
-                                use some of them to offer functionality. The extensions used are:
-                                <ul>
-                                    <li>mbstring</li>
-                                    <li>mcrypt</li>
-                                    <li>openssl</li>
-                                    <li>PDO</li>
-                                    <li>PDO/Mysql</li>
-                                    <li>PDO/Postgresql</li>
-                                    <li>PDO/Sqlite</li>
-                                    <li>PDO/Oracle</li>
-                                    <li>Mongo</li>
-                                </ul>
-                                It is not necessary for all the above extensions to be present
-                                in the system that has Phalcon installed. You can only install
-                                the ones that meet your needs. For instance if you use a MySQL
-                                database, then you can only load PDO and PDO/MySQL ignoring the
-                                Oracle, SQlite, Postgresql and Mongo.
-
-                                <h3>Need help?</h3>
-                                Have a look at our {{ link_to('support', 'support page') }} for
-                                ways to get support. We will do our best to help you.
-
-                            </div>
-                            <div class="tab-pane" id="windows">
-
-                                <h3>Windows</h3>
-                                To use phalcon on Windows you can download a DLL library.
-                                Edit your php.ini and append at the end:
-
-                                <pre><code>extension=php_phalcon.dll</code></pre>
-
-                                Restart your webserver to load the extension.
-
-                                <hr>
-
-                                <div class="alert alert-info">
-                                    We highly recommend you to use the latest version of PHP so as
-                                    to take advantage of the full feature set of Phalcon.
-                                </div>
-
-                                <table class='table'>
-
-                                    <?php foreach ($current as $version_key => $version) { ?>
-                                    <tr>
-                                        <td colspan="2">
-                                            <strong><?php echo $version_key; ?></strong>
-                                        </td>
-                                    </tr>
-                                    {% for file in version %}
-                                    <tr>
-                                        <td>
-                                            {{ file['name'] }}
-                                            <br />
-                                            <span style="font-size:10px">{{ file['date'] }} / sha1:{{ file['checksum'] }}</span>
-                                        </td>
-                                        <td class="text-right">
-                                            {{ link_to(file['file'], 'download', 'target': '_download', 'title': file['name']) }}
-                                        </td>
-                                    </tr>
-                                    {% endfor %}
-                                    <?php } ?>
-                                    <tr>
-                                        <td>
-                                            Source Code
-                                        </td>
-                                        <td class="text-right">
-                                            <a target="_download" href="https://github.com/phalcon/cphalcon/" title="GitHub Repo">github</a>
-                                        </td>
-                                    </tr>
-
-                                    <tr><td colspan='2'><br /></td></tr>
-
-                                    {% if alpha|length > 0 %}
-                                    <tr>
-                                        <td colspan="2">
-                                            <strong>Alpha/Beta versions</strong>
-                                        </td>
-                                    </tr>
-
-                                    {% for version_key, version in alpha %}
-                                    <tr>
-                                        <td colspan="2">
-                                            <strong>{{ version_key }}</strong>
-                                        </td>
-                                    </tr>
-                                    {% for file in version %}
-                                    <tr>
-                                        <td>
-                                            {{ file['name'] }}
-                                            <br />
-                                            <span style="font-size:10px">{{ file['date'] }} / sha1:{{ file['checksum'] }}</span>
-                                        </td>
-                                        <td class="text-right">
-                                            {{ link_to(file['file'], 'download', 'target': '_download', 'title': file['name']) }}
-                                        </td>
-                                    </tr>
-                                    {% endfor %}
-                                    {% endfor %}
-                                    <tr>
-                                        <td>
-                                            Source Code (please switch to the relevant branch)
-                                        </td>
-                                        <td class="text-right">
-                                            <a target="_download" href="https://github.com/phalcon/cphalcon/" title="GitHub Repo">github</a>
-                                        </td>
-                                    </tr>
-
-                                    <tr><td colspan='2'><br /></td></tr>
-                                    {% endif %}
-                                    <tr>
-                                        <td colspan="2">
-                                            <strong>Older versions</strong>
-                                        </td>
-                                    </tr>
-                                    {% for version_key, version in old %}
-                                    <tr>
-                                        <td colspan='2'>
-                                            <strong>{{ version_key }}</strong>
-                                        </td>
-                                    </tr>
-                                    {% for file in version %}
-                                    <tr>
-                                        <td>
-                                            {{ file['name'] }}
-                                            <br />
-                                            <span style="font-size:10px">{{ file['date'] }} / sha1:{{ file['checksum'] }}</span>
-                                        </td>
-                                        <td class="text-right">
-                                            {{ link_to(file['file'], 'download', 'target': '_download', 'title': file['name']) }}
-                                        </td>
-                                    </tr>
-                                    {% endfor %}
-                                    {% endfor %}
-                                    <tr>
-                                        <td>
-                                            Source Code
-                                        </td>
-                                        <td class="text-right">
-                                            <a target="_download" href="https://github.com/phalcon/cphalcon/" title="GitHub Repo">github</a>
-                                        </td>
-                                    </tr>
-
-                                </table>
-
-                            </div>
-
-                            <div class="tab-pane" id="devtools">
-
-                                <h3>Developer Tools</h3>
-
-                                <p>This tools provide you useful scripts to generate code helping to develop faster and easy applications that use with Phalcon framework.</p>
-
-                                <h4>Installing via Composer</h4>
-                                <p>Install composer in a common location or in your project:</p>
-
-<pre><code>curl -s http://getcomposer.org/installer | php</code></pre>
-
-Create the composer.json file as follows:
-
-<pre><code>{
-    "require": {
-        "phalcon/devtools": "dev-master"
-    }
-}
+sudo ./install
 </code></pre>
+    </p>
 
-Run the composer installer:
+    <p>2. Add the extension to your php.ini:</p>
+    <pre><code class="ini">extension=phalcon.so</code></pre>
 
-<pre><code>php composer.phar install</code></pre>
+    <p>3. Finally restart the webserver</p>
 
-Create a symbolink link to the phalcon.php script:
 
-<pre><code>ln -s ~/devtools/phalcon.php /usr/bin/phalcon
-chmod ugo+x /usr/bin/phalcon
-</code></pre>
+    <h2>Debian</h2>
 
-                            </div>
+    <p>There is a repo graciously offered by <a href="http://www.fortrabbit.com/">FortRabbit</a> <a href="http://debrepo.frbit.com/">here</a></p>
 
-                        </div>
-                    </div> <!-- /tabbable -->
+    <h2>Arch Linux</h2>
 
-                </div>
-            </div>
+    <p>There is a PKGBUILD for ArchLinux, available <a href="http://aur.archlinux.org/packages.php?ID=61950">here</a></p>
 
+    <pre><code class="bash"># pkg_add -r phalcon</code></pre>
+
+    <p>or</p>
+
+    <p>
+        <pre><code class="bash"># cd /usr/ports/www/phalcon && make install clean</code></pre>
+    </p>
+
+    <h2>OpenSUSE</h2>
+    <p>There is package available <a href="http://software.opensuse.org/package/php5-phalcon">here</a> (thanks to <a href='https://github.com/mruz'>Mariusz Łączak</a></p>
+
+    <h2>FreeBSD</h2>
+    <p>A port is available for FreeBSD. Just only need these simple line commands to install it:
+        <pre><code># pkg_add -r phalcon</code></pre>
+        or
+        <pre><code># cd /usr/ports/www/phalcon && make install clean</code></pre>
+    </p>
+
+    <h2>Dependencies</h2>
+
+    <p>Although Phalcon does not binary link to other extensions it does use some of them to offer functionality. The extensions used are:</p>
+
+    <ul>
+        <li>mbstring</li>
+        <li>mcrypt</li>
+        <li>openssl</li>
+        <li>PDO</li>
+        <li>PDO/Mysql</li>
+        <li>PDO/Postgresql</li>
+        <li>PDO/Sqlite</li>
+        <li>PDO/Oracle</li>
+        <li>Mongo</li>
+    </ul>
+
+    <p>It is not necessary for all the above extensions to be present in the system that has Phalcon installed. You can only install the ones that meet your needs. For instance if you use a MySQL
+        database, then you can only load PDO and PDO/MySQL ignoring the Oracle, SQlite, Postgresql and Mongo.</p>
+
+    <h2>Need help?</h2>
+
+    <p>Have a look at our <a href="{{ url(['for': 'pages', 'pageSlug': 'support']) }}">support page</a> for ways to get support. We will do our best to help you.</p>
+
+
+</div>

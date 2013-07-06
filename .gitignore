@@ -3,6 +3,7 @@ public/.DS_Store
 public/files/.DS_Store
 app/var/cache/*
 app/var/volt/*.php
+app/cache/*.php
 .settings/
 *.komodoproject
 *.sublime-*

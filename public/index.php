@@ -6,13 +6,31 @@ if (!defined('ROOT_PATH')) {
     define('ROOT_PATH', dirname(dirname(__FILE__)));
 }
 
-// Using require once because I want to get the specific
-// bootloader class here. The loader will be initialized
-// in my bootstrap class
-require_once ROOT_PATH . '/app/library/Ph/Bootstrap.php';
-require_once ROOT_PATH . '/app/library/Ph/Error.php';
+try {
 
-$di  = new \Phalcon\DI\FactoryDefault();
-$app = new \Ph\Bootstrap($di);
+	/**
+	 * Read the configuration
+	 */
+	$config = include __DIR__ . "/../app/config/config.php";
 
-echo $app->run(array());
+	/**
+	 * Read auto-loader
+	 */
+	include __DIR__ . "/../app/config/loader.php";
+
+	/**
+	 * Read services
+	 */
+	include __DIR__ . "/../app/config/services.php";
+
+	/**
+	 * Handle the request
+	 */
+	$application = new \Phalcon\Mvc\Application($di);
+	echo $application->handle()->getContent();
+
+} catch (Phalcon\Exception $e) {
+	echo $e->getMessage();
+} catch (PDOException $e){
+	echo $e->getMessage();
+}
