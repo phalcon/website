@@ -33,8 +33,8 @@ class DownloadController extends \ControllerBase
 
         $path     = 'files/';
         $template = "Phalcon %s - Windows %s for PHP %s %s(%s)";
-        $files    = [ ];
-        $alpha    = [ ];
+        $files    = array();
+        $alpha    = array();
 
         foreach ( glob($path . '*.zip') as $file ) {
 
@@ -73,20 +73,20 @@ class DownloadController extends \ControllerBase
 
                 // Check if we have an alpha here
                 if ( strpos(strtolower($version) , 'alpha') > 0 || strpos(strtolower($version) , 'beta') > 0 ) {
-                    $alpha[$version][$arch][$key] = [
+                    $alpha[$version][$arch][$key] = array(
                         'name'     => sprintf($template , $version , $arch , $php , $nts , $vc) ,
                         'file'     => 'files/' . $fileName ,
                         'date'     => $date ,
                         'checksum' => sha1_file($file)
-                    ];
+                    );
 
                 } else {
-                    $files[$version][$arch][$key] = [
+                    $files[$version][$arch][$key] = array(
                         'name'     => sprintf($template , $version , $arch , $php , $nts , $vc) ,
                         'file'     => 'files/' . $fileName ,
                         'date'     => $date ,
                         'checksum' => sha1_file($file)
-                    ];
+                    );
                 }
             }
         }
@@ -95,7 +95,7 @@ class DownloadController extends \ControllerBase
          * The $files contains all the data we need based on architecture
          * We need to sort it though so a new array will be created for this
          */
-        $results = [ ];
+        $results = array();
         foreach ( $files as $arch => $data ) {
 
             // $data is an array which needs to be sorted by key
@@ -108,7 +108,7 @@ class DownloadController extends \ControllerBase
         /**
          * The $alpha contains all the alpha version files
          */
-        $experimental = [ ];
+        $experimental = array();
         foreach ( $alpha as $arch => $data ) {
 
             // $data is an array which needs to be sorted by key
@@ -138,7 +138,7 @@ class DownloadController extends \ControllerBase
         unset($results[$key]);
 
         // Now sort the $old versions.
-        $old = [ 'x86' => [ ] , 'x64' => [ ] ];
+        $old = array( 'x86' => array() , 'x64' => array() );
         foreach ( $results as $result ) {
             foreach ( $result as $arch => $data ) {
                 $old[$arch] = array_merge($old[$arch] , $data);
@@ -154,11 +154,11 @@ class DownloadController extends \ControllerBase
         }
 
         $this->view->setVars(
-            [
+            array(
             'current' => $current ,
             'alpha'   => $alpha ,
             'old'     => $old
-            ]
+            )
         );
 
     }

@@ -31,10 +31,10 @@ class Subscribers extends \Phalcon\Mvc\Model
     {
 
         $this->validate(
-            new Uniqueness(["field"   => "email" ,"message" => "You are already subscribed!"])
+            new Uniqueness(array("field"   => "email" ,"message" => "You are already subscribed!"))
         );
 
-        $this->validate(new EmailValidator([ 'field' => 'email' ]));
+        $this->validate(new EmailValidator(array( 'field' => 'email' )));
 
         return $this->validationHasFailed() != true;
     }

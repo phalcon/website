@@ -29,10 +29,10 @@ class IndexController extends \ControllerBase
         }
 
         return $this->dispatcher->forward(
-            [
+            array(
             'controller' => 'index' ,
             'action'     => 'index'
-            ]
+            )
         );
     }
 
