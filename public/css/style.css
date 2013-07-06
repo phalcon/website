@@ -25,6 +25,7 @@ blockquote:after {bottom: 0;}
 
 .note {font-style: italic; margin: 15px 0;}
 .note-orange {padding:10px 30px; border-bottom: 6px solid #dc590b; background:#f38441; color:#fff;  }
+.note-orange a { color: #fff; }
 
 .highlight {padding: 20px 10px 10px; border-left: 3px solid #0ec281; background:#f2f2f2; color: #000; font: 14px/18px "Courier New", serif; }
 
@@ -39,14 +40,14 @@ h2:after, .h2:after {
 }
 
 h3, .h3 {font-size: 24px; line-height: 24px; font-weight: normal; margin: 5px 0 3px;}
-h4, .h4 {font-size: 16px; line-height: 18px; font-weight: bold; margin: 3px 0 2px;}
+h4, .h4 {font-size: 16px; line-height: 18px; font-weight: bold; margin: 3px 0 2px; margin-bottom: 7px; }
 
 p + h2, p + .h2 {margin-top: 50px;}
 
 h2 + h3 {margin-top: 20px;}
 
 
-.title-white {color: #fff; text-shadow: 0 0 2px rgba(0,0,0,0.7); font-weight: bold;}
+.title-white {color: #fff; text-shadow: 0 2px 2px rgba(0,0,0,0.7); font-weight: bold;}
 .section-title {color:#525252; text-transform: uppercase;}
 
 .with-hash {position: relative; padding-right: 20px; }

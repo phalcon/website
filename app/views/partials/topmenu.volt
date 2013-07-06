@@ -6,8 +6,8 @@
     <li><a href="http://forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
     <li><a href="http://blog.phalconphp.com/" class="header-nav-link" target="_blank">Blog</a></li>
     <li>{{ link_to(['for': 'pages', 'pageSlug': 'support'], 'Support', 'class' : 'header-nav-link') }}</li>
-    <li>{{ link_to(['for': 'pages', 'pageSlug': 'examples'], 'Examples', 'class' : 'header-nav-link') }}</li>
     <!--
+    <li>{{ link_to(['for': 'pages', 'pageSlug': 'examples'], 'Examples', 'class' : 'header-nav-link') }}</li>
     <li>{{ link_to(['for': 'pages', 'pageSlug': 'store'], 'Store', 'class' : 'header-nav-link') }}</li>
     <li>{{ link_to(['for': 'pages', 'pageSlug': 'github'], 'Github', 'class' : 'header-nav-link') }}</li>
     <li>{{ link_to(['for': 'pages', 'pageSlug': 'ui'], 'UI', 'class' : 'header-nav-link') }}</li>
