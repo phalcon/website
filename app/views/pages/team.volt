@@ -20,11 +20,13 @@
 
             <div class="member-info">
 
-                <div class="member-name">Andres Gutierrez</div>
+                <h3 class="member-name">Andres Gutierrez</h3>
 
+                <!--
                 <div class="member-links">
                     <a href="#">Twitter</a> &#8226; <a href="#">Facebook</a>
                 </div>
+                -->
                 <p>Andres is no stranger to open source projects. In the last nine years, he has designed and released frameworks for PHP and has been involved in web development his main passion.</p>
 
                 <p>A TR35 winner, Andres's main drive is to always choose and implement or use the right tool for the job, mostly focused on performance. Therefore in 2011 a new idea was in the works;
@@ -46,11 +48,13 @@
 
             <div class="member-info">
 
-                <div class="member-name">Nikolaos (Nikos) Dimopoulos</div>
+                <h3 class="member-name">Nikolaos (Nikos) Dimopoulos</h3>
 
+                <!--
                 <div class="member-links">
                     <a href="#">Twitter</a> &#8226; <a href="#">Facebook</a>
                 </div>
+                -->
                 <p>Nikos has been in the IT industry for over 20 years. He was introduced to the PHP world in 2000 and has been using it ever since in personal projects as well as projects for his
                     employers.</p>
 
@@ -73,12 +77,13 @@
 
             <div class="member-info">
 
-                <div class="member-name">Nikolay (boston) Kirsh</div>
+                <h3 class="member-name">Nikolay (boston) Kirsh</h3>
 
+                <!--
                 <div class="member-links">
                     <a href="#">Twitter</a> &#8226; <a href="#">Facebook</a>
                 </div>
-
+                -->
                 <p>Nikolay has been developing web applications for over 10 years. He has been involved in high performance as well as complex websites and designs.</p>
 
                 <p>Nikolay has been working with Open Source projects for a long time, utilizing them whenever requirements allow. He thus started using his personal time to give back to the
