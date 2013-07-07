@@ -138,6 +138,21 @@
     </div>
 </div>
 
+<div class="hosting-providers">
+
+    <i>Phalcon can be installed on</i>
+
+    <p><a href="{{ url("hosting") }}">
+        {{ image('images/hosting/fortrabbit-gray.png') }}
+        {{ image('images/hosting/amazon-gray.png') }}
+        {{ image('images/hosting/linode-gray.png') }}
+        {{ image('images/hosting/rackspace-gray.png') }}
+        {{ image('images/hosting/digital-ocean-gray.png') }}
+        {{ image('images/hosting/webfaction-gray.png') }}
+    </a></p>
+
+</div>
+
 <!--
 <div class="size-wrap">
     <div class="blog-post-wrap">
