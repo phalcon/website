@@ -6,7 +6,7 @@ class DownloadController extends \ControllerBase
     public function indexAction($type = 'index')
     {
 
-        switch ( $type ) {
+        switch ($type) {
 
             default:
             case 'index':
@@ -22,14 +22,14 @@ class DownloadController extends \ControllerBase
                 break;
         }
 
-        \Phalcon\Tag::setTitle($title);
+        $this->tag->setTitle($title);
         $this->view->pick('download/' . $type);
     }
 
     public function windowsAction()
     {
 
-        \Phalcon\Tag::setTitle('Download Phalcon for Windows');
+        $this->tag->setTitle('Download Phalcon for Windows');
 
         $path     = 'files/';
         $template = "Phalcon %s - Windows %s for PHP %s %s(%s)";
@@ -155,14 +155,12 @@ class DownloadController extends \ControllerBase
 
         $this->view->setVars(
             array(
-            'current' => $current ,
-            'alpha'   => $alpha ,
-            'old'     => $old
+                'current' => $current ,
+                'alpha'   => $alpha ,
+                'old'     => $old
             )
         );
 
     }
 
-
 }
-

@@ -6,7 +6,7 @@ class IndexController extends \ControllerBase
     public function indexAction()
     {
 
-        \Phalcon\Tag::setTitle('High performance PHP framework');
+        $this->tag->setTitle('High performance PHP framework');
     }
 
     public function notFoundAction()
@@ -19,9 +19,9 @@ class IndexController extends \ControllerBase
     {
         $subscriber        = new Subscribers();
         $subscriber->email = $this->request->getPost('email' , 'email');
-        if ( $subscriber->save() == false ) {
+        if ($subscriber->save() == false) {
             $this->flash->error("At this moment you can't subscribe, the following problem happen:");
-            foreach ( $subscriber->getMessages() as $message ) {
+            foreach ($subscriber->getMessages() as $message) {
                 $this->flash->error($message);
             }
         } else {
@@ -30,15 +30,15 @@ class IndexController extends \ControllerBase
 
         return $this->dispatcher->forward(
             array(
-            'controller' => 'index' ,
-            'action'     => 'index'
+                'controller' => 'index' ,
+                'action'     => 'index'
             )
         );
     }
 
     public function donateAction()
     {
-        \Phalcon\Tag::setTitle('Donate');
+        $this->tag->setTitle('Donate');
     }
 
 }

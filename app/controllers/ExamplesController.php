@@ -4,7 +4,7 @@ class ExamplesController extends \ControllerBase
 {
     public function initialize()
     {
-        \Phalcon\Tag::setTitle('Examples');
+        $this->tag->setTitle('Examples');
         parent::initialize();
     }
 

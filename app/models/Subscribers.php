@@ -1,7 +1,7 @@
 <?php
 
-use Phalcon\Mvc\Model\Message ,
-    Phalcon\Mvc\Model\Validator\Email as EmailValidator ,
+use Phalcon\Mvc\Model\Message,
+    Phalcon\Mvc\Model\Validator\Email as EmailValidator,
     Phalcon\Mvc\Model\Validator\Uniqueness as Uniqueness;
 
 class Subscribers extends \Phalcon\Mvc\Model
@@ -31,10 +31,15 @@ class Subscribers extends \Phalcon\Mvc\Model
     {
 
         $this->validate(
-            new Uniqueness(array("field"   => "email" ,"message" => "You are already subscribed!"))
+            new Uniqueness(array(
+                "field"   => "email" ,
+                "message" => "You are already subscribed!"
+            ))
         );
 
-        $this->validate(new EmailValidator(array( 'field' => 'email' )));
+        $this->validate(new EmailValidator(array(
+            'field' => 'email'
+        )));
 
         return $this->validationHasFailed() != true;
     }

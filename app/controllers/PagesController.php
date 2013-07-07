@@ -7,7 +7,7 @@ class PagesController extends \ControllerBase
     {
 
         $pageTitle = \Phalcon\Text::camelize($pageSlug);
-        \Phalcon\Tag::setTitle( $pageTitle );
+        $this->tag->setTitle( $pageTitle );
 
         $this->view->pick('pages/' . $pageSlug);
     }
