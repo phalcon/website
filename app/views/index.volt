@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 {% include 'partials/head.volt' %}
 <body>
 
