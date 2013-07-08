@@ -5,8 +5,9 @@
 </div>
 <div class="size-wrap">
 
-    <div class="note">Phalcon can be installed on any hosting provider that provide SSH root access.
-        Following are reputable companies where Phalcon can be installed:
+    <div class="note">
+        Phalcon can be installed on any machine that the hosting provider offers SSH root access (or sudo). 
+        Below is a list of reputable companies that offer such services:
     </div>
 
     <table align="center" width="75%" cellpadding="15">
@@ -74,8 +75,7 @@
 
                 <p>
                     Deploy and Manage Linux Virtual Servers in the Linode Cloud.
-                    Get a server running in seconds with your choice of Linux distro, resources, and node location.
-                    Install Phalcon using the standard instructions of installation.
+                    Get a server running in seconds with your choice of Linux distro, resources, and node location.                    
                     <a href='https://www.linode.com/'>See more</a>
                 </p>
 
