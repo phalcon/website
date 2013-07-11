@@ -69,6 +69,8 @@ sudo ./install
 
     <p>There is a repo graciously offered by <a href="http://www.fortrabbit.com/">FortRabbit</a> <a href="http://debrepo.frbit.com/">here</a></p>
 
+    <p>Package name is php5-phalcon</p>
+
     <h2>Arch Linux</h2>
 
     <p>There is a PKGBUILD for ArchLinux, available <a href="http://aur.archlinux.org/packages.php?ID=61950">here</a></p>
