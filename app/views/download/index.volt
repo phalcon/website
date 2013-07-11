@@ -67,14 +67,6 @@ sudo ./install
 
     <p>There is a PKGBUILD for ArchLinux, available <a href="http://aur.archlinux.org/packages.php?ID=61950">here</a></p>
 
-    <pre><code class="bash"># pkg_add -r phalcon</code></pre>
-
-    <p>or</p>
-
-    <p>
-        <pre><code class="bash"># cd /usr/ports/www/phalcon && make install clean</code></pre>
-    </p>
-
     <h2>OpenSUSE</h2>
     <p>There is package available <a href="http://software.opensuse.org/package/php5-phalcon">here</a> (thanks to <a href='https://github.com/mruz'>Mariusz Łączak</a></p>
 
