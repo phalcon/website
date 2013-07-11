@@ -35,10 +35,10 @@
 sudo apt-get install php5-dev php5-mysql gcc
 
 #Fedora
-sudo yum install php-devel php-mysqlnd gcc
+sudo yum install php-devel php-mysqlnd gcc libtool
 
 #RHEL
-sudo yum install php-devel php-mysql gcc
+sudo yum install php-devel php-mysql gcc libtool
 
 #Suse
 yast2 -i php5-pear php5-devel php5-mysql gcc
