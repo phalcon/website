@@ -34,6 +34,12 @@
 <pre><code class="bash">#Ubuntu
 sudo apt-get install php5-dev php5-mysql gcc
 
+#Fedora
+sudo yum install php-devel php-mysqlnd gcc
+
+#RHEL
+sudo yum install php-devel php-mysql gcc
+
 #Suse
 yast2 -i php5-pear php5-devel php5-mysql gcc
 </code></pre>
