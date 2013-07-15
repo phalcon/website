@@ -7,9 +7,9 @@
     <meta name="author" content="Phalcon Team" />
 
     <link href='http://fonts.googleapis.com/css?family=Ubuntu&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" media="all" href="{{ url('css/style.css?v=2') }}"/>
+    <link rel="stylesheet" type="text/css" media="all" href="http://static.phalconphp.com/css/style.css?v=2"/>
 
-    <link rel="stylesheet" href="{{ url('css/tomorrow-night.css') }}">
-    <script src="{{ url('js/highlight.pack.js') }}"></script>
+    <link rel="stylesheet" href="http://static.phalconphp.com/css/tomorrow-night.css">
+    <script src="http://static.phalconphp.com/js/highlight.pack.js"></script>
 
 </head>
