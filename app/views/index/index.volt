@@ -143,12 +143,12 @@
     <i>Phalcon can be installed on</i>
 
     <p><a href="{{ url("hosting") }}">
-        {{ image('http://static.phalconphp.com/images/hosting/fortrabbit-gray.png') }}
-        {{ image('http://static.phalconphp.com/images/hosting/amazon-gray.png') }}
-        {{ image('http://static.phalconphp.com/images/hosting/linode-gray.png') }}
-        {{ image('http://static.phalconphp.com/images/hosting/rackspace-gray.png') }}
-        {{ image('http://static.phalconphp.com/images/hosting/digital-ocean-gray.png') }}
-        {{ image('http://static.phalconphp.com/images/hosting/webfaction-gray.png') }}
+        {{ image('http://static.phalconphp.com/images/hosting/fortrabbit-gray.png', true) }}
+        {{ image('http://static.phalconphp.com/images/hosting/amazon-gray.png', true) }}
+        {{ image('http://static.phalconphp.com/images/hosting/linode-gray.png', true) }}
+        {{ image('http://static.phalconphp.com/images/hosting/rackspace-gray.png', true) }}
+        {{ image('http://static.phalconphp.com/images/hosting/digital-ocean-gray.png', true) }}
+        {{ image('http://static.phalconphp.com/images/hosting/webfaction-gray.png', true) }}
     </a></p>
 
 </div>
