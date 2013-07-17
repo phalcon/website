@@ -2,7 +2,7 @@
 
 body, html {margin: 0; padding:0; height: 100%;}
 
-body {background: #fff; color: #000000; font: 16px/20px Ubuntu, sans-serif; min-width: 990px;}
+body {background: #fff; color: #000000; font: 16px/24px Ubuntu, sans-serif; min-width: 990px;}
 
 a {color:#118f9e; }
 a:hover {color: #000;}
@@ -46,9 +46,12 @@ p + h2, p + .h2 {margin-top: 50px;}
 
 h2 + h3 {margin-top: 20px;}
 
+.upper {text-transform: uppercase;}
 
 .title-white {color: #fff; text-shadow: 0 2px 2px rgba(0,0,0,0.7); font-weight: bold;}
 .section-title {color:#525252; text-transform: uppercase;}
+
+.title-upper {}
 
 .with-hash {position: relative; padding-right: 20px; }
 .hash-link { text-decoration: none; font-size: 16px; position: absolute; top:0; right: 5px;}
@@ -104,7 +107,12 @@ a.button-medium {color: #fff;}
 .button.blue {background:#118f9e; color: #fff; }
 .button.blue:hover {background: #23838f;}
 
+.hr {margin: 20px 0; border-bottom: 1px solid #c0c0c0;}
 
+.columns-2:after {content:''; clear: both; display: block;}
+.columns-2 .column {width: 45%; margin: 0 2%; float: left;}
+
+.one-column {margin: 0 2%;}
 
 .tabs {margin:30px 0; padding: 0; background: #f2f2f2; list-style:none;}
 .tabs li {margin:0; padding: 0; float: left;}
