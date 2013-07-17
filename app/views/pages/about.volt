@@ -78,27 +78,6 @@
 
     <div class="columns-2">
         <div class="column">
-            <div class="h3 upper">Evangelism</div>
-            <p>Evangelism They’re a lot of people that still don’t know that Phalcon exist or it really works. We are certain that many developers will benefit from hearing what Phalcon is all about
-                and
-                how it can help them. If you know of any PHP events/meetings and you wish to give a talk about the project, you have our full support. Who does not want to know about the tool that is
-                revolutionizing the PHP development?</p>
-        </div>
-
-        <div class="column">
-            <div class="h3 upper">Share your experiences</div>
-            <p>Don’t be shy, feel free to share with the community, the ways that Phalcon was useful to you. If Phalcon is a success case for you, let us share that with the community. Also, discuss
-                what
-                components needed extra work, what you could do easier, what benefits you got by using Phalcon. Although not everything can be implemented immediately, your input on new feature
-                requests
-                can greatly help us shape the future of the project. Your feedback helps us all.</p>
-        </div>
-    </div>
-
-    <div class="hr"></div>
-
-    <div class="columns-2">
-        <div class="column">
             <div class="h3 upper">Blog</div>
             <p>If you like writing, remember that <a href="http://blog.phalconphp.com">our blog</a> is open to post tutorials created by you. If you have a blog of your own and have written something
                 about Phalcon, we can publish also in our
