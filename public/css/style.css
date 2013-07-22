@@ -194,7 +194,7 @@ a.header-nav-link {color:#000;}
 .features-table tr td:first-child {border-left:none;}
 
 .features-table li {margin-bottom:15px; }
-.features-table .small li {margin-bottom: 10px;}
+.features-table .small li {margin-bottom: 10px; margin-top: 10px;}
 
 .features-table ul {margin-top: 0;}
 

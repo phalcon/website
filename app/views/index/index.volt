@@ -30,6 +30,7 @@
 <div class="size-wrap">
     <div class="features-wrap">
 
+	<a name="features" href="#"></a>
         <div class="title-huge">Everything you need</div>
 
         <table class="features-table">
