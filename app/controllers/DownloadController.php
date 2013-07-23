@@ -139,17 +139,17 @@ class DownloadController extends \ControllerBase
 
         // Now sort the $old versions.
         $old = array( 'x86' => array() , 'x64' => array() );
-        foreach ( $results as $result ) {
-            foreach ( $result as $arch => $data ) {
+        foreach ($results as $result) {
+            foreach ($result as $arch => $data) {
                 $old[$arch] = array_merge($old[$arch] , $data);
             }
         }
 
-        if ( count($old['x86']) == 0 ) {
+        if (count($old['x86']) == 0) {
             unset($old['x86']);
         }
 
-        if ( count($old['x64']) == 0 ) {
+        if (count($old['x64']) == 0) {
             unset($old['x64']);
         }
 
