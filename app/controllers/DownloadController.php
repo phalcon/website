@@ -31,7 +31,7 @@ class DownloadController extends \ControllerBase
 
         $this->tag->setTitle('Download Phalcon for Windows');
 
-        $path     = 'files/';
+        $path     = 'http://static.phalconphp.com/files/';
         $template = "Phalcon %s - Windows %s for PHP %s %s(%s)";
         $files    = array();
         $alpha    = array();
