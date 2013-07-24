@@ -7,10 +7,10 @@
 <div class="size-wrap">
 
     <ul class="tabs clear-fix">
-        <li><a class="tab-link" href="{{ url(['for': 'download']) }}"><u>Linux/Unix/Mac</u></a></li>
-        <li><a class="tab-link active" href="{{ url(['for': 'download-type', 'type': 'windows']) }}"><u>Windows DLLs</u></a></li>
-        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'tools']) }}"><u>Developer Tools</u></a></li>
-        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'stubs']) }}"><u>IDE stubs</u></a></li>
+        <li><a class="tab-link" href="{{ url(['for': 'download']) }}"><span style="text-decoration: underline">Linux/Unix/Mac</span></a></li>
+        <li><a class="tab-link active" href="{{ url(['for': 'download-type', 'type': 'windows']) }}"><span style="text-decoration: underline">Windows DLLs</span></a></li>
+        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'tools']) }}"><span style="text-decoration: underline">Developer Tools</span></a></li>
+        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'stubs']) }}"><span style="text-decoration: underline">IDE stubs</span></a></li>
     </ul>
 
     <div class="note-orange">
@@ -37,7 +37,7 @@
                     <span style="font-size:10px">{{ current['x86'][key]['date'] }} / sha1: {{ current['x86'][key]['checksum'] }}</span>
                 </td>
                 <td class="text-right">
-                    {{ link_to(current['x86'][key]['file'], 'download', 'target': '_download', 'title': current['x86'][key]['name'], 'class': 'button button-small green') }}
+                    <a href="{{ current['x86'][key]['file'] }}" target="_download" title="{{ current['x86'][key]['name'] }}" class="button button-small green">download</a>
                 </td>
                 <td>
                     {{ current['x64'][key]['name'] }}
@@ -45,7 +45,7 @@
                     <span style="font-size:10px">{{ current['x64'][key]['date'] }} / sha1: {{ current['x64'][key]['checksum'] }}</span>
                 </td>
                 <td class="text-right">
-                    {{ link_to(current['x64'][key]['file'], 'download', 'target': '_download', 'title': current['x64'][key]['name'], 'class': 'button button-small green') }}
+                    <a href="{{ current['x64'][key]['file'] }}" target="_download" title="{{ current['x64'][key]['name'] }}" class="button button-small green">download</a>
                 </td>
             </tr>
         {% endfor %}
@@ -97,7 +97,7 @@
                     <span style="font-size:10px">{{ alpha['x86'][key]['date'] }} / sha1: {{ alpha['x86'][key]['checksum'] }}</span>
                 </td>
                 <td class="text-right">
-                    {{ link_to(alpha['x86'][key]['file'], 'download', 'target': '_download', 'title': alpha['x86'][key]['name'], 'class':'button button-small orange') }}
+                    <a href="{{ alpha['x86'][key]['file'] }}" target="_download" title="{{ alpha['x86'][key]['name'] }}" class="button button-small green">download</a>
                 </td>
                 <td>
                     {{ alpha['x64'][key]['name'] }}
@@ -105,7 +105,7 @@
                     <span style="font-size:10px">{{ alpha['x64'][key]['date'] }} / sha1: {{ alpha['x64'][key]['checksum'] }}</span>
                 </td>
                 <td class="text-right">
-                    {{ link_to(alpha['x64'][key]['file'], 'download', 'target': '_download', 'title': alpha['x64'][key]['name'], 'class':'button button-small orange') }}
+                    <a href="{{ alpha['x64'][key]['file'] }}" target="_download" title="{{ alpha['x64'][key]['name'] }}" class="button button-small green">download</a>
                 </td>
             </tr>
         {% endfor %}
@@ -139,7 +139,7 @@
                     <span style="font-size:10px">{{ old['x86'][key]['date'] }} / sha1: {{ old['x86'][key]['checksum'] }}</span>
                 </td>
                 <td class="text-right">
-                    {{ link_to(old['x86'][key]['file'], 'download', 'target': '_download', 'title': old['x86'][key]['name'], 'class':'button button-small') }}
+                    <a href="{{ old['x86'][key]['file'] }}" target="_download" title="{{ old['x86'][key]['name'] }}" class="button button-small green">download</a>
                 </td>
                 {% if old['x64'][key] is defined %}
                     <td>
@@ -148,7 +148,7 @@
                         <span style="font-size:10px">{{ old['x64'][key]['date'] }} / sha1: {{ old['x64'][key]['checksum'] }}</span>
                     </td>
                     <td class="text-right">
-                        {{ link_to(old['x64'][key]['file'], 'download', 'target': '_download', 'title': old['x64'][key]['name'], 'class':'button button-small') }}
+                        <a href="{{ old['x64'][key]['file'] }}" target="_download" title="{{ old['x64'][key]['name'] }}" class="button button-small green">download</a>
                     </td>
                 {% else %}
                     <td colspan="2"></td>
