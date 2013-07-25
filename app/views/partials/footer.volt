@@ -3,44 +3,44 @@
     <table class="footer-links">
         <tr>
             <td>
-                <div class="footer-links-title">Main</div>
+                <div class="footer-links-title">{{ tr('main_upper') }}</div>
                 <ul class="footer-links-list unstyled">
-                    <li>{{ link_to(['for': 'download'], 'Download', 'class' : 'link-black') }}</li>
-                    <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/index.html">Documentation</a></li>
-                    <li><a class="link-black" href="http://blog.phalconphp.com/">Blog</a></li>
+                    <li>{{ link_to(['for': 'download'], tr('download'), 'class' : 'link-black') }}</li>
+                    <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/index.html">{{ tr('documentation') }}</a></li>
+                    <li><a class="link-black" href="http://blog.phalconphp.com/">{{ tr('blog') }}</a></li>
                 </ul>
             </td>
             <td>
-                <div class="footer-links-title">Services</div>
+                <div class="footer-links-title">{{ tr('services_upper') }}</div>
                 <ul class="footer-links-list unstyled">
-                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'consulting'], 'Consulting', 'class' : 'link-black') }}</li>
-                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'hosting'], 'Hosting', 'class' : 'link-black') }}</li>
-                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'support'], 'Support', 'class' : 'link-black') }}</li>
+                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'consulting'], tr('consulting'), 'class' : 'link-black') }}</li>
+                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'hosting'], tr('hosting'), 'class' : 'link-black') }}</li>
+                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'support'], tr('support'), 'class' : 'link-black') }}</li>
 
                 </ul>
             </td>
             <td>
-                <div class="footer-links-title">Support</div>
+                <div class="footer-links-title">{{ tr('support_upper') }}</div>
                 <ul class="footer-links-list unstyled">
-                    <li><a href="http://forum.phalconphp.com/" class="link-black">Forum / Community</a></li>
-                    <li><a href="http://stackoverflow.com/questions/tagged/phalcon" class="link-black">Stack Overflow</a></li>
-                    <li><a href="https://github.com/phalcon/cphalcon/issues" class="link-black">Issue Tracker</a></li>
+                    <li><a href="http://forum.phalconphp.com/" class="link-black">{{ tr('forum_community') }}</a></li>
+                    <li><a href="http://stackoverflow.com/questions/tagged/phalcon" class="link-black">{{ tr('stack_overflow') }}</a></li>
+                    <li><a href="https://github.com/phalcon/cphalcon/issues" class="link-black">{{ tr('issue_tracker') }}</a></li>
                 </ul>
             </td>
             <td>
-                <div class="footer-links-title">Get Involved</div>
+                <div class="footer-links-title">{{ tr('get_involved_upper') }}</div>
                 <ul class="footer-links-list unstyled">
-                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'team'], 'Team', 'class' : 'link-black') }}</li>
-                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'about'], 'About', 'class' : 'link-black') }}</li>
-                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'roadmap'], 'Roadmap', 'class' : 'link-black') }}</li>
+                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'team'], tr('team'), 'class' : 'link-black') }}</li>
+                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'about'], tr('about'), 'class' : 'link-black') }}</li>
+                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'roadmap'], tr('roadmap'), 'class' : 'link-black') }}</li>
                 </ul>
             </td>
         </tr>
     </table>
 
     <div class="donate-wrap">
-        Donate to Phalcon: <a href="http://flattr.com/thing/1134206/Phalcon-PHP-Framework" target="_blank" class="button button-small orange">Flattr</a>
-        or
+        {{ tr('donate_to_phalcon') }} <a href="http://flattr.com/thing/1134206/Phalcon-PHP-Framework" target="_blank" class="button button-small orange">Flattr</a>
+        {{ tr('or') }}
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="display: inline" target="_blank">
             <input type="hidden" name="cmd" value="_s-xclick">
             <input type="hidden" name="hosted_button_id" value="7LSYMNMFZNG8W">
