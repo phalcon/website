@@ -5,7 +5,6 @@ use Phalcon\Mvc\Controller,
 
 class ControllerBase extends Controller
 {
-
     /**
      * @param Dispatcher $dispatcher
      *
@@ -13,14 +12,19 @@ class ControllerBase extends Controller
      */
     public function beforeExecuteRoute(Dispatcher $dispatcher)
     {
+        if ('1' != $this->config->application->debug) {
+            $key = preg_replace(
+                '/[^a-zA-Z0-9\_]/',
+                '',
+                $dispatcher->getControllerName() . '-' . $dispatcher->getActionName()
+            );
+            $key .= implode('-' , $dispatcher->getParams());
 
-        $key = preg_replace('/[^a-zA-Z0-9\_]/' , '' , $dispatcher->getControllerName() . '-' . $dispatcher->getActionName());
-        $key .= implode('-' , $dispatcher->getParams());
+            $this->view->cache(array('key' => $key));
 
-        $this->view->cache(array('key' => $key));
-
-        if ($this->view->getCache()->exists($key)) {
-            return false;
+            if ($this->view->getCache()->exists($key)) {
+                return false;
+            }
         }
 
         return true;

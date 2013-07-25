@@ -2,7 +2,7 @@
 
     <div class="size-wrap fixed clear-fix">
 
-        <div class="main-teaser-title title-white">The fastest<br/>PHP Framework</div>
+        <div class="main-teaser-title title-white">{{ tr('the_fastest') }}<br />{{ tr('php_framework') }}</div>
 
         <div class="main-teaser-left">
 
@@ -10,7 +10,7 @@
                 <img src="http://static.phalconphp.com/assets/chart.png" alt="" />
             </div>
 
-            <a href="/download"><span class="button-large">Download</span></a>
+            <a href="/download"><span class="button-large">{{ tr('download') }}</span></a>
 
         </div>
 
@@ -19,8 +19,8 @@
             <div class="teaser-video-wrap">
                 <a href="http://vimeo.com/63022489"><img src="http://static.phalconphp.com/assets/video.png" alt=""/></a>
             </div>
-            <a href="http://try.phalconphp.com/"><span class="button-medium">Try It Online</span></a>
-            <a href="http://vimeo.com/phalconphp" target="_blank"><span class="button-medium">See Screencasts</span></a>
+            <a href="http://try.phalconphp.com/"><span class="button-medium">{{ tr('try_online') }}</span></a>
+            <a href="http://vimeo.com/phalconphp" target="_blank"><span class="button-medium">{{ tr('see_screencasts') }}</span></a>
         </div>
 
     </div>
@@ -31,30 +31,30 @@
     <div class="features-wrap">
 
 	<a name="features" href="#"></a>
-        <div class="title-huge">Everything you need</div>
+        <div class="title-huge">{{ tr('everything_you_need_upper') }}</div>
 
         <table class="features-table">
             <tr>
                 <td>
                     <div class="h4">Full <a href="http://docs.phalconphp.com/en/latest/reference/applications.html">MVC</a> applications</div>
                     <ul class="dash-list small">
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/applications.html#single-module">Single-Module</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/applications.html#multi-module">Multi-Module</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/micro.html">Micro Applications</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/applications.html#single-module">{{ tr('single_module') }}</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/applications.html#multi-module">{{ tr('multi_module') }}</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/micro.html">{{ tr('micro_applications') }}</a></li>
                     </ul>
-                    <div class="h4">ORM</div>
+                    <div class="h4">{{ tr('orm') }}</div>
                     <ul class="two-columns dash-list small">
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#transactions">Transactions</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#transactions">{{ tr('transactions') }}</a></li>
 
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#behaviors">Behaviors</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#relationships-between-models">Relations</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/phql.html">PHQL</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#events-and-events-manager">Events</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#validation-failed-events">Validations</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#hydration-modes">Hydration</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#logging-low-level-sql-statements">Logging</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#profiling-sql-statements">Profiling</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#setting-multiple-databases">Sharding</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#behaviors">{{ tr('transactions') }}</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#relationships-between-models">{{ tr('transactions') }}</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/phql.html">{{ tr('transactions') }}</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#events-and-events-manager">{{ tr('transactions') }}</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#validation-failed-events">{{ tr('transactions') }}</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#hydration-modes">{{ tr('transactions') }}</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#logging-low-level-sql-statements">{{ tr('transactions') }}</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#profiling-sql-statements">{{ tr('transactions') }}</a></li>
+                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#setting-multiple-databases">{{ tr('transactions') }}</a></li>
                     </ul>
                 </td>
                 <td>
