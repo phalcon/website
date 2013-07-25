@@ -1,113 +1,75 @@
 <div class="header-line" xmlns="http://www.w3.org/1999/html">
     <div class="size-wrap">
-        <h1 class="header-line-title title-white">Hosting</h1>
+        <h1 class="header-line-title title-white">{{ tr('hosting') }}</h1>
     </div>
 </div>
 <div class="size-wrap">
 
     <div class="note">
-        Phalcon can be installed on any machine that the hosting provider offers SSH root access (or sudo). 
-        Below is a list of reputable companies that offer such services:
+        {{ tr('hosting_description') }}
     </div>
 
     <table align="center" width="75%" cellpadding="15">
         <tr>
-            <td align="center">{{ image('images/hosting/fortrabbit-gray.png') }}</td>
+            <td align="center">
+                <img src='http://static.phalconphp.com/images/hosting/fortrabbit-gray.png' title='Fortrabbit' alt='Fortrabbit' />
+            </td>
             <td>
                 <h4><a target="_blank" href='http://fortrabbit.com/'>Fortrabbit</a></h4>
-
-                <p>
-                    Fortrabbit offers many hosting plans (there is one for
-                    developers and is free - with some limitations) that would
-                    satisfy the needs of most of the developers that wish
-                    to either try Phalcon or deploy their applications using it.
-                </p>
-
-                <p>
-                    They offer a variety of
-                    <a href='http://support.fortrabbit.com/customer/portal/articles/958798'>extensions</a>
-                    that would satisfy even the most demanding project.
-                </p>
-
-                <p>Stable versions of Phalcon are pre-installed, you can activate them from
-                    the administration dashboard.</p>
+                <p>{{ tr('hosting_fortrabbit_1') }}</p>
+                <p>{{ tr('hosting_fortrabbit_2') }}</p>
+                <p>{{ tr('hosting_fortrabbit_3') }}</p>
             </td>
         </tr>
         <tr>
-            <td align="center">{{ image('images/hosting/webfaction-gray.png') }}</td>
+            <td align="center">
+                <img src='http://static.phalconphp.com/images/hosting/webfaction-gray.png' title='WebFaction' alt='WebFaction' />
+            </td>
             <td>
                 <h4><a target="_blank" href='http://webfaction.com/'>WebFaction</a></h4>
-
-                <p>
-                    WebFaction Hosting for developers. Full shell access to fast servers
-                    with all your favorite tools pre-installed and maintained for the user.
-                </p>
-
-                <p>
-                    To install PhalconPHP in WebFaction, follow the instructions outlined
-                    <a href='http://community.webfaction.com/questions/13689/phalcon-php'>here</a>
-                </p>
+                <p>{{ tr('hosting_webfaction_1') }}</p>
+                <p>{{ tr('hosting_webfaction_2') }}</p>
             </td>
         </tr>
         <tr>
-            <td align="center">{{ image('images/hosting/amazon-gray.png') }}</td>
+            <td align="center">
+                <img src='http://static.phalconphp.com/images/hosting/amazon-gray.png' title='Amazon EC2' alt='Amazon EC2' />
+            </td>
             <td>
                 <h4><a target="_blank" href='http://aws.amazon.com/'>Amazon EC2</a></h4>
-
-                <p>
-                    Amazon Elastic Compute Cloud delivers scalable, pay-as-you-go compute
-                    capacity in the cloud.
-                </p>
-
-                <p>
-                    Select a pre-configured, templated Amazon Machine Image (AMI) to get up and running immediately.
-                    Or create an AMI containing your applications, libraries, data, and associated configuration settings.
-                    <a href='http://aws.amazon.com/ec2/'>See more</a>
-                </p>
-
-                <p>Install Phalcon using the standard instructions of installation.</p>
+                <p>{{ tr('hosting_amazon_ec2_1') }}</p>
+                <p>{{ tr('hosting_amazon_ec2_2') }}</p>
+                <p>{{ tr('hosting_amazon_ec2_3') }}</p>
             </td>
         </tr>
         <tr>
-            <td align="center">{{ image('images/hosting/linode-gray.png') }}</td>
+            <td align="center">
+                <img src='http://static.phalconphp.com/images/hosting/linode-gray.png' title='Linode' alt='Linode' />
+            </td>
             <td>
                 <h4><a target="_blank" href='https://www.linode.com/'>Linode</a></h4>
-
-                <p>
-                    Deploy and Manage Linux Virtual Servers in the Linode Cloud.
-                    Get a server running in seconds with your choice of Linux distro, resources, and node location.                    
-                    <a href='https://www.linode.com/'>See more</a>
-                </p>
-
-                <p>Install Phalcon using the standard instructions of installation.</p>
+                <p>{{ tr('hosting_linode_1') }}</p>
+                <p>{{ tr('hosting_linode_2') }}</p>
             </td>
         </tr>
         <tr>
-            <td align="center">{{ image('images/hosting/digital-ocean-gray.png') }}</td>
+            <td align="center">
+                <img src='http://static.phalconphp.com/images/hosting/digital-ocean-gray.png' title='Digital Ocean' alt='Digital Ocean' />
+            </td>
             <td>
                 <h4><a target="_blank" href='https://www.digitalocean.com/'>Digital Ocean</a></h4>
-
-                <p>
-                    Blazing Fast Cloud Technology. Built for developers. Deploy an SSD cloud server in 55 seconds.
-                    <a href='https://www.digitalocean.com/'>See more</a>
-                </p>
-
-                <p>Install Phalcon using the standard instructions of installation.</p>
+                <p>{{ tr('hosting_digital_ocean_1') }}</p>
+                <p>{{ tr('hosting_digital_ocean_2') }}</p>
             </td>
         </tr>
         <tr>
-            <td align="center">{{ image('images/hosting/rackspace-gray.png') }}</td>
+            <td align="center">
+                <img src='http://static.phalconphp.com/images/hosting/rackspace-gray.png' title='Rackspace' alt='Rackspace' />
+            </td>
             <td>
                 <h4><a target="_blank" href='http://www.rackspace.com/cloud/servers/'>Rackspace</a></h4>
-
-                <p>
-                    Cloud Servers are virtual machines running Linux or Windows® Server in the Rackspace Cloud.
-                    You can scale resources like CPU, memory, and storage up or down, depending on your needs.
-                    Best of all, you can pay as you go.
-                    <a href='http://www.rackspace.com/cloud/servers/'>See more</a>
-                </p>
-
-                <p>Install Phalcon using the standard instructions of installation.</p>
+                <p>{{ tr('hosting_rackspace_1') }}</p>
+                <p>{{ tr('hosting_rackspace_2') }}</p>
             </td>
         </tr>
     </table>

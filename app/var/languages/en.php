@@ -76,6 +76,10 @@
         'roadmap'                   => 'Roadmap',
         'donate_to_phalcon'         => 'Donate to Phalcon:',
         'or'                        => 'or',
+        'twitter'                   => 'Twitter',
+        'facebook'                  => 'Facebook',
+        'google_plus'               => 'Google Plus',
+        'vimeo'                     => 'Vimeo',
 
         'consulting_header'         => "We are offering consulting services for Phalcon <br />and/or PHP implementations",
         'requirements_analysis_1'   => 'One of the biggest problems that developers face is the fact that a lot of projects do not have adequately defined requirements. Therefore, more often than not what the client wants is totally different to what the developer understands and subsequently delivers.',
@@ -133,6 +137,22 @@
         'thank_you'                 => 'Thank You!',
         'about_thank_you_1'         => 'We would like to thank all of our contributors and members of the community for pushing us to make Phalcon the best framework of its kind. Your kind words and engagement is what drives us to do better. We hope to meet and exceed the trust you put in Phalcon.',
         'flying_with_phalcon'       => 'Thanks for flying with Phalcon! &lt;3',
+
+        'hosting_description'       => 'Phalcon can be installed on any machine that the hosting provider offers SSH root access (or sudo). Below is a list of reputable companies that offer such services:',
+        'hosting_fortrabbit_1'      => 'Fortrabbit offers many hosting plans (there is one for developers and is free - with some limitations) that would satisfy the needs of most of the developers that wish to either try Phalcon or deploy their applications using it.',
+        'hosting_fortrabbit_2'      => "They offer a variety of <a href='http://support.fortrabbit.com/customer/portal/articles/958798'>extensions</a> that would satisfy even the most demanding project.",
+        'hosting_fortrabbit_3'      => 'Stable versions of Phalcon are pre-installed, you can activate them from the administration dashboard.',
+        'hosting_webfaction_1'      => 'WebFaction Hosting for developers. Full shell access to fast servers with all your favorite tools pre-installed and maintained for the user.',
+        'hosting_webfaction_2'      => "To install PhalconPHP in WebFaction, follow the instructions outlined <a href='http://community.webfaction.com/questions/13689/phalcon-php'>here</a>",
+        'hosting_amazon_ec2_1'      => 'Amazon Elastic Compute Cloud delivers scalable, pay-as-you-go compute capacity in the cloud.',
+        'hosting_amazon_ec2_2'      => "Select a pre-configured, templated Amazon Machine Image (AMI) to get up and running immediately. Or create an AMI containing your applications, libraries, data, and associated configuration settings. <a href='http://aws.amazon.com/ec2/'>See more</a>",
+        'hosting_amazon_ec2_3'      => 'Install Phalcon using the standard instructions of installation.',
+        'hosting_linode_1'          => "Deploy and Manage Linux Virtual Servers in the Linode Cloud. Get a server running in seconds with your choice of Linux distro, resources, and node location. <a href='https://www.linode.com/'>See more</a>",
+        'hosting_linode_2'          => 'Install Phalcon using the standard instructions of installation.',
+        'hosting_digital_ocean_1'   => "Blazing Fast Cloud Technology. Built for developers. Deploy an SSD cloud server in 55 seconds. <a href='https://www.digitalocean.com/'>See more</a>",
+        'hosting_digital_ocean_2'   => 'Install Phalcon using the standard instructions of installation.',
+        'hosting_rackspace_1'       => "Cloud Servers are virtual machines running Linux or Windows&reg; Server in the Rackspace Cloud. You can scale resources like CPU, memory, and storage up or down, depending on your needs. Best of all, you can pay as you go. <a href='http://www.rackspace.com/cloud/servers/'>See more</a>",
+        'hosting_rackspace_2'       => 'Install Phalcon using the standard instructions of installation.',
 
     ];
 

@@ -49,10 +49,10 @@
     </div>
 
     <div class="social-links">
-        <a target="_blank" href="https://twitter.com/phalconphp" class="social-link tw">Twitter</a>
-        <a target="_blank" href="http://www.facebook.com/pages/Phalcon/134230726685897" class="social-link fb">Facebook</a>
-        <a target="_blank" href="https://plus.google.com/102376109340560896457" class="social-link gp">Google Plus</a>
-        <a target="_blank" href="http://vimeo.com/phalconphp" class="social-link vm">Vimeo</a>
+        <a target="_blank" href="https://twitter.com/phalconphp" class="social-link tw">{{ tr('twitter') }}</a>
+        <a target="_blank" href="http://www.facebook.com/pages/Phalcon/134230726685897" class="social-link fb">{{ tr('facebook') }}</a>
+        <a target="_blank" href="https://plus.google.com/102376109340560896457" class="social-link gp">{{ tr('google_plus') }}</a>
+        <a target="_blank" href="http://vimeo.com/phalconphp" class="social-link vm">{{ tr('vimeo') }}</a>
     </div>
 
 </div>
