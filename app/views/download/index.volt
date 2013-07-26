@@ -9,7 +9,7 @@
     <ul class="tabs clear-fix">
         <li><a class="tab-link active" href="{{ url(['for': 'download']) }}"><u>{{ tr('download_linux') }}</u></a></li>
         <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'windows']) }}"><u>{{ tr('download_windows') }}</u></a></li>
-        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'tools']) }}"><u>{{ tr('download_windows') }}</u></a></li>
+        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'tools']) }}"><u>{{ tr('download_developer_tools') }}</u></a></li>
         <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'stubs']) }}"><u>{{ tr('download_ide_stubs') }}</u></a></li>
     </ul>
 
@@ -74,7 +74,7 @@ sudo ./install
     <h2>{{ tr('download_freebsd') }}</h2>
     <p>{{ tr('download_freebsd_1') }}
         <pre><code># pkg_add -r phalcon</code></pre>
-        or
+        {{ tr('or') }}
         <pre><code># cd /usr/ports/www/phalcon && make install clean</code></pre>
     </p>
 
