@@ -127,7 +127,7 @@
         </div>
 
         <div class="services-block">
-            <div class="services-block-title">Services</div>
+            <div class="services-block-title">{{ tr('services') }}</div>
 
             {{ link_to(['for': 'pages', 'pageSlug': 'consulting'], tr('consulting_upper'), 'class' : 'services-block-link') }}
             <br />

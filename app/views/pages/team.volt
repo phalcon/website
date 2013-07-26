@@ -54,7 +54,7 @@
                 <p>{{ tr('team_nikolay_2') }}</p>
                 <p>{{ tr('team_nikolay_3') }}</p>
                 <p>{{ tr('team_nikolay_4') }}</p>
-                <p>{{ tr('team_nikolay_5') }}</p>
+                <p>{{ tr('team_nikolay_5', 'http://www.phalconphp.ru', 'http://docs.phalconphp.ru', 'http://vk.com/phalconphp') }}</p>
             </div>
 
         </div>

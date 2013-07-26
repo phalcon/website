@@ -22,7 +22,7 @@
 
         <div class="column">
             <div class="h3 upper">{{ tr('screencasts') }}</div>
-            <p>{{ tr('about_screencasts_1') }}</p>
+            <p>{{ tr('about_screencasts_1', 'https://vimeo.com/user10964377') }}</p>
         </div>
     </div>
 
@@ -31,7 +31,7 @@
     <div class="columns-2">
         <div class="column">
             <div class="h3 upper">{{ tr('tests') }}</div>
-            <p>{{ tr('about_tests_1') }}</p>
+            <p>{{ tr('about_tests_1', 'https://travis-ci.org/phalcon/cphalcon') }}</p>
         </div>
 
         <div class="column">
@@ -59,7 +59,7 @@
     <div class="columns-2">
         <div class="column">
             <div class="h3 upper">{{ tr('blog') }}</div>
-            <p>{{ tr('about_blog_1') }}</p>
+            <p>{{ tr('about_blog_1', 'http://blog.phalconphp.com') }}</p>
         </div>
 
         <div class="column">

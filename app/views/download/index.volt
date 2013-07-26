@@ -1,31 +1,30 @@
 <div class="header-line">
     <div class="size-wrap">
-        <h1 class="header-line-title title-white">Download Phalcon</h1>
+        <h1 class="header-line-title title-white">{{ tr('download_phalcon') }}</h1>
     </div>
 </div>
 
 <div class="size-wrap">
 
     <ul class="tabs clear-fix">
-        <li><a class="tab-link active" href="{{ url(['for': 'download']) }}"><u>Linux/Unix/Mac</u></a></li>
-        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'windows']) }}"><u>Windows DLLs</u></a></li>
-        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'tools']) }}"><u>Developer Tools</u></a></li>
-        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'stubs']) }}"><u>IDE stubs</u></a></li>
+        <li><a class="tab-link active" href="{{ url(['for': 'download']) }}"><u>{{ tr('download_linux') }}</u></a></li>
+        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'windows']) }}"><u>{{ tr('download_windows') }}</u></a></li>
+        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'tools']) }}"><u>{{ tr('download_windows') }}</u></a></li>
+        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'stubs']) }}"><u>{{ tr('download_ide_stubs') }}</u></a></li>
     </ul>
 
-    <div class="note">Phalcon is a C extension so you need to download a binary for your platform or compile it from source code.</div>
+    <div class="note">{{ tr('download_note') }}</div>
 
-    <h2>Compilation</h2>
+    <h2>{{ tr('download_compilation') }}</h2>
+    <p>{{ tr('download_compilation_1') }}</p>
 
-    <p>On platform Linux you can easily compile and install the extension from source code.</p>
+    <h3>{{ tr('download_requirements') }}</h3>
 
-    <h3>Requirements</h3>
-
-    <p class="strong">We need some packages previously installed:</p>
+    <p class="strong">{{ tr('download_requirements_1') }}</p>
 
     <ul>
-        <li>PHP 5.x development resources</li>
-        <li>GCC compiler</li>
+        <li>{{ tr('download_requirements_2') }}</li>
+        <li>{{ tr('download_requirements_3') }}</li>
     </ul>
 
     <p>
@@ -47,9 +46,8 @@ yast2 -i php5-pear php5-devel php5-mysql gcc
     </p>
 
 
-    <h3>Compilation</h3>
-
-    <p>1. To create the extension from C source follow the next steps:</p>
+    <h3>{{ tr('download_compilation') }}</h3>
+    <p>{{ tr('download_compilation_11') }}</p>
 
     <p>
 
@@ -59,36 +57,29 @@ sudo ./install
 </code></pre>
     </p>
 
-    <p>2. Add the extension to your php.ini:</p>
+    <p>{{ tr('download_compilation_12') }}</p>
     <pre><code class="ini">extension=phalcon.so</code></pre>
+    <p>{{ tr('download_compilation_13') }}</p>
 
-    <p>3. Finally restart the webserver</p>
+    <h2>{{ tr('download_debian') }}</h2>
+    <p>{{ tr('download_debian_1', 'http://www.fortrabbit.com/', 'http://debrepo.frbit.com/') }}</p>
+    <p>{{ tr('download_debian_2') }}</p>
 
+    <h2>{{ tr('download_arch') }}</h2>
+    <p>{{ tr('download_arch_1', 'http://aur.archlinux.org/packages.php?ID=61950') }}</p>
 
-    <h2>Debian</h2>
+    <h2>{{ tr('download_opensuse') }}</h2>
+    <p>{{ tr('download_opensuse_1', 'http://software.opensuse.org/package/php5-phalcon', 'https://github.com/mruz') }}</p>
 
-    <p>There is a repo graciously offered by <a href="http://www.fortrabbit.com/">FortRabbit</a> <a href="http://debrepo.frbit.com/">here</a></p>
-
-    <p>Package name is php5-phalcon</p>
-
-    <h2>Arch Linux</h2>
-
-    <p>There is a PKGBUILD for ArchLinux, available <a href="http://aur.archlinux.org/packages.php?ID=61950">here</a></p>
-
-    <h2>OpenSUSE</h2>
-    <p>There is package available <a href="http://software.opensuse.org/package/php5-phalcon">here</a> (thanks to <a href='https://github.com/mruz'>Mariusz Łączak</a></p>
-
-    <h2>FreeBSD</h2>
-    <p>A port is available for FreeBSD. Just only need these simple line commands to install it:
+    <h2>{{ tr('download_freebsd') }}</h2>
+    <p>{{ tr('download_freebsd_1') }}
         <pre><code># pkg_add -r phalcon</code></pre>
         or
         <pre><code># cd /usr/ports/www/phalcon && make install clean</code></pre>
     </p>
 
-    <h2>Dependencies</h2>
-
-    <p>Although Phalcon does not binary link to other extensions it does use some of them to offer functionality. The extensions used are:</p>
-
+    <h2>{{ tr('download_dependencies') }}</h2>
+    <p>{{ tr('download_dependencies_1') }}</p>
     <ul>
         <li>mbstring</li>
         <li>mcrypt</li>
@@ -100,13 +91,9 @@ sudo ./install
         <li>PDO/Oracle</li>
         <li>Mongo</li>
     </ul>
+    <p>{{ tr('download_dependencies_2') }}</p>
 
-    <p>It is not necessary for all the above extensions to be present in the system that has Phalcon installed. You can only install the ones that meet your needs. For instance if you use a MySQL
-        database, then you can only load PDO and PDO/MySQL ignoring the Oracle, SQlite, Postgresql and Mongo.</p>
-
-    <h2>Need help?</h2>
-
-    <p>Have a look at our <a href="{{ url(['for': 'pages', 'pageSlug': 'support']) }}">support page</a> for ways to get support. We will do our best to help you.</p>
-
+    <h2>{{ tr('download_need_help') }}</h2>
+    <p>{{ tr('download_need_help_1', url(['for': 'pages', 'pageSlug': 'support'])) }}</p>
 
 </div>

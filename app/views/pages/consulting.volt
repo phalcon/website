@@ -18,5 +18,5 @@
     <p>{{ tr('sponsors_1') }}</p>
     <p>{{ tr('sponsors_2') }}</p>
     <h4>{{ tr('contact') }}</h4>
-    <p>{{ tr('contact_1') }}</p>
+    <p>{{ tr('contact_1', 'mailto:team@phalconphp.com') }}</p>
 </div>

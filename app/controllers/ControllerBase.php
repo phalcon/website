@@ -5,6 +5,20 @@ use Phalcon\Mvc\Controller,
 
 class ControllerBase extends Controller
 {
+    public function initialize()
+    {
+        /**
+         * Dev environment or production?
+         */
+        $cdn_url = ('1' == $this->config->application->debug) ? '/' : 'http://static.phalconphp.com/';
+
+        /**
+         * Docs path and CDN url
+         */
+        $this->view->setVar('docs_root', 'http://docs.phalconphp.com/en/latest/');
+        $this->view->setVar('cdn_url', $cdn_url);
+    }
+
     /**
      * @param Dispatcher $dispatcher
      *
