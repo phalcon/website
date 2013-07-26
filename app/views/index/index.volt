@@ -7,7 +7,7 @@
         <div class="main-teaser-left">
 
             <div class="teser-chart-wrap">
-                <img src="http://static.phalconphp.com/assets/chart.png" alt="" />
+                <img src="{{ cdn_url }}assets/chart.png" alt="" />
             </div>
 
             <a href="/download"><span class="button-large">{{ tr('download') }}</span></a>
@@ -17,7 +17,7 @@
         <div class="main-teaser-right">
 
             <div class="teaser-video-wrap">
-                <a href="http://vimeo.com/63022489"><img src="http://static.phalconphp.com/assets/video.png" alt=""/></a>
+                <a href="http://vimeo.com/63022489"><img src="{{ cdn_url }}assets/video.png" alt=""/></a>
             </div>
             <a href="http://try.phalconphp.com/"><span class="button-medium">{{ tr('try_online') }}</span></a>
             <a href="http://vimeo.com/phalconphp" target="_blank"><span class="button-medium">{{ tr('see_screencasts') }}</span></a>
@@ -36,60 +36,60 @@
         <table class="features-table">
             <tr>
                 <td>
-                    <div class="h4">Full <a href="http://docs.phalconphp.com/en/latest/reference/applications.html">MVC</a> applications</div>
+                    <div class="h4">Full <a href="{{ docs_root }}reference/applications.html">MVC</a> applications</div>
                     <ul class="dash-list small">
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/applications.html#single-module">{{ tr('single_module') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/applications.html#multi-module">{{ tr('multi_module') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/micro.html">{{ tr('micro_applications') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/applications.html#single-module">{{ tr('single_module') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/applications.html#multi-module">{{ tr('multi_module') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/micro.html">{{ tr('micro_applications') }}</a></li>
                     </ul>
                     <div class="h4">{{ tr('orm') }}</div>
                     <ul class="two-columns dash-list small">
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#transactions">{{ tr('transactions') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/models.html#transactions">{{ tr('transactions') }}</a></li>
 
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#behaviors">{{ tr('behaviors') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#relationships-between-models">{{ tr('relations') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/phql.html">{{ tr('phql') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#events-and-events-manager">{{ tr('events') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#validation-failed-events">{{ tr('validations') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#hydration-modes">{{ tr('hydration') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#logging-low-level-sql-statements">{{ tr('logging') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#profiling-sql-statements">{{ tr('profiling') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/models.html#setting-multiple-databases">{{ tr('sharding') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/models.html#behaviors">{{ tr('behaviors') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/models.html#relationships-between-models">{{ tr('relations') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/phql.html">{{ tr('phql') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/models.html#events-and-events-manager">{{ tr('events') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/models.html#validation-failed-events">{{ tr('validations') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/models.html#hydration-modes">{{ tr('hydration') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/models.html#logging-low-level-sql-statements">{{ tr('logging') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/models.html#profiling-sql-statements">{{ tr('profiling') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/models.html#setting-multiple-databases">{{ tr('sharding') }}</a></li>
                     </ul>
                 </td>
                 <td>
                     <ul class="unstyled">
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/odm.html">{{ tr('odm_for_mongo') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/volt.html">{{ tr('template_engine_volt') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/di.html">{{ tr('di_ioc') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/events.html">{{ tr('events_management') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/crypt.html">{{ tr('encryption') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/odm.html">{{ tr('odm_for_mongo') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/volt.html">{{ tr('template_engine_volt') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/di.html">{{ tr('di_ioc') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/events.html">{{ tr('events_management') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/crypt.html">{{ tr('encryption') }}</a></li>
                         <li>
-                            <a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/request.html">{{ tr('http_request') }}</a>
-                            / <a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/response.html">{{ tr('http_response') }}</a>
-                            / <a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/cookies.html">{{ tr('http_cookies') }}</a></li>
+                            <a class="link-black" href="{{ docs_root }}reference/request.html">{{ tr('http_request') }}</a>
+                            / <a class="link-black" href="{{ docs_root }}reference/response.html">{{ tr('http_response') }}</a>
+                            / <a class="link-black" href="{{ docs_root }}reference/cookies.html">{{ tr('http_cookies') }}</a></li>
                     </ul>
                 </td>
                 <td>
 
                     <ul class="unstyled">
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/escaper.html">{{ tr('escaping') }}</a> / <a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/filter.html">{{ tr('filtering') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/forms.html">{{ tr('forms_builder') }}</a> / <a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/validation.html">{{ tr('forms_validation') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/flash.html">{{ tr('flash_messages') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/cache.html">{{ tr('cache') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/pagination.html">{{ tr('pagination') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/annotations.html">{{ tr('annotations') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/escaper.html">{{ tr('escaping') }}</a> / <a class="link-black" href="{{ docs_root }}reference/filter.html">{{ tr('filtering') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/forms.html">{{ tr('forms_builder') }}</a> / <a class="link-black" href="{{ docs_root }}reference/validation.html">{{ tr('forms_validation') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/flash.html">{{ tr('flash_messages') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/cache.html">{{ tr('cache') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/pagination.html">{{ tr('pagination') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/annotations.html">{{ tr('annotations') }}</a></li>
                     </ul>
 
                 </td>
                 <td>
                     <ul class="unstyled">
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/security.html">{{ tr('security') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/translate.html">{{ tr('translations') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/assets.html">{{ tr('assets_management') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/loader.html">{{ tr('universal_auto_loader') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/logging.html">{{ tr('logging') }}</a></li>
-                        <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/reference/cli.html">{{ tr('cli') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/security.html">{{ tr('security') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/translate.html">{{ tr('translations') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/assets.html">{{ tr('assets_management') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/loader.html">{{ tr('universal_auto_loader') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/logging.html">{{ tr('logging') }}</a></li>
+                        <li><a class="link-black" href="{{ docs_root }}reference/cli.html">{{ tr('cli') }}</a></li>
                     </ul>
                 </td>
             </tr>
@@ -150,12 +150,12 @@
     <em>{{ tr('phalcon_can_be_installed') }}</em>
 
     <p><a href="{{ url("hosting") }}">
-        <img src="http://static.phalconphp.com/images/hosting/fortrabbit-gray.png" alt="Fortrabbit" />
-        <img src="http://static.phalconphp.com/images/hosting/amazon-gray.png" alt="Amazon" />
-        <img src="http://static.phalconphp.com/images/hosting/linode-gray.png" alt="Linode" />
-        <img src="http://static.phalconphp.com/images/hosting/rackspace-gray.png" alt="Rackspace" />
-        <img src="http://static.phalconphp.com/images/hosting/digital-ocean-gray.png" alt="Digital Ocean" />
-        <img src="http://static.phalconphp.com/images/hosting/webfaction-gray.png" alt="WebFaction" />
+        <img src="{{ cdn_url }}images/hosting/fortrabbit-gray.png" alt="Fortrabbit" />
+        <img src="{{ cdn_url }}images/hosting/amazon-gray.png" alt="Amazon" />
+        <img src="{{ cdn_url }}images/hosting/linode-gray.png" alt="Linode" />
+        <img src="{{ cdn_url }}images/hosting/rackspace-gray.png" alt="Rackspace" />
+        <img src="{{ cdn_url }}images/hosting/digital-ocean-gray.png" alt="Digital Ocean" />
+        <img src="{{ cdn_url }}images/hosting/webfaction-gray.png" alt="WebFaction" />
     </a></p>
 
 </div>

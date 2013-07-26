@@ -14,10 +14,10 @@
     </ul>
 
     <div class="note-orange">
-        We highly recommend you to use the latest version of PHP so as to take advantage of the full feature set of Phalcon.
+        {{ tr('download_windows_note') }}
     </div>
 
-    <h2>Stable/Master versions</h2>
+    <h2>{{ tr('download_windows_stable') }}</h2>
     <table class="api-table constants-table">
 
         <tr>
@@ -33,7 +33,7 @@
             <tr>
                 <td>
                     {{ current['x86'][key]['name'] }}
-                    <br/>
+                    <br />
                     <span class="font-small">{{ current['x86'][key]['date'] }} / sha1: {{ current['x86'][key]['checksum'] }}</span>
                 </td>
                 <td class="text-right">
@@ -41,7 +41,7 @@
                 </td>
                 <td>
                     {{ current['x64'][key]['name'] }}
-                    <br/>
+                    <br />
                     <span class="font-small">{{ current['x64'][key]['date'] }} / sha1: {{ current['x64'][key]['checksum'] }}</span>
                 </td>
                 <td class="text-right">
@@ -52,32 +52,31 @@
 
         <tr>
             <td colspan="4">
-                Source Code: <a target="_download" href="https://github.com/phalcon/cphalcon/tree/master" title="GitHub Repo">github</a>
+                {{ tr('download_source_code', 'https://github.com/phalcon/cphalcon/tree/master') }}
             </td>
         </tr>
 
     </table>
 
-    <br/><br/><br/>
+    <br /><br /><br />
 
-    <h3>Installation</h3>
+    <h3>{{ tr('download_windows_installation') }}</h3>
 
-    <p>To use phalcon on Windows you can download a DLL library. Edit your php.ini, append at the end, and restart your webserver to load the extension. <a
-                href="http://docs.phalconphp.com/en/latest/reference/install.html#windows">More</a>.</p>
+    <p>{{ tr('download_windows_installation', docs_root ~ 'install.html#windows') }}</p>
     <pre class="language-ini"><code>extension=php_phalcon.dll</code></pre>
 
-    <br/><br/>
+    <br /><br />
 
-    <h3>Related Guides</h3>
+    <h3>{{ tr('download_windows_guides') }}</h3>
     <p>
         <ul class="dash-list">
-            <li><a href="http://docs.phalconphp.com/en/latest/reference/xampp.html">Installation on XAMPP</a></li>
-            <li><a href="http://docs.phalconphp.com/en/latest/reference/wamp.html">Installation on WAMP</a></li>
+            <li><a href="{{ docs_root ~ 'xampp.html' }}">{{ tr('download_windows_guides_xampp') }}</a></li>
+            <li><a href="{{ docs_root ~ 'wamp.html' }}">{{ tr('download_windows_guides_wamp') }}</a></li>
         </ul>
     </p>
 
-    <br/> <br/>
-    <h2>Alpha/Beta versions</h2>
+    <br /> <br />
+    <h2>{{ tr('download_windows_alpha') }}</h2>
     <table class="api-table constants-table">
 
         <tr>
@@ -94,7 +93,7 @@
         <tr>
             <td>
                 {{ alpha['x86'][key]['name'] }}
-                <br/>
+                <br />
                 <span class="font-small">{{ alpha['x86'][key]['date'] }} / sha1: {{ alpha['x86'][key]['checksum'] }}</span>
             </td>
             <td class="text-right">
@@ -103,7 +102,7 @@
             {% if alpha['x64'][key] is defined %}
             <td>
                 {{ alpha['x64'][key]['name'] }}
-                <br/>
+                <br />
                 <span class="font-small">{{ alpha['x64'][key]['date'] }} / sha1: {{ alpha['x64'][key]['checksum'] }}</span>
             </td>
             <td class="text-right">
@@ -116,19 +115,19 @@
         {% endfor %}
         <tr>
             <td colspan="4">
-                Source Code (please switch to the relevant branch): <a target="_download" href="https://github.com/phalcon/cphalcon/" title="GitHub Repo">github</a>
+                {{ tr('download_source_code_switch', 'https://github.com/phalcon/cphalcon/') }}
             </td>
         </tr>
         {% else %}
         <tr>
-            <td colspan="4">No available alpha/beta versions at the moment.</td>
+            <td colspan="4">{{ tr('download_no_alpha_beta') }}</td>
         </tr>
         {% endif %}
 
     </table>
 
     <br /><br />
-    <h2>Older versions</h2>
+    <h2>{{ tr('download_windows_older') }}</h2>
     <table class="api-table constants-table">
 
         <tr>
@@ -144,7 +143,7 @@
         <tr>
             <td>
                 {{ old['x86'][key]['name'] }}
-                <br/>
+                <br />
                 <span class="font-small">{{ old['x86'][key]['date'] }} / sha1: {{ old['x86'][key]['checksum'] }}</span>
             </td>
             <td class="text-right">
@@ -153,7 +152,7 @@
             {% if old['x64'][key] is defined %}
             <td>
                 {{ old['x64'][key]['name'] }}
-                <br/>
+                <br />
                 <span class="font-small">{{ old['x64'][key]['date'] }} / sha1: {{ old['x64'][key]['checksum'] }}</span>
             </td>
             <td class="text-right">
@@ -167,7 +166,7 @@
 
         <tr>
             <td colspan="4">
-                Source Code (please switch to the relevant branch): <a target="_download" href="https://github.com/phalcon/cphalcon/" title="GitHub Repo">github</a>
+                {{ tr('download_source_code_switch', 'https://github.com/phalcon/cphalcon/') }}
             </td>
         </tr>
 
