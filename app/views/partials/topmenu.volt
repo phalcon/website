@@ -1,6 +1,6 @@
 <ul class="header-nav">
     <li>{{ link_to(['for': 'pages', 'pageSlug': 'download'], 'Download', 'class' : 'header-nav-link') }}</li>
-    <li><a href="http://docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">{{ tr('documentation') }}</a></li>
+    <li><a href="{{ docs_root }}index.html" class="header-nav-link" target="_blank">{{ tr('documentation') }}</a></li>
     <li><a href="http://forum.phalconphp.com/" class="header-nav-link" target="_blank">{{ tr('forum') }}</a></li>
     <li><a href="http://blog.phalconphp.com/" class="header-nav-link" target="_blank">{{ tr('blog') }}</a></li>
     <li>{{ link_to(['for': 'pages', 'pageSlug': 'support'], tr('support'), 'class' : 'header-nav-link') }}</li>

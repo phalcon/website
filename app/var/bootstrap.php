@@ -178,6 +178,29 @@ class Bootstrap
 
             $router->add(
                 '/',
+                'index::redirect'
+            )->setName('index');
+
+            $router->add(
+                '/{language:[a-z]+}',
+                [
+                    'language'   => 1,
+                    'controller' => 'index',
+                    'action'     => 'index',
+                ]
+            )->setName('index');
+
+            $router->add(
+                '/{language:[a-z]+}/index',
+                [
+                    'language'   => 1,
+                    'controller' => 'index',
+                    'action'     => 'index',
+                ]
+            )->setName('index');
+/**
+            $router->add(
+                '/',
                 'index::index'
             )->setName('index');
 
@@ -185,7 +208,7 @@ class Bootstrap
                 '/index',
                 'index::index'
             )->setName('index');
-
+*/
             $router->add(
                 '/{pageSlug:(models|about|team|roadmap|consulting|hosting|examples|support|api|ui|powered)}',
                 [
