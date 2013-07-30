@@ -21,7 +21,7 @@ allowtransparency="true" frameborder="0" scrolling="0" width="152px" height="30p
 
         {% if this.getDi().get('router').getControllerName() == 'index' and this.getDi().get('router').getActionName() == 'index' %}
         <blockquote class="header-intro">
-            <strong>Phalcon</strong> is a web framework implemented as a C extension offering <a href="http://docs.phalconphp.com/en/latest/reference/benchmark.html">high performance</a> and lower resource consumption
+            {{ tr('phalcon_description', docs_root ~ 'reference/benchmark.html') }}
         </blockquote>
         {% endif %}
 

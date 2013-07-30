@@ -10,10 +10,10 @@
     <meta http-equiv="pragma" content="no-cache" />
 
     <link href='http://fonts.googleapis.com/css?family=Ubuntu&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" media="all" href="http://static.phalconphp.com/css/style.css?v=2"/>
+    <link rel="stylesheet" type="text/css" media="all" href="{{ cdn_url }}css/style.css?v=2"/>
 
-    <link rel="icon" type="image/ico" href="http://static.phalconphp.com/favicon.ico"/>
-    <link rel="stylesheet" href="http://static.phalconphp.com/css/tomorrow-night.css">
-    <script src="http://static.phalconphp.com/js/highlight.pack.js"></script>
+    <link rel="icon" type="image/ico" href="{{ cdn_url }}favicon.ico"/>
+    <link rel="stylesheet" href="{{ cdn_url }}css/tomorrow-night.css">
+    <script src="{{ cdn_url }}js/highlight.pack.js"></script>
 
 </head>

@@ -15,6 +15,11 @@ class IndexController extends \ControllerBase
         $this->view->pick('404/404');
     }
 
+    public function redirectAction()
+    {
+        $this->response->redirect("en/");
+    }
+
     public function subscribeAction()
     {
         $subscriber        = new Subscribers();
