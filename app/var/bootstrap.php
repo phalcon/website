@@ -123,10 +123,10 @@ class Bootstrap
         $loader = new PhLoader();
 
         $loader->registerDirs(
-            [
+            array(
                 $config->application->controllersDir,
                 $config->application->modelsDir
-            ]
+            )
         );
 
         $loader->register();
@@ -169,10 +169,10 @@ class Bootstrap
             $router = new PhRouter(false);
 
             $router->notFound(
-                [
+                array(
                     "controller" => "index",
                     "action"     => "notFound",
-                ]
+                )
             );
             $router->removeExtraSlashes(true);
 
@@ -196,12 +196,12 @@ class Bootstrap
 
         $this->di['db'] = function () use ($config) {
             return new DbAdapter(
-                [
+                array(
                     'host'     => $config->database->host,
                     'username' => $config->database->username,
                     'password' => $config->database->password,
                     'dbname'   => $config->database->dbname,
-                ]
+                )
             );
         };
     }
@@ -236,13 +236,13 @@ class Bootstrap
             $view = new PhView();
             $view->setViewsDir($config->application->viewsDir);
             $view->registerEngines(
-                [
+                array(
                     '.volt' => function ($view , $di) use ($config) {
                         $volt        = new PhVolt($view , $di);
-                        $voltOptions = [
+                        $voltOptions = array(
                             'compiledPath'      => $config->application->voltDir ,
                             'compiledSeparator' => '_',
-                        ];
+                        );
 
                         if ('1' != $config->application->debug) {
                             $voltOptions['compileAlways'] = true;
@@ -260,7 +260,7 @@ class Bootstrap
                     },
                     '.phtml' => 'Phalcon\Mvc\View\Engine\Php', // Generate Template files uses PHP itself as the template engine
 		            //'.html'  => 'Phalcon\Mvc\View\Engine\Php' // Generate Template files uses PHP itself as the template engine
-	            ]
+                )
             );
 
             return $view;
@@ -285,7 +285,7 @@ class Bootstrap
             if (function_exists('apc_store')) {
                 $cache = new PhCacheBackApc($frontCache);
             } else {
-                $backEndOptions = ['cacheDir' => $config->cache->cacheDir];
+                $backEndOptions = array('cacheDir' => $config->cache->cacheDir);
                 $cache          = new PhCacheBackFile($frontCache, $backEndOptions);
             }
 
