@@ -66,6 +66,8 @@ ul.dash-list > li:before {content: '\2013'; position: absolute; top:0; left: 3px
 
 .small {font-size: 85%; line-height: 85%;}
 
+.font-small { font-size: 10px}
+
 ul.two-columns {overflow: hidden;}
 ul.two-columns li {width: 50%; float: left; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box}
 /* ui */

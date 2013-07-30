@@ -1,6 +1,9 @@
 <?php
 
+use \Phalcon\DI\FactoryDefault as PhDi;
+
 error_reporting(E_ALL);
+date_default_timezone_set('US/Eastern');
 
 if (!defined('ROOT_PATH')) {
     define('ROOT_PATH', dirname(dirname(__FILE__)));
@@ -8,28 +11,17 @@ if (!defined('ROOT_PATH')) {
 
 try {
 
-	/**
-	 * Read the configuration
-	 */
-	$config = include __DIR__ . "/../app/config/config.php";
-
-	/**
-	 * Read auto-loader
-	 */
-	include __DIR__ . "/../app/config/loader.php";
-
-	/**
-	 * Read services
-	 */
-	include __DIR__ . "/../app/config/services.php";
+	include ROOT_PATH . "/app/var/bootstrap.php";
 
 	/**
 	 * Handle the request
 	 */
-	$application = new \Phalcon\Mvc\Application($di);
-	echo $application->handle()->getContent();
+    $di  = new PhDi();
+    $app = new Bootstrap($di);
 
-} catch (Phalcon\Exception $e) {
+    echo $app->run(array());
+
+} catch (\Phalcon\Exception $e) {
 	echo $e->getMessage();
 } catch (PDOException $e){
 	echo $e->getMessage();
