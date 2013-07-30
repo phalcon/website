@@ -1,6 +1,9 @@
 <?php
 
-    $messages = [
+    /**
+     * Need to keep this as array() vs. [] for Transilex
+     */
+    $messages = array(
         'download'                        => 'Download',
         'documentation'                   => 'Documentation',
         'forum'                           => 'Forum',
@@ -210,6 +213,6 @@
 
 
 
-    ];
+    );
 
-    return $messages;
+    // return $messages;
