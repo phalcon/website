@@ -176,85 +176,10 @@ class Bootstrap
             );
             $router->removeExtraSlashes(true);
 
-            $router->add(
-                '/',
-                'index::redirect'
-            )->setName('index');
-
-            $router->add(
-                '/{language:[a-z]+}',
-                [
-                    'language'   => 1,
-                    'controller' => 'index',
-                    'action'     => 'index',
-                ]
-            )->setName('index');
-
-            $router->add(
-                '/{language:[a-z]+}/index',
-                [
-                    'language'   => 1,
-                    'controller' => 'index',
-                    'action'     => 'index',
-                ]
-            )->setName('index');
-/**
-            $router->add(
-                '/',
-                'index::index'
-            )->setName('index');
-
-            $router->add(
-                '/index',
-                'index::index'
-            )->setName('index');
-*/
-            $router->add(
-                '/{pageSlug:(models|about|team|roadmap|consulting|hosting|examples|support|api|ui|powered)}',
-                [
-                    'controller' => 'pages',
-                    'action'     => 'page',
-                ]
-            )->setName('pages');
-
-            $router->add(
-                '/download',
-                [
-                    'controller' => 'download'
-                ]
-            )->setName('download');
-
-            $router->add(
-                '/download/{type:(tools|stubs)}',
-                [
-                    'controller' => 'download',
-                    'action'     => 'index',
-                ]
-            )->setName('download-type');
-
-            $router->add(
-                '/download/windows',
-                [
-                    'controller' => 'download',
-                    'action'     => 'windows',
-                ]
-            )->setName('download-windows');
-
-            $router->add(
-                '/(documentation|reference)',
-                [
-                    'controller' => 'documentation',
-                    'action'     => 'index',
-                ]
-            )->setName('documentation');
-
-            $router->add(
-                '/donate',
-                [
-                    'controller' => 'index',
-                    'action'     => 'donate',
-                ]
-            )->setName('donate');
+            foreach ($config['routes'] as $route => $items) {
+                $router->add($route, $items->params->toArray())
+                       ->setName($items->name);
+            }
 
             return $router;
         };
@@ -319,7 +244,7 @@ class Bootstrap
                             'compiledSeparator' => '_',
                         ];
 
-                        if ('1' != $this->config->application->debug) {
+                        if ('1' != $config->application->debug) {
                             $voltOptions['compileAlways'] = true;
                         }
 
@@ -375,13 +300,14 @@ class Bootstrap
      */
     public static function translate()
     {
-        $return   = '';
-        $argCount = func_num_args();
-        $di       = PhDi::getDefault();
-        $session  = $di['session'];
-        $config   = $di['config'];
-        $phrases  = $session->get('phrases');
-        $lang     = $session->get('lang');
+        $return     = '';
+        $argCount   = func_num_args();
+        $di         = PhDi::getDefault();
+        $session    = $di['session'];
+        $config     = $di['config'];
+        $dispatcher = $di['dispatcher'];
+        $phrases    = $session->get('phrases');
+        $lang       = $dispatcher->getParam('language');
 
         if (!$phrases || ('1' == $config->application->debug)) {
             $english = require(ROOT_PATH . '/app/var/languages/en.php');

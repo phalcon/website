@@ -36,7 +36,7 @@
         <table class="features-table">
             <tr>
                 <td>
-                    <div class="h4">Full <a href="{{ docs_root }}reference/applications.html">MVC</a> applications</div>
+                    <div class="h4">{{ tr('full_mvc_applications', docs_root ~ 'reference/applications.html') }}</div>
                     <ul class="dash-list small">
                         <li><a class="link-black" href="{{ docs_root }}reference/applications.html#single-module">{{ tr('single_module') }}</a></li>
                         <li><a class="link-black" href="{{ docs_root }}reference/applications.html#multi-module">{{ tr('multi_module') }}</a></li>
@@ -135,7 +135,7 @@
             <br />
             {{ tr('implementation') }}
             <br />
-            {{ 'ongoing_support' }}
+            {{ tr('ongoing_support') }}
             <br />
             <p>{{ link_to(['for': 'pages', 'pageSlug': 'support'], tr('read_more'), 'class' : 'button button-small orange') }}</p>
             {{ link_to(['for': 'pages', 'pageSlug': 'hosting'], tr('hosting_upper'), 'class' : 'services-block-link') }}
