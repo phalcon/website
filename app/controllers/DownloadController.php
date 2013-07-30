@@ -154,11 +154,11 @@ class DownloadController extends \ControllerBase
         }
 
         $this->view->setVars(
-            [
+            array(
                 'current' => $current ,
                 'alpha'   => $alpha ,
                 'old'     => $old
-            ]
+            )
         );
 
     }
