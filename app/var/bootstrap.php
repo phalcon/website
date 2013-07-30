@@ -279,7 +279,7 @@ class Bootstrap
         $this->di['viewCache'] = function () use ($config) {
 
             // Get the parameters
-            $frontEndOptions = ['lifetime' => $config->cache->lifetime];
+            $frontEndOptions = array('lifetime' => $config->cache->lifetime);
             $frontCache      = new PhCacheFront($frontEndOptions);
 
             if (function_exists('apc_store')) {
