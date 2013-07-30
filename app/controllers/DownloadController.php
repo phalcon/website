@@ -73,20 +73,20 @@ class DownloadController extends \ControllerBase
 
                 // Check if we have an alpha here
                 if ( strpos(strtolower($version) , 'alpha') > 0 || strpos(strtolower($version) , 'beta') > 0 ) {
-                    $alpha[$version][$arch][$key] = [
+                    $alpha[$version][$arch][$key] = array(
                         'name'     => sprintf($template , $version , $arch , $php , $nts , $vc) ,
                         'file'     => $cdn . $fileName ,
                         'date'     => $date ,
                         'checksum' => sha1_file($file)
-                    ];
+                    );
 
                 } else {
-                    $files[$version][$arch][$key] = [
+                    $files[$version][$arch][$key] = array(
                         'name'     => sprintf($template , $version , $arch , $php , $nts , $vc) ,
                         'file'     => $cdn . $fileName ,
                         'date'     => $date ,
                         'checksum' => sha1_file($file)
-                    ];
+                    );
                 }
             }
         }
@@ -138,7 +138,7 @@ class DownloadController extends \ControllerBase
         unset($results[$key]);
 
         // Now sort the $old versions.
-        $old = ['x86' => [], 'x64' => []];
+        $old = array('x86' => array(), 'x64' => array());
         foreach ($results as $result) {
             foreach ($result as $arch => $data) {
                 $old[$arch] = array_merge($old[$arch] , $data);
