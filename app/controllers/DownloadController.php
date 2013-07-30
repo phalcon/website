@@ -5,7 +5,6 @@ class DownloadController extends \ControllerBase
 
     public function indexAction($type = 'index')
     {
-
         switch ($type) {
 
             default:
@@ -31,21 +30,22 @@ class DownloadController extends \ControllerBase
 
         $this->tag->setTitle('Download Phalcon for Windows');
 
-        $path     = 'files/';
+        $cdn      = 'http://static.phalconphp.com/files/';
+        $path     = ROOT_PATH . '/public/files/';
         $template = "Phalcon %s - Windows %s for PHP %s %s(%s)";
         $files    = array();
         $alpha    = array();
 
-        foreach ( glob($path . '*.zip') as $file ) {
+        foreach (glob($path . '*.zip') as $file ) {
 
             $fileDate = filemtime($file);
             $date     = '';
-            if ( $fileDate ) {
+            if ($fileDate) {
                 $date = date("F d Y H:i:s T" , $fileDate);
             }
             $fileName = str_replace($path , '' , $file);
 
-            if ( strpos($fileName , '_') > 0 ) {
+            if (strpos($fileName , '_') > 0) {
 
                 $chunks = explode('_' , str_replace('.zip' , '' , $fileName));
 
@@ -73,20 +73,20 @@ class DownloadController extends \ControllerBase
 
                 // Check if we have an alpha here
                 if ( strpos(strtolower($version) , 'alpha') > 0 || strpos(strtolower($version) , 'beta') > 0 ) {
-                    $alpha[$version][$arch][$key] = array(
+                    $alpha[$version][$arch][$key] = [
                         'name'     => sprintf($template , $version , $arch , $php , $nts , $vc) ,
-                        'file'     => 'files/' . $fileName ,
+                        'file'     => $cdn . $fileName ,
                         'date'     => $date ,
                         'checksum' => sha1_file($file)
-                    );
+                    ];
 
                 } else {
-                    $files[$version][$arch][$key] = array(
+                    $files[$version][$arch][$key] = [
                         'name'     => sprintf($template , $version , $arch , $php , $nts , $vc) ,
-                        'file'     => 'files/' . $fileName ,
+                        'file'     => $cdn . $fileName ,
                         'date'     => $date ,
                         'checksum' => sha1_file($file)
-                    );
+                    ];
                 }
             }
         }
@@ -96,7 +96,7 @@ class DownloadController extends \ControllerBase
          * We need to sort it though so a new array will be created for this
          */
         $results = array();
-        foreach ( $files as $arch => $data ) {
+        foreach ($files as $arch => $data) {
 
             // $data is an array which needs to be sorted by key
             krsort($data);
@@ -109,14 +109,14 @@ class DownloadController extends \ControllerBase
          * The $alpha contains all the alpha version files
          */
         $experimental = array();
-        foreach ( $alpha as $arch => $data ) {
+        foreach ($alpha as $arch => $data) {
 
             // $data is an array which needs to be sorted by key
             krsort($data);
             $experimental[$arch] = $data;
         }
 
-        if ( count($experimental) > 0 ) {
+        if (count($experimental) > 0) {
             krsort($experimental);
             reset($experimental);
             $key   = key($experimental);
@@ -138,7 +138,7 @@ class DownloadController extends \ControllerBase
         unset($results[$key]);
 
         // Now sort the $old versions.
-        $old = array( 'x86' => array() , 'x64' => array() );
+        $old = ['x86' => [], 'x64' => []];
         foreach ($results as $result) {
             foreach ($result as $arch => $data) {
                 $old[$arch] = array_merge($old[$arch] , $data);
@@ -154,11 +154,11 @@ class DownloadController extends \ControllerBase
         }
 
         $this->view->setVars(
-            array(
+            [
                 'current' => $current ,
                 'alpha'   => $alpha ,
                 'old'     => $old
-            )
+            ]
         );
 
     }
