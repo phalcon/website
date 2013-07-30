@@ -47,8 +47,8 @@ class Bootstrap
             'loader',
             'url',
             'router',
-            'database',
-            'modelsmetadata',
+//            'database',
+//            'modelsmetadata',
             'view',
             'cache',
         );
@@ -301,6 +301,7 @@ class Bootstrap
     public static function translate()
     {
         $return     = '';
+        $messages   = array();
         $argCount   = func_num_args();
         $di         = PhDi::getDefault();
         $session    = $di['session'];
@@ -310,11 +311,25 @@ class Bootstrap
         $lang       = $dispatcher->getParam('language');
 
         if (!$phrases || ('1' == $config->application->debug)) {
-            $english = require(ROOT_PATH . '/app/var/languages/en.php');
+            require(ROOT_PATH . '/app/var/languages/en.php');
+            /**
+             * Messages comes from the above require statement. Not the best
+             * way of doing it but we need this for Transilex
+             */
+            $english = $messages;
             $phrases = $english;
             if ('en' !== $lang) {
                 if (file_exists(ROOT_PATH . '/app/var/languages/' . $lang . '.php')) {
-                    $custom = require(ROOT_PATH . '/app/var/languages/' . $lang . '.php');
+                    /**
+                     * Cleanup
+                     */
+                    $messages = array();
+                    require(ROOT_PATH . '/app/var/languages/' . $lang . '.php');
+                    /**
+                     * Messages comes from the above require statement. Not
+                     * the best way of doing it but we need this for Transilex
+                     */
+                    $custom  = $messages;
                     $phrases = array_merge($english, $custom);
                 }
             }
