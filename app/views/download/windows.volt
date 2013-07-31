@@ -70,8 +70,8 @@
     <h3>{{ tr('download_windows_guides') }}</h3>
     <p>
         <ul class="dash-list">
-            <li><a href="{{ docs_root ~ 'xampp.html' }}">{{ tr('download_windows_guides_xampp') }}</a></li>
-            <li><a href="{{ docs_root ~ 'wamp.html' }}">{{ tr('download_windows_guides_wamp') }}</a></li>
+            <li><a href="{{ docs_root ~ 'reference/xampp.html' }}">{{ tr('download_windows_guides_xampp') }}</a></li>
+            <li><a href="{{ docs_root ~ 'reference/wamp.html' }}">{{ tr('download_windows_guides_wamp') }}</a></li>
         </ul>
     </p>
 
