@@ -147,7 +147,7 @@
                 <span class="font-small">{{ old['x86'][key]['date'] }} / sha1: {{ old['x86'][key]['checksum'] }}</span>
             </td>
             <td class="text-right">
-                {{ link_to(old['x86'][key]['file'], 'download', 'target': '_download', 'title': old['x86'][key]['name'], 'class':'button button-small') }}
+                <a href="{{ old['x86'][key]['file'] }}" title="{{ old['x86'][key]['name'] }}" class="button button-small green" target="_download">{{ tr('download') }}</a>
             </td>
             {% if old['x64'][key] is defined %}
             <td>
@@ -156,7 +156,7 @@
                 <span class="font-small">{{ old['x64'][key]['date'] }} / sha1: {{ old['x64'][key]['checksum'] }}</span>
             </td>
             <td class="text-right">
-                {{ link_to(old['x64'][key]['file'], 'download', 'target': '_download', 'title': old['x64'][key]['name'], 'class':'button button-small') }}
+                <a href="{{ old['x64'][key]['file'] }}" title="{{ old['x64'][key]['name'] }}" class="button button-small green" target="_download">{{ tr('download') }}</a>
             </td>
             {% else %}
             <td colspan="2"></td>
