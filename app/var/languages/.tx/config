@@ -1,7 +1,7 @@
 [main]
 host = https://www.transifex.com
 
-[phalcon-php-framework.website]
+[phalcon.website]
 file_filter = <lang>.php
 source_file = en.php
 source_lang = en
