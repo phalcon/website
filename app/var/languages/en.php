@@ -133,7 +133,7 @@
         'download_devtools_composer_1'    => 'Install composer in a common location or in your project:',
         'download_devtools_composer_2'    => 'Create the composer.json file as follows:',
         'download_devtools_composer_3'    => 'Run the composer installer:',
-        'download_devtools_composer_4'    => 'Create a symbolink link to the phalcon.php script:',
+        'download_devtools_composer_4'    => 'Create a symbolic link to the phalcon.php script:',
         'download_devtools_download'      => 'You can download or clone a cross platform package containing the developer tools from <a href=":1:">Github</a>.',
 
         'consulting_header'               => "We are offering consulting services for Phalcon <br />and/or PHP implementations",
