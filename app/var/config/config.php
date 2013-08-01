@@ -25,56 +25,64 @@
     );
 
     $routes = array(
-        '/' => array(
+        '/{language:[a-z]{2}}' => array(
             'params' => array(
+                'language'   => 1,
                 'controller' => 'index',
                 'action'     => 'index',
             ),
             'name'   => 'index',
         ),
-        '/index' => array(
+        '/{language:[a-z]{2}}/index' => array(
             'params' => array(
+                'language'   => 1,
                 'controller' => 'index',
                 'action'     => 'index',
             ),
             'name'   => 'index',
         ),
-        '/{pageSlug:(models|about|team|roadmap|consulting|hosting|examples|support|api|ui|powered)}' => array(
+        '/{language:[a-z]{2}}/{pageSlug:(models|about|team|roadmap|consulting|hosting|examples|support|api|ui|powered)}' => array(
             'params' => array(
+                'language'   => 1,
                 'controller' => 'pages',
                 'action'     => 'page',
             ),
             'name'   => 'pages',
         ),
-        '/download' => array(
+        '/{language:[a-z]{2}}/download' => array(
             'params' => array(
+                'language'   => 1,
                 'controller' => 'download'
             ),
             'name'   => 'download',
         ),
-        '/download/{type:(tools|stubs)}' => array(
+        '/{language:[a-z]{2}}/download/{type:(tools|stubs)}' => array(
             'params' => array(
+                'language'   => 1,
                 'controller' => 'download',
                 'action'     => 'index',
             ),
             'name'   => 'download-type',
         ),
-        '/download/windows' => array(
+        '/{language:[a-z]{2}}/download/windows' => array(
             'params' => array(
+                'language'   => 1,
                 'controller' => 'download',
                 'action'     => 'windows',
             ),
             'name'   => 'download-windows',
         ),
-        '/(documentation|reference)' => array(
+        '/{language:[a-z]{2}}/(documentation|reference)' => array(
             'params' => array(
+                'language'   => 1,
                 'controller' => 'documentation',
                 'action'     => 'index',
             ),
             'name'   => 'documentation',
         ),
-        '/donate' => array(
+        '/{language:[a-z]{2}}/donate' => array(
             'params' => array(
+                'language'   => 1,
                 'controller' => 'index',
                 'action'     => 'donate',
             ),
