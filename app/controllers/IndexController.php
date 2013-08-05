@@ -14,11 +14,6 @@ class IndexController extends \ControllerBase
         $this->view->pick('404/404');
     }
 
-    public function redirectAction()
-    {
-        $this->response->redirect("en/");
-    }
-
     public function subscribeAction()
     {
         $subscriber        = new Subscribers();
@@ -45,4 +40,42 @@ class IndexController extends \ControllerBase
         $this->tag->setTitle('Donate');
     }
 
+    /**
+     * Redirects for old links
+     */
+    public function redirectIndexAction()
+    {
+        $this->response->redirect('en/', 301);
+    }
+
+    public function redirectPagesAction()
+    {
+        $slug = $this->getUriParameter('pageSlug');
+        $slug = ($slug) ? '/' . $slug : '';
+
+        $this->response->redirect('en/' . $slug, 301);
+    }
+
+    public function redirectDownloadAction()
+    {
+        $this->response->redirect("en/download", 301);
+    }
+
+    public function redirectDownloadTypeAction()
+    {
+        $slug = $this->getUriParameter('type');
+        $slug = ($slug) ? '/' . $slug : '';
+
+        $this->response->redirect("en/download" . $slug, 301);
+    }
+
+    public function redirectDownloadWindowsAction()
+    {
+        $this->response->redirect("en/download/windows", 301);
+    }
+
+    public function redirectDonateAction()
+    {
+        $this->response->redirect('en/donate', 301);
+    }
 }

@@ -2,14 +2,6 @@
 
 class DownloadController extends \ControllerBase
 {
-    public function redirectAction()
-    {
-        $slug = $this->getSlug();
-        $slug = ($slug) ? '/' . $slug : '';
-
-        $this->response->redirect("en/download" . $slug);
-    }
-
     public function indexAction()
     {
         $type = $this->getUriParameter('type');

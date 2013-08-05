@@ -25,36 +25,74 @@
     );
 
     $routes = array(
+        // Index (Redirect)
         '/' => array(
             'params' => array(
                 'controller' => 'index',
-                'action'     => 'redirect',
+                'action'     => 'redirectIndex',
             ),
-            'name'   => 'index',
+            'name'   => 'index-redirect',
         ),
         '/index' => array(
             'params' => array(
                 'controller' => 'index',
-                'action'     => 'redirect',
+                'action'     => 'redirectIndex',
             ),
-            'name'   => 'index',
+            'name'   => 'index-redirect',
         ),
+
+        // Pages
+        '/{pageSlug:(models|about|team|roadmap|consulting|hosting|examples|support|api|ui|powered)}' => array(
+            'params' => array(
+                'controller' => 'index',
+                'action'     => 'redirectPages',
+            ),
+            'name'   => 'pages-redirect',
+        ),
+
+        // Download
         '/download' => array(
             'params' => array(
-                'controller' => 'download',
-                'action'     => 'redirect'
+                'controller' => 'index',
+                'action'     => 'redirectDownload'
             ),
-            'name'   => 'download',
+            'name'   => 'download-redirect',
         ),
         '/download/{type:(tools|stubs)}' => array(
             'params' => array(
-                'controller' => 'download',
-                'action'     => 'redirect',
+                'controller' => 'index',
+                'action'     => 'redirectDownloadType',
             ),
-            'name'   => 'download-type',
+            'name'   => 'download-type-redirect',
+        ),
+        '/download/windows' => array(
+            'params' => array(
+                'controller' => 'index',
+                'action'     => 'redirectDownloadWindows',
+            ),
+            'name'   => 'download-windows-redirect',
+        ),
+
+        // Documentation
+        '/(documentation|reference)' => array(
+            'params' => array(
+                'controller' => 'documentation',
+                'action'     => 'index',
+            ),
+            'name'   => 'documentation',
+        ),
+
+        // Donate
+        '/donate' => array(
+            'params' => array(
+                'controller' => 'index',
+                'action'     => 'redirectDonate',
+            ),
+            'name'   => 'donate-redirect',
         ),
 
 
+        // Index
         '/{language:[a-z]{2}}' => array(
             'params' => array(
                 'controller' => 'index',
@@ -69,6 +107,8 @@
             ),
             'name'   => 'index',
         ),
+
+        // Pages
         '/{language:[a-z]{2}}/{pageSlug:(models|about|team|roadmap|consulting|hosting|examples|support|api|ui|powered)}' => array(
             'params' => array(
                 'controller' => 'pages',
@@ -76,6 +116,8 @@
             ),
             'name'   => 'pages',
         ),
+
+        // Download
         '/{language:[a-z]{2}}/download' => array(
             'params' => array(
                 'controller' => 'download'
@@ -96,6 +138,8 @@
             ),
             'name'   => 'download-windows',
         ),
+
+        // Documentation
         '/{language:[a-z]{2}}/(documentation|reference)' => array(
             'params' => array(
                 'controller' => 'documentation',
@@ -103,6 +147,8 @@
             ),
             'name'   => 'documentation',
         ),
+
+        // Donate
         '/{language:[a-z]{2}}/donate' => array(
             'params' => array(
                 'controller' => 'index',
