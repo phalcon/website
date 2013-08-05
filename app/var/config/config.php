@@ -158,10 +158,23 @@
         ),
     );
 
+    $languages = array(
+        'el' => 'Ελληνικά',
+        'en' => 'English',
+        'es' => 'Español',
+        'fa' => 'الفارسية',
+        'fr' => 'Français',
+        'nl' => 'Nederlands',
+        'pl' => 'Polski',
+        'ru' => 'Pусский',
+        'vi' => 'Việt',
+        'zh' => '中国的',
+    );
 
     return array(
         'application' => $application,
         'database'    => $database,
         'cache'       => $cache,
         'routes'      => $routes,
+        'languages'   => $languages,
     );

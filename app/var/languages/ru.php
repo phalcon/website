@@ -4,6 +4,7 @@
      * Need to keep this as array() vs. [] for Transilex
      */
     $messages = array(
+        'language_text'                   => 'English',
         'download'                        => 'Скачать',
         'documentation'                   => 'Документация',
         'forum'                           => 'Форум',

@@ -19,7 +19,23 @@ class ControllerBase extends Controller
 
         $lang = ($lang) ? $lang : 'en';
 
+        /**
+         * Find the languages available
+         */
+        $languages           = $this->config->languages;
+        $languages_available = '';
+        $selected            = '';
+        $url                 = $this->request->getScheme() . '://'
+                             . $this->request->getHttpHost();
+        $uri                 = $this->router->getRewriteUri();
+        foreach ($languages as $key => $value) {
+            $selected = ($key == $lang) ? " selected='selected'" : '';
+            $href     = $url .  str_replace("/{$lang}", "/{$key}", $uri);
+            $languages_available .= "<option value='{$href}'{$selected}>{$value}</option>";
+        }
+
         $this->view->setVar('language', $lang);
+        $this->view->setVar('languages_available', $languages_available);
         $this->view->setVar('docs_root', 'http://docs.phalconphp.com/en/latest/');
         $this->view->setVar('cdn_url', $cdn_url);
     }

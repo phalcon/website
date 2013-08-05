@@ -7,4 +7,5 @@
     <li>{{ link_to(['for': 'pages', 'pageSlug': 'donate', 'language': language], tr('donate'), 'class' : 'header-nav-link') }}</li>
     <li><a href="http://store.phalconphp.com/" class="header-nav-link" target="_blank">{{ tr('store') }}</a></li>
     <li><a href="https://github.com/phalcon/cphalcon" class="header-nav-link" target="_blank">{{ tr('github') }}</a></li>
+    <li><select id='lng_select' onchange="javascript:location.href = this.value;">{{ languages_available }}</select></li>
 </ul>
