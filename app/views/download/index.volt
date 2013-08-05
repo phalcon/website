@@ -94,6 +94,6 @@ sudo ./install
     <p>{{ tr('download_dependencies_2') }}</p>
 
     <h2>{{ tr('download_need_help') }}</h2>
-    <p>{{ tr('download_need_help_1', url(['for': 'pages', 'pageSlug': 'support'])) }}</p>
+    <p>{{ tr('download_need_help_1', url(['for': 'pages', 'pageSlug': 'support', 'language': language])) }}</p>
 
 </div>
