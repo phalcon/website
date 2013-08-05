@@ -7,8 +7,8 @@
 <div class="size-wrap">
 
     <ul class="tabs clear-fix">
-        <li><a class="tab-link" href="{{ url(['for': 'pages', 'pageSlug': 'team']) }}"><u>{{ tr('team') }}</u></a></li>
-        <li><a class="tab-link active" href="{{ url(['for': 'pages', 'pageSlug': 'about']) }}"><u>{{ tr('about') }}</u></a></li>
+        <li><a class="tab-link" href="{{ url(['for': 'pages', 'pageSlug': 'team', 'language': language]) }}"><u>{{ tr('team') }}</u></a></li>
+        <li><a class="tab-link active" href="{{ url(['for': 'pages', 'pageSlug': 'about', 'language': language]) }}"><u>{{ tr('about') }}</u></a></li>
     </ul>
 
     <p>{{ tr('about_description_1') }}</p>
