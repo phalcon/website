@@ -129,7 +129,7 @@
         <div class="services-block">
             <div class="services-block-title">{{ tr('services') }}</div>
 
-            {{ link_to(['for': 'pages', 'pageSlug': 'consulting'], tr('consulting_upper'), 'class' : 'services-block-link') }}
+            {{ link_to(['for': 'pages', 'pageSlug': 'consulting', 'language': language], tr('consulting_upper'), 'class' : 'services-block-link') }}
             <br />
             {{ tr('requirements_analysis') }}
             <br />
@@ -137,8 +137,8 @@
             <br />
             {{ tr('ongoing_support') }}
             <br />
-            <p>{{ link_to(['for': 'pages', 'pageSlug': 'support'], tr('read_more'), 'class' : 'button button-small orange') }}</p>
-            {{ link_to(['for': 'pages', 'pageSlug': 'hosting'], tr('hosting_upper'), 'class' : 'services-block-link') }}
+            <p>{{ link_to(['for': 'pages', 'pageSlug': 'support', 'language': language], tr('read_more'), 'class' : 'button button-small orange') }}</p>
+            {{ link_to(['for': 'pages', 'pageSlug': 'hosting', 'language': language], tr('hosting_upper'), 'class' : 'services-block-link') }}
 
         </div>
 
@@ -149,7 +149,7 @@
 
     <em>{{ tr('phalcon_can_be_installed') }}</em>
 
-    <p><a href="{{ url("hosting") }}">
+    <p><a href="{{ url(language ~ '/hosting') }}">
         <img src="{{ cdn_url }}images/hosting/fortrabbit-gray.png" alt="Fortrabbit" />
         <img src="{{ cdn_url }}images/hosting/amazon-gray.png" alt="Amazon" />
         <img src="{{ cdn_url }}images/hosting/linode-gray.png" alt="Linode" />

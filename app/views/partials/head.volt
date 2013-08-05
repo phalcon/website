@@ -9,11 +9,11 @@
     <meta http-equiv="cache-control" content="no-cache" />
     <meta http-equiv="pragma" content="no-cache" />
 
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" media="all" href="{{ cdn_url }}css/style.css?v=2"/>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css' />
+    <link href="{{ cdn_url }}css/style.css?v=2" rel="stylesheet" type="text/css" media="all" />
 
-    <link rel="icon" type="image/ico" href="{{ cdn_url }}favicon.ico"/>
-    <link rel="stylesheet" href="{{ cdn_url }}css/tomorrow-night.css">
+    <link href="{{ cdn_url }}favicon.ico" rel="icon" type="image/ico" />
+    <link href="{{ cdn_url }}css/tomorrow-night.css" rel="stylesheet" />
     <script src="{{ cdn_url }}js/highlight.pack.js"></script>
 
 </head>
