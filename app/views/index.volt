@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ language }}">
 {% include 'partials/head.volt' %}
 <body>
 
@@ -8,7 +8,7 @@
     <div class="size-wrap">
 
         <div class="header">
-            <a class="header-logo" href="/"><span class="logo-text">Phalcon</span></a>
+            <a class="header-logo" href="/{{ language }}/"><span class="logo-text">Phalcon</span></a>
 
             <div class="header-right">
                 <iframe src="http://ghbtns.com/github-btn.html?user=phalcon&amp;repo=cphalcon&amp;type=watch&amp;count=true&amp;size=large"

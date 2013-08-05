@@ -5,7 +5,7 @@
             <td>
                 <div class="footer-links-title">{{ tr('main_upper') }}</div>
                 <ul class="footer-links-list unstyled">
-                    <li>{{ link_to(['for': 'download'], tr('download'), 'class' : 'link-black') }}</li>
+                    <li>{{ link_to(['for': 'download', 'language': language], tr('download'), 'class' : 'link-black') }}</li>
                     <li><a class="link-black" href="http://docs.phalconphp.com/en/latest/index.html">{{ tr('documentation') }}</a></li>
                     <li><a class="link-black" href="http://blog.phalconphp.com/">{{ tr('blog') }}</a></li>
                 </ul>
@@ -13,9 +13,9 @@
             <td>
                 <div class="footer-links-title">{{ tr('services_upper') }}</div>
                 <ul class="footer-links-list unstyled">
-                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'consulting'], tr('consulting'), 'class' : 'link-black') }}</li>
-                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'hosting'], tr('hosting'), 'class' : 'link-black') }}</li>
-                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'support'], tr('support'), 'class' : 'link-black') }}</li>
+                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'consulting', 'language': language], tr('consulting'), 'class' : 'link-black') }}</li>
+                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'hosting', 'language': language], tr('hosting'), 'class' : 'link-black') }}</li>
+                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'support', 'language': language], tr('support'), 'class' : 'link-black') }}</li>
 
                 </ul>
             </td>
@@ -30,9 +30,9 @@
             <td>
                 <div class="footer-links-title">{{ tr('get_involved_upper') }}</div>
                 <ul class="footer-links-list unstyled">
-                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'team'], tr('team'), 'class' : 'link-black') }}</li>
-                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'about'], tr('about'), 'class' : 'link-black') }}</li>
-                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'roadmap'], tr('roadmap'), 'class' : 'link-black') }}</li>
+                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'team', 'language': language], tr('team'), 'class' : 'link-black') }}</li>
+                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'about', 'language': language], tr('about'), 'class' : 'link-black') }}</li>
+                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'roadmap', 'language': language], tr('roadmap'), 'class' : 'link-black') }}</li>
                 </ul>
             </td>
         </tr>
