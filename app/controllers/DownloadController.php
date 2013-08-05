@@ -2,22 +2,30 @@
 
 class DownloadController extends \ControllerBase
 {
-
-    public function indexAction($type = 'index')
+    public function redirectAction()
     {
-        switch ($type) {
+        $slug = $this->getSlug();
+        $slug = ($slug) ? '/' . $slug : '';
 
-            default:
-            case 'index':
-                $title = 'Download Phalcon for Linux/Unix/Mac';
-                break;
+        $this->response->redirect("en/download" . $slug);
+    }
+
+    public function indexAction()
+    {
+        $type = $this->getUriParameter('type');
+        $type = ($type) ? $type : 'index';
+
+        switch ($type) {
 
             case 'tools':
                 $title = 'Download Phalcon Developer Tools';
                 break;
-
             case 'stubs':
                 $title = 'Download Phalcon IDE Stubs';
+                break;
+            case 'index':
+            default:
+                $title = 'Download Phalcon for Linux/Unix/Mac';
                 break;
         }
 

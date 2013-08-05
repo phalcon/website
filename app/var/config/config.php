@@ -25,9 +25,38 @@
     );
 
     $routes = array(
+        '/' => array(
+            'params' => array(
+                'controller' => 'index',
+                'action'     => 'redirect',
+            ),
+            'name'   => 'index',
+        ),
+        '/index' => array(
+            'params' => array(
+                'controller' => 'index',
+                'action'     => 'redirect',
+            ),
+            'name'   => 'index',
+        ),
+        '/download' => array(
+            'params' => array(
+                'controller' => 'download',
+                'action'     => 'redirect'
+            ),
+            'name'   => 'download',
+        ),
+        '/download/{type:(tools|stubs)}' => array(
+            'params' => array(
+                'controller' => 'download',
+                'action'     => 'redirect',
+            ),
+            'name'   => 'download-type',
+        ),
+
+
         '/{language:[a-z]{2}}' => array(
             'params' => array(
-                'language'   => 1,
                 'controller' => 'index',
                 'action'     => 'index',
             ),
@@ -35,7 +64,6 @@
         ),
         '/{language:[a-z]{2}}/index' => array(
             'params' => array(
-                'language'   => 1,
                 'controller' => 'index',
                 'action'     => 'index',
             ),
@@ -43,7 +71,6 @@
         ),
         '/{language:[a-z]{2}}/{pageSlug:(models|about|team|roadmap|consulting|hosting|examples|support|api|ui|powered)}' => array(
             'params' => array(
-                'language'   => 1,
                 'controller' => 'pages',
                 'action'     => 'page',
             ),
@@ -51,14 +78,12 @@
         ),
         '/{language:[a-z]{2}}/download' => array(
             'params' => array(
-                'language'   => 1,
                 'controller' => 'download'
             ),
             'name'   => 'download',
         ),
         '/{language:[a-z]{2}}/download/{type:(tools|stubs)}' => array(
             'params' => array(
-                'language'   => 1,
                 'controller' => 'download',
                 'action'     => 'index',
             ),
@@ -66,7 +91,6 @@
         ),
         '/{language:[a-z]{2}}/download/windows' => array(
             'params' => array(
-                'language'   => 1,
                 'controller' => 'download',
                 'action'     => 'windows',
             ),
@@ -74,7 +98,6 @@
         ),
         '/{language:[a-z]{2}}/(documentation|reference)' => array(
             'params' => array(
-                'language'   => 1,
                 'controller' => 'documentation',
                 'action'     => 'index',
             ),
@@ -82,7 +105,6 @@
         ),
         '/{language:[a-z]{2}}/donate' => array(
             'params' => array(
-                'language'   => 1,
                 'controller' => 'index',
                 'action'     => 'donate',
             ),

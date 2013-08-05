@@ -7,10 +7,10 @@
 <div class="size-wrap">
 
     <ul class="tabs clear-fix">
-        <li><a class="tab-link active" href="{{ url(['for': 'download']) }}"><u>{{ tr('download_linux') }}</u></a></li>
-        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'windows']) }}"><u>{{ tr('download_windows') }}</u></a></li>
-        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'tools']) }}"><u>{{ tr('download_developer_tools') }}</u></a></li>
-        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'stubs']) }}"><u>{{ tr('download_ide_stubs') }}</u></a></li>
+        <li><a class="tab-link active" href="{{ url(['for': 'download', 'language': language]) }}"><span class="span-ul">{{ tr('download_linux') }}</span></a></li>
+        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'windows', 'language': language]) }}"><span class="span-ul">{{ tr('download_windows') }}</span></a></li>
+        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'tools', 'language': language]) }}"><span class="span-ul">{{ tr('download_developer_tools') }}</span></a></li>
+        <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'stubs', 'language': language]) }}"><span class="span-ul">{{ tr('download_ide_stubs') }}</span></a></li>
     </ul>
 
     <div class="note">{{ tr('download_note') }}</div>

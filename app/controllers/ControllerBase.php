@@ -15,9 +15,10 @@ class ControllerBase extends Controller
         /**
          * Docs path and CDN url
          */
-        $lang = $this->dispatcher->getParam('language');
+        $lang = $this->getUriParameter('language');
 
         $lang = ($lang) ? $lang : 'en';
+
         $this->view->setVar('language', $lang);
         $this->view->setVar('docs_root', 'http://docs.phalconphp.com/en/latest/');
         $this->view->setVar('cdn_url', $cdn_url);
@@ -46,6 +47,11 @@ class ControllerBase extends Controller
         }
 
         return true;
+    }
+
+    protected function getUriParameter($parameter)
+    {
+        return $this->dispatcher->getParam($parameter);
     }
 
 }
