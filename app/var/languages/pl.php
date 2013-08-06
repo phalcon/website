@@ -202,13 +202,10 @@
         'hosting_webfaction_2'            => "Aby zainstalować PhalconPHP w WebFaction, wykonaj instrukcje opisane <a href=':1:'>tutaj</ a>",
         'hosting_amazon_ec2_1'            => 'Amazon Elastic Compute Cloud dostarcza skalowalne, chmury obliczeniowe.',
         'hosting_amazon_ec2_2'            => "Wybierz wstępnie skonfigurowany, obraz Amazon Machine Image (AMI), aby uruchomić i działać natychmiast. Lub utwórz AMI zawierający aplikacje, biblioteki, dane i związane z nimi ustawienia konfiguracji. <a href=':1:'>Zobacz więcej</ a>",
-        'hosting_amazon_ec2_3'            => 'Zainstaluj Phalcona korzystając ze standardowej instrukcji instalacji.',
         'hosting_linode_1'                => "Wdrażaj i zarządzaj serwerami wirtualnymi Linuksa w chmurze Linode. Pobierz serwer uruchomiony w ciągu kilku sekund, z wybraną dystrybucją Linuksa, zasobami i lokalizacją. <a href=':1:'>Zobacz więcej</ a>",
-        'hosting_linode_2'                => 'Zainstaluj Phalcona korzystając ze standardowej instrukcji instalacji.',
         'hosting_digital_ocean_1'         => "Niesamowicie szybki hosting w chmurze. Zbudowany dla deweloperów. Wdrażanie serwera SSD w 55 sekund. <a href=':1:'>Zobacz więcej</ a>",
-        'hosting_digital_ocean_2'         => 'Zainstaluj Phalcona korzystając ze standardowej instrukcji instalacji.',
         'hosting_rackspace_1'             => "Serwery w chmurze są maszynami wirtualnymi z systemem Linux lub Windows&reg; Server w chmurze Rackspace. Można skalować zasoby jak CPU, pamięć i zasoby dysku, w zależności od potrzeb. Najlepszy ze wszystkich. <a href=':1:'>Zobacz więcej</a>",
-        'hosting_rackspace_2'             => 'Zainstaluj Phalcona korzystając ze standardowej instrukcji instalacji.',
+        'hosting_install_instructions'    => 'Install Phalcon using the standard instructions of installation.',
 
 
 
