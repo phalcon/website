@@ -202,13 +202,10 @@
         'hosting_webfaction_2'            => "在WebFaction安装Phalcon , 请参见说明，在<a href=':1:'>这里</a>",
         'hosting_amazon_ec2_1'            => 'Amazon Elastic Compute Cloud提供可伸缩的，按需付费的云服务。',
         'hosting_amazon_ec2_2'            => "选择一个预算配置好的Amazon Machine Image (AMI) 并立即运行。 或者创建一个包含您应用，库，数据和相关配置的AMI。<a href=':1:'>参见更多</a>",
-        'hosting_amazon_ec2_3'            => '按照常规安装说明安装Phalcon即可',
         'hosting_linode_1'                => "部署和管理您的Linode VPS. 选择一个Linux发行版，并选择服务器资源大小，数据中心然后购买，并运行。 <a href=':1:'>参见更多</a>",
-        'hosting_linode_2'                => '按照常规安装说明安装Phalcon即可',
         'hosting_digital_ocean_1'         => "Blazing Fast Cloun Technology. 为开发人员构建. 部署一个SSD服务器只需55秒. <a href=':1:'>参见更多</a>",
-        'hosting_digital_ocean_2'         => '按照常规安装说明安装Phalcon即可',
         'hosting_rackspace_1'             => "云服务是一些运行Linux或Windows&reg;的虚拟机，在Rackspace Cloud上的服务器. 您可以根据需要扩展CPU, 内存, 和存储空间。 最重要的是，您可以按需付费. <a href=':1:'>参见更多</a>",
-        'hosting_rackspace_2'             => '按照常规安装说明安装Phalcon即可',
+        'hosting_install_instructions'    => 'Install Phalcon using the standard instructions of installation.',
 
 
 

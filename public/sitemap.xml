@@ -342,6 +342,54 @@
   <changefreq>daily</changefreq>
 </url>
 <url>
+    <loc>http://www.phalconphp.com/pt/</loc>
+    <changefreq>daily</changefreq>
+</url>
+<url>
+    <loc>http://www.phalconphp.com/pt/download</loc>
+    <changefreq>daily</changefreq>
+</url>
+<url>
+    <loc>http://www.phalconphp.com/pt/support</loc>
+    <changefreq>daily</changefreq>
+</url>
+<url>
+    <loc>http://www.phalconphp.com/pt/donate</loc>
+    <changefreq>daily</changefreq>
+</url>
+<url>
+    <loc>http://www.phalconphp.com/pt/consulting</loc>
+    <changefreq>daily</changefreq>
+</url>
+<url>
+    <loc>http://www.phalconphp.com/pt/hosting</loc>
+    <changefreq>daily</changefreq>
+</url>
+<url>
+    <loc>http://www.phalconphp.com/pt/team</loc>
+    <changefreq>daily</changefreq>
+</url>
+<url>
+    <loc>http://www.phalconphp.com/pt/about</loc>
+    <changefreq>daily</changefreq>
+</url>
+<url>
+    <loc>http://www.phalconphp.com/pt/roadmap</loc>
+    <changefreq>daily</changefreq>
+</url>
+<url>
+    <loc>http://www.phalconphp.com/pt/download/windows</loc>
+    <changefreq>daily</changefreq>
+</url>
+<url>
+    <loc>http://www.phalconphp.com/pt/download/tools</loc>
+    <changefreq>daily</changefreq>
+</url>
+<url>
+    <loc>http://www.phalconphp.com/pt/download/stubs</loc>
+    <changefreq>daily</changefreq>
+</url>
+<url>
   <loc>http://www.phalconphp.com/ru/</loc>
   <changefreq>daily</changefreq>
 </url>

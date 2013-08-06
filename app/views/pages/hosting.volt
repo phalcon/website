@@ -39,7 +39,7 @@
                 <h4><a target="_blank" href='http://aws.amazon.com/'>Amazon EC2</a></h4>
                 <p>{{ tr('hosting_amazon_ec2_1') }}</p>
                 <p>{{ tr('hosting_amazon_ec2_2', 'http://aws.amazon.com/ec2/') }}</p>
-                <p>{{ tr('hosting_amazon_ec2_3') }}</p>
+                <p>{{ tr('hosting_install_instructions') }}</p>
             </td>
         </tr>
         <tr>
@@ -49,7 +49,7 @@
             <td>
                 <h4><a target="_blank" href='https://www.linode.com/'>Linode</a></h4>
                 <p>{{ tr('hosting_linode_1', 'https://www.linode.com/') }}</p>
-                <p>{{ tr('hosting_linode_2') }}</p>
+                <p>{{ tr('hosting_install_instructions') }}</p>
             </td>
         </tr>
         <tr>
@@ -59,7 +59,7 @@
             <td>
                 <h4><a target="_blank" href='https://www.digitalocean.com/'>Digital Ocean</a></h4>
                 <p>{{ tr('hosting_digital_ocean_1', 'https://www.digitalocean.com/') }}</p>
-                <p>{{ tr('hosting_digital_ocean_2') }}</p>
+                <p>{{ tr('hosting_install_instructions') }}</p>
             </td>
         </tr>
         <tr>
@@ -69,7 +69,7 @@
             <td>
                 <h4><a target="_blank" href='http://www.rackspace.com/cloud/servers/'>Rackspace</a></h4>
                 <p>{{ tr('hosting_rackspace_1', 'http://www.rackspace.com/cloud/servers/') }}</p>
-                <p>{{ tr('hosting_rackspace_2') }}</p>
+                <p>{{ tr('hosting_install_instructions') }}</p>
             </td>
         </tr>
     </table>

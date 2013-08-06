@@ -14,7 +14,7 @@
         'store'                           => 'Shop',
         'github'                          => 'GitHub',
         'phalcon_description'             => "<strong>Phalcon</strong> est un framework web fourni en tant qu'extension écrite en C. Ce qui permet des <a href=':1:'>performances optimales</a> et une consomation de ressources amoindrie",
-        'the_fastest_php_framework'       => 'The fastest<br />PHP Framework',
+        'the_fastest_php_framework'       => 'Les plus rapide<br />des Frameworks PHP',
         'try_online'                      => 'L\'essayer en ligne',
         'see_screencasts'                 => 'Voir les Screencasts',
         'everything_you_need_upper'       => 'TOUT CE DONT VOUS AVEZ BESOIN',
@@ -202,13 +202,10 @@
         'hosting_webfaction_2'            => "Pour utiliser PhalconPHP avec  WebFaction, suivez les instructions fournies <a href=':1:'>ici</a>",
         'hosting_amazon_ec2_1'            => 'Amazon Elastic Compute Cloud propose une capacité de calcul évolutive dans le cloud que vous payez en fonction de l\'utilisation.',
         'hosting_amazon_ec2_2'            => "Select a pre-configured, templated Amazon Machine Image (AMI) to get up and running immediately. Or create an AMI containing your applications, libraries, data, and associated configuration settings. <a href=':1:'>See more</a>",
-        'hosting_amazon_ec2_3'            => 'Installer Phalcon en utilisant les instructions standards d\'installation.',
         'hosting_linode_1'                => "Déployez et gérez des serveurs virtuels Linux dans le Cloud de Linode. Démarez un serveur en quelques secondes. Vous choisissez la distribution, les ressources et le position du noeud. <a href=':1:'>En savoir plus.</a>",
-        'hosting_linode_2'                => 'Installer Phalcon en utilisant les instructions standards d\'installation.',
         'hosting_digital_ocean_1'         => "Technologie de cloud ultra rapide. Construite pour les développeurs. Déployez un serveur en cloud sur SSD en 55 secondes. <a href=':1:'>En savoir plus</a>",
-        'hosting_digital_ocean_2'         => 'Installer Phalcon en utilisant les instructions standards d\'installation.',
         'hosting_rackspace_1'             => "Cloud Servers are virtual machines running Linux or Windows&reg; Server in the Rackspace Cloud. You can scale resources like CPU, memory, and storage up or down, depending on your needs. Best of all, you can pay as you go. <a href=':1:'>See more</a>",
-        'hosting_rackspace_2'             => 'Install Phalcon using the standard instructions of installation.',
+        'hosting_install_instructions'    => 'Install Phalcon using the standard instructions of installation.',
 
 
 

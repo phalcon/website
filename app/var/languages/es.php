@@ -203,13 +203,10 @@
         'hosting_webfaction_2'            => "To install PhalconPHP in WebFaction, follow the instructions outlined <a href=':1:'>here</a>",
         'hosting_amazon_ec2_1'            => 'Amazon Elastic Compute Cloud delivers scalable, pay-as-you-go compute capacity in the cloud.',
         'hosting_amazon_ec2_2'            => "Select a pre-configured, templated Amazon Machine Image (AMI) to get up and running immediately. Or create an AMI containing your applications, libraries, data, and associated configuration settings. <a href=':1:'>See more</a>",
-        'hosting_amazon_ec2_3'            => 'Install Phalcon using the standard instructions of installation.',
         'hosting_linode_1'                => "Deploy and Manage Linux Virtual Servers in the Linode Cloud. Get a server running in seconds with your choice of Linux distro, resources, and node location. <a href=':1:'>See more</a>",
-        'hosting_linode_2'                => 'Install Phalcon using the standard instructions of installation.',
         'hosting_digital_ocean_1'         => "Blazing Fast Cloud Technology. Built for developers. Deploy an SSD cloud server in 55 seconds. <a href=':1:'>See more</a>",
-        'hosting_digital_ocean_2'         => 'Install Phalcon using the standard instructions of installation.',
         'hosting_rackspace_1'             => "Cloud Servers are virtual machines running Linux or Windows&reg; Server in the Rackspace Cloud. You can scale resources like CPU, memory, and storage up or down, depending on your needs. Best of all, you can pay as you go. <a href=':1:'>See more</a>",
-        'hosting_rackspace_2'             => 'Install Phalcon using the standard instructions of installation.',
+        'hosting_install_instructions'    => 'Install Phalcon using the standard instructions of installation.',
 
 
 
