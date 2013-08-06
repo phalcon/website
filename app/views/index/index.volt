@@ -2,7 +2,7 @@
 
     <div class="size-wrap fixed clear-fix">
 
-        <div class="main-teaser-title title-white">{{ tr('the_fastest') }}<br />{{ tr('php_framework') }}</div>
+        <div class="main-teaser-title title-white">{{ tr('the_fastest_php_framework') }}</div>
 
         <div class="main-teaser-left">
 
