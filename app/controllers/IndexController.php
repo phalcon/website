@@ -51,8 +51,8 @@ class IndexController extends \ControllerBase
     public function redirectPagesAction()
     {
         $slug = $this->getUriParameter('pageSlug');
-        $slug = ($slug) ? '/' . $slug : '';
 
+        $slug = ($slug) ? $slug : '';
         $this->response->redirect('en/' . $slug, 301);
     }
 
