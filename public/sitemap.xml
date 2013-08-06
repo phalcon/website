@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>http://www.phalconphp.com/el/</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/el/download</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/el/support</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/el/donate</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/el/consulting</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/el/hosting</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/el/team</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/el/about</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/el/roadmap</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/el/download/windows</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/el/download/tools</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/el/download/stubs</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/en/</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/en/download</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/en/support</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/en/donate</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/en/consulting</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/en/hosting</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/en/team</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/en/about</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/en/roadmap</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/en/download/windows</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/en/download/tools</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/en/download/stubs</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/es/</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/es/download</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/es/support</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/es/donate</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/es/consulting</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/es/hosting</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/es/team</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/es/about</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/es/roadmap</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/es/download/windows</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/es/download/tools</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/es/download/stubs</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fa/</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fa/download</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fa/support</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fa/donate</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fa/consulting</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fa/hosting</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fa/team</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fa/about</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fa/roadmap</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fa/download/windows</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fa/download/tools</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fa/download/stubs</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fr/</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fr/download</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fr/support</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fr/donate</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fr/consulting</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fr/hosting</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fr/team</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fr/about</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fr/roadmap</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fr/download/windows</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fr/download/tools</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/fr/download/stubs</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/nl/</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/nl/download</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/nl/support</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/nl/donate</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/nl/consulting</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/nl/hosting</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/nl/team</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/nl/about</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/nl/roadmap</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/nl/download/windows</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/nl/download/tools</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/nl/download/stubs</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/pl/</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/pl/download</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/pl/support</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/pl/donate</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/pl/consulting</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/pl/hosting</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/pl/team</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/pl/about</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/pl/roadmap</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/pl/download/windows</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/pl/download/tools</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/pl/download/stubs</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/ru/</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/ru/download</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/ru/support</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/ru/donate</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/ru/consulting</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/ru/hosting</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/ru/team</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/ru/about</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/ru/roadmap</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/ru/download/windows</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/ru/download/tools</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/ru/download/stubs</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/vi/</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/vi/download</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/vi/support</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/vi/donate</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/vi/consulting</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/vi/hosting</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/vi/team</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/vi/about</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/vi/roadmap</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/vi/download/windows</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/vi/download/tools</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/vi/download/stubs</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/zh/</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/zh/download</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/zh/support</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/zh/donate</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/zh/consulting</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/zh/hosting</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/zh/team</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/zh/about</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/zh/roadmap</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/zh/download/windows</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/zh/download/tools</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.phalconphp.com/zh/download/stubs</loc>
+  <changefreq>daily</changefreq>
+</url>
+</urlset>
