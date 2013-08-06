@@ -5,13 +5,13 @@
      */
     $messages = array(
         'language_text'                   => 'English',
-        'download'                        => 'Tải về',
-        'documentation'                   => 'Tài liệu',
+        'download'                        => 'Download',
+        'documentation'                   => 'Documentation',
         'forum'                           => 'Forum',
         'blog'                            => 'Blog',
-        'support'                         => 'Hỗ trợ',
-        'donate'                          => 'Đóng góp',
-        'store'                           => 'Gian hàng',
+        'support'                         => 'Support',
+        'donate'                          => 'Donate',
+        'store'                           => 'Store',
         'github'                          => 'GitHub',
         'phalcon_description'             => "<strong>Phalcon</strong> is a web framework implemented as a C extension offering <a href=':1:'>high performance</a> and lower resource consumption",
         'the_fastest_php_framework'       => 'The fastest<br />PHP Framework',

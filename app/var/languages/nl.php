@@ -203,13 +203,10 @@
         'hosting_amazon_ec2_1'            => 'Amazon Elastic Complete Cloud levert schaalbare, pay-as-you-go capaciteit in the cloud.',
         'hosting_amazon_ec2_2'            => "Selecteer een op voorhand geconfigureerde Amazon Machine Image (AMI) om onmiddelijk te kunnen beginnen. Of maak een AMI met daarop je eigen applicaties, libraries, data en settings.
 <a href=':1:'>Lees meer</a>",
-        'hosting_amazon_ec2_3'            => 'Installeer Phalcon met de standaard installatie instructies.',
         'hosting_linode_1'                => "Deploy en Beheer Linux Virtual Servers in de Linode Cloud. Krijg een server draaien binnen enkele seconden met jouw eigen keuze van Linux distro, bronnen en node locatie. <a href=':1:'>Lees meer</a>",
-        'hosting_linode_2'                => 'Installeer Phalcon met de standaard installatie instructies.',
         'hosting_digital_ocean_1'         => "Razend snelle Cloud Technologie. Gebouwd voor developers. Deploy een SSD cloud server in 55 seconden. <a href=':1:'>Lees meer</a>",
-        'hosting_digital_ocean_2'         => 'Installeer Phalcon met de standaard installatie instructies.',
         'hosting_rackspace_1'             => "Cloud Servers zijn virtuele machines die dat een Linux of Windows&reg; Server draaien in de Rackspace Cloud. Je kan bronnen zoals CPU, RAM en geheugen schalen, afhankelijk van wat je nodig hebt. En het beste van alles is hun \"pay as you go\" model. <a href=':1:'>Lees meer</a>",
-        'hosting_rackspace_2'             => 'Installeer Phalcon met de standaard installatie instructies.',
+        'hosting_install_instructions'    => 'Install Phalcon using the standard instructions of installation.',
 
 
 
