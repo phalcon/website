@@ -168,7 +168,7 @@
         'pl' => 'Polski',
         'ru' => 'Pусский',
         'vi' => 'Việt',
-        'zh' => '中国的',
+        'zh' => '简体中文',
     );
 
     return array(
