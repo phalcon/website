@@ -308,9 +308,10 @@ class Bootstrap
         $config     = $di['config'];
         $dispatcher = $di['dispatcher'];
         $phrases    = $session->get('phrases');
+        $language   = $session->get('language');
         $lang       = $dispatcher->getParam('language');
 
-        if (!$phrases || ('1' == $config->application->debug)) {
+        if (!$phrases || $language != $lang || ('1' == $config->application->debug)) {
             require(ROOT_PATH . '/app/var/languages/en.php');
             /**
              * Messages comes from the above require statement. Not the best
@@ -337,6 +338,7 @@ class Bootstrap
                 }
             }
             $session->set('phrases', $phrases);
+            $session->set('language', $lang);
         }
 
         // If parameters were passed process them, otherwise return an
