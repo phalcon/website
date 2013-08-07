@@ -109,7 +109,7 @@
         ),
 
         // Pages
-        '/{language:[a-z]{2}}/{pageSlug:(models|about|team|roadmap|consulting|hosting|examples|support|api|ui|powered)}' => array(
+        '/{language:[a-z]{2}}/{pageSlug:(models|about|team|roadmap|consulting|hosting|testimonials|examples|support|api|ui|powered)}' => array(
             'params' => array(
                 'controller' => 'pages',
                 'action'     => 'page',
