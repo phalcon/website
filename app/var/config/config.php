@@ -166,7 +166,7 @@
         'fr' => 'Français',
         'nl' => 'Nederlands',
         'pl' => 'Polski',
-        'pl' => 'Português',
+        'pt' => 'Português',
         'ru' => 'Pусский',
         'vi' => 'Việt',
         'zh' => '简体中文',
