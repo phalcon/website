@@ -38,6 +38,10 @@
   <changefreq>daily</changefreq>
 </url>
 <url>
+  <loc>http://www.phalconphp.com/el/testimonials</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
   <loc>http://www.phalconphp.com/el/roadmap</loc>
   <changefreq>daily</changefreq>
 </url>
@@ -84,6 +88,10 @@
 <url>
   <loc>http://www.phalconphp.com/en/about</loc>
   <changefreq>daily</changefreq>
+</url>
+<url>
+    <loc>http://www.phalconphp.com/en/testimonials</loc>
+    <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>http://www.phalconphp.com/en/roadmap</loc>
@@ -134,6 +142,10 @@
   <changefreq>daily</changefreq>
 </url>
 <url>
+    <loc>http://www.phalconphp.com/es/testimonials</loc>
+    <changefreq>daily</changefreq>
+</url>
+<url>
   <loc>http://www.phalconphp.com/es/roadmap</loc>
   <changefreq>daily</changefreq>
 </url>
@@ -176,6 +188,10 @@
 <url>
   <loc>http://www.phalconphp.com/fa/team</loc>
   <changefreq>daily</changefreq>
+</url>
+<url>
+    <loc>http://www.phalconphp.com/fa/testimonials</loc>
+    <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>http://www.phalconphp.com/fa/about</loc>
@@ -230,6 +246,10 @@
   <changefreq>daily</changefreq>
 </url>
 <url>
+    <loc>http://www.phalconphp.com/fr/testimonials</loc>
+    <changefreq>daily</changefreq>
+</url>
+<url>
   <loc>http://www.phalconphp.com/fr/roadmap</loc>
   <changefreq>daily</changefreq>
 </url>
@@ -276,6 +296,10 @@
 <url>
   <loc>http://www.phalconphp.com/nl/about</loc>
   <changefreq>daily</changefreq>
+</url>
+<url>
+    <loc>http://www.phalconphp.com/nl/testimonials</loc>
+    <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>http://www.phalconphp.com/nl/roadmap</loc>
@@ -326,6 +350,10 @@
   <changefreq>daily</changefreq>
 </url>
 <url>
+    <loc>http://www.phalconphp.com/pl/testimonials</loc>
+    <changefreq>daily</changefreq>
+</url>
+<url>
   <loc>http://www.phalconphp.com/pl/roadmap</loc>
   <changefreq>daily</changefreq>
 </url>
@@ -371,6 +399,10 @@
 </url>
 <url>
     <loc>http://www.phalconphp.com/pt/about</loc>
+    <changefreq>daily</changefreq>
+</url>
+<url>
+    <loc>http://www.phalconphp.com/pt/testimonials</loc>
     <changefreq>daily</changefreq>
 </url>
 <url>
@@ -422,6 +454,10 @@
   <changefreq>daily</changefreq>
 </url>
 <url>
+    <loc>http://www.phalconphp.com/ru/testimonials</loc>
+    <changefreq>daily</changefreq>
+</url>
+<url>
   <loc>http://www.phalconphp.com/ru/roadmap</loc>
   <changefreq>daily</changefreq>
 </url>
@@ -470,6 +506,10 @@
   <changefreq>daily</changefreq>
 </url>
 <url>
+    <loc>http://www.phalconphp.com/vi/testimonials</loc>
+    <changefreq>daily</changefreq>
+</url>
+<url>
   <loc>http://www.phalconphp.com/vi/roadmap</loc>
   <changefreq>daily</changefreq>
 </url>
@@ -516,6 +556,10 @@
 <url>
   <loc>http://www.phalconphp.com/zh/about</loc>
   <changefreq>daily</changefreq>
+</url>
+<url>
+    <loc>http://www.phalconphp.com/zh/testimonials</loc>
+    <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>http://www.phalconphp.com/zh/roadmap</loc>

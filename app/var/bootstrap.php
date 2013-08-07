@@ -330,7 +330,10 @@ class Bootstrap
                      * the best way of doing it but we need this for Transilex
                      */
                     $custom  = $messages;
-                    $phrases = array_merge($english, $custom);
+
+                    foreach ($english as $key => $value) {
+                        $phrases[$key] = (!empty($custom[$key])) ? $custom[$key] : $value;
+                    }
                 }
             }
             $session->set('phrases', $phrases);
