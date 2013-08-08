@@ -208,14 +208,30 @@
         'hosting_rackspace_1'             => "Cloud Servers son maquinas virtuales corriendo Linux o Windows&reg; Server en la nube Rackspace. Puedes escalar aumentando o disminuyendo recursos como CPU, memoria, y almacenamiento, dependiendo de tus necesidades. Lo mejor de todo, pagas según consumas. <a href=':1:'>Ver más</a>",
         'hosting_install_instructions'    => 'Instalar Phalcon usando las instrucciones estándar de instalación.',
 
-        'testimonials'                    => '',
-        'testimonials_description'        => "",
+        'testimonials'                    => 'Testimonios',
+        'testimonials_description'        => "A continuación hay un conjunto de testimonios y casos de éxito, de personas como tú, desarrolladores y usuarios de Phalcon. Si tienes casos de éxito, no dudes en compartirlos con nosotros, escríbenos a <a href='mailto::1:'>:2:</a>.",
         'testimonials_1'                  => "",
         'testimonials_2'                  => "",
         'testimonials_3'                  => "",
         'testimonials_4'                  => "",
         'testimonials_5'                  => "",
 
+        'support_note'                    => "",
+        'support_download_page'           => "",
+        'support_documentation_1'         => "",
+        'support_phalcon_forum'           => "",
+        'support_forum_1'                 => "",
+        'support_irc'                     => "",
+        'support_irc_1'                   => "",
+        'support_stack_overflow_1'        => "",
+        'support_please_note'             => "",
+        'support_please_note_1'           => "",
+        'support_please_note_2'           => "",
+        'support_please_note_3'           => "",
+        'support_please_note_4'           => "",
+        'support_please_note_5'           => "",
+        'support_reporting_a_bug'         => "",
+        'support_reporting_a_bug_1'       => "",
 
 
     );

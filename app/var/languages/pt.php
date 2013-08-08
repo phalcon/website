@@ -216,6 +216,22 @@ Clientes podem comprar horas de suporte ( mínimo de 2 horas ) à 50 USD por hor
         'testimonials_4'                  => "",
         'testimonials_5'                  => "",
 
+        'support_note'                    => "",
+        'support_download_page'           => "",
+        'support_documentation_1'         => "",
+        'support_phalcon_forum'           => "",
+        'support_forum_1'                 => "",
+        'support_irc'                     => "",
+        'support_irc_1'                   => "",
+        'support_stack_overflow_1'        => "",
+        'support_please_note'             => "",
+        'support_please_note_1'           => "",
+        'support_please_note_2'           => "",
+        'support_please_note_3'           => "",
+        'support_please_note_4'           => "",
+        'support_please_note_5'           => "",
+        'support_reporting_a_bug'         => "",
+        'support_reporting_a_bug_1'       => "",
 
 
     );
