@@ -215,6 +215,22 @@
         'testimonials_4'                  => "Hi guys, I just ran across Phalcon and it's just awesome! I've merely wanted to say to you how awesome you are! So, thanks for this framework and keep up the good work! Ivan Penchev",
         'testimonials_5'                  => "Hi Guys, i wrote simple url-shortener service with phalcon. That was amazing! really. <a href='https://github.com/blackbunny/Url-Shortener'>https://github.com/blackbunny/Url-Shortener</a>. Demo is here <a href='http://u.dolap.co'>http://u.dolap.co</a> :) Murat Küçükosman ",
 
+        'support_note'                    => "Many bugs are raised because users are not running the latest version. Please visit the :1:, download the latest available version (or compile it) and confirm if the issue you are experiencing is indeed a bug.",
+        'support_download_page'           => "download page",
+        'support_documentation_1'         => "Please use the :1: before anything else. You can also use the search feature in our documents to find what you are looking for. If your question is still not answered, there are more options below.",
+        'support_phalcon_forum'           => "Phalcon Forum",
+        'support_forum_1'                 => "You can ask a question in our <a href=':1:'>Discussion Forum</a>",
+        'support_irc'                     => "IRC channel",
+        'support_irc_1'                   => "You can find us in the :1: channel on Freenode.",
+        'support_stack_overflow_1'        => "If you are familiar or prefer Stack Overflow, there is a <a href=':1:'>phalcon</a> tag that you can use to search or to tag your query.",
+        'support_please_note'             => "Please note:",
+        'support_please_note_1'           => "Stack Overflow is not dedicated to support Phalcon",
+        'support_please_note_2'           => "Please do not raise new bugs there. Please use the <a href=':1:'>issue tracker</a> in Github for that",
+        'support_please_note_3'           => "Please do not ask for feature requests there. Please use the <a href=':1:'>issue tracker</a> in Github for that",
+        'support_please_note_4'           => "Make sure you include the 'phalcon' tag with your question",
+        'support_please_note_5'           => "Make sure you mention 'Phalcon' in the question",
+        'support_reporting_a_bug'         => "Reporting a bug",
+        'support_reporting_a_bug_1'       => "Please report bugs when you've exhausted all of the above options, using the <a href=':1:'>issue tracker</a> in Github.",
 
 
     );
