@@ -166,7 +166,7 @@
         'get_involved'                    => '加入我们',
         'about_description_1'             => "神奇的项目需要一个神奇的您。我们可能还不知道您，但我们认为您是一个非常适合创建更好Web应用的人。总之，我们已经准备好改变世界！在Phalcon里，我们正在构建一个新一代的PHP框架，我们想给您一个令人惊异的具有高性能的，使您开发更愉悦，更易使用的开发框架。",
         'about_description_2'             => '我们希望您能像我们一样享受Phalcon。我们打开怀抱，期待与您合作像以下这样的项目：',
-        'about_translations_1'            => "我们尽可能打破语言障碍，让更多的开发人员接触到我们。 我们正在使用<a href=':1:'>:2:</a>来管理所有需要翻译的单词。 项目源在<a href=':3:'>这里</a>，并且您可以通过下图查看我们当前的翻译进度。",
+        'about_translations_1'            => "",
         'documentation_upper'             => '文档',
         'about_documentation_1'           => '本网站的仓库是在github上。您可以自由的校订，修正错别字，添加新例子，添加新教程等，如果您可以的一些内容翻译成另一种语言，我们将非常感激！',
         'screencasts'                     => '示例',
@@ -208,7 +208,7 @@
         'hosting_install_instructions'    => '使用标准安装说明来安装Phalcon。',
 
         'testimonials'                    => '荣誉',
-        'testimonials_description'        => "",
+        'testimonials_description'        => "下面是一些来自Phalcon开发人员和用户的感言和成功案例。 我们非常欢迎您通过Email把您的成功案例发给我们，并且它会被发表到我们的博客上。 如果您准备发送或者与我们联系，请随时通过发送到Email<a href='mailto::1:'>:2:</a>。",
         'testimonials_1'                  => "",
         'testimonials_2'                  => "",
         'testimonials_3'                  => "",

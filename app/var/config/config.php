@@ -164,6 +164,8 @@
         'es' => 'Español',
         'fa' => 'الفارسية',
         'fr' => 'Français',
+        'ja' => '日本人',
+        'lt' => 'Lietuvos',
         'nl' => 'Nederlands',
         'pl' => 'Polski',
         'pt' => 'Português',
