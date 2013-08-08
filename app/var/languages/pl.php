@@ -166,7 +166,7 @@
         'get_involved'                    => '',
         'about_description_1'             => "Niesamowite projekty wymagają niesamowitych dłoni. Może nie znamy się jeszcze, ale myślę, że będziesz się świetnie nadawał się do budowy lepszego internetu. Razem, jesteśmy gotowi, aby zmienić świat! Tutaj w zespole Phalcona, budujemy framework nowej generacji dla PHP, chcemy dać Ci niesamowite osiągi, pomóc tworzyć łatwo i przyjemnie.",
         'about_description_2'             => 'Mamy nadzieję, że spodoba Ci się Phalcon tak bardzo jak Nam. Nasze drzwi są zawsze otwarte aby współpracować przy wielu rzeczach, których wymaga ten projekt takich jak:',
-        'about_translations_1'            => "Starając się dotrzeć do możliwie jak największej liczby deweloperów, przełamujemy bariery językowe. Używamy <a href=':1:'>:2:</a>, aby obsłużyć wszystkie słowa lub zdania, które muszą być przetłumaczone na tej stronie. Repozytorium projektu znajduje się <a href=':3:'>tutaj</a> i poniżej można zobaczyć aktualny stan naszego tłumaczenia.",
+        'about_translations_1'            => "",
         'documentation_upper'             => '',
         'about_documentation_1'           => 'Repozytorium tej strony jest dostępna na github. Zapraszam do poprawy redakcji, poprawy literówek, dodawania przykładów, dodawania artykułów, itp. Ponadto, jeśli możesz przetłumaczyć niektóre treści na inny język, to bylibyśmy bardzo wdzięczni!',
         'screencasts'                     => '',
