@@ -23,6 +23,11 @@
     </p>
 
     <br />
+    <h3>IRC channel</h3>
+
+    <p>You can find us in the #phalconphp channel on Freenode.</p>
+
+    <br />
     <h3>Stack Overflow</h3>
 
     <p>
