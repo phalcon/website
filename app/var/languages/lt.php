@@ -166,7 +166,7 @@
         'get_involved'                    => 'Įsitraukti',
         'about_description_1'             => "Nuostabiems projektams reikia nuostabių rankų. Mes galbūt jūsų dar nežinome, tačiau mes manome, kad jūs puikiai tiksite kurdami geresnį internetą. Kartu, mes esame pasiruošę pakeisti pasaulį! Čia Phalcon, mes kuriame naujos kartos PHP karkasą; mes norime jums suteikti įspūdingą našumą, tuo pačiu padėdami jums kurti lengvu ir smagiu keliu.",
         'about_description_2'             => 'Mes tikimės, kad jums patiks Phalcon kaip ir mums. Mūsų rankos visada atviros priimti jūsų bendradarbiavimą dėl įvairių dalykų, nes šis projektas reikalauja:',
-        'about_translations_1'            => "",
+        'about_translations_1'            => "Mes siekiame pritraukti kuo daugiau kūrėjų sulaužant kalbos barjerus. Mes naudojame <a href=':1:'>:2:</a>, kad tvarkytume visus žodžius ar sakinius, kuriuos reikia išversti šiai svetainei. Projekto saugykla yra <a href=':3:'>čia</a> ir žemiau jūs galite matyti dabartinę vertimų būseną.",
         'documentation_upper'             => 'DOKUMENTACIJA',
         'about_documentation_1'           => 'Šios svetainės saugykla yra prieinama per GitHub. Drąsiai tobulinkite ją, taisykite spausdinimo klaidas, pridėkite pavyzdžių, straipsnių ir pan. Tai pat, jei jūs norite išversti turinį į kitą kalbą, mes būsime labai dėkingi!',
         'screencasts'                     => 'Vaizdo įrašai',
@@ -215,6 +215,22 @@
         'testimonials_4'                  => "Sveiki vyrukai, Aš neseniai perbėgau per Phalcon ir jis yra tiesiog nuostabus! Aš tik norėjau jums pasakyti, kokie esate nuostabūs! Taigi, ačiū už šį karkasą ir išlaikykite gerą darbą! Ivan Penchev",
         'testimonials_5'                  => "Sveiki vyrukai, Aš parašiau paprastą URL-trumpinimo paslaugą su Phalcon. Tai buvo nuostabu! Tikrai.  <a href='https://github.com/blackbunny/Url-Shortener'>https://github.com/blackbunny/Url-Shortener</a>. Demonstracinė  versija yra čia <a href='http://u.dolap.co'>http://u.dolap.co</a> :) Murat Küçükosman",
 
+        'support_note'                    => "",
+        'support_download_page'           => "",
+        'support_documentation_1'         => "",
+        'support_phalcon_forum'           => "",
+        'support_forum_1'                 => "",
+        'support_irc'                     => "",
+        'support_irc_1'                   => "",
+        'support_stack_overflow_1'        => "",
+        'support_please_note'             => "",
+        'support_please_note_1'           => "",
+        'support_please_note_2'           => "",
+        'support_please_note_3'           => "",
+        'support_please_note_4'           => "",
+        'support_please_note_5'           => "",
+        'support_reporting_a_bug'         => "",
+        'support_reporting_a_bug_1'       => "",
 
 
     );

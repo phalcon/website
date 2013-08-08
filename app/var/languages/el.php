@@ -215,6 +215,22 @@
         'testimonials_4'                  => "Γεια σας παιδιά, ανακάλυψα το Phalcon και είναι απλά φοβερό! Ήθελα μόνο να πω πόσο φοβεροί είστε! Οπότε, σας ευχαριστώ γι 'αυτό το framework και να διατηρήστε την καλή δουλειά! Ivan Penchev",
         'testimonials_5'                  => "Γειά σας παιδειά, δημιούργησα μιά απλή υπηρεσία url-shortener με το phalcon. Ήταν εκπληκτικό! <a href='https://github.com/blackbunny/Url-Shortener'>https://github.com/blackbunny/Url-Shortener</a>. Demo είναι εδώ <a href='http://u.dolap.co'>http://u.dolap.co</a> :) Murat Küçükosman ",
 
+        'support_note'                    => "",
+        'support_download_page'           => "",
+        'support_documentation_1'         => "",
+        'support_phalcon_forum'           => "",
+        'support_forum_1'                 => "",
+        'support_irc'                     => "",
+        'support_irc_1'                   => "",
+        'support_stack_overflow_1'        => "",
+        'support_please_note'             => "",
+        'support_please_note_1'           => "",
+        'support_please_note_2'           => "",
+        'support_please_note_3'           => "",
+        'support_please_note_4'           => "",
+        'support_please_note_5'           => "",
+        'support_reporting_a_bug'         => "",
+        'support_reporting_a_bug_1'       => "",
 
 
     );
