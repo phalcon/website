@@ -10,7 +10,7 @@
                 <img src="{{ cdn_url }}assets/chart.png" alt="" />
             </div>
 
-            <a href="/download"><span class="button-large">{{ tr('download') }}</span></a>
+            <a href="/{{language}}/download"><span class="button-large">{{ tr('download') }}</span></a>
 
         </div>
 
