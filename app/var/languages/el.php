@@ -59,7 +59,7 @@
         'github_upper'                    => 'GITHUB',
         'email_us_upper'                  => 'ΕΠΙΚΟΙΝΩΝΙΑ',
         'services_upper'                  => 'ΥΠΗΡΕΣΙΕΣ',
-        'consulting_upper'                => 'ΣΥ',
+        'consulting_upper'                => 'ΣΥΜΒΟΥΛΕΥΤΕΙΤΕ',
         'requirements_analysis'           => 'Ανάλυση Απαιτήσεων',
         'implementation'                  => 'Εκτέλεση',
         'ongoing_support'                 => 'Συνεχής Υποστήρηξη',
