@@ -162,7 +162,7 @@
         'el' => 'Ελληνικά',
         'en' => 'English',
         'es' => 'Español',
-        'fa' => 'الفارسية',
+        'fa' => 'فارسی',
         'fr' => 'Français',
         'ja' => '日本人',
         'lt' => 'Lietuvos',
