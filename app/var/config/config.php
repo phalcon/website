@@ -169,6 +169,7 @@
         'nl' => 'Nederlands',
         'pl' => 'Polski',
         'pt' => 'Português',
+        'ro' => 'Română',
         'ru' => 'Pусский',
         'th' => 'ภาษาไทย',
         'vi' => 'Việt',
