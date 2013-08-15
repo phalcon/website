@@ -243,14 +243,14 @@ Ivan Penchev",
         'support_irc'                     => "ช่องทาง IRC",
         'support_irc_1'                   => "คุณสามารถค้นหาเราในชองทาง :1: บน Freenode",
         'support_stack_overflow_1'        => "ถ้าคุณเป็นครอบครัวหรือชื่นชอบ Stack Overflow นี่คือแท็กของ <a href=':1:'>phalcon</a> ที่คุณสามารถใช้ค้นหาหรือแท็กคำถามของคุณ",
-        'support_please_note'             => "กรุณาระบุหมายเหตุ:",
+        'support_please_note'             => "หมายเหตุ:",
         'support_please_note_1'           => "Stack Overflow ไม่ใช่แหล่งที่ใช้ซัฟพอร์ตอย่างจริงจังของ Phalcon",
         'support_please_note_2'           => "กรุณาอย่ารายงาน bug ที่นี่ ขอให้ใช้ <a href=':1:'>issue tracker</a> ของ Github แทน",
         'support_please_note_3'           => "กรุณาอย่าถามเกี่ยวกับคุณสมบัติใหม่ๆ. กรุณาใช้ <a href=':1:'>issue tracker</a> ใน Github สำหรับสิ่งนั้น",
         'support_please_note_4'           => "ทำให้แน่ใจว่าคุณใส่ 'phalcon' แท็กในคำถามของคุณ",
         'support_please_note_5'           => "ทำให้แน่ใจว่าคุณได้เมนชั่นถึง 'Phalcon' ในคำถาม",
         'support_reporting_a_bug'         => "รายงานความผิดพลาด",
-        'support_reporting_a_bug_1'       => "กรุณารายงานความผิดพลาดหลักจากคุณได้พยายามทดลองทุกวิธีแล้ว โดยการใช้ <a href=':1:'>issue tracker</a> ใน Github.",
+        'support_reporting_a_bug_1'       => "กรุณารายงานความผิดพลาดหลังจากคุณได้พยายามทดลองทุกวิธีแล้ว โดยการใช้ <a href=':1:'>issue tracker</a> ใน Github.",
 
 
     );
