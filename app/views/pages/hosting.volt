@@ -17,7 +17,7 @@
             <td>
                 <h4><a target="_blank" href='http://fortrabbit.com/'>Fortrabbit</a></h4>
                 <p>{{ tr('hosting_fortrabbit_1') }}</p>
-                <p>{{ tr('hosting_fortrabbit_2', 'http://support.fortrabbit.com/customer/portal/articles/958798') }}</p>
+                <p>{{ tr('hosting_fortrabbit_2', 'http://fortrabbit.com/docs/how-to/php/available-php-extensions') }}</p>
                 <p>{{ tr('hosting_fortrabbit_3') }}</p>
             </td>
         </tr>

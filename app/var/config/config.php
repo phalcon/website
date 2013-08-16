@@ -25,6 +25,14 @@
     );
 
     $routes = array(
+        '/sitemap' => array(
+            'params' => array(
+                'controller' => 'index',
+                'action'     => 'sitemap',
+            ),
+            'name'   => 'index-sitemap',
+        ),
+
         // Index (Redirect)
         '/' => array(
             'params' => array(
@@ -158,7 +166,12 @@
         ),
     );
 
+    /**
+     * These languages appear at the top select box
+     * allowing the user to easily change the language of the site
+     */
     $languages = array(
+        'bg' => 'български',
         'el' => 'Ελληνικά',
         'en' => 'English',
         'es' => 'Español',
@@ -166,20 +179,42 @@
         'fr' => 'Français',
         'ja' => '日本人',
         'lt' => 'Lietuvos',
+        'mk' => 'македонски',
         'nl' => 'Nederlands',
         'pl' => 'Polski',
         'pt' => 'Português',
         'ro' => 'Română',
         'ru' => 'Pусский',
+        'sr' => 'српски',
         'th' => 'ภาษาไทย',
         'vi' => 'Việt',
         'zh' => '简体中文',
     );
 
-    return array(
-        'application' => $application,
-        'database'    => $database,
-        'cache'       => $cache,
-        'routes'      => $routes,
-        'languages'   => $languages,
+    /**
+     * These are all the pages of the site. This is used to generate the
+     * sitemap.xml
+     */
+    $pages = array(
+        '',
+        'download',
+        'support',
+        'donate',
+        'consulting',
+        'hosting',
+        'team',
+        'about',
+        'roadmap',
+        'windows',
+        'tools',
+        'stubs',
     );
+
+return array(
+    'application' => $application,
+    'database'    => $database,
+    'cache'       => $cache,
+    'routes'      => $routes,
+    'languages'   => $languages,
+    'pages'       => $pages,
+);

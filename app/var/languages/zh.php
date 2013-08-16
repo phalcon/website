@@ -196,7 +196,7 @@
 
         'hosting_description'             => 'Phalcon可以安装在任何机器上，只要托管服务提供商提供SSH超级用户权限(或sudo)。下面是一些提供此类服务的有信誉的公司列表：',
         'hosting_fortrabbit_1'            => 'Fortrabbit提供许多托管计划(有一个针对开发人员是免费的 - 但有一些限制)，可以满足大部分的开发人员的期望，可以用来尝试Phalcon或者部署他们的应用程序。',
-        'hosting_fortrabbit_2'            => "他们提供各种<a href=':1:'>扩展</ A>，可以满足即使是很苛刻的项目。",
+        'hosting_fortrabbit_2'            => "他们提供各种<a href=':1:'>扩展</a>，可以满足即使是很苛刻的项目。",
         'hosting_fortrabbit_3'            => 'Phalcon的稳定版本已经预装，您可以通过控制面板激活他们。',
         'hosting_webfaction_1'            => 'WebFaction开发人员主机。拥有完全的shell权限，速度很快的服务器，所有您最喜爱的工具已经为您预先安装和维护。',
         'hosting_webfaction_2'            => "在WebFaction安装Phalcon， 请参见说明，在<a href=':1:'>这里</a>",
