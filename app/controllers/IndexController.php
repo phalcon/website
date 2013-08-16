@@ -1,5 +1,7 @@
 <?php
 
+use \Phalcon\Mvc\View as PhView;
+
 class IndexController extends \ControllerBase
 {
 
@@ -38,6 +40,37 @@ class IndexController extends \ControllerBase
     public function donateAction()
     {
         $this->tag->setTitle('Donate');
+    }
+
+    public function sitemapAction()
+    {
+        $this->view->setRenderLevel(PhView::LEVEL_ACTION_VIEW);
+        $this->response->setContentType('text/xml');
+
+        $output = <<<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+EOF;
+        $languages = $this->config->languages;
+        $pages     = $this->config->pages;
+        $template  = "
+<url>
+<loc>http://www.phalconphp.com/%s/%s</loc>
+<changefreq>daily</changefreq>
+</url>";
+
+        foreach ($languages as $language => $languageName) {
+
+            foreach ($pages as $page) {
+
+                $output .= sprintf($template, $language, $page);
+            }
+        }
+
+        $output .= "
+</urlset>";
+
+        echo $output;
     }
 
     /**
