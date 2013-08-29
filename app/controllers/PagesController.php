@@ -20,6 +20,7 @@ class PagesController extends \ControllerBase
     	$repositories = array(
         	'cphalcon' => 4,
         	'docs' => 2.5,
+            'website' => 2.5,
         	'zephir' => 3,
         	'phalcon-devtools' => 2,
         	'invo' => 0.9,
@@ -38,7 +39,7 @@ class PagesController extends \ControllerBase
         $p = array();
         $l = array();
         foreach ($repositories as $repository => $weight) {
-        	$contributorsJson = file_get_contents('https://api.github.com/repos/phalcon/' . $repository . '/contributors');
+        	$contributorsJson = @file_get_contents('https://api.github.com/repos/phalcon/' . $repository . '/contributors');
         	$d = json_decode($contributorsJson, true);
         	if (is_array($d)) {
 	        	foreach ($d as $contributor) {
@@ -52,9 +53,9 @@ class PagesController extends \ControllerBase
 	        	}
 	        }
         }
-        arsort($c);
 
         if (count($c)) {
+            arsort($c);
         	file_put_contents('../app/var/data/contributors.php', '<?php return ' . var_export(array($c, $p, $l), true) . ';');
         }
     }
