@@ -58,6 +58,14 @@
             'name'   => 'pages-redirect',
         ),
 
+        '/contributors' => array(
+            'params' => array(
+                'controller' => 'pages',
+                'action'     => 'contributors',
+            ),
+            'name'   => 'contributors',
+        ),
+
         // Download
         '/download' => array(
             'params' => array(
