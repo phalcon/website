@@ -5,12 +5,12 @@
      */
     $messages = array(
         'language_text'                   => '',
-        'download'                        => '',
-        'documentation'                   => '',
-        'forum'                           => '',
-        'blog'                            => '',
+        'download'                        => 'Unduh',
+        'documentation'                   => 'Dokumentasi',
+        'forum'                           => 'Forum',
+        'blog'                            => 'Blog',
         'support'                         => '',
-        'donate'                          => '',
+        'donate'                          => 'Donasi',
         'store'                           => '',
         'github'                          => '',
         'phalcon_description'             => "",
