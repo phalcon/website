@@ -126,22 +126,6 @@
             </div>
         </div>
 
-        <div class="services-block">
-            <div class="services-block-title">{{ tr('services') }}</div>
-
-            {{ link_to(['for': 'pages', 'pageSlug': 'consulting', 'language': language], tr('consulting_upper'), 'class' : 'services-block-link') }}
-            <br />
-            {{ tr('requirements_analysis') }}
-            <br />
-            {{ tr('implementation') }}
-            <br />
-            {{ tr('ongoing_support') }}
-            <br />
-            <p>{{ link_to(['for': 'pages', 'pageSlug': 'support', 'language': language], tr('read_more'), 'class' : 'button button-small orange') }}</p>
-            {{ link_to(['for': 'pages', 'pageSlug': 'hosting', 'language': language], tr('hosting_upper'), 'class' : 'services-block-link') }}
-
-        </div>
-
     </div>
 </div>
 

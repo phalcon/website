@@ -13,10 +13,8 @@
             <td>
                 <div class="footer-links-title">{{ tr('services_upper') }}</div>
                 <ul class="footer-links-list unstyled">
-                    <li>{{ link_to(['for': 'pages', 'pageSlug': 'consulting', 'language': language], tr('consulting'), 'class' : 'link-black') }}</li>
                     <li>{{ link_to(['for': 'pages', 'pageSlug': 'hosting', 'language': language], tr('hosting'), 'class' : 'link-black') }}</li>
                     <li>{{ link_to(['for': 'pages', 'pageSlug': 'support', 'language': language], tr('support'), 'class' : 'link-black') }}</li>
-
                 </ul>
             </td>
             <td>

@@ -215,12 +215,12 @@ a.header-nav-link {color:#000;}
 .icon-email {background-position: -130px -130px;}
 
 
-.services-links-wrap {float: left; width: 50%; overflow: hidden;}
+.services-links-wrap {float: left; padding-left: 30px; width: 100%; overflow: hidden;}
 /*.services-links {margin-left: -30px; overflow: hidden;}*/
 
 .service-link {
     -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-    display: block; float: left; margin: 0 4% 30px 0; border: 1px solid #27de9c; width: 45%; padding: 10px 0;
+    display: block; float: left; margin: 0 4% 30px 0; border: 1px solid #27de9c; width: 20%; padding: 10px 0;
     color: #fff; text-decoration: none; text-transform: uppercase; text-align: center;
 }
 a.service-link {color: #fff;}
@@ -241,6 +241,8 @@ a.services-block-link {color: #fff;}
 .hosting-providers p {margin: 0px; padding: 0px;}
 
 .hosting-providers img {margin: 10px; margin-top: 5px;border: 0;}
+
+.hosting-providers a { text-decoration: none; }
 
 .blog-post-wrap {margin: 30px 0;}
 
