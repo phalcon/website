@@ -55,7 +55,7 @@ class PagesController extends \ControllerBase
         arsort($c);
 
         if (count($c)) {
-        	file_put_contents('../app/var/data/contributors.php', '<?php return ' . var_export(array($c, $p, $l), true));
+        	file_put_contents('../app/var/data/contributors.php', '<?php return ' . var_export(array($c, $p, $l), true) . ';');
         }
     }
 }

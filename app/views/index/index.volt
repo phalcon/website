@@ -101,6 +101,7 @@
 
 </div>
 
+{{ partial('partials/contributors') }}
 
 <div class="green-block">
     <div class="size-wrap useful-links-wrap clear-fix">
@@ -143,3 +144,4 @@
     </a></p>
 
 </div>
+

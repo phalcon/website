@@ -343,3 +343,22 @@ ul.footer-links-list {margin:0;}
 .social-link.vm:hover {background-position: -132px -44px;}
 
 .span-ul {text-decoration: underline}
+
+.contributors {text-align: center; margin-top: 20px; padding-top: 30px; color: #717171; margin-bottom: 30px; border-top: 1px solid #c0c0c0 ;}
+
+.contributors table { margin-top: 10px; color: #717171;}
+
+.contributors img {
+    width: 58px;
+    filter: grayscale(95%);
+    -webkit-filter: grayscale(95%);
+    -moz-filter: grayscale(95%);
+    filter: grayscale(95%);
+}
+
+.contributors img:hover {
+    filter: grayscale(10%);
+    -webkit-filter: grayscale(10%);
+    -moz-filter: grayscale(10%);
+    filter: grayscale(10%);
+}
