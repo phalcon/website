@@ -77,7 +77,7 @@
         'team'                            => 'Time',
         'about'                           => 'Sobre',
         'roadmap'                         => '',
-        'donate_to_phalcon'               => '',
+        'donate_to_phalcon'               => 'Doação para Phalcon:',
         'or'                              => 'ou',
         'twitter'                         => 'Twitter',
         'facebook'                        => 'Facebook',
