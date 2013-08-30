@@ -36,7 +36,7 @@ class ControllerBase extends Controller
 
         $this->view->setVar('language', $lang);
         $this->view->setVar('languages_available', $languages_available);
-        $this->view->setVar('docs_root', 'http://docs.phalconphp.com/en/latest/');
+        $this->view->setVar('docs_root', 'http://docs.phalconphp.com/' . $lang . '/latest/');
         $this->view->setVar('cdn_url', '/phalconphp/');
     }
 

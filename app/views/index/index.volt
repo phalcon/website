@@ -95,7 +95,7 @@
             </tr>
         </table>
         <div class="documentation-button-wrap">
-            <a href="http://docs.phalconphp.com/en/latest/index.html"><span class="button black">{{ tr('documentation') }}</span></a>
+            <a href="{{ docs_root }}"><span class="button black">{{ tr('documentation') }}</span></a>
         </div>
     </div>
 
