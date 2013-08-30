@@ -83,6 +83,7 @@
         'facebook'                        => 'Facebook',
         'google_plus'                     => 'G+',
         'vimeo'                           => 'Vimeo',
+        'amazing_contributors'            => '',
 
         'download_phalcon'                => 'دانلود فالکن',
         'download_linux'                  => 'لینوکس/یونیکس/مک',
