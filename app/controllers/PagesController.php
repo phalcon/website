@@ -9,10 +9,6 @@ class PagesController extends \ControllerBase
         $pageTitle = \Phalcon\Text::camelize($pageSlug);
         $this->tag->setTitle( $pageTitle );
         $this->view->pick('pages/' . $pageSlug);
-
-        if ($pageSlug == 'team') {
-
-        }
     }
 
     public function contributorsAction()
