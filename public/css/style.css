@@ -304,14 +304,14 @@ a.services-block-link {color: #fff;}
 
 
 .team-member {margin: 0 0 20px; overflow: hidden;}
-.member-photo {border: 1px solid  #dadada; padding: 27px 48px; float: left;}
-.member-photo img {border: none; width: 128px;}
-.member-info {margin-left: 280px; }
+.member-photo {border: 1px solid  #dadada; padding: 27px 38px; float: left;}
+.member-photo-noborder { border: 0px; }
+.member-photo img {border: none; width: 96px;}
+.member-info {margin-left: 200px; }
 .member-name {font-size:24px; line-height: 26px; text-transform:uppercase; margin:0 0 10px; padding: 0;  }
 .member-links {margin: 10px 0;}
 
 .method-description {padding-left: 26px; margin: 0 0 30px;}
-
 
 .footer-wrap { margin-top: 50px; }
 .footer-wrap:before {content: ''; display: block; height: 2px;  border-color:#525252; border-width:3px 0 1px; border-style: solid none; margin-bottom:24px;}

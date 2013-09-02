@@ -78,7 +78,7 @@ frameworks, languages and new technologies. </p>
         </div>
 
         <div class="team-member">
-            <div class="member-photo">
+            <div class="member-photo member-photo-noborder">
             </div>
             <div class="member-info">
                 <h3 class="member-name">Many more people</h3>
