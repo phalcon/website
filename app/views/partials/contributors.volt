@@ -1,38 +1,29 @@
 <?php
-
-    $contributors = require '../app/var/data/contributors.php';
-
+ 
+    $contributors = require(ROOT_PATH .  '/app/var/data/contributors.php');
     $n = 1;
-
-    echo <<<EOF
+?>
 <div class="contributors">
     <em>{{ tr('amazing_contributors') }}</em>
     <table cellspacing="0" cellpadding="0" align="center">
     <tr>
-EOF;
-
-    foreach (array_slice($contributors[0], 0, 84) as $contributor => $number) {
-
-        echo <<<EOF
+<?php
+foreach ($contributors[0] as $contributor => $number) {
+?>
         <td>
-            <a title="{$contributor}" href="{$contributors[2][$contributor]}">
-                <img src="{$contributors[1][$contributor]}" alt="{$contributor}" /></a>
+            <a title="<?php echo $contributor; ?>" href="<?php echo $contributors[2][$contributor]; ?>">
+                <img src="<?php echo $contributors[1][$contributor]; ?>" alt="<?php echo $contributor; ?>" /></a>
         </td>
-EOF;
-
-	if ($n % 14 == 0) {
-
-        echo <<<EOF
-    </tr>
-    <tr>
-EOF;
-
-	}
-	$n++;
+<?php
+    if ($n % 14 == 0) {
+?>
+        </tr>
+        <tr>
+<?php
+    }
+    $n++;
 }
-
-    echo <<<EOF
+?>
     </tr>
     </table>
 </div>
-EOF;
