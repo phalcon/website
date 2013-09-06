@@ -83,6 +83,7 @@
         'facebook'                        => 'Facebook',
         'google_plus'                     => 'Google Plus',
         'vimeo'                           => 'Vimeo',
+        'amazing_contributors'            => 'Οι καταπληκτικοί συντελεστές μας:',
 
         'download_phalcon'                => 'Λήψη Phalcon',
         'download_linux'                  => 'Linux/Unix/Mac',

@@ -83,6 +83,7 @@
         'facebook'                        => '',
         'google_plus'                     => '',
         'vimeo'                           => '',
+        'amazing_contributors'            => '',
 
         'download_phalcon'                => '',
         'download_linux'                  => '',
