@@ -83,6 +83,7 @@
         'facebook'                        => 'Facebook',
         'google_plus'                     => 'Google Plus',
         'vimeo'                           => 'Vimeo',
+        'amazing_contributors'            => 'Our amazing contributors',
 
         'download_phalcon'                => 'Download Phalcon',
         'download_linux'                  => 'Linux/Unix/Mac',
