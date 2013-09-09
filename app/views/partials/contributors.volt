@@ -8,7 +8,7 @@
     <table cellspacing="0" cellpadding="0" align="center">
     <tr>
 <?php
-foreach ($contributors[0] as $contributor => $number) {
+foreach (array_slice($contributors[0], 0, 84) as $contributor => $number) {
 ?>
         <td>
             <a title="<?php echo $contributor; ?>" href="<?php echo $contributors[2][$contributor]; ?>">
