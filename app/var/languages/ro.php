@@ -13,7 +13,7 @@
         'donate'                          => 'Donează',
         'store'                           => 'Magazin',
         'github'                          => 'GitHub',
-        'phalcon_description'             => "<strong>Phalcon</strong> este un web framwerok  implementat ca și extensie C, oferind o <a href=':1:'>înaltă performanță</a> si consum redus de resurse",
+        'phalcon_description'             => "<strong>Phalcon</strong> este un web framework  implementat ca și extensie C, oferind o <a href=':1:'>înaltă performanță</a> si consum redus de resurse",
         'the_fastest_php_framework'       => 'Cel mai rapid<br /> framework PHP',
         'try_online'                      => 'Incearcă online',
         'see_screencasts'                 => 'Vizualizează Screencasts',
