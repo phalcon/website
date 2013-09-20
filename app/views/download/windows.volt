@@ -88,7 +88,7 @@
             </th>
         </tr>
 
-        {% if alpha['x64'][key] is defined %}
+        {% if alpha['x64'] is defined %}
         {% for key, value in alpha['x86'] %}
         <tr>
             <td>
