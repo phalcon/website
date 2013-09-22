@@ -185,7 +185,7 @@
         'es' => 'Español',
         'fa' => 'فارسی',
         'fr' => 'Français',
-        'ja' => '日本人',
+        'ja' => '日本語',
         'lt' => 'Lietuvos',
         'mk' => 'македонски',
         'nl' => 'Nederlands',
