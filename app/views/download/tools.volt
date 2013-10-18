@@ -15,7 +15,7 @@
 
     <h2>{{ tr('download_developer_tools') }}</h2>
     <p>{{ tr('download_devtools_1') }}</p>
-    <p>{{ tr('download_devtools_docs', docs_root ~ 'tools.html') }}</p>
+    <p>{{ tr('download_devtools_docs', docs_root ~ 'reference/tools.html') }}</p>
 
     <br />
     <h3>{{ tr('download_devtools_composer') }}</h3>
