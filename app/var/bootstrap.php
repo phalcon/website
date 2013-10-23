@@ -307,12 +307,21 @@ class Bootstrap
         $session    = $di['session'];
         $config     = $di['config'];
         $dispatcher = $di['dispatcher'];
-        $phrases    = $session->get('phrases');
-        $language   = $session->get('language');
         $lang       = $dispatcher->getParam('language');
 
+        if (function_exists('apc_store')) {
+            $phrases    = apc_fetch($lang . 'phrases');
+            $language   = apc_fetch($lang . 'language');
+        } else {
+            $phrases    = $session->get('phrases');
+            $language   = $session->get('language');
+        }
+
+        $changed = false;
         if (!$phrases || $language != $lang || ('1' == $config->application->debug)) {
-            require(ROOT_PATH . '/app/var/languages/en.php');
+
+            require ROOT_PATH . '/app/var/languages/en.php';
+
             /**
              * Messages comes from the above require statement. Not the best
              * way of doing it but we need this for Transilex
@@ -336,9 +345,20 @@ class Bootstrap
                         $phrases[$key] = (!empty($custom[$key])) ? $custom[$key] : $value;
                     }
                 }
+
+                $changed = true;
             }
-            $session->set('phrases', $phrases);
-            $session->set('language', $lang);
+
+            if ($changed) {
+                if (function_exists('apc_store')) {
+                    apc_store('phrases', $phrases);
+                    apc_store('language', $lang);
+                } else {
+                    $session->set('phrases', $phrases);
+                    $session->set('language', $lang);
+                }
+            }
+
         }
 
         // If parameters were passed process them, otherwise return an
