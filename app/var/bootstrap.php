@@ -54,7 +54,8 @@ class Bootstrap
         try {
 
             foreach ($loaders as $service) {
-                $this->$function('init' . ucfirst($service));
+                $function = 'init' . ucfirst($service);
+                $this->$function();
             }
 
             $application = new PhApplication();
