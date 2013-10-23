@@ -310,8 +310,8 @@ class Bootstrap
         $lang       = $dispatcher->getParam('language');
 
         if (function_exists('apc_store')) {
-            $phrases    = apc_fetch($lang . 'phrases');
-            $language   = apc_fetch($lang . 'language');
+            $phrases    = apc_fetch($lang . '-phrases');
+            $language   = apc_fetch($lang . '-language');
         } else {
             $phrases    = $session->get('phrases');
             $language   = $session->get('language');
@@ -351,8 +351,8 @@ class Bootstrap
 
             if ($changed) {
                 if (function_exists('apc_store')) {
-                    apc_store('phrases', $phrases);
-                    apc_store('language', $lang);
+                    apc_store($lang . '-phrases', $phrases);
+                    apc_store($lang . '-language', $lang);
                 } else {
                     $session->set('phrases', $phrases);
                     $session->set('language', $lang);
