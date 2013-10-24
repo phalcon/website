@@ -25,13 +25,6 @@
     );
 
     $routes = array(
-        '/sitemap' => array(
-            'params' => array(
-                'controller' => 'index',
-                'action'     => 'sitemap',
-            ),
-            'name'   => 'index-sitemap',
-        ),
 
         // Index (Redirect)
         '/' => array(
@@ -64,6 +57,14 @@
                 'action'     => 'contributors',
             ),
             'name'   => 'contributors',
+        ),
+
+        '/sitemap' => array(
+            'params' => array(
+                'controller' => 'index',
+                'action'     => 'sitemap',
+            ),
+            'name'   => 'index-sitemap',
         ),
 
         // Download
