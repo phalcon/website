@@ -51,7 +51,7 @@ yast2 -i php5-pear php5-devel php5-mysql gcc
 
     <p>
 
-<pre><code class="bash">git clone git://github.com/phalcon/cphalcon.git
+<pre><code class="bash">git clone --depth=1 git://github.com/phalcon/cphalcon.git
 cd cphalcon/build
 sudo ./install
 </code></pre>

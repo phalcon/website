@@ -5,12 +5,20 @@ use Phalcon\Mvc\Controller,
 
 class ControllerBase extends Controller
 {
-	public function initialize()
+	public function requestInitialize()
 	{
 		/**
 		 * Dev environment or production?
 		 */
-		$cdn_url = ('0' == $this->config->application->debug) ? '/' : 'http://static.phalconphp.com/';
+		if ('0' == $this->config->application->debug) {
+			if (PHP_OS == 'Darwin') {
+				$cdnUrl = '/phalconphp/';
+			} else {
+				$cdnUrl = '/';
+			}
+		} else {
+			$cdnUrl = 'http://static.phalconphp.com/';
+		}
 
 		/**
 		 * Docs path and CDN url
@@ -23,7 +31,7 @@ class ControllerBase extends Controller
 		 * Find the languages available
 		 */
 		$languages           = $this->config->languages;
-		$languages_available = '';
+		$languagesAvailable  = '';
 		$selected            = '';
 		$url                 = $this->request->getScheme() . '://'
 							 . $this->request->getHttpHost();
@@ -32,13 +40,13 @@ class ControllerBase extends Controller
 		foreach ($languages as $key => $value) {
 			$selected = ($key == $lang) ? " selected='selected'" : '';
 			$href     = $url .  str_replace("/{$lang}", "/{$key}", $uri);
-			$languages_available .= "<option value='{$href}'{$selected}>{$value}</option>";
+			$languagesAvailable .= "<option value='{$href}'{$selected}>{$value}</option>";
 		}
 
 		$this->view->setVar('language', $lang);
-		$this->view->setVar('languages_available', $languages_available);
+		$this->view->setVar('languages_available', $languagesAvailable);
 		$this->view->setVar('docs_root', 'http://docs.phalconphp.com/en/latest/');
-		$this->view->setVar('cdn_url', $this->config->application->baseUri);
+		$this->view->setVar('cdn_url', $cdnUrl);
 	}
 
 	/**
@@ -64,6 +72,7 @@ class ControllerBase extends Controller
 			}
 		}
 
+		$this->requestInitialize();
 		return true;
 	}
 
