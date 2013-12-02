@@ -83,7 +83,7 @@
         'facebook'                        => 'Facebook',
         'google_plus'                     => 'Google Plus',
         'vimeo'                           => 'Vimeo',
-        'amazing_contributors'            => '',
+        'amazing_contributors'            => 'Our amazing contributors',
 
         'download_phalcon'                => 'Descargar Phalcon',
         'download_linux'                  => 'Linux/Unix/Mac',
@@ -211,7 +211,7 @@
 
         'testimonials'                    => 'Testimonios',
         'testimonials_description'        => "A continuación hay un conjunto de testimonios y casos de éxito, de personas como tú, desarrolladores y usuarios de Phalcon. Si tienes casos de éxito, no dudes en compartirlos con nosotros, escríbenos a <a href='mailto::1:'>:2:</a>.",
-        'testimonials_1'                  => "",
+        'testimonials_1'                  => "Saludos, Phalcon team! Tengo un proyecto, creado en Phalcon framework. Es Guitarama (<a href='http://guitarama.ru'>http://guitarama.ru</a>) - un catalogo de tablaturas y acordes de guitarra. El sitio está orientado a una audiencia rusa y usa el este lenguaje, pero espero, que no haya problema para entender la mayoría de sitios. El sitio fue relanzado en una nueva plataforma ",
         'testimonials_2'                  => "Hola, Equipo Phalcon, queremos compartir nuestro caso de éxito usando Phalcon en los proyectos <a href='http://kolesa.kz'>http://kolesa.kz</a> y <a href='krisha.kz'>krisha.kz</a>, los sitios más visitados de Kazakhstan, ranqueados en el TOP-10 de sitios de clasificados en el CIS. Ambos sitios usan una misma RESTful API escrita en Phalcon\Mvc\Micro.  En cargas altas la API procesa alrededor de 400 req/seg y este no es el limite. Al cambiarnos a Phalcon hemos reducido el tiempo de procesamiento y el consumo de CPU y memoria así como el tiempo de desarrollo. Continuaremos usando Phalcon en nuevos proyectos. Gracias por gran trabajo que están haciendo! Saludos, Nikita Vershinin, Lead Developer, Kolesa.kz y krisha.kz",
         'testimonials_3'                  => "Equipo Phalcon, el framework que han creado es increíble, nunca había usado un framework que combinara, velocidad, eficiencia, brevedad y naturalidad todo en un solo paquete. Trataré de contribuir de vuelva al proyecto en todo lo que pueda. Recientemente empecé a hacer un proyecto de unas ~800 horas y estoy feliz de decir que usaré Phalcon Framework. Bravo.",
         'testimonials_4'                  => "Hola chicos, Acabo de encontrar Phalcon y es increíble!, Solamente quiero decirles lo increíbles que son!, Gracias por el framework y sigan con el buen trabajo! Ivan Penchev",
