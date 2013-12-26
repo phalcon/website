@@ -141,6 +141,7 @@
         <img src="{{ cdn_url }}images/hosting/rackspace-gray.png" alt="Rackspace" />
         <img src="{{ cdn_url }}images/hosting/digital-ocean-gray.png" alt="Digital Ocean" />
         <img src="{{ cdn_url }}images/hosting/webfaction-gray.png" alt="WebFaction" />
+        <img src="{{ cdn_url }}images/hosting/azure-gray.jpg" alt="Windows Azure" />
     </a></p>
 
 </div>

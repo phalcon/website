@@ -72,6 +72,16 @@
                 <p>{{ tr('hosting_install_instructions') }}</p>
             </td>
         </tr>
+        <tr>
+            <td align="center">
+                <img src='{{ cdn_url ~ 'images/hosting/azure-gray.jpg' }}' title='Windows Azure' alt='Windows Azure' />
+            </td>
+            <td>
+                <h4><a target="_blank" href='http://www.windowsazure.com'>Windows Azure</a></h4>
+                <p>{{ tr('hosting_azure_1', 'http://www.windowsazure.com') }}</p>
+                <p>{{ tr('hosting_azure_2', 'http://www.sitepoint.com/phalcon-windows-azure/') }}</p>
+            </td>
+        </tr>
     </table>
 
 </div>
