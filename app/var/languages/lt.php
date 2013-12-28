@@ -207,6 +207,8 @@
         'hosting_digital_ocean_1'         => "Liepsnojančiai greita debesų technologija. Sukurta kūrėjams. Įdiekite SSD debesį per 55 sekundes. <a href=':1:'>Žiūrėti daugiau</a>",
         'hosting_rackspace_1'             => "Debesų serveriai yra virtualiosios mašinos veikiančios Linux ar Windows&reg; serveriuose, kurias gausite per Rackspace Cloud. Jūs galite keisti išteklius, kaip CPU, atmintį ir talpą, padidinti ar sumažinti pagal jūsų poreikius. Geriausia, jūs galite mokėti už tiek kiek jums reikia. <a href=':1:'>Žiūrėti daugiau</a>",
         'hosting_install_instructions'    => 'Įdiekite Phalcon naudodami standartines diegimo instrukcijas.',
+        'hosting_azure_1'                 => "The <a href=':1:'>Windows Azure cloud</a> provides you with highly scalable and manageable Windows hosting for your web apps. Use Phalcon to reduce your instance costs.",
+        'hosting_azure_2'                 => "To install Phalcon, follow the step by step procedure in <a href=':1:'>this SitePoint article</a>.",
 
         'testimonials'                    => 'Atsiliepimai',
         'testimonials_description'        => "Žemiau yra atsiliepimų ir sėkmės istorijų rinkinys, iš jūsų, kūrėjų ir Phalcon PHP vartotojų. Mes visada laukiame el. laiškų su sėkmės istorijomis ir jas skelbiame savo tinklaraštyje. Jei jūs norite mums atsiųsti savo sėkmės istoriją ar susisiekti su mumis, drąsiai rašykite mums adresu <a href='mailto::1:'>:2:</a>.",

@@ -207,6 +207,8 @@
         'hosting_digital_ocean_1'         => "Niesamowicie szybki hosting w chmurze. Zbudowany dla deweloperów. Wdrażanie serwera SSD w 55 sekund. <a href=':1:'>Zobacz więcej</ a>",
         'hosting_rackspace_1'             => "Serwery w chmurze są maszynami wirtualnymi z systemem Linux lub Windows&reg; Server w chmurze Rackspace. Można skalować zasoby jak CPU, pamięć i zasoby dysku, w zależności od potrzeb. Najlepszy ze wszystkich. <a href=':1:'>Zobacz więcej</a>",
         'hosting_install_instructions'    => 'Zainstaluj Phalcona korzystając ze standardowej instrukcji instalacji.',
+        'hosting_azure_1'                 => "The <a href=':1:'>Windows Azure cloud</a> provides you with highly scalable and manageable Windows hosting for your web apps. Use Phalcon to reduce your instance costs.",
+        'hosting_azure_2'                 => "To install Phalcon, follow the step by step procedure in <a href=':1:'>this SitePoint article</a>.",
 
         'testimonials'                    => 'Referencje',
         'testimonials_description'        => "Poniżej znajduje się zbiór doświadczeń i sukcesów, od Ciebie, deweloperów i użytkowników Phalcona. Zawsze są mile widziane maile z historiami sukcesu i będą one opisane na naszym blogu. Jeśli chcesz wysłać do nas swoją historię sukcesu lub skontaktować się z nami, prosimy o maila na<a href='mailto::1:'>:2:</a>.",

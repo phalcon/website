@@ -207,6 +207,8 @@
         'hosting_digital_ocean_1'         => "Молниеносно быстрые облачные технологии. Созданы для разработчиков. Развертывание сервера на SSD в облако за 55 секунд. <a href=':1:'>Подробнее</a>",
         'hosting_rackspace_1'             => "Облачные серверы представляют собой виртуальные машины, работающие под управлением Linux или Windows&reg; Server в Rackspace Cloud. В зависимости от ваших потребностей вы можете масштабировать ресурсы, такие как процессор, память и размер диска, изменяя их как в большую, так и в меньшую сторону. Вы оплачиваете только те ресурсы, которые вам необходимо использовать. <a href=':1:'>Подробнее</a>",
         'hosting_install_instructions'    => 'Установите Phalcon, используя стандартную инструкцию.',
+        'hosting_azure_1'                 => "The <a href=':1:'>Windows Azure cloud</a> provides you with highly scalable and manageable Windows hosting for your web apps. Use Phalcon to reduce your instance costs.",
+        'hosting_azure_2'                 => "To install Phalcon, follow the step by step procedure in <a href=':1:'>this SitePoint article</a>.",
 
         'testimonials'                    => 'Отзывы',
         'testimonials_description'        => "Ниже опубликованы отзывы и результаты использования Phalcon, которые мы получили от вас, разработчиков и пользователей Phalcon PHP. Мы всегда рады письмам с вашими отзывами и будем размещать их в нашем блоге. Если вы хотите прислать нам свои результаты или связаться с нами, не стесняйтесь, пишите нам по адресу <a href='mailto::1:'>:2:</a>.",
