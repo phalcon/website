@@ -208,6 +208,8 @@ Clientes podem comprar horas de suporte ( mínimo de 2 horas ) à 50 USD por hor
         'hosting_digital_ocean_1'         => "Blazing Technology Fast Cloud. Construído para os desenvolvedores. Implante um servidor SSD na nuvem em 55 segundos. <a href=':1:'> Veja mais </ a>",
         'hosting_rackspace_1'             => "Servidores na nuvem  são máquinas virtuais rodando Linux ou Windows ® Server na Rackspace Cloud. Você pode dimensionar recursos como CPU, memória e armazenamento aumentando ou diminuindo, dependendo de suas necessidades. O melhor de tudo, você terá o quanto poder pagar. <a href=':1:'> Veja mais </ a>",
         'hosting_install_instructions'    => 'Instale Phalcon utilizando as instruções padrão de instalação.',
+        'hosting_azure_1'                 => "The <a href=':1:'>Windows Azure cloud</a> provides you with highly scalable and manageable Windows hosting for your web apps. Use Phalcon to reduce your instance costs.",
+        'hosting_azure_2'                 => "To install Phalcon, follow the step by step procedure in <a href=':1:'>this SitePoint article</a>.",
 
         'testimonials'                    => 'Testemunhos',
         'testimonials_description'        => "Abaixo está uma coleção de testemunhos e histórias de sucesso, de vocês, os desenvolvedores e usuários de Phalcon PHP. Nós sempre apreciamos e-mails com histórias de sucesso e estaremos postando-os em nosso blog. Se você quiser enviar sua história de sucesso ou entrar em contato conosco, não hesite em nos enviar seu email para <a href='mailto::1:'>:2:</ a>.",

@@ -207,6 +207,8 @@
         'hosting_digital_ocean_1'         => "Blazing Fast Cloun Technology，专为开发人员构建的云服务器。 部署一个SSD服务器只需55秒。 <a href=':1:'>参见更多</a>",
         'hosting_rackspace_1'             => "云服务是一些运行Linux或Windows&reg;的虚拟机，在Rackspace Cloud上的服务器。 您可以根据需要扩展CPU、 内存和存储空间。 最重要的是，您可以按需付费。 <a href=':1:'>参见更多</a>",
         'hosting_install_instructions'    => '使用标准安装说明来安装Phalcon。',
+        'hosting_azure_1'                 => "The <a href=':1:'>Windows Azure cloud</a> provides you with highly scalable and manageable Windows hosting for your web apps. Use Phalcon to reduce your instance costs.",
+        'hosting_azure_2'                 => "To install Phalcon, follow the step by step procedure in <a href=':1:'>this SitePoint article</a>.",
 
         'testimonials'                    => '荣誉',
         'testimonials_description'        => "下面是一些来自Phalcon开发人员和用户的感言和成功案例。 我们非常欢迎您通过Email把您的成功案例发给我们，并且它会被发表到我们的博客上。 如果您准备发送或者与我们联系，请随时通过发送到Email<a href='mailto::1:'>:2:</a>。",
