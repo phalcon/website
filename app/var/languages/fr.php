@@ -209,8 +209,9 @@
 Il est possible d'augmenter ou de diminuer les ressources comme la CPU, la mémoire, l'espace disque, en fonction des besoins. De plus, le paiement se fait à la consommation.
 <a href=':1:'>En savoir plus</a>",
         'hosting_install_instructions'    => 'Installer Phalcon en utilisant les instructions standards d\'installation.',
-        'hosting_azure_1'                 => "The <a href=':1:'>Windows Azure cloud</a> provides you with highly scalable and manageable Windows hosting for your web apps. Use Phalcon to reduce your instance costs.",
-        'hosting_azure_2'                 => "To install Phalcon, follow the step by step procedure in <a href=':1:'>this SitePoint article</a>.",
+        'hosting_azure_1'                 => "<a href=':1:'>Windows Azure</a> est une plateforme Cloud ouverte et flexible qui vous permet de générer, déployer et gérer rapidement des applications à travers un réseau global de centres de données gérés par Microsoft.       
+  ",
+        'hosting_azure_2'                 => "Installer Phalcon en utilisant les <a href=':1:'>instructions d'installation</a>.",
 
         'testimonials'                    => 'Témoignages',
         'testimonials_description'        => "Below is a collection of testimonials and success stories, from you, the developers and users of Phalcon PHP. We always welcome emails with success stories and will be posting those in our blog. If you wish to send us your success story or get in touch with us, feel free to mail us at <a href='mailto::1:'>:2:</a>.",
