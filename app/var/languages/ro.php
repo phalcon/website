@@ -207,6 +207,8 @@
         'hosting_digital_ocean_1'         => "Blazing Fast Cloud Technology. Construit pentru dezvoltatori. Implementați un cloud server SSD în 55 de secunde. <a href=':1:'>Vezi mai multe</ a>",
         'hosting_rackspace_1'             => "Cloud Servers sunt masini virtuale care rulează Linux sau Windows&reg; Server în Rackspace Cloud. Puteți scala resurse cum ar fi CPU, memorie și marirea sau micsorarea spațiului de stocare , în funcție de nevoile dumneavoastră. Foarte important, puteți să plătiți doar atât cât consumați.<a href=':1:'>Vezi mai multe</ a>",
         'hosting_install_instructions'    => 'Instalați Phalcon folosind instrucțiunile standard de instalare.',
+        'hosting_azure_1'                 => "The <a href=':1:'>Windows Azure cloud</a> provides you with highly scalable and manageable Windows hosting for your web apps. Use Phalcon to reduce your instance costs.",
+        'hosting_azure_2'                 => "To install Phalcon, follow the step by step procedure in <a href=':1:'>this SitePoint article</a>.",
 
         'testimonials'                    => 'Mărturii',
         'testimonials_description'        => "Mai jos veți găsi o colecție de mărturii și povești de succes, de la dvs., de la dezvoltatorii și de la utilizatorii Phalcon PHP. Sunt binevenite întotdeauna email-uri cu povești de succes și vom posta acele povești pe blog-ul nostru. Dacă doriți să ne trimiteți povestea dvs. de succes, sau dacă doriți să luați legătura cu noi, nu ezitați să ne trimiteți un email la <a href='mailto::1:'>: 2:</ a>.",
