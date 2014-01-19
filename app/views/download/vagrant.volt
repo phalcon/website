@@ -36,11 +36,33 @@
     </ul>
 
     <pre style="margin:0px">
-        <code>vagrant init phalconbox https://s3-eu-west-1.amazonaws.com/phalcon/phalcon125-apache2-php53-mysql55.box
+        <code>vagrant init phalconbox53 https://s3-eu-west-1.amazonaws.com/phalcon/phalcon125-apache2-php53-mysql55.box
 vagrant up</code>
     </pre>
 
-    Pre-Installed examples:<br/>
+    <h3>Box #2</h3>
+
+    <ul>
+        <li>Ubuntu 12.04 (Precise Pangolin) x86</li>
+        <li>Apache 2.2</li>
+        <li>Phalcon 1.2.5</li>
+        <li>PHP 5.4.23</li>
+        <li>MySQL 5.5</li>
+    </ul>
+
+    <ul>
+        <li>MySQL User: root Password: pass</li>
+        <li>Document Root: /var/www/</li>
+    </ul>
+
+    <pre style="margin:0px">
+        <code>vagrant init phalconbox https://s3-eu-west-1.amazonaws.com/phalcon/phalcon125-apache2-php54-mysql55.box
+vagrant up</code>
+    </pre>
+
+    <h3>Pre-Installed examples:</h3>
+
+    <p>The following examples are pre-installed on each vagrant box:</p>
 
     <pre style="margin:0px">
     <code>http://&lt;vagrant-box-ip&gt;/website
