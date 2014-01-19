@@ -15,7 +15,7 @@
         'pluginsDir'     => ROOT_PATH . '/app/plugins/',
         'libraryDir'     => ROOT_PATH . '/app/library/',
         'voltDir'        => ROOT_PATH . '/app/var/volt/',
-        'baseUri'        => '/',
+        'baseUri'        => '/phalconphp/',
         'debug'          => '0',
     );
 
@@ -89,6 +89,13 @@
             ),
             'name'   => 'download-windows-redirect',
         ),
+        '/download/vagrant' => array(
+            'params' => array(
+                'controller' => 'index',
+                'action'     => 'redirectDownloadVagrant',
+            ),
+            'name'   => 'download-vagrant-redirect',
+        ),
 
         // Documentation
         '/(documentation|reference)' => array(
@@ -154,6 +161,13 @@
                 'action'     => 'windows',
             ),
             'name'   => 'download-windows',
+        ),
+        '/{language:[a-z]{2}}/download/vagrant' => array(
+            'params' => array(
+                'controller' => 'download',
+                'action'     => 'vagrant',
+            ),
+            'name'   => 'download-vagrant',
         ),
 
         // Documentation

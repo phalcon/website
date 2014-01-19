@@ -240,7 +240,7 @@ class Bootstrap
                             'compiledSeparator' => '_',
                         );
 
-                        if ('1' != $config->application->debug) {
+                        if ('1' == $config->application->debug) {
                             $voltOptions['compileAlways'] = true;
                         }
 
@@ -255,7 +255,6 @@ class Bootstrap
                         return $volt;
                     },
                     '.phtml' => 'Phalcon\Mvc\View\Engine\Php', // Generate Template files uses PHP itself as the template engine
-		            //'.html'  => 'Phalcon\Mvc\View\Engine\Php' // Generate Template files uses PHP itself as the template engine
                 )
             );
 

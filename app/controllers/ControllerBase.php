@@ -11,13 +11,9 @@ class ControllerBase extends Controller
 		 * Dev environment or production?
 		 */
 		if ('0' == $this->config->application->debug) {
-			if (PHP_OS == 'Darwin') {
-				$cdnUrl = '/phalconphp/';
-			} else {
-				$cdnUrl = '/';
-			}
-		} else {
 			$cdnUrl = 'http://static.phalconphp.com/';
+		} else {
+			$cdnUrl = $this->config->application->baseUri;
 		}
 
 		/**

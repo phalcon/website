@@ -163,4 +163,13 @@ class DownloadController extends \ControllerBase
 
     }
 
+    public function vagrantAction()
+    {
+
+        $this->tag->setTitle('Download Phalcon Vagrant Boxes');
+
+
+
+    }
+
 }
