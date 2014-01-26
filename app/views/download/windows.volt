@@ -139,6 +139,7 @@
             </th>
         </tr>
 
+	{% if old['x86'] is defined %}
         {% for key, value in old['x86'] %}
         <tr>
             <td>
@@ -163,6 +164,7 @@
             {% endif %}
         </tr>
         {% endfor %}
+	{% endif %}
 
         <tr>
             <td colspan="4">
