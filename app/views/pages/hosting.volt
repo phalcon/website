@@ -50,6 +50,7 @@
                 <h4><a target="_blank" href='https://www.linode.com/'>Linode</a></h4>
                 <p>{{ tr('hosting_linode_1', 'https://www.linode.com/') }}</p>
                 <p>{{ tr('hosting_install_instructions') }}</p>
+                <p>Follow this <a href="https://www.digitalocean.com/community/articles/how-to-install-and-get-started-with-phalcon-on-an-ubuntu-12-04-vps">tutorial</a> to get started</p>
             </td>
         </tr>
         <tr>
