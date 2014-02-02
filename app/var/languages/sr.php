@@ -137,6 +137,17 @@
         'download_devtools_composer_4'    => 'Create a symbolic link to the phalcon.php script:',
         'download_devtools_download'      => 'You can download or clone a cross platform package containing the developer tools from <a href=":1:">Github</a>.',
 
+        'download_vagrant'                => 'Vagrant',
+        'download_vagrant_boxes'          => 'Vagrant Boxes',
+        'download_vagrant_1'              => "<a href=':1:'>Vagrant</a> is an excellent tool to create and configure lightweight, reproducible, and portable development environments.",
+        'download_vagrant_2'              => "Use any of the following boxes to test or develop with Phalcon on a pre-configured environment.",
+        'download_box_1'                  => "Box #1",
+        'download_box_2'                  => "Box #2",
+        'download_box_user_pass'          => "MySQL User: :1: Password: :2:",
+        'download_box_doc_root'           => "Document Root: :1:",
+        'download_examples'               => "Pre-Installed examples",
+        'download_examples_1'             => "The following examples are pre-installed on each vagrant box:",
+
         'consulting_header'               => "We are offering consulting services for Phalcon <br />and/or PHP implementations",
         'requirements_analysis_1'         => 'One of the biggest problems that developers face is the fact that a lot of projects do not have adequately defined requirements. Therefore, more often than not what the client wants is totally different from what the developer understands and subsequently delivers.',
         'requirements_analysis_2'         => 'We can offer requirements analysis services, discussing with the clients and translating their vision to exact specifications for developers.',

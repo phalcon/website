@@ -137,6 +137,17 @@
         'download_devtools_composer_4'    => 'Creëer een symbolic link naar het phalcon.php script:',
         'download_devtools_download'      => 'Je kan een cross platform package met daarin de developer tools downloaden of clonen van <a href=":1:">Github</a>.',
 
+        'download_vagrant'                => 'Vagrant',
+        'download_vagrant_boxes'          => 'Vagrant Boxes',
+        'download_vagrant_1'              => "<a href=':1:'>Vagrant</a> is an excellent tool to create and configure lightweight, reproducible, and portable development environments.",
+        'download_vagrant_2'              => "Use any of the following boxes to test or develop with Phalcon on a pre-configured environment.",
+        'download_box_1'                  => "Box #1",
+        'download_box_2'                  => "Box #2",
+        'download_box_user_pass'          => "MySQL User: :1: Password: :2:",
+        'download_box_doc_root'           => "Document Root: :1:",
+        'download_examples'               => "Pre-Installed examples",
+        'download_examples_1'             => "The following examples are pre-installed on each vagrant box:",
+
         'consulting_header'               => "We bieden consultancy diensten aan voor Phalcon <br />en/of andere PHP implementaties",
         'requirements_analysis_1'         => 'Een van de grootste problemen voor ontwikkelaars is dat de eisen van projecten vaak slecht gedefinieerd zijn. Dit kan er voor zorgen dat hetgeen de klant wilt totaal verschillend is van wat de ontwikkelaar uit de eisen begreep en bouwde.',
         'requirements_analysis_2'         => 'We bieden een eisen analyse dienst aan, waarbij we met de klant praten en hun visie vertalen naar de exacte specificaties voor de ontwikkelaars.',

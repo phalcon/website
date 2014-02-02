@@ -137,6 +137,17 @@
         'download_devtools_composer_4'    => 'Sukurkite virtualiąją nuorodą į phalcon.php:',
         'download_devtools_download'      => 'Jūs galite atsisiųsti arba klonuoti platformos paketą, kuriame yra kūrėjo įrankiai iš  <a href=":1:">Github</a>.',
 
+        'download_vagrant'                => 'Vagrant',
+        'download_vagrant_boxes'          => 'Vagrant Boxes',
+        'download_vagrant_1'              => "<a href=':1:'>Vagrant</a> is an excellent tool to create and configure lightweight, reproducible, and portable development environments.",
+        'download_vagrant_2'              => "Use any of the following boxes to test or develop with Phalcon on a pre-configured environment.",
+        'download_box_1'                  => "Box #1",
+        'download_box_2'                  => "Box #2",
+        'download_box_user_pass'          => "MySQL User: :1: Password: :2:",
+        'download_box_doc_root'           => "Document Root: :1:",
+        'download_examples'               => "Pre-Installed examples",
+        'download_examples_1'             => "The following examples are pre-installed on each vagrant box:",
+
         'consulting_header'               => "Mes siūlome konsultacines paslaugas Phalcon <br />ir/arba PHP realizacijoms",
         'requirements_analysis_1'         => 'Viena iš didžiausių problemų, su kuria susiduria kūrėjai yra faktas, kad daug projektų neturi pakankamai apibrėžtų reikalavimų. Todėl, dažniau nei niekada, klientų norai yra visiškai skirtingi nuo kūrėjo supratimo ir vėlesnio pristatymo.',
         'requirements_analysis_2'         => 'Mes galime pasiūlyti reikalavimų analizės paslaugas, aptarti su klientais ir paversti jų viziją į tikslius reikalavimus kūrėjams.',

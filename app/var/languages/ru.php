@@ -137,6 +137,17 @@
         'download_devtools_composer_4'    => 'Создайте символическую ссылку на файл phalcon.php:',
         'download_devtools_download'      => 'Вы можете скачать или клонировать кроссплатформенный пакет, содержащий developer tools с <a href=":1:">Github</a>.',
 
+        'download_vagrant'                => 'Vagrant',
+        'download_vagrant_boxes'          => 'Vagrant Boxes',
+        'download_vagrant_1'              => "<a href=':1:'>Vagrant</a> is an excellent tool to create and configure lightweight, reproducible, and portable development environments.",
+        'download_vagrant_2'              => "Use any of the following boxes to test or develop with Phalcon on a pre-configured environment.",
+        'download_box_1'                  => "Box #1",
+        'download_box_2'                  => "Box #2",
+        'download_box_user_pass'          => "MySQL User: :1: Password: :2:",
+        'download_box_doc_root'           => "Document Root: :1:",
+        'download_examples'               => "Pre-Installed examples",
+        'download_examples_1'             => "The following examples are pre-installed on each vagrant box:",
+
         'consulting_header'               => "Мы предлагаем консалтинговые услуги по Phalcon <br />и/или PHP разработке",
         'requirements_analysis_1'         => 'Одна из самых больших проблем, с которыми сталкиваются разработчики, является тот факт, что многие проекты не имеют чётко сформулированного технического задания. Поэтому, чаще всего, то, чего хочет клиент, полностью отличается от того, что понимает разработчик и, соответственно, реализует.',
         'requirements_analysis_2'         => 'Мы можем предложить услуги по анализу требований клиентов, обсуждению деталей с клиентами и реализации этих требований в виде конкретного технического задания для разработчиков.',

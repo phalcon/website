@@ -137,6 +137,17 @@
         'download_devtools_composer_4'    => '给phalcon.php创建symbolic link:',
         'download_devtools_download'      => '您可以在<a href=":1:">Github</a>下载或复制包含开发工具的跨平台包.',
 
+        'download_vagrant'                => 'Vagrant',
+        'download_vagrant_boxes'          => 'Vagrant Boxes',
+        'download_vagrant_1'              => "<a href=':1:'>Vagrant</a> is an excellent tool to create and configure lightweight, reproducible, and portable development environments.",
+        'download_vagrant_2'              => "Use any of the following boxes to test or develop with Phalcon on a pre-configured environment.",
+        'download_box_1'                  => "Box #1",
+        'download_box_2'                  => "Box #2",
+        'download_box_user_pass'          => "MySQL User: :1: Password: :2:",
+        'download_box_doc_root'           => "Document Root: :1:",
+        'download_examples'               => "Pre-Installed examples",
+        'download_examples_1'             => "The following examples are pre-installed on each vagrant box:",
+
         'consulting_header'               => "我们提供Phalcon咨询服务<br />或基于PHP的开发",
         'requirements_analysis_1'         => '开发人员面临的最大问题是很多项目都没有进行充分的需求调研。因此，往往客户的要求完全不同于开发人员的理解和其随后提供的开发结果。',
         'requirements_analysis_2'         => '我们提供的服务包含需求分析，参与客户讨论，并把他们的需求转换成详细的开发文档。',
