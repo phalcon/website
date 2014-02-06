@@ -201,6 +201,7 @@
         'fa' => 'فارسی',
         'fr' => 'Français',
         'ja' => '日本語',
+        'ko' => '한국의',
         'lt' => 'Lietuvos',
         'mk' => 'македонски',
         'nl' => 'Nederlands',

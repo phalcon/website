@@ -137,6 +137,17 @@
         'download_devtools_composer_4'    => 'สร้าง symbolic link ไปยัง phplcon.php สคริปต์:',
         'download_devtools_download'      => 'คุณสามารถดาวน์โหลดหรือโคลน cross-platform แพ็คเกจของเครื่องมือการพัฒนาจาก <a href=":1:">Github</a>',
 
+        'download_vagrant'                => 'Vagrant',
+        'download_vagrant_boxes'          => 'Vagrant Boxes',
+        'download_vagrant_1'              => "<a href=':1:'>Vagrant</a> is an excellent tool to create and configure lightweight, reproducible, and portable development environments.",
+        'download_vagrant_2'              => "Use any of the following boxes to test or develop with Phalcon on a pre-configured environment.",
+        'download_box_1'                  => "Box #1",
+        'download_box_2'                  => "Box #2",
+        'download_box_user_pass'          => "MySQL User: :1: Password: :2:",
+        'download_box_doc_root'           => "Document Root: :1:",
+        'download_examples'               => "Pre-Installed examples",
+        'download_examples_1'             => "The following examples are pre-installed on each vagrant box:",
+
         'consulting_header'               => "เรานำเสนอการบริการให้คำปรึกษาสำหรับ Phalcon <br /> และ/หรือ การพัฒนาด้วย PHP",
         'requirements_analysis_1'         => 'ปัญหาใหญ่ที่สุดอย่างหนึ่งที่นักพัฒนาต้องประสบอย่างแน่นอนที่สุดคือ มีโปรเจ็คจำนวนไม่น้อยเลยที่ไม่สามารถกำหนดความต้องการทั้งหมดให้ตรงตามความเหมาะสมได้ กรณีนี้ สิ่งที่เกิดขึ้นบ่อยๆคือ สิ่งที่ลูกค้าต้องการมักแตกต่างไปจากสิ่งที่นักพัฒนาเข้าใจและส่งมอบให้',
         'requirements_analysis_2'         => 'เรานำเสนอบริการวิเคราะห์ความต้องการ การให้ความเห็น และการปรับปรุงมุมมองไปสู่ข้อกำหนดที่ถูกต้องสำหรับนักพัฒนา',

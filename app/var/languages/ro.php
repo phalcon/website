@@ -137,6 +137,17 @@
         'download_devtools_composer_4'    => 'Creați un link simbolic la script-ul phalcon.php:',
         'download_devtools_download'      => 'Puteți descărca sau clona un pachet cross-platform care conține instrumentele de dezvoltare de pe <a href=":1:">Github</a>.',
 
+        'download_vagrant'                => 'Vagrant',
+        'download_vagrant_boxes'          => 'Vagrant Boxes',
+        'download_vagrant_1'              => "<a href=':1:'>Vagrant</a> is an excellent tool to create and configure lightweight, reproducible, and portable development environments.",
+        'download_vagrant_2'              => "Use any of the following boxes to test or develop with Phalcon on a pre-configured environment.",
+        'download_box_1'                  => "Box #1",
+        'download_box_2'                  => "Box #2",
+        'download_box_user_pass'          => "MySQL User: :1: Password: :2:",
+        'download_box_doc_root'           => "Document Root: :1:",
+        'download_examples'               => "Pre-Installed examples",
+        'download_examples_1'             => "The following examples are pre-installed on each vagrant box:",
+
         'consulting_header'               => "Oferim servicii de consultanță pentru Phalcon <br /> și / sau implementări PHP",
         'requirements_analysis_1'         => 'Una dintre cele mai mari probleme cu care dezvoltatorii se confruntă, este faptul că o mulțime de proiecte nu au definite cerințele în mod adecvat. Prin urmare, de cele mai multe ori, ceea ce dorește clientul este total diferit de ceea ce înțelege un dezvoltator și oferă ulterior.',
         'requirements_analysis_2'         => 'Vă putem oferi servicii de analiză a cerințelor, discuții cu clienții și transpunerea viziunii acestora în specificații exacte pentru dezvoltatori.',
