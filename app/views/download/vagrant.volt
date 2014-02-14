@@ -10,17 +10,15 @@
         <li><a class="tab-link" href="{{ url(['for': 'download', 'language': language]) }}"><span class="span-ul">{{ tr('download_linux') }}</span></a></li>
         <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'windows', 'language': language]) }}"><span class="span-ul">{{ tr('download_windows') }}</span></a></li>
         <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'tools', 'language': language]) }}"><span class="span-ul">{{ tr('download_developer_tools') }}</span></a></li>
-        <li><a class="tab-link active" href="{{ url(['for': 'download-type', 'type': 'vagrant', 'language': language]) }}"><span class="span-ul">Vagrant</span></a></li>
+        <li><a class="tab-link active" href="{{ url(['for': 'download-type', 'type': 'vagrant', 'language': language]) }}"><span class="span-ul">{{ tr('download_vagrant') }}</span></a></li>
         <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'stubs', 'language': language]) }}"><span class="span-ul">{{ tr('download_ide_stubs') }}</span></a></li>
     </ul>
 
-    <h2>Vagrant Boxes</h2>
-    <p>
-        <a href="http://www.vagrantup.com/">Vagrant</a> is an excellent tool to create and configure lightweight, reproducible, and portable development environments.
-        <p>Use any of the following boxes to test or develop with Phalcon on a pre-configured environment.
-    </p>
+    <h2>{{ tr('download_vagrant_boxes') }}</h2>
+    <p>{{ tr('download_vagrant_1', 'http://www.vagrantup.com') }}</p>
+    <p>{{ tr('download_vagrant_2') }}</p>
 
-    <h3>Box #1</h3>
+    <h3>{{ tr('download_box_1') }}</h3>
 
     <ul>
         <li>Ubuntu 12.04 (Precise Pangolin) x86</li>
@@ -31,8 +29,8 @@
     </ul>
 
     <ul>
-        <li>MySQL User: root Password: pass</li>
-        <li>Document Root: /var/www/</li>
+        <li>{{ tr('download_box_user_pass', 'root', 'pass') }}</li>
+        <li>{{ tr('download_box_doc_root', '/var/www') }}</li>
     </ul>
 
     <pre style="margin:0px">
@@ -40,7 +38,7 @@
 vagrant up</code>
     </pre>
 
-    <h3>Box #2</h3>
+    <h3>{{ tr('download_box_2') }}</h3>
 
     <ul>
         <li>Ubuntu 12.04 (Precise Pangolin) x86</li>
@@ -51,8 +49,8 @@ vagrant up</code>
     </ul>
 
     <ul>
-        <li>MySQL User: root Password: pass</li>
-        <li>Document Root: /var/www/</li>
+        <li>{{ tr('download_box_user_pass', 'root', 'pass') }}</li>
+        <li>{{ tr('download_box_doc_root', '/var/www') }}</li>
     </ul>
 
     <pre style="margin:0px">
@@ -60,9 +58,8 @@ vagrant up</code>
 vagrant up</code>
     </pre>
 
-    <h3>Pre-Installed examples:</h3>
-
-    <p>The following examples are pre-installed on each vagrant box:</p>
+    <h3>{{ tr('download_examples') }}</h3>
+    <p>{{ tr('download_examples_1') }}</p>
 
     <pre style="margin:0px">
     <code>http://&lt;vagrant-box-ip&gt;/website

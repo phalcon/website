@@ -195,12 +195,15 @@
      */
     $languages = array(
         'bg' => 'български',
+        'cz' => 'Ceský',
         'el' => 'Ελληνικά',
         'en' => 'English',
         'es' => 'Español',
         'fa' => 'فارسی',
         'fr' => 'Français',
+        'hu' => 'Magyar',
         'ja' => '日本語',
+        'ko' => '한국의',
         'lt' => 'Lietuvos',
         'mk' => 'македонски',
         'nl' => 'Nederlands',
