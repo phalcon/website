@@ -195,7 +195,7 @@
      */
     $languages = array(
         'bg' => 'български',
-        'cz' => 'Ceský',
+        'cz' => 'Český',
         'el' => 'Ελληνικά',
         'en' => 'English',
         'es' => 'Español',
