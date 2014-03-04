@@ -23,12 +23,22 @@
         </tr>
         <tr>
             <td align="center">
-                <img src='{{ cdn_url ~ 'images/hosting/webfaction-gray.png' }}' title='WebFaction' alt='WebFaction' />
+                <img src='{{ cdn_url ~ 'images/hosting/azure-gray.jpg' }}' title='Windows Azure' alt='Windows Azure' />
             </td>
             <td>
-                <h4><a target="_blank" href='http://webfaction.com/'>WebFaction</a></h4>
-                <p>{{ tr('hosting_webfaction_1') }}</p>
-                <p>{{ tr('hosting_webfaction_2', 'http://community.webfaction.com/questions/13689/phalcon-php') }}</p>
+                <h4><a target="_blank" href='http://www.windowsazure.com'>Windows Azure</a></h4>
+                <p>{{ tr('hosting_azure_1', 'http://www.windowsazure.com') }}</p>
+                <p>{{ tr('hosting_azure_2', 'http://www.sitepoint.com/phalcon-windows-azure/') }}</p>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <!--<img src='' title='Layer Shift' alt='Layer Shift' />-->
+            </td>
+            <td>
+                <h4><a target="_blank" href='http://www.layershift.com'>Layer Shift</a></h4>
+                <p>You bring the code, we'll sort the servers</p>
+                <p>Follow this <a href="http://kb.layershift.com/jelastic-install-phalcon-php-framework">tutorial</a> to get started</p>
             </td>
         </tr>
         <tr>
@@ -65,22 +75,22 @@
         </tr>
         <tr>
             <td align="center">
+                <img src='{{ cdn_url ~ 'images/hosting/webfaction-gray.png' }}' title='WebFaction' alt='WebFaction' />
+            </td>
+            <td>
+                <h4><a target="_blank" href='http://webfaction.com/'>WebFaction</a></h4>
+                <p>{{ tr('hosting_webfaction_1') }}</p>
+                <p>{{ tr('hosting_webfaction_2', 'http://community.webfaction.com/questions/13689/phalcon-php') }}</p>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
                 <img src='{{ cdn_url ~ 'images/hosting/rackspace-gray.png' }}' title='Rackspace' alt='Rackspace' />
             </td>
             <td>
                 <h4><a target="_blank" href='http://www.rackspace.com/cloud/servers/'>Rackspace</a></h4>
                 <p>{{ tr('hosting_rackspace_1', 'http://www.rackspace.com/cloud/servers/') }}</p>
                 <p>{{ tr('hosting_install_instructions') }}</p>
-            </td>
-        </tr>
-        <tr>
-            <td align="center">
-                <img src='{{ cdn_url ~ 'images/hosting/azure-gray.jpg' }}' title='Windows Azure' alt='Windows Azure' />
-            </td>
-            <td>
-                <h4><a target="_blank" href='http://www.windowsazure.com'>Windows Azure</a></h4>
-                <p>{{ tr('hosting_azure_1', 'http://www.windowsazure.com') }}</p>
-                <p>{{ tr('hosting_azure_2', 'http://www.sitepoint.com/phalcon-windows-azure/') }}</p>
             </td>
         </tr>
     </table>
