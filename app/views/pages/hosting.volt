@@ -21,14 +21,14 @@
                 <p>{{ tr('hosting_fortrabbit_3') }}</p>
             </td>
         </tr>
-        <tr>
+         <tr>
             <td align="center">
-                <img src='{{ cdn_url ~ 'images/hosting/azure-gray.jpg' }}' title='Windows Azure' alt='Windows Azure' />
+                <img src='{{ cdn_url ~ 'images/hosting/digital-ocean-gray.png' }}' title='Digital Ocean' alt='Digital Ocean' />
             </td>
             <td>
-                <h4><a target="_blank" href='http://www.windowsazure.com'>Windows Azure</a></h4>
-                <p>{{ tr('hosting_azure_1', 'http://www.windowsazure.com') }}</p>
-                <p>{{ tr('hosting_azure_2', 'http://www.sitepoint.com/phalcon-windows-azure/') }}</p>
+                <h4><a target="_blank" href='https://www.digitalocean.com/'>Digital Ocean</a></h4>
+                <p>{{ tr('hosting_digital_ocean_1', 'https://www.digitalocean.com/') }}</p>
+                <p>{{ tr('hosting_install_instructions') }}</p>
             </td>
         </tr>
         <tr>
@@ -37,8 +37,18 @@
             </td>
             <td>
                 <h4><a target="_blank" href='http://www.layershift.com'>Layer Shift</a></h4>
-                <p>You bring the code, we'll sort the servers</p>
+                <p>You bring the code, we'll sort the servers. Next generation, auto-sizing PaaS for PHP</p>
                 <p>Follow this <a href="http://kb.layershift.com/jelastic-install-phalcon-php-framework">tutorial</a> to get started</p>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <img src='{{ cdn_url ~ 'images/hosting/azure-gray.jpg' }}' title='Windows Azure' alt='Windows Azure' />
+            </td>
+            <td>
+                <h4><a target="_blank" href='http://www.windowsazure.com'>Windows Azure</a></h4>
+                <p>{{ tr('hosting_azure_1', 'http://www.windowsazure.com') }}</p>
+                <p>{{ tr('hosting_azure_2', 'http://www.sitepoint.com/phalcon-windows-azure/') }}</p>
             </td>
         </tr>
         <tr>
@@ -61,16 +71,6 @@
                 <p>{{ tr('hosting_linode_1', 'https://www.linode.com/') }}</p>
                 <p>{{ tr('hosting_install_instructions') }}</p>
                 <p>Follow this <a href="https://www.digitalocean.com/community/articles/how-to-install-and-get-started-with-phalcon-on-an-ubuntu-12-04-vps">tutorial</a> to get started</p>
-            </td>
-        </tr>
-        <tr>
-            <td align="center">
-                <img src='{{ cdn_url ~ 'images/hosting/digital-ocean-gray.png' }}' title='Digital Ocean' alt='Digital Ocean' />
-            </td>
-            <td>
-                <h4><a target="_blank" href='https://www.digitalocean.com/'>Digital Ocean</a></h4>
-                <p>{{ tr('hosting_digital_ocean_1', 'https://www.digitalocean.com/') }}</p>
-                <p>{{ tr('hosting_install_instructions') }}</p>
             </td>
         </tr>
         <tr>
