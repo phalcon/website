@@ -139,14 +139,14 @@
 
         'download_vagrant'                => 'Vagrant',
         'download_vagrant_boxes'          => 'Vagrant Boxes',
-        'download_vagrant_1'              => "<a href=':1:'>Vagrant</a> is an excellent tool to create and configure lightweight, reproducible, and portable development environments.",
-        'download_vagrant_2'              => "Use any of the following boxes to test or develop with Phalcon on a pre-configured environment.",
+        'download_vagrant_1'              => "<a href=':1:'>Vagrant</a> is een uitstekend hulpmiddel om lichtgewicht, reproduceerbare en draagbare ontwikkelomgevingen te creëren.",
+        'download_vagrant_2'              => "Gebruik een van de volgende 'boxes' om Phalcon te testen in een voor-geconfigureerde omgeving.",
         'download_box_1'                  => "Box #1",
         'download_box_2'                  => "Box #2",
         'download_box_user_pass'          => "MySQL User: :1: Password: :2:",
         'download_box_doc_root'           => "Document Root: :1:",
-        'download_examples'               => "Pre-Installed examples",
-        'download_examples_1'             => "The following examples are pre-installed on each vagrant box:",
+        'download_examples'               => "Voor-geïnstalleerde voorbeelden",
+        'download_examples_1'             => "De volgende voorbeelden zijn voor-geïnstalleerd op elke vagrant box:",
 
         'consulting_header'               => "We bieden consultancy diensten aan voor Phalcon <br />en/of andere PHP implementaties",
         'requirements_analysis_1'         => 'Een van de grootste problemen voor ontwikkelaars is dat de eisen van projecten vaak slecht gedefinieerd zijn. Dit kan er voor zorgen dat hetgeen de klant wilt totaal verschillend is van wat de ontwikkelaar uit de eisen begreep en bouwde.',
@@ -220,7 +220,7 @@
         'hosting_rackspace_1'             => "Cloud Servers zijn virtuele machines die dat een Linux of Windows&reg; Server draaien in de Rackspace Cloud. Je kan bronnen zoals CPU, RAM en geheugen schalen, afhankelijk van wat je nodig hebt. En het beste van alles is hun \"pay as you go\" model. <a href=':1:'>Lees meer</a>",
         'hosting_install_instructions'    => 'Installeer Phalcon met de standaard installatie instructies.',
         'hosting_azure_1'                 => "The <a href=':1:'>Windows Azure cloud</a> provides you with highly scalable and manageable Windows hosting for your web apps. Use Phalcon to reduce your instance costs.",
-        'hosting_azure_2'                 => "To install Phalcon, follow the step by step procedure in <a href=':1:'>this SitePoint article</a>.",
+        'hosting_azure_2'                 => "Om Phalcon te installeren kun je dit <a href=':1:'>dit SitePoint artikel</a> artikel stap-voor-stap volgen.",
 
         'testimonials'                    => 'Getuigenissen',
         'testimonials_description'        => "Onderaan vind je een verzameling van getuigenissen en succesverhalen, van jou, de ontwikkelaars en gebruikers van Phalcon PHP. We verwelkomen steeds emails met succesverhalen en zullen deze op onze blog plaatsen. Indien je ons je succesverhaal wil sturen of contact met ons op te nemen, voel je vrij om een email te sturen naar <a href='mailto::1:'>:2:</a>.",
