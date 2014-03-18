@@ -203,6 +203,7 @@
         'fr' => 'Français',
         'hu' => 'Magyar',
         'ja' => '日本語',
+        'it' => 'Italiano',
         'ko' => '한국어',
         'lt' => 'Lietuvos',
         'mk' => 'македонски',

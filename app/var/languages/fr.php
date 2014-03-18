@@ -156,7 +156,7 @@
         'ongoing_support_2'               => 'Les heures de support ne s\'expirent pas, elles peuvent être utilisées quand vous en aurez besoin. Pour les clients nécessitant un support continue, nous offrons de solution fléxibles adaptées à vos besoins.',
         'sponsors'                        => 'Sponsors',
         'sponsors_1'                      => 'Pour ceux désireux de sponsoriser notre travail et d\'aider au développement, nous offrons différentes offres de parrainage qui s\'adapteront à votre budget.',
-        'sponsors_2'                      => 'Additionally, customers might want certain features implemented that would normally take a lot longer to do so due to their popularity or complexity. We can certainly accommodate such requests at our normal rates.',
+        'sponsors_2'                      => 'De plus, les utilisateurs pourraient vouloir certaines fonctionnalités intégrées, qui devraient normalement prendre beaucoup plus de temps de par leur popularité ou complexité. Nous pouvons certainement accepter ce type de requête à notre vitesse habituelle.',
         'contact'                         => 'Contact',
         'contact_1'                       => "N'hésitez pas à <a href=':1:'>nous contacter</a> pour discuter de vos besoins et de vous offrir une solution qui s'adaptera au mieux à vos besoins et à votre budget. Aucun projet n'est trop petit ou trop grand.",
 
