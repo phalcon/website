@@ -36,7 +36,7 @@ class DownloadController extends \ControllerBase
         $files    = array();
         $alpha    = array();
 
-        foreach (glob($path . '*.zip') as $file ) {
+        foreach (glob($path . '*.zip', GLOB_NOSORT) as $file ) {
 
             $fileDate = filemtime($file);
             $date     = '';
@@ -160,6 +160,15 @@ class DownloadController extends \ControllerBase
                 'old'     => $old
             )
         );
+
+    }
+
+    public function vagrantAction()
+    {
+
+        $this->tag->setTitle('Download Phalcon Vagrant Boxes');
+
+
 
     }
 

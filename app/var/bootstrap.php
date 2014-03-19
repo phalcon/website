@@ -2,21 +2,21 @@
 /**
  * Bootstraps the application
  */
-use \Phalcon\DI\FactoryDefault as PhDi;
-use \Phalcon\Config as PhConfig;
-use \Phalcon\Session\Adapter\Files as PhSession;
-use \Phalcon\Loader as PhLoader;
-use \Phalcon\Mvc\Url as PhUrl;
-use \Phalcon\Mvc\Router as PhRouter;
-use \Phalcon\Db\Adapter\Pdo\Mysql as PhMysql;
-use \Phalcon\Exception as PhException;
-use \Phalcon\Mvc\Application as PhApplication;
-use \Phalcon\Mvc\View as PhView;
-use \Phalcon\Mvc\View\Engine\Volt as PhVolt;
-use \Phalcon\Mvc\Model\Metadata\Memory as PhMetadataMemory;
-use \Phalcon\Cache\Frontend\Output as PhCacheFront;
-use \Phalcon\Cache\Backend\File as PhCacheBackFile;
-use \Phalcon\Cache\Backend\Apc as PhCacheBackApc;
+use Phalcon\DI\FactoryDefault as PhDi,
+    Phalcon\Config as PhConfig,
+    Phalcon\Session\Adapter\Files as PhSession,
+    Phalcon\Loader as PhLoader,
+    Phalcon\Mvc\Url as PhUrl,
+    Phalcon\Mvc\Router as PhRouter,
+    Phalcon\Db\Adapter\Pdo\Mysql as PhMysql,
+    Phalcon\Exception as PhException,
+    Phalcon\Mvc\Application as PhApplication,
+    Phalcon\Mvc\View as PhView,
+    Phalcon\Mvc\View\Engine\Volt as PhVolt,
+    Phalcon\Mvc\Model\Metadata\Memory as PhMetadataMemory,
+    Phalcon\Cache\Frontend\Output as PhCacheFront,
+    Phalcon\Cache\Backend\File as PhCacheBackFile,
+    Phalcon\Cache\Backend\Apc as PhCacheBackApc;
 
 class Bootstrap
 {
@@ -47,8 +47,6 @@ class Bootstrap
             'loader',
             'url',
             'router',
-//            'database',
-//            'modelsmetadata',
             'view',
             'cache',
         );
@@ -56,10 +54,8 @@ class Bootstrap
         try {
 
             foreach ($loaders as $service) {
-
                 $function = 'init' . ucfirst($service);
-
-                $this->$function($options);
+                $this->$function();
             }
 
             $application = new PhApplication();
@@ -244,7 +240,7 @@ class Bootstrap
                             'compiledSeparator' => '_',
                         );
 
-                        if ('1' != $config->application->debug) {
+                        if ('1' == $config->application->debug) {
                             $voltOptions['compileAlways'] = true;
                         }
 
@@ -259,7 +255,6 @@ class Bootstrap
                         return $volt;
                     },
                     '.phtml' => 'Phalcon\Mvc\View\Engine\Php', // Generate Template files uses PHP itself as the template engine
-		            //'.html'  => 'Phalcon\Mvc\View\Engine\Php' // Generate Template files uses PHP itself as the template engine
                 )
             );
 
@@ -279,8 +274,7 @@ class Bootstrap
         $this->di['viewCache'] = function () use ($config) {
 
             // Get the parameters
-            $frontEndOptions = array('lifetime' => $config->cache->lifetime);
-            $frontCache      = new PhCacheFront($frontEndOptions);
+            $frontCache      = new PhCacheFront(array('lifetime' => $config->cache->lifetime));
 
             if (function_exists('apc_store')) {
                 $cache = new PhCacheBackApc($frontCache);
@@ -307,11 +301,21 @@ class Bootstrap
         $session    = $di['session'];
         $config     = $di['config'];
         $dispatcher = $di['dispatcher'];
-        $phrases    = $session->get('phrases');
         $lang       = $dispatcher->getParam('language');
 
-        if (!$phrases || ('1' == $config->application->debug)) {
-            require(ROOT_PATH . '/app/var/languages/en.php');
+        if (function_exists('apc_store')) {
+            $phrases    = apc_fetch($lang . '-phrases');
+            $language   = apc_fetch($lang . '-language');
+        } else {
+            $phrases    = $session->get('phrases');
+            $language   = $session->get('language');
+        }
+
+        $changed = false;
+        if (!$phrases || $language != $lang || ('1' == $config->application->debug)) {
+
+            require ROOT_PATH . '/app/var/languages/en.php';
+
             /**
              * Messages comes from the above require statement. Not the best
              * way of doing it but we need this for Transilex
@@ -320,11 +324,13 @@ class Bootstrap
             $phrases = $english;
             if ('en' !== $lang) {
                 if (file_exists(ROOT_PATH . '/app/var/languages/' . $lang . '.php')) {
+
                     /**
                      * Cleanup
                      */
                     $messages = array();
-                    require(ROOT_PATH . '/app/var/languages/' . $lang . '.php');
+                    require ROOT_PATH . '/app/var/languages/' . $lang . '.php';
+
                     /**
                      * Messages comes from the above require statement. Not
                      * the best way of doing it but we need this for Transilex
@@ -335,8 +341,20 @@ class Bootstrap
                         $phrases[$key] = (!empty($custom[$key])) ? $custom[$key] : $value;
                     }
                 }
+
+                $changed = true;
             }
-            $session->set('phrases', $phrases);
+
+            if ($changed) {
+                if (function_exists('apc_store')) {
+                    apc_store($lang . '-phrases', $phrases);
+                    apc_store($lang . '-language', $lang);
+                } else {
+                    $session->set('phrases', $phrases);
+                    $session->set('language', $lang);
+                }
+            }
+
         }
 
         // If parameters were passed process them, otherwise return an

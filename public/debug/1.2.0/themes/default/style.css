@@ -126,8 +126,6 @@ li.highlight {
 	margin: 0px;
 	text-shadow: 1px 0px #111111;
 	font-weight: normal;
-	box-shadow: 2px 5px 10px -7px #000;
-	border-left: 5px solid #444444;
 }
 
 .error-scroll
@@ -205,6 +203,7 @@ li.highlight {
 	padding-top: 10px;
 	padding-bottom: 7px;
 	padding-left: 5px;
+	max-width: 1024px;
 }
 
 .error-main .error-file
@@ -232,6 +231,7 @@ li.highlight {
 {
 	text-align: left;
 	margin: 0px;
+	max-width: 1024px;
 }
 
 .version
@@ -272,11 +272,6 @@ li.highlight {
 .superglobal-detail td.key
 {
 	font-weight: bold;
-}
-
-.ui-widget-header
-{
-	background: #414141;
 }
 
 .ui-widget

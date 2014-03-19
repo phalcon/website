@@ -15,8 +15,8 @@
         'pluginsDir'     => ROOT_PATH . '/app/plugins/',
         'libraryDir'     => ROOT_PATH . '/app/library/',
         'voltDir'        => ROOT_PATH . '/app/var/volt/',
-        'baseUri'        => '/',
-        'debug'          => '1',
+        'baseUri'        => '/phalconphp/',
+        'debug'          => '0',
     );
 
     $cache = array(
@@ -25,6 +25,7 @@
     );
 
     $routes = array(
+
         // Index (Redirect)
         '/' => array(
             'params' => array(
@@ -50,6 +51,22 @@
             'name'   => 'pages-redirect',
         ),
 
+        '/contributors' => array(
+            'params' => array(
+                'controller' => 'pages',
+                'action'     => 'contributors',
+            ),
+            'name'   => 'contributors',
+        ),
+
+        '/sitemap' => array(
+            'params' => array(
+                'controller' => 'index',
+                'action'     => 'sitemap',
+            ),
+            'name'   => 'index-sitemap',
+        ),
+
         // Download
         '/download' => array(
             'params' => array(
@@ -71,6 +88,13 @@
                 'action'     => 'redirectDownloadWindows',
             ),
             'name'   => 'download-windows-redirect',
+        ),
+        '/download/vagrant' => array(
+            'params' => array(
+                'controller' => 'index',
+                'action'     => 'redirectDownloadVagrant',
+            ),
+            'name'   => 'download-vagrant-redirect',
         ),
 
         // Documentation
@@ -138,6 +162,13 @@
             ),
             'name'   => 'download-windows',
         ),
+        '/{language:[a-z]{2}}/download/vagrant' => array(
+            'params' => array(
+                'controller' => 'download',
+                'action'     => 'vagrant',
+            ),
+            'name'   => 'download-vagrant',
+        ),
 
         // Documentation
         '/{language:[a-z]{2}}/(documentation|reference)' => array(
@@ -158,24 +189,61 @@
         ),
     );
 
+    /**
+     * These languages appear at the top select box
+     * allowing the user to easily change the language of the site
+     */
     $languages = array(
+        'bg' => 'български',
+        'cz' => 'Český',
         'el' => 'Ελληνικά',
         'en' => 'English',
         'es' => 'Español',
-        'fa' => 'الفارسية',
+        'fa' => 'فارسی',
         'fr' => 'Français',
+        'hu' => 'Magyar',
+        'ja' => '日本語',
+        'it' => 'Italiano',
+        'ko' => '한국어',
+        'lt' => 'Lietuvos',
+        'mk' => 'македонски',
         'nl' => 'Nederlands',
         'pl' => 'Polski',
-        'pl' => 'Português',
+        'pt' => 'Português',
+        'ro' => 'Română',
         'ru' => 'Pусский',
+        'sr' => 'српски',
+        'sv' => 'Svenska',
+        'th' => 'ภาษาไทย',
+        'tr' => 'Türkçe',
         'vi' => 'Việt',
         'zh' => '简体中文',
     );
 
-    return array(
-        'application' => $application,
-        'database'    => $database,
-        'cache'       => $cache,
-        'routes'      => $routes,
-        'languages'   => $languages,
+    /**
+     * These are all the pages of the site. This is used to generate the
+     * sitemap.xml
+     */
+    $pages = array(
+        '',
+        'download',
+        'support',
+        'donate',
+        'consulting',
+        'hosting',
+        'team',
+        'about',
+        'roadmap',
+        'windows',
+        'tools',
+        'stubs',
     );
+
+return array(
+    'application' => $application,
+    'database'    => $database,
+    'cache'       => $cache,
+    'routes'      => $routes,
+    'languages'   => $languages,
+    'pages'       => $pages,
+);

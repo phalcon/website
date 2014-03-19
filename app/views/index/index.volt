@@ -10,7 +10,7 @@
                 <img src="{{ cdn_url }}assets/chart.png" alt="" />
             </div>
 
-            <a href="/download"><span class="button-large">{{ tr('download') }}</span></a>
+            <a href="{{ url(['for': 'download', 'language': language]) }}"><span class="button-large">{{ tr('download') }}</span></a>
 
         </div>
 
@@ -101,6 +101,7 @@
 
 </div>
 
+{{ partial('partials/contributors') }}
 
 <div class="green-block">
     <div class="size-wrap useful-links-wrap clear-fix">
@@ -126,22 +127,6 @@
             </div>
         </div>
 
-        <div class="services-block">
-            <div class="services-block-title">{{ tr('services') }}</div>
-
-            {{ link_to(['for': 'pages', 'pageSlug': 'consulting', 'language': language], tr('consulting_upper'), 'class' : 'services-block-link') }}
-            <br />
-            {{ tr('requirements_analysis') }}
-            <br />
-            {{ tr('implementation') }}
-            <br />
-            {{ tr('ongoing_support') }}
-            <br />
-            <p>{{ link_to(['for': 'pages', 'pageSlug': 'support', 'language': language], tr('read_more'), 'class' : 'button button-small orange') }}</p>
-            {{ link_to(['for': 'pages', 'pageSlug': 'hosting', 'language': language], tr('hosting_upper'), 'class' : 'services-block-link') }}
-
-        </div>
-
     </div>
 </div>
 
@@ -156,6 +141,8 @@
         <img src="{{ cdn_url }}images/hosting/rackspace-gray.png" alt="Rackspace" />
         <img src="{{ cdn_url }}images/hosting/digital-ocean-gray.png" alt="Digital Ocean" />
         <img src="{{ cdn_url }}images/hosting/webfaction-gray.png" alt="WebFaction" />
+        <img src="{{ cdn_url }}images/hosting/azure-gray.jpg" alt="Windows Azure" />
     </a></p>
 
 </div>
+
