@@ -14,7 +14,7 @@
         'store'                           => 'Magasin',
         'github'                          => 'GitHub',
         'phalcon_description'             => "<strong>Phalcon</strong> est un framework web fourni en tant qu'extension écrite en C. Ce qui permet des <a href=':1:'>performances optimales</a> et une consomation de ressources amoindrie",
-        'the_fastest_php_framework'       => 'Les plus rapide<br />des Frameworks PHP',
+        'the_fastest_php_framework'       => 'Le plus rapide<br />des Frameworks PHP',
         'try_online'                      => 'L\'essayer en ligne',
         'see_screencasts'                 => 'Voir les Screencasts',
         'everything_you_need_upper'       => 'TOUT CE DONT VOUS AVEZ BESOIN',
