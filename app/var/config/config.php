@@ -43,7 +43,7 @@
         ),
 
         // Pages
-        '/{pageSlug:(models|about|team|roadmap|consulting|hosting|examples|support|api|ui|powered)}' => array(
+        '/{pageSlug:(models|about|team|roadmap|hosting|examples|support|api|ui|powered)}' => array(
             'params' => array(
                 'controller' => 'index',
                 'action'     => 'redirectPages',
@@ -53,7 +53,7 @@
 
         '/contributors' => array(
             'params' => array(
-                'controller' => 'pages',
+                'controller' => 'utils',
                 'action'     => 'contributors',
             ),
             'name'   => 'contributors',
@@ -61,7 +61,7 @@
 
         '/sitemap' => array(
             'params' => array(
-                'controller' => 'index',
+                'controller' => 'utils',
                 'action'     => 'sitemap',
             ),
             'name'   => 'index-sitemap',
@@ -187,6 +187,15 @@
             ),
             'name'   => 'donate',
         ),
+
+        //Humans
+        '/humans.txt' => array(
+            'params' => array(
+                'controller' => 'utils',
+                'action'     => 'humans',
+            ),
+            'name'   => 'humans',
+        )
     );
 
     /**
@@ -229,7 +238,6 @@
         'download',
         'support',
         'donate',
-        'consulting',
         'hosting',
         'team',
         'about',
