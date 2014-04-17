@@ -228,8 +228,8 @@
         'testimonials_3'                  => "Phalcon团队，你们创建的这个框架是令人惊奇的。我从来没有用过一个框架，同时拥有速度，效率，简洁，自然性。我会尽我可能以任何方式来宣传和促进这个项目。最近，我正在开发一个~800小时的项目，很高兴地告诉你们，我们使用的是Phalcon。Bravo. Brian Seymour",
         'testimonials_4'                  => "嗨，大家好，我只是偶然发现Phalcon，它真是太棒了！我只是想对你说，你确实很棒！所以，感谢这个框架和你们的努力工作！Ivan Penchev",
         'testimonials_5'                  => "Hi Guys, i wrote simple url-shortener service with phalcon. That was amazing! really. <a href=':1:'>:2:</a>. Demo is here <a href=':3:'>:4:</a> :) Murat Küçükosman ",
-        'testimonials_6'                  => "Hello Phalcon Team, I created a small project designed for Polish users using your framework. I have to admit that the performance is amazing, congratulations good job. Service to validate the content of the web pages in Polish language <a href=':1:'></a>:2:</a>",
-        'testimonials_7'                  => "Hi guys! Just wanted to share with you the latest release of our old project - <a href=':1:'>:2:</a>. Switching to phalcon allowed us to halve the server load compared to the previous framework, which is great!",
+        'testimonials_6'                  => "Phalcon 团队，你好，我使用你们的框架为波兰的用户开发了一个小项目。我不得不承认性能真的很赞，恭喜干的这么出色。这个小项目的服务是验证网页内容是否属于波兰语言 <a href=':1:'></a>:2:</a>",
+        'testimonials_7'                  => "嗨，伙计们！只是想与你们分享我们老项目的最新版本 - <a href=':1:'>:2:</a>。当使用 Phalcon 之后服务器负载相当使用以前框架时的一半，这真是太棒了！",
 
         'support_note'                    => "因为未使用最新的版本而导致用户误报了很多bug，所以建议您访问这里:1:，下载最新的版本(或自己编译)，再确定您发现的bug是否真的存在。",
         'support_download_page'           => "下载",
