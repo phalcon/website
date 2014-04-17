@@ -104,7 +104,7 @@
         'download_debian_1'               => "<a href=':1:'>FortRabbit</a> 様が快く提供していただいた リポジトリは <a href=':2:'>こちら</a>",
         'download_debian_2'               => 'パッケージ名は php5-phalcon です',
         'download_arch'                   => 'Arch Linux',
-        'download_arch_1'                 => "Linux アーキテクチャのためのパッケージビルドは <a href=':1:'>ここ</a> にあります",
+        'download_arch_1'                 => "Arch Linux のための PKGBUILD は <a href=':1:'>ここ</a> にあります",
         'download_opensuse'               => 'OpenSUSE',
         'download_opensuse_1'             => "利用可能なパッケージ <a href=':1:'>ここ</a> にあります (thanks to <a href=':2:'>Mariusz Łączak</a>)",
         'download_freebsd'                => 'FreeBSD',
@@ -156,7 +156,8 @@
         'ongoing_support_2'               => 'サポート時間に有効期限はありませんし、必要なときにいつでも使用することができます。継続的な支援スキームを使用したいお客様のために、私たちはより良いニーズに合う柔軟なプランを提供します。',
         'sponsors'                        => 'スポンサー',
         'sponsors_1'                      => '我々の仕事やPhalconのさらなる発展を後援したい人のために、我々は、任意の予算に収まるように、様々なスポンサーシップオプションを提供しています。',
-        'sponsors_2'                      => 'Additionally, customers might want certain features implemented that would normally take a lot longer to do so due to their popularity or complexity. We can certainly accommodate such requests at our normal rates.',
+        'sponsors_2'                      => '加えて、カスタマーは複雑さ、または流行のために、通常は多くの時間がかかるものが実装されることを要求するかもしれません。
+私達はそのような要求に通常価格で確実に対応することが出来ます。',
         'contact'                         => 'コンタクト',
         'contact_1'                       => "Feel free to <a href=':1:'>contact us</a> to discuss your requirements and allow us to offer a solution that would best fit your needs and your budget. No project is too big or too small.",
 
