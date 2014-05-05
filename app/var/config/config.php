@@ -205,6 +205,7 @@
     $languages = array(
         'bg' => 'български',
         'cz' => 'Český',
+        'de' => 'Deutsch',
         'el' => 'Ελληνικά',
         'en' => 'English',
         'es' => 'Español',
