@@ -2,7 +2,6 @@
 
 class UtilsController extends \ControllerBase
 {
-
 	public function sitemapAction()
 	{
 		$this->view->setRenderLevel(PhView::LEVEL_ACTION_VIEW);
@@ -74,7 +73,14 @@ EOF;
                 if (is_array($contributors)) {
                     foreach ($contributors as $contributor) {
                         $login = $contributor['login'];
-                        
+
+                        /**
+                         * @phalcon is master account not contributor I thin :)
+                         */
+                        if ($login == 'phalcon') {
+                            continue;
+                        }
+
                         if (!isset($c[$login])) {
                             $c[$login] = 0;
                             $p[$login] = $contributor['avatar_url'];
