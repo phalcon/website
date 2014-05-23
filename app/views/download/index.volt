@@ -32,7 +32,7 @@
 
     <div class="highlight1">
 <pre><code class="bash">#Ubuntu
-sudo apt-get install php5-dev php5-mysql gcc
+sudo apt-get install php5-dev php5-mysql gcc libpcre3-dev
 
 #Fedora
 sudo yum install php-devel php-mysqlnd gcc libtool
