@@ -93,6 +93,16 @@
                 <p>{{ tr('hosting_install_instructions') }}</p>
             </td>
         </tr>
+        <tr>
+            <td align="center">
+                <img src='{{ cdn_url ~ 'images/hosting/aspnix-gray.png' }}' title='ASPnix' alt='ASPnix' />
+            </td>
+            <td>
+                <h4><a target="_blank" href='https://aspnix.com/'>ASPnix</a></h4>
+                <p>{{ tr('hosting_aspnix_1', 'https://aspnix.com/') }}</p>
+                <p>{{ tr('hosting_aspnix_2') }}</p>
+            </td>
+        </tr>
     </table>
 
 </div>
