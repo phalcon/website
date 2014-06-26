@@ -15,6 +15,7 @@ class ControllerBase extends Controller
 		} else {
 			$cdnUrl = $this->config->application->baseUri;
 		}
+		$baseUrl = $this->config->application->baseUri;
 
 		/**
 		 * Docs path and CDN url
@@ -30,16 +31,17 @@ class ControllerBase extends Controller
 		$languagesAvailable  = '';
 		$selected            = '';
 		$url                 = $this->request->getScheme() . '://'
-							 . $this->request->getHttpHost();
+							 . $this->request->getHttpHost()
+							 . $this->config->application->baseUri;
 		$uri                 = $this->router->getRewriteUri();
-
 		foreach ($languages as $key => $value) {
 			$selected = ($key == $lang) ? " selected='selected'" : '';
-			$href     = $url .  str_replace("/{$lang}", "/{$key}", $uri);
+			$href     = $url .  str_replace("/{$lang}", "{$key}", $uri);
 			$languagesAvailable .= "<option value='{$href}'{$selected}>{$value}</option>";
 		}
 
 		$this->view->setVar('language', $lang);
+		$this->view->setVar('baseurl', $baseUrl);
 		$this->view->setVar('languages_available', $languagesAvailable);
 		$this->view->setVar('docs_root', 'http://docs.phalconphp.com/'.$lang.'/latest/');
 		$this->view->setVar('cdn_url', $cdnUrl);
