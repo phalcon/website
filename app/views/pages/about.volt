@@ -18,7 +18,7 @@
     <div class="columns-2">
         <div class="column">
             <div class="h3 upper">{{ tr('documentation_upper') }}</div>
-            <p>{{ tr('about_documentation_1') }}</p>
+            <p>{{ tr('about_documentation_1', 'https://github.com/phalcon/docs', 'https://readthedocs.org') }}</p>
         </div>
 
         <div class="column">
