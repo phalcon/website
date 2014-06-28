@@ -177,10 +177,10 @@
 
         'get_involved'                    => '加入我们',
         'about_description_1'             => "神奇的项目需要一个神奇的您。我们可能还不知道您，但我们认为您是一个非常适合创建更好Web应用的人。总之，我们已经准备好改变世界！在Phalcon里，我们正在构建一个新一代的PHP框架，我们想给您一个令人惊异的具有高性能的，使您开发更愉悦，更易使用的开发框架。",
-        'about_description_2'             => '我们希望您能像我们一样享受Phalcon。我们打开怀抱，期待与您合作像以下这样的项目：',
+        'about_description_2'             => "We hope that you enjoy Phalcon as much as we do. We always welcome your collaboration and help! <strong>You don't have to be a C developer to help Phalcon!</strong> There are many other areas that you can contribute:",
         'about_translations_1'            => "我们尽可能打破语言障碍，让更多的开发人员接触到我们。 我们正在使用<a href=':1:'>:2:</a>来管理所有需要翻译的单词。 项目源在<a href=':3:'>这里</a>，并且您可以通过下图查看我们当前的翻译进度。",
         'documentation_upper'             => '文档',
-        'about_documentation_1'           => '本网站的仓库是在github上。您可以自由的校订，修正错别字，添加新例子，添加新教程等，如果您可以的一些内容翻译成另一种语言，我们将非常感激！',
+        'about_documentation_1'           => "The repository of this website is available on <a href=':1:'>github</a>. We are using <a href=':2:'>readthedocs</a> to manage our documentation.<br /><br />We always appreciate corrections, additions and enhancements in our documentation, so all you have to do is clone the repository and issue a pull request!<br /><br />If you can help non English speaking developers by translating some of the content to another language, that would be great!",
         'screencasts'                     => '示例',
         'about_screencasts_1'             => "我们欢迎任何示例程序，如果您有一些额外的时间并且想要支持社区，您可以制作包含框架任何功能的视频教学，我们将会非常欢迎的。 请查看我们的<a href=':1:'> Vimeo频道</ A>指南。",
         'tests'                           => '测试',

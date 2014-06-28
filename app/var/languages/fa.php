@@ -178,10 +178,10 @@
 
         'get_involved'                    => 'مشترک شدن',
         'about_description_1'             => "Amazing projects need amazing hands. We might not know you just yet, but we think you'd be a great fit for building a better web. Together, we're ready to change the world! Here at Phalcon, we’re building a new generation framework for PHP; we want to give you an amazing performance while helping you develop in an easy and fun way.",
-        'about_description_2'             => 'We hope that you enjoy Phalcon as much as we do. Our arms are always open to receive your collaboration on the many things a project like this requires:',
+        'about_description_2'             => "We hope that you enjoy Phalcon as much as we do. We always welcome your collaboration and help! <strong>You don't have to be a C developer to help Phalcon!</strong> There are many other areas that you can contribute:",
         'about_translations_1'            => "We are trying to reach as many developers as possible, breaking down the language barriers. We are using <a href=':1:'>:2:</a>, to handle all the words or sentences that need to be translated for this site. The project repository is located <a href=':3:'>here</a> and below you can see the current status of our translation effort.",
         'documentation_upper'             => 'مستندات',
-        'about_documentation_1'           => 'The repository of this website is available on github. Feel free to improve the redaction, fix typos, add examples, add articles, etc. Also, if you can translate some of the content to another language, it will be very much appreciated!',
+        'about_documentation_1'           => "The repository of this website is available on <a href=':1:'>github</a>. We are using <a href=':2:'>readthedocs</a> to manage our documentation.<br /><br />We always appreciate corrections, additions and enhancements in our documentation, so all you have to do is clone the repository and issue a pull request!<br /><br />If you can help non English speaking developers by translating some of the content to another language, that would be great!",
         'screencasts'                     => 'Screencasts',
         'about_screencasts_1'             => "We all love screencasts. If you have some extra time and want to support the community with some nice videos teaching any of the framework's features, it's very welcome. Check out our <a href=':1:'>Vimeo Channel</a> as a guide.",
         'tests'                           => 'تست ها',
