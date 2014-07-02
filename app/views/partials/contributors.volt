@@ -1,7 +1,6 @@
 <?php
- 
-    $contributors = require(ROOT_PATH .  '/app/var/data/contributors.php');
     $n = 1;
+    $contributors = require ROOT_PATH .  '/app/var/data/contributors.php';
 ?>
 <div class="contributors">
     <em>{{ tr('amazing_contributors') }}</em>

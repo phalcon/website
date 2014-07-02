@@ -12,10 +12,10 @@
     <table align="center" width="75%" cellpadding="15">
         <tr>
             <td align="center">
-                <img src='{{ cdn_url ~ 'images/hosting/fortrabbit-gray.png' }}' title='Fortrabbit' alt='Fortrabbit' />
+                <img src='{{ cdn_url ~ 'images/hosting/fortrabbit-gray.png' }}' title='{{ tr('hosting_fortrabbit_title') }}' alt='{{ tr('hosting_fortrabbit_title') }}' />
             </td>
             <td>
-                <h4><a target="_blank" href='http://fortrabbit.com/'>Fortrabbit</a></h4>
+                <h4><a target="_blank" href='http://fortrabbit.com/'>{{ tr('hosting_fortrabbit_title') }}</a></h4>
                 <p>{{ tr('hosting_fortrabbit_1') }}</p>
                 <p>{{ tr('hosting_fortrabbit_2', 'http://fortrabbit.com/docs/how-to/php/available-php-extensions') }}</p>
                 <p>{{ tr('hosting_fortrabbit_3') }}</p>
@@ -23,40 +23,41 @@
         </tr>
          <tr>
             <td align="center">
-                <img src='{{ cdn_url ~ 'images/hosting/digital-ocean-gray.png' }}' title='Digital Ocean' alt='Digital Ocean' />
+                <img src='{{ cdn_url ~ 'images/hosting/digital-ocean-gray.png' }}' title='{{ tr('hosting_digital_ocean_title') }}' alt='{{ tr('hosting_digital_ocean_title') }}' />
             </td>
             <td>
-                <h4><a target="_blank" href='https://www.digitalocean.com/'>Digital Ocean</a></h4>
+                <h4><a target="_blank" href='https://www.digitalocean.com/'>{{ tr('hosting_digital_ocean_title') }}</a></h4>
                 <p>{{ tr('hosting_digital_ocean_1', 'https://www.digitalocean.com/') }}</p>
                 <p>{{ tr('hosting_install_instructions') }}</p>
+                <p>{{ tr('hosting_digital_ocean_2', 'https://www.digitalocean.com/community/articles/how-to-install-and-get-started-with-phalcon-on-an-ubuntu-12-04-vps') }}</p>
             </td>
         </tr>
         <tr>
             <td align="center">
-                <!--<img src='' title='Layer Shift' alt='Layer Shift' />-->
+                <img src='{{ cdn_url ~ 'images/hosting/layershift-gray.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' />
             </td>
             <td>
-                <h4><a target="_blank" href='http://www.layershift.com'>Layer Shift</a></h4>
-                <p>You bring the code, we'll sort the servers. Next generation, auto-sizing PaaS for PHP</p>
-                <p>Follow this <a href="http://kb.layershift.com/jelastic-install-phalcon-php-framework">tutorial</a> to get started</p>
+                <h4><a target="_blank" href='http://www.layershift.com'>{{ tr('hosting_layershift_title') }}</a></h4>
+                <p>{{ tr('hosting_layershift_1') }}</p>
+                <p>{{ tr('hosting_layershift_2', 'http://kb.layershift.com/jelastic-install-phalcon-php-framework') }}</p>
             </td>
         </tr>
         <tr>
             <td align="center">
-                <img src='{{ cdn_url ~ 'images/hosting/azure-gray.jpg' }}' title='Windows Azure' alt='Windows Azure' />
+                <img src='{{ cdn_url ~ 'images/hosting/azure-gray.jpg' }}' title='{{ tr('hosting_azure_title') }}' alt='{{ tr('hosting_azure_title') }}' />
             </td>
             <td>
-                <h4><a target="_blank" href='http://www.windowsazure.com'>Windows Azure</a></h4>
+                <h4><a target="_blank" href='http://www.windowsazure.com'>{{ tr('hosting_azure_title') }}</a></h4>
                 <p>{{ tr('hosting_azure_1', 'http://www.windowsazure.com') }}</p>
                 <p>{{ tr('hosting_azure_2', 'http://www.sitepoint.com/phalcon-windows-azure/') }}</p>
             </td>
         </tr>
         <tr>
             <td align="center">
-                <img src='{{ cdn_url ~ 'images/hosting/amazon-gray.png' }}' title='Amazon EC2' alt='Amazon EC2' />
+                <img src='{{ cdn_url ~ 'images/hosting/amazon-gray.png' }}' title='{{ tr('hosting_amazon_ec2_title') }}' alt='{{ tr('hosting_amazon_ec2_title') }}' />
             </td>
             <td>
-                <h4><a target="_blank" href='http://aws.amazon.com/'>Amazon EC2</a></h4>
+                <h4><a target="_blank" href='http://aws.amazon.com/'>{{ tr('hosting_amazon_ec2_title') }}</a></h4>
                 <p>{{ tr('hosting_amazon_ec2_1') }}</p>
                 <p>{{ tr('hosting_amazon_ec2_2', 'http://aws.amazon.com/ec2/') }}</p>
                 <p>{{ tr('hosting_install_instructions') }}</p>
@@ -64,33 +65,42 @@
         </tr>
         <tr>
             <td align="center">
-                <img src='{{ cdn_url ~ 'images/hosting/linode-gray.png' }}' title='Linode' alt='Linode' />
+                <img src='{{ cdn_url ~ 'images/hosting/linode-gray.png' }}' title='{{ tr('hosting_linode_title') }}' alt='{{ tr('hosting_linode_title') }}' />
             </td>
             <td>
-                <h4><a target="_blank" href='https://www.linode.com/'>Linode</a></h4>
+                <h4><a target="_blank" href='https://www.linode.com/'>{{ tr('hosting_linode_title') }}</a></h4>
                 <p>{{ tr('hosting_linode_1', 'https://www.linode.com/') }}</p>
                 <p>{{ tr('hosting_install_instructions') }}</p>
-                <p>Follow this <a href="https://www.digitalocean.com/community/articles/how-to-install-and-get-started-with-phalcon-on-an-ubuntu-12-04-vps">tutorial</a> to get started</p>
             </td>
         </tr>
         <tr>
             <td align="center">
-                <img src='{{ cdn_url ~ 'images/hosting/webfaction-gray.png' }}' title='WebFaction' alt='WebFaction' />
+                <img src='{{ cdn_url ~ 'images/hosting/webfaction-gray.png' }}' title='{{ tr('hosting_webfaction_title') }}' alt='{{ tr('hosting_webfaction_title') }}' />
             </td>
             <td>
-                <h4><a target="_blank" href='http://webfaction.com/'>WebFaction</a></h4>
+                <h4><a target="_blank" href='http://webfaction.com/'>{{ tr('hosting_webfaction_title') }}</a></h4>
                 <p>{{ tr('hosting_webfaction_1') }}</p>
                 <p>{{ tr('hosting_webfaction_2', 'http://community.webfaction.com/questions/13689/phalcon-php') }}</p>
             </td>
         </tr>
         <tr>
             <td align="center">
-                <img src='{{ cdn_url ~ 'images/hosting/rackspace-gray.png' }}' title='Rackspace' alt='Rackspace' />
+                <img src='{{ cdn_url ~ 'images/hosting/rackspace-gray.png' }}' title='{{ tr('hosting_rackspace_title') }}' alt='{{ tr('hosting_rackspace_title') }}' />
             </td>
             <td>
-                <h4><a target="_blank" href='http://www.rackspace.com/cloud/servers/'>Rackspace</a></h4>
+                <h4><a target="_blank" href='http://www.rackspace.com/cloud/servers/'>{{ tr('hosting_rackspace_title') }}</a></h4>
                 <p>{{ tr('hosting_rackspace_1', 'http://www.rackspace.com/cloud/servers/') }}</p>
                 <p>{{ tr('hosting_install_instructions') }}</p>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <img src='{{ cdn_url ~ 'images/hosting/aspnix-gray.png' }}' title='{{ tr('hosting_aspnix_title') }}' alt='{{ tr('hosting_aspnix_title') }}' />
+            </td>
+            <td>
+                <h4><a target="_blank" href='https://aspnix.com/'>{{ tr('hosting_aspnix_title') }}</a></h4>
+                <p>{{ tr('hosting_aspnix_1', 'https://aspnix.com/') }}</p>
+                <p>{{ tr('hosting_aspnix_2', 'https://aspnix.com/kb/sales-kb/what-php-extensions-are-supported-on-windows-shared-hosting/') }}</p>
             </td>
         </tr>
     </table>
