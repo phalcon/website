@@ -16,6 +16,29 @@
 
     <div class="note">{{ tr('download_note') }}</div>
 
+
+    <h2>Ubuntu</h2>
+    <p>
+        {{ tr('download_ubuntu') }}
+    </p>
+    <div class="highlight1">
+<pre><code class="bash">sudo apt-add-repository ppa:phalcon/stable
+
+sudo apt-get update
+
+sudo apt-get install php5-phalcon</code></pre>
+    </div>
+
+    <p>
+        {{ tr('download_ubuntu_1') }}
+
+
+    <div class="highlight1">
+<pre><code class="bash">sudo apt-get-install python-software-properties</code></pre>
+    </div>
+
+    </p>
+
     <h2>{{ tr('download_compilation') }}</h2>
     <p>{{ tr('download_compilation_1') }}</p>
 
