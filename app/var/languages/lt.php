@@ -90,6 +90,8 @@
         'download_windows'                => 'Windows DLLs',
         'download_developer_tools'        => 'Kūrėjo Įrankiai',
         'download_ide_stubs'              => 'IDE patarimai',
+        'download_ubuntu'                 => 'To install Phalcon on Ubuntu you need to follow these steps:',
+        'download_ubuntu_1'               => 'If you are missing apt-add-repository run the following command:',
         'download_note'                   => 'Phalcon yra C plėtinys, dėl to jums reikia atsisiųsti dvejetainį failą jūsų platformai arba sukompiliuoti jį iš pirminio kodo.',
         'download_compilation'            => 'Kompiliavimas',
         'download_compilation_1'          => 'Linux operacinėje sistemoje jūs galite lengvai sukompiliuoti ir įdiegti plėtinį iš pirminio kodo.',

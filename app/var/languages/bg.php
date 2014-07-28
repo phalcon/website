@@ -92,6 +92,8 @@ is a web framework implemented as a C extension offering  and lower resource con
         'download_windows'                => 'Уиндовс DLL файлове',
         'download_developer_tools'        => 'Инструменти за разработка',
         'download_ide_stubs'              => 'ИСР (Интеграционна среда за разработване) стъб',
+        'download_ubuntu'                 => 'To install Phalcon on Ubuntu you need to follow these steps:',
+        'download_ubuntu_1'               => 'If you are missing apt-add-repository run the following command:',
         'download_note'                   => 'Phalcon is a C extension, so you need to download a binary for your platform or compile it from source code.',
         'download_compilation'            => 'Компилация',
         'download_compilation_1'          => 'On Linux you can easily compile and install the extension from source code.',

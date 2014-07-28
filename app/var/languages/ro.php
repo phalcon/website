@@ -90,6 +90,8 @@
         'download_windows'                => 'Fișiere DLL pentru Windows',
         'download_developer_tools'        => 'Utilitare pentru dezvoltatori',
         'download_ide_stubs'              => 'IDE stubs',
+        'download_ubuntu'                 => 'To install Phalcon on Ubuntu you need to follow these steps:',
+        'download_ubuntu_1'               => 'If you are missing apt-add-repository run the following command:',
         'download_note'                   => 'Phalcon este o extensie C, deci trebuie să descărcați un fișier binar pentru platforma dumneavoastră sau puteți să îl compilați  de la codul sursă.',
         'download_compilation'            => 'Compilare',
         'download_compilation_1'          => 'Pe sisteme Linux, puteți să compilați și să instalați cu ușurință extensia folosind codul sursă.',
