@@ -90,6 +90,8 @@
         'download_windows'                => 'Windows DLLs',
         'download_developer_tools'        => '开发工具',
         'download_ide_stubs'              => 'IDE stubs',
+        'download_ubuntu'                 => 'To install Phalcon on Ubuntu you need to follow these steps:',
+        'download_ubuntu_1'               => 'If you are missing apt-add-repository run the following command:',
         'download_note'                   => 'Phalcon是一个用C实现的扩展，所以您可以下载适合您机器的二进制格式文件或者使用源代码进行编译。',
         'download_compilation'            => '编译',
         'download_compilation_1'          => 'Linux下，使用源代码编译安装是很方便的。',

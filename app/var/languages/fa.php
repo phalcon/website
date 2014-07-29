@@ -90,6 +90,8 @@
         'download_windows'                => 'DLL های ویندوز',
         'download_developer_tools'        => 'ابزار توسعه',
         'download_ide_stubs'              => 'IDE stubs',
+        'download_ubuntu'                 => 'To install Phalcon on Ubuntu you need to follow these steps:',
+        'download_ubuntu_1'               => 'If you are missing apt-add-repository run the following command:',
         'download_note'                   => 'Phalcon is a C extension, so you need to download a binary for your platform or compile it from source code.',
         'download_compilation'            => 'گردآوری',
         'download_compilation_1'          => ' شما میتوانید به راحتی افزونه را  توسط سورس کد کامپایل و بر روی لینوکس خود نصب کنید.',

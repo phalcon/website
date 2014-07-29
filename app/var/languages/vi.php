@@ -90,6 +90,8 @@
         'download_windows'                => 'Windows DLLs',
         'download_developer_tools'        => 'Công cụ phát triển',
         'download_ide_stubs'              => 'Mẫu IDE',
+        'download_ubuntu'                 => 'To install Phalcon on Ubuntu you need to follow these steps:',
+        'download_ubuntu_1'               => 'If you are missing apt-add-repository run the following command:',
         'download_note'                   => 'Phalcon là thành phần mở rộng của C, vì vậy bạn cần tải về file nhị phân cho các nền tảng hoặc bạn có thể biên dịch từ mã nguồn.',
         'download_compilation'            => 'Biên dịch',
         'download_compilation_1'          => 'Cài đặt từ mã nguồn trên  Linux khá là đơn giản',
