@@ -16,9 +16,10 @@
             </td>
             <td>
                 <p>{{ tr('consulting_lezgro_1', 'http://www.lezgro.com') }}</p>
-                <p>{{ tr('consulting_lezgro_2', 'http://www.lezgro.com') }}</p>
-                <p>{{ tr('consulting_lezgro_3') }}</p>
-                <p>{{ tr('consulting_lezgro_4', 'http://lezgro.com/contacts/') }}</p>
+                <p>{{ tr('consulting_lezgro_2') }}</p>
+                <p>{{ tr('consulting_lezgro_3', 'http://www.lezgro.com') }}</p>
+                <p>{{ tr('consulting_lezgro_4') }}</p>
+                <p>{{ tr('consulting_lezgro_5', 'http://lezgro.com/contacts/') }}</p>
             </td>
         </tr>
     </table>
