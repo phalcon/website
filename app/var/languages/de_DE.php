@@ -150,7 +150,13 @@
         'download_examples'               => "Vorinstallierte Beispiele",
         'download_examples_1'             => "Die folgenden Beispiele sind auf allen Vagrant-Containern vorinstalliert:",
 
-        'consulting_header'               => "Wir bieten Unterstützung für Phalcon<br>und/oder PHP-Implementierungen",
+        'consulting_header'               => "We have partnered with <a href=':1:'>LEZGRO</a>, a company that specializes in web and mobile application development and is very adept in delivering Phalcon powered applications to their clientele.",
+        'consulting_lezgro_1'             => "<a href=':1:'>LEZGRO</a> congratulates you with the your choice of making Phalcon central in your technology stack!",
+        'consulting_lezgro_2'             => "Since our company first saw the light of the day in 2003, we have tried various technologies and approaches in software development.",
+        'consulting_lezgro_3'             => "Product managers, CTOs, and non-technical founders involve <a href=':1:'>LEZGRO</a> to build products that stand out, quickly and with a high quality.",
+        'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
+        'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
+        
         'requirements_analysis_1'         => 'Eines der größten Probleme von Entwicklern bei der Realisierung von Projekten sind fehlende adäquat definierte Anforderungen. Es ist häufig der Fall, dass ein Kunde eine andere Zielsetzung als der Entwickler verfolgt, und diese letztendlich liefert.',
         'requirements_analysis_2'         => 'Wir bieten Ihnen eine Dienst zur Analyse Ihres Bedarfes, diskutieren mit den Kunden und Übersetzen deren Vision in genaue Spezifikationen für Entwickler.',
         'implementation_1'                => 'Wenn Sie uns zur Entwicklung Ihrer Anwendung beauftragen möchten, werden wir dies gerne tun. Durch die Nutzung des aktuellsten Standes der Technik, bieten wir robuste Lösungen für Ihre Aufgaben oder Projekte an. Neben der reinen Entwicklung vervollständigen wir diese mit Tests und Dokumentation.',

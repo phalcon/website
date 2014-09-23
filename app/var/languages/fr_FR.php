@@ -150,7 +150,13 @@
         'download_examples'               => "Exemples pré-installés",
         'download_examples_1'             => "Les examples suivants sont pré-installés sur chaque Vagrant box.",
 
-        'consulting_header'               => "Nous offrons un service de consultation pour Phalcon <br /> et/ou pour des implémentations php",
+        'consulting_header'               => "We have partnered with <a href=':1:'>LEZGRO</a>, a company that specializes in web and mobile application development and is very adept in delivering Phalcon powered applications to their clientele.",
+        'consulting_lezgro_1'             => "<a href=':1:'>LEZGRO</a> congratulates you with the your choice of making Phalcon central in your technology stack!",
+        'consulting_lezgro_2'             => "Since our company first saw the light of the day in 2003, we have tried various technologies and approaches in software development.",
+        'consulting_lezgro_3'             => "Product managers, CTOs, and non-technical founders involve <a href=':1:'>LEZGRO</a> to build products that stand out, quickly and with a high quality.",
+        'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
+        'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
+        
         'requirements_analysis_1'         => 'One of the biggest problems that developers face is the fact that a lot of projects do not have adequately defined requirements. Par conséquent, le plus souvent ce que le client veut est totalement différent de ce que le développeur comprend et délivre ensuite.',
         'requirements_analysis_2'         => 'Nous vous proposons d\'étudier vos besoin, des discuter avec les clients et de traduire leur vision en spécifications techniques pour les développeurs.',
         'implementation_1'                => 'Si vous souhaitez nous embaucher pour développer votre application, nous seront honoré de pouvoir travail avec vous. En utilisant les dernières techinologies, nous pouvons construire une solution solide adaptée à vos besoins, testée et documentée.',

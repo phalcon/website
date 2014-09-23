@@ -150,7 +150,13 @@
         'download_examples'               => "Προ-εγκατεστημμένα παραδείγματα",
         'download_examples_1'             => "Τα παρακάτω παραδείγματα εφαρμογών είναι προ-εγατεστημένα σε κάθε κουτί vagrant:",
 
-        'consulting_header'               => "Προσφέρουμε υπηρεσίες συμβουλών για το Phalcon <br /> ή/και για εφαρμογές PHP",
+        'consulting_header'               => "We have partnered with <a href=':1:'>LEZGRO</a>, a company that specializes in web and mobile application development and is very adept in delivering Phalcon powered applications to their clientele.",
+        'consulting_lezgro_1'             => "<a href=':1:'>LEZGRO</a> congratulates you with the your choice of making Phalcon central in your technology stack!",
+        'consulting_lezgro_2'             => "Since our company first saw the light of the day in 2003, we have tried various technologies and approaches in software development.",
+        'consulting_lezgro_3'             => "Product managers, CTOs, and non-technical founders involve <a href=':1:'>LEZGRO</a> to build products that stand out, quickly and with a high quality.",
+        'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
+        'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
+        
         'requirements_analysis_1'         => 'Ένα από τα μεγαλύτερα προβλήματα που αντιμετωπίζουν οι προγραμματιστές, είναι το γεγονός ότι πολλές εφαρμογές δεν έχουν επαρκώς καθορισμένες απαιτήσεις. Ως εκ τούτου, τις περισσότερες φορές, το τι θέλει ο πελάτης είναι εντελώς διαφορετικό από το τι καταλαβαίνει και παραδίδει ο προγραμματιστής.',
         'requirements_analysis_2'         => 'Προσφέρουμε υπηρεσίες ανάλυσης αναγκών, συζητώντας με πελάτες και μεταφράζοντας το όραμά τους σε ακριβέστατους προσδιορισμούς για τους προγραμματιστές.',
         'implementation_1'                => 'Θα χαρούμε να σας βοηθήσουμε, αν θέλετε να μας προσλάβετε για την ανάπτυξη της εφαρμογής σας. Χρησιμοποιώντας τις πιό τελευταίες και σύγχρονες τεχνολογίες, μπορούμε να προσφέρουμε μια υσχηρή λύση για τις εργασίες σας, πλήρης με τέστς και τεκμηρίωση. ',
