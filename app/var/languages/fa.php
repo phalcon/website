@@ -150,7 +150,13 @@
         'download_examples'               => "Pre-Installed examples",
         'download_examples_1'             => "The following examples are pre-installed on each vagrant box:",
 
-        'consulting_header'               => "خدمات مشاوره ای ما برای سرویس های Phalcon و اجرای طرح های PHP",
+        'consulting_header'               => "We have partnered with <a href=':1:'>LEZGRO</a>, a company that specializes in web and mobile application development and is very adept in delivering Phalcon powered applications to their clientele.",
+        'consulting_lezgro_1'             => "<a href=':1:'>LEZGRO</a> congratulates you with the your choice of making Phalcon central in your technology stack!",
+        'consulting_lezgro_2'             => "Since our company first saw the light of the day in 2003, we have tried various technologies and approaches in software development.",
+        'consulting_lezgro_3'             => "Product managers, CTOs, and non-technical founders involve <a href=':1:'>LEZGRO</a> to build products that stand out, quickly and with a high quality.",
+        'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
+        'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
+        
         'requirements_analysis_1'         => 'One of the biggest problems that developers face is the fact that a lot of projects do not have adequately defined requirements. Therefore, more often than not what the client wants is totally different from what the developer understands and subsequently delivers.',
         'requirements_analysis_2'         => 'خدمات مشاوره ای ما برای آنالیز نیازمندی های یک سرویس ، برگذاری جلسات و مشاوره با کاربران برای استخراج ساختار و احتیاجات مورد نظر آنها برای شروع توسعه نرم افزاری.',
         'implementation_1'                => 'اگر شما مایل به همکاری ما برای توسعه نرم افزارتان هستید، خوشحال میشویم که بتوانیم نیاز شما را برطرف کنیم. با استفاده از آخرین تکنولوژی ها، ما میتوانیم قوی ترین راه کار را برای پروژه ی شما در اختیارتان بگذاریم، تمام این مراحل توسط مستندات و تست های مختلف به شما تحویل داده خواهد شد.',

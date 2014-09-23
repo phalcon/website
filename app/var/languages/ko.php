@@ -150,7 +150,13 @@
         'download_examples'               => "미리 설치된 예제들",
         'download_examples_1'             => "각 vagrant 박스에 미리 설치된 예제를 따라해보세요",
 
-        'consulting_header'               => "우리는 Phalcon 또는 PHP 구현을 위한 <br/> 컨설팅 서비스를 제공하고 있습니다",
+        'consulting_header'               => "We have partnered with <a href=':1:'>LEZGRO</a>, a company that specializes in web and mobile application development and is very adept in delivering Phalcon powered applications to their clientele.",
+        'consulting_lezgro_1'             => "<a href=':1:'>LEZGRO</a> congratulates you with the your choice of making Phalcon central in your technology stack!",
+        'consulting_lezgro_2'             => "Since our company first saw the light of the day in 2003, we have tried various technologies and approaches in software development.",
+        'consulting_lezgro_3'             => "Product managers, CTOs, and non-technical founders involve <a href=':1:'>LEZGRO</a> to build products that stand out, quickly and with a high quality.",
+        'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
+        'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
+        
         'requirements_analysis_1'         => '개발자가 직면하고있는 많은 프로젝트가 제대로 정의된 요구 사항이 없다는 사실이 가장 큰 문제 중 하나입니다. 따라서 각각의 클라이언트가 원하는 것은 개발자가 이해하고 있는 것과는 완전히 다른 것을 제공 할 수 있습니다.',
         'requirements_analysis_2'         => '우리는 고객과 협의하여 개발자를위한 정확한 사양에 자신의 비전을 번역하고, 요구 사항 분석 서비스를 제공 할 수 있습니다.',
         'implementation_1'                => '응용 프로그램을 개발하기 위해 우리를 고용하려는 경우, 우리는 이렇게하여 드리겠습니다. 최신 기술을 사용하여 우리는 완전한 테스트와 문서를 당신의 작업이나 프로젝트를 위해 강력한 솔루션을 제공 할 수 있습니다.',

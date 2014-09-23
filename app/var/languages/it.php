@@ -150,7 +150,13 @@
         'download_examples'               => "Esempi pre-installati",
         'download_examples_1'             => "I seguenti esempi sono preinstallati su ciascuna Vagrant box:",
 
-        'consulting_header'               => "Offriamo servizi di consulenza per Phalcon <br /> e/o implementazioni in PHP",
+        'consulting_header'               => "We have partnered with <a href=':1:'>LEZGRO</a>, a company that specializes in web and mobile application development and is very adept in delivering Phalcon powered applications to their clientele.",
+        'consulting_lezgro_1'             => "<a href=':1:'>LEZGRO</a> congratulates you with the your choice of making Phalcon central in your technology stack!",
+        'consulting_lezgro_2'             => "Since our company first saw the light of the day in 2003, we have tried various technologies and approaches in software development.",
+        'consulting_lezgro_3'             => "Product managers, CTOs, and non-technical founders involve <a href=':1:'>LEZGRO</a> to build products that stand out, quickly and with a high quality.",
+        'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
+        'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
+        
         'requirements_analysis_1'         => 'Uno dei problemi più grandi che gli sviluppatori si trovano ad affrontare è il fatto che molti progetti non hanno dei requsiti adeguatamente definiti. Per questo motivo, molto spesso il desiderio del cliente è totalmente differente da ciò che lo sviluppatore riesce a capire e conseguenzialmente consegnare.',
         'requirements_analysis_2'         => 'Offriamo il servizio di analisi dei requisiti, discutendo con i clienti e trascrivendo le loro idee in precise specifiche per gli sviluppatori.',
         'implementation_1'                => 'Se sei interessato ad ingaggiarci per sviluppare la tua applicazione, saremo più che felici di farlo. Usando le ultime tecnologie possiamo offrire una soluzione robusta per le esigenze del tuo progetto, corredata di test e documentazione.',

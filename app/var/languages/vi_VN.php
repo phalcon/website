@@ -150,7 +150,13 @@
         'download_examples'               => "Ví dụ cài đặt sẵn",
         'download_examples_1'             => "Các ví dụ sau đây được cài đặt sẵn trên mỗi hộp vagrant:",
 
-        'consulting_header'               => "Chúng tôi đang cung cấp dịch vụ tư vấn cho Phalcon <br /> và / hoặc triển khai PHP",
+        'consulting_header'               => "We have partnered with <a href=':1:'>LEZGRO</a>, a company that specializes in web and mobile application development and is very adept in delivering Phalcon powered applications to their clientele.",
+        'consulting_lezgro_1'             => "<a href=':1:'>LEZGRO</a> congratulates you with the your choice of making Phalcon central in your technology stack!",
+        'consulting_lezgro_2'             => "Since our company first saw the light of the day in 2003, we have tried various technologies and approaches in software development.",
+        'consulting_lezgro_3'             => "Product managers, CTOs, and non-technical founders involve <a href=':1:'>LEZGRO</a> to build products that stand out, quickly and with a high quality.",
+        'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
+        'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
+        
         'requirements_analysis_1'         => 'Một trong những vấn đề lớn nhất mà các nhà phát triển phải đối mặt với một thực tế là nhiều dự án không có yêu cầu xác định chính xác. Vì vậy, thường xuyên hơn không phải những gì khách hàng muốn là hoàn toàn khác với những gì các nhà phát triển hiểu và sau đó cung cấp.',
         'requirements_analysis_2'         => 'Chúng tôi có thể cung cấp dịch vụ yêu cầu phân tích, thảo luận với khách hàng và dịch tầm nhìn của họ để đưa ra chính xác các thông số kỹ thuật cho các nhà phát triển.',
         'implementation_1'                => 'Nếu bạn muốn thuê chúng tôi phát triển ứng dụng của bạn, chúng tôi sẽ được hạnh phúc hơn để làm như vậy hơn. Sử dụng các công nghệ mới nhất, chúng tôi có thể cung cấp một giải pháp mạnh mẽ cho công việc hoặc dự án của bạn, hoàn thành với các bài kiểm tra và tài liệu.',

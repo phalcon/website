@@ -150,7 +150,13 @@
         'download_examples'               => "Предустановленные примеры",
         'download_examples_1'             => "Следующие примеры установлены в наших vagrant боксах:",
 
-        'consulting_header'               => "Мы предлагаем консалтинговые услуги по Phalcon <br />и/или PHP разработке",
+        'consulting_header'               => "We have partnered with <a href=':1:'>LEZGRO</a>, a company that specializes in web and mobile application development and is very adept in delivering Phalcon powered applications to their clientele.",
+        'consulting_lezgro_1'             => "<a href=':1:'>LEZGRO</a> congratulates you with the your choice of making Phalcon central in your technology stack!",
+        'consulting_lezgro_2'             => "Since our company first saw the light of the day in 2003, we have tried various technologies and approaches in software development.",
+        'consulting_lezgro_3'             => "Product managers, CTOs, and non-technical founders involve <a href=':1:'>LEZGRO</a> to build products that stand out, quickly and with a high quality.",
+        'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
+        'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
+        
         'requirements_analysis_1'         => 'Одна из самых больших проблем, с которыми сталкиваются разработчики, является тот факт, что многие проекты не имеют чётко сформулированного технического задания. Поэтому, чаще всего, то, чего хочет клиент, полностью отличается от того, что понимает разработчик и, соответственно, реализует.',
         'requirements_analysis_2'         => 'Мы можем предложить услуги по анализу требований клиентов, обсуждению деталей с клиентами и реализации этих требований в виде конкретного технического задания для разработчиков.',
         'implementation_1'                => 'Если вы хотите нанять нас для разработки приложения, мы были бы более чем счастливы сделать это. Используя новейшие технологии, мы можем предложить надежное решение для вашей задачи или проекта с полным пакетом тестов и документации.',
