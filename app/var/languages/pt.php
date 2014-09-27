@@ -150,7 +150,13 @@
         'download_examples'               => "Exemplos pré-instalados",
         'download_examples_1'             => "Os seguintes exemplos estão pré-instalados em cada box do vagrant:",
 
-        'consulting_header'               => "Oferecemos serviços de consultoria para implementações com Phalcon <br /> e/ou PHP",
+        'consulting_header'               => "We have partnered with <a href=':1:'>LEZGRO</a>, a company that specializes in web and mobile application development and is very adept in delivering Phalcon powered applications to their clientele.",
+        'consulting_lezgro_1'             => "<a href=':1:'>LEZGRO</a> congratulates you with the your choice of making Phalcon central in your technology stack!",
+        'consulting_lezgro_2'             => "Since our company first saw the light of the day in 2003, we have tried various technologies and approaches in software development.",
+        'consulting_lezgro_3'             => "Product managers, CTOs, and non-technical founders involve <a href=':1:'>LEZGRO</a> to build products that stand out, quickly and with a high quality.",
+        'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
+        'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
+        
         'requirements_analysis_1'         => 'Um dos maiores problemas que os desenvolvedores enfrentam é o fato de que muitos projetos não têm requisitos adequadamente definidos. Portanto, na maioria das vezes o que o cliente quer é totalmente diferente do que o desenvolvedor entende e posteriormente entrega.',
         'requirements_analysis_2'         => 'Nós podemos oferecer serviços de análise de requisitos, dialogar com os clientes e traduzir sua visão para especificações exatas para os desenvolvedores.',
         'implementation_1'                => 'Se você deseja contratar-nos para desenvolver sua aplicação, ficaremos mais do que contentes em fazê-lo. Utilizando as mais recentes tecnologias, podemos oferecer uma solução robusta para sua tarefa ou projeto, completa com testes e documentação.',

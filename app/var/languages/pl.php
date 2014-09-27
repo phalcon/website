@@ -150,7 +150,13 @@
         'download_examples'               => "Preinstalowane przykłady",
         'download_examples_1'             => "Poniższe przykłady są preinstalowane na każdym zestawie Vagrant:",
 
-        'consulting_header'               => "Oferujemy konsultacje dla wdrożeń Phalcona <br />i/lub realizacji PHP",
+        'consulting_header'               => "We have partnered with <a href=':1:'>LEZGRO</a>, a company that specializes in web and mobile application development and is very adept in delivering Phalcon powered applications to their clientele.",
+        'consulting_lezgro_1'             => "<a href=':1:'>LEZGRO</a> congratulates you with the your choice of making Phalcon central in your technology stack!",
+        'consulting_lezgro_2'             => "Since our company first saw the light of the day in 2003, we have tried various technologies and approaches in software development.",
+        'consulting_lezgro_3'             => "Product managers, CTOs, and non-technical founders involve <a href=':1:'>LEZGRO</a> to build products that stand out, quickly and with a high quality.",
+        'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
+        'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
+        
         'requirements_analysis_1'         => 'Jednym z największych problemów, z którym muszą mierzyć się developerzy jest fakt, że wiele projektów nie ma odpowiednio zdefiniowanych wymagań. Dlatego też, często to co klient chce,  jest zupełnie inne od tego,  co deweloper rozumie, a następnie wykonuje i dostarcza.',
         'requirements_analysis_2'         => 'Oferujemy analizę wymagań projektów, omówienie ich z klientami i przeniesienie ich wizji do specyfikacji dla developerów.',
         'implementation_1'                => 'Jeśli chcesz wynająć Nas do  rozwoju Twojej aplikacji, bylibyśmy bardziej niż szczęśliwi mogąc to zrobić. Korzystając z najnowszych technologii, możemy zaoferować solidne rozwiązanie dla Twojego zadania lub projektu, wraz z przeprowadzeniem testów i stworzeniem dokumentacji.',
