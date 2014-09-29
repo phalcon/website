@@ -34,7 +34,7 @@ sudo apt-get install php5-phalcon</code></pre>
 
 
     <div class="highlight1">
-<pre><code class="bash">sudo apt-get-install python-software-properties</code></pre>
+<pre><code class="bash">sudo apt-get install python-software-properties</code></pre>
     </div>
 
     </p>
