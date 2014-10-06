@@ -65,6 +65,12 @@ sudo yum install php-devel php-mysql gcc libtool
 
 #Suse
 yast2 -i php5-pear php5-devel php5-mysql gcc
+
+#OS X (Using Homebrew)
+brew tap homebrew/dupes
+brew tap homebrew/versions
+brew tap homebrew/php
+brew install php5x php5x-phalcon # Where "x" - minor number of PHP
 </code></pre>
     </div>
     </p>
