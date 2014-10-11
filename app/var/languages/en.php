@@ -111,6 +111,8 @@
         'download_opensuse_1'             => "There is a package available <a href=':1:'>here</a> (thanks to <a href=':2:'>Mariusz Łączak</a>)",
         'download_freebsd'                => 'FreeBSD',
         'download_freebsd_1'              => 'A port is available for FreeBSD. You only need these few commands to install it:',
+        'download_cpanel'                 => 'cPanel',
+        'download_cpanel_1'               => "After requests from the community, the cPanel developers released a custom module that allows for installation of Phalcon in cPanel hosted sites. Information can be found <a href=':1:'>here</a>. The module is maintained in <a href=':2:'>Github</a>.",
         'download_dependencies'           => 'Dependencies',
         'download_dependencies_1'         => 'Although Phalcon does not binary link to other extensions it does use some of them to offer functionality. The extensions used are:',
         'download_dependencies_2'         => 'It is not necessary for all the above extensions to be present in the system that has Phalcon installed. You can only install the ones that meet your needs. For instance if you use a MySQL database, then you can only load PDO and PDO/MySQL ignoring the Oracle, SQlite, Postgresql and Mongo.',
