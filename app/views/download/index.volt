@@ -108,6 +108,9 @@ sudo ./install
         <pre><code># cd /usr/ports/www/phalcon && make install clean</code></pre>
     </p>
 
+    <h2>{{ tr('download_cpanel') }}</h2>
+    <p>{{ tr('download_cpanel_1', 'https://documentation.cpanel.net/display/EA/Custom+Modules', 'https://github.com/thecpaneladmin/EA-PhalconPHP') }}</p>
+
     <h2>{{ tr('download_dependencies') }}</h2>
     <p>{{ tr('download_dependencies_1') }}</p>
     <ul>

@@ -111,6 +111,8 @@
         'download_opensuse_1'             => "There is a package available <a href=':1:'>here</a> (thanks to <a href=':2:'>Mariusz Łączak</a>)",
         'download_freebsd'                => 'FreeBSD',
         'download_freebsd_1'              => 'A port is available for FreeBSD. You only need these few commands to install it:',
+        'download_cpanel'                 => 'cPanel',
+        'download_cpanel_1'               => "After requests from the community, the cPanel developers released a custom module that allows for installation of Phalcon in cPanel hosted sites. Information can be found <a href=':1:'>here</a>. The module is maintained in <a href=':2:'>Github</a>.",
         'download_dependencies'           => 'Dependencies',
         'download_dependencies_1'         => 'Although Phalcon does not binary link to other extensions it does use some of them to offer functionality. The extensions used are:',
         'download_dependencies_2'         => 'It is not necessary for all the above extensions to be present in the system that has Phalcon installed. You can only install the ones that meet your needs. For instance if you use a MySQL database, then you can only load PDO and PDO/MySQL ignoring the Oracle, SQlite, Postgresql and Mongo.',
@@ -155,7 +157,7 @@
         'consulting_lezgro_2'             => "Since our company first saw the light of the day in 2003, we have tried various technologies and approaches in software development.",
         'consulting_lezgro_3'             => "Product managers, CTOs, and non-technical founders involve <a href=':1:'>LEZGRO</a> to build products that stand out, quickly and with a high quality.",
         'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
-        'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
+        'consulting_lezgro_5'             => "Contact LEZGRO through our <a href=':1:'>website</a>, where you can also see samples and testimonials of our work.",
         
         'requirements_analysis_1'         => 'One of the biggest problems that developers face is the fact that a lot of projects do not have adequately defined requirements. Therefore, more often than not what the client wants is totally different from what the developer understands and subsequently delivers.',
         'requirements_analysis_2'         => 'We can offer requirements analysis services, discussing with the clients and translating their vision to exact specifications for developers.',
