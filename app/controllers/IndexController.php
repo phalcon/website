@@ -12,7 +12,7 @@ class IndexController extends \ControllerBase
 
     public function notFoundAction()
     {
-        $this->response->setResponseCode(404, 'Not Found'); sta
+        $this->response->setResponseCode(404, 'Not Found');
         $this->view->pick('404/404');
     }
 
