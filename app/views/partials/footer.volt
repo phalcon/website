@@ -38,7 +38,7 @@
     </table>
 
     <div class="donate-wrap">
-        {{ tr('donate_to_phalcon') }} <a href="http://flattr.com/thing/1134206/Phalcon-PHP-Framework" target="_blank" class="button button-small orange">Flattr</a>
+        {{ tr('donate_to_phalcon') }} <a href="https://pledgie.com/campaigns/27405" target="_blank" class="button button-small orange">Pledgie</a>
         {{ tr('or') }}
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="display: inline" target="_blank">
             <input type="hidden" name="cmd" value="_s-xclick">
