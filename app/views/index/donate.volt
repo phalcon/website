@@ -13,6 +13,6 @@
     <input type="hidden" name="hosted_button_id" value="7LSYMNMFZNG8W">
 </form>-->
 
-<form action="https://pledgie.com/campaigns/27405" method="post" id="f1"></form>
+<form action="https://pledgie.com/campaigns/27405" method="get" id="f1"></form>
 
 <script>document.getElementById('f1').submit()</script>
