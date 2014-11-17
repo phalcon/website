@@ -15,8 +15,8 @@
         'pluginsDir'     => ROOT_PATH . '/app/plugins/',
         'libraryDir'     => ROOT_PATH . '/app/library/',
         'voltDir'        => ROOT_PATH . '/app/var/volt/',
-        'baseUri'        => '/phalconphp/',
-        'debug'          => '0',
+        'baseUri'        => '/website/',
+        'debug'          => '1',
     );
 
     $cache = array(
