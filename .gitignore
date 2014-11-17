@@ -1,6 +1,4 @@
 .DS_Store
-new_layout/node_modules/*
-new_layout/.DS_Store
 public/.DS_Store
 public/files/.DS_Store
 app/var/cache/*
