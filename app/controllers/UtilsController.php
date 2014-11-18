@@ -54,7 +54,7 @@ EOF;
             'zephir-docs' => 1.5,
             'forum' => 1.5,
             'vokuro' => 1,
-            'php-phalcon' => 1.0,
+            'phalcon-ppa' => 1.0,
             'invo' => 0.9,
             'album-o-rama' => 0.9,
             'php-site' => 0.9,
@@ -74,7 +74,7 @@ EOF;
                 if (is_array($contributors)) {
                     foreach ($contributors as $contributor) {
                         $login = $contributor['login'];
-                        
+
                         if (!isset($c[$login])) {
                             $c[$login] = 0;
                             $p[$login] = $contributor['avatar_url'];
