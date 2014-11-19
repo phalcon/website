@@ -139,6 +139,7 @@
         <img src="{{ cdn_url }}images/hosting/amazon-gray.png" alt="Amazon" />
         <img src="{{ cdn_url }}images/hosting/linode-gray.png" alt="Linode" />
         <img src="{{ cdn_url }}images/hosting/rackspace-gray.png" alt="Rackspace" />
+	<img src="{{ cdn_url }}images/hosting/5hosting-gray.png" alt="5hosting" />
         <img src="{{ cdn_url }}images/hosting/digital-ocean-gray.png" alt="Digital Ocean" />
         <img src="{{ cdn_url }}images/hosting/webfaction-gray.png" alt="WebFaction" />
         <img src="{{ cdn_url }}images/hosting/azure-gray.jpg" alt="Windows Azure" />

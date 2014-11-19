@@ -217,6 +217,9 @@
         'flying_with_phalcon'             => 'Thanks for flying with Phalcon! &lt;3',
 
         'hosting_description'             => 'Phalcon can be installed on any machine on which the hosting provider offers SSH root access (or sudo). Below is a list of reputable companies that offer such services:',
+	'hosting_5hosting_title'	  => '5hosting.com - unlimited Webspace',
+	'hosting_5hosting_1'		  => '5hosting.com offers unlimited webspace, traffic, databases and email accounts in a high availability load balanced cluster based solely on SSD harddrives for a fixed monthly rate.',
+	'hosting_5hosting_2'		  => "The phalcon framework comes pre-compiled for all stable PHP versions (5.4, 5.5 and 5.6) and can easily be activated with this <a href=':1:'>tutorial</a>.",
         'hosting_fortrabbit_title'        => 'Fortrabbit',
         'hosting_fortrabbit_1'            => 'Fortrabbit offers many hosting plans (there is one for developers and is free - with some limitations) that would satisfy the needs of most of the developers that wish to either try Phalcon or deploy their applications using it.',
         'hosting_fortrabbit_2'            => "They offer a variety of <a href=':1:'>extensions</a> that would satisfy even the most demanding project.",
