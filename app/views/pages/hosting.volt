@@ -10,6 +10,16 @@
     </div>
 
     <table align="center" width="75%" cellpadding="15">
+	<tr>
+            <td align="center">
+                <img src='{{ cdn_url ~ 'images/hosting/5hosting-gray.png' }}' title='{{ tr('hosting_5hosting_title') }}' alt='{{ tr('hosting_5hosting_title') }}' />
+            </td>
+            <td>
+                <h4><a target="_blank" href='http://www.5hosting.com/'>{{ tr('hosting_5hosting_title') }}</a></h4>
+                <p>{{ tr('hosting_5hosting_1') }}</p>
+                <p>{{ tr('hosting_5hosting_2', 'http://blog.5hosting.com/php-updates-php-5-6-phalcon-unterstuetzung/') }}</p>
+            </td>
+        </tr>
         <tr>
             <td align="center">
                 <img src='{{ cdn_url ~ 'images/hosting/fortrabbit-gray.png' }}' title='{{ tr('hosting_fortrabbit_title') }}' alt='{{ tr('hosting_fortrabbit_title') }}' />
