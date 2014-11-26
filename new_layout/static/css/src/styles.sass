@@ -1,0 +1,701 @@
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  -ms-border-radius: $radius
+  border-radius: $radius
+
+=transition($transition-property, $transition-time, $method)
+  -webkit-transition: $transition-property $transition-time $method
+  -moz-transition: $transition-property $transition-time $method
+  -ms-transition: $transition-property $transition-time $method
+  -o-transition: $transition-property $transition-time $method
+  transition: $transition-property $transition-time $method
+
+=gradient($start, $end)
+  background: $end
+  background: -moz-linear-gradient(top, $start 0%, $end 100%)
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $start), color-stop(100%, $end))
+  background: -webkit-linear-gradient(top, $start 0%, $end 100%)
+  background: -o-linear-gradient(top, $start 0%, $end 100%)
+  background: -ms-linear-gradient(top, $start 0%, $end 100%)
+  background: linear-gradient(to bottom, $start 0%, $end 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$start', endColorstr='$end',GradientType=0 )
+
+$color-text-default:  #4d4a4c
+
+body
+  color: $color-text-default
+  font-size: 14px
+  font-family: "Open Sans", Helvetica, Arial
+  font-weight: 400
+
+a
+  color: #70b599
+
+a:hover
+  color: #70b599
+  text-decoration: none
+
+a.btn-phalcon
+  background: #84d3b2
+  color: white
+  border-top: none
+  border-left: none
+  border-right: none
+  border-bottom: 4px solid #70b599
+  margin-top: 25px
+  margin-bottom: 25px
+  padding-left: 40px
+  padding-right: 40px
+  +border-radius(15px)
+  +transition(all, 0.1s, ease-out)
+
+a:hover.btn-phalcon
+  background: #7cc8a8
+  color: white
+  border-color: #63a187
+
+.homepage-header
+  padding-top: 20px
+  //background-color: #0098a9
+  background: #d6f9d1
+  background: -moz-radial-gradient(center, ellipse cover,  #d6f9d1 0%, #91dbce 38%, #0a6278 100%)
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#d6f9d1), color-stop(38%,#91dbce), color-stop(100%,#0a6278))
+  background: -webkit-radial-gradient(center, ellipse cover,  #d6f9d1 0%,#91dbce 38%,#0a6278 100%)
+  background: -o-radial-gradient(center, ellipse cover,  #d6f9d1 0%,#91dbce 38%,#0a6278 100%)
+  background: -ms-radial-gradient(center, ellipse cover,  #d6f9d1 0%,#91dbce 38%,#0a6278 100%)
+  background: radial-gradient(ellipse at center,  #d6f9d1 0%,#91dbce 38%,#0a6278 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6f9d1', endColorstr='#0a6278',GradientType=1 )
+
+.page-header
+  margin: 0
+  border: none
+  padding-top: 20px
+  -webkit-box-shadow: 0 0 3px 0 rgba(37,82,95,0.9)
+  box-shadow: 0 0 3px 0 rgba(37,82,95,0.9)
+  +gradient(#167a92,#68c4c2)
+  z-index: 100
+
+
+
+header
+
+  .navbar-toggle
+    border-color: #ffffff
+    margin-top: 15px
+
+  .navbar-toggle span
+    background: #ffffff
+
+  .phalcon-logo
+    display: block
+    width: 200px
+    height: 90px
+    background: transparent url("../img/phalcon.png") 0 0 no-repeat
+    background-size: 200px 90px
+
+  .main-menu
+    margin-top: 38px
+
+  .main-menu li
+    margin: 0 3px
+
+  .main-menu li a
+    color: #bae1e6
+    font-size: 17px
+    //+transition(color, 0.2s, ease-in-out)
+    text-shadow: 1px 1px 1px #0e566a
+    padding: 8px 18px
+
+  .main-menu li a:hover
+    color: white
+    background-color: transparent
+
+  .main-menu li a.active
+    color: white
+    background-color: rgba(0, 0, 0, 0.15)
+    -webkit-box-shadow: inset 0 0 15px 0 rgba(0,0,0,0.2)
+    box-shadow: inset 0 0 15px 0 rgba(0,0,0,0.2)
+    +border-radius(18px)
+
+  a.github
+    margin-right: 0px
+    background: transparent url("../img/github.png") center center no-repeat
+    opacity: 0.6
+
+  a:hover.github
+    opacity: 0.9
+
+  a.twitter
+    background: transparent url("../img/twitter.png") center center no-repeat
+    opacity: 0.6
+
+  a:hover.twitter
+    opacity: 0.9
+  
+  a#dropdownLanguageMenu
+    background: transparent url("../img/frame.png") 6px 3px no-repeat
+    margin-right: 0
+
+  a:hover#dropdownLanguageMenu
+    background-position: 6px -30px
+
+  #dropdownLanguageMenu img
+    margin-bottom: 4px
+
+  #dropdownLanguageMenu span
+    margin-bottom: 4px
+
+  .dropdown-menu
+    background: rgba(255, 255, 255, 0.6)
+
+  .dropdown-menu li a
+    font-size: 12px
+    color: #4d4a4c
+    text-shadow: none
+    background-color: transparent
+    background-position: 8px 6px
+    background-repeat: no-repeat
+    padding: 4px 0 4px 32px
+
+  .dropdown-menu li a:hover
+    background-color: rgba(255, 255, 255, 0.4)
+    color: #4d4a4c
+
+  .tagline
+    margin-top: 120px
+    text-align: center
+
+  .tagline h1
+    font-size: 22px
+    font-weight: 700
+
+  .tagline  p
+    font-size: 16px
+
+  .tagline  p a
+    color: $color-text-default
+    border-bottom: 1px dotted $color-text-default
+
+  .tagline  p a:hover
+    color: $color-text-default
+    border-bottom: 1px solid $color-text-default
+
+  .anim
+    background: rgba(0, 0, 0, 0.3)
+    width: 100%
+    height: 400px
+
+  .sublinks
+    color: #97c6ad
+
+  .sublinks a
+    font-size: 13px
+    color: $color-text-default
+    margin-left: 10px
+    margin-right: 10px
+
+  .sublinks a:hover
+    border-bottom: 1px dotted $color-text-default
+    margin-right: 10px
+
+
+.heading
+  background: #548d90 url('../img/heading.png') center center no-repeat
+  padding: 20px 0
+  font-size: 24px
+  font-weight: 700
+  margin: 0
+  border: none
+  -webkit-box-shadow: inset 0 0 7px 0 rgba(58,100,102,0.9)
+  box-shadow: inset 0 0 7px 0 rgba(58,100,102,0.9)
+
+.heading
+  h2
+    padding: 0
+    margin: 0
+    color: #ffffff
+    padding-left: 56px
+
+a.btn-video
+  display: block
+  background-color: #c8ebdc
+  border-top: 3px solid #70b99a
+  padding: 20px 0
+  text-align: center
+  color: #619884
+  font-size: 24px
+  font-weight: 700
+  +transition(all, 0.15s, ease-in)
+
+a.btn-video i
+  font-weight: 400
+  font-size: 30px
+
+a.btn-video span
+  color: #7eb7a9
+  font-weight: 400
+
+a:hover.btn-video
+  color: white
+  background-color: #307670
+
+a:hover.btn-video span
+  color: #b9f4d3
+
+
+.codesamples
+  padding: 80px 0
+
+.codesamples
+
+  h2
+    font-size: 32px
+    text-transform: uppercase
+    text-align: center
+    color: #c4c4c5
+    margin: 25px 0 50px 0
+
+  h4
+    font-size: 11px
+    text-transform: uppercase
+    color: #b0b0b0
+    border-bottom: 1px solid #eeeeee
+    padding-bottom: 5px
+    margin: 25px 70px 8px 0
+    clear: both
+
+  ul.tags
+    list-style-type: none
+    padding: 0 75px 0 0
+    margin: 0
+
+  ul.tags li
+    display: block
+    float: left
+
+  ul.tags li a 
+    display: block
+    padding: 2px 18px
+    text-align: center
+    background-color: #c8efd2
+    color: #285346
+    +border-radius(15px)
+    margin-right: 15px
+    margin-bottom: 15px
+
+  ul.tags li a.active
+    background-color: #285346
+    color: #ffffff
+
+  ul.tags li a:hover
+    background-color: #285346
+    color: #ffffff
+
+  ul.features-positive
+    list-style-image: url('../img/check.png')
+
+  ul.features-negative
+    list-style-image: url('../img/remove.png')
+
+  ul.features li
+    margin-bottom: 5px
+
+
+    
+  pre
+    background-color: #242424
+    +border-radius(25px)
+
+  code 
+    background-color: #242424
+
+  .codesample-header
+    text-align: center
+
+  .codesample-header
+    h3
+      display: inline-block
+      padding: 6px 32px
+      text-align: center
+      background-color: #285346
+      color: #ffffff
+      margin: 45px auto 15px auto
+      +border-radius(25px)
+
+  .codesample-body
+    p
+      padding: 5px 25px 10px 25px
+      color: #696769
+      font-size: 15px
+      line-height: 24px
+
+
+
+
+.community
+  border-top: 2px solid #f2f2f2
+  padding: 80px 0
+
+  h2
+    text-align: center
+    margin-top: 30px
+    padding-bottom: 80px
+    font-size: 32px
+    font-weight: 700
+    color: #3b7866
+
+  a.community-link
+    display: block
+    font-size: 20px
+    color: #000000
+    text-align: center
+
+  a.community-link i
+    font-size: 36px
+
+  a:hover.community-link
+    color: #70b599
+
+  .contributors
+    margin-top: 40px
+    position: relative
+    background-color: #000000
+
+  .contributors
+
+    .fader
+      display: block
+      width: 100%
+      height: 135px
+      background: transparent url('../img/fader2.png') bottom center repeat-x
+      position: absolute
+      z-index: 999
+      bottom: 0
+      left: 0
+
+    a
+      display: block
+      float: left
+      width: 60px
+      height: 60px
+      margin: 0px
+      opacity: 0.9
+      +transition(all, 0.2s, ease-in)
+
+    a img
+      width: 60px
+      height: 60px
+      filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale") /* Firefox 3.5+ */
+      filter: gray /* IE6-9 */
+      -webkit-filter: grayscale(100%) /* Chrome 19+ & Safari 6+ */
+
+    a:hover
+      opacity: 1
+
+    a:hover img
+      filter: none
+      -webkit-filter: grayscale(0%)
+
+
+.getinvolved
+  padding: 40px 0 80px 0
+
+.getinvolved
+  h3
+    font-size: 20px
+    text-align: center
+    color: #000000
+
+  p
+    color: #4d4a4c
+  img
+    display: block
+    margin: 0 auto
+    width: 150px
+    height: 150px
+
+
+.prefooter
+  border-top: 1px solid #b1cec8
+  background-color: #e6f6ef
+  padding: 25px
+  -webkit-box-shadow: inset 0 10px 10px -10px #9ac1b9
+  box-shadow: inset 0 10px 10px -10px #9ac1b9
+
+  span
+    font-size: 22px
+    color: #7eb7a9
+    margin-right: 20px
+
+  a.btn-social
+    /* width: 49px */
+    padding: 10px 11px 5px 11px
+    +border-radius(13px)
+    color: white
+    font-size: 20px
+    text-align: center
+    margin: 0 5px
+    border-bottom: 3px solid #000000
+    text-shadow: -1px -1px 1px #000000
+    opacity: 0.8
+
+  a.btn-social-twitter
+    +gradient(#52c6f9, #46b3f5)
+    border-color: #198dd5
+    text-shadow: -1px -1px 1px #198dd5
+
+  a.btn-social-facebook
+    +gradient(#5c77b4, #384f93)
+    border-color: #2a3e80
+    text-shadow: -1px -1px 1px #2a3e80
+
+  a.btn-social-googleplus
+    +gradient(#f17d68, #da3924)
+    border-color: #b92a15
+    text-shadow: -1px -1px 1px #cf331b
+
+  a.btn-social-github
+    +gradient(#898989, #616161)
+    border-color: #323232
+    text-shadow: -1px -1px 1px #323232
+
+  a:hover.btn-social
+    opacity: 1
+    color: white
+
+
+.footer
+  background-color: #1e272e
+  padding: 60px 0 80px 0
+
+.footer
+  h4
+    font-size: 12px
+    text-transform: uppercase
+    color: #ffffff
+
+  ul
+    list-style-type: none
+    padding: 0
+    margin: 0
+
+  ul li
+    padding: 3px 0
+
+  ul li a
+    font-size: 13px
+    color: #6d7481
+
+  ul li a:hover
+    color: #c0c6cf
+    border-bottom: 1px dotted #c0c6cf
+
+  .license
+    padding: 30px 0 0 90px
+    background: transparent url('../img/phalcon3.png') 0 0 no-repeat
+    background-size: 74px 85px
+    color: #6d7481
+    font-size: 12px
+    line-height: 18px
+
+  .license a
+    color: #6d7481
+    border-bottom: 1px dotted #6d7481
+
+  .license a:hover
+    color: #c0c6cf
+    border-bottom: 1px solid #c0c6cf
+
+  .design
+    padding-left: 90px
+    margin-top: 30px
+    font-size: 11px
+    text-transform: uppercase
+    color: #6d7481
+
+    a
+      margin-top: 7px
+      display: block
+      width: 115px
+      height: 42px
+      background: transparent url('../img/fogcity.png') 0 0 no-repeat
+      background-size: 115px 42px
+      opacity: 0.5
+
+    a:hover
+      opacity: 1
+
+    a span
+      display: none
+
+
+
+.mfp-fade.mfp-bg
+  opacity: 0.001
+  +transition(alls, 0.15s, ease-out)
+
+.mfp-fade.mfp-bg.mfp-ready
+  opacity: 0.8
+
+.mfp-fade.mfp-bg.mfp-removing
+  opacity: 0
+
+.mfp-fade.mfp-wrap .mfp-content
+  opacity: 0
+  +transition(alls, 0.15s, ease-out)
+
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content
+  opacity: 1
+
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content
+  opacity: 0
+
+
+
+@media screen and (max-width:767px)
+  .homepage-header
+    padding-top: 7px
+
+  header
+    .phalcon-logo
+      margin-left: 0px
+      width: 169px
+      height: 58px
+      background-image: url("../img/phalcon1.png")
+      background-size: 169px 58px
+
+    .navbar-header
+      padding-bottom: 5px
+      border: none
+
+    .main-menu li a
+      color: #ffffff
+      padding: 10px 20px
+
+    .main-menu li a:hover
+      color: #ffffff
+
+    .main-menu li a.active
+      color: #a6b2a3
+      background-color: transparent
+      -webkit-box-shadow: none
+      box-shadow: none
+
+    .main-menu
+      margin-top: 0
+      padding-top: 10px
+      padding-bottom: 5px
+      padding-left: 35px
+      background: rgba(0, 0, 0, 0.4)
+      +border-radius(18px)
+      -webkit-box-shadow: inset 0 0 15px 0 rgba(0,0,0,0.5)
+      box-shadow: inset 0 0 15px 0 rgba(0,0,0,0.5)
+
+    a#dropdownLanguageMenu
+      background-position: 8px 5px
+
+    a:hover#dropdownLanguageMenu
+      background-position: 8px -28px
+
+    .dropdown-menu
+      padding-left: 16px
+
+    .dropdown-menu li a
+      color: #ffffff
+      background-position: 2px 8px
+
+    .dropdown-menu li a:hover
+      color: #ffffff
+      background-color: transparent
+
+
+
+
+
+
+.codesamples-container
+  display: block
+  overflow: hidden
+  height: 520px
+  position: relative
+
+.codesamples-container
+
+  .codesample
+    position: absolute
+    top: -520px
+    left: 0
+
+  .codesample-pulldown
+    top: 520px
+    +transition(all, 0.8s, ease-in-out)
+
+  .codesample-current
+    top: 0
+    +transition(all, 0.8s, ease-in-out)
+
+
+
+@media screen and (min-width:768px)
+  .homepage-header
+    padding-top: 7px
+
+  .page-header
+    padding-top: 7px
+
+  header
+    .phalcon-logo
+      margin-left: 0px
+      width: 169px
+      height: 58px
+      background-image: url("../img/phalcon1.png")
+      background-size: 169px 58px
+
+    .main-menu
+      margin-top: 5px
+      border-top: 2px solid #5bafbb
+      padding-top: 7px
+      padding-right: 20px
+
+    .main-menu li
+      margin: 0 1px
+
+    .main-menu li a
+      padding: 8px 16px
+
+    .dropdown-menu li a
+      padding: 4px 0 4px 32px
+
+  .heading
+    h2
+      padding-left: 56px
+
+@media screen and (min-width:992px)
+  header
+    .phalcon-logo
+      margin-left: 0px
+      display: block
+      width: 200px
+      height: 90px
+      background: transparent url("../img/phalcon.png") 0 0 no-repeat
+      background-size: 200px 90px
+
+    .main-menu
+      margin-top: 38px
+      border-top: none
+      padding-top: 0
+
+  .heading
+    h2
+      padding-left: 56px
+
+
+@media screen and (min-width:1200px)
+  header
+    .navbar-header
+      padding-left: 60px
+
+  .heading
+    h2
+      padding-left: 150px
