@@ -15,7 +15,7 @@
     
     <meta property="og:url" content=".............." />
     <meta property="og:title" content="................" />
-    <meta property="og:type" content="website" /> <!-- article on subpages-->
+    <meta property="og:type" content="website" /> <!-- article or subpages-->
     <meta property="og:description" content="................" />
     <meta property="og:site_name" content="Phalcon PHP" />
     <meta property="og:image" content=".............." />
@@ -55,10 +55,16 @@
 
 
       <nav class="navbar" role="navigation">
-        <div class="navbar-header visible-lg">
-          <a class="navbar-brand phalcon-logo" href="#"><span itemprop="name" class="sr-only">Phalcon PHP</span></a>
+        <div class="container-fluid">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-container">
+                <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand phalcon-logo" href="#"><span itemprop="name" class="sr-only">Phalcon PHP</span></a>
         </div>
-        <div class="collapse navbar-collapse navbar-right">
+
+        <div class="collapse navbar-collapse navbar-right" id="main-menu-container">
           <ul class="nav navbar-nav main-menu">
             <li class="first"><a href="#">Download</a></li>
             <li><a href="#">Documentation</a></li>
@@ -99,11 +105,9 @@
             <li class="visible-lg"><a href="https://twitter.com/phalconphp" class="twitter">&nbsp;</a></li>
           </ul>
         </div>
-      </nav>
 
-      <div class="text-center">
-          <a class="phalcon-logo hidden-lg" href="#" style="margin: 0 auto"><span itemprop="name" class="sr-only">Phalcon PHP</span></a>
-      </div>
+        </div>
+      </nav>
 
       <div class="tagline">
         <h1>Phalcon is a robust PHP Framework built as a C-extension.</h1>
@@ -139,43 +143,43 @@
 
                 <h4>Basic features</h4>
                 <ul class="tags">
-                    <li><a href="#">No overhead</a></li>
-                    <li><a href="#">MVC</a></li>
-                    <li><a href="#">DI</a></li>
-                    <li><a href="#">REST</a></li>
-                    <li><a href="#">Auto-loader</a></li>
-                    <li><a href="#">Router</a></li>
+                    <li><a class="codesample active" href="#nooverhead">No overhead</a></li>
+                    <li><a class="codesample" href="#mvc">MVC</a></li>
+                    <li><a class="codesample" href="#di">DI</a></li>
+                    <li><a class="codesample" href="#rest">REST</a></li>
+                    <li><a class="codesample" href="#autoloader">Auto-loader</a></li>
+                    <li><a class="codesample" href="#router">Router</a></li>
                 </ul>
                 <div class="clearfix"></div>
 
                 <h4>Data &amp; storage</h4>
                 <ul class="tags">
-                    <li><a href="#">ORM</a></li>
-                    <li><a href="#">PHQL</a></li>
-                    <li><a href="#">ODM for Mongo</a></li>
-                    <li><a href="#">Transactions</a></li>
-                    <li><a href="#">Cache</a></li>
-                    <li><a href="#">Memcache</a></li>
+                    <li><a class="codesample" href="#orm">ORM</a></li>
+                    <li><a class="codesample" href="#phql">PHQL</a></li>
+                    <li><a class="codesample" href="#odm">ODM for Mongo</a></li>
+                    <li><a class="codesample" href="#transactions">Transactions</a></li>
+                    <li><a class="codesample" href="#cache">Cache</a></li>
+                    <li><a class="codesample" href="#memcache">Memcache</a></li>
                 </ul>
                 <div class="clearfix"></div>
 
                 <h4>Views &amp; frontend</h4>
                 <ul class="tags">
-                    <li><a href="#">Template engines</a></li>
-                    <li><a href="#">Volt</a></li>
-                    <li><a href="#">i18n</a></li>
-                    <li><a href="#">Forms builder</a></li>
-                    <li><a href="#">Flash messages</a></li>
+                    <li><a class="codesample" href="#templates">Template engines</a></li>
+                    <li><a class="codesample" href="#volt">Volt</a></li>
+                    <li><a class="codesample" href="#i18n">i18n</a></li>
+                    <li><a class="codesample" href="#froms">Forms builder</a></li>
+                    <li><a class="codesample" href="#flash">Flash messages</a></li>
                 </ul>
                 <div class="clearfix"></div>
 
                 <h4>Others</h4>
                 <ul class="tags">
-                    <li><a href="#">ACL</a></li>
-                    <li><a href="#">Sharding</a></li>
-                    <li><a href="#">Crypt</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Queueing</a></li>
+                    <li><a class="codesample" href="#acl">ACL</a></li>
+                    <li><a class="codesample" href="#sharding">Sharding</a></li>
+                    <li><a class="codesample" href="#crypt">Crypt</a></li>
+                    <li><a class="codesample" href="#events">Events</a></li>
+                    <li><a class="codesample" href="#queues">Queueing</a></li>
                 </ul>
                 <div class="clearfix"></div>
 
@@ -183,31 +187,191 @@
 
             <div class="col-sm-7">
 
-                <div class="target-container">
+                <div class="codesamples-container">
 
                     <!-- =================================================================== -->
-                    <div class="codesample" id="">
+                    <div class="codesample codesample-current" id="nooverhead"><!-- codesample -->
                         <div class="codesample-header">
-                            <h3>REST</h3>
+                            <h3>No overhead</h3>
                         </div>
                         <div class="codesample-body">
-                            <p>Building a simple RESTful server will take upto 3 files and 60 lines of code. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusr inci.</p>
-                            <pre><code class="php">
-    // How many robots are there?
-    $robots = Robots::find();
-    echo "There are ", count($robots), "\n";
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <h3 class="text-center">Other PHP frameworks</h3>
+                                    <ul class="features features-negative">
+                                        <li>Many files containing classes and functions are read on every request made. Disk reading is expensive in terms of performance, thus modern frameworks use lazy loading (autoload).</li>
+                                        <li>Some of the classes contain methods that aren’t used in every request but they’re loaded always consuming memory</li>
+                                        <li>Continuous loading or interpreting is expensive and impacts performance</li>
+                                        <li>The framework code does not change very often, and yet an application needs to load and interpret it every time a request is made</li>
+                                    </ul>
+                                </div>
+                                <div class="col-xs-6">
+                                    <h3 class="text-center">PHP C-extension (Phalcon)</h3>
+                                    <ul class="features features-positive">
+                                        <li>C-extensions are loaded together with PHP one time on the web server’s daemon start process</li>
+                                        <li>Classes and functions provided by the extension are ready to use for any application</li>
+                                        <li>The code isn’t interpreted because is already compiled to a specific platform and processor</li>
+                                        <li>Thanks to its low-level architecture and optimizations <strong>Phalcon provides the lowest overhead for MVC-based applications</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
 
-    // Get and print virtual robots ordered by name
-    $robots = Robots::find(array(
-        "type = 'virtual'",
-        "order" => "name"
-    ));
-    foreach ($robots as $robot) {
-        echo $robot->name, "\n";
-    }
+                        </div>
+                    </div><!-- /codesample -->
+                    <!-- =================================================================== -->
+
+
+
+                    <!-- =================================================================== -->
+                    <div class="codesample" id="mvc"><!-- codesample -->
+                        <div class="codesample-header">
+                            <h3>Model-View-Controller</h3>
+                        </div>
+                        <div class="codesample-body">
+                            <p>Build single and multi-module applications with ease and pleasure. Using the file structure, scheme and patterns you already know.</p>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <pre><code class="php">
+    single/
+        app/
+            controllers/
+            models/
+            views/
+        public/
+            css/
+            img/
+            js/
+                                    </code></pre>
+                                </div>
+                                <div class="col-xs-6">
+                                    <pre><code class="php">
+    multiple/
+      apps/
+        frontend/
+           controllers/
+           models/
+           views/
+           Module.php
+        backend/
+           controllers/
+           models/
+           views/
+           Module.php
+      public/
+        ../
+                                    </code></pre>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div><!-- /codesample -->
+                    <!-- =================================================================== -->
+
+
+
+                    <!-- =================================================================== -->
+                    <div class="codesample" id="di"><!-- codesample -->
+                        <div class="codesample-header">
+                            <h3>Dependency Injection</h3>
+                        </div>
+                        <div class="codesample-body">
+                            <p>Phalcon is built upon a powerful yet ease to understand and use pattern called Dependency Injection. Initialize or define services once - and use them virtually anywhere throughout the application.</p>
+                            <pre><code class="php">          
+//Create the Dependency Injector Container
+$di = new Phalcon\DI();
+
+//Register classes, functions, components
+$di->set("request", new Phalcon\Http\Request());
+
+..
+
+//Use anywhere else in code
+$request = $di->getShared("request");
+
                             </code></pre>
                         </div>
                     </div><!-- /codesample -->
+                    <!-- =================================================================== -->
+
+
+
+                    <!-- =================================================================== -->
+                    <div class="codesample" id="rest"><!-- codesample -->
+                        <div class="codesample-header">
+                            <h3>RESTful services</h3>
+                        </div>
+                        <div class="codesample-body">
+                            <p>Writing REST servers and applications has never been easier. No boilerplate. Simple services will fit in one file.</p>
+                            <pre><code class="php">          
+    $app = new Phalcon\Mvc\Micro();
+
+    //Returning data in JSON
+    $app->get('/get/data.json', function () {
+        echo json_encode(array("some", "important", "data"));
+    });
+
+    $app->handle();
+                            </code></pre>
+                        </div>
+                    </div><!-- /codesample -->
+                    <!-- =================================================================== -->
+
+
+                    <!-- =================================================================== -->
+                    <div class="codesample" id="autoloader"><!-- codesample -->
+                        <div class="codesample-header">
+                            <h3>Universal Class Loader</h3>
+                        </div>
+                        <div class="codesample-body">
+                            <p>Register namespaces, prefixes, directories or classes. Take advantage of Autoloader events and maintain full controll over the business logic using Autoloader configuration.</p>
+                            <pre><code class="php">          
+    // Creates the autoloader
+    $loader = new \Phalcon\Loader();
+
+    // Register some directories
+    $loader->registerDirs(
+        array(
+            "library/MyComponent/",
+            "vendor/example/adapters/",
+            "vendor/example/"
+        )
+    );
+
+    // register autoloader
+    $loader->register();
+                            </code></pre>
+                        </div>
+                    </div><!-- /codesample -->
+                    <!-- =================================================================== -->
+
+
+
+
+
+                    <!-- =================================================================== -->
+                    <div class="codesample" id="router"><!-- codesample -->
+                        <div class="codesample-header">
+                            <h3>Router</h3>
+                        </div>
+                        <div class="codesample-body">
+                            <p>Routing as it supposed to be. Nothing more. Nothing less.</p>
+                            <pre><code class="php">          
+    // Create the router
+    $router = new \Phalcon\Mvc\Router();
+
+    //Define a route
+    $router->add(
+        "/admin/users/my-profile",
+        array(
+            "controller" => "users",
+            "action"     => "profile",
+        )
+    );
+                            </code></pre>
+                        </div>
+                    </div><!-- /codesample -->
+                    <!-- =================================================================== -->
+
 
 
                 </div>

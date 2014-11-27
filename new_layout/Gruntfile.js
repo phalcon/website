@@ -47,11 +47,11 @@ module.exports = function(grunt) {
 		cssmin: {
 			compress: {
 				files: {
-					'static/css/phalcon.min.css': ['static/css/src/styles.css', 'static/css/src/magnific-popup.css', 'static/css/src/icomoon.css', 'static/css/src/highlight.js.css']
+					'static/css/phalcon.min.css': ['static/css/src/styles.css', 'static/css/src/flags.css', 'static/css/src/magnific-popup.css', 'static/css/src/icomoon.css', 'static/css/src/highlight.js.css']
 				}
 			}
 		},
-		
+
 		watch: {
 			options: {
 				livereload: true,
@@ -71,7 +71,7 @@ module.exports = function(grunt) {
 			    }
 			},
 			imagemin: {
-				files: ['static/img/src/*'],
+				files: ['static/img/src/*', '!static/img/src/heading.png'],
 				tasks: ['imagemin'],
 			},
 			hints: {
@@ -105,6 +105,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	
 	//34. Where we tell Grunt what to do when we type "grunt" into the terminal.
-	grunt.registerTask('default', ['jshint', 'uglify', 'sass', 'cssmin', 'imagemin', 'watch']);
+	grunt.registerTask('default', ['jshint', 'uglify', 'sass', 'cssmin', 'watch']);
 
 };
