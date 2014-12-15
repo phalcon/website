@@ -12,6 +12,8 @@ a:hover.btn-phalcon { background: #7cc8a8; color: white; border-color: #63a187; 
 
 .page-header { margin: 0; border: none; padding-top: 20px; -webkit-box-shadow: 0 0 3px 0 rgba(37, 82, 95, 0.9); box-shadow: 0 0 3px 0 rgba(37, 82, 95, 0.9); background: #68c4c2; background: -moz-linear-gradient(top, #167a92 0%, #68c4c2 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #167a92), color-stop(100%, #68c4c2)); background: -webkit-linear-gradient(top, #167a92 0%, #68c4c2 100%); background: -o-linear-gradient(top, #167a92 0%, #68c4c2 100%); background: -ms-linear-gradient(top, #167a92 0%, #68c4c2 100%); background: linear-gradient(to bottom, #167a92 0%, #68c4c2 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$start', endColorstr='$end',GradientType=0 ); z-index: 100; }
 
+.HYPE_scene { background-color: transparent !important; }
+
 header .navbar-toggle { border-color: #ffffff; margin-top: 15px; }
 header .navbar-toggle span { background: #ffffff; }
 header .phalcon-logo { display: block; width: 200px; height: 90px; background: transparent url("../img/phalcon.png") 0 0 no-repeat; background-size: 200px 90px; }
@@ -36,7 +38,7 @@ header .tagline h1 { font-size: 22px; font-weight: 700; }
 header .tagline p { font-size: 16px; }
 header .tagline p a { color: #4d4a4c; border-bottom: 1px dotted #4d4a4c; }
 header .tagline p a:hover { color: #4d4a4c; border-bottom: 1px solid #4d4a4c; }
-header .anim { background: rgba(0, 0, 0, 0.3); width: 100%; height: 400px; }
+header .anim { width: 100%; height: 400px; }
 header .sublinks { color: #97c6ad; }
 header .sublinks a { font-size: 13px; color: #4d4a4c; margin-left: 10px; margin-right: 10px; }
 header .sublinks a:hover { border-bottom: 1px dotted #4d4a4c; margin-right: 10px; }
