@@ -52,4 +52,12 @@ $(function(){
 	});
 
 
+	$('.hypechart').click(function(e) {
+		if (HYPE.documents.phalcon.currentSceneName() !== 'Chart')
+			HYPE.documents.phalcon.showSceneNamed('Chart',HYPE.documents.phalcon.kSceneTransitionPushTopToBottom, 0.1);
+		//else
+			//HYPE.documents.phalcon.showSceneNamed('Mountains',HYPE.documents.phalcon.kSceneTransitionInstant);
+	});
+
+
 });
