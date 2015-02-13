@@ -269,6 +269,8 @@
         'support_reporting_a_bug'         => "Reporting a bug",
         'support_reporting_a_bug_1'       => "Please report bugs when you've exhausted all of the above options, using the <a href=':1:'>issue tracker</a> in Github.",
 
+        'demo_video'                      => " &nbsp; Watch the demo video: <span>A polling app built from scratch in &lt; 15 min.</span>",
+
 
     );
 
