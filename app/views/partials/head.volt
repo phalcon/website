@@ -32,7 +32,7 @@
     <link rel="canonical" href="/.............." />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
 
-    {{- stylesheet_link("//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css", false) -}}
+    {{- stylesheet_link("//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css", false) -}}
     {{- stylesheet_link("css/phalcon.min.css", true) -}}
     <!--
     EUROPE <link href='https://fonts.googleapis.com/css?family=Open+Sans:700,400&subset=latin-ext' rel='stylesheet' type='text/css'>
