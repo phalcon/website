@@ -13,7 +13,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand phalcon-logo" href="#">
+                    <a class="navbar-brand phalcon-logo" href="/">
                         <span itemprop="name" class="sr-only">Phalcon PHP</span>
                     </a>
                 </div>
