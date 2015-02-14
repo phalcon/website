@@ -1,3 +1,17 @@
+<div class="prefooter">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <span>Follow along:</span>
+                <a href="https://twitter.com/phalconphp" alt="Twitter" class="btn-social btn-social-twitter"><i class="icon-twitter"></i></a>
+                <a href="https://www.facebook.com/pages/Phalcon-Framework/134230726685897" alt="Facebook" class="btn-social btn-social-facebook"><i class="icon-facebook"></i></a>
+                <a href="https://plus.google.com/102376109340560896457" alt="Google+" class="btn-social btn-social-googleplus"><i class="icon-googleplus"></i></a>
+                <a href="https://github.com/phalcon/cphalcon" alt="Github" class="btn-social btn-social-github"><i class="icon-github"></i></a>
+            </div>
+        </div>
+    </div>
+
+</div>
 <footer class="footer">
     <div class="container">
         <div class="row">
@@ -28,8 +42,8 @@
                 <ul>
                     <li><a href="http://forum.phalconphp.com/" class="header-nav-link" target="_blank">{{ tr('forum') }}</a></li>
                     <li><a href="https://github.com/phalcon/cphalcon">GitHub</a></li>
-                    <li><a href="https://github.com/phalcon/cphalcon/issues" class="link-black">{{ tr('issue_tracker') }}</a></li>
-                    <li><a href="http://stackoverflow.com/questions/tagged/phalcon" class="link-black">{{ tr('stack_overflow') }}</a></li>
+                    <li><a href="https://github.com/phalcon/cphalcon/issues">{{ tr('issue_tracker') }}</a></li>
+                    <li><a href="http://stackoverflow.com/questions/tagged/phalcon">{{ tr('stack_overflow') }}</a></li>
                     <li>{{ link_to(['for': 'pages', 'pageSlug': 'testimonials', 'language': language], tr('testimonials')) }}</li>
                     <li><a href="http://builtwith.phalconphp.com/">Built with Phalcon</a></li>
                     <li><a href="http://store.phalconphp.com/">{{ tr('store') }}</a></li>
