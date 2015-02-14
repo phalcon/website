@@ -37,10 +37,3 @@
     <li class="visible-lg"><a href="https://github.com/phalcon/cphalcon/" class="github">&nbsp;</a></li>
     <li class="visible-lg"><a href="https://twitter.com/phalconphp" class="twitter">&nbsp;</a></li>
 </ul>
-
-{#
-    <li>{{ link_to(['for': 'pages', 'pageSlug': 'testimonials', 'language': language], tr('testimonials'), 'class' : 'header-nav-link') }}</li>
-    <li>{{ link_to(['for': 'pages', 'pageSlug': 'support', 'language': language], tr('support'), 'class' : 'header-nav-link') }}</li>
-    <li>{{ link_to(['for': 'pages', 'pageSlug': 'consulting', 'language': language], tr('consulting'), 'class' : 'header-nav-link') }}</li>
-    <li>{{ link_to(['for': 'pages', 'pageSlug': 'donate', 'language': language], tr('donate'), 'class' : 'header-nav-link') }}</li>
-    <li><a href="http://store.phalconphp.com/" class="header-nav-link" target="_blank">{{ tr('store') }}</a></li>#}

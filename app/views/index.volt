@@ -47,29 +47,9 @@
     </div>
 </header>
 <a class="video btn-video" href="http://vimeo.com/63022489"><i class="icon-youtube"></i>{{ tr('demo_video') }}</a>
-
-
-
-
-
-
-<div class="wrapper">
-
-    <div class="size-wrap">
-
-        {% if this.getDi().get('router').getControllerName() == 'index' and this.getDi().get('router').getActionName() == 'index' %}
-        <blockquote class="header-intro">
-            {{ tr('phalcon_description', docs_root ~ 'reference/benchmark.html') }}
-        </blockquote>
-        {% endif %}
-
-    </div>
-
     {{ content() }}
 
     {% include 'partials/footer.volt' %}
-
-</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="/js/plugins/jquery.backstretch.min.js"></script>
