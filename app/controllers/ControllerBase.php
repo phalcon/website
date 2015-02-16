@@ -37,7 +37,9 @@ class ControllerBase extends Controller
 		foreach ($languages as $key => $value) {
 			$selected = ($key == $lang) ? " selected='selected'" : '';
 			$href     = $url .  str_replace("/{$lang}", "{$key}", $uri);
-			$languagesAvailable .= "<option value='{$href}'{$selected}>{$value}</option>";
+			$languagesAvailable .= "<a role='menuitem' tabindex='-1' href='{$href}' class='flag-{$key}'>{$value}</a>";
+
+			#$languagesAvailable .= "<option value='{$href}'{$selected}>{$value}</option>"; // old way to do it
 		}
 
 		$this->view->setVar('language', $lang);

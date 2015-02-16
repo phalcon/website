@@ -2,15 +2,15 @@
 .flag-bg  { background-image: url("../img/flags/bg.gif"); }
 .flag-cz  { background-image: url("../img/flags/cz.gif"); }
 .flag-de  { background-image: url("../img/flags/de.gif"); }
-.flag-gr  { background-image: url("../img/flags/gr.gif"); }
-.flag-us  { background-image: url("../img/flags/us.gif"); }
+.flag-el  { background-image: url("../img/flags/el.gif"); }
+.flag-en  { background-image: url("../img/flags/en.gif"); }
 .flag-es  { background-image: url("../img/flags/es.gif"); }
-.flag-ir  { background-image: url("../img/flags/ir.gif"); }
+.flag-fa  { background-image: url("../img/flags/fa.gif"); }
 .flag-fr  { background-image: url("../img/flags/fr.gif"); }
 .flag-hu  { background-image: url("../img/flags/hu.gif"); }
-.flag-jp  { background-image: url("../img/flags/jp.gif"); }
+.flag-ja  { background-image: url("../img/flags/ja.gif"); }
 .flag-it  { background-image: url("../img/flags/it.gif"); }
-.flag-kr  { background-image: url("../img/flags/kr.gif"); }
+.flag-ko  { background-image: url("../img/flags/ko.gif"); }
 .flag-lt  { background-image: url("../img/flags/lt.gif"); }
 .flag-mk  { background-image: url("../img/flags/mk.gif"); }
 .flag-lt  { background-image: url("../img/flags/lt.gif"); }
@@ -24,4 +24,4 @@
 .flag-th  { background-image: url("../img/flags/th.gif"); }
 .flag-tr  { background-image: url("../img/flags/tr.gif"); }
 .flag-vi  { background-image: url("../img/flags/vi.gif"); }
-.flag-cn  { background-image: url("../img/flags/cn.gif"); }
+.flag-zh  { background-image: url("../img/flags/zh.gif"); }
