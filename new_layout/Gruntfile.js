@@ -47,7 +47,7 @@ module.exports = function(grunt) {
 		cssmin: {
 			compress: {
 				files: {
-					'static/css/phalcon.min.css': ['static/css/src/styles.css', 'static/css/src/flags.css', 'static/css/src/magnific-popup.css', 'static/css/src/icomoon.css', 'static/css/src/highlight.js.css']
+					'../public/css/phalcon.min.css': ['static/css/src/styles.css', 'static/css/src/flags.css', 'static/css/src/magnific-popup.css', 'static/css/src/icomoon.css', 'static/css/src/highlight.js.css']
 				}
 			}
 		},
