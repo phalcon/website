@@ -30,6 +30,12 @@
                     {% elseif isPage === 'stubs' %}
                         Phalcon IDE Stubs
                     {% endif %}
+                {% elseif isPage === 'about' %}
+                    {{ tr('get_involved') }}
+                {% elseif isPage === 'team' %}
+                    {{ tr('phalcon_team') }}
+                {% elseif isPage === 'testimonials' %}
+                    {{ tr('get_involved') }}
                 {% else %}
                     Documentation - {{ dispatcher.getControllerName() }} - {{ dispatcher.getActionName() }}
                 {% endif %}

@@ -10,6 +10,7 @@ class PagesController extends \ControllerBase
         $this->tag->setTitle($pageTitle);
         $this->view->pick('pages/' . $pageSlug);
         $this->view->setVar('isFrontpage', false);
+        $this->view->setVar('isPage', $pageSlug);
     }
 }
 
