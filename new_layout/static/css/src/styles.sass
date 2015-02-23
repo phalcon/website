@@ -36,7 +36,7 @@ a:hover
   color: #70b599
   text-decoration: none
 
-a.btn-phalcon
+a.btn-phalcon, button.btn-phalcon
   background: #84d3b2
   color: white
   border-top: none
@@ -50,7 +50,7 @@ a.btn-phalcon
   +border-radius(15px)
   +transition(all, 0.1s, ease-out)
 
-a:hover.btn-phalcon
+a:hover.btn-phalcon, button:hover.btn-phalcon
   background: #7cc8a8
   color: white
   border-color: #63a187
@@ -216,7 +216,6 @@ header
     padding: 0
     margin: 0
     color: #ffffff
-    padding-left: 56px
 
 a.btn-video
   display: block
@@ -398,6 +397,12 @@ a:hover.btn-video span
       filter: none
       -webkit-filter: grayscale(0%)
 
+
+.download
+  ul.nav
+    padding: 15px 0
+    margin-bottom: 0
+    list-style: none
 
 .getinvolved
   padding: 40px 0 80px 0
@@ -668,10 +673,6 @@ a:hover.btn-video span
     .dropdown-menu li a
       padding: 4px 0 4px 32px
 
-  .heading
-    h2
-      padding-left: 56px
-
 @media screen and (min-width:992px)
   header
     .phalcon-logo
@@ -687,16 +688,4 @@ a:hover.btn-video span
       border-top: none
       padding-top: 0
 
-  .heading
-    h2
-      padding-left: 56px
-
-
 @media screen and (min-width:1200px)
-  header
-    .navbar-header
-      padding-left: 60px
-
-  .heading
-    h2
-      padding-left: 150px

@@ -23,12 +23,17 @@ class DownloadController extends \ControllerBase
 
         $this->tag->setTitle($title);
         $this->view->pick('download/' . $type);
+        $this->view->setVar('isFrontpage', false);
+        $this->view->setVar('isPage', $type);
+        $this->view->setVar('title', $title);
     }
 
     public function windowsAction()
     {
 
         $this->tag->setTitle('Download Phalcon for Windows');
+        $this->view->setVar('isPage', 'windows');
+        $this->view->setVar('title', 'Download Phalcon for Windows');
 
         $cdn      = 'http://static.phalconphp.com/files/';
         $path     = ROOT_PATH . '/public/files/';
@@ -160,6 +165,7 @@ class DownloadController extends \ControllerBase
                 'old'     => $old
             )
         );
+        $this->view->setVar('isFrontpage', false);
 
     }
 
@@ -167,6 +173,8 @@ class DownloadController extends \ControllerBase
     {
 
         $this->tag->setTitle('Download Phalcon Vagrant Boxes');
+        $this->view->setVar('isFrontpage', false);
+        $this->view->setVar('isPage', 'vagrant');
 
 
 

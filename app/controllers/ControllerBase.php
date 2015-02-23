@@ -47,6 +47,7 @@ class ControllerBase extends Controller
 		$this->view->setVar('languages_available', $languagesAvailable);
 		$this->view->setVar('docs_root', 'http://docs.phalconphp.com/'.$lang.'/latest/');
 		$this->view->setVar('cdn_url', $cdnUrl);
+        $this->view->setVar('isFrontpage', true);
 	}
 
 	/**
@@ -71,6 +72,7 @@ class ControllerBase extends Controller
 				return false;
 			}
 		}
+
 
 		$this->requestInitialize();
 		return true;
