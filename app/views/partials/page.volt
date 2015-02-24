@@ -36,6 +36,16 @@
                     {{ tr('phalcon_team') }}
                 {% elseif isPage === 'testimonials' %}
                     {{ tr('get_involved') }}
+                {% elseif isPage === 'consulting' %}
+                    {{ tr('consulting') }}
+                {% elseif isPage === 'hosting' %}
+                    {{ tr('hosting') }}
+                {% elseIf isPage === 'roadmap' %}
+                    Roadmap
+                {% elseif isPage === 'support' %}
+                    {{ tr('support') }}
+                {% elseif isPage === 404 %}
+                    Not Found
                 {% else %}
                     Documentation - {{ dispatcher.getControllerName() }} - {{ dispatcher.getActionName() }}
                 {% endif %}
