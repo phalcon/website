@@ -3,27 +3,27 @@
 {% include 'partials/head.volt' %}
 <body>
 
+{% if isFrontpage == 1 %}
 <header class="homepage-header">
-    <div class="container">
-        <nav class="navbar" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-container">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand phalcon-logo" href="/">
-                        <span itemprop="name" class="sr-only">Phalcon PHP</span>
-                    </a>
-                </div>
-
-                <div class="collapse navbar-collapse navbar-right" id="main-menu-container">
-                    {% include 'partials/topmenu.volt' %}
-                </div>
+    <nav class="navbar" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-container">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand phalcon-logo" href="/">
+                    <span itemprop="name" class="sr-only">Phalcon PHP</span>
+                </a>
             </div>
-        </nav>
 
+            <div class="collapse navbar-collapse navbar-right" id="main-menu-container">
+                {% include 'partials/topmenu.volt' %}
+            </div>
+        </div>
+    </nav>
+    <div class="container">
         <div class="tagline">
             <h1>Phalcon is a robust PHP Framework built as a C-extension.</h1>
             <p>It makes it <a href="#" class="hypechart">the fastest PHP framework</a> around*</p>
@@ -31,7 +31,7 @@
             {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], tr('download'), 'class' : 'btn btn-lg btn-phalcon') }}
 
             <div class="sublinks">
-                <a href="https://github.com/phalcon/cphalcon/tree/2.0.0">Clone on GitHub</a> |
+                <a href="https://github.com/phalcon/cphalcon">Clone on GitHub</a> |
                 <a href="#">Download v.1.3.3</a> |
                 {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], 'Install instructions') }}
             </div>
@@ -47,6 +47,9 @@
     </div>
 </header>
 <a class="video btn-video" href="http://vimeo.com/63022489"><i class="icon-youtube"></i>{{ tr('demo_video') }}</a>
+    {% else %}
+    {% include 'partials/page.volt' %}
+{% endif %}
     {{ content() }}
 
     {% include 'partials/footer.volt' %}
