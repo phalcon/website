@@ -18,23 +18,11 @@
             <div class="col-xs-6 col-sm-2">
                 <h4>Download</h4>
                 <ul>
-                    <li><a href="#">Installing Phalcon PHP</a></li>
+                    <li><a href="/download">Installing Phalcon PHP</a></li>
                     <li><a href="{{ docs_root }}index.html" class="header-nav-link" target="_blank">{{ tr('documentation') }}</a></li>
-                    <li><a href="#">API</a></li>
-                    <li><a href="#">Tutorial</a></li>
-                    <li><a href="#">Sample Applications</a></li>
-                    <li><a href="#">License</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-6 col-sm-2">
-                <h4>Documentation</h4>
-                <ul>
-                    <li><a href="#">Installing Phalcon PHP</a></li>
-                    <li><a href="{{ docs_root }}index.html" class="header-nav-link" target="_blank">{{ tr('documentation') }}</a></li>
-                    <li><a href="#">API</a></li>
-                    <li><a href="#">Tutorial</a></li>
-                    <li><a href="#">Sample Applications</a></li>
-                    <li><a href="#">License</a></li>
+                    <li><a href="http://api.phalconphp.com">API</a></li>
+                    <li><a href="{{ docs_root }}reference/tutorial.html">Tutorial</a></li>
+                    <li><a href="{{ docs_root }}reference/tutorial.html#sample-applications">Sample Applications</a></li>
                 </ul>
             </div>
             <div class="col-xs-6 col-sm-2">

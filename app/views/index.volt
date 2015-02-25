@@ -31,7 +31,7 @@
             {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], tr('download'), 'class' : 'btn btn-lg btn-phalcon') }}
 
             <div class="sublinks">
-                <a href="https://github.com/phalcon/cphalcon/tree/2.0.0">Clone on GitHub</a> |
+                <a href="https://github.com/phalcon/cphalcon">Clone on GitHub</a> |
                 <a href="#">Download v.1.3.3</a> |
                 {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], 'Install instructions') }}
             </div>
