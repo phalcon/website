@@ -288,7 +288,7 @@ $request = $di->getShared("request");
                 <img src="/img/phalcon2.png" alt="Learn to fly with Phalcon v2.0" />
                 <h3>Learn to fly with Phalcon v2.0</h3>
                 <p>Lorem ipsum sample text dummy text lorem ipsum sample text dummy text</p>
-                <a href="#" class="btn btn-lg btn-phalcon">Tutorial: Chapter 1</a>
+                <a href="{{ docs_root }}reference/tutorial.html" class="btn btn-lg btn-phalcon">Tutorial: Chapter 1</a>
             </div>
             <div class="col-sm-4 col-sm-offset-2 text-center">
                 <img src="/img/donate.png" alt="Donate & help Phalcon fly high" />

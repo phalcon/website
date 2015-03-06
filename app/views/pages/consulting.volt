@@ -1,27 +1,22 @@
-<div class="header-line" xmlns="http://www.w3.org/1999/html">
-    <div class="size-wrap">
-        <h1 class="header-line-title title-white">{{ tr('consulting') }}</h1>
-    </div>
-</div>
-<div class="size-wrap">
+<section class="consulting">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                {{ tr('consulting_header') }}
+            </div>
+        </div>
 
-    <div class="note">
-        {{ tr('consulting_header') }}
-    </div>
-
-    <table align="center" width="75%" cellpadding="15">
-        <tr>
-            <td align="center">
+        <div class="row">
+            <div class="col-lg-2">
                 <img src='{{ cdn_url ~ 'images/consulting/lezgro.png' }}' title='LEZGRO' alt='LEZGRO' />
-            </td>
-            <td>
+            </div>
+            <div class="col-lg-10">
                 <p>{{ tr('consulting_lezgro_1', 'http://www.lezgro.com') }}</p>
                 <p>{{ tr('consulting_lezgro_2') }}</p>
                 <p>{{ tr('consulting_lezgro_3', 'http://www.lezgro.com') }}</p>
                 <p>{{ tr('consulting_lezgro_4') }}</p>
                 <p>{{ tr('consulting_lezgro_5', 'http://lezgro.com/contacts/') }}</p>
-            </td>
-        </tr>
-    </table>
-
-</div>
+            </div>
+        </div>
+    </div>
+</section>
