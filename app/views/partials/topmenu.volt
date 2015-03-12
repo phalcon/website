@@ -5,7 +5,7 @@
     <li><a href="http://blog.phalconphp.com/" class="header-nav-link" target="_blank">{{ tr('blog') }}</a></li>
     <li>{{ link_to(['for': 'pages', 'pageSlug': 'about', 'language': language], tr('about')) }}</li>
     <li class="dropdown">
-        <a href="javascript:;" class="dropdown-toggle" id="dropdownLanguageMenu" data-toggle="dropdown"><img src="/img/flags/en.gif" alt="" />&nbsp;<span class="caret"></span></a>
+        <a href="javascript:;" class="dropdown-toggle" id="dropdownLanguageMenu" data-toggle="dropdown"><img src="/images/flags/en.gif" alt="" />&nbsp;<span class="caret"></span></a>
         <ul class="dropdown-menu" id="dropdown-language" role="menu" aria-labelledby="dropdownLanguageMenu">
             <li role="presentation" class="dropdown-link">{{ languages_available }}</li>
 {#            <li role="presentation" class="dropdown-link"><a role="menuitem" tabindex="-1" href="http://www.phalconphp/com/cz/" class="flag-cz">Český</a></li>
@@ -34,6 +34,6 @@
             <li role="presentation" class="dropdown-link"><a role="menuitem" tabindex="-1" href="http://www.phalconphp/com/cn/" class="flag-cn">简体中文</a></li> <!-- changed form "zn" -->#}
         </ul>
     </li>
-    <li class="visible-lg"><a href="https://github.com/phalcon/cphalcon/" class="github">&nbsp;</a></li>
     <li class="visible-lg"><a href="https://twitter.com/phalconphp" class="twitter">&nbsp;</a></li>
+    <li class="visible-lg"><a href="https://github.com/phalcon/cphalcon/" class="github">&nbsp;</a></li>
 </ul>

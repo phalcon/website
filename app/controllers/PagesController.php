@@ -13,4 +13,3 @@ class PagesController extends \ControllerBase
         $this->view->setVar('isPage', $pageSlug);
     }
 }
-

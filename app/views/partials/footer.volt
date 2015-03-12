@@ -1,12 +1,16 @@
 <div class="prefooter">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-sm-offset-3">
+            <div class="col-sm-3 text-right">
                 <span>Follow along:</span>
+            </div>
+            <div class="col-sm-6 text-center">
                 <a href="https://twitter.com/phalconphp" alt="Twitter" class="btn-social btn-social-twitter"><i class="icon-twitter"></i></a>
                 <a href="https://www.facebook.com/pages/Phalcon-Framework/134230726685897" alt="Facebook" class="btn-social btn-social-facebook"><i class="icon-facebook"></i></a>
                 <a href="https://plus.google.com/102376109340560896457" alt="Google+" class="btn-social btn-social-googleplus"><i class="icon-googleplus"></i></a>
                 <a href="https://github.com/phalcon/cphalcon" alt="Github" class="btn-social btn-social-github"><i class="icon-github"></i></a>
+            </div>
+            <div class="col-sm-3">
             </div>
         </div>
     </div>
@@ -15,7 +19,7 @@
 <footer class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-xs-6 col-sm-2">
+            <div class="col-xs-4 col-sm-3">
                 <h4>Download</h4>
                 <ul>
                     <li><a href="/download">Installing Phalcon PHP</a></li>
@@ -25,7 +29,7 @@
                     <li><a href="{{ docs_root }}reference/tutorial.html#sample-applications">Sample Applications</a></li>
                 </ul>
             </div>
-            <div class="col-xs-6 col-sm-2">
+            <div class="col-xs-4 col-sm-3">
                 <h4>Community</h4>
                 <ul>
                     <li><a href="http://forum.phalconphp.com/" class="header-nav-link" target="_blank">{{ tr('forum') }}</a></li>
@@ -37,7 +41,7 @@
                     <li><a href="http://store.phalconphp.com/">{{ tr('store') }}</a></li>
                 </ul>
             </div>
-            <div class="col-xs-6 col-sm-2">
+            <div class="col-xs-4 col-sm-2">
                 <h4>About</h4>
                 <ul>
                     <li><a class="link-black" href="http://blog.phalconphp.com/">{{ tr('blog') }}</a></li>
@@ -49,7 +53,8 @@
                     <li>{{ link_to(['for': 'pages', 'pageSlug': 'hosting', 'language': language], tr('hosting')) }}</li>
                 </ul>
             </div>
-            <div class="col-xs-12 col-sm-4">
+            <div id="license-spaccer" class="visible-xs"></div>
+            <div id="license-wrapper" class="col-xs-12 col-sm-4">
                 <p class="license">
                     Phalcon is an open-source PHP framework <br />
                     built as a C-extension. It is available under the <br />
@@ -58,7 +63,10 @@
 
                 <div class="design">
                     <span>Designed by:</span>
+                    {# #TODO /phalcon-development-team giving 404
                     <a href="http://www.fog-city.net/phalcon-development-team" class="fogcity" target="_blank" title="Phalcon Development Team"><span>Fog City - Phalcon Development Team</span></a>
+                    #}
+                    <a href="http://www.fog-city.net/" class="fogcity" target="_blank" title="Fog City Software"><span>Fog City Software</span></a>
                 </div>
             </div>
         </div>
