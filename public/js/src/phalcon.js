@@ -1,7 +1,7 @@
 $(function(){
 
     // Header background stretch init
-    $('.homepage-header').backstretch('img/bg.jpg');
+    $('.homepage-header').backstretch('/images/bg.jpg');
 
     // Video popup init
 	$('.video').magnificPopup({

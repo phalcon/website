@@ -285,13 +285,13 @@ $request = $di->getShared("request");
     <div class="container">
         <div class="row">
             <div class="col-sm-4 col-sm-offset-1 text-center">
-                <img src="/img/phalcon2.png" alt="Learn to fly with Phalcon v2.0" />
+                <img src="/images/phalcon2.png" alt="Learn to fly with Phalcon v2.0" />
                 <h3>Learn to fly with Phalcon v2.0</h3>
                 <p>Lorem ipsum sample text dummy text lorem ipsum sample text dummy text</p>
                 <a href="{{ docs_root }}reference/tutorial.html" class="btn btn-lg btn-phalcon">Tutorial: Chapter 1</a>
             </div>
             <div class="col-sm-4 col-sm-offset-2 text-center">
-                <img src="/img/donate.png" alt="Donate & help Phalcon fly high" />
+                <img src="/images/donate.png" alt="Donate & help Phalcon fly high" />
                 <h3>Donate & help Phalcon fly high</h3>
                 <p>Lorem ipsum sample text dummy text lorem ipsum sample text dummy text</p>
                 {{ tr('donate_to_phalcon') }} <a href="https://pledgie.com/campaigns/27405" target="_blank" class="btn btn-lg btn-phalcon" style="margin-bottom: 0 !important;">Donate via Pledgie</a>

@@ -58,7 +58,10 @@
 
                 <div class="design">
                     <span>Designed by:</span>
+                    {# #TODO /phalcon-development-team giving 404
                     <a href="http://www.fog-city.net/phalcon-development-team" class="fogcity" target="_blank" title="Phalcon Development Team"><span>Fog City - Phalcon Development Team</span></a>
+                    #}
+                    <a href="http://www.fog-city.net/" class="fogcity" target="_blank" title="Fog City Software"><span>Fog City Software</span></a>
                 </div>
             </div>
         </div>
