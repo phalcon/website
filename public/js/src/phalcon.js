@@ -17,6 +17,7 @@ $(function(){
 	hljs.initHighlightingOnLoad();
 
 	// Code samples autoplayer
+	/*
 	var timerId = setInterval( function(){
 		var link = $('.codesamples ul li a.active').parent().next().find('a');
 		var target = link.attr('href');
@@ -31,11 +32,12 @@ $(function(){
 		$('.codesample-current').removeClass('codesample-current');
 		$(target).addClass('codesample-current');
 	}, 3500);
+	*/
 
 	// Code samples tags - click event
 	$('.codesample').click(function(e) {
 		e.preventDefault();
-		clearInterval(timerId);
+		//clearInterval(timerId);
 
 		var target = $(this).attr('href');
 		var current = $('.codesample-current').attr('id');

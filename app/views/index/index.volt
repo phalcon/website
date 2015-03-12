@@ -246,59 +246,61 @@ $request = $di->getShared("request");
 </section>
 
 <section class="community">
-    <h2>Join the vibrant community of developers</h2>
+    <h2>Come join our vibrant developer community!</h2>
 
     <div class="container">
-        <div class="row">
-            <div class="col-xs-6 col-sm-2 col-sm-offset-2">
-                <a href="#" class="community-link">
-                    <i class="icon-users"></i><br />
-                    How&nbsp;to&nbsp;Contribute
+        <div id="community-buttons" class="row">
+            <div class="col-xs-6 col-sm-3">
+                <a href="http://phweb/en/about" class="icon community-link">
+                    <i class="icon-organization"></i><br />
+                    How to Contribute
                 </a>
             </div>
-            <div class="col-xs-6 col-sm-2">
-                <a href="http://forum.phalconphp.com/" class="community-link">
+            <div class="col-xs-6 col-sm-3">
+                <a href="http://forum.phalconphp.com/" class="icon community-link" target="_blank">
                     <i class="icon-bubbles"></i><br />
                     {{ tr('forum') }}
                 </a>
             </div>
-            <div class="col-xs-6 col-sm-2">
-                <a href="https://github.com/phalcon/cphalcon" class="community-link">
+            <div class="col-xs-6 col-sm-3">
+                <a href="https://github.com/phalcon/cphalcon" class="icon community-link" target="_blank">
                     <i class="icon-github"></i><br />
                     {{ tr('github') }}
                 </a>
             </div>
-            <div class="col-xs-6 col-sm-2">
-                <a href="http://stackoverflow.com/questions/tagged/phalcon" class="community-link">
-                    <i class="icon-support"></i><br />
+            <div class="col-xs-6 col-sm-3">
+                <a href="http://stackoverflow.com/questions/tagged/phalcon" class="icon community-link" target="_blank">
+                    <i class="icon-stack-overflow"></i><br />
                     {{ tr('stack_overflow') }}
                 </a>
             </div>
 
         </div>
     </div>
-{{ partial('partials/contributors') }}
+
+    {{ partial('partials/contributors') }}
+
 </section>
 
 <section class="getinvolved">
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-4 col-sm-offset-1 text-center">
-                <img src="/images/phalcon2.png" alt="Learn to fly with Phalcon v2.0" />
-                <h3>Learn to fly with Phalcon v2.0</h3>
-                <p>Lorem ipsum sample text dummy text lorem ipsum sample text dummy text</p>
-                <a href="{{ docs_root }}reference/tutorial.html" class="btn btn-lg btn-phalcon">Tutorial: Chapter 1</a>
+            <div class="col-xs-6 text-center">
+                <i class="icon-code icon-huge"></i>
+                <h3>Learn to fly with Phalcon 2!</h3>
+                <p>Get started by learning the basic concepts behind a common Phalcon App</p>
+                <a href="{{ docs_root }}reference/tutorial.html" class="btn btn-lg btn-phalcon">Try our Tutorial</a>
             </div>
-            <div class="col-sm-4 col-sm-offset-2 text-center">
-                <img src="/images/donate.png" alt="Donate & help Phalcon fly high" />
-                <h3>Donate & help Phalcon fly high</h3>
-                <p>Lorem ipsum sample text dummy text lorem ipsum sample text dummy text</p>
-                {{ tr('donate_to_phalcon') }} <a href="https://pledgie.com/campaigns/27405" target="_blank" class="btn btn-lg btn-phalcon" style="margin-bottom: 0 !important;">Donate via Pledgie</a>
+            <div class="col-xs-6 text-center">
+                <i class="icon-thumbs-up icon-huge"></i>
+                <h3>Help Phalcon to fly higher!</h3>
+                <p>You may show your apprecition by donating to this project via:</p>
+                <a href="https://pledgie.com/campaigns/27405" target="_blank" class="btn btn-lg btn-phalcon">Pledgie</a> <b>or</b>
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="display: inline" target="_blank">
                     <input type="hidden" name="cmd" value="_s-xclick" />
                     <input type="hidden" name="hosted_button_id" value="7LSYMNMFZNG8W" />
-                    <button class="btn btn-lg btn-phalcon" type="submit" title="PayPal — The safer, easier way to pay online.">Donate via PayPal</button>
+                    <button class="btn btn-lg btn-phalcon" type="submit" title="PayPal — The safer, easier way to pay online.">PayPal</button>
                 </form>
             </div>
         </div>

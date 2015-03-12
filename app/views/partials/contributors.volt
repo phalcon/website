@@ -5,7 +5,7 @@
 <?php
 foreach (array_slice($contributors[0], 0, 84) as $contributor => $number) {
 ?>
-    <a title="<?php echo $contributor; ?>" href="<?php echo $contributors[2][$contributor]; ?>"><img src="<?php echo $contributors[1][$contributor]; ?>" alt="<?php echo $contributor; ?>" /></a>
+    <a title="<?php echo $contributor; ?>" href="<?php echo $contributors[2][$contributor]; ?>"><img src="<?php echo $contributors[1][$contributor]; ?>&s=90" alt="<?php echo $contributor; ?>" /></a>
 <?php
     }
 ?>

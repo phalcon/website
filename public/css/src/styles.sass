@@ -27,6 +27,10 @@ $color-text-default:  #4d4a4c
   margin: 20px 0
   border-bottom: 1px solid #c0c0c0
 
+.icon-huge
+  font-size: 112px
+  color: #70b599
+
 body
   color: $color-text-default
   font-size: 14px
@@ -59,6 +63,16 @@ a:hover.btn-phalcon, button:hover.btn-phalcon
   color: white
   border-color: #63a187
 
+a:focus, .nav>li>a:focus
+  text-decoration: none !important
+
+a.super
+  font-size: 55%
+  vertical-align: super
+
+.nav>li>a:focus
+  background-color: transparent !important
+
 .homepage-header
   padding-top: 20px
   //background-color: #0098a9
@@ -86,6 +100,9 @@ a:hover.btn-phalcon, button:hover.btn-phalcon
 
 header
 
+  .navbar
+    margin-top: -15px
+
   .navbar-toggle
     border-color: #ffffff
     margin-top: 15px
@@ -97,7 +114,7 @@ header
     display: block
     width: 200px
     height: 90px
-    background: transparent url("../images/phalcon.png") 0 0 no-repeat
+    background: transparent url("/images/phalcon.png") 0 0 no-repeat
     background-size: 200px 90px
 
   .main-menu
@@ -126,21 +143,21 @@ header
 
   a.github
     margin-right: 0px
-    background: transparent url("../images/github.png") center center no-repeat
+    background: transparent url("/images/github.png") center center no-repeat
     opacity: 0.6
 
   a:hover.github
     opacity: 0.9
 
   a.twitter
-    background: transparent url("../images/twitter.png") center center no-repeat
+    background: transparent url("/images/twitter.png") center center no-repeat
     opacity: 0.6
 
   a:hover.twitter
     opacity: 0.9
   
   a#dropdownLanguageMenu
-    background: transparent url("../images/frame.png") 6px 3px no-repeat
+    background: transparent url("/images/frame.png") 6px 3px no-repeat
     margin-right: 0
 
   a:hover#dropdownLanguageMenu
@@ -169,7 +186,7 @@ header
     color: #4d4a4c
 
   .tagline
-    margin-top: 120px
+    margin-top: 50px
     text-align: center
 
   .tagline h1
@@ -206,7 +223,7 @@ header
 
 
 .heading
-  background: #548d90 url('../images/heading.png') center center no-repeat
+  background: #548d90 url('/images/heading.png') center center no-repeat
   padding: 20px 0
   font-size: 24px
   font-weight: 700
@@ -297,10 +314,10 @@ a:hover.btn-video span
     color: #ffffff
 
   ul.features-positive
-    list-style-image: url('../images/check.png')
+    list-style-image: url('/images/check.png')
 
   ul.features-negative
-    list-style-image: url('../images/remove.png')
+    list-style-image: url('/images/remove.png')
 
   ul.features li
     margin-bottom: 5px
@@ -339,12 +356,12 @@ a:hover.btn-video span
 
 .community
   border-top: 2px solid #f2f2f2
-  padding: 80px 0
+  padding: 20px 0
 
   h2
     text-align: center
     margin-top: 30px
-    padding-bottom: 80px
+    padding-bottom: 20px
     font-size: 32px
     font-weight: 700
     color: #3b7866
@@ -361,10 +378,18 @@ a:hover.btn-video span
   a:hover.community-link
     color: #70b599
 
+
+#community-buttons > div
+  margin-top: 30px
+
+#community-buttons a
+  white-space: nowrap
+
 .contributors
   margin-top: 40px
   position: relative
-  background-color: #000000
+  background: url('/images/contributors.jpeg') center -2px white
+  text-align: center
 
 .contributors
 
@@ -372,34 +397,35 @@ a:hover.btn-video span
     display: block
     width: 100%
     height: 135px
-    background: transparent url('../images/fader2.png') bottom center repeat-x
+    background: linear-gradient(to top,#fff,#fff 25px, rgba(255,255,255,0.8) 80px, transparent 100%)
     position: absolute
-    z-index: 999
-    bottom: 0
+    z-index: 300
+    bottom: -20px
     left: 0
+    pointer-events: none !important
 
   a
-    display: block
-    float: left
+    display: inline-block
     width: 60px
     height: 60px
-    margin: 0px
-    opacity: 0.9
-    +transition(all, 0.2s, ease-in)
+    margin: -2px
 
   a img
+    background: white
     width: 60px
     height: 60px
     filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale") /* Firefox 3.5+ */
     filter: gray /* IE6-9 */
     -webkit-filter: grayscale(100%) /* Chrome 19+ & Safari 6+ */
-
-  a:hover
-    opacity: 1
+    z-index: 101
+    position: relative
+    +transition(transform, 100ms, cubic-bezier(0.18, 0.89, 0.32, 1.28))
 
   a:hover img
     filter: none
     -webkit-filter: grayscale(0%)
+    transform: scale(1.5)
+    z-index: 301
 
 
 .download, .about, .testimonials, .team
@@ -412,6 +438,12 @@ a:hover.btn-video span
   padding: 40px 0 80px 0
 
 .getinvolved
+  .container
+    text-align: center
+    .row
+      display: inline-block
+      .text-center
+        max-width: 350px
   h3
     font-size: 20px
     text-align: center
@@ -501,9 +533,16 @@ a:hover.btn-video span
     color: #c0c6cf
     border-bottom: 1px dotted #c0c6cf
 
+  #license-wrapper
+    background: url('/images/phalcon3.png') 10px 0/74px 85px no-repeat
+
+  #license-spaccer
+    float: left
+    height: 50px
+    width: 100%
+
   .license
-    padding: 30px 0 0 90px
-    background: transparent url('../images/phalcon3.png') 0 0 no-repeat
+    padding-left: 90px
     background-size: 74px 85px
     color: #6d7481
     font-size: 12px
@@ -529,9 +568,10 @@ a:hover.btn-video span
       display: block
       width: 115px
       height: 42px
-      background: transparent url('../images/fogcity.png') 0 0 no-repeat
+      background: transparent url('/images/fogcity.png') 0 0 no-repeat
       background-size: 115px 42px
       opacity: 0.5
+
 
     a:hover
       opacity: 1
@@ -563,7 +603,7 @@ a:hover.btn-video span
 
 
 
-@media screen and (max-width:767px)
+@media screen and (max-width: 767px)
   .homepage-header
     padding-top: 7px
 
@@ -572,7 +612,7 @@ a:hover.btn-video span
       margin-left: 0px
       width: 169px
       height: 58px
-      background-image: url("../images/phalcon1.png")
+      background-image: url("/images/phalcon1.png")
       background-size: 169px 58px
 
     .navbar-header
@@ -647,7 +687,7 @@ a:hover.btn-video span
 
 
 
-@media screen and (min-width:768px)
+@media screen and (min-width: 768px)
   .homepage-header
     padding-top: 7px
 
@@ -659,7 +699,7 @@ a:hover.btn-video span
       margin-left: 0px
       width: 169px
       height: 58px
-      background-image: url("../images/phalcon1.png")
+      background-image: url("/images/phalcon1.png")
       background-size: 169px 58px
 
     .main-menu
@@ -677,14 +717,14 @@ a:hover.btn-video span
     .dropdown-menu li a
       padding: 4px 0 4px 32px
 
-@media screen and (min-width:992px)
+@media screen and (min-width: 992px)
   header
     .phalcon-logo
       margin-left: 0px
       display: block
       width: 200px
       height: 90px
-      background: transparent url("../images/phalcon.png") 0 0 no-repeat
+      background: transparent url("/images/phalcon.png") 0 0 no-repeat
       background-size: 200px 90px
 
     .main-menu
@@ -692,7 +732,7 @@ a:hover.btn-video span
       border-top: none
       padding-top: 0
 
-@media screen and (min-width:1200px)
+@media screen and (min-width: 1200px)
 
 .team
   h3

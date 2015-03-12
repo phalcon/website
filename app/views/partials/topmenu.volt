@@ -34,6 +34,6 @@
             <li role="presentation" class="dropdown-link"><a role="menuitem" tabindex="-1" href="http://www.phalconphp/com/cn/" class="flag-cn">简体中文</a></li> <!-- changed form "zn" -->#}
         </ul>
     </li>
-    <li class="visible-lg"><a href="https://github.com/phalcon/cphalcon/" class="github">&nbsp;</a></li>
     <li class="visible-lg"><a href="https://twitter.com/phalconphp" class="twitter">&nbsp;</a></li>
+    <li class="visible-lg"><a href="https://github.com/phalcon/cphalcon/" class="github">&nbsp;</a></li>
 </ul>
