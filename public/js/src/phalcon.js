@@ -1,7 +1,10 @@
-$(function(){
+$(function() {
+	$.ajax({
+		dataType: "json",
+		url: 'https://api.github.com/repos/phalcon/cphalcon',
+		success: countingStars
+	});
 
-    // Header background stretch init
-    $('.homepage-header').backstretch('/images/bg.jpg');
 
     // Video popup init
 	$('.video').magnificPopup({
@@ -60,6 +63,34 @@ $(function(){
 		//else
 			//HYPE.documents.phalcon.showSceneNamed('Mountains',HYPE.documents.phalcon.kSceneTransitionInstant);
 	});
-
-
 });
+
+$(window).load(function() {
+	$(document.body).addClass('loaded');
+});
+
+function countingStars(data)
+{
+	$.extend($.easing,
+		{
+			easeOutExpo: function (x, t, b, c, d) {
+				return (t==d) ? b+c : c * (-Math.pow(4, -10 * t/d) + 1) + b;
+			}
+		}
+	);
+
+	var total = parseInt(data.stargazers_count);
+	var container = $("#stargazers").find("span").get(0);
+
+	$({
+		stars: 0
+	}).animate({
+		stars: total
+	}, {
+		duration: 2000,
+		easing: 'easeOutExpo',
+		step: function() {
+			container.innerText = Math.round(this.stars).toLocaleString(navigator.language);
+		}
+	});
+}
