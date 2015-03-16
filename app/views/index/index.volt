@@ -251,15 +251,15 @@ $request = $di->getShared("request");
     <div class="container">
         <div id="community-buttons" class="row">
             <div class="col-xs-6 col-sm-3">
-                <a href="http://phweb/en/about" class="icon community-link">
-                    <i class="icon-organization"></i><br />
-                    How to Contribute
-                </a>
-            </div>
-            <div class="col-xs-6 col-sm-3">
                 <a href="http://forum.phalconphp.com/" class="icon community-link" target="_blank">
                     <i class="icon-bubbles"></i><br />
                     {{ tr('forum') }}
+                </a>
+            </div>
+            <div class="col-xs-6 col-sm-3">
+                <a href="http://phweb/en/about" class="icon community-link">
+                    <i class="icon-organization"></i><br />
+                    How to Contribute
                 </a>
             </div>
             <div class="col-xs-6 col-sm-3">
@@ -286,14 +286,20 @@ $request = $di->getShared("request");
 
     <div class="container">
         <div class="row">
-            <div class="col-xs-6 text-center">
+            <div class="col-xs-12 col-sm-4 text-center">
                 <i class="icon-code icon-huge"></i>
                 <h3>Learn to fly with Phalcon 2!</h3>
                 <p>Get started by learning the basic concepts behind a common Phalcon App</p>
-                <a href="{{ docs_root }}reference/tutorial.html" class="btn btn-lg btn-phalcon">Try our Tutorial</a>
+                <a href="{{ docs_root }}reference/tutorial.html" class="btn btn-lg btn-phalcon">Try the tutorial</a>
             </div>
-            <div class="col-xs-6 text-center">
-                <i class="icon-thumbs-up icon-huge"></i>
+            <div class="col-xs-12 col-sm-4 text-center">
+                <img src="/images/zephir.png" alt="Zephir Language"/>
+                <h3>Meet Zephir!</h3>
+                <p>Get started by learning the basic concepts behind a common Phalcon App</p>
+                <a href="{{ docs_root }}reference/tutorial.html" class="btn btn-lg btn-phalcon">Learn more</a>
+            </div>
+            <div class="col-xs-12 col-sm-4 text-center">
+                <i class="icon-todo-fa fa fa-usd icon-huge"></i>
                 <h3>Help Phalcon to fly higher!</h3>
                 <p>You may show your apprecition by donating to this project via:</p>
                 <a href="https://pledgie.com/campaigns/27405" target="_blank" class="btn btn-lg btn-phalcon">Pledgie</a> <b>or</b>

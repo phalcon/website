@@ -21,8 +21,16 @@
   background: linear-gradient(to bottom, $start 0%, $end 100%)
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$start', endColorstr='$end',GradientType=0 )
 
+=select($type)
+  user-select: $type
+  -moz-user-select: $type
+  -ms-user-select:  $type
+  -webkit-user-select:  $type
+
 $color-text-default:  #4d4a4c
 
+.fa
+  font-family: FontAwesome !important
 .hr
   margin: 20px 0
   border-bottom: 1px solid #c0c0c0
@@ -94,9 +102,8 @@ a.super
 
 
 header
-
-  .navbar
-    margin-top: -15px
+  .container
+    padding: 20px 0
 
   .navbar-toggle
     border-color: #ffffff
@@ -105,25 +112,25 @@ header
   .navbar-toggle span
     background: #ffffff
 
-  .phalcon-logo
-    display: block
-    width: 200px
-    height: 90px
-    background: transparent url("/images/phalcon.png") 0 0 no-repeat
-    background-size: 200px 90px
-
-  .main-menu
-    margin-top: 38px
-
   .main-menu li
     margin: 0 3px
 
   .main-menu li a
-    color: #bae1e6
+    color: #D7EFF2
     font-size: 17px
-    //+transition(color, 0.2s, ease-in-out)
     text-shadow: 1px 1px 1px #0e566a
     padding: 8px 18px
+
+  .main-menu a.header-nav-link
+    text-transform: uppercase
+    font-size: 14px !important
+
+  .main-menu li.separator
+    background: rgba(255,255,255,.4)
+    margin: 7px 10px
+    width: 2px
+    box-shadow: 1px 1px 2px rgba(100,100,100,0.6)
+    cursor: default
 
   .main-menu li a:hover
     color: white
@@ -136,12 +143,24 @@ header
     box-shadow: inset 0 0 15px 0 rgba(0,0,0,0.2)
     +border-radius(18px)
 
-  a.github
-    margin-right: 0px
-    background: transparent url("/images/github.png") center center no-repeat
+  #stargazers
+    margin-right: 0
     opacity: 0.6
+    padding: 2px !important
+    +select(none)
 
-  a:hover.github
+    img
+      width: auto
+
+    span
+      background: url('/images/starcount-frame.png') center right no-repeat
+      font-size: 14px
+      padding: 5px 10px 5px 15px
+      margin-left: -18px
+      z-index: -1
+      position: relative
+
+  #stargazers:hover
     opacity: 0.9
 
   a.twitter
@@ -185,8 +204,10 @@ header
     text-align: center
 
   .tagline h1
-    font-size: 22px
+    font-size: 2em
     font-weight: 700
+    color: white
+    text-shadow: 0 0 .3em #1F8C60
 
   .tagline  p
     font-size: 16px
@@ -234,7 +255,7 @@ header
   margin: 0
   border: none
   -webkit-box-shadow: inset 0 0 7px 0 rgba(58,100,102,0.9)
-  box-shadow: inset 0 0 7px 0 rgba(58,100,102,0.9)
+  box-shadow: inset 0 0 7px 0 #3a6466
 
 .heading
   h2
@@ -275,11 +296,11 @@ a:hover.btn-video span
 .codesamples
 
   h2
-    font-size: 32px
-    text-transform: uppercase
     text-align: center
-    color: #c4c4c5
-    margin: 25px 0 50px 0
+    padding-bottom: 20px
+    font-size: 32px
+    font-weight: 700
+    color: #3b7866
 
   h4
     font-size: 11px
@@ -355,20 +376,18 @@ a:hover.btn-video span
       font-size: 15px
       line-height: 24px
 
-
-
-
 .community
   border-top: 2px solid #f2f2f2
   padding: 20px 0
+  overflow: hidden
 
   h2
     text-align: center
-    margin-top: 30px
     padding-bottom: 20px
     font-size: 32px
     font-weight: 700
     color: #3b7866
+
 
   a.community-link
     display: block
@@ -459,8 +478,6 @@ body.loaded .contributors a img
   img
     display: block
     margin: 0 auto
-    width: 150px
-    height: 150px
 
 
 .prefooter
@@ -613,13 +630,6 @@ body.loaded .contributors a img
     padding-top: 7px
 
   header
-    .phalcon-logo
-      margin-left: 0px
-      width: 169px
-      height: 58px
-      background-image: url("/images/phalcon1.png")
-      background-size: 169px 58px
-
     .navbar-header
       padding-bottom: 5px
       border: none
@@ -692,54 +702,7 @@ body.loaded .contributors a img
 
 
 
-@media screen and (min-width: 768px)
-  .homepage-header
-    padding-top: 7px
-
-  .page-header
-    padding-top: 7px
-
-  header
-    .phalcon-logo
-      margin-left: 0px
-      width: 169px
-      height: 58px
-      background-image: url("/images/phalcon1.png")
-      background-size: 169px 58px
-
-    .main-menu
-      margin-top: 5px
-      border-top: 2px solid #5bafbb
-      padding-top: 7px
-      padding-right: 20px
-
-    .main-menu li
-      margin: 0 1px
-
-    .main-menu li a
-      padding: 8px 16px
-
-    .dropdown-menu li a
-      padding: 4px 0 4px 32px
-
-@media screen and (min-width: 992px)
-  header
-    .phalcon-logo
-      margin-left: 0px
-      display: block
-      width: 200px
-      height: 90px
-      background: transparent url("/images/phalcon.png") 0 0 no-repeat
-      background-size: 200px 90px
-
-    .main-menu
-      margin-top: 38px
-      border-top: none
-      padding-top: 0
-
-@media screen and (min-width: 1200px)
-
-.team
+  .team
   h3
     margin-top: 0
     margin-bottom: 10px
@@ -754,3 +717,9 @@ body.loaded .contributors a img
 .support
   .bg-danger
     padding: 10px
+
+@media screen and (min-width: 768px)
+
+@media screen and (min-width: 992px)
+
+@media screen and (min-width: 1200px)
