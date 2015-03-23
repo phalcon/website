@@ -1,27 +1,33 @@
-.flag-pl  { background-image: url("/images/flags/pl.gif"); }
-.flag-bg  { background-image: url("/images/flags/bg.gif"); }
-.flag-cz  { background-image: url("/images/flags/cz.gif"); }
-.flag-de  { background-image: url("/images/flags/de.gif"); }
-.flag-el  { background-image: url("/images/flags/el.gif"); }
-.flag-en  { background-image: url("/images/flags/en.gif"); }
-.flag-es  { background-image: url("/images/flags/es.gif"); }
-.flag-fa  { background-image: url("/images/flags/fa.gif"); }
-.flag-fr  { background-image: url("/images/flags/fr.gif"); }
-.flag-hu  { background-image: url("/images/flags/hu.gif"); }
-.flag-ja  { background-image: url("/images/flags/ja.gif"); }
-.flag-it  { background-image: url("/images/flags/it.gif"); }
-.flag-ko  { background-image: url("/images/flags/ko.gif"); }
-.flag-lt  { background-image: url("/images/flags/lt.gif"); }
-.flag-mk  { background-image: url("/images/flags/mk.gif"); }
-.flag-lt  { background-image: url("/images/flags/lt.gif"); }
-.flag-nl  { background-image: url("/images/flags/nl.gif"); }
-.flag-pl  { background-image: url("/images/flags/pl.gif"); }
-.flag-pt  { background-image: url("/images/flags/pt.gif"); }
-.flag-ro  { background-image: url("/images/flags/ro.gif"); }
-.flag-ru  { background-image: url("/images/flags/ru.gif"); }
-.flag-sr  { background-image: url("/images/flags/sr.gif"); }
-.flag-sv  { background-image: url("/images/flags/sv.gif"); }
-.flag-th  { background-image: url("/images/flags/th.gif"); }
-.flag-tr  { background-image: url("/images/flags/tr.gif"); }
-.flag-vi  { background-image: url("/images/flags/vi.gif"); }
-.flag-zh  { background-image: url("/images/flags/zh.gif"); }
+.flag {
+    width: 16px;
+    height: 11px;
+    display: inline-block;
+    /* Image generated with https://www.flag-sprites.com/gen/flags.png?set=famfamfam&countries=bg,br,cn,cz,de,es,fr,gr,hu,ir,it,jp,kr,lt,mk,nl,pl,ro,rs,ru,se,th,tr,us,vn */
+    background:url('/images/flags.png') no-repeat
+}
+
+.flag.flag-bg {background-position: -16px 0}
+.flag.flag-br {background-position: -32px 0}
+.flag.flag-cn {background-position: -48px 0}
+.flag.flag-cz {background-position: -64px 0}
+.flag.flag-de {background-position: -80px 0}
+.flag.flag-es {background-position: 0 -11px}
+.flag.flag-fr {background-position: -16px -11px}
+.flag.flag-gr {background-position: -32px -11px}
+.flag.flag-hu {background-position: -48px -11px}
+.flag.flag-ir {background-position: -64px -11px}
+.flag.flag-it {background-position: -80px -11px}
+.flag.flag-jp {background-position: 0 -22px}
+.flag.flag-kr {background-position: -16px -22px}
+.flag.flag-lt {background-position: -32px -22px}
+.flag.flag-mk {background-position: -48px -22px}
+.flag.flag-nl {background-position: -64px -22px}
+.flag.flag-pl {background-position: -80px -22px}
+.flag.flag-ro {background-position: 0 -33px}
+.flag.flag-rs {background-position: -16px -33px}
+.flag.flag-ru {background-position: -32px -33px}
+.flag.flag-se {background-position: -48px -33px}
+.flag.flag-th {background-position: -64px -33px}
+.flag.flag-tr {background-position: -80px -33px}
+.flag.flag-us {background-position: 0 -44px}
+.flag.flag-vn {background-position: -16px -44px}

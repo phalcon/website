@@ -7,12 +7,13 @@
 
     <li class="dropdown">
         <a href="javascript:void(0)" class="dropdown-toggle" id="dropdownLanguageMenu" data-toggle="dropdown">
-            <img src="/images/flags/{{ language }}.gif" alt="" />&nbsp;<span class="caret"></span>
+            <i class="flag flag-{{ languageFlags[language] }}"></i>&nbsp;<span class="caret"></span>
         </a>
         <ul class="dropdown-menu" id="dropdown-language" role="menu" aria-labelledby="dropdownLanguageMenu">
             <li role="presentation" class="dropdown-link">
                 {% for langCode, langName in languages if langCode != language %}
-                    <a role='menuitem' tabindex='-1' href='/{{ langCode }}/{{ cleanUri }}' class='flag-{{ langCode }}'>
+                    <a href="/{{ langCode }}/{{ cleanUri }}" role="menuitem" tabindex="-1">
+                        <i class="flag flag-{{ languageFlags[langCode] }}"></i>
                         {{ langName }}
                     </a>
                 {% endfor %}

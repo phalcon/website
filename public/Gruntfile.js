@@ -33,19 +33,6 @@ module.exports = function(grunt) {
 			}
 		},
 
-		/*
-		imagemin: {
-			dynamic: {
-				files: [{
-					expand: true,
-					cwd: 'img/src/',
-					src: ['** /*.{png,jpg,gif}'],
-					dest: 'img/'
-				}]
-			}
-		},
-		*/
-		
 		cssmin: {
 			compress: {
 				files: {
@@ -72,16 +59,12 @@ module.exports = function(grunt) {
 			      livereload: true
 			    }
 			},
-			imagemin: {
-				files: ['img/src/*', '!img/src/heading.png'],
-				tasks: ['imagemin']
-			},
 			hints: {
 				files: ['js/src/*.js'],
 				tasks: ['jshint'],
 				options: {
 					livereload: true,
-					spawn: false,
+					spawn: false
 				}
 			},
 			scripts: {
@@ -89,7 +72,7 @@ module.exports = function(grunt) {
 				tasks: ['uglify'],
 				options: {
 	   			    livereload: true,
-					spawn: false,
+					spawn: false
 				}
 			}
 		}
