@@ -244,8 +244,8 @@
         'hosting_aspnix_1'                => 'ASPnix provides superior Windows web hosting services. Our customers have rated our service as outstanding. We offer economical plans for shared Windows web hosting, Virtual private servers and dedicated servers!  <a href=":1:">See more</a>',
         'hosting_aspnix_2'                => '<p>Phalcon is supported on all Windows shared web hosting packages and plans, no configuration or installation required! They offer a variety of PHP versions from 5.2 – 5.6 as well as many <a href=":1:" target="_blank">additional extensions</a>!</p>',
         'hosting_layershift_title'        => 'Layershift',
-        'hosting_layershift_1'            => "You bring the code, we'll sort the servers. Next generation, auto-sizing PaaS for PHP",
-        'hosting_layershift_2'            => "<p>Follow this <a href=':1'>tutorial</a> to get started</p>",
+        'hosting_layershift_1'            => "Next generation, auto-sizing PaaS for Java, PHP, Ruby, Python, and Node.js apps. Fully isolated self-scaling role-based containers for each customer, including choice of Apache or Nginx, and full range of SQL and NoSQL servers. Pay for resource usage, not server instance size. SSD-powered. UK hosted.",
+        'hosting_layershift_2'            => "<p>Follow this <a href=':1:'>tutorial</a> to get started</p>",
 
         'testimonials'                    => 'Testimonials',
         'testimonials_description'        => "Below is a collection of testimonials and success stories, from you, the developers and users of Phalcon PHP. We always welcome emails with success stories and will be posting those in our blog. If you wish to send us your success story or get in touch with us, feel free to mail us at <a href='mailto::1:'>:2:</a>.",
