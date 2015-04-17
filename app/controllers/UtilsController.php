@@ -3,6 +3,12 @@
 class UtilsController extends \ControllerBase
 {
 
+    public function indexAction()
+    {
+        echo 'eta';
+        exit;
+    }
+
 	public function sitemapAction()
 	{
 		$this->view->setRenderLevel(PhView::LEVEL_ACTION_VIEW);
@@ -34,7 +40,6 @@ EOF;
 
 	public function contributorsAction()
     {
-
         $opts = array(
             'http' => array(
                 'method' => "GET",

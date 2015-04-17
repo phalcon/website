@@ -115,7 +115,6 @@
             'name'   => 'donate-redirect',
         ),
 
-
         // Index
         '/{language:[a-z]{2}}' => array(
             'params' => array(

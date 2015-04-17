@@ -1,5 +1,4 @@
 <?php
-
 use \Phalcon\DI\FactoryDefault as PhDi;
 
 error_reporting(E_ALL);

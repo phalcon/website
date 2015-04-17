@@ -299,7 +299,7 @@ $request = $di->getShared("request");
                 <a href="{{ docs_root }}reference/tutorial.html" class="btn btn-lg btn-phalcon">Learn more</a>
             </div>
             <div class="col-xs-12 col-sm-4 text-center">
-                <i class="icon-todo-fa fa fa-usd icon-huge"></i>
+                <i class="icon-todo-fa fa fa-thumbs-o-up icon-huge"></i>
                 <h3>Help Phalcon to fly higher!</h3>
                 <p>You may show your apprecition by donating to this project via:</p>
                 <a href="https://pledgie.com/campaigns/27405" target="_blank" class="btn btn-lg btn-phalcon">Pledgie</a> <b>or</b>

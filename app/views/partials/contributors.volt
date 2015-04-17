@@ -8,14 +8,14 @@
     <div class="contributors-side">
         {% for index, name in names if index is odd %}
             <a href="https://github.com/{{ name|lower }}" title="{{ name }}" target="_blank" tabindex="-1">
-                <img class="lazy" data-original="https://avatars.githubusercontent.com/u/{{ avatars[name] }}?v=3&s=90" src="/images/blank.gif"/>
+                <img class="lazy" data-original="{{ avatars[name] }}&s=90" src="/images/blank.gif"/>
             </a>
         {% endfor %}
     </div>
     <div class="contributors-side">
         {% for index, name in names if index is even %}
             <a href="https://github.com/{{ name|lower }}" title="{{ name }}" target="_blank" tabindex="-1">
-                <img class="lazy" data-original="https://avatars.githubusercontent.com/u/{{ avatars[name] }}?v=3&s=90" src="/images/blank.gif"/>
+                <img class="lazy" data-original="{{ avatars[name] }}&s=90" src="/images/blank.gif"/>
             </a>
         {% endfor %}
     </div>
