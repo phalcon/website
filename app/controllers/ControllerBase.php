@@ -37,7 +37,9 @@ class ControllerBase extends Controller
 		foreach ($languages as $key => $value) {
 			$selected = ($key == $lang) ? " selected='selected'" : '';
 			$href     = $url .  str_replace("/{$lang}", "{$key}", $uri);
-			$languagesAvailable .= "<option value='{$href}'{$selected}>{$value}</option>";
+			$languagesAvailable .= "<a role='menuitem' tabindex='-1' href='{$href}' class='flag-{$key}'>{$value}</a>";
+
+			#$languagesAvailable .= "<option value='{$href}'{$selected}>{$value}</option>"; // old way to do it
 		}
 
 		$this->view->setVar('language', $lang);
@@ -45,6 +47,7 @@ class ControllerBase extends Controller
 		$this->view->setVar('languages_available', $languagesAvailable);
 		$this->view->setVar('docs_root', 'http://docs.phalconphp.com/'.$lang.'/latest/');
 		$this->view->setVar('cdn_url', $cdnUrl);
+        $this->view->setVar('isFrontpage', true);
 	}
 
 	/**
@@ -69,6 +72,7 @@ class ControllerBase extends Controller
 				return false;
 			}
 		}
+
 
 		$this->requestInitialize();
 		return true;
