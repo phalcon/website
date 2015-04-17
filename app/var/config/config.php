@@ -115,7 +115,6 @@
             'name'   => 'donate-redirect',
         ),
 
-
         // Index
         '/{language:[a-z]{2}}' => array(
             'params' => array(
@@ -202,33 +201,61 @@
      * These languages appear at the top select box
      * allowing the user to easily change the language of the site
      */
-    $languages = array(
-        'bg' => 'български',
-        'cz' => 'Český',
-        'de' => 'Deutsch',
-        'el' => 'Ελληνικά',
-        'en' => 'English',
-        'es' => 'Español',
-        'fa' => 'فارسی',
-        'fr' => 'Français',
-        'hu' => 'Magyar',
-        'ja' => '日本語',
-        'it' => 'Italiano',
-        'ko' => '한국어',
-        'lt' => 'Lietuvos',
-        'mk' => 'македонски',
-        'nl' => 'Nederlands',
-        'pl' => 'Polski',
-        'pt' => 'Português',
-        'ro' => 'Română',
-        'ru' => 'Pусский',
-        'sr' => 'српски',
-        'sv' => 'Svenska',
-        'th' => 'ภาษาไทย',
-        'tr' => 'Türkçe',
-        'vi' => 'Việt',
-        'zh' => '简体中文',
-    );
+	$languages = array(
+		'bg' => 'български',
+		'cz' => 'Český',
+		'de' => 'Deutsch',
+		'el' => 'Ελληνικά',
+		'en' => 'English',
+		'es' => 'Español',
+		'fa' => 'فارسی',
+		'fr' => 'Français',
+		'hu' => 'Magyar',
+		'ja' => '日本語',
+		'it' => 'Italiano',
+		'ko' => '한국어',
+		'lt' => 'Lietuvos',
+		'mk' => 'македонски',
+		'nl' => 'Nederlands',
+		'pl' => 'Polski',
+		'pt' => 'Português',
+		'ro' => 'Română',
+		'ru' => 'Pусский',
+		'sr' => 'српски',
+		'sv' => 'Svenska',
+		'th' => 'ภาษาไทย',
+		'tr' => 'Türkçe',
+		'vi' => 'Việt',
+		'zh' => '简体中文'
+	);
+
+	$languageFlags = array(
+		'bg' => 'bg',
+		'cz' => 'cz',
+		'de' => 'de',
+		'el' => 'gr',
+		'en' => 'us',
+		'es' => 'es',
+		'fa' => 'ir',
+		'fr' => 'fr',
+		'hu' => 'hu',
+		'ja' => 'jp',
+		'it' => 'it',
+		'ko' => 'kr',
+		'lt' => 'lt',
+		'mk' => 'mk',
+		'nl' => 'nl',
+		'pl' => 'pl',
+		'pt' => 'br',
+		'ro' => 'ro',
+		'ru' => 'ru',
+		'sr' => 'rs',
+		'sv' => 'se',
+		'th' => 'th',
+		'tr' => 'tr',
+		'vi' => 'vn',
+		'zh' => 'cn'
+	);
 
     /**
      * These are all the pages of the site. This is used to generate the
@@ -254,5 +281,6 @@ return array(
     'cache'       => $cache,
     'routes'      => $routes,
     'languages'   => $languages,
+    'languageFlags'   => $languageFlags,
     'pages'       => $pages,
 );

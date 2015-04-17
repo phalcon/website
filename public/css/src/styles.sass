@@ -21,8 +21,16 @@
   background: linear-gradient(to bottom, $start 0%, $end 100%)
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$start', endColorstr='$end',GradientType=0 )
 
+=select($type)
+  user-select: $type
+  -moz-user-select: $type
+  -ms-user-select:  $type
+  -webkit-user-select:  $type
+
 $color-text-default:  #4d4a4c
 
+.fa
+  font-family: FontAwesome !important
 .hr
   margin: 20px 0
   border-bottom: 1px solid #c0c0c0
@@ -74,16 +82,11 @@ a.super
   background-color: transparent !important
 
 .homepage-header
-  padding-top: 20px
-  //background-color: #0098a9
-  background: #d6f9d1
-  background: -moz-radial-gradient(center, ellipse cover,  #d6f9d1 0%, #91dbce 38%, #0a6278 100%)
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#d6f9d1), color-stop(38%,#91dbce), color-stop(100%,#0a6278))
-  background: -webkit-radial-gradient(center, ellipse cover,  #d6f9d1 0%,#91dbce 38%,#0a6278 100%)
-  background: -o-radial-gradient(center, ellipse cover,  #d6f9d1 0%,#91dbce 38%,#0a6278 100%)
-  background: -ms-radial-gradient(center, ellipse cover,  #d6f9d1 0%,#91dbce 38%,#0a6278 100%)
-  background: radial-gradient(ellipse at center,  #d6f9d1 0%,#91dbce 38%,#0a6278 100%)
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6f9d1', endColorstr='#0a6278',GradientType=1 )
+  background: url('/images/bg.jpg') no-repeat center center
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
 
 .page-header
   margin: 0
@@ -99,9 +102,8 @@ a.super
 
 
 header
-
-  .navbar
-    margin-top: -15px
+  .container
+    padding: 20px 0
 
   .navbar-toggle
     border-color: #ffffff
@@ -110,25 +112,25 @@ header
   .navbar-toggle span
     background: #ffffff
 
-  .phalcon-logo
-    display: block
-    width: 200px
-    height: 90px
-    background: transparent url("/images/phalcon.png") 0 0 no-repeat
-    background-size: 200px 90px
-
-  .main-menu
-    margin-top: 38px
-
   .main-menu li
     margin: 0 3px
 
   .main-menu li a
-    color: #bae1e6
+    color: #D7EFF2
     font-size: 17px
-    //+transition(color, 0.2s, ease-in-out)
     text-shadow: 1px 1px 1px #0e566a
     padding: 8px 18px
+
+  .main-menu a.header-nav-link
+    text-transform: uppercase
+    font-size: 14px !important
+
+  .main-menu li.separator
+    background: rgba(255,255,255,.4)
+    margin: 7px 10px
+    width: 2px
+    box-shadow: 1px 1px 2px rgba(100,100,100,0.6)
+    cursor: default
 
   .main-menu li a:hover
     color: white
@@ -141,12 +143,24 @@ header
     box-shadow: inset 0 0 15px 0 rgba(0,0,0,0.2)
     +border-radius(18px)
 
-  a.github
-    margin-right: 0px
-    background: transparent url("/images/github.png") center center no-repeat
+  #stargazers
+    margin-right: 0
     opacity: 0.6
+    padding: 2px !important
+    +select(none)
 
-  a:hover.github
+    img
+      width: auto
+
+    span
+      background: url('/images/starcount-frame.png') center right no-repeat
+      font-size: 14px
+      padding: 5px 10px 5px 15px
+      margin-left: -18px
+      z-index: -1
+      position: relative
+
+  #stargazers:hover
     opacity: 0.9
 
   a.twitter
@@ -170,16 +184,40 @@ header
     margin-bottom: 4px
 
   .dropdown-menu
-    background: rgba(255, 255, 255, 0.6)
+    background: rgba(255, 255, 255, 0.8)
+    width: 500px
+    -webkit-column-count: 3
+    -moz-column-count: 3
+    column-count: 3
+    border-radius: 5px !important
+    margin-right: 10px
+    transition: all 100ms ease-out
+    display: block !important
+    opacity: 0
+    visibility: hidden !important
+    transform-origin: top right
+    transform: scale(.9)
+
+  li.dropdown.open
+
+    a#dropdownLanguageMenu
+      background-position: 6px -30px
+
+    .dropdown-menu
+      opacity: 1
+      visibility: visible !important
+      transform: scale(1)
 
   .dropdown-menu li a
     font-size: 12px
     color: #4d4a4c
     text-shadow: none
-    background-color: transparent
-    background-position: 8px 6px
-    background-repeat: no-repeat
-    padding: 4px 0 4px 32px
+    padding: 5px 10px
+    border-radius: 5px
+
+
+    i
+      margin-right: 5px
 
   .dropdown-menu li a:hover
     background-color: rgba(255, 255, 255, 0.4)
@@ -190,8 +228,10 @@ header
     text-align: center
 
   .tagline h1
-    font-size: 22px
+    font-size: 2em
     font-weight: 700
+    color: white
+    text-shadow: 0 0 .3em #1F8C60
 
   .tagline  p
     font-size: 16px
@@ -204,9 +244,18 @@ header
     color: $color-text-default
     border-bottom: 1px solid $color-text-default
 
-  .anim
+  .tagline  p i
+    vertical-align: text-top
+    font-size: 50%
+
+  #mountains
     width: 100%
     height: 400px
+    margin-top: -150px
+    pointer-events: none
+    background: url('/images/mountains.png') center bottom repeat-x
+    opacity: .8
+
 
   .sublinks
     color: #97c6ad
@@ -230,7 +279,7 @@ header
   margin: 0
   border: none
   -webkit-box-shadow: inset 0 0 7px 0 rgba(58,100,102,0.9)
-  box-shadow: inset 0 0 7px 0 rgba(58,100,102,0.9)
+  box-shadow: inset 0 0 7px 0 #3a6466
 
 .heading
   h2
@@ -271,11 +320,11 @@ a:hover.btn-video span
 .codesamples
 
   h2
-    font-size: 32px
-    text-transform: uppercase
     text-align: center
-    color: #c4c4c5
-    margin: 25px 0 50px 0
+    padding-bottom: 20px
+    font-size: 32px
+    font-weight: 700
+    color: #3b7866
 
   h4
     font-size: 11px
@@ -322,8 +371,6 @@ a:hover.btn-video span
   ul.features li
     margin-bottom: 5px
 
-
-    
   pre
     background-color: #242424
     +border-radius(25px)
@@ -351,20 +398,18 @@ a:hover.btn-video span
       font-size: 15px
       line-height: 24px
 
-
-
-
 .community
   border-top: 2px solid #f2f2f2
   padding: 20px 0
+  overflow: hidden
 
   h2
     text-align: center
-    margin-top: 30px
     padding-bottom: 20px
     font-size: 32px
     font-weight: 700
     color: #3b7866
+
 
   a.community-link
     display: block
@@ -385,13 +430,28 @@ a:hover.btn-video span
 #community-buttons a
   white-space: nowrap
 
-.contributors
+#contributors
   margin-top: 40px
   position: relative
-  background: url('/images/contributors.jpeg') center -2px white
-  text-align: center
+  background: url('/images/contributors.jpeg') center top white
+  text-align: left !important
 
-.contributors
+#contributors
+  div.contributors-side
+    width: 50%
+    display: inline-block
+
+  div.contributors-side:first-child
+    float: left
+
+    a
+      float: right
+
+  div.contributors-side:nth-child(2)
+    float: right
+
+    a
+      float: left
 
   .fader
     display: block
@@ -408,25 +468,25 @@ a:hover.btn-video span
     display: inline-block
     width: 60px
     height: 60px
-    margin: -2px
+    margin: 0
 
-  a img
-    background: white
-    width: 60px
-    height: 60px
-    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale") /* Firefox 3.5+ */
-    filter: gray /* IE6-9 */
-    -webkit-filter: grayscale(100%) /* Chrome 19+ & Safari 6+ */
-    z-index: 101
-    position: relative
-    +transition(transform, 100ms, cubic-bezier(0.18, 0.89, 0.32, 1.28))
+    img
+      background: transparent
+      width: 60px
+      height: 60px
+      -webkit-filter: grayscale(100%) /* Chrome 19+ & Safari 6+ */
+      z-index: 101
+      position: relative
+      +transition(transform, 100ms, cubic-bezier(0.18, 0.89, 0.32, 1.28))
+
+    img.loaded
+      background: white
 
   a:hover img
     filter: none
     -webkit-filter: grayscale(0%)
     transform: scale(1.5)
     z-index: 301
-
 
 .download, .about, .testimonials, .team
   ul.nav
@@ -454,8 +514,6 @@ a:hover.btn-video span
   img
     display: block
     margin: 0 auto
-    width: 150px
-    height: 150px
 
 
 .prefooter
@@ -608,13 +666,6 @@ a:hover.btn-video span
     padding-top: 7px
 
   header
-    .phalcon-logo
-      margin-left: 0px
-      width: 169px
-      height: 58px
-      background-image: url("/images/phalcon1.png")
-      background-size: 169px 58px
-
     .navbar-header
       padding-bottom: 5px
       border: none
@@ -649,7 +700,7 @@ a:hover.btn-video span
       background-position: 8px -28px
 
     .dropdown-menu
-      padding-left: 16px
+      padding-left: 16px !important
 
     .dropdown-menu li a
       color: #ffffff
@@ -658,10 +709,6 @@ a:hover.btn-video span
     .dropdown-menu li a:hover
       color: #ffffff
       background-color: transparent
-
-
-
-
 
 
 .codesamples-container
@@ -685,56 +732,6 @@ a:hover.btn-video span
     top: 0
     +transition(all, 0.8s, ease-in-out)
 
-
-
-@media screen and (min-width: 768px)
-  .homepage-header
-    padding-top: 7px
-
-  .page-header
-    padding-top: 7px
-
-  header
-    .phalcon-logo
-      margin-left: 0px
-      width: 169px
-      height: 58px
-      background-image: url("/images/phalcon1.png")
-      background-size: 169px 58px
-
-    .main-menu
-      margin-top: 5px
-      border-top: 2px solid #5bafbb
-      padding-top: 7px
-      padding-right: 20px
-
-    .main-menu li
-      margin: 0 1px
-
-    .main-menu li a
-      padding: 8px 16px
-
-    .dropdown-menu li a
-      padding: 4px 0 4px 32px
-
-@media screen and (min-width: 992px)
-  header
-    .phalcon-logo
-      margin-left: 0px
-      display: block
-      width: 200px
-      height: 90px
-      background: transparent url("/images/phalcon.png") 0 0 no-repeat
-      background-size: 200px 90px
-
-    .main-menu
-      margin-top: 38px
-      border-top: none
-      padding-top: 0
-
-@media screen and (min-width: 1200px)
-
-.team
   h3
     margin-top: 0
     margin-bottom: 10px
@@ -749,3 +746,9 @@ a:hover.btn-video span
 .support
   .bg-danger
     padding: 10px
+
+@media screen and (min-width: 768px)
+
+@media screen and (min-width: 992px)
+
+@media screen and (min-width: 1200px)

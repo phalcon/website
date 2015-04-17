@@ -22,29 +22,20 @@ class ControllerBase extends Controller
 		 */
 		$lang = $this->getUriParameter('language');
 
-		$lang = ($lang) ? $lang : 'en';
-
 		/**
-		 * Find the languages available
+		 * Localization
 		 */
-		$languages           = $this->config->languages;
-		$languagesAvailable  = '';
-		$selected            = '';
-		$url                 = $this->request->getScheme() . '://'
-							 . $this->request->getHttpHost()
-							 . $this->config->application->baseUri;
-		$uri                 = $this->router->getRewriteUri();
-		foreach ($languages as $key => $value) {
-			$selected = ($key == $lang) ? " selected='selected'" : '';
-			$href     = $url .  str_replace("/{$lang}", "{$key}", $uri);
-			$languagesAvailable .= "<a role='menuitem' tabindex='-1' href='{$href}' class='flag-{$key}'>{$value}</a>";
-
-			#$languagesAvailable .= "<option value='{$href}'{$selected}>{$value}</option>"; // old way to do it
-		}
+		$lang = ($lang) ? $lang : 'en';
+		$uri = $this->router->getRewriteUri();
+		$cleanUri = preg_replace('/^\/[a-z]{2}\//', '', $uri);
+		$languages = $this->config->languages;
+		$languageFlags = $this->config->languageFlags;
 
 		$this->view->setVar('language', $lang);
 		$this->view->setVar('baseurl', $baseUrl);
-		$this->view->setVar('languages_available', $languagesAvailable);
+		$this->view->setVar('cleanUri', $cleanUri);
+		$this->view->setVar('languages', $languages);
+		$this->view->setVar('languageFlags', $languageFlags);
 		$this->view->setVar('docs_root', 'http://docs.phalconphp.com/'.$lang.'/latest/');
 		$this->view->setVar('cdn_url', $cdnUrl);
         $this->view->setVar('isFrontpage', true);
@@ -82,5 +73,4 @@ class ControllerBase extends Controller
 	{
 		return $this->dispatcher->getParam($parameter);
 	}
-
 }

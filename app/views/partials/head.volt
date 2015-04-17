@@ -36,7 +36,16 @@
     <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework">
 
     {{- stylesheet_link("//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css", false) -}}
-    {{- stylesheet_link("css/phalcon.min.css", true) -}}
+    {#
+        Not minifying for now
+        {{- stylesheet_link("css/phalcon.min.css", true) -}}
+    #}
+    {{- stylesheet_link("css/src/styles.css", true) -}}
+    {{- stylesheet_link("css/src/highlight.js.css", true) -}}
+    {{- stylesheet_link("css/src/flags.css", true) -}}
+    {{- stylesheet_link("css/src/icomoon.css", true) -}}
+    {{- stylesheet_link("css/src/magnific-popup.css", true) -}}
+
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
     <!--

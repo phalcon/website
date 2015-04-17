@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ language }}">
-
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     {% include 'partials/head.volt' %}
 
     <body>
@@ -14,8 +14,9 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand phalcon-logo" href="/">
-                                <span itemprop="name" class="sr-only">Phalcon PHP</span>
+                            <a class="phalcon-logo" href="/{{ language }}/">
+                                <img id="mascot" src="/images/logo.png" alt="Phalcon PHP"/>
+                                <img src="/images/phalcon-logo-text.png" alt="Phalcon PHP"/>
                             </a>
                         </div>
 
@@ -24,28 +25,38 @@
                         </div>
                     </div>
                 </nav>
-                <div class="container">
+                <div id="">
                     <div class="tagline">
-                        <h1>Phalcon is a robust PHP Framework built as a C-extension.</h1>
-                        <p>It makes it <a href="#" class="hypechart">the fastest PHP framework</a> around
-                            <a href="http://docs.phalconphp.com/en/latest/reference/benchmark.html" target="_blank" class="super">
-                                <i class="icon-asterisk"></i>
+                        <h1>A full-stack PHP framework delivered as a C-extension</h1>
+                        <p>
+                            Its innovative architeture makes Phalcon the fastest PHP framework ever built!
+                            <a id="bench-link" href="#" target="_blank">
+                                See for yourself...
                             </a>
                         </p>
-                        {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], tr('download'), 'class' : 'btn btn-lg btn-phalcon') }}
 
-                        <div class="sublinks">
-                            <a href="https://github.com/phalcon/cphalcon">Clone on GitHub</a> |
-                            <a href="#">Download v.1.3.3</a> |
-                            {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], 'Install instructions') }}
+                        <div class="home-button-container">
+                            <a id="the-difference-tm" href="javascript:void(0)" class="btn btn-lg btn-phalcon">
+                                <i class="fa fa-download"></i> Get Phalcon 2.0
+                            </a>
+                            <div class="sublinks">
+                                <a href="#">Download v.1.3.4</a> |
+                                {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], 'Install instructions') }}
+                            </div>
+                        </div>
+
+                        <div class="home-button-container">
+                            <a id="the-difference-tm" href="javascript:void(0)" class="btn btn-lg btn-phalcon">
+                                <i class="fa fa-youtube-play"></i> Watch the demo
+                            </a>
+                            <div class="sublinks">
+                                <a href="#">See all Screencasts here</a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="anim">
-
-                        <div id="phalcon_hype_container" style="position:relative;overflow:hidden;width:100%;height:400px;">
-                            <script type="text/javascript" charset="utf-8" src="/anim/phalcon_hype_generated_script.js"></script>
-                        </div>
+                    <div id="mountains">
+                        {# SVG HERE #}
                     </div>
                 </div>
             </header>
@@ -59,7 +70,7 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-        <script src="/js/plugins/jquery.backstretch.min.js"></script>
+        <script src="/js/plugins/jquery.lazyload.min.js"></script>
         <script src="/js/plugins/jquery.magnific-popup.min.js"></script>
         <script src="/js/plugins/highlight.pack.js"></script>
         <script src="/js/phalcon.min.js"></script>
