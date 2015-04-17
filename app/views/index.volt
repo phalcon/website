@@ -36,11 +36,11 @@
                         </p>
 
                         <div class="home-button-container">
-                            <a id="the-difference-tm" href="http://phalconphp.com/install" class="btn btn-lg btn-phalcon">
+                            <a id="the-difference-tm" href="http://phalconphp.com/download" class="btn btn-lg btn-phalcon">
                                 <i class="fa fa-download"></i> Get Phalcon 2.0
                             </a>
                             <div class="sublinks">
-                                <a href="http://phalconphp.com/install">Download v.2.0.0</a> |
+                                {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], 'Download v.2.0.0') }} |
                                 {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], 'Install instructions') }}
                             </div>
                         </div>
