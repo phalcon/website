@@ -14,7 +14,8 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="zphalcon-logo" href="/{{ language }}/">
+                            <a class="phalcon-logo" href="/{{ language }}/">
+                                <img id="mascot" src="/images/logo.png" alt="Phalcon PHP"/>
                                 <img src="/images/phalcon-logo-text.png" alt="Phalcon PHP"/>
                             </a>
                         </div>
@@ -26,22 +27,31 @@
                 </nav>
                 <div id="">
                     <div class="tagline">
-                        <h1>A Full-stack PHP Framework delivered as a C-extension</h1>
+                        <h1>A full-stack PHP framework delivered as a C-extension</h1>
                         <p>
-                            It makes Phalcon
-                            <a id="bench-link" href="http://docs.phalconphp.com/en/latest/reference/benchmark.html" target="_blank">
-                                the fastest PHP framework
-                            </a><i class="icon-asterisk"></i> of them all!
+                            Its innovative architeture makes Phalcon the fastest PHP framework ever built!
+                            <a id="bench-link" href="#" target="_blank">
+                                See for yourself...
+                            </a>
                         </p>
 
-                        <a id="the-difference-tm" href="javascript:void(0)" class="btn btn-lg btn-phalcon">
-                            Show me teh numbas!!
-                        </a>
+                        <div class="home-button-container">
+                            <a id="the-difference-tm" href="javascript:void(0)" class="btn btn-lg btn-phalcon">
+                                <i class="fa fa-download"></i> Get Phalcon 2.0
+                            </a>
+                            <div class="sublinks">
+                                <a href="#">Download v.1.3.4</a> |
+                                {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], 'Install instructions') }}
+                            </div>
+                        </div>
 
-                        <div class="sublinks">
-                            <a href="https://github.com/phalcon/cphalcon">Clone on GitHub</a> |
-                            <a href="#">Download v.1.3.3</a> |
-                            {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], 'Install instructions') }}
+                        <div class="home-button-container">
+                            <a id="the-difference-tm" href="javascript:void(0)" class="btn btn-lg btn-phalcon">
+                                <i class="fa fa-youtube-play"></i> Watch the demo
+                            </a>
+                            <div class="sublinks">
+                                <a href="#">See all Screencasts here</a>
+                            </div>
                         </div>
                     </div>
 

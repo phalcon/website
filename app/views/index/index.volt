@@ -8,7 +8,7 @@
 
                 <h4>Basic features</h4>
                 <ul class="tags">
-                    <li><a class="codesample active" href="#nooverhead">No overhead</a></li>
+                    <li><a class="codesample active" href="#nooverhead">Low overhead</a></li>
                     <li><a class="codesample" href="#mvc">MVC</a></li>
                     <li><a class="codesample" href="#di">DI</a></li>
                     <li><a class="codesample" href="#rest">REST</a></li>
@@ -57,7 +57,7 @@
                     <!-- =================================================================== -->
                     <div class="codesample codesample-current" id="nooverhead"><!-- codesample -->
                         <div class="codesample-header">
-                            <h3>No overhead</h3>
+                            <h3>Low overhead</h3>
                         </div>
                         <div class="codesample-body">
                             <div class="row">
@@ -288,20 +288,20 @@ $request = $di->getShared("request");
         <div class="row">
             <div class="col-xs-12 col-sm-4 text-center">
                 <i class="icon-code icon-huge"></i>
-                <h3>Learn to fly with Phalcon 2!</h3>
-                <p>Get started by learning the basic concepts behind a common Phalcon App</p>
+                <h3>Learn to fly with Phalcon 2</h3>
+                <p>Get started by learning the basic concepts behind a common Phalcon application</p>
                 <a href="{{ docs_root }}reference/tutorial.html" class="btn btn-lg btn-phalcon">Try the tutorial</a>
             </div>
             <div class="col-xs-12 col-sm-4 text-center">
                 <img src="/images/zephir.png" alt="Zephir Language"/>
-                <h3>Meet Zephir!</h3>
-                <p>Get started by learning the basic concepts behind a common Phalcon App</p>
-                <a href="{{ docs_root }}reference/tutorial.html" class="btn btn-lg btn-phalcon">Learn more</a>
+                <h3>Meet Zephir</h3>
+                <p>Learn about the technology that empowers Phalcon and how it's changing PHP's world</p>
+                <a href="http://zephir-lang.com" class="btn btn-lg btn-phalcon">Visit the website</a>
             </div>
             <div class="col-xs-12 col-sm-4 text-center">
                 <i class="icon-todo-fa fa fa-thumbs-o-up icon-huge"></i>
-                <h3>Help Phalcon to fly higher!</h3>
-                <p>You may show your apprecition by donating to this project via:</p>
+                <h3>Help Phalcon to fly higher</h3>
+                <p>Show your apprecition and help us with project costs by simply donating via:</p>
                 <a href="https://pledgie.com/campaigns/27405" target="_blank" class="btn btn-lg btn-phalcon">Pledgie</a> <b>or</b>
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="display: inline" target="_blank">
                     <input type="hidden" name="cmd" value="_s-xclick" />

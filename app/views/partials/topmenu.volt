@@ -23,7 +23,7 @@
 
     <li class="hidden-xs hidden-sm separator">&nbsp;</li>
 
-    <li class="hidden-xs hidden-sm"><a href="https://twitter.com/phalconphp" class="twitter">&nbsp;</a></li>
+    <li class="hidden-xs hidden-sm"><a href="https://twitter.com/phalconphp" class="twitter" target="_blank">&nbsp;</a></li>
     <li class="hidden-xs hidden-sm">
         <a id="stargazers" href="https://github.com/phalcon/cphalcon/" target="_blank">
             <img src="/images/github.png" alt="Phalcon on GitHub!"/>
