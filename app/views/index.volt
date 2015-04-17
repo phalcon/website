@@ -46,7 +46,7 @@
                         </div>
 
                         <div class="home-button-container">
-                            <a id="the-difference-tm" href="javascript:void(0)" class="btn btn-lg btn-phalcon">
+                            <a id="the-difference-tm" href="http://vimeo.com/63022489" class="btn btn-lg btn-phalcon">
                                 <i class="fa fa-youtube-play"></i> Watch the demo
                             </a>
                             <div class="sublinks">

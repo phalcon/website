@@ -1,17 +1,17 @@
 <?php return array (
-  0 =>
+  0 => 
   array (
-    'phalcon' => 13399.10,
-    'andresgutierrez' => 6932.30,
+    'phalcon' => 13399.100000000002,
     'sjinks' => 6872,
+    'andresgutierrez' => 6132.3000000000002,
     'niden' => 3624,
     'ovr' => 1990.5,
     'dreamsxin' => 1635,
-    'xboston' => 1362.90,
+    'xboston' => 1362.9000000000001,
     'carvajaldiazeduar' => 991,
     'mruz' => 660,
     'nkt' => 430,
-    'kenjikobe' => 351.69,
+    'kenjikobe' => 351.69999999999999,
     'Cinderella-Man' => 338.5,
     'endeveit' => 208,
     'steffengy' => 204,
@@ -139,7 +139,7 @@
     'IGonza' => 0.90000000000000002,
     'kaiohken1982' => 0.90000000000000002,
   ),
-  1 =>
+  1 => 
   array (
     'phalcon' => 'https://avatars.githubusercontent.com/u/1221505?v=3',
     'sjinks' => 'https://avatars.githubusercontent.com/u/7810770?v=3',
@@ -279,7 +279,7 @@
     'alantonilopez' => 'https://avatars.githubusercontent.com/u/2019783?v=3',
     'rogerthomas84' => 'https://avatars.githubusercontent.com/u/350232?v=3',
   ),
-  2 =>
+  2 => 
   array (
     'phalcon' => 'https://github.com/phalcon',
     'sjinks' => 'https://github.com/sjinks',
