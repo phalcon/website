@@ -16,7 +16,7 @@
                             </button>
                             <a class="phalcon-logo" href="/{{ language }}/">
                                 <img id="mascot" src="/images/logo.png" alt="Phalcon PHP"/>
-                                <img src="/images/phalcon-logo-text.png" alt="Phalcon PHP"/>
+                                <!--<img src="/images/phalcon-logo-text.png" alt="Phalcon PHP"/>-->
                             </a>
                         </div>
 
@@ -30,17 +30,17 @@
                         <h1>A full-stack PHP framework delivered as a C-extension</h1>
                         <p>
                             Its innovative architeture makes Phalcon the fastest PHP framework ever built!
-                            <a id="bench-link" href="#" target="_blank">
+                            <a id="bench-link" href="http://docs.phalconphp.com" target="_blank">
                                 See for yourself...
                             </a>
                         </p>
 
                         <div class="home-button-container">
-                            <a id="the-difference-tm" href="javascript:void(0)" class="btn btn-lg btn-phalcon">
+                            <a id="the-difference-tm" href="http://phalconphp.com/install" class="btn btn-lg btn-phalcon">
                                 <i class="fa fa-download"></i> Get Phalcon 2.0
                             </a>
                             <div class="sublinks">
-                                <a href="#">Download v.1.3.4</a> |
+                                <a href="http://phalconphp.com/install">Download v.2.0.0</a> |
                                 {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], 'Install instructions') }}
                             </div>
                         </div>
@@ -50,7 +50,7 @@
                                 <i class="fa fa-youtube-play"></i> Watch the demo
                             </a>
                             <div class="sublinks">
-                                <a href="#">See all Screencasts here</a>
+                                <a href="https://vimeo.com/phalconphp">See all Screencasts here</a>
                             </div>
                         </div>
                     </div>

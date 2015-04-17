@@ -278,19 +278,19 @@ $request = $di->getShared("request");
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-4 text-center">
-                <i class="icon-code icon-huge"></i>
+                <!--<i class="icon-code icon-huge"></i>-->
                 <h3>Learn to fly with Phalcon 2</h3>
                 <p>Get started by learning the basic concepts behind a common Phalcon application</p>
                 <a href="{{ docs_root }}reference/tutorial.html" class="btn btn-lg btn-phalcon">Try the tutorial</a>
             </div>
             <div class="col-xs-12 col-sm-4 text-center">
-                <img src="/images/zephir.png" alt="Zephir Language"/>
+                <!--<img src="/images/zephir.png" alt="Zephir Language"/>-->
                 <h3>Meet Zephir</h3>
                 <p>Learn about the technology that empowers Phalcon</p>
                 <a href="http://zephir-lang.com" class="btn btn-lg btn-phalcon">Visit the website</a>
             </div>
             <div class="col-xs-12 col-sm-4 text-center">
-                <i class="icon-todo-fa fa fa-thumbs-o-up icon-huge"></i>
+                <!--<i class="icon-todo-fa fa fa-thumbs-o-up icon-huge"></i>-->
                 <h3>Help Phalcon to fly higher</h3>
                 <p>Show your apprecition and help us with project costs by simply donating via:</p>
                 <a href="https://pledgie.com/campaigns/27405" target="_blank" class="btn btn-lg btn-phalcon">Pledgie</a> <b>or</b>
