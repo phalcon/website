@@ -5,7 +5,7 @@
                 {{ tr('hosting_description') }}
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-lg-3">
                 <img src='{{ cdn_url ~ 'images/hosting/fortrabbit-gray.png' }}' title='{{ tr('hosting_fortrabbit_title') }}' alt='{{ tr('hosting_fortrabbit_title') }}' />

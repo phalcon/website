@@ -152,10 +152,10 @@
         'download_examples'               => "Pre-Installed examples",
         'download_examples_1'             => "The following examples are pre-installed on each vagrant box:",
 
-        'consulting_header'               => "We have partnered with <a href=':1:'>LEZGRO</a>, a company that specializes in web and mobile application development and is very adept in delivering Phalcon powered applications to their clientele.",
-        'consulting_lezgro_1'             => "<a href=':1:'>LEZGRO</a> congratulates you with the your choice of making Phalcon central in your technology stack!",
+        'consulting_header'               => "We have partnered with LEZGRO, a company that specializes in web and mobile application development and is very adept in delivering Phalcon powered applications to their clientele.",
+        'consulting_lezgro_1'             => "LEZGRO congratulates you with the your choice of making Phalcon central in your technology stack!",
         'consulting_lezgro_2'             => "Since our company first saw the light of the day in 2003, we have tried various technologies and approaches in software development.",
-        'consulting_lezgro_3'             => "Product managers, CTOs, and non-technical founders involve <a href=':1:'>LEZGRO</a> to build products that stand out, quickly and with a high quality.",
+        'consulting_lezgro_3'             => "Product managers, CTOs, and non-technical founders involve LEZGRO to build products that stand out, quickly and with a high quality.",
         'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
         'consulting_lezgro_5'             => "Contact LEZGRO through our <a href=':1:'>website</a>, where you can also see samples and testimonials of our work.",
         
@@ -217,6 +217,9 @@
         'flying_with_phalcon'             => 'Thanks for flying with Phalcon! &lt;3',
 
         'hosting_description'             => 'Phalcon can be installed on any machine on which the hosting provider offers SSH root access (or sudo). Below is a list of reputable companies that offer such services:',
+	'hosting_5hosting_title'	  => '5hosting.com - unlimited Webspace',
+	'hosting_5hosting_1'		  => '5hosting.com offers unlimited webspace, traffic, databases and email accounts in a high availability load balanced cluster based solely on SSD harddrives for a fixed monthly rate.',
+	'hosting_5hosting_2'		  => "The phalcon framework comes pre-compiled for all stable PHP versions (5.4, 5.5 and 5.6) and can easily be activated with this <a href=':1:'>tutorial</a>.",
         'hosting_fortrabbit_title'        => 'Fortrabbit',
         'hosting_fortrabbit_1'            => 'Fortrabbit offers many hosting plans (there is one for developers and is free - with some limitations) that would satisfy the needs of most of the developers that wish to either try Phalcon or deploy their applications using it.',
         'hosting_fortrabbit_2'            => "They offer a variety of <a href=':1:'>extensions</a> that would satisfy even the most demanding project.",
@@ -241,8 +244,8 @@
         'hosting_aspnix_1'                => 'ASPnix provides superior Windows web hosting services. Our customers have rated our service as outstanding. We offer economical plans for shared Windows web hosting, Virtual private servers and dedicated servers!  <a href=":1:">See more</a>',
         'hosting_aspnix_2'                => '<p>Phalcon is supported on all Windows shared web hosting packages and plans, no configuration or installation required! They offer a variety of PHP versions from 5.2 – 5.6 as well as many <a href=":1:" target="_blank">additional extensions</a>!</p>',
         'hosting_layershift_title'        => 'Layershift',
-        'hosting_layershift_1'            => "You bring the code, we'll sort the servers. Next generation, auto-sizing PaaS for PHP",
-        'hosting_layershift_2'            => "<p>Follow this <a href=':1'>tutorial</a> to get started</p>",
+        'hosting_layershift_1'            => "Next generation, auto-sizing PaaS for Java, PHP, Ruby, Python, and Node.js apps. Fully isolated self-scaling role-based containers for each customer, including choice of Apache or Nginx, and full range of SQL and NoSQL servers. Pay for resource usage, not server instance size. SSD-powered. UK hosted.",
+        'hosting_layershift_2'            => "<p>Follow this <a href=':1:'>tutorial</a> to get started</p>",
 
         'testimonials'                    => 'Testimonials',
         'testimonials_description'        => "Below is a collection of testimonials and success stories, from you, the developers and users of Phalcon PHP. We always welcome emails with success stories and will be posting those in our blog. If you wish to send us your success story or get in touch with us, feel free to mail us at <a href='mailto::1:'>:2:</a>.",
