@@ -1,148 +1,78 @@
-<div class="main-teaser">
+<!DOCTYPE html>
+<html lang="{{ language }}">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    {% include 'partials/head.volt' %}
 
-    <div class="size-wrap fixed clear-fix">
+    <body>
+        {% if isFrontpage == 1 %}
+            <header class="homepage-header">
+                <nav class="navbar" role="navigation">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-container">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="phalcon-logo" href="/{{ language }}/">
+                                <img id="mascot" src="/images/logo.png" alt="Phalcon PHP"/>
+                                <img src="/images/phalcon-logo-text.png" alt="Phalcon PHP"/>
+                            </a>
+                        </div>
 
-        <div class="main-teaser-title title-white">{{ tr('the_fastest_php_framework') }}</div>
+                        <div class="collapse navbar-collapse navbar-right" id="main-menu-container">
+                            {% include 'partials/topmenu.volt' %}
+                        </div>
+                    </div>
+                </nav>
+                <div id="">
+                    <div class="tagline">
+                        <h1>A full-stack PHP framework delivered as a C-extension</h1>
+                        <p>
+                            Its innovative architeture makes Phalcon the fastest PHP framework ever built!
+                            <a id="bench-link" href="#" target="_blank">
+                                See for yourself...
+                            </a>
+                        </p>
 
-        <div class="main-teaser-left">
+                        <div class="home-button-container">
+                            <a id="the-difference-tm" href="javascript:void(0)" class="btn btn-lg btn-phalcon">
+                                <i class="fa fa-download"></i> Get Phalcon 2.0
+                            </a>
+                            <div class="sublinks">
+                                <a href="#">Download v.2.0.0</a> |
+                                {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], 'Install instructions') }}
+                            </div>
+                        </div>
 
-            <div class="teser-chart-wrap">
-                <img src="{{ cdn_url }}assets/chart.png" alt="" />
-            </div>
+                        <div class="home-button-container">
+                            <a id="the-difference-tm" href="javascript:void(0)" class="btn btn-lg btn-phalcon">
+                                <i class="fa fa-youtube-play"></i> Watch the demo
+                            </a>
+                            <div class="sublinks">
+                                <a href="#">See all Screencasts here</a>
+                            </div>
+                        </div>
+                    </div>
 
-            <a href="{{ url(['for': 'download', 'language': language]) }}"><span class="button-large">{{ tr('download') }}</span></a>
+                    <div id="mountains">
+                        {# SVG HERE #}
+                    </div>
+                </div>
+            </header>
+            <a class="video btn-video" href="http://vimeo.com/63022489"><i class="icon-youtube"></i>{{ tr('demo_video') }}</a>
+        {% else %}
+                {% include 'partials/page.volt' %}
+        {% endif %}
+        {{ content() }}
 
-        </div>
+        {% include 'partials/footer.volt' %}
 
-        <div class="main-teaser-right">
-
-            <div class="teaser-video-wrap">
-                <a href="http://vimeo.com/63022489"><img src="{{ cdn_url }}assets/video.png" alt=""/></a>
-            </div>
-            <a href="http://try.phalconphp.com/"><span class="button-medium">{{ tr('try_online') }}</span></a>
-            <a href="http://vimeo.com/phalconphp" target="_blank"><span class="button-medium">{{ tr('see_screencasts') }}</span></a>
-        </div>
-
-    </div>
-
-</div>
-
-<div class="size-wrap">
-    <div class="features-wrap">
-
-	<a name="features" href="#"></a>
-        <div class="title-huge">{{ tr('everything_you_need_upper') }}</div>
-
-        <table class="features-table">
-            <tr>
-                <td>
-                    <div class="h4">{{ tr('full_mvc_applications', docs_root ~ 'reference/applications.html') }}</div>
-                    <ul class="dash-list small">
-                        <li><a class="link-black" href="{{ docs_root }}reference/applications.html#single-module">{{ tr('single_module') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/applications.html#multi-module">{{ tr('multi_module') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/micro.html">{{ tr('micro_applications') }}</a></li>
-                    </ul>
-                    <div class="h4">{{ tr('orm') }}</div>
-                    <ul class="two-columns dash-list small">
-                        <li><a class="link-black" href="{{ docs_root }}reference/models.html#transactions">{{ tr('transactions') }}</a></li>
-
-                        <li><a class="link-black" href="{{ docs_root }}reference/models.html#behaviors">{{ tr('behaviors') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/models.html#relationships-between-models">{{ tr('relations') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/phql.html">{{ tr('phql') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/models.html#events-and-events-manager">{{ tr('events') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/models.html#validation-failed-events">{{ tr('validations') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/models.html#hydration-modes">{{ tr('hydration') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/models.html#logging-low-level-sql-statements">{{ tr('logging') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/models.html#profiling-sql-statements">{{ tr('profiling') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/models.html#setting-multiple-databases">{{ tr('sharding') }}</a></li>
-                    </ul>
-                </td>
-                <td>
-                    <ul class="unstyled">
-                        <li><a class="link-black" href="{{ docs_root }}reference/odm.html">{{ tr('odm_for_mongo') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/volt.html">{{ tr('template_engine_volt') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/di.html">{{ tr('di_ioc') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/events.html">{{ tr('events_management') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/crypt.html">{{ tr('encryption') }}</a></li>
-                        <li>
-                            <a class="link-black" href="{{ docs_root }}reference/request.html">{{ tr('http_request') }}</a>
-                            / <a class="link-black" href="{{ docs_root }}reference/response.html">{{ tr('http_response') }}</a>
-                            / <a class="link-black" href="{{ docs_root }}reference/cookies.html">{{ tr('http_cookies') }}</a></li>
-                    </ul>
-                </td>
-                <td>
-
-                    <ul class="unstyled">
-                        <li><a class="link-black" href="{{ docs_root }}reference/escaper.html">{{ tr('escaping') }}</a> / <a class="link-black" href="{{ docs_root }}reference/filter.html">{{ tr('filtering') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/forms.html">{{ tr('forms_builder') }}</a> / <a class="link-black" href="{{ docs_root }}reference/validation.html">{{ tr('forms_validation') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/flash.html">{{ tr('flash_messages') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/cache.html">{{ tr('cache') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/pagination.html">{{ tr('pagination') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/annotations.html">{{ tr('annotations') }}</a></li>
-                    </ul>
-
-                </td>
-                <td>
-                    <ul class="unstyled">
-                        <li><a class="link-black" href="{{ docs_root }}reference/security.html">{{ tr('security') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/translate.html">{{ tr('translations') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/assets.html">{{ tr('assets_management') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/loader.html">{{ tr('universal_auto_loader') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/logging.html">{{ tr('logging') }}</a></li>
-                        <li><a class="link-black" href="{{ docs_root }}reference/cli.html">{{ tr('cli') }}</a></li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
-        <div class="documentation-button-wrap">
-            <a href="http://docs.phalconphp.com/en/latest/index.html"><span class="button black">{{ tr('documentation') }}</span></a>
-        </div>
-    </div>
-
-</div>
-
-{{ partial('partials/contributors') }}
-
-<div class="green-block">
-    <div class="size-wrap useful-links-wrap clear-fix">
-
-        <div class="services-links-wrap">
-            <div class="services-links">
-                <a class="service-link" href="http://forum.phalconphp.com">
-                    <i class="icon-large icon-forum"></i>
-                    <span class="service-link-text">{{ tr('phalcon_forum_upper') }}</span>
-                </a>
-                <a class="service-link" href="http://stackoverflow.com/questions/tagged/phalcon">
-                    <i class="icon-large icon-so"></i>
-                    <span class="service-link-text">{{ tr('stack_overflow_upper') }}</span>
-                </a>
-                <a class="service-link" href="https://github.com/phalcon/cphalcon">
-                    <i class="icon-large icon-github"></i>
-                    <span class="service-link-text">{{ tr('github_upper') }}</span>
-                </a>
-                <a class="service-link" href="mailto:team@phalconphp.com">
-                    <i class="icon-large icon-email"></i>
-                    <span class="service-link-text">{{ tr('email_us_upper') }}</span>
-                </a>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<div class="hosting-providers">
-
-    <em>{{ tr('phalcon_can_be_installed') }}</em>
-
-    <p><a href="{{ url(language ~ '/hosting') }}">
-        <img src="{{ cdn_url }}images/hosting/fortrabbit-gray.png" alt="Fortrabbit" />
-        <img src="{{ cdn_url }}images/hosting/amazon-gray.png" alt="Amazon" />
-        <img src="{{ cdn_url }}images/hosting/linode-gray.png" alt="Linode" />
-        <img src="{{ cdn_url }}images/hosting/rackspace-gray.png" alt="Rackspace" />
-	<img src="{{ cdn_url }}images/hosting/5hosting-gray.png" alt="5hosting" />
-        <img src="{{ cdn_url }}images/hosting/digital-ocean-gray.png" alt="Digital Ocean" />
-        <img src="{{ cdn_url }}images/hosting/webfaction-gray.png" alt="WebFaction" />
-        <img src="{{ cdn_url }}images/hosting/azure-gray.jpg" alt="Windows Azure" />
-    </a></p>
-
-</div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="/js/plugins/jquery.lazyload.min.js"></script>
+        <script src="/js/plugins/jquery.magnific-popup.min.js"></script>
+        <script src="/js/plugins/highlight.pack.js"></script>
+        <script src="/js/phalcon.min.js"></script>
+    </body>
+</html>

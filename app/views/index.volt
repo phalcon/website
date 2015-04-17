@@ -15,7 +15,7 @@
                                 <span class="icon-bar"></span>
                             </button>
                             <a class="navbar-brand phalcon-logo" href="/">
-                                <span itemprop="name" class="sr-only">Phalcon PHP</span>
+                                <span itemprop="name" class="sr-only">Phalcon</span>
                             </a>
                         </div>
 
@@ -36,7 +36,7 @@
 
                         <div class="sublinks">
                             <a href="https://github.com/phalcon/cphalcon">Clone on GitHub</a> |
-                            <a href="#">Download v.1.3.3</a> |
+                            <a href="#">Download v.2.0.0</a> |
                             {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], 'Install instructions') }}
                         </div>
                     </div>
