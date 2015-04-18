@@ -71,6 +71,7 @@
         <script src="/js/plugins/jquery.lazyload.min.js"></script>
         <script src="/js/plugins/jquery.magnific-popup.min.js"></script>
         <script src="/js/plugins/highlight.pack.js"></script>
+        <script src="/js/plugins/jquery.backstretch.min.js"></script>
         <script src="/js/phalcon.min.js"></script>
     </body>
 </html>
