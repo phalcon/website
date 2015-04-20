@@ -275,7 +275,14 @@
         'community' => 'Сообщество',
         'designed_by' => 'Дизайн:',
         'license_new_bsd' => "Phalcon - это PHP фреймворк с открытым исходным кодом, созданный на C.<br /> Распространяется под лицензией <a href=\"http://opensource.org/licenses/BSD-3-Clause\" target=\"_blank\">new BSD</a>.",
-        'how_to_contribute'               => "Как внести вклад"
+        'how_to_contribute'               => "Как внести вклад",
+        'get_phalcon'                     => 'Скачать Phalcon 2.0',
+        'install_instructions'            => 'Инструкции по установке',
+        'watch_the_demo'                  => 'Посмотреть демо',
+        'see_all_screencasts'             => 'Посмотреть все скринкасты',
+        'header_tagline'                  => 'Полнофункциональный PHP-фреймворк, поставляемый как C-расширение',
+        'see_for_youself'                 => 'Смотреть подробнее...',
+        'header_slogan'                   => 'Инновационная архитектура делает Phalcon быстрейшим PHP-фреймворком из всех существующих!'
 
     );
 
