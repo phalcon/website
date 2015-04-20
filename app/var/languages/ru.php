@@ -274,7 +274,9 @@
         'sample_applications' => 'Примеры приложений',
         'community' => 'Сообщество',
         'designed_by' => 'Дизайн:',
-        'license_new_bsd' => "Phalcon - это PHP фреймворк с открытым исходным кодом, созданный на C.<br /> Распространяется под лицензией <a href=\"http://opensource.org/licenses/BSD-3-Clause\" target=\"_blank\">new BSD</a>."
+        'license_new_bsd' => "Phalcon - это PHP фреймворк с открытым исходным кодом, созданный на C.<br /> Распространяется под лицензией <a href=\"http://opensource.org/licenses/BSD-3-Clause\" target=\"_blank\">new BSD</a>.",
+        'how_to_contribute'               => "Как внести вклад"
+
     );
 
     // return $messages;
