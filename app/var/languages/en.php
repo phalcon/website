@@ -281,7 +281,8 @@
         'sample_applications' => 'Sample applications',
         'community' => 'Community',
         'designed_by' => 'Designed by:',
-        'license_new_bsd' => "Phalcon is an open-source PHP framework <br />built as a C-extension. It is available under the <br /><a href=\"http://opensource.org/licenses/BSD-3-Clause\" target=\"_blank\">new BSD License</a>."
+        'license_new_bsd' => "Phalcon is an open-source PHP framework <br />built as a C-extension. It is available under the <br /><a href=\"http://opensource.org/licenses/BSD-3-Clause\" target=\"_blank\">new BSD License</a>.",
+        'how_to_contribute'               => "How to Contribute"
 
     );
 
