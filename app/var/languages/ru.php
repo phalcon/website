@@ -268,8 +268,13 @@
         'support_please_note_5'           => "Убедитесь, что вы упоминаете слово 'Phalcon' в вопросе",
         'support_reporting_a_bug'         => "Сообщение об ошибке",
         'support_reporting_a_bug_1'       => "Пожалуйста, сообщайте об ошибках, когда вы испробовали все из вышеперечисленных вариантов, используя <a href=':1:'>issue tracker</а> на Github.",
-
-
+        'built_with_phalcon' => 'Сделано на Phalcon',
+        'installing_phalcon_php' => 'Установка Phalcon',
+        'tutorial' => 'Руководство',
+        'sample_applications' => 'Примеры приложений',
+        'community' => 'Сообщество',
+        'designed_by' => 'Дизайн:',
+        'license_new_bsd' => "Phalcon - это PHP фреймворк с открытым исходным кодом, созданный на C.<br /> Распространяется под лицензией <a href=\"http://opensource.org/licenses/BSD-3-Clause\" target=\"_blank\">new BSD</a>."
     );
 
     // return $messages;
