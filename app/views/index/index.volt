@@ -248,10 +248,7 @@ $request = $di->getShared("request");
                 </a>
             </div>
             <div class="col-xs-6 col-sm-3">
-                <a href="http://phweb/en/about" class="icon community-link">
-                    <i class="icon-organization"></i><br />
-                    How to Contribute
-                </a>
+                {{ link_to(['for': 'pages', 'pageSlug': 'about', 'language': language], '<i class="icon-organization"></i><br />'~tr('how_to_contribute'), 'class' : 'icon community-link') }}
             </div>
             <div class="col-xs-6 col-sm-3">
                 <a href="https://github.com/phalcon/cphalcon" class="icon community-link" target="_blank">
