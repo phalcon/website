@@ -7,6 +7,7 @@
             </p>
 
             <div class="highlight1">
+            
                 <pre>
                     <code class="bash">
 sudo apt-add-repository ppa:phalcon/stable
@@ -15,6 +16,18 @@ sudo apt-get install php5-phalcon
                     </code>
                 </pre>
             </div>
+            
+            <p>
+            {{ tr('download_ubuntu_2') }}
+            </p>
+            <div class="highlight1">
+                <pre>
+                   <code class="bash">
+sudo apt-add-repository ppa:phalcon/legacy
+                   </code>
+                </pre>
+            </div>
+
 
             <p>
                 {{ tr('download_ubuntu_1') }}
