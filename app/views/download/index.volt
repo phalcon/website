@@ -7,7 +7,7 @@
             </p>
 
             <div class="highlight1">
-            
+
                 <pre>
                     <code class="bash">
 sudo apt-add-repository ppa:phalcon/stable
@@ -16,7 +16,7 @@ sudo apt-get install php5-phalcon
                     </code>
                 </pre>
             </div>
-            
+
             <p>
             {{ tr('download_ubuntu_2') }}
             </p>
@@ -107,7 +107,7 @@ sudo ./install
 
             <h2>{{ tr('download_arch') }}</h2>
 
-            <p>{{ tr('download_arch_1', 'http://aur.archlinux.org/packages.php?ID=61950') }}</p>
+            <p>{{ tr('download_arch_1', 'https://aur.archlinux.org/packages/php-phalcon/') }}</p>
 
             <h2>{{ tr('download_opensuse') }}</h2>
 
