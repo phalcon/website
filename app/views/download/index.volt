@@ -94,7 +94,7 @@ sudo ./install
 
             <h2>{{ tr('download_arch') }}</h2>
 
-            <p>{{ tr('download_arch_1', 'http://aur.archlinux.org/packages.php?ID=61950') }}</p>
+            <p>{{ tr('download_arch_1', 'https://aur.archlinux.org/packages/php-phalcon/') }}</p>
 
             <h2>{{ tr('download_opensuse') }}</h2>
 
