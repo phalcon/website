@@ -1,50 +1,50 @@
 <section class="codesamples">
 
-    <h2>Discover the wealth of built-in components</h2>
+    <h2>{{ tr('codesamples_header') }}</h2>
 
     <div class="container">
         <div class="row">
             <div class="col-sm-5">
 
-                <h4>Basic features</h4>
+                <h4>{{ tr('basic_fatures') }}</h4>
                 <ul class="tags">
-                    <li><a class="codesample active" href="#nooverhead">Low overhead</a></li>
-                    <li><a class="codesample" href="#mvc">MVC</a></li>
-                    <li><a class="codesample" href="#di">DI</a></li>
-                    <li><a class="codesample" href="#rest">REST</a></li>
-                    <li><a class="codesample" href="#autoloader">Auto-loader</a></li>
-                    <li><a class="codesample" href="#router">Router</a></li>
+                    <li><a class="codesample active" href="#nooverhead">{{ tr('low_overhead') }}</a></li>
+                    <li><a class="codesample" href="#mvc">{{ tr('mvc') }}</a></li>
+                    <li><a class="codesample" href="#di">{{ tr('di') }}</a></li>
+                    <li><a class="codesample" href="#rest">{{ tr('rest') }}</a></li>
+                    <li><a class="codesample" href="#autoloader">{{ tr('auto_loader') }}</a></li>
+                    <li><a class="codesample" href="#router">{{ tr('router') }}</a></li>
                 </ul>
                 <div class="clearfix"></div>
 
-                <h4>Data &amp; storage</h4>
+                <h4>{{ tr('data_and_storage') }}</h4>
                 <ul class="tags">
-                    <li><a class="codesample" href="#orm">ORM</a></li>
-                    <li><a class="codesample" href="#phql">PHQL</a></li>
-                    <li><a class="codesample" href="#odm">ODM for Mongo</a></li>
-                    <li><a class="codesample" href="#transactions">Transactions</a></li>
-                    <li><a class="codesample" href="#cache">Cache</a></li>
-                    <li><a class="codesample" href="#memcache">Memcache</a></li>
+                    <li><a class="codesample" href="#orm">{{ tr('orm') }}</a></li>
+                    <li><a class="codesample" href="#phql">{{ tr('phql') }}</a></li>
+                    <li><a class="codesample" href="#odm">{{ tr('odm_for_mongo') }}</a></li>
+                    <li><a class="codesample" href="#transactions">{{ tr('transactions') }}</a></li>
+                    <li><a class="codesample" href="#cache">{{ tr('cache') }}</a></li>
+                    <li><a class="codesample" href="#memcache">{{ tr('memcache') }}</a></li>
                 </ul>
                 <div class="clearfix"></div>
 
-                <h4>Views &amp; frontend</h4>
+                <h4>{{ tr('view_and_frontend') }}</h4>
                 <ul class="tags">
-                    <li><a class="codesample" href="#templates">Template engines</a></li>
-                    <li><a class="codesample" href="#volt">Volt</a></li>
-                    <li><a class="codesample" href="#i18n">i18n</a></li>
-                    <li><a class="codesample" href="#froms">Forms builder</a></li>
-                    <li><a class="codesample" href="#flash">Flash messages</a></li>
+                    <li><a class="codesample" href="#templates">{{ tr('template_engines') }}</a></li>
+                    <li><a class="codesample" href="#volt">{{ tr('volt') }}</a></li>
+                    <li><a class="codesample" href="#i18n">{{ tr('i18n') }}</a></li>
+                    <li><a class="codesample" href="#froms">{{ tr('form_builder') }}</a></li>
+                    <li><a class="codesample" href="#flash">{{ tr('flash_messages') }}</a></li>
                 </ul>
                 <div class="clearfix"></div>
 
-                <h4>Others</h4>
+                <h4>{{ tr('Others') }}</h4>
                 <ul class="tags">
-                    <li><a class="codesample" href="#acl">ACL</a></li>
-                    <li><a class="codesample" href="#sharding">Sharding</a></li>
-                    <li><a class="codesample" href="#crypt">Crypt</a></li>
-                    <li><a class="codesample" href="#events">Events</a></li>
-                    <li><a class="codesample" href="#queues">Queueing</a></li>
+                    <li><a class="codesample" href="#acl">{{ tr('ACL') }}</a></li>
+                    <li><a class="codesample" href="#sharding">{{ tr('sharding') }}</a></li>
+                    <li><a class="codesample" href="#crypt">{{ tr('crypt') }}</a></li>
+                    <li><a class="codesample" href="#events">{{ tr('events') }}</a></li>
+                    <li><a class="codesample" href="#queues">{{ tr('queueing') }}</a></li>
                 </ul>
                 <div class="clearfix"></div>
 
@@ -57,7 +57,7 @@
                     <!-- =================================================================== -->
                     <div class="codesample codesample-current" id="nooverhead"><!-- codesample -->
                         <div class="codesample-header">
-                            <h3>Low overhead</h3>
+                            <h3>{{ tr('low_overhead') }}</h3>
                         </div>
                         <div class="codesample-body">
                             <div class="row">
@@ -81,7 +81,7 @@
                     <!-- =================================================================== -->
                     <div class="codesample" id="mvc"><!-- codesample -->
                         <div class="codesample-header">
-                            <h3>Model-View-Controller</h3>
+                            <h3>{{ tr('model_view_controller') }}</h3>
                         </div>
                         <div class="codesample-body">
                             <p>Build single and multi-module applications with ease and pleasure. Using the file structure, scheme and patterns you already know.</p>
@@ -128,7 +128,7 @@
                     <!-- =================================================================== -->
                     <div class="codesample" id="di"><!-- codesample -->
                         <div class="codesample-header">
-                            <h3>Dependency Injection</h3>
+                            <h3>{{ tr('dependency_injection') }}</h3>
                         </div>
                         <div class="codesample-body">
                             <p>Phalcon is built upon a powerful yet ease to understand and use pattern called Dependency Injection. Initialize or define services once - and use them virtually anywhere throughout the application.</p>
@@ -154,7 +154,7 @@ $request = $di->getShared("request");
                     <!-- =================================================================== -->
                     <div class="codesample" id="rest"><!-- codesample -->
                         <div class="codesample-header">
-                            <h3>RESTful services</h3>
+                            <h3>{{ tr('restful_services') }}</h3>
                         </div>
                         <div class="codesample-body">
                             <p>Writing REST servers and applications has never been easier. No boilerplate. Simple services will fit in one file.</p>
