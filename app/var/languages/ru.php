@@ -285,7 +285,7 @@
         'header_tagline'                  => 'Полнофункциональный PHP-фреймворк, поставляемый как C-расширение',
         'see_for_youself'                 => 'Смотреть подробнее...',
         'header_slogan'                   => 'Инновационная архитектура делает Phalcon быстрейшим PHP-фреймворком из всех существующих!',
-        'codesamples_header'              => 'Discover the wealth of built-in components',
+        'codesamples_header'              => 'Откройте для себя возможности встроенных компонентов',
         'basic_fatures' => 'Базовые возможности',
         'low_overhead' => 'Низкое потребление',
         'mvc' => 'MVC',
