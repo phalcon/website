@@ -7,13 +7,15 @@ class IndexController extends \ControllerBase
 
     public function indexAction()
     {
-        $this->tag->setTitle('High performance PHP framework');
+        $this->tag->setTitle('Phalcon - High Performance PHP Framework');
     }
 
     public function notFoundAction()
     {
         $this->response->setStatusCode(404, 'Not Found');
         $this->view->pick('404/404');
+        $this->view->setVar('isFrontpage', false);
+        $this->view->setVar('isPage', 404);
     }
 
     public function subscribeAction()
