@@ -1,5 +1,7 @@
 <?php
 
+use \Phalcon\Mvc\View as PhView;
+
 class UtilsController extends \ControllerBase
 {
 
