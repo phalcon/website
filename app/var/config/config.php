@@ -1,14 +1,14 @@
 <?php
 
-    $database = [
+    $database = array(
         'adapter'     => 'Mysql',
         'host'        => 'localhost',
         'username'    => 'root',
         'password'    => '',
         'dbname'      => 'test',
-    ];
+    );
 
-    $application = [
+    $application = array(
         'controllersDir' => ROOT_PATH . '/app/controllers/',
         'modelsDir'      => ROOT_PATH . '/app/models/',
         'viewsDir'       => ROOT_PATH . '/app/views/',
@@ -18,192 +18,192 @@
         'baseUri'        => '/',
         'debug'          => '1',
         'cdn'            => 'http://static.phalconphp.com/'
-    ];
+    );
 
-    $cache = [
+    $cache = array(
         'lifetime' => 86400 ,
         'cacheDir' => ROOT_PATH . '/app/var/cache/' ,
-    ];
+    );
 
-    $routes = [
+    $routes = array(
 
         // Index (Redirect)
-        '/' => [
-            'params' => [
+        '/' => array(
+            'params' => array(
                 'controller' => 'index',
                 'action'     => 'redirectIndex',
-            ],
+            ),
             'name'   => 'index-redirect',
-        ],
-        '/index' => [
-            'params' => [
+        ),
+        '/index' => array(
+            'params' => array(
                 'controller' => 'index',
                 'action'     => 'redirectIndex',
-            ],
+            ),
             'name'   => 'index-redirect',
-        ],
+        ),
 
         // Pages
-        '/{pageSlug:(models|about|team|roadmap|hosting|examples|support|api|ui|powered)}' => [
-            'params' => [
+        '/{pageSlug:(models|about|team|roadmap|hosting|examples|support|api|ui|powered)}' => array(
+            'params' => array(
                 'controller' => 'index',
                 'action'     => 'redirectPages',
-            ],
+            ),
             'name'   => 'pages-redirect',
-        ],
+        ),
 
-        '/contributors' => [
-            'params' => [
+        '/contributors' => array(
+            'params' => array(
                 'controller' => 'utils',
                 'action'     => 'contributors',
-            ],
+            ),
             'name'   => 'contributors',
-        ],
+        ),
 
-        '/sitemap' => [
-            'params' => [
+        '/sitemap' => array(
+            'params' => array(
                 'controller' => 'utils',
                 'action'     => 'sitemap',
-            ],
+            ),
             'name'   => 'index-sitemap',
-        ],
+        ),
 
         // Download
-        '/download' => [
-            'params' => [
+        '/download' => array(
+            'params' => array(
                 'controller' => 'index',
                 'action'     => 'redirectDownload'
-            ],
+            ),
             'name'   => 'download-redirect',
-        ],
-        '/download/{type:(tools|stubs)}' => [
-            'params' => [
+        ),
+        '/download/{type:(tools|stubs)}' => array(
+            'params' => array(
                 'controller' => 'index',
                 'action'     => 'redirectDownloadType',
-            ],
+            ),
             'name'   => 'download-type-redirect',
-        ],
-        '/download/windows' => [
-            'params' => [
+        ),
+        '/download/windows' => array(
+            'params' => array(
                 'controller' => 'index',
                 'action'     => 'redirectDownloadWindows',
-            ],
+            ),
             'name'   => 'download-windows-redirect',
-        ],
-        '/download/vagrant' => [
-            'params' => [
+        ),
+        '/download/vagrant' => array(
+            'params' => array(
                 'controller' => 'index',
                 'action'     => 'redirectDownloadVagrant',
-            ],
+            ),
             'name'   => 'download-vagrant-redirect',
-        ],
+        ),
 
         // Documentation
-        '/(documentation|reference)' => [
-            'params' => [
+        '/(documentation|reference)' => array(
+            'params' => array(
                 'controller' => 'documentation',
                 'action'     => 'index',
-            ],
+            ),
             'name'   => 'documentation',
-        ],
+        ),
 
         // Donate
-        '/donate' => [
-            'params' => [
+        '/donate' => array(
+            'params' => array(
                 'controller' => 'index',
                 'action'     => 'redirectDonate',
-            ],
+            ),
             'name'   => 'donate-redirect',
-        ],
+        ),
 
 
         // Index
-        '/{language:[a-z]{2}}' => [
-            'params' => [
+        '/{language:array(a-z){2}}' => array(
+            'params' => array(
                 'controller' => 'index',
                 'action'     => 'index',
-            ],
+            ),
             'name'   => 'index',
-        ],
-        '/{language:[a-z]{2}}/index' => [
-            'params' => [
+        ),
+        '/{language:array(a-z){2}}/index' => array(
+            'params' => array(
                 'controller' => 'index',
                 'action'     => 'index',
-            ],
+            ),
             'name'   => 'index',
-        ],
+        ),
 
         // Pages
-        '/{language:[a-z]{2}}/{pageSlug:(models|about|team|roadmap|consulting|hosting|testimonials|examples|support|api|ui|powered)}' => [
-            'params' => [
+        '/{language:array(a-z){2}}/{pageSlug:(models|about|team|roadmap|consulting|hosting|testimonials|examples|support|api|ui|powered)}' => array(
+            'params' => array(
                 'controller' => 'pages',
                 'action'     => 'page',
-            ],
+            ),
             'name'   => 'pages',
-        ],
+        ),
 
         // Download
-        '/{language:[a-z]{2}}/download' => [
-            'params' => [
+        '/{language:array(a-z){2}}/download' => array(
+            'params' => array(
                 'controller' => 'download'
-            ],
+            ),
             'name'   => 'download',
-        ],
-        '/{language:[a-z]{2}}/download/{type:(tools|stubs)}' => [
-            'params' => [
+        ),
+        '/{language:array(a-z){2}}/download/{type:(tools|stubs)}' => array(
+            'params' => array(
                 'controller' => 'download',
                 'action'     => 'index',
-            ],
+            ),
             'name'   => 'download-type',
-        ],
-        '/{language:[a-z]{2}}/download/windows' => [
-            'params' => [
+        ),
+        '/{language:array(a-z){2}}/download/windows' => array(
+            'params' => array(
                 'controller' => 'download',
                 'action'     => 'windows',
-            ],
+            ),
             'name'   => 'download-windows',
-        ],
-        '/{language:[a-z]{2}}/download/vagrant' => [
-            'params' => [
+        ),
+        '/{language:array(a-z){2}}/download/vagrant' => array(
+            'params' => array(
                 'controller' => 'download',
                 'action'     => 'vagrant',
-            ],
+            ),
             'name'   => 'download-vagrant',
-        ],
+        ),
 
         // Documentation
-        '/{language:[a-z]{2}}/(documentation|reference)' => [
-            'params' => [
+        '/{language:array(a-z){2}}/(documentation|reference)' => array(
+            'params' => array(
                 'controller' => 'documentation',
                 'action'     => 'index',
-            ],
+            ),
             'name'   => 'documentation',
-        ],
+        ),
 
         // Donate
-        '/{language:[a-z]{2}}/donate' => [
-            'params' => [
+        '/{language:array(a-z){2}}/donate' => array(
+            'params' => array(
                 'controller' => 'index',
                 'action'     => 'donate',
-            ],
+            ),
             'name'   => 'donate',
-        ],
+        ),
 
         //Humans
-        '/humans.txt' => [
-            'params' => [
+        '/humans.txt' => array(
+            'params' => array(
                 'controller' => 'utils',
                 'action'     => 'humans',
-            ],
+            ),
             'name'   => 'humans',
-        ]
-    ];
+        )
+    );
 
     /**
      * These languages appear at the top select box
      * allowing the user to easily change the language of the site
      */
-    $languages = [
+    $languages = array(
         'bg' => 'български',
         'cz' => 'Český',
         'de' => 'Deutsch',
@@ -229,13 +229,13 @@
         'tr' => 'Türkçe',
         'vi' => 'Việt',
         'zh' => '简体中文',
-    ];
+    );
 
     /**
      * These are all the pages of the site. This is used to generate the
      * sitemap.xml
      */
-    $pages = [
+    $pages = array(
         '',
         'download',
         'support',
@@ -247,13 +247,13 @@
         'windows',
         'tools',
         'stubs',
-    ];
+    );
 
-return [
+return array(
     'application' => $application,
     'database'    => $database,
     'cache'       => $cache,
     'routes'      => $routes,
     'languages'   => $languages,
     'pages'       => $pages,
-];
+);
