@@ -357,6 +357,11 @@ class Bootstrap
             // The first argument is the key
             $key = $arguments[0];
 
+            /**
+             * For default translation is a $key if it's not found
+             */
+            $return = $key;
+
             if (isset($phrases[$key])) {
                 $return = $phrases[$key];
 
