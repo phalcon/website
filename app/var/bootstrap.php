@@ -232,7 +232,7 @@ class Bootstrap
                             'compiledSeparator' => '_',
                         );
 
-                        if ('1' == $config->application->debug) {
+                        if ($config->application->debug) {
                             $voltOptions['compileAlways'] = true;
                         }
 
@@ -304,7 +304,7 @@ class Bootstrap
         }
 
         $changed = false;
-        if (!$phrases || $language != $lang || ('1' == $config->application->debug)) {
+        if (!$phrases || $language != $lang || ($config->application->debug)) {
 
             require ROOT_PATH . '/app/var/languages/en.php';
 
