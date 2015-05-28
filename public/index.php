@@ -8,17 +8,13 @@ if (!defined('ROOT_PATH')) {
 }
 
 try {
+    include ROOT_PATH . "/app/var/bootstrap.php";
 
-	include ROOT_PATH . "/app/var/bootstrap.php";
-
-	/**
-	 * Handle the request
-	 */
-    $app = new Bootstrap(\Phalcon\DI\FactoryDefault());
+    /**
+     * Handle the request
+     */
+    $app = new Bootstrap(new \Phalcon\DI\FactoryDefault());
     echo $app->run(array());
-
-} catch (\Phalcon\Exception $e) {
-	echo $e->getMessage();
-} catch (PDOException $e){
-	echo $e->getMessage();
+} catch (\Exception $e) {
+    echo $e->getMessage();
 }
