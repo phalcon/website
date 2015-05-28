@@ -301,7 +301,7 @@ $request = $di->getShared("request");
             <div class="col-xs-12 col-sm-4 text-center">
                 <i class="icon-todo-fa fa fa-thumbs-o-up icon-huge"></i>
                 <h3>Help Phalcon to fly higher</h3>
-                <p>Show your apprecition and help us with project costs by simply donating via:</p>
+                <p>Show your appreciation and help us with project costs by simply donating via:</p>
                 <a href="https://pledgie.com/campaigns/27405" target="_blank" class="btn btn-lg btn-phalcon">Pledgie</a> <b>or</b>
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="display: inline" target="_blank">
                     <input type="hidden" name="cmd" value="_s-xclick" />
