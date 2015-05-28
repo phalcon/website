@@ -69,9 +69,9 @@ EOF;
         $l = array();
 
         foreach ($repositories as $repository => $weight) {
-            $responce = file_get_contents('https://api.github.com/repos/phalcon/' . $repository . '/contributors', false, $context);
-            if ($responce) {
-                $contributors = json_decode($responce, true);
+            $response = file_get_contents('https://api.github.com/repos/phalcon/' . $repository . '/contributors', false, $context);
+            if ($response) {
+                $contributors = json_decode($response, true);
 
                 if (is_array($contributors)) {
                     foreach ($contributors as $contributor) {
