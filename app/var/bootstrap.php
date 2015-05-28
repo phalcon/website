@@ -51,23 +51,15 @@ class Bootstrap
             'cache',
         );
 
-        try {
-
-            foreach ($loaders as $service) {
-                $function = 'init' . ucfirst($service);
-                $this->$function();
-            }
-
-            $application = new PhApplication();
-            $application->setDI($this->di);
-
-            return $application->handle()->getContent();
-
-        } catch (PhException $e) {
-            echo $e->getMessage();
-        } catch (\PDOException $e) {
-            echo $e->getMessage();
+        foreach ($loaders as $service) {
+            $function = 'init' . ucfirst($service);
+            $this->$function();
         }
+
+        $application = new PhApplication();
+        $application->setDI($this->di);
+
+        return $application->handle()->getContent();
     }
 
     // Protected functions
