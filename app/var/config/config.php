@@ -16,7 +16,7 @@
         'libraryDir'     => ROOT_PATH . '/app/library/',
         'voltDir'        => ROOT_PATH . '/app/var/volt/',
         'baseUri'        => '/',
-        'debug'          => '0',
+        'debug'          => false,
         'cdn'            => 'http://static.phalconphp.com/'
     );
 
