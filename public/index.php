@@ -1,7 +1,5 @@
 <?php
 
-use \Phalcon\DI\FactoryDefault as PhDi;
-
 error_reporting(E_ALL);
 date_default_timezone_set('US/Eastern');
 
@@ -16,9 +14,7 @@ try {
 	/**
 	 * Handle the request
 	 */
-    $di  = new PhDi();
-    $app = new Bootstrap($di);
-
+    $app = new Bootstrap(\Phalcon\DI\FactoryDefault());
     echo $app->run(array());
 
 } catch (\Phalcon\Exception $e) {
