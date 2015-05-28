@@ -29,7 +29,7 @@
                     <div class="tagline">
                         <h1>A full-stack PHP framework delivered as a C-extension</h1>
                         <p>
-                            Its innovative architeture makes Phalcon the fastest PHP framework ever built!
+                            Its innovative architecture makes Phalcon the fastest PHP framework ever built!
                             <a id="bench-link" href="#" target="_blank">
                                 See for yourself...
                             </a>
