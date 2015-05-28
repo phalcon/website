@@ -16,9 +16,8 @@
         'libraryDir'     => ROOT_PATH . '/app/library/',
         'voltDir'        => ROOT_PATH . '/app/var/volt/',
         'baseUri'        => '/',
-        'debug'          => '1',
-//        'cdn'            => 'http://static.phalconphp.com/'
-        'cdn'            => 'http://phalcon-1618.kxcdn.com/'
+        'debug'          => '0',
+        'cdn'            => 'http://static.phalconphp.com/'
     );
 
     $cache = array(
