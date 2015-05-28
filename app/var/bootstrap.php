@@ -59,7 +59,7 @@ class Bootstrap
         $application = new PhApplication();
         $application->setDI($this->di);
 
-        return $application->handle()->getContent();
+        return $application->handle($_SERVER['REQUEST_URI'])->getContent();
     }
 
     // Protected functions
