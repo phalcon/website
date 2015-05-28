@@ -60,3 +60,4 @@ sudo rm -rf /etc/nginx/sites-enabled/*
 sudo cp /vagrant/vagrant/etc/nginx/sites-enabled/* /etc/nginx/sites-enabled/
 
 sudo service nginx restart
+sudo service php5-fpm restart
