@@ -3,7 +3,7 @@
 
     <div class="row">
         <div class="col-lg-2">
-            <img src="http://static.phalconphp.com/images/team/andres.jpg" alt="Andres Gutierrez" style="width: 102px;" class="img-circle"/>
+            <img src="{{ cdn_url }}images/team/andres.jpg" alt="Andres Gutierrez" style="width: 102px;" class="img-circle"/>
         </div>
 
         <div class="col-lg-10">
@@ -18,7 +18,7 @@
 
     <div class="row">
         <div class="col-lg-2">
-            <img src="http://static.phalconphp.com/images/team/eduar.jpg" alt="Eduar Carvajal" style="width: 102px;" class="img-circle"/>
+            <img src="{{ cdn_url }}images/team/eduar.jpg" alt="Eduar Carvajal" style="width: 102px;" class="img-circle"/>
         </div>
 
         <div class="col-lg-10">
@@ -34,7 +34,7 @@
 
     <div class="row">
         <div class="col-lg-2">
-            <img src="http://static.phalconphp.com/images/team/nikos.jpg" alt="Nikolaos (Nikos) Dimopoulos" style="width: 102px;" class="img-circle"/>
+            <img src="{{ cdn_url }}images/team/nikos.jpg" alt="Nikolaos (Nikos) Dimopoulos" style="width: 102px;" class="img-circle"/>
         </div>
 
         <div class="col-lg-10">
@@ -49,7 +49,7 @@
 
     <div class="row">
         <div class="col-lg-2">
-            <img src="http://static.phalconphp.com/images/team/nikolay.jpg" alt="Nikolay (boston) Kirsh" style="width: 102px;" class="img-circle"/>
+            <img src="{{ cdn_url }}images/team/nikolay.jpg" alt="Nikolay (boston) Kirsh" style="width: 102px;" class="img-circle"/>
         </div>
 
         <div class="col-lg-10">
