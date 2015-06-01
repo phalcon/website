@@ -41,7 +41,7 @@
             'name'   => 'index-redirect',
         ),
         // Pages
-        '/{pageSlug:(models|about|team|roadmap|hosting|examples|support|api|ui|powered)}' => array(
+        '/{pageSlug:(about|team|roadmap|hosting|support)}' => array(
             'params' => array(
                 'controller' => 'index',
                 'action'     => 'redirectPages',
