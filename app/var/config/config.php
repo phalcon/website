@@ -41,7 +41,7 @@
             'name'   => 'index-redirect',
         ),
         // Pages
-        '/{pageSlug:(models|about|team|roadmap|hosting|examples|support|api|ui|powered)}' => array(
+        '/{pageSlug:(about|team|roadmap|consulting|hosting|testimonials|support)}' => array(
             'params' => array(
                 'controller' => 'index',
                 'action'     => 'redirectPages',
@@ -123,7 +123,7 @@
             'name'   => 'index',
         ),
         // Pages
-        '/{language:[a-z]{2}}/{pageSlug:(models|about|team|roadmap|consulting|hosting|testimonials|examples|support|api|ui|powered)}' => array(
+        '/{language:[a-z]{2}}/{pageSlug:(about|team|roadmap|consulting|hosting|testimonials|support)}' => array(
             'params' => array(
                 'controller' => 'pages',
                 'action'     => 'page',
@@ -220,16 +220,19 @@
      */
     $pages = array(
         '',
-        'download',
-        'support',
-        'donate',
-        'hosting',
-        'team',
         'about',
+        'team',
+        'testimonials',
+        'download',
+        'download/windows',
+        'download/tools',
+        'download/vagrant',
+        'download/stubs',
         'roadmap',
-        'windows',
-        'tools',
-        'stubs',
+        'consulting',
+        'hosting',
+        'support',
+        'donate'
     );
 return array(
     'application' => $application,
