@@ -207,7 +207,7 @@ $request = $di->getShared("request");
                     <!-- =================================================================== -->
                     <div class="codesample" id="router"><!-- codesample -->
                         <div class="codesample-header">
-                            <h3>Router</h3>
+                            <h3>{{ tr('router') }}</h3>
                         </div>
                         <div class="codesample-body">
                             <p>Routing as it supposed to be. Nothing more. Nothing less.</p>

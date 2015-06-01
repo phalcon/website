@@ -291,10 +291,12 @@
         'low_overhead' => 'Низкое потребление',
         'mvc' => 'MVC',
         'di' => 'DI',
+        'dependency_injection' => 'Внедрение зависимости',
+        'restful_services' => 'RESTful services',
+        'model_view_controller' => 'Модель-Представление-Контроллер',
         'rest' => 'REST',
         'auto_loader' => 'Автозагрузчик',
         'router' => 'Роутер',
-        'orm' => 'ORM',
         'odm_for_mongo' => 'ODM для Mongo',
         'transactions' => 'Транзакции',
         'cache' => 'Кэш',
@@ -319,9 +321,8 @@
         'visit_website' => 'Посетить сайт',
         'help_to_fly' => 'Помогите Phalcon летать выше',
         'help_to_fly_text' => 'Выразите свою признательность и помогите нам, просто пожертвовав:',
-        'try_tutorial' => 'Try the tutorial',
+        'try_tutorial' => 'Обучающие материалы',
         'folow_along' => 'Следуйте за нами:'
-
     );
 
     // return $messages;
