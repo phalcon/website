@@ -317,8 +317,16 @@
         'data_and_storage' => 'Data &amp; storage',
         'view_and_frontend' => 'Views &amp; frontend',
         'others' => 'Others',
-
-
+        'join_community' => 'Come join our vibrant developer community!',
+        'learn_to_fly' => 'Learn to fly with Phalcon 2',
+        'learn_to_fly_text' => 'Get started by learning the basic concepts behind a common Phalcon application',
+        'meet_zephir' => 'Meet Zephir',
+        'meet_zephir_text' => 'Learn about the technology that empowers Phalcon',
+        'visit_website' => 'Visit the website',
+        'help_to_fly' => 'Help Phalcon to fly higher',
+        'help_to_fly_text' => 'Show your appreciation and help us with project costs by simply donating via:',
+        'try_tutorial' => 'Try the tutorial',
+        'folow_along' => 'Follow along:'
     );
 
     // return $messages;
