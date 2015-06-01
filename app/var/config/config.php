@@ -220,16 +220,19 @@
      */
     $pages = array(
         '',
-        'download',
-        'support',
-        'donate',
-        'hosting',
-        'team',
         'about',
+        'team',
+        'testimonials',
+        'download',
+        'download/windows',
+        'download/tools',
+        'download/vagrant',
+        'download/stubs',
         'roadmap',
-        'windows',
-        'tools',
-        'stubs',
+        'consulting',
+        'hosting',
+        'support',
+        'donate'
     );
 return array(
     'application' => $application,
