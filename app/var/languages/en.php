@@ -285,7 +285,7 @@
         'designed_by' => 'Designed by:',
         'license_new_bsd' => "Phalcon is an open-source PHP framework <br />built as a C-extension. It is available under the <br /><a href=\"http://opensource.org/licenses/BSD-3-Clause\" target=\"_blank\">new BSD License</a>.",
         'how_to_contribute'               => "How to Contribute",
-        'get_phalcon'                     => 'Get Phalcon 2.0',
+        'get_phalcon'                     => 'Get Phalcon',
         'install_instructions'            => 'Install instructions',
         'watch_the_demo'                  => 'Watch the demo',
         'see_all_screencasts'             => 'See all Screencasts here',
