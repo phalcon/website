@@ -41,7 +41,7 @@
             'name'   => 'index-redirect',
         ),
         // Pages
-        '/{pageSlug:(about|team|roadmap|hosting|support)}' => array(
+        '/{pageSlug:(about|team|roadmap|consulting|hosting|testimonials|support)}' => array(
             'params' => array(
                 'controller' => 'index',
                 'action'     => 'redirectPages',
@@ -123,7 +123,7 @@
             'name'   => 'index',
         ),
         // Pages
-        '/{language:[a-z]{2}}/{pageSlug:(models|about|team|roadmap|consulting|hosting|testimonials|examples|support|api|ui|powered)}' => array(
+        '/{language:[a-z]{2}}/{pageSlug:(about|team|roadmap|consulting|hosting|testimonials|support)}' => array(
             'params' => array(
                 'controller' => 'pages',
                 'action'     => 'page',
