@@ -310,6 +310,16 @@
         'data_and_storage' => 'Данные &amp; Хранение',
         'view_and_frontend' => 'Представление &amp; frontend',
         'others' => 'Другое',
+        'join_community' => 'Присоединяйся к активной жизни нашего сообщества!',
+        'learn_to_fly' => 'Научитесь летать с Phalcon 2',
+        'learn_to_fly_text' => 'Начните с изучения основных концепций Phalcon',
+        'meet_zephir' => 'Встречайте Zephir',
+        'meet_zephir_text' => 'Узнайте о технологии, которая дает возможности Phalcon',
+        'visit_website' => 'Посетить сайт',
+        'help_to_fly' => 'Помогите Phalcon летать выше',
+        'help_to_fly_text' => 'Выразите свою признательность и помогите нам, просто пожертвовав:',
+        'try_tutorial' => 'Try the tutorial',
+        'folow_along' => 'Следуйте за нами:'
 
     );
 
