@@ -9,6 +9,7 @@
         'documentation'                   => 'Documentation',
         'forum'                           => 'Forum',
         'blog'                            => 'Blog',
+        'resources'                       => 'Resources',
         'support'                         => 'Support',
         'donate'                          => 'Donate',
         'store'                           => 'Store',

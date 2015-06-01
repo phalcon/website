@@ -16,16 +16,15 @@
         'libraryDir'     => ROOT_PATH . '/app/library/',
         'voltDir'        => ROOT_PATH . '/app/var/volt/',
         'baseUri'        => '/',
-        'debug'          => '1',
+        'debug'          => false,
+        'cdn'            => 'http://static.phalconphp.com/'
     );
 
     $cache = array(
         'lifetime' => 86400 ,
         'cacheDir' => ROOT_PATH . '/app/var/cache/' ,
     );
-
     $routes = array(
-
         // Index (Redirect)
         '/' => array(
             'params' => array(
@@ -41,7 +40,6 @@
             ),
             'name'   => 'index-redirect',
         ),
-
         // Pages
         '/{pageSlug:(models|about|team|roadmap|hosting|examples|support|api|ui|powered)}' => array(
             'params' => array(
@@ -50,7 +48,6 @@
             ),
             'name'   => 'pages-redirect',
         ),
-
         '/contributors' => array(
             'params' => array(
                 'controller' => 'utils',
@@ -58,7 +55,6 @@
             ),
             'name'   => 'contributors',
         ),
-
         '/sitemap' => array(
             'params' => array(
                 'controller' => 'utils',
@@ -66,7 +62,6 @@
             ),
             'name'   => 'index-sitemap',
         ),
-
         // Download
         '/download' => array(
             'params' => array(
@@ -96,7 +91,6 @@
             ),
             'name'   => 'download-vagrant-redirect',
         ),
-
         // Documentation
         '/(documentation|reference)' => array(
             'params' => array(
@@ -105,7 +99,6 @@
             ),
             'name'   => 'documentation',
         ),
-
         // Donate
         '/donate' => array(
             'params' => array(
@@ -114,8 +107,6 @@
             ),
             'name'   => 'donate-redirect',
         ),
-
-
         // Index
         '/{language:[a-z]{2}}' => array(
             'params' => array(
@@ -131,7 +122,6 @@
             ),
             'name'   => 'index',
         ),
-
         // Pages
         '/{language:[a-z]{2}}/{pageSlug:(models|about|team|roadmap|consulting|hosting|testimonials|examples|support|api|ui|powered)}' => array(
             'params' => array(
@@ -140,7 +130,6 @@
             ),
             'name'   => 'pages',
         ),
-
         // Download
         '/{language:[a-z]{2}}/download' => array(
             'params' => array(
@@ -169,7 +158,6 @@
             ),
             'name'   => 'download-vagrant',
         ),
-
         // Documentation
         '/{language:[a-z]{2}}/(documentation|reference)' => array(
             'params' => array(
@@ -178,7 +166,6 @@
             ),
             'name'   => 'documentation',
         ),
-
         // Donate
         '/{language:[a-z]{2}}/donate' => array(
             'params' => array(
@@ -187,7 +174,6 @@
             ),
             'name'   => 'donate',
         ),
-
         //Humans
         '/humans.txt' => array(
             'params' => array(
@@ -197,7 +183,6 @@
             'name'   => 'humans',
         )
     );
-
     /**
      * These languages appear at the top select box
      * allowing the user to easily change the language of the site
@@ -229,7 +214,6 @@
         'vi' => 'Việt',
         'zh' => '简体中文',
     );
-
     /**
      * These are all the pages of the site. This is used to generate the
      * sitemap.xml
@@ -247,7 +231,6 @@
         'tools',
         'stubs',
     );
-
 return array(
     'application' => $application,
     'database'    => $database,

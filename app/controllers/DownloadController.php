@@ -35,7 +35,7 @@ class DownloadController extends \ControllerBase
         $this->view->setVar('isPage', 'windows');
         $this->view->setVar('title', 'Download Phalcon for Windows');
 
-        $cdn      = 'http://static.phalconphp.com/files/';
+        $cdn      = $this->config->application->cdn . 'files/';
         $path     = ROOT_PATH . '/public/files/';
         $template = "Phalcon %s - Windows %s for PHP %s %s(%s)";
         $files    = array();

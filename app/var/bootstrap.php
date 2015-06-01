@@ -51,23 +51,15 @@ class Bootstrap
             'cache',
         );
 
-        try {
-
-            foreach ($loaders as $service) {
-                $function = 'init' . ucfirst($service);
-                $this->$function();
-            }
-
-            $application = new PhApplication();
-            $application->setDI($this->di);
-
-            return $application->handle()->getContent();
-
-        } catch (PhException $e) {
-            echo $e->getMessage();
-        } catch (\PDOException $e) {
-            echo $e->getMessage();
+        foreach ($loaders as $service) {
+            $function = 'init' . ucfirst($service);
+            $this->$function();
         }
+
+        $application = new PhApplication();
+        $application->setDI($this->di);
+
+        return $application->handle($_SERVER['REQUEST_URI'])->getContent();
     }
 
     // Protected functions
@@ -240,7 +232,7 @@ class Bootstrap
                             'compiledSeparator' => '_',
                         );
 
-                        if ('1' == $config->application->debug) {
+                        if ($config->application->debug) {
                             $voltOptions['compileAlways'] = true;
                         }
 
@@ -312,7 +304,7 @@ class Bootstrap
         }
 
         $changed = false;
-        if (!$phrases || $language != $lang || ('1' == $config->application->debug)) {
+        if (!$phrases || $language != $lang || ($config->application->debug)) {
 
             require ROOT_PATH . '/app/var/languages/en.php';
 
@@ -364,6 +356,11 @@ class Bootstrap
 
             // The first argument is the key
             $key = $arguments[0];
+
+            /**
+             * For default translation is a $key if it's not found
+             */
+            $return = $key;
 
             if (isset($phrases[$key])) {
                 $return = $phrases[$key];

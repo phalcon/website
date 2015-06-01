@@ -1,7 +1,5 @@
 <?php
 
-use \Phalcon\DI\FactoryDefault as PhDi;
-
 error_reporting(E_ALL);
 date_default_timezone_set('US/Eastern');
 
@@ -10,19 +8,13 @@ if (!defined('ROOT_PATH')) {
 }
 
 try {
+    include ROOT_PATH . "/app/var/bootstrap.php";
 
-	include ROOT_PATH . "/app/var/bootstrap.php";
-
-	/**
-	 * Handle the request
-	 */
-    $di  = new PhDi();
-    $app = new Bootstrap($di);
-
+    /**
+     * Handle the request
+     */
+    $app = new Bootstrap(new \Phalcon\DI\FactoryDefault());
     echo $app->run(array());
-
-} catch (\Phalcon\Exception $e) {
-	echo $e->getMessage();
-} catch (PDOException $e){
-	echo $e->getMessage();
+} catch (\Exception $e) {
+    echo $e->getMessage();
 }

@@ -37,7 +37,7 @@
                         <div class="home-button-container">
                             {{ link_to(['for': 'pages', 'id': 'the-difference-tm', 'pageSlug': 'download', 'language': language], '<i class="fa fa-download"></i> '~ tr('get_phalcon'), 'class': 'btn btn-lg btn-phalcon') }}
                             <div class="sublinks">
-                                {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], tr('download')~' v.2.0.0') }} |
+                                {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], tr('download')~' v.2.0.2') }} |
                                 {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], tr('install_instructions')) }}
                             </div>
                         </div>
@@ -65,12 +65,12 @@
 
         {% include 'partials/footer.volt' %}
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-        <script src="/js/plugins/jquery.lazyload.min.js"></script>
-        <script src="/js/plugins/jquery.magnific-popup.min.js"></script>
-        <script src="/js/plugins/highlight.pack.js"></script>
-        <script src="/js/plugins/jquery.backstretch.min.js"></script>
-        <script src="/js/phalcon.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="{{ cdn_url }}js/plugins/jquery.lazyload.min.js"></script>
+        <script src="{{ cdn_url }}js/plugins/jquery.magnific-popup.min.js"></script>
+        <script src="{{ cdn_url }}js/plugins/highlight.pack.js"></script>
+        <script src="{{ cdn_url }}js/plugins/jquery.backstretch.min.js"></script>
+        <script src="{{ cdn_url }}js/phalcon.min.js"></script>
     </body>
 </html>

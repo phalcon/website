@@ -7,14 +7,12 @@ class ControllerBase extends Controller
 {
 	public function requestInitialize()
 	{
-		/**
-		 * Dev environment or production?
-		 */
-		if ('0' == $this->config->application->debug) {
-			$cdnUrl = 'http://static.phalconphp.com/';
+		if ($this->config->application->debug) {
+            $cdnUrl = $this->config->application->baseUri;
 		} else {
-			$cdnUrl = $this->config->application->baseUri;
+            $cdnUrl = $this->config->application->cdn;
 		}
+
 		$baseUrl = $this->config->application->baseUri;
 
 		/**
@@ -57,7 +55,7 @@ class ControllerBase extends Controller
 	 */
 	public function beforeExecuteRoute(Dispatcher $dispatcher)
 	{
-		if ('1' != $this->config->application->debug) {
+		if (!$this->config->application->debug) {
 
 			$lang = $this->getUriParameter('language');
         	$lang = ($lang) ? $lang : 'en';
