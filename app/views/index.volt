@@ -26,28 +26,28 @@
                 </nav>
                 <div id="">
                     <div class="tagline">
-                        <h1>A full-stack PHP framework delivered as a C-extension</h1>
+                        <h1>{{ tr('header_tagline') }}</h1>
                         <p>
-                            Its innovative architecture makes Phalcon the fastest PHP framework ever built!
+                            {{ tr('header_slogan') }}
                             <a id="bench-link" href="http://docs.phalconphp.com" target="_blank">
-                                See for yourself...
+                                {{ tr('see_for_youself') }}
                             </a>
                         </p>
 
                         <div class="home-button-container">
-                            {{ link_to(['for': 'pages', 'id': 'the-difference-tm', 'pageSlug': 'download', 'language': language], '<i class="fa fa-download"></i> Get Phalcon 2.0', 'class': 'btn btn-lg btn-phalcon') }}
+                            {{ link_to(['for': 'pages', 'id': 'the-difference-tm', 'pageSlug': 'download', 'language': language], '<i class="fa fa-download"></i> '~ tr('get_phalcon') ~ ' 2.0', 'class': 'btn btn-lg btn-phalcon') }}
                             <div class="sublinks">
-                                {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], 'Download v.2.0.2') }} |
-                                {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], 'Install instructions') }}
+                                {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], tr('download')~' v.2.0.2') }} |
+                                {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], tr('install_instructions')) }}
                             </div>
                         </div>
 
                         <div class="home-button-container">
                             <a id="the-difference-tm" href="http://vimeo.com/63022489" class="btn btn-lg btn-phalcon">
-                                <i class="fa fa-youtube-play"></i> Watch the demo
+                                <i class="fa fa-youtube-play"></i> {{ tr('watch_the_demo') }}
                             </a>
                             <div class="sublinks">
-                                <a href="https://vimeo.com/phalconphp">See all Screencasts here</a>
+                                <a href="https://vimeo.com/phalconphp">{{ tr('see_all_screencasts') }}</a>
                             </div>
                         </div>
                     </div>

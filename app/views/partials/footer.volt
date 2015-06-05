@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-3 text-right">
-                <span>Follow along:</span>
+                <span>{{ tr('follow_along') }}</span>
             </div>
             <div class="col-sm-6 text-center">
                 <a href="https://twitter.com/phalconphp" alt="Twitter" class="btn-social btn-social-twitter"><i class="icon-twitter"></i></a>
