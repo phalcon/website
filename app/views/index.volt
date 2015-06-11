@@ -37,7 +37,7 @@
                         <div class="home-button-container">
                             {{ link_to(['for': 'pages', 'id': 'the-difference-tm', 'pageSlug': 'download', 'language': language], '<i class="fa fa-download"></i> '~ tr('get_phalcon') ~ ' 2.0', 'class': 'btn btn-lg btn-phalcon') }}
                             <div class="sublinks">
-                                {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], tr('download')~' v.2.0.2') }} |
+                                {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], tr('download')~' v.2.0.3') }} |
                                 {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], tr('install_instructions')) }}
                             </div>
                         </div>
