@@ -18,9 +18,7 @@ class ControllerBase extends Controller
 		/**
 		 * Docs path and CDN url
 		 */
-		$lang = $this->getUriParameter('language');
-
-		$lang = ($lang) ? $lang : 'en';
+		$lang = $this->getLang();
 
 		/**
 		 * Find the languages available
@@ -57,8 +55,7 @@ class ControllerBase extends Controller
 	{
 		if (!$this->config->application->debug) {
 
-			$lang = $this->getUriParameter('language');
-        	$lang = ($lang) ? $lang : 'en';
+			$lang = $this->getLang();
 
 			$key = preg_replace(
 				'/[^a-zA-Z0-9\_]/',
@@ -81,4 +78,23 @@ class ControllerBase extends Controller
 		return $this->dispatcher->getParam($parameter);
 	}
 
+    protected function getLang()
+    {
+        $lang = $this->getUriParameter('language');
+
+        if (!$lang) {
+            $languagesAvailable = array_keys($this->config->languages->toArray());
+
+            foreach ($this->request->getLanguages() as $httpLang) {
+                $httpLang = mb_strtolower(substr($httpLang['language'], 0, 2));
+                if (in_array($httpLang, $languagesAvailable)) {
+                    return $httpLang;
+                }
+            }
+        } else {
+            return $lang;
+        }
+
+        return 'en';
+    }
 }
