@@ -51,6 +51,7 @@ EOF;
             'zephir' => 4,
             'docs' => 2.5,
             'website' => 2.5,
+            'blog' => 2.5,
             'phalcon-devtools' => 2,
             'incubator' => 2,
             'zephir-docs' => 1.5,
