@@ -49,7 +49,7 @@ class IndexController extends \ControllerBase
      */
     public function redirectIndexAction()
     {
-        return $this->response->redirect('en/', 301);
+        return $this->response->redirect($this->getLang() . '/', 301);
     }
 
     public function redirectPagesAction()
@@ -57,12 +57,12 @@ class IndexController extends \ControllerBase
         $slug = $this->getUriParameter('pageSlug');
 
         $slug = ($slug) ? $slug : '';
-        $this->response->redirect('en/' . $slug, 301);
+        $this->response->redirect($this->getLang() . '/' . $slug, 301);
     }
 
     public function redirectDownloadAction()
     {
-        return $this->response->redirect("en/download", 301);
+        return $this->response->redirect($this->getLang() . "/download", 301);
     }
 
     public function redirectDownloadTypeAction()
@@ -70,16 +70,16 @@ class IndexController extends \ControllerBase
         $slug = $this->getUriParameter('type');
         $slug = ($slug) ? '/' . $slug : '';
 
-        $this->response->redirect("en/download" . $slug, 301);
+        $this->response->redirect($this->getLang() . "/download" . $slug, 301);
     }
 
     public function redirectDownloadWindowsAction()
     {
-        return $this->response->redirect("en/download/windows", 301);
+        return $this->response->redirect($this->getLang() . "/download/windows", 301);
     }
 
     public function redirectDonateAction()
     {
-        return $this->response->redirect('en/donate', 301);
+        return $this->response->redirect($this->getLang() . '/donate', 301);
     }
 }
