@@ -29,14 +29,14 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <link href="/images/favicon.ico" rel="icon" type="image/x-ico"/>
+    <link href="{{ cdn_url }}images/favicon.ico" rel="icon" type="image/x-ico"/>
 
 
     {{ get_title() }}
     <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework">
 
     {{- stylesheet_link("//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css", false) -}}
-    {{- stylesheet_link("css/phalcon.min.css", true) -}}
+    {{- stylesheet_link(cdn_url ~ "css/phalcon.min.css", true) -}}
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
     <!--
