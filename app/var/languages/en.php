@@ -329,7 +329,7 @@
         'help_to_fly' => 'Help Phalcon to fly higher',
         'help_to_fly_text' => 'Show your appreciation and help us with project costs by simply donating via:',
         'try_tutorial' => 'Try the tutorial',
-        'folow_along' => 'Follow along:'
+        'follow_along' => 'Follow along:'
     );
 
     // return $messages;
