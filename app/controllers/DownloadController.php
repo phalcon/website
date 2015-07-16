@@ -70,14 +70,14 @@ class DownloadController extends \ControllerBase
 
                 $phpVersion = str_replace('php' , '' , $chunks[3]);
                 $php        = $phpVersion;
-                $key        = $version . $phpVersion . '0';
+                $key        = "F" . $version . $phpVersion . '0';
 
                 $nts = (isset($chunks[5])) ? 'NTS ' : '';
                 $key = str_replace('.' , '' , $key);
                 $key .= ($nts) ? '0' : '1';
 
                 // Check if we have an alpha here
-                if ( strpos(strtolower($version) , 'alpha') > 0 || strpos(strtolower($version) , 'beta') > 0 ) {
+                if (strpos(strtolower($version) , 'alpha') > 0 || strpos(strtolower($version) , 'beta') > 0 ) {
                     $alpha[$version][$arch][$key] = array(
                         'name'     => sprintf($template , $version , $arch , $php , $nts , $vc) ,
                         'file'     => $cdn . $fileName ,
@@ -94,6 +94,8 @@ class DownloadController extends \ControllerBase
                     );
                 }
             }
+
+            //print_r($files);
         }
 
         /**
@@ -166,18 +168,12 @@ class DownloadController extends \ControllerBase
             )
         );
         $this->view->setVar('isFrontpage', false);
-
     }
 
     public function vagrantAction()
     {
-
         $this->tag->setTitle('Download Phalcon Vagrant Boxes');
         $this->view->setVar('isFrontpage', false);
         $this->view->setVar('isPage', 'vagrant');
-
-
-
     }
-
 }

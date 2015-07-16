@@ -59,7 +59,13 @@ class Bootstrap
         $application = new PhApplication();
         $application->setDI($this->di);
 
-        return $application->handle($_SERVER['REQUEST_URI'])->getContent();
+        if (PHP_OS == 'Linux') {
+            $uri = $_SERVER['REQUEST_URI'];
+        } else {
+            $uri = null;
+        }
+
+        return $application->handle($uri)->getContent();
     }
 
     // Protected functions
@@ -170,39 +176,6 @@ class Bootstrap
             }
 
             return $router;
-        };
-    }
-
-    /**
-     * Initializes the database
-     *
-     * @param array $options
-     */
-    protected function initDatabase($options = array())
-    {
-        $config = $this->di['config'];
-
-        $this->di['db'] = function () use ($config) {
-            return new DbAdapter(
-                array(
-                    'host'     => $config->database->host,
-                    'username' => $config->database->username,
-                    'password' => $config->database->password,
-                    'dbname'   => $config->database->dbname,
-                )
-            );
-        };
-    }
-
-    /**
-     * Initializes the models metadata
-     *
-     * @param array $options
-     */
-    protected function initModelsMetadata($options = array())
-    {
-        $this->di['modelsMetadata'] = function () {
-                return new PhMetadataMemory();
         };
     }
 

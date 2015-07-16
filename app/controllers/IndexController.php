@@ -1,6 +1,6 @@
 <?php
 
-use \Phalcon\Mvc\View as PhView;
+use Phalcon\Mvc\View as PhView;
 
 class IndexController extends \ControllerBase
 {

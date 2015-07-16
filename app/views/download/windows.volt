@@ -1,5 +1,7 @@
 {% include 'download/header.volt' %}
 
+{{ content() }}
+
             <div class="alert alert-warning">
                 {{ tr('download_windows_note') }}
             </div>
@@ -28,6 +30,7 @@
                             <a href="{{ current['x86'][key]['file'] }}" title="{{ current['x86'][key]['name'] }}"
                                class="btn btn-success" target="_download">{{ tr('download') }}</a>
                         </td>
+                        {% if current['x64'][key]['name'] is defined %}
                         <td>
                             {{ current['x64'][key]['name'] }}
                             <br/>
@@ -38,6 +41,14 @@
                             <a href="{{ current['x64'][key]['file'] }}" title="{{ current['x64'][key]['name'] }}"
                                class="btn btn-success" target="_download">{{ tr('download') }}</a>
                         </td>
+                        {% else %}
+                        <td>
+                            Missing x64 {{ key }}
+                        </td>
+                        <td class="text-right">
+                            <a href="#" class="btn btn-default disabled" target="_download">{{ tr('download') }}</a>
+                        </td>
+                        {% endif %}
                     </tr>
                 {% endfor %}
 

@@ -43,5 +43,4 @@ class Subscribers extends \Phalcon\Mvc\Model
 
         return $this->validationHasFailed() != true;
     }
-
 }

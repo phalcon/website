@@ -1,7 +1,11 @@
 <div class="container">
     <div class="row text-center">
-        <strong>ERROR 404</strong>
 
+        <p>
+            {{ image("images/dead-bird-hi.png", "width": 300) }}
+        </p>
+
+        <strong>ERROR 404</strong>
         <p>You have tried to access a page which does not exist or has been moved.</p>
         <br/>
 

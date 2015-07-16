@@ -7,6 +7,4 @@ class SubscriptionController extends \ControllerBase
     {
 
     }
-
 }
-
