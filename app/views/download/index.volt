@@ -8,24 +8,16 @@
 
             <div class="highlight1">
 
-                <pre>
-                    <code class="bash">
-sudo apt-add-repository ppa:phalcon/stable
+                <pre><code class="bash">sudo apt-add-repository ppa:phalcon/stable
 sudo apt-get update
-sudo apt-get install php5-phalcon
-                    </code>
-                </pre>
+sudo apt-get install php5-phalcon</code></pre>
             </div>
 
             <p>
             {{ tr('download_ubuntu_2') }}
             </p>
             <div class="highlight1">
-                <pre>
-                   <code class="bash">
-sudo apt-add-repository ppa:phalcon/legacy
-                   </code>
-                </pre>
+                <pre><code class="bash">sudo apt-add-repository ppa:phalcon/legacy</code></pre>
             </div>
 
 
@@ -33,11 +25,11 @@ sudo apt-add-repository ppa:phalcon/legacy
                 {{ tr('download_ubuntu_1') }}
 
                 <div class="highlight1">
-                    <pre>
-                        <code class="bash">
-sudo apt-get install python-software-properties
-                        </code>
-                    </pre>
+                    <pre><code class="bash"># Ubuntu 14.04+
+sudo apt-get install software-properties-common
+
+# Ubuntu 12.04
+sudo apt-get install python-software-properties</code></pre>
                 </div>
             </p>
 
@@ -56,9 +48,7 @@ sudo apt-get install python-software-properties
 
             <p>
                 <div class="highlight1">
-                    <pre>
-                        <code class="bash">
-#Ubuntu
+                    <pre><code class="bash">#Ubuntu
     sudo apt-get install php5-dev php5-mysql gcc libpcre3-dev
 
 #Fedora
@@ -74,9 +64,7 @@ sudo apt-get install python-software-properties
     brew tap homebrew/dupes
     brew tap homebrew/versions
     brew tap homebrew/php
-    brew install php5x php5x-phalcon # Where "x" - minor number of PHP
-                        </code>
-                    </pre>
+    brew install php5x php5x-phalcon # Where "x" - minor number of PHP</code></pre>
                 </div>
             </p>
 
@@ -86,13 +74,9 @@ sudo apt-get install python-software-properties
             <p>{{ tr('download_compilation_11') }}</p>
 
             <p>
-                <pre>
-                    <code class="bash">
-git clone --depth=1 git://github.com/phalcon/cphalcon.git
+                <pre><code class="bash">git clone --depth=1 git://github.com/phalcon/cphalcon.git
 cd cphalcon/build
-sudo ./install
-                    </code>
-                </pre>
+sudo ./install</code></pre>
             </p>
 
             <p>{{ tr('download_compilation_12') }}</p>

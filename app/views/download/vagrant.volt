@@ -19,10 +19,8 @@
     <li>{{ tr('download_box_doc_root', '/var/www') }}</li>
 </ul>
 
-<pre style="margin:0px">
-    <code>vagrant init phalconbox53 https://s3-eu-west-1.amazonaws.com/phalcon/phalcon125-apache2-php53-mysql55.box
-vagrant up</code>
-</pre>
+<pre style="margin:0px"><code>vagrant init phalconbox53 https://s3-eu-west-1.amazonaws.com/phalcon/phalcon125-apache2-php53-mysql55.box
+vagrant up</code></pre>
 
 <h3>{{ tr('download_box_2') }}</h3>
 
@@ -39,18 +37,14 @@ vagrant up</code>
     <li>{{ tr('download_box_doc_root', '/var/www') }}</li>
 </ul>
 
-<pre style="margin:0px">
-    <code>vagrant init phalconbox https://s3-eu-west-1.amazonaws.com/phalcon/phalcon125-apache2-php54-mysql55.box
-vagrant up</code>
-</pre>
+<pre style="margin:0px"><code>vagrant init phalconbox https://s3-eu-west-1.amazonaws.com/phalcon/phalcon125-apache2-php54-mysql55.box
+vagrant up</code></pre>
 
 <h3>{{ tr('download_examples') }}</h3>
 <p>{{ tr('download_examples_1') }}</p>
 
-<pre style="margin:0px">
-<code>http://&lt;vagrant-box-ip&gt;/website
-http://&lt;vagrant-box-ip&gt;/invo</code>
-</pre>
+<pre style="margin:0px"><code>http://&lt;vagrant-box-ip&gt;/website
+http://&lt;vagrant-box-ip&gt;/invo</code></pre>
 
 </div>
 </div>
