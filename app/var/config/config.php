@@ -215,6 +215,18 @@
         'zh' => '简体中文',
     );
     /**
+     * These are all languages our documentation is available in.
+     */
+    $documentationLanguages = array(
+        'en',
+        'es',
+        'fr',
+        'ja',
+        'pl',
+        'pt',
+        'ru'
+    );
+    /**
      * These are all the pages of the site. This is used to generate the
      * sitemap.xml
      */
@@ -235,10 +247,11 @@
         'donate'
     );
 return array(
-    'application' => $application,
-    'database'    => $database,
-    'cache'       => $cache,
-    'routes'      => $routes,
-    'languages'   => $languages,
-    'pages'       => $pages,
+    'application'  => $application,
+    'database'     => $database,
+    'cache'        => $cache,
+    'routes'       => $routes,
+    'languages'    => $languages,
+    'doclanguages' => $documentationLanguages,
+    'pages'        => $pages,
 );

@@ -23,13 +23,14 @@ class ControllerBase extends Controller
 		/**
 		 * Find the languages available
 		 */
-		$languages           = $this->config->languages;
-		$languagesAvailable  = '';
-		$selected            = '';
-		$url                 = $this->request->getScheme() . '://'
-							 . $this->request->getHttpHost()
-							 . $this->config->application->baseUri;
-		$uri                 = $this->router->getRewriteUri();
+		$languages              = $this->config->languages;
+		$documentationLanguage  = $this->config->doclanguages->get(0,$lang);
+		$languagesAvailable     = '';
+		$selected               = '';
+		$url                    = $this->request->getScheme() . '://'
+							    . $this->request->getHttpHost()
+							    . $this->config->application->baseUri;
+		$uri                    = $this->router->getRewriteUri();
 		foreach ($languages as $key => $value) {
 			$selected = ($key == $lang) ? " selected='selected'" : '';
 			$href     = $url .  str_replace("/{$lang}", "{$key}", $uri);
@@ -41,7 +42,7 @@ class ControllerBase extends Controller
 		$this->view->setVar('language', $lang);
 		$this->view->setVar('baseurl', $baseUrl);
 		$this->view->setVar('languages_available', $languagesAvailable);
-		$this->view->setVar('docs_root', 'http://docs.phalconphp.com/'.$lang.'/latest/');
+		$this->view->setVar('docs_root', 'http://docs.phalconphp.com/'.$documentationLanguage.'/latest/');
 		$this->view->setVar('cdn_url', $cdnUrl);
         $this->view->setVar('isFrontpage', true);
 	}
