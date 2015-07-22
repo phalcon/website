@@ -24,7 +24,7 @@ class ControllerBase extends Controller
 		 * Find the languages available
 		 */
 		$languages              = $this->config->languages;
-        $documentationLanguage  = $this->config->doclanguages->get(0,$lang);
+		$documentationLanguage  = $this->config->doclanguages->get(0,$lang);
 		$languagesAvailable     = '';
 		$selected               = '';
 		$url                    = $this->request->getScheme() . '://'
