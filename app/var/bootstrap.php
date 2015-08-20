@@ -250,6 +250,16 @@ class Bootstrap
 
             return $cache;
         };
+
+        $this->di->setShared('cacheData', function () use ($config) {
+            $frontendOptions = array('lifetime' => 60 * 60);
+            $frontCache = new PhCacheFront($frontendOptions);
+
+            $backEndOptions = array('cacheDir' => $config->cache->cacheDir);
+            $cache = new PhCacheBackFile($frontCache, $backEndOptions);
+
+            return $cache;
+        });
     }
 
     /**
