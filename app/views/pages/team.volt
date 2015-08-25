@@ -73,7 +73,7 @@
             <p>Serghei has been working as a Ruby/PHP developer for over 7 years
             and has been specializing in web application development.
                 As a supporter and advocate of Behavior Driven Development (BDD) is also a member of the <a href="http://codeception.com/">Codeception</a> team.</p>
-            <p>Sergei can be found neck deep in innovative technologies introducing to Phalcon.
+            <p>Sergei can be found neck deep in innovative technologies which introduced him in Phalcon.
                 He is responsible for the coordination of bug fixes, testing, developer tools, incubator and support other Phalcon-related projects.
             </p>
             <p>When he’s not working, Serghei enjoys watch documentaries, science fiction movies and sometimes plays Mahjong or Go.</p>
