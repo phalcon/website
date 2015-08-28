@@ -1,8 +1,9 @@
 <ul class="nav navbar-nav main-menu">
     <li class="first">{{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], tr('download'), 'class' : 'header-nav-link') }}</li>
     <li><a href="{{ docs_root }}index.html" class="header-nav-link" target="_blank">{{ tr('documentation') }}</a></li>
-    <li><a href="http://forum.phalconphp.com/" class="header-nav-link" target="_blank">{{ tr('forum') }}</a></li>
-    <li><a href="http://blog.phalconphp.com/" class="header-nav-link" target="_blank">{{ tr('blog') }}</a></li>
+    <li><a href="https://forum.phalconphp.com/" class="header-nav-link" target="_blank">{{ tr('forum') }}</a></li>
+    <li><a href="https://blog.phalconphp.com/" class="header-nav-link" target="_blank">{{ tr('blog') }}</a></li>
+    <li><a href="https://api.phalconphp.com/" class="header-nav-link" target="_blank">{{ tr('API') }}</a></li>
     <li><a href="http://phalconist.com/" class="header-nav-link" target="_blank">{{ tr('resources') }}</a></li>
     <li>{{ link_to(['for': 'pages', 'pageSlug': 'about', 'language': language], tr('about')) }}</li>
     <li class="dropdown">
