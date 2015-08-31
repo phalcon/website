@@ -32,7 +32,7 @@
             <li role="presentation" class="dropdown-link"><a role="menuitem" tabindex="-1" href="http://phalconphp/com/sv/" class="flag-sv">Svenska</a></li>
             <li role="presentation" class="dropdown-link"><a role="menuitem" tabindex="-1" href="http://phalconphp/com/th/" class="flag-th">ภาษาไทย</a></li>
             <li role="presentation" class="dropdown-link"><a role="menuitem" tabindex="-1" href="http://phalconphp/com/tr/" class="flag-tr">Türkçe</a></li>
-            <li role="presentation" class="dropdown-link"><a role="menuitem" tabindex="-1" href="http://phalconphp/com/vi/" class="flag-vi">Việt</a></li>
+            <li role="presentation" class="dropdown-link"><a role="menuitem" tabindex="-1" href="http://phalconphp/com/vi/" class="flag-vn">Việt</a></li>
             <li role="presentation" class="dropdown-link"><a role="menuitem" tabindex="-1" href="http://phalconphp/com/cn/" class="flag-cn">简体中文</a></li> <!-- changed form "zn" -->#}
         </ul>
     </li>
