@@ -6,7 +6,7 @@
     $messages = array(
         'language_text'                   => 'İngilizce',
         'download'                        => 'Phalcon\'u İndir',
-        'documentation'                   => 'Dökümantasyon',
+        'documentation'                   => 'Dokümantasyon',
         'forum'                           => 'Forum',
         'blog'                            => 'Blog',
         'support'                         => 'Destek',
@@ -131,7 +131,7 @@
         'download_windows_older'          => 'Eksi Sürümler',
 
         'download_devtools_1'             => 'Bu araçlar, iskelet kodun oluşturulması için kullanılan yararlı scriptlerin bir araya getirilmesi ile oluşturulmuştur. Uygulamanın çekirdek bileşenleri basit bir komutla yaratılabilir ve size Phalcon ile rahatlıkla uygulama geliştirme imkânı sunar.',
-        'download_devtools_docs'          => "Dökümantasyon: <a href=':1:'>Phalcon Geliştirici Araçları</a>",
+        'download_devtools_docs'          => "Dokümantasyon: <a href=':1:'>Phalcon Geliştirici Araçları</a>",
         'download_devtools_composer'      => 'Composer Aracılığı İle Yükleme',
         'download_devtools_composer_1'    => 'Composer\'ı ortak bir konuma ya da proje dizinine kurun:',
         'download_devtools_composer_2'    => 'composer.json dosyasını aşağıda belirtildiği şekilde oluşturun:',
@@ -187,7 +187,7 @@
         'about_description_1'             => "Amazing projects need amazing hands. We might not know you just yet, but we think you'd be a great fit for building a better web. Together, we're ready to change the world! Here at Phalcon, we’re building a new generation framework for PHP; we want to give you an amazing performance while helping you develop in an easy and fun way.",
         'about_description_2'             => "We hope that you enjoy Phalcon as much as we do. We always welcome your collaboration and help! <strong>You don't have to be a C developer to help Phalcon!</strong> There are many other areas that you can contribute:",
         'about_translations_1'            => "Dil engelini aşarak, mümkün olduğu kadar çok geliştiriciye ulaşmaya çalışıyoruz. Site için tercüme edilmesi gereken kelime ve sözcüklerin tercüme edilmesi için <a href=':1:'>:2:</a> kullanıyoruz. Tercüme projesini <a href=':3:'>burada</a> bulabilir ve güncel İlerleme durumunu aşağıda görebilirsiniz.",
-        'documentation_upper'             => 'Dökümantasyon',
+        'documentation_upper'             => 'Dokümantasyon',
         'about_documentation_1'           => "The repository of this website is available on <a href=':1:'>github</a>. We are using <a href=':2:'>readthedocs</a> to manage our documentation.<br /><br />We always appreciate corrections, additions and enhancements in our documentation, so all you have to do is clone the repository and issue a pull request!<br /><br />If you can help non English speaking developers by translating some of the content to another language, that would be great!",
         'screencasts'                     => 'Videolar',
         'about_screencasts_1'             => "We all love screencasts. If you have some extra time and want to support the community with some nice videos teaching any of the framework's features, it's very welcome. Check out our <a href=':1:'>Vimeo Channel</a> as a guide.",
@@ -254,7 +254,7 @@
 
         'support_note'                    => "Karşılaştığınız çoğu hatanın ortaya çıkmasının en genel sebebi son sürümün kullanılmamasıdır. Lütfen :1: adresini ziyaret edin ve en son uygun sürümü indirin (ya da derleyin) ve karşılaştığınız meselenin gerçekten bir hata olup olmadığından emin olun.",
         'support_download_page'           => "indirme sayfası",
-        'support_documentation_1'         => "Lütfen herşeyden önce :1: bölümünü kullanın. Ayrıca dökümanlarımızda aradığınızı bulabilmek için arama özelliğini de kullanabilirsiniz. Eğer sorunuza hâla yanıt bulamadıysanız, aşağıda birkaç seçenek daha bulunmaktadır.",
+        'support_documentation_1'         => "Lütfen herşeyden önce :1: bölümünü kullanın. Ayrıca dokümanlarımızda aradığınızı bulabilmek için arama özelliğini de kullanabilirsiniz. Eğer sorunuza hâla yanıt bulamadıysanız, aşağıda birkaç seçenek daha bulunmaktadır.",
         'support_phalcon_forum'           => "Phalcon Forumu",
         'support_forum_1'                 => "Sorularınızı <a href=':1:'>Tartışma Forumumuzda</a> sorabilirsiniz.",
         'support_irc'                     => "IRC Kanalı",
