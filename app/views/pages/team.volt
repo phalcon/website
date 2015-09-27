@@ -23,11 +23,9 @@
 
         <div class="col-lg-10">
             <h3 class="member-name">Eduar Carvajal</h3>
-            <p>Eduar is a C/PHP developer with several years of experience in application development.
-            He is one of the founders and lead developers of the Phalcon project which began in 2011.</p>
-            <p>He has taken part in all areas, from the framework design to the internal kernel functions,
-                including documentation and developer tools. He is driven by a fascination with frameworks, languages and new technologies.</p>
-            <p>Eduar likes science fiction movies and sometimes plays football.</p>
+            <p>{{ tr('team_eduar_1') }}</p>
+            <p>{{ tr('team_eduar_2') }}</p>
+            <p>{{ tr('team_eduar_3') }}</p>
         </div>
 
     </div>
@@ -70,13 +68,9 @@
 
         <div class="col-lg-10">
             <h3 class="member-name">Serghei Iakovlev</h3>
-            <p>Serghei has been working as a Ruby/PHP developer for over 7 years
-            and has been specializing in web application development.
-                As a supporter and advocate of Behavior Driven Development (BDD) is also a member of the <a href="http://codeception.com/">Codeception</a> team.</p>
-            <p>Serghei can be found neck deep in innovative technologies which introduced him in Phalcon.
-                He is responsible for the coordination of bug fixes, testing, developer tools, incubator and support other Phalcon-related projects.
-            </p>
-            <p>When he’s not working, Serghei enjoys watch documentaries, science fiction movies and sometimes plays Mahjong or Go.</p>
+            <p>{{ tr('team_serghei_1', 'http://codeception.com/') }}</p>
+            <p>{{ tr('team_serghei_2') }}</p>
+            <p>{{ tr('team_serghei_3') }}</p>
         </div>
 
     </div>
@@ -85,8 +79,8 @@
         <div class="col-lg-2">
         </div>
         <div class="col-lg-10">
-            <h3 class="member-name">Many more people</h3>
-            <p>Phalcon is and has always been an effort of many volunteers:</p>
+            <h3 class="member-name">{{ tr('phalcon_team_1') }}</h3>
+            <p>{{ tr('phalcon_team_2') }}</p>
             <div class="hr"></div>
         </div>
     </div>
