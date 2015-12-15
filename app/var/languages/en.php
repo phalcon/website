@@ -256,6 +256,8 @@
         'hosting_layershift_title'        => 'Layershift',
         'hosting_layershift_1'            => "Next generation, auto-sizing PaaS for Java, PHP, Ruby, Python, and Node.js apps. Fully isolated self-scaling role-based containers for each customer, including choice of Apache or Nginx, and full range of SQL and NoSQL servers. Pay for resource usage, not server instance size. SSD-powered. UK hosted.",
         'hosting_layershift_2'            => "<p>Follow this <a href=':1:'>tutorial</a> to get started</p>",
+        'hosting_kinghost_title'          => "KingHost",
+        'hosting_kinghost_1'              => "Since 2006, KingHost is one of the largest hosting company sites in Brazil and already has over 300,000 sites hosted with approximately 60,000 customers. Headquartered in Porto Alegre (RS) , with data centers in Brazil , the company offers the hosting service of shared servers, specific plans for custom developers and projects in the area of enterprise solutions , including cloud computing and dedicated servers. It also offers digital marketing solutions such as email marketing and security solutions.",
 
         'testimonials'                    => 'Testimonials',
         'testimonials_description'        => "Below is a collection of testimonials and success stories, from you, the developers and users of Phalcon PHP. We always welcome emails with success stories and will be posting those in our blog. If you wish to send us your success story or get in touch with us, feel free to mail us at <a href='mailto::1:'>:2:</a>.",

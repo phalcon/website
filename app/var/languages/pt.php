@@ -242,6 +242,8 @@ Clientes podem comprar horas de suporte ( mínimo de 2 horas ) à 50 USD por hor
         'hosting_layershift_title'        => 'Layershift',
         'hosting_layershift_1'            => "You bring the code, we'll sort the servers. Next generation, auto-sizing PaaS for PHP",
         'hosting_layershift_2'            => "<p>Follow this <a href=':1'>tutorial</a> to get started</p>",
+        'hosting_kinghost_title'          => "KingHost",
+        'hosting_kinghost_1'              => "Presente no mercado desde 2006, a KingHost é uma das maiores empresas de hospedagem de sites do Brasil e já apresenta mais de 300 mil sites hospedados, com aproximadamente 60 mil clientes. Sediada em Porto Alegre (RS), com data centers no Brasil, a empresa oferece o serviço de hospedagem de sites compartilhada, planos específicos para desenvolvedores e projetos personalizados na área de soluções corporativas, incluindo cloud computing e servidores dedicados. Também oferece soluções de marketing digital, como e-mail marketing e soluções de segurança.",
 
         'testimonials'                    => 'Testemunhos',
         'testimonials_description'        => "Abaixo está uma coleção de testemunhos e histórias de sucesso, de vocês, os desenvolvedores e usuários de Phalcon PHP. Nós sempre apreciamos e-mails com histórias de sucesso e estaremos postando-os em nosso blog. Se você quiser enviar sua história de sucesso ou entrar em contato conosco, não hesite em nos enviar seu email para <a href='mailto::1:'>:2:</ a>.",
