@@ -307,7 +307,7 @@
         'mvc' => 'MVC',
         'di' => 'DI',
         'dependency_injection' => 'Dependency Injection',
-        'restful_services' => 'RESTful сервисы',
+        'restful_services' => 'RESTful services',
         'model_view_controller' => 'Model-View-Controller',
         'rest' => 'REST',
         'auto_loader' => 'Auto-loader',
