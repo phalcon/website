@@ -325,11 +325,11 @@
         'learn_to_fly'                    => 'Learn to fly with Phalcon 2',
         'learn_to_fly_text'               => 'Get started by learning the basic concepts behind a common Phalcon application',
         'meet_zephir'                     => 'Meet Zephir',
-        'meet_zephir_text'                => 'Learn about the technology that empowers Phalcon',
-        'visit_website'                   => 'Visit the website',
-        'help_to_fly'                     => 'Help Phalcon to fly higher',
-        'help_to_fly_text'                => 'Show your appreciation and help us with project costs by simply donating via:',
-        'try_tutorial'                    => 'Try the tutorial',
+        'meet_zephir_text'                => 'Saiba mais sobre a tecnologia que fornece poderes ao Phalcon',
+        'visit_website'                   => 'Visite o site',
+        'help_to_fly'                     => 'Ajude o Phalcon a voar mais alto',
+        'help_to_fly_text'                => 'Mostre sua apreciação e nos ajudar com os custos do projeto, basta doar via:',
+        'try_tutorial'                    => 'Experimente o tutorial',
         'follow_along'                    => 'Follow along:'
     );
 
