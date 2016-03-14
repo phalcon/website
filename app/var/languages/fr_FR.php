@@ -157,6 +157,11 @@
         'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
         'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
         
+        'consulting_mctekk_header'        => 'We have partnered with MCTekK, which has already delivered various high end PhalconPHP projects, with their main strengths being web and mobile development.',
+        'consulting_mctekk_1'             => 'MCTekK jumped on the PhlaconPHP wagon since day one. From its conception we saw the great advantages that PhalconPHP was offering and could offer in the future.',
+        'consulting_mctekk_2'             => 'We have ample experience with PhalconPHP and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning PhalconPHP to help you improve your readiness, quickness and quality.',
+        'consulting_mctekk_3'             => 'Contact us thourgh our <a href=":1:">website</a>, where you can take a look at the projects we have been involved in.',
+        
         'requirements_analysis_1'         => 'One of the biggest problems that developers face is the fact that a lot of projects do not have adequately defined requirements. Par conséquent, le plus souvent ce que le client veut est totalement différent de ce que le développeur comprend et délivre ensuite.',
         'requirements_analysis_2'         => 'Nous vous proposons d\'étudier vos besoin, des discuter avec les clients et de traduire leur vision en spécifications techniques pour les développeurs.',
         'implementation_1'                => 'Si vous souhaitez nous embaucher pour développer votre application, nous seront honoré de pouvoir travail avec vous. En utilisant les dernières techinologies, nous pouvons construire une solution solide adaptée à vos besoins, testée et documentée.',

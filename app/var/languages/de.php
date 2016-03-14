@@ -157,6 +157,11 @@
         'consulting_lezgro_4'             => "Da wir nun positive Erfahrungen mit Phalcon sammeln konnten, können wir Dir dazu raten mit Phalcon zu arbeiten und deinem Phalcon basierten Produkt zur Marktreife verhelfen.",
         'consulting_lezgro_5'             => "Nimm Kontakt zu LEZGRO über ihre <a href=':1:'>Webseite</a> auf, auf der du auch Beispiele und Erfahrungsberichte zu ihrer Arbeit sehen kannst.",
         
+        'consulting_mctekk_header'        => 'We have partnered with MCTekK, which has already delivered various high end PhalconPHP projects, with their main strengths being web and mobile development.',
+        'consulting_mctekk_1'             => 'MCTekK jumped on the PhlaconPHP wagon since day one. From its conception we saw the great advantages that PhalconPHP was offering and could offer in the future.',
+        'consulting_mctekk_2'             => 'We have ample experience with PhalconPHP and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning PhalconPHP to help you improve your readiness, quickness and quality.',
+        'consulting_mctekk_3'             => 'Contact us thourgh our <a href=":1:">website</a>, where you can take a look at the projects we have been involved in.',
+        
         'requirements_analysis_1'         => 'Eines der größten Probleme von Entwicklern bei der Realisierung von Projekten sind fehlende und nicht ausreichend definierte Anforderungen. Die Diskrepanz zwischen der Erwartung des Kunden und dem Ziel des Entwicklers ist häufig groß.',
         'requirements_analysis_2'         => 'Wir bieten Dir einen Dienst zur Analyse des Bedarfs, diskutieren mit den Kunden und übersetzen deren Vision in genaue Spezifikationen für Entwickler.',
         'implementation_1'                => 'Wenn Du uns mit der Entwicklung Ihrer Anwendung betrauen möchtest, werden wir dies gerne tun. Durch Nutzung aktuellster Technik bieten wir robuste Lösungen für Deine Aufgaben oder Projekte an. Neben der reinen Entwicklung vervollständigen wir diese mit Tests und Dokumentation.',

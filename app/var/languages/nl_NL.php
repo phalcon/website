@@ -157,6 +157,11 @@
         'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
         'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
         
+        'consulting_mctekk_header'        => 'We have partnered with MCTekK, which has already delivered various high end PhalconPHP projects, with their main strengths being web and mobile development.',
+        'consulting_mctekk_1'             => 'MCTekK jumped on the PhlaconPHP wagon since day one. From its conception we saw the great advantages that PhalconPHP was offering and could offer in the future.',
+        'consulting_mctekk_2'             => 'We have ample experience with PhalconPHP and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning PhalconPHP to help you improve your readiness, quickness and quality.',
+        'consulting_mctekk_3'             => 'Contact us thourgh our <a href=":1:">website</a>, where you can take a look at the projects we have been involved in.',
+        
         'requirements_analysis_1'         => 'Een van de grootste problemen voor ontwikkelaars is dat de eisen van projecten vaak slecht gedefinieerd zijn. Dit kan er voor zorgen dat hetgeen de klant wilt totaal verschillend is van wat de ontwikkelaar uit de eisen begreep en bouwde.',
         'requirements_analysis_2'         => 'We bieden een eisen analyse dienst aan, waarbij we met de klant praten en hun visie vertalen naar de exacte specificaties voor de ontwikkelaars.',
         'implementation_1'                => 'Indien je ons wilt inhuren om uw applicatie te ontwikkelen, zijn we meer dan blij om dit te doen. Door gebruik van de nieuwste technologieën kunnen we een robuuste oplossing aanbieden voor elk project, compleet met testen en documentatie.',
