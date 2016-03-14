@@ -157,6 +157,11 @@
         'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
         'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
         
+        'consulting_mctekk_header'        => 'MCTekK has already delivered various high end PhalconPHP projects, with their main strengths being web and mobile development.',
+        'consulting_mctekk_1'             => 'MCTekK jumped on the PhalconPHP wagon since day one. From its conception we saw the great advantages that PhalconPHP was offering and could offer in the future.',
+        'consulting_mctekk_2'             => 'We have ample experience with PhalconPHP and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning PhalconPHP to help you improve your readiness, quickness and quality.',
+        'consulting_mctekk_3'             => 'Contact us thourgh our <a href=":1:">website</a>, where you can take a look at the projects we have been involved in.',
+        
         'requirements_analysis_1'         => '開発者が直面している多くのプロジェクトが適切に定義された要件を持っていないという事実が最大の問題の一つです。そのため、それぞれのクライアントが望んでいることは、開発者が理解しているものとは全く異なるものを提供してしまう。',
         'requirements_analysis_2'         => '私たちはクライアントと協議し、開発者のための正確な仕様に自分のビジョンを翻訳し、要件の分析サービスを提供することができます。',
         'implementation_1'                => 'アプリケーションを開発するために私たちを雇いたい場合、我々はそうするよりも幸せになる。最新技術を使用して、我々は完全なテストとドキュメントを、あなたのタスクやプロジェクトのために堅牢なソリューションを提供することができます。',

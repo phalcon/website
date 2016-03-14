@@ -157,6 +157,11 @@
         'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
         'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
         
+        'consulting_mctekk_header'        => 'MCTekK has already delivered various high end PhalconPHP projects, with their main strengths being web and mobile development.',
+        'consulting_mctekk_1'             => 'MCTekK jumped on the PhalconPHP wagon since day one. From its conception we saw the great advantages that PhalconPHP was offering and could offer in the future.',
+        'consulting_mctekk_2'             => 'We have ample experience with PhalconPHP and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning PhalconPHP to help you improve your readiness, quickness and quality.',
+        'consulting_mctekk_3'             => 'Contact us thourgh our <a href=":1:">website</a>, where you can take a look at the projects we have been involved in.',
+        
         'requirements_analysis_1'         => 'Um dos maiores problemas que os desenvolvedores enfrentam é o fato de que muitos projetos não têm requisitos adequadamente definidos. Portanto, na maioria das vezes o que o cliente quer é totalmente diferente do que o desenvolvedor entende e posteriormente entrega.',
         'requirements_analysis_2'         => 'Nós podemos oferecer serviços de análise de requisitos, dialogar com os clientes e traduzir sua visão para especificações exatas para os desenvolvedores.',
         'implementation_1'                => 'Se você deseja contratar-nos para desenvolver sua aplicação, ficaremos mais do que contentes em fazê-lo. Utilizando as mais recentes tecnologias, podemos oferecer uma solução robusta para sua tarefa ou projeto, completa com testes e documentação.',

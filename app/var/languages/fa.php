@@ -157,6 +157,11 @@
         'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
         'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
         
+        'consulting_mctekk_header'        => 'MCTekK has already delivered various high end PhalconPHP projects, with their main strengths being web and mobile development.',
+        'consulting_mctekk_1'             => 'MCTekK jumped on the PhalconPHP wagon since day one. From its conception we saw the great advantages that PhalconPHP was offering and could offer in the future.',
+        'consulting_mctekk_2'             => 'We have ample experience with PhalconPHP and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning PhalconPHP to help you improve your readiness, quickness and quality.',
+        'consulting_mctekk_3'             => 'Contact us thourgh our <a href=":1:">website</a>, where you can take a look at the projects we have been involved in.',
+        
         'requirements_analysis_1'         => 'One of the biggest problems that developers face is the fact that a lot of projects do not have adequately defined requirements. Therefore, more often than not what the client wants is totally different from what the developer understands and subsequently delivers.',
         'requirements_analysis_2'         => 'خدمات مشاوره ای ما برای آنالیز نیازمندی های یک سرویس ، برگذاری جلسات و مشاوره با کاربران برای استخراج ساختار و احتیاجات مورد نظر آنها برای شروع توسعه نرم افزاری.',
         'implementation_1'                => 'اگر شما مایل به همکاری ما برای توسعه نرم افزارتان هستید، خوشحال میشویم که بتوانیم نیاز شما را برطرف کنیم. با استفاده از آخرین تکنولوژی ها، ما میتوانیم قوی ترین راه کار را برای پروژه ی شما در اختیارتان بگذاریم، تمام این مراحل توسط مستندات و تست های مختلف به شما تحویل داده خواهد شد.',

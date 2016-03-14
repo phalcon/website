@@ -157,6 +157,11 @@
         'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
         'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
         
+        'consulting_mctekk_header'        => 'MCTekK has already delivered various high end PhalconPHP projects, with their main strengths being web and mobile development.',
+        'consulting_mctekk_1'             => 'MCTekK jumped on the PhalconPHP wagon since day one. From its conception we saw the great advantages that PhalconPHP was offering and could offer in the future.',
+        'consulting_mctekk_2'             => 'We have ample experience with PhalconPHP and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning PhalconPHP to help you improve your readiness, quickness and quality.',
+        'consulting_mctekk_3'             => 'Contact us thourgh our <a href=":1:">website</a>, where you can take a look at the projects we have been involved in.',
+        
         'requirements_analysis_1'         => 'Viena iš didžiausių problemų, su kuria susiduria kūrėjai yra faktas, kad daug projektų neturi pakankamai apibrėžtų reikalavimų. Todėl, dažniau nei niekada, klientų norai yra visiškai skirtingi nuo kūrėjo supratimo ir vėlesnio pristatymo.',
         'requirements_analysis_2'         => 'Mes galime pasiūlyti reikalavimų analizės paslaugas, aptarti su klientais ir paversti jų viziją į tikslius reikalavimus kūrėjams.',
         'implementation_1'                => 'Jei jūs norite mus pasamdyti, kad sukurtumėme jūsų programą, mes būtume daugiau nei laimingi galėdami tai padaryti. Naudodami naujausias technologijas, mes galime pasiūlyti patikimą sprendimą jūsų užduočiai ar projektui su testais ir dokumentacija.',
