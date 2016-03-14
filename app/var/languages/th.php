@@ -157,6 +157,11 @@
         'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
         'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
         
+        'consulting_mctekk_header'        => 'We have partnered with MCTekK, which has already delivered various high end PhalconPHP projects, with their main strengths being web and mobile development.',
+        'consulting_mctekk_1'             => 'MCTekK jumped on the PhlaconPHP wagon since day one. From its conception we saw the great advantages that PhalconPHP was offering and could offer in the future.',
+        'consulting_mctekk_2'             => 'We have ample experience with PhalconPHP and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning PhalconPHP to help you improve your readiness, quickness and quality.',
+        'consulting_mctekk_3'             => 'Contact us thourgh our <a href=":1:">website</a>, where you can take a look at the projects we have been involved in.',
+        
         'requirements_analysis_1'         => 'ปัญหาใหญ่ที่สุดอย่างหนึ่งที่นักพัฒนาต้องประสบอย่างแน่นอนที่สุดคือ มีโปรเจ็คจำนวนไม่น้อยเลยที่ไม่สามารถกำหนดความต้องการทั้งหมดให้ตรงตามความเหมาะสมได้ กรณีนี้ สิ่งที่เกิดขึ้นบ่อยๆคือ สิ่งที่ลูกค้าต้องการมักแตกต่างไปจากสิ่งที่นักพัฒนาเข้าใจและส่งมอบให้',
         'requirements_analysis_2'         => 'เรานำเสนอบริการวิเคราะห์ความต้องการ การให้ความเห็น และการปรับปรุงมุมมองไปสู่ข้อกำหนดที่ถูกต้องสำหรับนักพัฒนา',
         'implementation_1'                => 'ถ้าคุณต้องการว่าจ้างเราให้พัฒนาแอปพลิเคชั่นให้ เรามีความยินดีเป็นอย่างมากที่จะทำ ด้วยการใช้เทคโนโลยี่ล่าสุด เราสามารถนำเสนอโซลูชั่นที่ยอดเยี่ยมสำหรับงานของคุณ หรือโปรเจ็คของคุณ มันจะเสร็จเรียบร้อยพร้อมทั้งการเทส และเอกสารประกอบ',
