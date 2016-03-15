@@ -157,6 +157,11 @@
         'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
         'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
         
+        'consulting_mctekk_header'        => 'MCTekK has already delivered various high end Phalcon projects, with their main strengths being web and mobile development.',
+        'consulting_mctekk_1'             => 'MCTekK jumped on the Phalcon wagon since day one. From its conception we saw the great advantages that Phalcon was offering and could offer in the future.',
+        'consulting_mctekk_2'             => 'We have ample experience with Phalcon and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning Phalcon to help you improve your readiness, quickness and quality.',
+        'consulting_mctekk_3'             => 'Contact us thourgh our <a href=":1:">website</a>, where you can take a look at the projects we have been involved in.',
+        
         'requirements_analysis_1'         => 'Una dintre cele mai mari probleme cu care dezvoltatorii se confruntă, este faptul că o mulțime de proiecte nu au definite cerințele în mod adecvat. Prin urmare, de cele mai multe ori, ceea ce dorește clientul este total diferit de ceea ce înțelege un dezvoltator și oferă ulterior.',
         'requirements_analysis_2'         => 'Vă putem oferi servicii de analiză a cerințelor, discuții cu clienții și transpunerea viziunii acestora în specificații exacte pentru dezvoltatori.',
         'implementation_1'                => 'Dacă doriți să ne angajați pentru a dezvolta aplicația dumneavoastră, am fi mai mult decât fericiți să facem acest lucru. Folosind cele mai noi tehnologii, putem să vă oferim o soluție robustă pentru task-ul sau proiectul dumneavoastră, însoțită de teste și documentația aferentă.',
@@ -181,7 +186,7 @@
         'team_nikolay_2'                  => 'Nikolay a lucrat cu proiecte Open Source o perioadă lungă de timp, utilizându-le ori de câte ori cerințele au permis. Astfel, el a început să își folosească timpul personal pentru a da înapoi comunității, bifurcând proiecte, oferind modificările și sugestiile arhitecturale, precum și cele de performanță. El a avut un rol esențial în îmbunătățirea proiectelor de tip Open Source CMS, primind feedback-uri pozitive din partea comunității.',
         'team_nikolay_3'                  => 'Implicarea sa continuă în proiecte open source l-a ajutat să își lărgească cunoștințele sale tehnice, cu respectarea mentalității de a da înapoi comunității.',
         'team_nikolay_4'                  => 'Nikolay este un susținător avid al maximizării performanțelor unei aplicații web. După ce a studiat Phalcon, a decis să continue și să folosească proiectul,  și a devenit un evanghelist pentru acesta. El conduce eforturile comunității ruse și oferă resurse pentru programatorii vorbitori de limbă rusă.',
-        'team_nikolay_5'                  => "Contribuțiile sale includ: o oglindă a site-ului principal în limba rusă (<a href=':1:'> http://www.phalconphp.ru </ a>), o oglinda a repository-ului cu documentația în limba rusă (<a href = ': 2: \"> http://docs.phalconphp.ru </ a>), schimbările în curs de desfășurare și corecții la documentația în limba engleză, un grup în rețeaua socială Vkontakte (<a href=':3:'>http://vk.com/phalconphp</ a>).",
+        'team_nikolay_5'                  => "Contribuțiile sale includ: o oglindă a site-ului principal în limba rusă (<a href=':1:'> http://www.Phalcon.ru </ a>), o oglinda a repository-ului cu documentația în limba rusă (<a href = ': 2: \"> http://docs.Phalcon.ru </ a>), schimbările în curs de desfășurare și corecții la documentația în limba engleză, un grup în rețeaua socială Vkontakte (<a href=':3:'>http://vk.com/Phalcon</ a>).",
 
         'get_involved'                    => 'Implică-te',
         'about_description_1'             => "Proiectele uimitoare au nevoie nevoie de mâini uimitoare. Nu te cunoaștem încă, dar credem că ai fi potrivit pentru a construi un Web mai bun. Împreună, suntem pregătiți pentru a schimba lumea! Aici, la Phalcon, construim o nouă generație de framework pentru PHP; dorim să vă oferim posibilitatea de a experimenta o performanță uimitoare, în timp ce vă ajutăm să dezvoltați într-un mod ușor și distractiv.",
@@ -221,7 +226,7 @@
         'hosting_fortrabbit_3'            => 'Versiuni stabile ale Phalcon sunt pre-instalate, le puteți activa din tabloul de bord al secțiunii de administrare.',
         'hosting_webfaction_title'        => 'WebFaction',
         'hosting_webfaction_1'            => 'WebFaction Hosting pentru dezvoltatori. Acces shell deplin la servere rapide cu toate instrumentele preferate,  pre-instalate și întreținute pentru utilizator.',
-        'hosting_webfaction_2'            => "Pentru a instala PhalconPHP în WebFaction, urmați instrucțiunile prezentate <a href=':1:'>aici</ a>",
+        'hosting_webfaction_2'            => "Pentru a instala Phalcon în WebFaction, urmați instrucțiunile prezentate <a href=':1:'>aici</ a>",
         'hosting_amazon_ec2_title'        => 'Amazon EC2',
         'hosting_amazon_ec2_1'            => 'Amazon Elastic Compute Cloud oferă capacitate scalabilă calculată în modul "pay-as-you-go", pe servere aflate în cloud.',
         'hosting_amazon_ec2_2'            => "Selectați o machetă preconfigurată Amazon Machine Image (AMI), pentru a fi online imediat. Sau creați un AMI ce conține aplicațiile dumneavoastră, biblioteci, date și setările de configurare asociate. <a href=':1:'>Vezi mai multe</ a>",

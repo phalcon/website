@@ -157,6 +157,11 @@
         'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
         'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
         
+        'consulting_mctekk_header'        => 'MCTekK has already delivered various high end Phalcon projects, with their main strengths being web and mobile development.',
+        'consulting_mctekk_1'             => 'MCTekK jumped on the Phalcon wagon since day one. From its conception we saw the great advantages that Phalcon was offering and could offer in the future.',
+        'consulting_mctekk_2'             => 'We have ample experience with Phalcon and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning Phalcon to help you improve your readiness, quickness and quality.',
+        'consulting_mctekk_3'             => 'Contact us thourgh our <a href=":1:">website</a>, where you can take a look at the projects we have been involved in.',
+        
         'requirements_analysis_1'         => '开发人员面临的最大问题是很多项目都没有进行充分的需求调研。因此，往往客户的要求完全不同于开发人员的理解和其随后提供的开发结果。',
         'requirements_analysis_2'         => '我们提供的服务包含需求分析，参与客户讨论，并把他们的需求转换成详细的开发文档。',
         'implementation_1'                => '如果你想雇佣我们为您开发应用程序，我们将非常乐意。使用最新的技术，我们可以为您的任务或项目提供一个健壮的，经过完全测试的和完整文档的解决方案。',
@@ -181,7 +186,7 @@
         'team_nikolay_2'                  => 'Nikolay参与开源项目的工作已经很长一段时间了，每当有需要时就尽可能利用开源项目。因此，他开始使用他的个人时间通过fork项目，优化项目结构和提出建议，以及性能优化等来回馈给社区。他一直积极地根据来自社会各界的反馈改进开源CMS项目。',
         'team_nikolay_3'                  => '他坚持参与开源项目和回馈社区的心态已经帮助他提升了技术。',
         'team_nikolay_4'                  => 'Nikolay是一个Web应用性能最大化的狂热支持者。在他接触“Phalcon”后，他决定继续使用的这个项目，并成为它的传播者， 并努力向俄语社区和俄语开发人员提供资源。',
-        'team_nikolay_5'                  => "他的贡献包含： 俄语镜像网站 (<a href=':1:'>http://www.phalconphp.ru</a>)， 俄语文档镜像 (<a href=':2:'>http://docs.phalconphp.ru</a>)， 持续改正和修改英文文档，Fackebook社区组织Vkontakte (<a href=':3:'>http://vk.com/phalconphp</a>)。",
+        'team_nikolay_5'                  => "他的贡献包含： 俄语镜像网站 (<a href=':1:'>http://www.Phalcon.ru</a>)， 俄语文档镜像 (<a href=':2:'>http://docs.Phalcon.ru</a>)， 持续改正和修改英文文档，Fackebook社区组织Vkontakte (<a href=':3:'>http://vk.com/Phalcon</a>)。",
 
         'get_involved'                    => '加入我们',
         'about_description_1'             => "神奇的项目需要一个神奇的您。我们可能还不知道您，但我们认为您是一个非常适合创建更好Web应用的人。总之，我们已经准备好改变世界！在Phalcon里，我们正在构建一个新一代的PHP框架，我们想给您一个令人惊异的具有高性能的，使您开发更愉悦，更易使用的开发框架。",

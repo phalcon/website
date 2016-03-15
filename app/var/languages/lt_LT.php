@@ -157,6 +157,11 @@
         'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
         'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
         
+        'consulting_mctekk_header'        => 'MCTekK has already delivered various high end Phalcon projects, with their main strengths being web and mobile development.',
+        'consulting_mctekk_1'             => 'MCTekK jumped on the Phalcon wagon since day one. From its conception we saw the great advantages that Phalcon was offering and could offer in the future.',
+        'consulting_mctekk_2'             => 'We have ample experience with Phalcon and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning Phalcon to help you improve your readiness, quickness and quality.',
+        'consulting_mctekk_3'             => 'Contact us thourgh our <a href=":1:">website</a>, where you can take a look at the projects we have been involved in.',
+        
         'requirements_analysis_1'         => 'Viena iš didžiausių problemų, su kuria susiduria kūrėjai yra faktas, kad daug projektų neturi pakankamai apibrėžtų reikalavimų. Todėl, dažniau nei niekada, klientų norai yra visiškai skirtingi nuo kūrėjo supratimo ir vėlesnio pristatymo.',
         'requirements_analysis_2'         => 'Mes galime pasiūlyti reikalavimų analizės paslaugas, aptarti su klientais ir paversti jų viziją į tikslius reikalavimus kūrėjams.',
         'implementation_1'                => 'Jei jūs norite mus pasamdyti, kad sukurtumėme jūsų programą, mes būtume daugiau nei laimingi galėdami tai padaryti. Naudodami naujausias technologijas, mes galime pasiūlyti patikimą sprendimą jūsų užduočiai ar projektui su testais ir dokumentacija.',
@@ -181,7 +186,7 @@
         'team_nikolay_2'                  => 'Nikolay dirbo su atvirojo kodo projektais jau ilgą laiką, naudojo juos kai leido reikalavimai. Todėl jis skyrė savo asmeninį laiką, norėdamas pagelbėti bendruomenei, siūlydamas architektūros pakeitimus ir kitus pasiūlymus, taip pat ir našumo pasiūlymus. Jis padėjo gerinti atvirojo kodo TVS projektus, iš kurių gavo teigiamus atsiliepimus.',
         'team_nikolay_3'                  => 'Jo nuolatinis dalyvavimas atvirojo kodo projektuose padėjo jam patobulinti technines žinias.',
         'team_nikolay_4'                  => 'Nikolay yra aistringas maksimalaus našumo projektuose rėmėjas. Kai jis prisijungė prie Phalcon, jis nusprendė tęsti ir naudoti projektą ir tapti jo Evangelistu. Jis yra Rusijos bendruomenės lyderis ir siūlo įvairius išteklius rusakalbiams kūrėjams.',
-        'team_nikolay_5'                  => "Jo įnašai yra: dubliuojamoji svetainė (<a href=':1:'>http://www.phalconphp.ru</a>), dubliuojamoji dokumentacija (<a href=':2:'>http://docs.phalconphp.ru</a>), nuolatiniai pakeitimai ir pataisymai dokumentacijoje angliškai, grupė socialiniame tinkle Vkontakte (<a href=':3:'>http://vk.com/phalconphp</a>).",
+        'team_nikolay_5'                  => "Jo įnašai yra: dubliuojamoji svetainė (<a href=':1:'>http://www.Phalcon.ru</a>), dubliuojamoji dokumentacija (<a href=':2:'>http://docs.Phalcon.ru</a>), nuolatiniai pakeitimai ir pataisymai dokumentacijoje angliškai, grupė socialiniame tinkle Vkontakte (<a href=':3:'>http://vk.com/Phalcon</a>).",
 
         'get_involved'                    => 'Įsitraukti',
         'about_description_1'             => "Nuostabiems projektams reikia nuostabių rankų. Mes galbūt jūsų dar nežinome, tačiau mes manome, kad jūs puikiai tiksite kurdami geresnį internetą. Kartu, mes esame pasiruošę pakeisti pasaulį! Čia Phalcon, mes kuriame naujos kartos PHP karkasą; mes norime jums suteikti įspūdingą našumą, tuo pačiu padėdami jums kurti lengvu ir smagiu keliu.",

@@ -157,6 +157,11 @@
         'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
         'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
         
+        'consulting_mctekk_header'        => 'MCTekK has already delivered various high end Phalcon projects, with their main strengths being web and mobile development.',
+        'consulting_mctekk_1'             => 'MCTekK jumped on the Phalcon wagon since day one. From its conception we saw the great advantages that Phalcon was offering and could offer in the future.',
+        'consulting_mctekk_2'             => 'We have ample experience with Phalcon and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning Phalcon to help you improve your readiness, quickness and quality.',
+        'consulting_mctekk_3'             => 'Contact us thourgh our <a href=":1:">website</a>, where you can take a look at the projects we have been involved in.',
+        
         'requirements_analysis_1'         => '개발자가 직면하고있는 많은 프로젝트가 제대로 정의된 요구 사항이 없다는 사실이 가장 큰 문제 중 하나입니다. 따라서 각각의 클라이언트가 원하는 것은 개발자가 이해하고 있는 것과는 완전히 다른 것을 제공 할 수 있습니다.',
         'requirements_analysis_2'         => '우리는 고객과 협의하여 개발자를위한 정확한 사양에 자신의 비전을 번역하고, 요구 사항 분석 서비스를 제공 할 수 있습니다.',
         'implementation_1'                => '응용 프로그램을 개발하기 위해 우리를 고용하려는 경우, 우리는 이렇게하여 드리겠습니다. 최신 기술을 사용하여 우리는 완전한 테스트와 문서를 당신의 작업이나 프로젝트를 위해 강력한 솔루션을 제공 할 수 있습니다.',
@@ -182,7 +187,7 @@
         'team_nikolay_2'                  => 'Nikolay 는 허용하는 시간내에 오랫동안 오픈 소스 프로젝트에 참여하고 왔습니다. 그는 개인적인 시간을 사용하여 아키텍처의 변경이나 제안뿐만 아니라 성능을 그대로 제공하고 복제한 프로젝트에서 지역 사회에 보답을 시작했습니다. 그는 지역 사회의 의견을 받아 오픈 소스 CMS 프로젝트의 개선에 전력 해 왔습니다.',
         'team_nikolay_3'                  => '그의 지속적인 오픈소스 프로젝트에의 참여는 지역사회의 정신에 영향을 끼치며 그 자신의 기술 지식 향상에 도움이 되었습니다.',
         'team_nikolay_4'                  => 'Nikolay는 Web 응용 프로그램의 성능을 최대화하기 위한 열성적인 서포터입니다. 그는 Phalcon 도입 후 그는 프로젝트에 사용하기로 결정하고  전파하는 책임자가 되는 것을 결정했다. 그는 러시아어를 사용하는 개발자를 위한 리소스를 제공하고 러시아 사회에 위해 노력하고 있습니다.',
-        'team_nikolay_5'                  => "그의 공헌 : 러시아의 주요 웹 사이트의 미러 (<a href=':1:'> http://www.phalconphp.ru </a>), 러시아의 문서 저장소 미러 (<a href = ':2:'> http://docs.phalconphp.ru </a>) 소셜 네트워크 Vkontakte의 그룹에서 현재 진행중인 변화와 영어 문서의 수정 (<a href=':3:'> http://vk.com/phalconphp </a>).",
+        'team_nikolay_5'                  => "그의 공헌 : 러시아의 주요 웹 사이트의 미러 (<a href=':1:'> http://www.Phalcon.ru </a>), 러시아의 문서 저장소 미러 (<a href = ':2:'> http://docs.Phalcon.ru </a>) 소셜 네트워크 Vkontakte의 그룹에서 현재 진행중인 변화와 영어 문서의 수정 (<a href=':3:'> http://vk.com/Phalcon </a>).",
 
         'get_involved'                    => '참여하기',
         'about_description_1'             => "놀라운 프로젝트는 놀라운 사람이 필요합니다. 우리는 아직 당신을 알고 있지 않을 수 있습니다. ​​하지만 우리는 당신이 더 나은 웹을 구축하기 위한 중대한 적임자가 될 것이라고 생각합니다. 우리는 함께 세상을 바꿀 준비가 되있습니다! 여기 팔콘에서 우리는 PHP를 위한 새로운 세대의 프레임 워크를 구축하고, 당신은 쉽고 재미있는 방식으로 개발할 수 있도록 하는 동안 우리는 당신에게 놀라운 성능을 제공합니다.",

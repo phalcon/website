@@ -157,6 +157,11 @@
         'consulting_lezgro_4'             => "Da wir nun positive Erfahrungen mit Phalcon sammeln konnten, können wir Dir dazu raten mit Phalcon zu arbeiten und deinem Phalcon basierten Produkt zur Marktreife verhelfen.",
         'consulting_lezgro_5'             => "Nimm Kontakt zu LEZGRO über ihre <a href=':1:'>Webseite</a> auf, auf der du auch Beispiele und Erfahrungsberichte zu ihrer Arbeit sehen kannst.",
         
+        'consulting_mctekk_header'        => 'MCTekK has already delivered various high end Phalcon projects, with their main strengths being web and mobile development.',
+        'consulting_mctekk_1'             => 'MCTekK jumped on the Phalcon wagon since day one. From its conception we saw the great advantages that Phalcon was offering and could offer in the future.',
+        'consulting_mctekk_2'             => 'We have ample experience with Phalcon and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning Phalcon to help you improve your readiness, quickness and quality.',
+        'consulting_mctekk_3'             => 'Contact us thourgh our <a href=":1:">website</a>, where you can take a look at the projects we have been involved in.',
+        
         'requirements_analysis_1'         => 'Eines der größten Probleme von Entwicklern bei der Realisierung von Projekten sind fehlende und nicht ausreichend definierte Anforderungen. Die Diskrepanz zwischen der Erwartung des Kunden und dem Ziel des Entwicklers ist häufig groß.',
         'requirements_analysis_2'         => 'Wir bieten Dir einen Dienst zur Analyse des Bedarfs, diskutieren mit den Kunden und übersetzen deren Vision in genaue Spezifikationen für Entwickler.',
         'implementation_1'                => 'Wenn Du uns mit der Entwicklung Ihrer Anwendung betrauen möchtest, werden wir dies gerne tun. Durch Nutzung aktuellster Technik bieten wir robuste Lösungen für Deine Aufgaben oder Projekte an. Neben der reinen Entwicklung vervollständigen wir diese mit Tests und Dokumentation.',
@@ -181,7 +186,7 @@
         'team_nikolay_2'                  => 'Nikolay arbeitet bereits seit langem mit Open-Source-Projekten und nutzt diese immer, wenn die Anforderungen dies zulassen. Auf diese Art und Weise verbringt er einen großen Teil seiner Freizeit mit der Community, um einen Beitrag zur Entwicklung der Anwendungsarchitektur und der Geschwindigkeit beizusteuern. Er half insbesondere bei der Verbesserung von Open-Source CMS-Systemen, bei welchen er viel positives Feedback von der Community erhielt.',
         'team_nikolay_3'                  => 'Seine große Erfahrung mit Open-Source Projekten half ihm, sein technischen Wissen zur verbessern und dies der Gemeinschaft zur Verfügung zu stellen. ',
         'team_nikolay_4'                  => 'Nikolay ist ein begeisterter Unterstützer von maximaler Performance bei Webanwendungen. Nachdem er Phalcon kennen lernte, beschloss er diese Ideen weiter zu verfolgen und wurde ein Evangelist des Projektes. Er betreut die russische Community und bietet Ressourcen für russisch-sprechende Entwickler.',
-        'team_nikolay_5'                  => "Seine Beiträge: ein Mirror der Hauptwebsite in Russisch (<a href=':1:'>http://www.phalconphp.ru</a>), ein Mirror der Dokumentation auf Russisch (<a href=':2:'>http://docs.phalconphp.ru</a>), Verbesserung der englischen Dokumentation sowie die Betreuung einer Gruppe im sozialen Netzwerk Vkontakte (<a href=':3:'>http://vk.com/phalconphp</a>).",
+        'team_nikolay_5'                  => "Seine Beiträge: ein Mirror der Hauptwebsite in Russisch (<a href=':1:'>http://www.Phalcon.ru</a>), ein Mirror der Dokumentation auf Russisch (<a href=':2:'>http://docs.Phalcon.ru</a>), Verbesserung der englischen Dokumentation sowie die Betreuung einer Gruppe im sozialen Netzwerk Vkontakte (<a href=':3:'>http://vk.com/Phalcon</a>).",
 
         'get_involved'                    => 'Mitmachen',
         'about_description_1'             => "Großartige Projekte benötigen großartige Helfer. Wir mögen dich noch nicht kennen, aber wir wissen, dass du der Richtige bist. Gemeinsam können wir die Welt verändern! Hier bei Phalcon entwickeln wir die nächste Framework-Generation für PHP und wir möchten dir beeindruckende Geschwindigkeit bieten, während wir die Entwicklung zu einem einfachen und entspannten Erlebnis machen.",
@@ -221,7 +226,7 @@
         'hosting_fortrabbit_3'            => 'Stabile Versionen von Phalcon sind vorinstalliert, Du kannst diese einfach von dem Administrations-Dashboard aus aktivieren.',
         'hosting_webfaction_title'        => 'WebFaction',
         'hosting_webfaction_1'            => 'WebFaction Hosting für Entwickler. Shell Zugang und schnelle Server auf denen sämtliche Werkzeuge vorinstalliert und gewartet werden.',
-        'hosting_webfaction_2'            => "Um PhalconPHP bei WebFaction zu installieren, befolge folgende <a href=':1:'>Instruktionen</a>.",
+        'hosting_webfaction_2'            => "Um Phalcon bei WebFaction zu installieren, befolge folgende <a href=':1:'>Instruktionen</a>.",
         'hosting_amazon_ec2_title'        => 'Amazon EC2',
         'hosting_amazon_ec2_1'            => 'Amazon Elastic Compute Cloud bietet eine skalierbare Lösung bei der nur die tatsächlich genutzten Ressourcen bezahlt werden.',
         'hosting_amazon_ec2_2'            => "Wähle eine vorkonfigurierte Vorlage eines Amazon Machine Images (AMI), um sofort durchzustarten. Alternativ kannst Du ein AMI mit Deinen Anwendungen, Bibliotheken, Daten und sonstigen Einstellungen erstellen. <a href=':1:'>Mehr...</a>",

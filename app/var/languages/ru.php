@@ -158,6 +158,11 @@
         'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
         'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
         
+        'consulting_mctekk_header'        => 'MCTekK has already delivered various high end Phalcon projects, with their main strengths being web and mobile development.',
+        'consulting_mctekk_1'             => 'MCTekK jumped on the Phalcon wagon since day one. From its conception we saw the great advantages that Phalcon was offering and could offer in the future.',
+        'consulting_mctekk_2'             => 'We have ample experience with Phalcon and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning Phalcon to help you improve your readiness, quickness and quality.',
+        'consulting_mctekk_3'             => 'Contact us thourgh our <a href=":1:">website</a>, where you can take a look at the projects we have been involved in.',
+        
         'requirements_analysis_1'         => 'Одна из самых больших проблем, с которыми сталкиваются разработчики, является тот факт, что многие проекты не имеют чётко сформулированного технического задания. Поэтому, чаще всего, то, чего хочет клиент, полностью отличается от того, что понимает разработчик и, соответственно, реализует.',
         'requirements_analysis_2'         => 'Мы можем предложить услуги по анализу требований клиентов, обсуждению деталей с клиентами и реализации этих требований в виде конкретного технического задания для разработчиков.',
         'implementation_1'                => 'Если вы хотите нанять нас для разработки приложения, мы были бы более чем счастливы сделать это. Используя новейшие технологии, мы можем предложить надежное решение для вашей задачи или проекта с полным пакетом тестов и документации.',
@@ -182,7 +187,7 @@
         'team_nikolay_2'                  => 'Николай работает с Open Source проектами в течение длительного времени, используя их во всех случаях, когда это позволяют требования. В свободное время он начал сотрудничать с сообществом, предлагая архитектурные изменения и высказывая различные идеи по оптимизации, в том числе, с целью повышения производительности. Он сыграл важную роль в улучшении Open Source CMS проектов, которое получило высокую оценку сообщества.',
         'team_nikolay_3'                  => 'Его постоянное участие в open source проектах помогло ему повысить свой уровень профессионализма и, в то же время, внести вклад в развитие сообщества.',
         'team_nikolay_4'                  => 'Николай является ярым сторонником максимальной производительности в веб-приложениях. После вступления в команду Phalcon он решил продолжить работу с проектом и стать его проповедником. Он возглавляет русское сообщество и осуществляет поддержку русскоязычных ресурсов.',
-        'team_nikolay_5'                  => "Его вклад в проект: зеркало основного сайта на русском языке (<a href=':1:'>http://www.phalconphp.ru</a>), зеркало репозитория документации на русском языке (<a href = ':2:'>http://docs.phalconphp.ru</a>), текущие изменения и исправления в документации на английском языке, группа в социальной сети ВКонтакте (<a href=':3:'>http://vk.com/phalconphp</a>).",
+        'team_nikolay_5'                  => "Его вклад в проект: зеркало основного сайта на русском языке (<a href=':1:'>http://www.Phalcon.ru</a>), зеркало репозитория документации на русском языке (<a href = ':2:'>http://docs.Phalcon.ru</a>), текущие изменения и исправления в документации на английском языке, группа в социальной сети ВКонтакте (<a href=':3:'>http://vk.com/Phalcon</a>).",
 
         'get_involved'                    => 'Участие',
         'about_description_1'             => "Удивительным проектам &mdash; удивительные руки. Возможно, мы ещё не знакомы, но мы думаем, что вы могли бы идеально подойти для разработки лучших веб приложений. Вместе мы готовы изменить мир! Здесь, в Phalcon, мы создаем PHP фреймворк нового поколения. Мы хотим предложить вам потрясающую производительность, которая позволяет программировать в простой и увлекательной форме.",
@@ -222,7 +227,7 @@
         'hosting_fortrabbit_3'            => 'Стабильная версия Phalcon предварительно установлена. Модуль можно активировать в панели администрирования.',
         'hosting_webfaction_title'        => 'WebFaction',
         'hosting_webfaction_1'            => 'WebFaction хостинг для разработчиков. Полный доступ к быстрым серверам с предустановленными вашими любимыми инструментами ​​и технической поддержкой для пользователей.',
-        'hosting_webfaction_2'            => "Для установки PhalconPHP в WebFaction следуйте инструкциям, приведенным <a href=':1:'>здесь</a>",
+        'hosting_webfaction_2'            => "Для установки Phalcon в WebFaction следуйте инструкциям, приведенным <a href=':1:'>здесь</a>",
         'hosting_amazon_ec2_title'        => 'Amazon EC2',
         'hosting_amazon_ec2_1'            => 'Amazon Elastic Compute Cloud предоставляет масштабируемые, оплачиваемые по факту, вычислительные ресурсы в облаке.',
         'hosting_amazon_ec2_2'            => "Выберите предварительно настроенный образ шаблона машины Amazon(AMI), чтобы сразу приступить к работе. Или создайте AMI, содержащий приложения, библиотеки, данные и соответствующие настройки конфигурации. <a href=':1:'>Подробнее</a>",

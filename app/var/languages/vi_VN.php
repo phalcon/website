@@ -157,6 +157,11 @@
         'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
         'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
         
+        'consulting_mctekk_header'        => 'MCTekK has already delivered various high end Phalcon projects, with their main strengths being web and mobile development.',
+        'consulting_mctekk_1'             => 'MCTekK jumped on the Phalcon wagon since day one. From its conception we saw the great advantages that Phalcon was offering and could offer in the future.',
+        'consulting_mctekk_2'             => 'We have ample experience with Phalcon and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning Phalcon to help you improve your readiness, quickness and quality.',
+        'consulting_mctekk_3'             => 'Contact us thourgh our <a href=":1:">website</a>, where you can take a look at the projects we have been involved in.',
+        
         'requirements_analysis_1'         => 'Một trong những vấn đề lớn nhất mà các nhà phát triển phải đối mặt với một thực tế là nhiều dự án không có yêu cầu xác định chính xác. Vì vậy, thường xuyên hơn không phải những gì khách hàng muốn là hoàn toàn khác với những gì các nhà phát triển hiểu và sau đó cung cấp.',
         'requirements_analysis_2'         => 'Chúng tôi có thể cung cấp dịch vụ yêu cầu phân tích, thảo luận với khách hàng và dịch tầm nhìn của họ để đưa ra chính xác các thông số kỹ thuật cho các nhà phát triển.',
         'implementation_1'                => 'Nếu bạn muốn thuê chúng tôi phát triển ứng dụng của bạn, chúng tôi sẽ được hạnh phúc hơn để làm như vậy hơn. Sử dụng các công nghệ mới nhất, chúng tôi có thể cung cấp một giải pháp mạnh mẽ cho công việc hoặc dự án của bạn, hoàn thành với các bài kiểm tra và tài liệu.',
@@ -181,7 +186,7 @@
         'team_nikolay_2'                  => 'Nikolay đã làm việc với các dự án mã nguồn mở trong một thời gian dài, sử dụng chúng bất cứ khi nào các yêu cầu cho phép. Vì vậy anh ấy đã bắt đầu sử dụng thời gian cá nhân của mình để đóp góp lại cho cộng đồng, bởi forking dự án, cung cấp thay đổi kiến ​​trúc và đề nghị, cũng như những người thực hiện. Anh ấy đã có công trong việc cải thiện các dự án mã nguồn mở CMS, và nhận được các phản hồi tích cực từ cộng đồng.',
         'team_nikolay_3'                  => 'Sự tham gia liên tục của bản thân với các dự án mã nguồn mở đã giúp anh ấy nâng cao kiến ​​thức kỹ thuật của mình, trong khi tuân thủ sự cho trở lại tâm lý cộng đồng.',
         'team_nikolay_4'                  => 'Nikolay là một người ủng hộ cuồng nhiệt của tối đa hóa hiệu suất trong các ứng dụng web. Sau khi có cái nhìn về   Phalcon, anh quyết định theo đuổi và sử dụng trong dự án và trở thành một Thánh cho nó. Anh ấy đang dẫn đầu các nỗ lực hướng tới các nguồn lực cộng đồng và cung cấp cho các nhà phát triển nói tiếng Nga.',
-        'team_nikolay_5'                  => "Anh ấy là một người đóng góp bao gồm: Một trang web chính thức ở Nga  (<a href=':1:'>http://www.phalconphp.ru</a>), một tài liệu hướng dẫn bằng tiếng Nga (<a href=':2:'>http://docs.phalconphp.ru</a>), thay đổi đang diễn ra và chỉnh sửa các tài liệu bằng tiếng Anh, một nhóm mạng xã hội Vkontakte (<a href=':3:'>http://vk.com/phalconphp</a>).",
+        'team_nikolay_5'                  => "Anh ấy là một người đóng góp bao gồm: Một trang web chính thức ở Nga  (<a href=':1:'>http://www.Phalcon.ru</a>), một tài liệu hướng dẫn bằng tiếng Nga (<a href=':2:'>http://docs.Phalcon.ru</a>), thay đổi đang diễn ra và chỉnh sửa các tài liệu bằng tiếng Anh, một nhóm mạng xã hội Vkontakte (<a href=':3:'>http://vk.com/Phalcon</a>).",
 
         'get_involved'                    => 'Hãy tham gia',
         'about_description_1'             => "Dự án tuyệt vời cần bàn tay tuyệt vời. Chúng tôi có thể không biết bạn chỉ được nêu ra, nhưng chúng tôi nghĩ rằng bạn muốn  xây dựng một trang web tốt hơn. Cùng với nhau, chúng tôi đã sẵn sàng để thay đổi thế giới! Tại Phalcon, chúng tôi đang xây dựng một khuôn khổ  tổng quan mới cho PHP; chúng tôi muốn cung cấp cho bạn một hiệu suất tuyệt vời trong khi giúp bạn phát triển một cách dễ dàng và vui vẻ.",
@@ -221,7 +226,7 @@
         'hosting_fortrabbit_3'            => 'Phiên bản ổn định của Phalcon được cài đặt sẵn, bạn có thể kích hoạt chúng từ bảng điều khiển quản trị.',
         'hosting_webfaction_title'        => 'WebFaction',
         'hosting_webfaction_1'            => 'WebFaction Hosting cho các nhà phát triển. Truy cập vỏ đến các máy chủ nhanh chóng với tất cả các công cụ ưa thích của bạn trước khi cài đặt và duy trì cho người sử dụng.',
-        'hosting_webfaction_2'            => "Để cài đặt PhalconPHP trên WebFaction, hãy làm theo các hướng dẫn <a href=':1:'>ở  đây </ a>",
+        'hosting_webfaction_2'            => "Để cài đặt Phalcon trên WebFaction, hãy làm theo các hướng dẫn <a href=':1:'>ở  đây </ a>",
         'hosting_amazon_ec2_title'        => 'Amazon EC2',
         'hosting_amazon_ec2_1'            => 'Amazon Elastic Compute Cloud cung cấp khả năng mở rộng, pay-as-you-go công suất tính toán trong đám mây.',
         'hosting_amazon_ec2_2'            => "Chọn một cấu hình sẵn, templated Amazon Machine Image (AMI) để có được và chạy ngay lập tức. Hoặc tạo một AMI có chứa các ứng dụng, thư viện, dữ liệu, và các thiết lập cấu hình có liên quan của bạn. <a href=':1:'> Xem thêm </ a>",

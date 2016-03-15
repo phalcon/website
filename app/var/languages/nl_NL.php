@@ -157,6 +157,11 @@
         'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
         'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
         
+        'consulting_mctekk_header'        => 'MCTekK has already delivered various high end Phalcon projects, with their main strengths being web and mobile development.',
+        'consulting_mctekk_1'             => 'MCTekK jumped on the Phalcon wagon since day one. From its conception we saw the great advantages that Phalcon was offering and could offer in the future.',
+        'consulting_mctekk_2'             => 'We have ample experience with Phalcon and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning Phalcon to help you improve your readiness, quickness and quality.',
+        'consulting_mctekk_3'             => 'Contact us thourgh our <a href=":1:">website</a>, where you can take a look at the projects we have been involved in.',
+        
         'requirements_analysis_1'         => 'Een van de grootste problemen voor ontwikkelaars is dat de eisen van projecten vaak slecht gedefinieerd zijn. Dit kan er voor zorgen dat hetgeen de klant wilt totaal verschillend is van wat de ontwikkelaar uit de eisen begreep en bouwde.',
         'requirements_analysis_2'         => 'We bieden een eisen analyse dienst aan, waarbij we met de klant praten en hun visie vertalen naar de exacte specificaties voor de ontwikkelaars.',
         'implementation_1'                => 'Indien je ons wilt inhuren om uw applicatie te ontwikkelen, zijn we meer dan blij om dit te doen. Door gebruik van de nieuwste technologieën kunnen we een robuuste oplossing aanbieden voor elk project, compleet met testen en documentatie.',
@@ -181,7 +186,7 @@
         'team_nikolay_2'                  => 'Nikolay werkt reeds lange tijd met Open Source projecten, en gebruikt ze wanneer de requirements het toelaten. Hierdoor begon hij met zijn persoonlijke tijd te geven aan de gemeenschap, door projecten te forken, en veranderingen ten voordele van zowel de architectuur en de performantie voor te stellen. Zijn werk is zeer gunstig voor het verbeteren van Open Source CMS projecten en ontving steeds positieve feedback van de gemeenschap.',
         'team_nikolay_3'                  => 'Zijn voortdurende betrokkenheid met open source projecten heeft hem geholpen zijn technische kennis uit te breiden en tegelijk veel aan de gemeenschap terug te geven.',
         'team_nikolay_4'                  => 'Nikolay is een enthousiast voorstander van het maximalizeren van de performantie van web applicaties. Na zijn introductie tot Phalcon heeft hij beslist het te gebruiken, verbeteren en het woord erover te verspreiden. Hij leidt ook de Russische Phalcon gemeenschap en biedt bronnen aan voor de Russisch sprekende ontwikkelaars.',
-        'team_nikolay_5'                  => "Zijn bijdragen zijn onderandere: Een mirror naar de website in het Russisch (<a href=':1:'>http://www.phalconphp.ru</a>), een mirror van de documentatie repository in het Russisch (<a href=':2:'>http://docs.phalconphp.ru</a>), veranderingen en verbeteringen aan de documentatie in het Engels, en een groep in het sociaal netwerk Vkontakte (<a href=':3:'>http://vk.com/phalconphp</a>).",
+        'team_nikolay_5'                  => "Zijn bijdragen zijn onderandere: Een mirror naar de website in het Russisch (<a href=':1:'>http://www.Phalcon.ru</a>), een mirror van de documentatie repository in het Russisch (<a href=':2:'>http://docs.Phalcon.ru</a>), veranderingen en verbeteringen aan de documentatie in het Engels, en een groep in het sociaal netwerk Vkontakte (<a href=':3:'>http://vk.com/Phalcon</a>).",
 
         'get_involved'                    => 'Doe Mee',
         'about_description_1'             => "Er is geen geweldig project zonder de juiste steun. Het is mogelijk dat we je nog niet kennen, maar we vinden dat je mooi past in het bouwen van een beter web. Samen zijn we klaar om de wereld te veranderen! Hier bij Phalcon bouwen we een nieuwe generatie framework voor PHP, we willen u een geweldige performantie geven terwijl we het ontwikkelen makkelijk en plezierig houden.",
@@ -221,7 +226,7 @@
         'hosting_fortrabbit_3'            => 'Stabiele versies van Phalcon zijn op voorhand geïnstalleerd, je kan deze activeren vanaf het administration dashboard.',
         'hosting_webfaction_title'        => 'WebFaction',
         'hosting_webfaction_1'            => 'WebFaction Hosting voor developers. Volledige shell access tot snelle servers met al je favoriete tools op voorhand geïnstalleerd en onderhouden voor de gebruiker.',
-        'hosting_webfaction_2'            => "Om PhalconPHP te installeren op WebFaction, volg <a href=':1:'>deze</a> instructies",
+        'hosting_webfaction_2'            => "Om Phalcon te installeren op WebFaction, volg <a href=':1:'>deze</a> instructies",
         'hosting_amazon_ec2_title'        => 'Amazon EC2',
         'hosting_amazon_ec2_1'            => 'Amazon Elastic Complete Cloud levert schaalbare, pay-as-you-go capaciteit in the cloud.',
         'hosting_amazon_ec2_2'            => "Selecteer een op voorhand geconfigureerde Amazon Machine Image (AMI) om onmiddelijk te kunnen beginnen. Of maak een AMI met daarop je eigen applicaties, libraries, data en settings.

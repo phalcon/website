@@ -157,6 +157,11 @@
         'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
         'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
         
+        'consulting_mctekk_header'        => 'MCTekK has already delivered various high end Phalcon projects, with their main strengths being web and mobile development.',
+        'consulting_mctekk_1'             => 'MCTekK jumped on the Phalcon wagon since day one. From its conception we saw the great advantages that Phalcon was offering and could offer in the future.',
+        'consulting_mctekk_2'             => 'We have ample experience with Phalcon and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning Phalcon to help you improve your readiness, quickness and quality.',
+        'consulting_mctekk_3'             => 'Contact us thourgh our <a href=":1:">website</a>, where you can take a look at the projects we have been involved in.',
+        
         'requirements_analysis_1'         => '開発者が直面している多くのプロジェクトが適切に定義された要件を持っていないという事実が最大の問題の一つです。そのため、それぞれのクライアントが望んでいることは、開発者が理解しているものとは全く異なるものを提供してしまう。',
         'requirements_analysis_2'         => '私たちはクライアントと協議し、開発者のための正確な仕様に自分のビジョンを翻訳し、要件の分析サービスを提供することができます。',
         'implementation_1'                => 'アプリケーションを開発するために私たちを雇いたい場合、我々はそうするよりも幸せになる。最新技術を使用して、我々は完全なテストとドキュメントを、あなたのタスクやプロジェクトのために堅牢なソリューションを提供することができます。',
@@ -182,7 +187,7 @@
         'team_nikolay_2'                  => 'Nikolay は、要件が許す時にそれらを利用して、長い時間のためのオープンソースプロジェクトに取り組んできました。彼は個人的な時間を使用して、アーキテクチャの変更や提案だけでなく、性能そのものを提供し、フォークしたプロジェクトで、地域社会にお返しを始めました。彼は、コミュニティからのフィードバックを受け取って、オープンソースCMSプロジェクトの改善に尽力してきました。',
         'team_nikolay_3'                  => 'His continuous involvement with open source projects has helped him advance his technical knowledge while abiding by the give back to the community mentality.',
         'team_nikolay_4'                  => 'Nikolay は、Webアプリケーションのパフォーマンスを最大化するための熱心なサポーターです。彼は Phalcon 導入後、彼はプロジェクトを追求し、使用することを決めた、そのためのエバンジェリストになることを決めた。彼は、ロシア語を話す開発者のために、リソースを提供し、ロシアのコミュニティにために努力をしています。',
-        'team_nikolay_5'                  => "彼の貢献: ロシアの主なウェブサイトのミラー (<a href=':1:'>http://www.phalconphp.ru</a>), ロシアのドキュメントリポジトリのミラー (<a href=':2:'>http://docs.phalconphp.ru</a>), ソーシャルネットワーク Vkontakte 内のグループで、現在進行中の変化と英語のドキュメントの修正 (<a href=':3:'>http://vk.com/phalconphp</a>).",
+        'team_nikolay_5'                  => "彼の貢献: ロシアの主なウェブサイトのミラー (<a href=':1:'>http://www.Phalcon.ru</a>), ロシアのドキュメントリポジトリのミラー (<a href=':2:'>http://docs.Phalcon.ru</a>), ソーシャルネットワーク Vkontakte 内のグループで、現在進行中の変化と英語のドキュメントの修正 (<a href=':3:'>http://vk.com/Phalcon</a>).",
 
         'get_involved'                    => '仲間に加わろう',
         'about_description_1'             => "Amazing projects need amazing hands. We might not know you just yet, but we think you'd be a great fit for building a better web. Together, we're ready to change the world! Here at Phalcon, we’re building a new generation framework for PHP; we want to give you an amazing performance while helping you develop in an easy and fun way.",
@@ -222,7 +227,7 @@
         'hosting_fortrabbit_3'            => 'Phalcon の安定バージョンがプリインストールされ、管理ダッシュボードからそれらを有効にすることができます。',
         'hosting_webfaction_title'        => 'WebFaction',
         'hosting_webfaction_1'            => 'WebFactionは、開発者のためのホスティング。すべてのお好みのツールを使用して、高速のサーバーへのフルシェルアクセスは、プリインストールされ、ユーザーのために維持した。',
-        'hosting_webfaction_2'            => "WebFactionでPhalconPHPをインストールするには、<a href=':1:'>ここ</a> で説明されている指示に従ってください ",
+        'hosting_webfaction_2'            => "WebFactionでPhalconをインストールするには、<a href=':1:'>ここ</a> で説明されている指示に従ってください ",
         'hosting_amazon_ec2_title'        => 'Amazon EC2',
         'hosting_amazon_ec2_1'            => 'Amazon Elastic Compute Cloud 提供スケーラブルで、従量制クラウドで容量を計算します。',
         'hosting_amazon_ec2_2'            => "立ち上がってすぐに実行するための事前設定、テンプレートの Amazon Machine Image（AMI ）を選択します。またはあなたのアプリケーション、ライブラリ、データ、および関連する構成設定を含むAMIを作成します。<a href=':1:'>続きを見る</a>",
