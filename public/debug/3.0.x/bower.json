@@ -1,0 +1,28 @@
+{
+  "name": "phalcon_debug",
+  "authors": [
+    "David Schissler <david.schissler@gmail.com>"
+  ],
+  "description": "Phalcon Debug Component",
+  "main": "",
+  "keywords": [
+    "phalcon",
+    "debug",
+    "php"
+  ],
+  "license": "MIT",
+  "homepage": "https://phalconphp.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "jquery.scrollTo": "^2.1.2",
+    "jquery-ui": "^1.12.0"
+  }
+}
