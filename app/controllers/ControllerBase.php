@@ -51,7 +51,7 @@ class ControllerBase extends Controller
 			}
 		}
 
-		$this->view->setVar('release', $release));
+		$this->view->setVar('release', $release);
 	}
 
 	public function requestInitialize()
