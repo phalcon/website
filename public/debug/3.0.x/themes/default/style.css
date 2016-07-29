@@ -1,0 +1,298 @@
+
+/*
+  +------------------------------------------------------------------------+
+  | Phalcon Framework                                                      |
+  +------------------------------------------------------------------------+
+  | Copyright (c) 2011-2016 Phalcon Team (http://www.phalconphp.com)       |
+  +------------------------------------------------------------------------+
+  | This source file is subject to the New BSD License that is bundled     |
+  | with this package in the file docs/LICENSE.txt.                        |
+  |                                                                        |
+  | If you did not receive a copy of the license and are unable to         |
+  | obtain it through the world-wide-web, please send an email             |
+  | to license@phalconphp.com so we can send you a copy immediately.       |
+  +------------------------------------------------------------------------+
+  | Authors: Andres Gutierrez <andres@phalconphp.com>                      |
+  |          Eduar Carvajal <eduar@phalconphp.com>                         |
+  +------------------------------------------------------------------------+
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+body
+{
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	/*background: #423a4a;*/
+	margin: 0px;
+}
+
+.str,
+.atv
+{
+	color: #8EAACD;
+}
+
+.kwd
+{
+	color: #9385AC;
+}
+
+.com
+{
+	color: #66747B;
+}
+
+.typ,
+.tag
+{
+	color: #c0c0c0;
+}
+
+.lit
+{
+	color: #5AB889;
+}
+
+.pun
+{
+	color: #dadada;
+}
+
+.pln
+{
+	color: #F1F2F3;
+}
+
+.atn
+{
+	color: #E0E2E4;
+}
+
+.dec
+{
+	color: purple;
+}
+
+pre.prettyprint
+{
+	font-family: Consolas,Lucida Console,Monaco,Andale Mono,"MS Gothic",monospace;
+	border: 0px solid #888;
+	font-size: 13px;
+	font-weight: normal;
+}
+
+ol.linenums
+{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.prettyprint {
+	background-color: #2f2f2f;
+}
+
+li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9
+{
+	color: #555;
+	list-style-type: decimal;
+}
+
+li.L1, li.L3, li.L5, li.L7, li.L9
+{
+	background: #2a2a2a;
+}
+
+li.highlight {
+	background: #1a1a1a;
+}
+
+.error-main
+{
+	background: #D83D5B;
+	color: #ffffff;
+	padding: 10px;
+	padding-top: 14px;
+	border-radius: 3px;
+	font-size: 14px;
+	width: 90%;
+	text-align: left;
+	/*box-shadow: 2px 2px 2px #111111;*/
+}
+
+.error-main h1
+{
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	margin: 0px;
+	text-shadow: 1px 0px #111111;
+	font-weight: normal;
+}
+
+.error-scroll
+{
+	height: 250px;
+	overflow-y: scroll;
+}
+
+.error-info h3
+{
+	margin: 0px;
+	color: #414141;
+	margin-bottom: 5px;
+	font-size: 14px;
+	border-bottom: 1px solid #eaeaea;
+}
+
+.error-info
+{
+	text-align: center;
+	width: 90%;
+	padding: 10px;
+	background: #fff;
+	margin-top: 5px;
+}
+
+.error-info table
+{
+	/*background-color: #FBF6EF;
+	border-radius: 5px;
+	margin-top: 5px;
+	width: 99%;*/
+}
+
+.error-info td
+{
+	color: #373536;
+	font-size: 12px;
+	padding: 3px;
+}
+
+.error-info a
+{
+	color: #373536;
+	text-decoration: none;
+}
+
+.error-info a:hover
+{
+	text-decoration: underline;
+}
+
+.error-info td.error-number
+{
+	/*background: #1D1F22;*/
+	color: #807B70;
+	width: 20px;
+	font-size: 14px;
+}
+
+.error-info .error-file,
+.error-main .error-file
+{
+	font-size: 11px;
+	margin-top: 3px;
+	color: #717171;
+}
+
+.error-info .error-file
+{
+	background: #D83D5B;
+	color: #ffffff;
+	margin: 0px;
+	margin-top: 10px;
+	padding-top: 10px;
+	padding-bottom: 7px;
+	padding-left: 5px;
+	max-width: 1024px;
+}
+
+.error-main .error-file
+{
+	color: #fafafa;
+}
+
+.error-info .error-class
+{
+	color: #2A2A2A;
+}
+
+.error-info .error-parameter
+{
+	color: #807B70;
+}
+
+.error-info .error-function
+{
+	color: #333333;
+	font-weight: bold;
+}
+
+.error-info pre
+{
+	text-align: left;
+	margin: 0px;
+	max-width: 1024px;
+}
+
+.version
+{
+	font-family: sans-serif;
+	text-align: right;
+	color: #ffffff;
+	background: #333333;
+	padding: 10px;
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+
+.version a
+{
+	color: #ffffff;
+}
+
+.superglobal-detail
+{
+	width: 70%;
+}
+
+.superglobal-detail th
+{
+  background: #D83D5B;
+  color: #ffffff;
+  font-size: 13px;
+  padding: 4px;
+}
+
+.superglobal-detail td
+{
+	border-bottom: 1px solid #dadada;
+	padding: 3px;
+}
+
+.superglobal-detail td.key
+{
+	font-weight: bold;
+}
+
+.ui-widget
+{
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+.ui-tabs .ui-tabs-nav a
+{
+	font-size: 13px;
+}
+
+.ui-widget-content {
+  border: 1px solid #dadada;
+  background: #FFFFFF;
+  color: #222222;
+}
+
+.ui-widget-header {
+  border: 1px solid #dadada;
+  background: #dadada;
+  color: #222222;
+  font-weight: bold;
+}
