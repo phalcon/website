@@ -47,11 +47,11 @@ class ControllerBase extends Controller
 			if (isset($response->tag_name)) {
 				$release = str_replace('phalcon-v', '', strtolower(trim($response->tag_name)));
 
-				$this->cacheData->save('gh_release', $release, 60 * 60);
+				$this->cacheData->save('gh_release', $release, 60 * 60 * 24);
 			}
 		}
 
-		$this->view->setVar('release', ($release ? ' v.'.$release : ''));
+		$this->view->setVar('release', $release);
 	}
 
 	public function requestInitialize()
