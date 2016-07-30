@@ -1,3 +1,5 @@
+{% include 'pages/head.volt' %}
+
 <section class="support">
     <div class="container">
         <h3 class="bg-danger">{{ tr('support_note', link_to('download', tr('support_download_page'), 'language', language)) }}</h3>

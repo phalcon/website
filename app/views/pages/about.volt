@@ -1,3 +1,4 @@
+{% include 'pages/head.volt' %}
 <section class="about">
     {% include 'pages/header.volt' %}
         <div class="row">

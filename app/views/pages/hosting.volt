@@ -1,3 +1,5 @@
+{% include 'pages/head.volt' %}
+
 <section class="hosting">
     <div class="container">
         <div class="row">
@@ -99,7 +101,7 @@
                 <p>{{ tr('hosting_aspnix_2', 'https://aspnix.com/kb/sales-kb/what-php-extensions-are-supported-on-windows-shared-hosting/') }}</p>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-lg-3">
                 <img src='{{ cdn_url ~ 'images/hosting/kinghost-gray.png' }}' title='{{ tr('hosting_kinghost_title') }}' alt='{{ tr('hosting_kinghost_title') }}' />
