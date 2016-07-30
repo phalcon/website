@@ -10,7 +10,10 @@
 
                 <pre><code class="bash">sudo apt-add-repository ppa:phalcon/stable
 sudo apt-get update
-sudo apt-get install php5-phalcon</code></pre>
+sudo apt-get install php5-phalcon
+# Ubuntu 16.04+
+sudo apt-get install php7.0-phalcon
+</code></pre>
             </div>
 
             <p>
