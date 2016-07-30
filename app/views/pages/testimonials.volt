@@ -1,3 +1,5 @@
+{% include 'pages/head.volt' %}
+
 <section class="testimonials">
     {% include 'pages/header.volt' %}
     <div class="row">

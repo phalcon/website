@@ -1,21 +1,3 @@
-<div class="prefooter">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3 text-right">
-                <span>{{ tr('follow_along') }}</span>
-            </div>
-            <div class="col-sm-6 text-center">
-                <a href="https://twitter.com/phalconphp" alt="Twitter" class="btn-social btn-social-twitter"><i class="icon-twitter"></i></a>
-                <a href="https://www.facebook.com/pages/Phalcon-Framework/134230726685897" alt="Facebook" class="btn-social btn-social-facebook"><i class="icon-facebook"></i></a>
-                <a href="https://plus.google.com/102376109340560896457" alt="Google+" class="btn-social btn-social-googleplus"><i class="icon-googleplus"></i></a>
-                <a href="https://github.com/phalcon/cphalcon" alt="Github" class="btn-social btn-social-github"><i class="icon-github"></i></a>
-            </div>
-            <div class="col-sm-3">
-            </div>
-        </div>
-    </div>
-
-</div>
 <footer class="footer">
     <div class="container">
         <div class="row">
@@ -61,11 +43,10 @@
 
                 <div class="design">
                     <span>{{ tr('designed_by') }}</span>
-                    {# #TODO /phalcon-development-team giving 404
-                    <a href="http://www.fog-city.net/phalcon-development-team" class="fogcity" target="_blank" title="Phalcon Development Team"><span>Fog City - Phalcon Development Team</span></a>
-                    #}
-                    <a href="http://www.fog-city.net/" class="fogcity" target="_blank" title="Fog City Software"><span>Fog City Software</span></a>
                 </div>
+                <a class="license" href="http://loudertech.com/" target="_blank" title="">
+                    <span>loudertech.com</span>
+                </a>
             </div>
         </div>
     </div>

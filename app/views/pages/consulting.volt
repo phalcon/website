@@ -1,3 +1,5 @@
+{% include 'pages/head.volt' %}
+
 <section class="consulting">
     <div class="container">
         <div class="row">
@@ -18,7 +20,7 @@
                 <p>{{ tr('consulting_lezgro_5', 'http://lezgro.com/contacts/') }}</p>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-lg-12">
                 {{ tr('consulting_mctekk_header') }}

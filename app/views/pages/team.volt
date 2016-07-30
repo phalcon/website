@@ -1,3 +1,5 @@
+{% include 'pages/head.volt' %}
+
 <section class="team">
     {% include 'pages/header.volt' %}
 

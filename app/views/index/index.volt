@@ -1,303 +1,576 @@
-<section class="codesamples">
 
-    <h2>{{ tr('codesamples_header') }}</h2>
+<link href="{{ cdn_url }}css/phalcon.min.css" rel='stylesheet' type='text/css'>
 
+<!-- =========================
+     Background Video
+============================== -->
+
+<div class="video-background" data-vide-bg="{{ cdn_url }}video/phalcon.mp4"></div>
+
+<!-- =========================
+     Section1 - Header
+============================== -->
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+            <!-- Header top -->
+            <div class="col-sm-3 logo">
+                <a href="#">
+                    <img alt="" class="logo-phalcon" src="{{ cdn_url }}images/phalcon1.png">
+                </a>
+            </div>
+            <div class="col-sm-7 menu-phalcon">
+                <div class="center">
+                    {% include 'partials/topmenu.volt' %}
+                </div>
+            </div>
+            <div class="col-sm-2 social-icons-align" style="margin-top:15px;">
+                <a href="https://github.com/phalcon/cphalcon/">
+                    <img alt="" src="{{ cdn_url }}images/twitter.png">
+                </a>
+                <a href="https://twitter.com/phalconphp">
+                    <img alt="" src="{{ cdn_url }}images/github.png">
+                </a>
+            </div>
+            <!-- /End Header Top -->
+            <!-- Header Content -->
+            <div class="col-sm-12">
+                <h1>A full-stack PHP framework delivered</h1>
+                <h2>as a C-extension</h2>
+
+                <!--<div class="separator red"></div>-->
+                <br>
+
+                <p>
+                    Its innovative architecture makes Phalcon the fastest PHP framework ever built! See for yourself
+                </p>
+
+                <br>
+                <br>
+                <br>
+
+                <a href="{{ cdn_url }}download">
+                    <button class="view-detail btn">
+                        Download
+                        <i class="glyphicon glyphicon-save"></i>
+                    </button>
+                </a>
+            </div>
+         <!-- /End Header Content -->
+      </div>
+    </div>
+ </div>
+
+
+
+<!-- =========================
+     Section2 - Advertised
+============================== -->
+<div id="advertised-section">
     <div class="container">
         <div class="row">
-            <div class="col-sm-5">
-
-                <h4>{{ tr('basic_fatures') }}</h4>
-                <ul class="tags">
-                    <li><a class="codesample active" href="#nooverhead">{{ tr('low_overhead') }}</a></li>
-                    <li><a class="codesample" href="#mvc">{{ tr('mvc') }}</a></li>
-                    <li><a class="codesample" href="#di">{{ tr('di') }}</a></li>
-                    <li><a class="codesample" href="#rest">{{ tr('rest') }}</a></li>
-                    <li><a class="codesample" href="#autoloader">{{ tr('auto_loader') }}</a></li>
-                    <li><a class="codesample" href="#router">{{ tr('router') }}</a></li>
-                </ul>
-                <div class="clearfix"></div>
-
-                <h4>{{ tr('data_and_storage') }}</h4>
-                <ul class="tags">
-                    <li><a class="codesample" href="#orm">{{ tr('orm') }}</a></li>
-                    <li><a class="codesample" href="#phql">{{ tr('phql') }}</a></li>
-                    <li><a class="codesample" href="#odm">{{ tr('odm_for_mongo') }}</a></li>
-                    <li><a class="codesample" href="#transactions">{{ tr('transactions') }}</a></li>
-                    <li><a class="codesample" href="#cache">{{ tr('cache') }}</a></li>
-                    <li><a class="codesample" href="#memcache">{{ tr('memcache') }}</a></li>
-                </ul>
-                <div class="clearfix"></div>
-
-                <h4>{{ tr('view_and_frontend') }}</h4>
-                <ul class="tags">
-                    <li><a class="codesample" href="#templates">{{ tr('template_engines') }}</a></li>
-                    <li><a class="codesample" href="#volt">{{ tr('volt') }}</a></li>
-                    <li><a class="codesample" href="#i18n">{{ tr('i18n') }}</a></li>
-                    <li><a class="codesample" href="#froms">{{ tr('form_builder') }}</a></li>
-                    <li><a class="codesample" href="#flash">{{ tr('flash_messages') }}</a></li>
-                </ul>
-                <div class="clearfix"></div>
-
-                <h4>{{ tr('Others') }}</h4>
-                <ul class="tags">
-                    <li><a class="codesample" href="#acl">{{ tr('ACL') }}</a></li>
-                    <li><a class="codesample" href="#sharding">{{ tr('sharding') }}</a></li>
-                    <li><a class="codesample" href="#crypt">{{ tr('crypt') }}</a></li>
-                    <li><a class="codesample" href="#events">{{ tr('events') }}</a></li>
-                    <li><a class="codesample" href="#queues">{{ tr('queueing') }}</a></li>
-                </ul>
-                <div class="clearfix"></div>
-
+            <div class="col-md-3">
+                <div class="advertised red">
+                    <div class="arrow-left"></div>
+                    <div class="arrow-down-2"></div>
+                    <p>
+                        <img src='{{ cdn_url ~ 'images/professor.png' }}'
+                        title='{{ tr('hosting_fortrabbit_title') }}'
+                        alt='{{ tr('hosting_fortrabbit_title') }}' />
+                        Learn
+                    </p>
+                </div>
             </div>
 
-            <div class="col-sm-7">
+            <div class="col-md-3">
+                <div class="advertised">
+                    <p>
+                        <a href="{{ docs_root }}reference/tutorial.html" style="color:#ffffff">
+                            <img src='{{ cdn_url ~ 'images/chemistry.png' }}'
+                                title='{{ tr('hosting_fortrabbit_title') }}'
+                                alt='{{ tr('hosting_fortrabbit_title') }}' />
+                                Try phalcon
+                        </a>
+                    </p>
+                </div>
+            </div>
 
-                <div class="codesamples-container">
+            <div class="col-md-3">
+                <div class="advertised">
+                    <p>
+                        <a href="http://zephir-lang.com">
+                            <img src='{{ cdn_url ~ 'images/zephir_logo.png' }}' title='{{ tr('hosting_digital_ocean_title') }}' alt='{{ tr('hosting_digital_ocean_title') }}' />
+                        </a>
+                    </p>
+                </div>
+            </div>
 
-                    <!-- =================================================================== -->
-                    <div class="codesample codesample-current" id="nooverhead"><!-- codesample -->
-                        <div class="codesample-header">
-                            <h3>{{ tr('low_overhead') }}</h3>
-                        </div>
-                        <div class="codesample-body">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <h3 class="text-center">PHP C-extension (Phalcon)</h3>
-                                    <ul class="features features-positive">
-                                        <li>C-extensions are loaded together with PHP one time on the web server’s daemon start process</li>
-                                        <li>Classes and functions provided by the extension are ready to use for any application</li>
-                                        <li>The code is compiled and isn’t interpreted because is already compiled to a specific platform and processor</li>
-                                        <li>Thanks to its low-level architecture and optimizations <strong>Phalcon provides the lowest overhead for MVC-based applications</strong></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div><!-- /codesample -->
-                    <!-- =================================================================== -->
-
-
-
-                    <!-- =================================================================== -->
-                    <div class="codesample" id="mvc"><!-- codesample -->
-                        <div class="codesample-header">
-                            <h3>{{ tr('model_view_controller') }}</h3>
-                        </div>
-                        <div class="codesample-body">
-                            <p>Build single and multi-module applications with ease and pleasure. Using the file structure, scheme and patterns you already know.</p>
-                            <div class="row">
-                                <div class="col-xs-6">
-                                    <pre><code class="php">
-    single/
-        app/
-            controllers/
-            models/
-            views/
-        public/
-            css/
-            img/
-            js/
-                                        </code></pre>
-                                </div>
-                                <div class="col-xs-6">
-                                    <pre><code class="php">
-    multiple/
-      apps/
-        frontend/
-           controllers/
-           models/
-           views/
-           Module.php
-        backend/
-           controllers/
-           models/
-           views/
-           Module.php
-        public/
-        ../
-                                        </code></pre>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div><!-- /codesample -->
-                    <!-- =================================================================== -->
-
-
-
-                    <!-- =================================================================== -->
-                    <div class="codesample" id="di"><!-- codesample -->
-                        <div class="codesample-header">
-                            <h3>{{ tr('dependency_injection') }}</h3>
-                        </div>
-                        <div class="codesample-body">
-                            <p>Phalcon is built upon a powerful yet easy to understand and use pattern called Dependency Injection. Initialize or define services once - and use them virtually anywhere throughout the application.</p>
-                            <pre><code class="php">
-//Create the Dependency Injector Container
-$di = new Phalcon\DI();
-
-//Register classes, functions, components
-$di->set("request", new Phalcon\Http\Request());
-
-..
-
-//Use anywhere else in code
-$request = $di->getShared("request");
-
-                                </code></pre>
-                        </div>
-                    </div><!-- /codesample -->
-                    <!-- =================================================================== -->
-
-
-
-                    <!-- =================================================================== -->
-                    <div class="codesample" id="rest"><!-- codesample -->
-                        <div class="codesample-header">
-                            <h3>{{ tr('restful_services') }}</h3>
-                        </div>
-                        <div class="codesample-body">
-                            <p>Writing REST servers and applications has never been easier. No boilerplate. Simple services will fit in one file.</p>
-                            <pre><code class="php">
-    $app = new Phalcon\Mvc\Micro();
-
-    //Returning data in JSON
-    $app->get('/get/data.json', function () {
-        echo json_encode(array("some", "important", "data"));
-    });
-
-    $app->handle();
-                                </code></pre>
-                        </div>
-                    </div><!-- /codesample -->
-                    <!-- =================================================================== -->
-
-
-                    <!-- =================================================================== -->
-                    <div class="codesample" id="autoloader"><!-- codesample -->
-                        <div class="codesample-header">
-                            <h3>Universal Class Loader</h3>
-                        </div>
-                        <div class="codesample-body">
-                            <p>Register namespaces, prefixes, directories or classes. Take advantage of Autoloader events and maintain full controll over the business logic using Autoloader configuration.</p>
-                            <pre><code class="php">
-    // Creates the autoloader
-    $loader = new \Phalcon\Loader();
-
-    // Register some directories
-    $loader->registerDirs(
-        array(
-            "library/MyComponent/",
-            "vendor/example/adapters/",
-            "vendor/example/"
-        )
-    );
-
-    // register autoloader
-    $loader->register();
-                                </code></pre>
-                        </div>
-                    </div><!-- /codesample -->
-                    <!-- =================================================================== -->
-
-
-
-
-
-                    <!-- =================================================================== -->
-                    <div class="codesample" id="router"><!-- codesample -->
-                        <div class="codesample-header">
-                            <h3>{{ tr('router') }}</h3>
-                        </div>
-                        <div class="codesample-body">
-                            <p>Routing as it supposed to be. Nothing more. Nothing less.</p>
-                            <pre><code class="php">
-    // Create the router
-    $router = new \Phalcon\Mvc\Router();
-
-    //Define a route
-    $router->add(
-        "/admin/users/my-profile",
-        array(
-            "controller" => "users",
-            "action"     => "profile",
-        )
-    );
-                                </code></pre>
-                        </div>
-                    </div><!-- /codesample -->
-                    <!-- =================================================================== -->
-
-
-
+            <div class="col-md-3">
+                <div class="advertised">
+                    <p>
+                        <a href="{{ cdn_url }}/es/about" style="color:#ffffff">
+                            <img src='{{ cdn_url ~ 'images/drop.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' />
+                            Contribution
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>
 
-<section class="community">
-    <h2>{{ tr('join_community') }}</h2>
+<!--
+=========================
+     Section3 - Features
+=========================
+-->
 
+<section id="feature-section" class="codesamples">
     <div class="container">
-        <div id="community-buttons" class="row">
-            <div class="col-xs-6 col-sm-3">
-                <a href="http://forum.phalconphp.com/" class="icon community-link" target="_blank">
-                    <i class="icon-bubbles"></i><br />
-                    {{ tr('forum') }}
-                </a>
+        <div class=" col-md-12 white-bg">
+            <!-- Features Left -->
+            <div class="col-sm-5">
+                <h2 class="verticle-line">
+                    Basic Features
+                </h2>
+                <ul class="feature-list">
+                    <li class="basic_features low_overhead">
+                        <div class="feature-bullet">
+                            <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>Low overhead</h3>
+                            <p>
+                                Less memory consumption and CPU
+                            </p>
+                        </div>
+                    </li>
+                    <li class="basic_features mvc">
+                        <div class="feature-bullet">
+                            <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>MVC & HMVC</h3>
+                            <p>
+                                Modules, Components, Models, View, Controlles
+                            </p>
+                        </div>
+                    </li>
+                    <li class="basic_features di">
+                        <div class="feature-bullet">
+                            <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>Dependency Injection</h3>
+                            <p>
+                                Dependency Injection and Location of services and it’s itself a container for them.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="basic_features rest">
+                        <div class="feature-bullet">
+                          <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>Rest</h3>
+                            <p>
+                                In this case, we will use a micro application to meet our goal.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="basic_features autoloader">
+                        <div class="feature-bullet">
+                            <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>Autoloader</h3>
+                            <p>
+                                Provides the autoloading mechanism.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="basic_features router">
+                        <div class="feature-bullet">
+                            <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>Router</h3>
+                            <p>
+                                Phalcon\Mvc\Router provides advanced routing capabilities.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <div class="col-xs-6 col-sm-3">
-                {{ link_to(['for': 'pages', 'pageSlug': 'about', 'language': language], '<i class="icon-organization"></i><br />'~tr('how_to_contribute'), 'class' : 'icon community-link') }}
-            </div>
-            <div class="col-xs-6 col-sm-3">
-                <a href="https://github.com/phalcon/cphalcon" class="icon community-link" target="_blank">
-                    <i class="icon-github"></i><br />
-                    {{ tr('github') }}
-                </a>
-            </div>
-            <div class="col-xs-6 col-sm-3">
-                <a href="http://stackoverflow.com/questions/tagged/phalcon" class="icon community-link" target="_blank">
-                    <i class="icon-stack-overflow"></i><br />
-                    {{ tr('stack_overflow') }}
-                </a>
-            </div>
+            <!-- /End Features Left -->
 
+            <!-- Features Right -->
+            <div class="col-sm-7">
+                {% include "partials/components/lowOverhead.volt" %}
+                {% include "partials/components/mvc.volt" %}
+                {% include "partials/components/di.volt" %}
+                {% include "partials/components/rest.volt" %}
+                {% include "partials/components/autoloader.volt" %}
+                {% include "partials/components/router.volt" %}
+            </div>
+            <!-- /End Features Right -->
         </div>
     </div>
-
-    {{ partial('partials/contributors') }}
-
 </section>
 
-<section class="getinvolved">
-
+<!-- =========================
+     Section3 - Features
+============================== -->
+<section id="feature-section" class="codesamples">
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-4 text-center">
-                <!--<i class="icon-code icon-huge"></i>-->
-                <h3>{{ tr('learn_to_fly') }}</h3>
-                <p>{{ tr('learn_to_fly_text') }}</p>
-                <a href="{{ docs_root }}reference/tutorial.html" class="btn btn-lg btn-phalcon">{{ tr('try_tutorial') }}</a>
+        <div class=" col-md-12 white-bg">
+            <!-- Features Left -->
+            <div class="col-sm-5">
+                <h2 class="verticle-line">
+                    Data & storage
+                </h2>
+                <ul class="feature-list">
+                    <li class="data_storage orm">
+                        <div class="feature-bullet">
+                            <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>ORM</h3>
+                            <p>
+                                Object Relational Mapping
+                            </p>
+                        </div>
+                    </li>
+                    <li class="data_storage phql">
+                        <div class="feature-bullet">
+                            <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>{{ tr("phql") }}</h3>
+                            <p>
+                                Phalcon Query Language, PhalconQL
+                            </p>
+                        </div>
+                    </li>
+                    <li class="data_storage odm">
+                        <div class="feature-bullet">
+                            <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>{{ tr("odm_for_mongo") }}</h3>
+                            <p>
+                                Object Document Mapping
+                            </p>
+                        </div>
+                    </li>
+                    <li class="data_storage transactions">
+                        <div class="feature-bullet">
+                            <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>{{ tr("transactions") }}</h3>
+                            <p>
+                                Transactions in Phalcon allow you to commit all operations.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="data_storage cache">
+                        <div class="feature-bullet">
+                            <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>Cache</h3>
+                            <p>
+                                Improve your performance with someone cache system
+                            </p>
+                        </div>
+                    </li>
+                    <li class="data_storage memcache">
+                        <div class="feature-bullet">
+                            <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
+                        </div>
+                        <div class="feature-content">
+                            <h3>Memcache</h3>
+                            <p>
+                                Allows to cache output fragments
+                            </p>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <div class="col-xs-12 col-sm-4 text-center">
-                <!--<img src="/images/zephir.png" alt="Zephir Language"/>-->
-                <h3>{{ tr('meet_zephir') }}</h3>
-                <p>{{ tr('meet_zephir_text') }}</p>
-                <a href="http://zephir-lang.com" class="btn btn-lg btn-phalcon">{{ tr('visit_website') }}</a>
-            </div>
-            <div class="col-xs-12 col-sm-4 text-center">
-                <!--<i class="icon-todo-fa fa fa-thumbs-o-up icon-huge"></i>-->
-                <h3>{{ tr('help_to_fly') }}</h3>
-                <p>{{ tr('help_to_fly_text') }}</p>
-                <a href="https://pledgie.com/campaigns/27405" target="_blank" class="btn btn-lg btn-phalcon">Pledgie</a> <b>{{ tr('or') }}</b>
-                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="display: inline" target="_blank">
-                    <input type="hidden" name="cmd" value="_s-xclick" />
-                    <input type="hidden" name="hosted_button_id" value="7LSYMNMFZNG8W" />
-                    <button class="btn btn-lg btn-phalcon" type="submit" title="PayPal — The safer, easier way to pay online.">PayPal</button>
-                </form>
+
+            <div class="col-sm-7">
+                {% include "partials/components/orm.volt" %}
+                {% include "partials/components/phql.volt" %}
+                {% include "partials/components/odm.volt" %}
+                {% include "partials/components/transactions.volt" %}
+                {% include "partials/components/cache.volt" %}
+                {% include "partials/components/memcache.volt" %}
             </div>
         </div>
     </div>
+</section>
 
+<!-- =========================
+     Section3 - Features
+============================== -->
+<section id="feature-section" class="codesamples">
+  <div class="container">
+    <div class=" col-md-12 white-bg">
+        <!-- Features Left -->
+        <div class="col-sm-5">
+
+            <h2 class="verticle-line">
+                Views & frontend
+            </h2>
+
+            <ul class="feature-list">
+                <li class="views_front_end templates">
+                    <div class="feature-bullet">
+                        <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
+                    </div>
+                    <div class="feature-content">
+                        <h3>{{ tr("template_engines") }}</h3>
+                        <p>
+                            Views represent the user interface of your application
+                        </p>
+                    </div>
+                </li>
+                <li class="views_front_end volt">
+                    <div class="feature-bullet">
+                        <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
+                    </div>
+                    <div class="feature-content">
+                        <h3>
+                            {{ tr("template_engine_volt") }}
+                        </h3>
+                        <p>
+                            Template engine builded in C
+                        </p>
+                    </div>
+                </li>
+                <li class="views_front_end i18n">
+                    <div class="feature-bullet">
+                        <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
+                    </div>
+                    <div class="feature-content">
+                        <h3>{{ tr("i18n") }}</h3>
+                        <p>
+                            Part of creating a localized application is to produce concatenated.
+                        </p>
+                    </div>
+                </li>
+                <li class="views_front_end forms">
+                    <div class="feature-bullet">
+                       <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
+                    </div>
+                    <div class="feature-content">
+                        <h3>
+                            {{ tr("forms_builder") }}
+                        </h3>
+                        <p>
+                            Phalcon provides a set of built-in elements to use in your forms.
+                        </p>
+                    </div>
+                </li>
+                <li class="views_front_end flash">
+                    <div class="feature-bullet">
+                        <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
+                    </div>
+                    <div class="feature-content">
+                        <h3>
+                            {{ tr("flash_messages") }}
+                        </h3>
+                        <p>
+                            Flash messages are used to notify the user about the state of actions.
+                        </p>
+                    </div>
+               </li>
+           </ul>
+      </div>
+      <!-- /End Features Left -->
+
+      <!-- Features Right -->
+      <div class="col-sm-7">
+          {% include "partials/components/templates.volt" %}
+          {% include "partials/components/volt_template.volt" %}
+          {% include "partials/components/i18n.volt" %}
+          {% include "partials/components/forms.volt" %}
+          {% include "partials/components/flashmessages.volt" %}
+      </div>
+      <!-- /End Features Right -->
+  </div>
+</div>
+</section>
+
+<!-- =========================
+     Section3 - Features
+============================== -->
+<section id="feature-section" class="codesamples">
+  <div class="container">
+    <div class=" col-md-12 white-bg">
+        <!-- Features Left -->
+        <div class="col-sm-5">
+            <h2 class="verticle-line">More...</h2>
+
+        <ul class="feature-list">
+          <li class="more_components acl">
+            <div class="feature-bullet">
+                <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
+            </div>
+            <div class="feature-content">
+                <h3>Acl</h3>
+                <p>
+                    Access Control List
+                </p>
+            </div>
+          </li>
+        <li class="more_components sharding">
+            <div class="feature-bullet">
+                <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
+            </div>
+            <div class="feature-content">
+                <h3>Sharding</h3>
+                <p>
+                    To shard the data consist into splitting the data according to a criteria.
+                </p>
+            </div>
+          </li>
+          <li class="more_components crypt">
+              <div class="feature-bullet">
+                  <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
+              </div>
+            <div class="feature-content">
+                <h3>Crypt</h3>
+                <p>Provides encryption facilities to phalcon applications</p>
+            </div>
+          </li>
+          <li class="more_components events">
+              <div class="feature-bullet">
+                  <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
+              </div>
+            <div class="feature-content">
+                <h3>Events</h3>
+                <p>
+                    Execution of most of the other components of the framework by creating “hook points”.
+                </p>
+            </div>
+          </li>
+          <li class="more_components queueing">
+              <div class="feature-bullet">
+                  <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
+              </div>
+            <div class="feature-content">
+                <h3>Queueing - background process</h3>
+                <p>
+                    The best solution here is to implement background jobs.
+                </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- /End Features Left -->
+
+      <!-- Features Right -->
+      <div class="col-sm-7">
+          {% include "partials/components/acl.volt" %}
+          {% include "partials/components/sharding.volt" %}
+          {% include "partials/components/crypt.volt" %}
+          {% include "partials/components/events.volt" %}
+          {% include "partials/components/queueing.volt" %}
+      </div>
+      <!-- /End Features Right -->
+  </div>
+</div>
+</section>
+
+<!-- =========================
+     Section4 - Design
+============================== -->
+<section>
+  <div class="container">
+    <div class="col-md-12 red-bg">
+
+        <!-- HEADING -->
+        <h2>A polling app built from scratch in < 15 min</h2>
+        <p>Watch the demo video</p>
+        <div class="separator"></div>
+
+      <!-- Video -->
+        <div class="video-img"><img alt="" src="{{ cdn_url }}images/flat_v3/laptop.png">
+            <div class="video">
+             <iframe src="https://player.vimeo.com/video/63022489?color=ffffff" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!-- =========================
+     Section5 - Benifits
+============================== -->
+<section>
+  <div class="container">
+    <div class="white-bg">
+
+        <!-- Section Heading -->
+        <h2>
+            Come join our vibrant developer community!
+        </h2>
+        <p>
+            Community contributed with Extensions, Plugins, Adapters, VM, examples, source code... and more
+        </p>
+        <br>
+        <div class="clearfix">
+
+            <!-- Benifit1 -->
+            <div class="col-md-4 community">
+                <a href="http://forum.phalconphp.com/">
+                    <div class="benifit-icon">
+                        <img alt="" src="{{ cdn_url }}images/chat.png" width="60" height="60">
+                    </div>
+                    <h3>
+                        Forum
+                    </h3>
+                </a>
+            </div>
+
+            <div class="col-md-4 community">
+                <a href="https://github.com/phalcon/cphalcon">
+                    <div class="benifit-icon">
+                        <img alt="" src="{{ cdn_url }}images/github_black.png" width="60" height="60" style="border-radius: 25px;">
+                    </div>
+                    <h3>
+                        Git Hub
+                    </h3>
+                </a>
+            </div>
+            <!-- /End Benifit1 -->
+
+            <!-- Benifit2 -->
+            <div class="col-md-4 community">
+                <a href="http://stackoverflow.com/questions/tagged/phalcon">
+                    <div class="benifit-icon">
+                        <img alt="" src="{{ cdn_url }}images/stackoverflow.png" width="60" height="60" style="border-radius: 25px;">
+                    </div>
+                    <h3>
+                        Stack Overflow
+                    </h3>
+                </a>
+            </div>
+            <!-- /End Benifit2 -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     Section6 - Clients
+============================== -->
+<section>
+  <div class="container">
+    <div class="col-md-12 white-bg">
+        <h2>Phalcon contributors</h2>
+        {{ partial('partials/contributors') }}
+    </div>
+  </div>
 </section>
