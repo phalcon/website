@@ -42,10 +42,10 @@
                 </p>
 
                 <div class="design">
-                    <span>{{ tr('designed_by') }}</span>
+                    <span>Website {{ tr('designed_by') }}</span>
                 </div>
                 <a class="license" href="http://loudertech.com/" target="_blank" title="">
-                    <span>loudertech.com</span>
+                    <span>LouderTech SAS</span>
                 </a>
             </div>
         </div>

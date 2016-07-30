@@ -24,7 +24,7 @@
 .hljs-request,
 .hljs-status,
 .clojure .hljs-attribute {
-  color: #96cbfe;
+  color: #BA5BDA;
 }
 
 .hljs-sub .hljs-keyword,
@@ -42,7 +42,7 @@
 .apache .hljs-cbracket,
 .hljs-date,
 .coffeescript .hljs-attribute {
-  color: #a8ff60;
+  color: #86BA5A;
 }
 
 .hljs-subst {
@@ -66,7 +66,7 @@
 .hljs-phpdoc,
 .hljs-dartdoc,
 .nginx .hljs-built_in {
-  color: #ffffb6;
+  color: #E1AA3C;
 }
 
 .hljs-symbol,

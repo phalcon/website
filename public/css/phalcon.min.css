@@ -12,10 +12,10 @@
 .codesamples ul.features-positive { list-style-image: url("//static.phalconphp.com/www/images/check.png"); }
 .codesamples ul.features-negative { list-style-image: url("//static.phalconphp.com/www/images/remove.png"); }
 .codesamples ul.features li { margin-bottom: 5px; }
-.codesamples pre { background-color: #242424; -webkit-border-radius: 25px; -moz-border-radius: 25px; -ms-border-radius: 25px; border-radius: 25px; }
-.codesamples code { background-color: #242424; }
+.codesamples pre { background-color: #1E2128; -webkit-border-radius: 25px; -moz-border-radius: 25px; -ms-border-radius: 25px; border-radius: 25px; }
+.codesamples code { background-color: #1E2128; }
 .codesamples .codesample-header { text-align: center; }
-.codesamples .codesample-header h3 { display: inline-block; padding: 6px 32px; text-align: center; background-color: #285346; color: #ffffff; margin: 45px auto 15px auto; -webkit-border-radius: 25px; -moz-border-radius: 25px; -ms-border-radius: 25px; border-radius: 25px; }
+.codesamples .codesample-header h3 { display: inline-block; padding: 6px 32px; text-align: center; background-color: #009FC8; color: #ffffff; margin: 45px auto 15px auto; -webkit-border-radius: 25px; -moz-border-radius: 25px; -ms-border-radius: 25px; border-radius: 25px; }
 .codesamples .codesample-body p { padding: 5px 25px 10px 25px; color: #696769; font-size: 15px; line-height: 24px; }
 
 .contributors {
@@ -110,7 +110,7 @@ nav:hover{
 }
 .footer ul li a {
     font-size: 13px;
-    color: #6d7481
+    color: #fafafa;
 }
 .footer ul li a:hover {
     color: #c0c6cf;
@@ -127,12 +127,12 @@ nav:hover{
 .footer .license {
     padding-left: 90px;
     background-size: 74px 85px;
-    color: #6d7481;
+    color: #fafafa;
     font-size: 12px;
     line-height: 18px
 }
 .footer .license a {
-    color: #6d7481;
+    color: #fafafa;
     border-bottom: 1px dotted #6d7481
 }
 .footer .license a:hover {

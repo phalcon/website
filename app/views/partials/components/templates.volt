@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <pre>
-                    <code class="php">
+                    <code class="html">
 {{"<html>
     <body>
     <div class='top'><?php $this->partial('shared/ad_banner'); ?></div>
