@@ -6,7 +6,8 @@
     </div>
     <div class="codesample-body">
         <p>
-            In addition to its ability to map tables in relational databases, Phalcon can map documents from NoSQL databases. The ODM offers a CRUD functionality, events, validations among other services.
+            In addition to its ability to map tables in relational databases, Phalcon can map documents to a MongoDB database.
+            The ODM offers a CRUD functionality, events, validations among other services.
         </p>
         <div class="row">
             <div class="col-xs-12">

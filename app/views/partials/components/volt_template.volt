@@ -6,7 +6,9 @@
     </div>
     <div class="codesample-body">
         <p>
-            Volt is an ultra-fast and designer friendly templating language written in C for PHP. It provides you a set of helpers to write views in an easy way. Volt is highly integrated with other components of Phalcon, just as you can use it as a stand-alone component in your applications.
+            Volt is an ultra-fast and designer friendly templating language written in Zephir/C for PHP. It provides you a set of helpers 
+            to write views in an easy way. Volt is highly integrated with other components of Phalcon,
+            just as you can use it as a stand-alone component in your applications.
         </p>
         <div class="row">
             <div class="col-xs-12">

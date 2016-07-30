@@ -42,7 +42,7 @@ try {
 } catch (TxFailed $e) {
     echo "Failed, reason: ", $e->getMessage();
 }
-                    </code>
+</code>
                 </pre>
             </div>
         </div>

@@ -12,11 +12,15 @@
             <div class="col-xs-12">
                 <pre>
                     <code class="php">
-$app = new Phalcon\Mvc\Micro();
+use Phalcon\Mvc\Micro;
 
-//Returning data in JSON
-$app->get('/get/data.json', function () {
-    echo json_encode(array("some", "important", "data"));
+$app = new Micro();
+
+// Returning data in JSON
+$app->get('/check/status', function () {
+    return $this->response->setJsonContent([
+        "status" => "important"
+    ]);
 });
 
 $app->handle();

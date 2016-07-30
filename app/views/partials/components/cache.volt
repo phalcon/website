@@ -6,7 +6,8 @@
     </div>
     <div class="codesample-body">
         <p>
-            Every application is different, we could have models whose data change frequently and others that rarely change. Accessing database systems is often one of the most common bottlenecks in terms of performance
+            The cache component allows faster access to frequently used or already processed data. It supports many
+            backends such as Redis, Memcached, Mongo, Files, Apc and more
         </p>
         <div class="row">
             <div class="col-xs-12">

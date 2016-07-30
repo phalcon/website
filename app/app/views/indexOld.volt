@@ -14,9 +14,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="phalcon-logo" href="/{{ language }}/">
-                                <!--<img src="/images/phalcon-logo-text.png" alt="Phalcon PHP"/>-->
-                            </a>
+                            <a class="phalcon-logo" href="{{ url() }}/"></a>
                         </div>
 
                         <div class="collapse navbar-collapse navbar-right" id="main-menu-container">

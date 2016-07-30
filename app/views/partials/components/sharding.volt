@@ -6,7 +6,7 @@
     </div>
     <div class="codesample-body">
         <p>
-            In Phalcon, all models can belong to the same database connection or have an individual one. Actually, when Phalcon\Mvc\Model needs to connect to the database it requests the “db” service in the application’s services container. You can overwrite this service setting it in the initialize method:
+            Attach models to different database 
         </p>
         <div class="row">
             <div class="col-xs-12">

@@ -6,7 +6,8 @@
     </div>
     <div class="codesample-body">
         <p>
-            Each element in the form can be rendered as required by the developer. Internally, Phalcon\Tag is used to produce the correct HTML for each element and you can pass additional HTML attributes as the second parameter of render():
+            Each element in the form can be rendered as required by the developer. Internally, Phalcon\Tag is used to produce the correct HTML
+            for each element and you can pass additional HTML attributes as the second parameter of render():
         </p>
         <div class="row">
             <div class="col-xs-12">

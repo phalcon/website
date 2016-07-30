@@ -12,13 +12,13 @@
                 </h3>
                 <ul class="features features-positive">
                     <li>
-                        C-extensions are loaded together with PHP one time on the web server’s daemon start process
+                        Zephir/C extensions are loaded together with PHP one time on the web server’s daemon start process
                     </li>
                     <li>
                         Classes and functions provided by the extension are ready to use for any application
                     </li>
                     <li>
-                        The code is compiled and isn’t interpreted because is already compiled to a specific platform and processor
+                        The code is compiled and isn’t interpreted because it's already compiled to a specific platform and processor
                     </li>
                     <li>
                         Thanks to its low-level architecture and optimizations

@@ -6,7 +6,7 @@
     </div>
     <div class="codesample-body">
         <p>
-            This method is also implemented in the Plugin. Now we are going to explain step-by-step how we built the access control list (ACL):
+            This is how you can built the access control list (ACL):
         </p>
         <div class="row">
             <div class="col-xs-12">

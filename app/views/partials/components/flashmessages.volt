@@ -6,7 +6,7 @@
     </div>
     <div class="codesample-body">
         <p>
-            Usually the Flash Messaging service is requested from the services container, if you’re using Phalcon\Di\FactoryDefault then Phalcon\Flash\Direct is automatically registered as “flash” service:
+            Use the flash notifier to show notifications to a user in a web application:
         </p>
         <div class="row">
             <div class="col-xs-12">

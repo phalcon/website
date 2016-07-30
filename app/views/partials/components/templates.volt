@@ -6,7 +6,9 @@
     </div>
     <div class="codesample-body">
         <p>
-            Views represent the user interface of your application. Views are often HTML files with embedded PHP code that perform tasks related solely to the presentation of the data. Views handle the job of providing data to the web browser or other tool that is used to make requests from your application.
+            Views represent the user interface of your application. Views are often HTML files with embedded PHP
+            code that perform tasks related solely to the presentation of the data. Views handle the job of providing
+            data to the web browser or other tool that is used to make requests from your application.
         </p>
         <div class="row">
             <div class="col-xs-12">

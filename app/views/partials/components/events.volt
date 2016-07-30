@@ -6,7 +6,8 @@
     </div>
     <div class="codesample-body">
         <p>
-            An EventsManager allows us to attach listeners to a particular type of event. The type that interests us now is “dispatch”. The following code filters all events produced by the Dispatcher:
+            An EventsManager allows us to attach listeners to a particular type of event.
+            The type that interests us now is “dispatch”. The following code filters all events produced by the Dispatcher:
         </p>
         <div class="row">
             <div class="col-xs-12">

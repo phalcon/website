@@ -6,13 +6,13 @@
     </div>
     <div class="codesample-body">
         <p>
-            Phalcon provides encryption facilities via the Phalcon\Crypt component. This class offers simple object-oriented wrappers to the openssl PHP’s encryption library.
+            Phalcon provides encryption facilities via the Phalcon\Crypt component. This class offers simple object-oriented
+            wrappers to the openssl PHP’s encryption library.
         </p>
         <div class="row">
             <div class="col-xs-12">
                 <pre>
                     <code class="php">
-
 use Phalcon\Crypt;
 
 // Create an instance

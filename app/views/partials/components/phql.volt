@@ -6,7 +6,8 @@
     </div>
     <div class="codesample-body">
         <p>
-            In addition to its ability to map tables in relational databases, Phalcon can map documents from NoSQL databases. The ODM offers a CRUD functionality, events, validations among other services.
+            PHQL is a high-level, object-oriented SQL dialect that allows to write queries using a standardized SQL-like language. PHQL is implemented as a parser (written in C) that translates syntax in that of the target RDBMS.
+            To achieve the highest performance possible, Phalcon provides a parser that uses the same technology as SQLite. This technology provides a small in-memory parser with a very low memory footprint that is also thread-safe.
         </p>
         <div class="row">
             <div class="col-xs-12">

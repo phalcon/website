@@ -31,7 +31,6 @@
 
     <link href="{{ cdn_url }}images/favicon.ico" rel="icon" type="image/x-ico"/>
 
-
     {{ get_title() }}
     <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework">
 

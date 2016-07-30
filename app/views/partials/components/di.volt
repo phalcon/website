@@ -6,7 +6,8 @@
     </div>
     <div class="codesample-body">
         <p>
-            Phalcon is built upon a powerful yet easy to understand and use pattern called Dependency Injection. Initialize or define services once - and use them virtually anywhere throughout the application.
+            Phalcon is built upon a powerful yet easy to understand and use pattern called Dependency Injection.
+            Initialize or define services once - and use them virtually anywhere throughout the application.
         </p>
         <div class="row">
             <div class="col-xs-12">

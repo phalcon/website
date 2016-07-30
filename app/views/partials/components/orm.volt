@@ -6,7 +6,8 @@
     </div>
     <div class="codesample-body">
         <p>
-            In Phalcon, relationships must be defined in the initialize() method of a model. The methods belongsTo(), hasOne(), hasMany() and hasManyToMany() define the relationship between one or more fields from the current model to fields in another model. Each of these methods requires 3 parameters: local fields, referenced model, referenced fields.
+            A powerful ORM is provided by Phalcon allowing you to manipulate database records
+            as classes and objects. MySQL, PostgreSQL and SQLite are supported out of the box.
         </p>
         <div class="row">
             <div class="col-xs-12">

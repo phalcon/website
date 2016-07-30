@@ -2,10 +2,17 @@
 <link href="{{ cdn_url }}css/phalcon.min.css" rel='stylesheet' type='text/css'>
 
 <!-- =========================
-     Background Video
+     Background Images
 ============================== -->
 
-<div class="video-background" data-vide-bg="{{ cdn_url }}video/phalcon.mp4"></div>
+<ul class="bg-slideshow">
+    <li><span>Image 01</span></li>
+    <li><span>Image 02</span></li>
+    <li><span>Image 03</span></li>
+    <li><span>Image 04</span></li>
+    <li><span>Image 05</span></li>
+    <li><span>Image 06</span></li>
+</ul>
 
 <!-- =========================
      Section1 - Header
@@ -15,7 +22,7 @@
       <div class="row">
             <!-- Header top -->
             <div class="col-sm-3 logo">
-                <a href="#">
+                <a href="{{ url() }}">
                     <img alt="" class="logo-phalcon" src="{{ cdn_url }}images/phalcon1.png">
                 </a>
             </div>
@@ -35,26 +42,31 @@
             <!-- /End Header Top -->
             <!-- Header Content -->
             <div class="col-sm-12">
-                <h1>A full-stack PHP framework delivered</h1>
-                <h2>as a C-extension</h2>
+                <div align="center">
+                    <div style="max-width: 600px"><h1>{{ tr('header_tagline') }}</h1></div>
+                </div>
 
                 <!--<div class="separator red"></div>-->
                 <br>
 
                 <p>
-                    Its innovative architecture makes Phalcon the fastest PHP framework ever built! See for yourself
+                    {{ tr('header_slogan') }}
+                    <a id="bench-link" href="https://docs.phalconphp.com/" target="_blank">
+                        {{ tr('see_for_youself') }}
+                    </a>
                 </p>
 
                 <br>
                 <br>
                 <br>
 
-                <a href="{{ cdn_url }}download">
-                    <button class="view-detail btn">
-                        Download
-                        <i class="glyphicon glyphicon-save"></i>
-                    </button>
-                </a>
+                {{ link_to(['for': 'pages', 'id': 'the-difference-tm', 'pageSlug': 'download',
+                                'language': language], '<button class="view-detail btn"> <i class="fa fa-download"></i> '~ tr('get_phalcon') ~ ' 3.0</button>',
+                                'class': 'btn btn-lg btn-phalcon btn-download') }}
+                <div class="sublinks">
+                    {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], tr('download') ~ ' ' ~  release) }} |
+                    {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], tr('install_instructions')) }}
+                </div>
             </div>
          <!-- /End Header Content -->
       </div>
@@ -110,7 +122,7 @@
                     <p>
                         <a href="{{ cdn_url }}/es/about" style="color:#ffffff">
                             <img src='{{ cdn_url ~ 'images/drop.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' />
-                            Contribution
+                            Contribute
                         </a>
                     </p>
                 </div>
@@ -141,7 +153,7 @@
                         <div class="feature-content">
                             <h3>Low overhead</h3>
                             <p>
-                                Less memory consumption and CPU
+                                Low memory consumption and CPU comparted to traditional frameworks
                             </p>
                         </div>
                     </li>
@@ -152,7 +164,7 @@
                         <div class="feature-content">
                             <h3>MVC & HMVC</h3>
                             <p>
-                                Modules, Components, Models, View, Controlles
+                                Modules, components, models, views and controllers
                             </p>
                         </div>
                     </li>
@@ -174,7 +186,8 @@
                         <div class="feature-content">
                             <h3>Rest</h3>
                             <p>
-                                In this case, we will use a micro application to meet our goal.
+                                In this case, you can use either a micro or full stack application to meet your goal.
+                                In addition, a powerful set of HTTP helpers.
                             </p>
                         </div>
                     </li>
@@ -185,7 +198,7 @@
                         <div class="feature-content">
                             <h3>Autoloader</h3>
                             <p>
-                                Provides the autoloading mechanism.
+                                Provides the autoloading mechanism of PHP classes following PSR-4.
                             </p>
                         </div>
                     </li>
@@ -248,7 +261,7 @@
                         <div class="feature-content">
                             <h3>{{ tr("phql") }}</h3>
                             <p>
-                                Phalcon Query Language, PhalconQL
+                                The powerful and secure Phalcon Query Language, PHQL
                             </p>
                         </div>
                     </li>
@@ -259,7 +272,7 @@
                         <div class="feature-content">
                             <h3>{{ tr("odm_for_mongo") }}</h3>
                             <p>
-                                Object Document Mapping
+                                Object Document Mapping for MongoDB
                             </p>
                         </div>
                     </li>
@@ -270,7 +283,7 @@
                         <div class="feature-content">
                             <h3>{{ tr("transactions") }}</h3>
                             <p>
-                                Transactions in Phalcon allow you to commit all operations.
+                                Transactions in Phalcon allows to keep the data integraty safe.
                             </p>
                         </div>
                     </li>
@@ -281,18 +294,7 @@
                         <div class="feature-content">
                             <h3>Cache</h3>
                             <p>
-                                Improve your performance with someone cache system
-                            </p>
-                        </div>
-                    </li>
-                    <li class="data_storage memcache">
-                        <div class="feature-bullet">
-                            <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
-                        </div>
-                        <div class="feature-content">
-                            <h3>Memcache</h3>
-                            <p>
-                                Allows to cache output fragments
+                                Improve your performance with many of the backend caches that Phalcon provides
                             </p>
                         </div>
                     </li>
@@ -305,7 +307,6 @@
                 {% include "partials/components/odm.volt" %}
                 {% include "partials/components/transactions.volt" %}
                 {% include "partials/components/cache.volt" %}
-                {% include "partials/components/memcache.volt" %}
             </div>
         </div>
     </div>
@@ -345,7 +346,7 @@
                             {{ tr("template_engine_volt") }}
                         </h3>
                         <p>
-                            Template engine builded in C
+                            A template engine inspered in Jinja but built in C for PHP
                         </p>
                     </div>
                 </li>
@@ -356,7 +357,7 @@
                     <div class="feature-content">
                         <h3>{{ tr("i18n") }}</h3>
                         <p>
-                            Part of creating a localized application is to produce concatenated.
+                            Translate your applications to many languages easily
                         </p>
                     </div>
                 </li>
@@ -369,7 +370,7 @@
                             {{ tr("forms_builder") }}
                         </h3>
                         <p>
-                            Phalcon provides a set of built-in elements to use in your forms.
+                            Create HTML forms with Minor Effort
                         </p>
                     </div>
                 </li>
@@ -419,9 +420,9 @@
                 <img src='{{ cdn_url ~ 'images/favorite.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' class="img-star" />
             </div>
             <div class="feature-content">
-                <h3>Acl</h3>
+                <h3>ACL</h3>
                 <p>
-                    Access Control List
+                    Access Control List allows users to access the modules they're authorized to
                 </p>
             </div>
           </li>
@@ -432,7 +433,7 @@
             <div class="feature-content">
                 <h3>Sharding</h3>
                 <p>
-                    To shard the data consist into splitting the data according to a criteria.
+                    Connect, store and retrieve data from many database systems at the same time
                 </p>
             </div>
           </li>
@@ -442,7 +443,7 @@
               </div>
             <div class="feature-content">
                 <h3>Crypt</h3>
-                <p>Provides encryption facilities to phalcon applications</p>
+                <p>Encrypt/Decrypt important data to keep them safe from unauthorized third-parties</p>
             </div>
           </li>
           <li class="more_components events">
@@ -452,7 +453,8 @@
             <div class="feature-content">
                 <h3>Events</h3>
                 <p>
-                    Execution of most of the other components of the framework by creating “hook points”.
+                    Extend the most of the framework components by setting “hook points”. Create your own events and
+                    make your application more flexible and powerful
                 </p>
             </div>
           </li>
@@ -463,7 +465,8 @@
             <div class="feature-content">
                 <h3>Queueing - background process</h3>
                 <p>
-                    The best solution here is to implement background jobs.
+                    Use the built-in queueing system in Phalcon to schedule jobs and reduce the
+                    load of your web server
                 </p>
             </div>
           </li>
@@ -540,7 +543,7 @@
                         <img alt="" src="{{ cdn_url }}images/github_black.png" width="60" height="60" style="border-radius: 25px;">
                     </div>
                     <h3>
-                        Git Hub
+                        Github
                     </h3>
                 </a>
             </div>
@@ -570,6 +573,7 @@
   <div class="container">
     <div class="col-md-12 white-bg">
         <h2>Phalcon contributors</h2>
+        <p>Phalcon is improved everyday by our amazing community</p>
         {{ partial('partials/contributors') }}
     </div>
   </div>
