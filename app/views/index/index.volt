@@ -120,7 +120,7 @@
             <div class="col-md-3">
                 <div class="advertised">
                     <p>
-                        <a href="{{ cdn_url }}/es/about" style="color:#ffffff">
+                        <a href="{{ url(['for': 'pages', 'pageSlug': 'about', 'language': language]) }}" style="color:#ffffff">
                             <img src='{{ cdn_url ~ 'images/drop.png' }}' title='{{ tr('hosting_layershift_title') }}' alt='{{ tr('hosting_layershift_title') }}' />
                             Contribute
                         </a>
