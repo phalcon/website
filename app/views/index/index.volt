@@ -32,10 +32,10 @@
                 </div>
             </div>
             <div class="col-sm-2 social-icons-align" style="margin-top:15px;">
-                <a href="https://github.com/phalcon/cphalcon/">
+                <a href="https://twitter.com/phalconphp">
                     <img alt="" src="{{ cdn_url }}images/twitter.png">
                 </a>
-                <a href="https://twitter.com/phalconphp">
+                <a href="https://github.com/phalcon/cphalcon/">
                     <img alt="" src="{{ cdn_url }}images/github.png">
                 </a>
             </div>
