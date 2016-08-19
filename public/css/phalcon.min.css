@@ -115,6 +115,7 @@ nav:hover{
 .footer ul li a:hover {
     color: #c0c6cf;
     border-bottom: 1px dotted #c0c6cf
+    text-decoration: none;
 }
 .footer #license-wrapper {
     background: url(//static.phalconphp.com/www/images/phalcon3.png) 10px 0/74px 85px no-repeat
@@ -701,6 +702,10 @@ h2.form-title {
 	width: 100%;
 	margin: 0px;
 	text-align: center;
+}
+
+.advertised a:hover {
+	text-decoration: none;
 }
 
 /*---------------------------------------
