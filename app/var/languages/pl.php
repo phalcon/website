@@ -90,7 +90,7 @@
         'download_windows'                => 'Windows DLLs',
         'download_developer_tools'        => 'Developer Tools',
         'download_ide_stubs'              => 'Integracja z IDE',
-        'download_ubuntu'                 => 'To install Phalcon on Ubuntu you need to follow these steps:',
+        'download_ubuntu'                 => 'To install Phalcon on Ubuntu or Debian you need to follow these steps:',
         'download_ubuntu_1'               => 'If you are missing apt-add-repository run the following command:',
         'download_note'                   => 'Phalcon jest rozszerzeniem C, a więc potrzebujesz ściągnąć go w postacie binarnej dla swojej platformy, lub skompilować go ze źródła.',
         'download_compilation'            => 'Kompilowanie',
@@ -156,12 +156,12 @@
         'consulting_lezgro_3'             => "Product managers, CTOs, and non-technical founders involve <a href=':1:'>LEZGRO</a> to build products that stand out, quickly and with a high quality.",
         'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
         'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
-        
+
         'consulting_mctekk_header'        => 'MCTekK has already delivered various high end Phalcon projects, with their main strengths being web and mobile development.',
         'consulting_mctekk_1'             => 'MCTekK jumped on the Phalcon wagon since day one. From its conception we saw the great advantages that Phalcon was offering and could offer in the future.',
         'consulting_mctekk_2'             => 'We have ample experience with Phalcon and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning Phalcon to help you improve your readiness, quickness and quality.',
         'consulting_mctekk_3'             => 'Contact us thourgh our <a href=":1:">website</a>, where you can take a look at the projects we have been involved in.',
-        
+
         'requirements_analysis_1'         => 'Jednym z największych problemów, z którym muszą mierzyć się developerzy jest fakt, że wiele projektów nie ma odpowiednio zdefiniowanych wymagań. Dlatego też, często to co klient chce,  jest zupełnie inne od tego,  co deweloper rozumie, a następnie wykonuje i dostarcza.',
         'requirements_analysis_2'         => 'Oferujemy analizę wymagań projektów, omówienie ich z klientami i przeniesienie ich wizji do specyfikacji dla developerów.',
         'implementation_1'                => 'Jeśli chcesz wynająć Nas do  rozwoju Twojej aplikacji, bylibyśmy bardziej niż szczęśliwi mogąc to zrobić. Korzystając z najnowszych technologii, możemy zaoferować solidne rozwiązanie dla Twojego zadania lub projektu, wraz z przeprowadzeniem testów i stworzeniem dokumentacji.',

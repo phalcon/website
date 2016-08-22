@@ -91,7 +91,7 @@
         'download_windows'                => 'Windows DLLs',
         'download_developer_tools'        => 'Developer Tools',
         'download_ide_stubs'              => 'IDE stubs',
-        'download_ubuntu'                 => 'To install Phalcon on Ubuntu you need to follow these steps:',
+        'download_ubuntu'                 => 'To install Phalcon on Ubuntu or Debian you need to follow these steps:',
         'download_ubuntu_1'               => 'If you are missing apt-add-repository run the following command:',
         'download_ubuntu_2'               => 'If you wish to install the legacy version of Phalcon (1.x) use the following PPA:',
         'download_note'                   => 'Phalcon is a C extension, so you need to download a binary for your platform or compile it from source code.',
@@ -160,7 +160,7 @@
         'consulting_lezgro_3'             => "Product managers, CTOs, and non-technical founders involve LEZGRO to build products that stand out, quickly and with a high quality.",
         'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
         'consulting_lezgro_5'             => "Contact LEZGRO through our <a href=':1:'>website</a>, where you can also see samples and testimonials of our work.",
-        
+
         'consulting_mctekk_header'        => 'MCTekK has already delivered various high end Phalcon projects, with their main strengths being web and mobile development.',
         'consulting_mctekk_1'             => 'MCTekK jumped on the Phalcon wagon since day one. From its conception we saw the great advantages that Phalcon was offering and could offer in the future.',
         'consulting_mctekk_2'             => 'We have ample experience with Phalcon and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning Phalcon to help you improve your readiness, quickness and quality.',
