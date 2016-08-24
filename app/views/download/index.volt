@@ -9,13 +9,12 @@
             <div class="highlight1">
 
                 <pre>
-                    <code class="bash">
-                        curl -s https://packagecloud.io/install/repositories/phalcon/stable/script.deb.sh | sudo bash
+                    <code class="bash">curl -s https://packagecloud.io/install/repositories/phalcon/stable/script.deb.sh | sudo bash
 
-                        sudo apt-get install php5-phalcon
-                        # Ubuntu 16.04+ or Debian 9+
-                        sudo apt-get install php7.0-phalcon
-                    </code>
+sudo apt-get install php5-phalcon
+
+# Ubuntu 16.04+ or Debian 9+
+sudo apt-get install php7.0-phalcon</code>
                 </pre>
             </div>
 
@@ -55,22 +54,22 @@ sudo apt-get install python-software-properties</code></pre>
             <p>
                 <div class="highlight1">
                     <pre><code class="bash"># Ubuntu
-    sudo apt-get install php5-dev php5-mysql gcc libpcre3-dev
+sudo apt-get install php5-dev php5-mysql gcc libpcre3-dev
 
 # Fedora
-    sudo yum install php-devel php-mysqlnd gcc libtool
+sudo yum install php-devel php-mysqlnd gcc libtool
 
 # RHEL
-    sudo yum install php-devel php-mysql gcc libtool
+sudo yum install php-devel php-mysql gcc libtool
 
 # Suse
-    yast2 -i php5-pear php5-devel php5-mysql gcc
+yast2 -i php5-pear php5-devel php5-mysql gcc
 
 # OS X (Using Homebrew)
-    brew tap homebrew/dupes
-    brew tap homebrew/versions
-    brew tap homebrew/php
-    brew install php5x php5x-phalcon # Where "x" - minor number of PHP</code></pre>
+brew tap homebrew/dupes
+brew tap homebrew/versions
+brew tap homebrew/php
+brew install php5x php5x-phalcon # Where "x" - minor number of PHP</code></pre>
                 </div>
             </p>
 
