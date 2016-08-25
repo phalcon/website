@@ -91,6 +91,7 @@
         'download_developer_tools'        => 'Entwicklungswerkzeuge',
         'download_ide_stubs'              => 'IDE-Integration',
         'download_ubuntu'                 => 'Um Phalcon unter Ubuntu zu installieren folge diesen Schritten:',
+        'download_ubuntu_or_debian'       => 'Ubuntu or Debian',
         'download_ubuntu_1'               => 'Wenn dir apt-add-repository fehlt führe folgendes aus:',
         'download_note'                   => 'Phalcon ist eine in C geschriebene Erweiterung, daher musst Du die passende Binary herunterladen oder neu kompilieren.',
         'download_compilation'            => 'Kompilieren',
@@ -102,9 +103,6 @@
         'download_compilation_11'         => '1. Um die Erweiterung zu kompilieren sind folgende Schritte erforderlich:',
         'download_compilation_12'         => '2. Füge die Erweiterung zur php.ini hinzu:',
         'download_compilation_13'         => '3. Zum Schluss noch den Webserver neu starten',
-        'download_debian'                 => 'Debian',
-        'download_debian_1'               => " <a href=':1:'>FortRabbit</a> hat netterweise ein <a href=':2:'>Repository</a> bereitgestellt.",
-        'download_debian_2'               => 'Das Debian-Paket heisst php5-phalcon.',
         'download_arch'                   => 'Arch Linux',
         'download_arch_1'                 => "Für ArchLinux ist ein <a href=':1:'>PKGBUILD</a> verfügbar.",
         'download_opensuse'               => 'OpenSUSE',
@@ -156,12 +154,12 @@
         'consulting_lezgro_3'             => "Produktmanager, CTOs, und technikferne Gründer ziehen <a href=':1:'>LEZGRO</a> heran um herausragende Produkte zügig und mit hoher Qualität zu erschaffen.",
         'consulting_lezgro_4'             => "Da wir nun positive Erfahrungen mit Phalcon sammeln konnten, können wir Dir dazu raten mit Phalcon zu arbeiten und deinem Phalcon basierten Produkt zur Marktreife verhelfen.",
         'consulting_lezgro_5'             => "Nimm Kontakt zu LEZGRO über ihre <a href=':1:'>Webseite</a> auf, auf der du auch Beispiele und Erfahrungsberichte zu ihrer Arbeit sehen kannst.",
-        
+
         'consulting_mctekk_header'        => 'MCTekK has already delivered various high end Phalcon projects, with their main strengths being web and mobile development.',
         'consulting_mctekk_1'             => 'MCTekK jumped on the Phalcon wagon since day one. From its conception we saw the great advantages that Phalcon was offering and could offer in the future.',
         'consulting_mctekk_2'             => 'We have ample experience with Phalcon and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning Phalcon to help you improve your readiness, quickness and quality.',
         'consulting_mctekk_3'             => 'Contact us thourgh our <a href=":1:">website</a>, where you can take a look at the projects we have been involved in.',
-        
+
         'requirements_analysis_1'         => 'Eines der größten Probleme von Entwicklern bei der Realisierung von Projekten sind fehlende und nicht ausreichend definierte Anforderungen. Die Diskrepanz zwischen der Erwartung des Kunden und dem Ziel des Entwicklers ist häufig groß.',
         'requirements_analysis_2'         => 'Wir bieten Dir einen Dienst zur Analyse des Bedarfs, diskutieren mit den Kunden und übersetzen deren Vision in genaue Spezifikationen für Entwickler.',
         'implementation_1'                => 'Wenn Du uns mit der Entwicklung Ihrer Anwendung betrauen möchtest, werden wir dies gerne tun. Durch Nutzung aktuellster Technik bieten wir robuste Lösungen für Deine Aufgaben oder Projekte an. Neben der reinen Entwicklung vervollständigen wir diese mit Tests und Dokumentation.',

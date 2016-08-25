@@ -92,6 +92,7 @@
         'download_developer_tools'        => 'Developer Tools',
         'download_ide_stubs'              => 'Поддержка IDE',
         'download_ubuntu'                 => 'Для установки Phalcon на Ubuntu необходимо выполнить следующие действия:',
+        'download_ubuntu_or_debian'       => 'Ubuntu или Debian',
         'download_ubuntu_1'               => 'Если у вас отсутствует apt-add-repository,  выполните следующую команду:',
         'download_note'                   => 'Phalcon является PHP расширением на языке C, поэтому вам нужно скачать бинарный файл для вашей платформы или скомпилировать его из исходных кодов.',
         'download_compilation'            => 'Компиляция',
@@ -103,9 +104,6 @@
         'download_compilation_11'         => '1. Чтобы собрать расширение из исходного кода, выполните следующие действия:',
         'download_compilation_12'         => '2. Добавьте в файл php.ini:',
         'download_compilation_13'         => '3. Перезапустите веб сервер',
-        'download_debian'                 => 'Debian',
-        'download_debian_1'               => "Любезно предоставленный <a href=':1:'>FortRabbit</a> репозитарий находится  <a href=':2:'>здесь</a>",
-        'download_debian_2'               => 'Пакет называется php5-phalcon',
         'download_arch'                   => 'Arch Linux',
         'download_arch_1'                 => "Существует PKGBUILD для ArchLinux, доступное <a href=':1:'>здесь</a>",
         'download_opensuse'               => 'OpenSUSE',
@@ -157,12 +155,12 @@
         'consulting_lezgro_3'             => "Product managers, CTOs, and non-technical founders involve <a href=':1:'>LEZGRO</a> to build products that stand out, quickly and with a high quality.",
         'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
         'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
-        
+
         'consulting_mctekk_header'        => 'MCTekK has already delivered various high end Phalcon projects, with their main strengths being web and mobile development.',
         'consulting_mctekk_1'             => 'MCTekK jumped on the Phalcon wagon since day one. From its conception we saw the great advantages that Phalcon was offering and could offer in the future.',
         'consulting_mctekk_2'             => 'We have ample experience with Phalcon and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning Phalcon to help you improve your readiness, quickness and quality.',
         'consulting_mctekk_3'             => 'Contact us thourgh our <a href=":1:">website</a>, where you can take a look at the projects we have been involved in.',
-        
+
         'requirements_analysis_1'         => 'Одна из самых больших проблем, с которыми сталкиваются разработчики, является тот факт, что многие проекты не имеют чётко сформулированного технического задания. Поэтому, чаще всего, то, чего хочет клиент, полностью отличается от того, что понимает разработчик и, соответственно, реализует.',
         'requirements_analysis_2'         => 'Мы можем предложить услуги по анализу требований клиентов, обсуждению деталей с клиентами и реализации этих требований в виде конкретного технического задания для разработчиков.',
         'implementation_1'                => 'Если вы хотите нанять нас для разработки приложения, мы были бы более чем счастливы сделать это. Используя новейшие технологии, мы можем предложить надежное решение для вашей задачи или проекта с полным пакетом тестов и документации.',

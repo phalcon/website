@@ -91,6 +91,7 @@
         'download_developer_tools'        => '开发工具',
         'download_ide_stubs'              => 'IDE stubs',
         'download_ubuntu'                 => '如果要再Unbuntu上安装Phalcon，请按照以下步骤操作：',
+        'download_ubuntu_or_debian'       => 'Ubuntu or Debian',
         'download_ubuntu_1'               => '如果你没有apt-add-repository请执行以下command:',
         'download_note'                   => 'Phalcon是一个用C实现的扩展，所以您可以下载适合您机器的二进制格式文件或者使用源代码进行编译。',
         'download_compilation'            => '编译',
@@ -102,9 +103,6 @@
         'download_compilation_11'         => '1. 从C源代码创建扩展请按照下面的步骤:',
         'download_compilation_12'         => '2. 添加扩展到php.ini文件:',
         'download_compilation_13'         => '3. 最后，重启web服务器',
-        'download_debian'                 => 'Debian',
-        'download_debian_1'               => "<a href=':1:'>FortRabbit</a>在<a href=':2:'>这里</a>提供了一个repo",
-        'download_debian_2'               => '包的名字是php5-phalcon',
         'download_arch'                   => 'Arch Linux',
         'download_arch_1'                 => "ArchLinux下有一个PKGBUILD，<a href=':1:'>点击这里</a>",
         'download_opensuse'               => 'OpenSUSE',
@@ -156,12 +154,12 @@
         'consulting_lezgro_3'             => "Product managers, CTOs, and non-technical founders involve <a href=':1:'>LEZGRO</a> to build products that stand out, quickly and with a high quality.",
         'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
         'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
-        
+
         'consulting_mctekk_header'        => 'MCTekK has already delivered various high end Phalcon projects, with their main strengths being web and mobile development.',
         'consulting_mctekk_1'             => 'MCTekK jumped on the Phalcon wagon since day one. From its conception we saw the great advantages that Phalcon was offering and could offer in the future.',
         'consulting_mctekk_2'             => 'We have ample experience with Phalcon and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning Phalcon to help you improve your readiness, quickness and quality.',
         'consulting_mctekk_3'             => 'Contact us thourgh our <a href=":1:">website</a>, where you can take a look at the projects we have been involved in.',
-        
+
         'requirements_analysis_1'         => '开发人员面临的最大问题是很多项目都没有进行充分的需求调研。因此，往往客户的要求完全不同于开发人员的理解和其随后提供的开发结果。',
         'requirements_analysis_2'         => '我们提供的服务包含需求分析，参与客户讨论，并把他们的需求转换成详细的开发文档。',
         'implementation_1'                => '如果你想雇佣我们为您开发应用程序，我们将非常乐意。使用最新的技术，我们可以为您的任务或项目提供一个健壮的，经过完全测试的和完整文档的解决方案。',

@@ -91,6 +91,7 @@
         'download_developer_tools'        => 'Vývojářské nástroje',
         'download_ide_stubs'              => 'IDE pomůcky',
         'download_ubuntu'                 => 'Chcete-li nainstalovat Phalcon na Ubuntu, musíte provést následující kroky:',
+        'download_ubuntu_or_debian'       => 'Ubuntu or Debian',
         'download_ubuntu_1'               => 'Pokud vám chybí apt-add-repository, spusťte následující příkaz:',
         'download_note'                   => 'Phalcon je rozšíření C, takže je potřeba stáhnout binární kód pro vaši platformu nebo ji zkompilovat ze zdrojového kódu.',
         'download_compilation'            => 'Sestavení',
@@ -102,9 +103,6 @@
         'download_compilation_11'         => '1. Pro vytvoření rozšíření z C kódu postupujte podle těchto kroků:',
         'download_compilation_12'         => '2. Přidat rozšíření do souboru php.ini:',
         'download_compilation_13'         => '3. A restartujeme webový server',
-        'download_debian'                 => 'Debian',
-        'download_debian_1'               => "Tento repozitář, nabízí <href=':1:'>FortRabbit</a> <a href=':2:'>zde</a>",
-        'download_debian_2'               => 'Balíček se jmenuje php5-phalcon',
         'download_arch'                   => 'Arch Linux',
         'download_arch_1'                 => "PKGBUILD pro ArchLinux je dostupný <a href=':1:'>zde</a>",
         'download_opensuse'               => 'OpenSUSE',
@@ -158,12 +156,12 @@
 
 (nutné evidovat)",
         'consulting_lezgro_5'             => "Kontaktujte LEZGRO pomocí jejich <a href=':1:'> stránek </a>, kde také můžete vidět ukázky a důkazy jejich práce.",
-        
+
         'consulting_mctekk_header'        => 'MCTekK has already delivered various high end Phalcon projects, with their main strengths being web and mobile development.',
         'consulting_mctekk_1'             => 'MCTekK jumped on the Phalcon wagon since day one. From its conception we saw the great advantages that Phalcon was offering and could offer in the future.',
         'consulting_mctekk_2'             => 'We have ample experience with Phalcon and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning Phalcon to help you improve your readiness, quickness and quality.',
         'consulting_mctekk_3'             => 'Contact us thourgh our <a href=":1:">website</a>, where you can take a look at the projects we have been involved in.',
-        
+
         'requirements_analysis_1'         => 'Jedním z největších problémů, kterému vývojáři čelí, je skutečnost, že mnoho projektů nemá dostatečně definované požadavky. Proto se často stává, že to, co klient chce, je zcela odlišné od toho, jak to vývojář pochopí a co následně dodá.',
         'requirements_analysis_2'         => 'We can offer requirements analysis services, discussing with the clients and translating their vision to exact specifications for developers.',
         'implementation_1'                => 'If you wish to hire us to develop your application, we would be more than happy to do so. Using the latest technologies, we can offer a robust solution for your task or project, complete with tests and documentation.',
