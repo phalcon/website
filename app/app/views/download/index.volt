@@ -2,16 +2,21 @@
 {% include 'download/header.volt' %}
 
             <div class="note">{{ tr('download_note') }}</div>
-            <h2>Ubuntu</h2>
+            <h2>{{ tr('download_ubuntu_or_debian') }}</h2>
             <p>
                 {{ tr('download_ubuntu') }}
             </p>
 
             <div class="highlight1">
 
-                <pre><code class="bash">sudo apt-add-repository ppa:phalcon/stable
-sudo apt-get update
-sudo apt-get install php5-phalcon</code></pre>
+                <pre>
+                    <code class="bash">curl -s https://packagecloud.io/install/repositories/phalcon/stable/script.deb.sh | sudo bash
+
+sudo apt-get install php5-phalcon
+
+# Ubuntu 16.04+ or Debian 9+
+sudo apt-get install php7.0-phalcon</code>
+                </pre>
             </div>
 
             <p>
@@ -83,12 +88,6 @@ sudo ./install</code></pre>
             <p>{{ tr('download_compilation_12') }}</p>
             <pre><code class="ini">extension=phalcon.so</code></pre>
             <p>{{ tr('download_compilation_13') }}</p>
-
-            <h2>{{ tr('download_debian') }}</h2>
-
-            <p>{{ tr('download_debian_1', 'http://www.fortrabbit.com/', 'http://debrepo.frbit.com/') }}</p>
-
-            <p>{{ tr('download_debian_2') }}</p>
 
             <h2>{{ tr('download_arch') }}</h2>
 

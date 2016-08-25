@@ -1,7 +1,7 @@
 {% include 'download/header.volt' %}
 
             <div class="note">{{ tr('download_note') }}</div>
-            <h2>Ubuntu or Debian</h2>
+            <h2>{{ tr('download_ubuntu_or_debian') }}</h2>
             <p>
                 {{ tr('download_ubuntu') }}
             </p>
@@ -87,12 +87,6 @@ sudo ./install</code></pre>
             <p>{{ tr('download_compilation_12') }}</p>
             <pre><code class="ini">extension=phalcon.so</code></pre>
             <p>{{ tr('download_compilation_13') }}</p>
-
-            <h2>{{ tr('download_debian') }}</h2>
-
-            <p>{{ tr('download_debian_1', 'http://www.fortrabbit.com/', 'http://debrepo.frbit.com/') }}</p>
-
-            <p>{{ tr('download_debian_2') }}</p>
 
             <h2>{{ tr('download_arch') }}</h2>
 

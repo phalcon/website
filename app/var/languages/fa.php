@@ -91,6 +91,7 @@
         'download_developer_tools'        => 'ابزار توسعه',
         'download_ide_stubs'              => 'IDE stubs',
         'download_ubuntu'                 => 'برای نصب فالکون بر روی اوبونتو باید از مراحل زیر پیروی کنید:',
+        'download_ubuntu_or_debian'       => 'Ubuntu or Debian',
         'download_ubuntu_1'               => 'اگر شما apt-add-repository را ندارید، دستور زیر را اجرا کنید:',
         'download_note'                   => 'فالکون افزونه (extention) است که به زبان C نوشته شده است، بنابراین باید پرونده باینری متناسب با پلتفرم خود را دریافت کنید و یا اینکه با استفاده از کدهای منبع آن را کامپایل کنید.',
         'download_compilation'            => 'گردآوری',
@@ -102,9 +103,6 @@
         'download_compilation_11'         => '1. برای ایجاد افزونه از طریق سورس c مراحل زیر را دنبال کنید',
         'download_compilation_12'         => '2.افزونه را در فایل php.ini خود اضافه کنید:',
         'download_compilation_13'         => '۳. در پایان وب سرور را ریست کنید',
-        'download_debian'                 => 'Debian',
-        'download_debian_1'               => "یک مخزن توسط <a href=':1:'>FortRabbit</a> در <a href=':2:'>اینجا</a> پیشنهاد شده است.",
-        'download_debian_2'               => 'اسم بسته یا پکیج php5-phalcon است',
         'download_arch'                   => 'Arch linux',
         'download_arch_1'                 => "یک PKGBUILD برای ArchLinux در <a href=':1:'>اینجا</a> موجود میباشد.",
         'download_opensuse'               => 'OpenSUSE',
@@ -156,12 +154,12 @@
         'consulting_lezgro_3'             => "Product managers, CTOs, and non-technical founders involve <a href=':1:'>LEZGRO</a> to build products that stand out, quickly and with a high quality.",
         'consulting_lezgro_4'             => "Now that we have acquired positive experience with Phalcon, we are open to advise you on making the decision to develop on Phalcon, and help you bring your Phalcon-based product to market.",
         'consulting_lezgro_5'             => "Contact LEZGRO through their <a href=':1:'>website</a>, where you can also see samples and testimonials of their work.",
-        
+
         'consulting_mctekk_header'        => 'MCTekK has already delivered various high end Phalcon projects, with their main strengths being web and mobile development.',
         'consulting_mctekk_1'             => 'MCTekK jumped on the Phalcon wagon since day one. From its conception we saw the great advantages that Phalcon was offering and could offer in the future.',
         'consulting_mctekk_2'             => 'We have ample experience with Phalcon and have developed a myriad of project with it as the core. We are here to advise you on anything you need concerning Phalcon to help you improve your readiness, quickness and quality.',
         'consulting_mctekk_3'             => 'Contact us thourgh our <a href=":1:">website</a>, where you can take a look at the projects we have been involved in.',
-        
+
         'requirements_analysis_1'         => 'One of the biggest problems that developers face is the fact that a lot of projects do not have adequately defined requirements. Therefore, more often than not what the client wants is totally different from what the developer understands and subsequently delivers.',
         'requirements_analysis_2'         => 'خدمات مشاوره ای ما برای آنالیز نیازمندی های یک سرویس ، برگذاری جلسات و مشاوره با کاربران برای استخراج ساختار و احتیاجات مورد نظر آنها برای شروع توسعه نرم افزاری.',
         'implementation_1'                => 'اگر شما مایل به همکاری ما برای توسعه نرم افزارتان هستید، خوشحال میشویم که بتوانیم نیاز شما را برطرف کنیم. با استفاده از آخرین تکنولوژی ها، ما میتوانیم قوی ترین راه کار را برای پروژه ی شما در اختیارتان بگذاریم، تمام این مراحل توسط مستندات و تست های مختلف به شما تحویل داده خواهد شد.',
