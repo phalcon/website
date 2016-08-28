@@ -57,13 +57,13 @@ sudo apt-get install python-software-properties</code></pre>
 sudo apt-get install php5-dev php5-mysql gcc libpcre3-dev
 
 # Fedora
-sudo yum install php-devel php-mysqlnd gcc libtool
+sudo yum install php-devel php-mysqlnd gcc libtool pcre-devel
 
 # RHEL
-sudo yum install php-devel php-mysql gcc libtool
+sudo yum install php-devel php-mysql gcc libtool pcre-devel
 
 # Suse
-yast2 -i php5-pear php5-devel php5-mysql gcc
+yast2 -i php5-pear php5-devel php5-mysql gcc libtool pcre-devel
 
 # OS X (Using Homebrew)
 brew tap homebrew/dupes

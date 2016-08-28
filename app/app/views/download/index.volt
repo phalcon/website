@@ -54,23 +54,23 @@ sudo apt-get install python-software-properties</code></pre>
 
             <p>
                 <div class="highlight1">
-                    <pre><code class="bash">#Ubuntu
-    sudo apt-get install php5-dev php5-mysql gcc libpcre3-dev
+                    <pre><code class="bash"># Ubuntu
+sudo apt-get install php5-dev php5-mysql gcc libpcre3-dev
 
-#Fedora
-    sudo yum install php-devel php-mysqlnd gcc libtool
+# Fedora
+sudo yum install php-devel php-mysqlnd gcc libtool pcre-devel
 
-#RHEL
-    sudo yum install php-devel php-mysql gcc libtool
+# RHEL
+sudo yum install php-devel php-mysql gcc libtool pcre-devel
 
-#Suse
-    yast2 -i php5-pear php5-devel php5-mysql gcc
+# Suse
+yast2 -i php5-pear php5-devel php5-mysql gcc libtool pcre-devel
 
-#OS X (Using Homebrew)
-    brew tap homebrew/dupes
-    brew tap homebrew/versions
-    brew tap homebrew/php
-    brew install php5x php5x-phalcon # Where "x" - minor number of PHP</code></pre>
+# OS X (Using Homebrew)
+brew tap homebrew/dupes
+brew tap homebrew/versions
+brew tap homebrew/php
+brew install php5x php5x-phalcon # Where "x" - minor number of PHP</code></pre>
                 </div>
             </p>
 
