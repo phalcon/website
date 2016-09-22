@@ -214,6 +214,18 @@
         'vi' => 'Tiếng Việt',
         'zh' => '简体中文',
     );
+
+    /**
+     * Some ISO 639-1 language codes needs to be mapped to a
+     * suitable ISO 3166-2 country code in order for language
+     * visualisation by flag to function, e.g. without this
+     * mapping the Swedish language will be visualised by the
+     * flag of El Salvador
+     */
+    $countryCodes = array(
+        'sv' => 'se',
+    );
+
     /**
      * These are all languages our documentation is available in.
      */
@@ -252,6 +264,7 @@ return array(
     'cache'        => $cache,
     'routes'       => $routes,
     'languages'    => $languages,
+    'countryCodes' => $countryCodes,
     'doclanguages' => $documentationLanguages,
     'pages'        => $pages,
 );

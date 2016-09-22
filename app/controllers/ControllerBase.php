@@ -57,9 +57,9 @@ class ControllerBase extends Controller
 	public function requestInitialize()
 	{
 		if ($this->config->application->debug) {
-            $cdnUrl = $this->config->application->baseUri;
+			$cdnUrl = $this->config->application->baseUri;
 		} else {
-            $cdnUrl = $this->config->application->cdn;
+			$cdnUrl = $this->config->application->cdn;
 		}
 
 		$baseUrl = $this->config->application->baseUri;
@@ -73,27 +73,31 @@ class ControllerBase extends Controller
 		 * Find the languages available
 		 */
 		$languages              = $this->config->languages;
-		$documentationLanguage  = $this->config->doclanguages->get(0,$lang);
+		$documentationLanguage  = $this->config->doclanguages->get(0, $lang);
+		$countryCode            = $this->config->countryCodes->get($lang, 'en');
 		$languagesAvailable     = '';
 		$selected               = '';
 		$url                    = $this->request->getScheme() . '://'
-							    . $this->request->getHttpHost()
-							    . $this->config->application->baseUri;
+								. $this->request->getHttpHost()
+								. $this->config->application->baseUri;
 		$uri                    = $this->router->getRewriteUri();
+
+
 		foreach ($languages as $key => $value) {
 			$selected = ($key == $lang) ? " selected='selected'" : '';
 			$href     = $url .  str_replace("/{$lang}", "{$key}", $uri);
-			$languagesAvailable .= "<a role='menuitem' tabindex='-1' href='{$href}' class='flag-{$key}'>{$value}</a>";
+			$code = $this->config->countryCodes->get($key, $key);
 
-			#$languagesAvailable .= "<option value='{$href}'{$selected}>{$value}</option>"; // old way to do it
+			$languagesAvailable .= "<a role='menuitem' tabindex='-1' href='{$href}' class='flag-{$code}'>{$value}</a>";
 		}
 
 		$this->view->setVar('language', $lang);
+		$this->view->setVar('country_code', $countryCode);
 		$this->view->setVar('baseurl', $baseUrl);
 		$this->view->setVar('languages_available', $languagesAvailable);
 		$this->view->setVar('docs_root', 'http://docs.phalconphp.com/'.$documentationLanguage.'/latest/');
 		$this->view->setVar('cdn_url', $cdnUrl);
-        $this->view->setVar('isFrontpage', true);
+		$this->view->setVar('isFrontpage', true);
 	}
 
 	/**
@@ -128,23 +132,23 @@ class ControllerBase extends Controller
 		return $this->dispatcher->getParam($parameter);
 	}
 
-    protected function getLang()
-    {
-        $lang = $this->getUriParameter('language');
+	protected function getLang()
+	{
+		$lang = $this->getUriParameter('language');
 
-        if (!$lang) {
-            $languagesAvailable = array_keys($this->config->languages->toArray());
+		if (!$lang) {
+			$languagesAvailable = array_keys($this->config->languages->toArray());
 
-            foreach ($this->request->getLanguages() as $httpLang) {
-                $httpLang = mb_strtolower(substr($httpLang['language'], 0, 2));
-                if (in_array($httpLang, $languagesAvailable)) {
-                    return $httpLang;
-                }
-            }
-        } else {
-            return $lang;
-        }
+			foreach ($this->request->getLanguages() as $httpLang) {
+				$httpLang = mb_strtolower(substr($httpLang['language'], 0, 2));
+				if (in_array($httpLang, $languagesAvailable)) {
+					return $httpLang;
+				}
+			}
+		} else {
+			return $lang;
+		}
 
-        return 'en';
-    }
+		return 'en';
+	}
 }
