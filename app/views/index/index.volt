@@ -153,7 +153,7 @@
                         <div class="feature-content">
                             <h3>Low overhead</h3>
                             <p>
-                                Low memory consumption and CPU comparted to traditional frameworks
+                                Low memory consumption and CPU compared to traditional frameworks
                             </p>
                         </div>
                     </li>
