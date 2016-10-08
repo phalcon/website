@@ -346,7 +346,7 @@
                             {{ tr("template_engine_volt") }}
                         </h3>
                         <p>
-                            A template engine inspered in Jinja but built in C for PHP
+                            A template engine inspired by Jinja but built in C for PHP
                         </p>
                     </div>
                 </li>
