@@ -370,7 +370,7 @@
                             {{ tr("forms_builder") }}
                         </h3>
                         <p>
-                            Create HTML forms with Minor Effort
+                            Easily create HTML forms
                         </p>
                     </div>
                 </li>
