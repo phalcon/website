@@ -46,6 +46,7 @@ class ControllerBase extends Controller
 
 			if (isset($response->tag_name)) {
 				$release = str_replace('phalcon-v', '', strtolower(trim($response->tag_name)));
+				$release = str_replace('v', '', $release);
 
 				$this->cacheData->save('gh_release', $release, 60 * 60);
 			}
