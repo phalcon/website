@@ -20,7 +20,7 @@ return new \Phalcon\Config(
             'pluginsDir'      => APP_PATH . '/app/plugins/',
             'libraryDir'      => APP_PATH . '/app/library/',
             'cacheDir'        => APP_PATH . '/app/cache/',
-            'baseUri'         => '/test/',
+            'baseUri'         => '',
             'googleAnalytics' => 'UA-90300500-2',
         ],
     ]
