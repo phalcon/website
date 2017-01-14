@@ -57,6 +57,7 @@
 <script src="{{ cdn_url }}js/custom.js"></script>
 <script src="{{ cdn_url }}js/plugins/highlight.pack.js"></script>
 
+
 {% if (not config.application.googleAnalytics is empty) %}
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
