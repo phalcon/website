@@ -9,15 +9,16 @@
     );
 
     $application = array(
-        'controllersDir' => ROOT_PATH . '/app/controllers/',
-        'modelsDir'      => ROOT_PATH . '/app/models/',
-        'viewsDir'       => ROOT_PATH . '/app/views/',
-        'pluginsDir'     => ROOT_PATH . '/app/plugins/',
-        'libraryDir'     => ROOT_PATH . '/app/library/',
-        'voltDir'        => ROOT_PATH . '/app/var/volt/',
-        'baseUri'        => '/website/',
-        'debug'          => true,
-        'cdn'            => 'https://static.phalconphp.com/www/'
+        'controllersDir'  => ROOT_PATH . '/app/controllers/',
+        'modelsDir'       => ROOT_PATH . '/app/models/',
+        'viewsDir'        => ROOT_PATH . '/app/views/',
+        'pluginsDir'      => ROOT_PATH . '/app/plugins/',
+        'libraryDir'      => ROOT_PATH . '/app/library/',
+        'voltDir'         => ROOT_PATH . '/app/var/volt/',
+        'baseUri'         => '/',
+        'debug'           => true,
+        'cdn'             => 'https://static.phalconphp.com/www/',
+        'googleAnalytics' => 'UA-90300500-2',
     );
 
     $cache = array(
