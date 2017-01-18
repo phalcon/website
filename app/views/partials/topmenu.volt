@@ -6,7 +6,7 @@
     </li>
     <li><a href="https://docs.phalconphp.com/" class="header-nav-link" target="_blank">{{ tr('documentation') }}</a></li>
     <li><a href="https://forum.phalconphp.com/" class="header-nav-link" target="_blank">{{ tr('forum') }}</a></li>
-    <li><a href="https://slack.phalconphp.com/" class="header-nav-link" target="_blank">{{ tr('Slack') }}</a></li>
+    <li><a href="https://phalconchats.slack.com/" class="header-nav-link" target="_blank">{{ tr('Slack') }}</a></li>
     <li><a href="https://blog.phalconphp.com/" class="header-nav-link" target="_blank">{{ tr('blog') }}</a></li>
     <li><a href="https://api.phalconphp.com/" class="header-nav-link" target="_blank">{{ tr('API') }}</a></li>
     <li><a href="http://phalconist.com/" class="header-nav-link" target="_blank">{{ tr('resources') }}</a></li>
