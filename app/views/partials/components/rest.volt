@@ -1,12 +1,12 @@
 <div class="codesample basic_features_code code_rest" style="display:none">
     <div class="codesample-header">
         <h3>
-            {{ tr("restful_services") }}
+            {{ locale.translate("restful_services") }}
         </h3>
     </div>
     <div class="codesample-body">
         <p>
-            Writing REST servers and applications has never been easier. No boilerplate. Simple services will fit in one file.
+            {{ locale.translate("restful_services_1") }}
         </p>
         <div class="row">
             <div class="col-xs-12">
@@ -16,7 +16,8 @@ use Phalcon\Mvc\Micro;
 
 $app = new Micro();
 
-// Returning data in JSON
+// {{ locale.translate("restful_services_2") }}
+
 $app->get('/check/status', function () {
     return $this->response->setJsonContent([
         "status" => "important"

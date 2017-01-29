@@ -1,7 +1,7 @@
 <div class="codesample data_storage_code code_odm" style="display:none">
     <div class="codesample-header">
         <h3>
-            {{ tr("odm_for_mongo") }}
+            {{ locale.translate("odm_for_mongo") }}
         </h3>
     </div>
     <div class="codesample-body">

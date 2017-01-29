@@ -1,7 +1,7 @@
 <div class="codesample more_components_code code_crypt" style="display:none">
     <div class="codesample-header">
         <h3>
-            {{ tr("encryption") }}
+            {{ locale.translate("encryption") }}
         </h3>
     </div>
     <div class="codesample-body">

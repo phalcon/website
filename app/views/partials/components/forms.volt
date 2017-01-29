@@ -1,7 +1,7 @@
 <div class="codesample views_front_end_code code_forms" style="display:none">
     <div class="codesample-header">
         <h3>
-            {{ tr("forms_builder") }}
+            {{ locale.translate("forms_builder") }}
         </h3>
     </div>
     <div class="codesample-body">

@@ -1,5 +1,6 @@
 <?php
-    $contributors = require ROOT_PATH .  '/app/var/data/contributors.php';
+//    $contributors = require ROOT_PATH .  '/app/var/data/contributors.php';
+    $contributors = [];
 ?>
 <div class="contributors">
 <?php

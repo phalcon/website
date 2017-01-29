@@ -1,27 +1,29 @@
 <div class="codesample basic_features_code code_di" style="display:none">
     <div class="codesample-header">
         <h3>
-            {{ tr("dependency_injection") }}
+            {{ locale.translate("dependency_injection") }}
         </h3>
     </div>
     <div class="codesample-body">
         <p>
-            Phalcon is built upon a powerful yet easy to understand and use pattern called Dependency Injection.
-            Initialize or define services once - and use them virtually anywhere throughout the application.
+            {{ locale.translate("dependency_injection_1") }}
         </p>
         <div class="row">
             <div class="col-xs-12">
                 <pre>
                     <code class="php">
-//Create the Dependency Injector Container
+//{{ locale.translate("dependency_injection_2") }}
+
 $di = new Phalcon\DI();
 
-//Register classes, functions, components
+//{{ locale.translate("dependency_injection_3") }}
+
 $di->set("request", new Phalcon\Http\Request());
 
 ..
 
-//Use anywhere else in code
+//{{ locale.translate("dependency_injection_4") }}
+
 $request = $di->getShared("request");
                     </code>
                 </pre>

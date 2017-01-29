@@ -1,7 +1,7 @@
 <div class="codesample data_storage_code code_phql" style="display:none">
     <div class="codesample-header">
         <h3>
-            {{ tr("phql") }}
+            {{ locale.translate("phql") }}
         </h3>
     </div>
     <div class="codesample-body">

@@ -1,7 +1,7 @@
 <div class="codesample views_front_end_code code_i18n"  style="display:none">
     <div class="codesample-header">
         <h3>
-            {{ tr("i18n") }}
+            {{ locale.translate("i18n") }}
         </h3>
     </div>
     <div class="codesample-body">

@@ -1,7 +1,7 @@
 <div class="codesample more_components_code code_acl">
     <div class="codesample-header">
         <h3>
-            {{ tr("acl")|upper }}
+            {{ locale.translate("acl")|upper }}
         </h3>
     </div>
     <div class="codesample-body">

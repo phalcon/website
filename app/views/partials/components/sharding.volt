@@ -1,7 +1,7 @@
 <div class="codesample more_components_code code_sharding" style="display:none">
     <div class="codesample-header">
         <h3>
-            {{ tr("sharding") }}
+            {{ locale.translate("sharding") }}
         </h3>
     </div>
     <div class="codesample-body">

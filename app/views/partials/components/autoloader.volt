@@ -1,7 +1,7 @@
 <div class="codesample basic_features_code code_autoloader" style="display:none">
     <div class="codesample-header">
         <h3>
-            {{ tr("auto_loader") }}
+            {{ locale.translate("auto_loader") }}
         </h3>
     </div>
     <div class="codesample-body">

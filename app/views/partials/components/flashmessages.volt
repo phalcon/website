@@ -1,7 +1,7 @@
 <div class="codesample views_front_end_code code_flash" style="display:none">
     <div class="codesample-header">
         <h3>
-            {{ tr("flash_messages") }}
+            {{ locale.translate("flash_messages") }}
         </h3>
     </div>
     <div class="codesample-body">

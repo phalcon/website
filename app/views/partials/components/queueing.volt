@@ -1,7 +1,7 @@
 <div class="codesample more_components_code code_queueing" style="display:none">
     <div class="codesample-header">
         <h3>
-            {{ tr("queueing") }}
+            {{ locale.translate("queueing") }}
         </h3>
     </div>
     <div class="codesample-body">

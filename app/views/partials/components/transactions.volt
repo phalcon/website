@@ -1,7 +1,7 @@
 <div class="codesample data_storage_code code_transactions" style="display:none">
     <div class="codesample-header">
         <h3>
-            {{ tr("transactions") }}
+            {{ locale.translate("transactions") }}
         </h3>
     </div>
     <div class="codesample-body">
