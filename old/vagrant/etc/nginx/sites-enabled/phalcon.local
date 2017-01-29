@@ -1,0 +1,19 @@
+server {
+        listen 80;
+
+        root /var/www/phalcon-website/public;
+        index index.php;
+
+        # Make site accessible from http://phalcon.local/
+        server_name phalcon.local;
+
+
+        location ~ \.php$ {
+                include fastcgi_params;
+                fastcgi_pass   php-fpm;
+        }
+
+        location / {
+                try_files $uri $uri/ /index.php?$query_string;
+        }
+}

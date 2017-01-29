@@ -1,5 +1,3 @@
-
-
 .codesamples { padding: 80px 0; }
 
 .codesamples h2 { font-size: 32px; text-transform: uppercase; text-align: center; color: #c4c4c5; margin: 25px 0 50px 0; }
@@ -1488,4 +1486,32 @@ ul.social-icons li a {
 /* Show at least something when animations not supported */
 .no-cssanimations .bg-slideshow li span{
 	opacity: 1;
+}
+
+
+#backers a {
+	margin: 20px 15px 0;
+	position: relative;
+}
+#backers a,
+#backers img {
+	width: 100px;
+	display: inline-block;
+	vertical-align: middle;
+}
+#backers img {
+	transition: all 0.3s ease;
+	filter: contrast(0%);
+}
+#backers img:hover {
+	filter: none;
+}
+#backers .inner {
+    max-width: 700px;
+    margin: 0px auto;
+}
+#backers h3 {
+    color: #999;
+    font-size: 0.9em;
+    margin: 0 0 10px;
 }

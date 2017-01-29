@@ -1,20 +1,20 @@
 <?php
 
-error_reporting(E_ALL);
-date_default_timezone_set('US/Eastern');
+use Website\Bootstrap\Main;
 
-if (!defined('ROOT_PATH')) {
-    define('ROOT_PATH', dirname(dirname(__FILE__)));
+if (true !== defined('APP_PATH')) {
+    define('APP_PATH', dirname(dirname(__FILE__)));
 }
 
 try {
-    include ROOT_PATH . "/app/var/bootstrap.php";
+    require_once APP_PATH . '/app/library/Bootstrap/AbstractBootstrap.php';
+    require_once APP_PATH . '/app/library/Bootstrap/Main.php';
 
     /**
-     * Handle the request
+     * We don't want a global scope variable for this
      */
-    $app = new Bootstrap(new \Phalcon\DI\FactoryDefault());
-    echo $app->run(array());
+    (new Main())->run();
+
 } catch (\Exception $e) {
     echo $e->getMessage();
 }
