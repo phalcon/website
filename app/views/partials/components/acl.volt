@@ -1,12 +1,12 @@
 <div class="codesample more_components_code code_acl">
     <div class="codesample-header">
         <h3>
-            {{ locale.translate("acl")|upper }}
+            {{ locale.translate('acl') }}
         </h3>
     </div>
     <div class="codesample-body">
         <p>
-            This is how you can built the access control list (ACL):
+            {{ locale.translate('acl_1') }}
         </p>
         <div class="row">
             <div class="col-xs-12">
@@ -16,14 +16,18 @@ use Phalcon\Acl;
 use Phalcon\Acl\Role;
 use Phalcon\Acl\Adapter\Memory as AclList;
 
-// Create the ACL
+// {{ locale.translate('acl_2') }}
+
 $acl = new AclList();
 
-// The default action is DENY access
+// {{ locale.translate('acl_3') }}
+
 $acl->setDefaultAction(Acl::DENY);
 
-// Register two roles, Users is registered users
-// and guests are users without a defined identity
+// {{ locale.translate('acl_4') }}
+
+// {{ locale.translate('acl_5') }}
+
 $roles = array(
     'users'  => new Role('Users'),
     'guests' => new Role('Guests')

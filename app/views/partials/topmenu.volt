@@ -1,14 +1,18 @@
+{% set links = ['download', 'forum', 'slack', 'blog', 'api', 'store', 'resources', 'about'] %}
 <ul class="nav navbar-nav main-menu">
-    <li class="first">
-        {#{{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], locale.translate('download'), 'class' : 'header-nav-link')}}#}
+    {% for link in links %}
+    <li {% if loop.first %}class="first"{% endif %}>
+        {{
+            link_to(
+                'https://phalcon.link/' ~ link,
+                locale.translate(link),
+                'class': 'header-nav-link',
+                'target': '_blank',
+                'local': false
+            )
+        }}
     </li>
-    <li><a href="https://docs.phalconphp.com/" class="header-nav-link" target="_blank">{{ locale.translate('documentation') }}</a></li>
-    <li><a href="https://forum.phalconphp.com/" class="header-nav-link" target="_blank">{{ locale.translate('forum') }}</a></li>
-    <li><a href="https://slack.phalconphp.com/" class="header-nav-link" target="_blank">{{ locale.translate('Slack') }}</a></li>
-    <li><a href="https://blog.phalconphp.com/" class="header-nav-link" target="_blank">{{ locale.translate('blog') }}</a></li>
-    <li><a href="https://api.phalconphp.com/" class="header-nav-link" target="_blank">{{ locale.translate('API') }}</a></li>
-    <li><a href="http://phalconist.com/" class="header-nav-link" target="_blank">{{ locale.translate('resources') }}</a></li>
-    {#<li>{{ link_to(['for': 'pages', 'pageSlug': 'about', 'language': language], locale.translate('about')) }}</li>#}
+    {% endfor %}
     <li class="dropdown" style="margin-left:3px;">
         <a href="javascript:;" class="dropdown-toggle" id="dropdownLanguageMenu" data-toggle="dropdown"><img src="{{ cdnUrl }}/images/flags/{{ language }}.gif" alt="" />&nbsp;<span class="caret"></span></a>
         <ul class="dropdown-menu" id="dropdown-language" role="menu" style="color:black" aria-labelledby="dropdownLanguageMenu">

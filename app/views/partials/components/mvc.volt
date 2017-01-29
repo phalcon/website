@@ -1,12 +1,12 @@
 <div class="codesample basic_features_code code_mvc" style="display:none">
     <div class="codesample-header">
         <h3>
-            {{ locale.translate("mvc") }}
+            {{ locale.translate('mvc') }}
         </h3>
     </div>
     <div class="codesample-body">
         <p>
-            Build single and multi-module applications with ease and pleasure. Using the file structure, scheme and patterns you already know.
+            {{ locale.translate('mvc_1') }}
         </p>
         <div class="row">
             <div class="col-xs-6">

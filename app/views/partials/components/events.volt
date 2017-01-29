@@ -1,13 +1,12 @@
 <div class="codesample more_components_code code_events" style="display:none">
     <div class="codesample-header">
         <h3>
-            {{ locale.translate("events_management") }}
+            {{ locale.translate('events_management') }}
         </h3>
     </div>
     <div class="codesample-body">
         <p>
-            An EventsManager allows us to attach listeners to a particular type of event.
-            The type that interests us now is “dispatch”. The following code filters all events produced by the Dispatcher:
+            {{ locale.translate('events_management_1') }}
         </p>
         <div class="row">
             <div class="col-xs-12">
@@ -18,18 +17,22 @@ use Phalcon\Events\Manager as EventsManager;
 
 $di->set('dispatcher', function () {
 
-    // Create an events manager
+    // {{ locale.translate('events_management_2') }}
+
     $eventsManager = new EventsManager();
 
-    // Listen for events produced in the dispatcher using the Security plugin
+    // {{ locale.translate('events_management_3') }}
+
     $eventsManager->attach('dispatch:beforeExecuteRoute', new SecurityPlugin);
 
-    // Handle exceptions and not-found exceptions using NotFoundPlugin
+    // {{ locale.translate('events_management_4') }}
+
     $eventsManager->attach('dispatch:beforeException', new NotFoundPlugin);
 
     $dispatcher = new Dispatcher();
 
-    // Assign the events manager to the dispatcher
+    // {{ locale.translate('events_management_5') }}
+
     $dispatcher->setEventsManager($eventsManager);
 
     return $dispatcher;

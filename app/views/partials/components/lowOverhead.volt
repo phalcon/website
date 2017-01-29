@@ -1,7 +1,7 @@
 <div class="codesample basic_features_code code_low_overhead">
     <div class="codesample-header">
         <h3>
-            {{ locale.translate("low_overhead") }}
+            {{ locale.translate('low_overhead') }}
         </h3>
     </div>
     <div class="codesample-body">
