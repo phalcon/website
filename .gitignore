@@ -1,5 +1,6 @@
 .DS_Store
 /vendor
+/storage/cache/
 .env
 /public/robots.txt
 /public/sitemap.xml
