@@ -1,30 +1,91 @@
 <?php
 
-    $database = array(
-        'adapter'     => 'Mysql',
-        'host'        => 'localhost',
-        'username'    => 'root',
-        'password'    => '',
-        'dbname'      => 'test',
-    );
+return [
+    'routes'        => [
+        [
+            'class'   => 'Website\Controllers\IndexController',
+            'prefix'  => '',
+            'methods' => [
+                'get' => [
+                    '/'                                 => 'indexRedirectAction',
+                    '/{language:[a-z]{2}}'              => 'indexAction',
+                    '/{language:[a-z]{2}}/about'        => 'aboutAction',
+                    '/{language:[a-z]{2}}/hosting'      => 'hostingAction',
+                    '/{language:[a-z]{2}}/sponsors'     => 'sponsorsAction',
+                    '/{language:[a-z]{2}}/support'      => 'supportAction',
+                    '/{language:[a-z]{2}}/team'         => 'teamAction',
+                    '/{language:[a-z]{2}}/testimonials' => 'testimonialsAction',
+                    '/{language:[a-z]{2}}/404'          => 'notfoundAction',
+                ],
+            ],
+        ],
+        [
+            'class'   => 'Website\Controllers\DownloadController',
+            'prefix'  => 'download',
+            'methods' => [
+                'get' => [
+                    '/'                            => 'indexRedirectAction',
+                    '/{language:[a-z]{2}}'         => 'indexAction',
+                    '/{language:[a-z]{2}}/windows' => 'windowsAction',
+                    '/{language:[a-z]{2}}/tools'   => 'toolsAction',
+                    '/{language:[a-z]{2}}/vagrant' => 'vagrantAction',
+                    '/{language:[a-z]{2}}/stubs'   => 'stubsAction',
+                ],
+            ],
+        ],
+        [
+            'class'   => 'Website\Controllers\UtilsController',
+            'prefix'  => '',
+            'methods' => [
+                'get' => [
+                    '/contributors' => 'contributorsAction',
+                    '/sitemap'      => 'sitemapAction',
+                ],
+            ],
+        ],
+    ],
+    'middleware'    => [
+        'Website\Middleware\NotFoundMiddleware',
+    ],
+    'languages'     => [
+        'bg' => 'български',
+        'cz' => 'Český',
+        'de' => 'Deutsch',
+        'el' => 'Ελληνικά',
+        'en' => 'English',
+        'es' => 'Español',
+        'fa' => 'فارسی',
+        'fr' => 'Français',
+        'hu' => 'Magyar',
+        'ja' => '日本語',
+        'it' => 'Italiano',
+        'ko' => '한국어',
+        'lt' => 'Lietuvos',
+        'mk' => 'македонски',
+        'nl' => 'Nederlands',
+        'pl' => 'Polski',
+        'pt' => 'Português',
+        'ro' => 'Română',
+        'ru' => 'Pусский',
+        'sr' => 'српски',
+        'sv' => 'Svenska',
+        'th' => 'ภาษาไทย',
+        'tr' => 'Türkçe',
+        'vi' => 'Tiếng Việt',
+        'zh' => '简体中文',
+    ],
+    'doc_languages' => [
+        'en',
+        'es',
+        'fr',
+        'ja',
+        'pl',
+        'pt',
+        'ru',
+    ],
+];
 
-    $application = array(
-        'controllersDir' => ROOT_PATH . '/app/controllers/',
-        'modelsDir'      => ROOT_PATH . '/app/models/',
-        'viewsDir'       => ROOT_PATH . '/app/views/',
-        'pluginsDir'     => ROOT_PATH . '/app/plugins/',
-        'libraryDir'     => ROOT_PATH . '/app/library/',
-        'voltDir'        => ROOT_PATH . '/app/var/volt/',
-        'baseUri'        => '/',
-        'debug'          => true,
-        'cdn'            => 'https://static.phalconphp.com/www/',
-        'googleAnalytics' => 'UA-90300500-2',
-    );
-
-    $cache = array(
-        'lifetime' => 86400 ,
-        'cacheDir' => ROOT_PATH . '/app/var/cache/' ,
-    );
+/**
     $routes = array(
         // Index (Redirect)
         '/' => array(
@@ -184,75 +245,4 @@
             'name'   => 'humans',
         )
     );
-    /**
-     * These languages appear at the top select box
-     * allowing the user to easily change the language of the site
-     */
-    $languages = array(
-        'bg' => 'български',
-        'cz' => 'Český',
-        'de' => 'Deutsch',
-        'el' => 'Ελληνικά',
-        'en' => 'English',
-        'es' => 'Español',
-        'fa' => 'فارسی',
-        'fr' => 'Français',
-        'hu' => 'Magyar',
-        'ja' => '日本語',
-        'it' => 'Italiano',
-        'ko' => '한국어',
-        'lt' => 'Lietuvos',
-        'mk' => 'македонски',
-        'nl' => 'Nederlands',
-        'pl' => 'Polski',
-        'pt' => 'Português',
-        'ro' => 'Română',
-        'ru' => 'Pусский',
-        'sr' => 'српски',
-        'sv' => 'Svenska',
-        'th' => 'ภาษาไทย',
-        'tr' => 'Türkçe',
-        'vi' => 'Tiếng Việt',
-        'zh' => '简体中文',
-    );
-    /**
-     * These are all languages our documentation is available in.
-     */
-    $documentationLanguages = array(
-        'en',
-        'es',
-        'fr',
-        'ja',
-        'pl',
-        'pt',
-        'ru'
-    );
-    /**
-     * These are all the pages of the site. This is used to generate the
-     * sitemap.xml
-     */
-    $pages = array(
-        '',
-        'about',
-        'team',
-        'testimonials',
-        'download',
-        'download/windows',
-        'download/tools',
-        'download/vagrant',
-        'download/stubs',
-        'roadmap',
-        'consulting',
-        'hosting',
-        'support',
-        'donate'
-    );
-return array(
-    'application'  => $application,
-    'database'     => $database,
-    'cache'        => $cache,
-    'routes'       => $routes,
-    'languages'    => $languages,
-    'doclanguages' => $documentationLanguages,
-    'pages'        => $pages,
-);
+ */

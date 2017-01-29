@@ -6,26 +6,19 @@ use Dotenv\Dotenv;
 use Phalcon\Cache\Frontend\Output as PhCacheFront;
 use Phalcon\Cache\Backend\File as PhCacheBackFile;
 use Phalcon\Cli\Console as PhCliConsole;
-use Phalcon\Cli\Dispatcher as PhCliDispatcher;
 use Phalcon\Di as PhDI;
 use Phalcon\Di\FactoryDefault as PhFactoryDefault;
-use Phalcon\Events\Manager as PhEventsManager;
-use Phalcon\Http\Request as PhRequest;
-use Phalcon\Http\Response as PhResponse;
 use Phalcon\Loader as PhLoader;
 use Phalcon\Logger\Adapter\File as PhFileLogger;
 use Phalcon\Logger\Formatter\Line as PhLoggerFormatter;
 use Phalcon\Mvc\Application as PhApplication;
 use Phalcon\Mvc\Micro as PhMicro;
 use Phalcon\Mvc\Micro\Collection as PhMicroCollection;
-use Phalcon\Mvc\Router as PhRouter;
 use Phalcon\Mvc\View\Simple as PhViewSimple;
 use Phalcon\Mvc\View\Engine\Volt as PhVolt;
-use Phalcon\Mvc\Url as PhUrl;
 
 use Website\Constants;
 use Website\Locale;
-use Website\Middleware\CacheMiddleware;
 use Website\Middleware\NotFoundMiddleware;
 use Website\Utils;
 use Website\View\Engine\Volt\Extensions\Php;
@@ -295,8 +288,9 @@ abstract class AbstractBootstrap
                 'class'   => 'Website\Controllers\IndexController',
                 'methods' => [
                     'get' => [
-                        '/'    => 'indexAction',
-                        '/404' => 'notfoundAction',
+                        '/'                        => 'indexRedirectAction',
+                        '/{language:[a-z]{2}}'     => 'indexAction',
+                        '/{language:[a-z]{2}}/404' => 'notfoundAction',
                      ],
                 ],
             ],
@@ -326,7 +320,6 @@ abstract class AbstractBootstrap
         $eventsManager = $this->diContainer->getShared(Constants::SRV_EVENTS_MANAGER);
 
         $eventsManager->attach(Constants::SRV_MICRO, new NotFoundMiddleware());
-
         $this->application->before(new NotFoundMiddleware());
 
         $this->application->setEventsManager($eventsManager);

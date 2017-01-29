@@ -14,7 +14,7 @@ use Website\Controller as WController;
  */
 class UtilsController extends WController
 {
-    public function contributors()
+    public function contributorsAction()
     {
         $repositories = [
             'cphalcon'         => 4,
@@ -46,15 +46,15 @@ class UtilsController extends WController
         $contributors = [];
         $weights      = [];
         foreach ($repositories as $repository => $weight) {
-            $response = file_get_contents(
-                sprintf(
-                    'https://api.github.com/repos/phalcon/%s/contributors',
-                    $repository
-                ),
-                false,
-                $context
-            );
-
+//            $response = file_get_contents(
+//                sprintf(
+//                    'https://api.github.com/repos/phalcon/%s/contributors',
+//                    $repository
+//                ),
+//                false,
+//                $context
+//            );
+            $response = file_get_contents(APP_PATH . '/' . $repository . '.json');
             if ($response) {
                 $results = json_decode($response, true);
                 if (true === is_array($results)) {
@@ -78,14 +78,18 @@ class UtilsController extends WController
 
 //        var_dump($weights);
 //        asort($weights, SORT_NUMERIC & SORT_DESC);
-        array_multisort($contributors['weight'], SORT_NUMERIC & SORT_DESC);
+        arsort($weights);
 
-        var_dump($contributors);
+        $results = [];
+        foreach ($weights as $login => $weight) {
+            $results[$login] = $contributors[$login];
+        }
+
+        file_put_contents(
+            APP_PATH . '/storage/cache/data/contributors.json',
+            json_encode($results)
+        );
         die();
-//        if (count($c)) {
-//            arsort($c);
-//            file_put_contents('../app/var/data/contributors.php', '<?php return ' . var_export(array($c, $p, $l), true) . ';');
-//        }
     }
 
     /**
