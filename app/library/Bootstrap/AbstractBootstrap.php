@@ -3,8 +3,10 @@
 namespace Website\Bootstrap;
 
 use Dotenv\Dotenv;
-use Phalcon\Cache\Frontend\Output as PhCacheFront;
+use Phalcon\Cache\Frontend\Data as PhCacheFrontData;
+use Phalcon\Cache\Frontend\Output as PhCacheFrontOutput;
 use Phalcon\Cache\Backend\File as PhCacheBackFile;
+use Phalcon\Config as PhConfig;
 use Phalcon\Cli\Console as PhCliConsole;
 use Phalcon\Di as PhDI;
 use Phalcon\Di\FactoryDefault as PhFactoryDefault;
@@ -18,6 +20,7 @@ use Phalcon\Mvc\View\Simple as PhViewSimple;
 use Phalcon\Mvc\View\Engine\Volt as PhVolt;
 
 use Website\Constants;
+use Website\Exception;
 use Website\Locale;
 use Website\Middleware\NotFoundMiddleware;
 use Website\Utils;
@@ -51,6 +54,7 @@ abstract class AbstractBootstrap
             ->initEnvironment()
             ->initApplication()
             ->initUtils()
+            ->initConfig()
             ->initCache()
             ->initLogger()
             ->initLocale()
@@ -63,7 +67,7 @@ abstract class AbstractBootstrap
     /**
      * Initializes the application
      *
-     * @return $this;
+     * @return $this
      */
     protected function initApplication()
     {
@@ -75,7 +79,7 @@ abstract class AbstractBootstrap
     /**
      * Initializes the Cache
      *
-     * @return $this;
+     * @return $this
      */
     protected function initCache()
     {
@@ -83,27 +87,20 @@ abstract class AbstractBootstrap
          * viewCache
          */
         /** @var \Website\Utils $utils */
-        $utils      = $this->diContainer->getShared('utils');
-        $frontCache = new PhCacheFront(
-            [
-                'lifetime' => $utils->env(Constants::CACHE_LIFETIME, 3600)
-            ]
-        );
+        $utils    = $this->diContainer->getShared('utils');
+        $lifetime = $utils->env(Constants::CACHE_LIFETIME, 3600);
+        $frontEnd = new PhCacheFrontOutput(['lifetime' => $lifetime]);
+        $backEnd  = ['cacheDir' => APP_PATH . '/storage/cache/view/'];
+        $cache    = new PhCacheBackFile($frontEnd, $backEnd);
 
-        $backEndOptions = [
-            'cacheDir' => APP_PATH . '/storage/cache/view'
-        ];
-        $cache          = new PhCacheBackFile($frontCache, $backEndOptions);
-
-        $this->diContainer->setShared(Constants::SRV_VIEW_CACHE, $cache);
+        $this->diContainer->set(Constants::SRV_VIEW_CACHE, $cache);
 
         /**
          * cacheData
          */
-        $backEndOptions = [
-            'cacheDir' => APP_PATH . '/storage/cache/data'
-        ];
-        $cache          = new PhCacheBackFile($frontCache, $backEndOptions);
+        $frontEnd = new PhCacheFrontOutput(['lifetime' => $lifetime]);
+        $backEnd  = ['cacheDir' => APP_PATH . '/storage/cache/data/'];
+        $cache    = new PhCacheBackFile($frontEnd, $backEnd);
 
         $this->diContainer->setShared(Constants::SRV_CACHE_DATA, $cache);
 
@@ -111,9 +108,30 @@ abstract class AbstractBootstrap
     }
 
     /**
+     * Initializes the Config container
+     *
+     * @return $this
+     * @throws Exception
+     */
+    protected function initConfig()
+    {
+        $fileName = APP_PATH . '/app/config/config.php';
+        if (true !== file_exists($fileName)) {
+            throw new Exception('Configuration file not found');
+        }
+
+        $configArray = require_once($fileName);
+        $config = new PhConfig($configArray);
+
+        $this->diContainer->setShared(Constants::SRV_CONFIG, $config);
+
+        return $this;
+    }
+
+    /**
      * Initializes the Di container
      *
-     * @return $this;
+     * @return $this
      */
     protected function initDi()
     {
@@ -126,7 +144,7 @@ abstract class AbstractBootstrap
     /**
      * Initializes the environment
      *
-     * @return $this;
+     * @return $this
      */
     protected function initEnvironment()
     {
@@ -202,7 +220,7 @@ abstract class AbstractBootstrap
     /**
      * Initializes the autoloader
      *
-     * @return $this;
+     * @return $this
      */
     protected function initLoader()
     {
@@ -239,7 +257,7 @@ abstract class AbstractBootstrap
     /**
      * Initializes the Locale service
      *
-     * @return $this;
+     * @return $this
      */
     protected function initLocale()
     {
@@ -251,7 +269,7 @@ abstract class AbstractBootstrap
     /**
      * Initializes the loggers
      *
-     * @return $this;
+     * @return $this
      */
     protected function initLogger()
     {
@@ -283,31 +301,17 @@ abstract class AbstractBootstrap
      */
     protected function initRoutes()
     {
-        $routes = [
-            [
-                'class'   => 'Website\Controllers\IndexController',
-                'methods' => [
-                    'get' => [
-                        '/'                        => 'indexRedirectAction',
-                        '/{language:[a-z]{2}}'     => 'indexAction',
-                        '/{language:[a-z]{2}}/404' => 'notfoundAction',
-                     ],
-                ],
-            ],
-            [
-                'class'   => 'Website\Controllers\UtilsController',
-                'methods' => [
-                    'get' => [
-                        '/contributors' => 'contributorsAction',
-                        '/sitemap'      => 'sitemapAction',
-                    ],
-                ],
-            ],
-        ];
+        /** @var PhConfig $config */
+        $config     = $this->diContainer->getShared(Constants::SRV_CONFIG);
+        $routes     = $config->get('routes')->toArray();
+        $middleware = $config->get('middleware')->toArray();
 
         foreach ($routes as $route) {
             $collection = new PhMicroCollection();
             $collection->setHandler($route['class'], true);
+            if (true !== empty($route['prefix'])) {
+                $collection->setPrefix($route['prefix']);
+            }
 
             foreach ($route['methods'] as $verb => $methods) {
                 foreach ($methods as $endpoint => $action) {
@@ -319,8 +323,10 @@ abstract class AbstractBootstrap
 
         $eventsManager = $this->diContainer->getShared(Constants::SRV_EVENTS_MANAGER);
 
-        $eventsManager->attach(Constants::SRV_MICRO, new NotFoundMiddleware());
-        $this->application->before(new NotFoundMiddleware());
+        foreach ($middleware as $class) {
+            $eventsManager->attach(Constants::SRV_MICRO, new $class());
+            $this->application->before(new $class());
+        }
 
         $this->application->setEventsManager($eventsManager);
 
@@ -330,7 +336,7 @@ abstract class AbstractBootstrap
     /**
      * Initializes the utils service and stores it in the DI
      *
-     * @return $this;
+     * @return $this
      */
     protected function initUtils()
     {

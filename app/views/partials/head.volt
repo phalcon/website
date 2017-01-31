@@ -3,28 +3,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
+    <meta name="author" content="Phalcon Framework Team">
+    <meta name="generator" content="Phalcon Framework Website">
+    <meta name="application-name" content="Phalcon Website">
     <meta name="keyword" content="{{ utils.env('APP_KEYWORDS', '') }}">
     <meta name="description" content="{{ utils.env('APP_DESCRIPTION', '') }}">
-    <meta name=generator content="Phalcon Framework 3.0.3">
+
+    <meta http-equiv="x-dns-prefetch-control" content="off">
 
     <meta property="og:url" content="https://phalconphp.com/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="object">
+    <meta property="og:title" content="Phalcon Website">
+    <meta property="og:description" content="">
     <meta property="og:site_name" content="Phalcon Website">
+    <meta property="og:image" content="https://phalconphp.com/images/phalcon1.png">
+
+    <meta name="twitter:image:alt" content="Phalcon Website">
+    <meta name="twitter:title" content="Phalcon Website">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://phalconphp.com/images/phalcon1.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@phalconphp">
 
     <link rel="canonical" href="https://phalconphp.com/">
-    <link rel="author" href="https://github.com/tobispace">
     <link rel="publisher" href="https://phalconphp.com/">
+    <link rel="author" href="https://phalconphp.com/en/team">
 
     <link href="/images/favicon.ico" rel="icon" type="image/x-ico"/>
 
     <title>Phalcon - High Performance PHP Framework</title>
 
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type='text/css'>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
-    <link href="/css/flags.css" rel='stylesheet' type='text/css'>
-    <link href="/css/highlight.js.css" rel='stylesheet' type='text/css'>
-
-    <link href="/css/phalcon.min.css" rel='stylesheet' type='text/css'>
+    {{ assets.outputCss('header_css') }}
 
     {% if (not utils.env('GOOGLE_ANALYTICS', '') is empty) %}
     <script>

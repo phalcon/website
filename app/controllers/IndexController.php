@@ -15,27 +15,54 @@ class IndexController extends WController
 {
     public function indexAction($language)
     {
-        $contributors = [];
-        $fileName     = APP_PATH . '/storage/cache/data/contributors.json';
-        if (true == file_exists($fileName)) {
-            $contributors = file_get_contents($fileName);
-            $contributors = json_decode($contributors, true);
-        }
+        /**
+         * Add more needed assets
+         */
+        $this
+            ->assets
+            ->collection('header_css')
+            ->addCss($this->getCdnUrl() . 'css/flags.css', $this->isCdnLocal())
+            ->addCss($this->getCdnUrl() . 'css/highlight.js.css', $this->isCdnLocal())
+            ->addCss($this->getCdnUrl() . 'css/phalcon.min.css', $this->isCdnLocal());
 
-        echo $this->viewSimple->render(
-            'index',
-            [
-                'version'             => '3.0.3',
-                'language'            => $language,
-                'cdnUrl'              => $this->utils->env('APP_STATIC_URL', '/'),
-                'languages_available' => '',
-                'contributors'        => $contributors,
-            ]
-        );
+        echo $this
+                ->viewSimple
+                ->cache(true)
+                ->render(
+                    'index',
+                    [
+                        'version'             => '3.0.3',
+                        'language'            => $language,
+                        'cdnUrl'              => $this->utils->env('APP_STATIC_URL', '/'),
+                        'languages_available' => '',
+                        'contributors'        => $this->getContributors(),
+                        'docsRoot'            => '',
+                    ]
+                );
     }
 
     public function indexRedirectAction()
     {
         return $this->response->redirect('/en/', true);
+    }
+
+    public function teamAction($language)
+    {
+        $this
+            ->assets
+            ->collection('header_css')
+            ->addCss($this->getCdnUrl() . 'css/src/styles.css', $this->isCdnLocal())
+            ->addCss($this->getCdnUrl() . 'css/phalconPage.css', $this->isCdnLocal());
+
+        echo $this->viewSimple->render(
+            'pages/team',
+            [
+                'language'            => $language,
+                'cdnUrl'              => $this->getCdnUrl(),
+                'contributors'        => $this->getContributors(),
+                'languages_available' => '',
+                'docsRoot'            => '',
+            ]
+        );
     }
 }

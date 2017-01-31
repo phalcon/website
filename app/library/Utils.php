@@ -6,6 +6,15 @@ use Phalcon\Mvc\User\Component;
 
 class Utils extends Component
 {
+    /**
+     * Checks for an environment variable and returns it; if not it returns
+     * the default variable
+     *
+     * @param string $value
+     * @param mixed  $default
+     *
+     * @return array|false|string
+     */
     public function env($value, $default = '')
     {
         $return = $default;
@@ -17,6 +26,14 @@ class Utils extends Component
         return $return;
     }
 
+    /**
+     * Converts milliseconds to human readable format
+     *
+     * @param float $microseconds
+     * @param int   $precision
+     *
+     * @return string
+     */
     public function timeToHuman($microseconds, $precision = 3)
     {
         $units = ['μs', 'ns', 'ms', 's'];
@@ -30,6 +47,14 @@ class Utils extends Component
         return round($micro, $precision) . ' ' . $units[$pow];
     }
 
+    /**
+     * Converts bytes to a human readable format
+     *
+     * @param int $bytes
+     * @param int $precision
+     *
+     * @return string
+     */
     public function bytesToHuman($bytes, $precision = 2)
     {
         $units  = ['B', 'KB', 'MB', 'GB', 'TB', 'PB'];

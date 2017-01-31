@@ -8,6 +8,7 @@ class Constants
      * Services
      */
     const SRV_CACHE_DATA     = 'cacheData';
+    const SRV_CONFIG         = 'config';
     const SRV_DISPATCHER     = 'dispatcher';
     const SRV_EVENTS_MANAGER = 'eventsManager';
     const SRV_LOCALE         = 'locale';

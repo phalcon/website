@@ -54,7 +54,7 @@ class Locale extends Component
 
             $phrases = json_decode($english, true);
 
-            if ('en_US' !== $language) {
+            if ('en' !== $language) {
                 $other   = file_get_contents(
                     sprintf(
                         '%s/storage/languages/%s.json',

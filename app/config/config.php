@@ -9,13 +9,15 @@ return [
                 'get' => [
                     '/'                                 => 'indexRedirectAction',
                     '/{language:[a-z]{2}}'              => 'indexAction',
-                    '/{language:[a-z]{2}}/about'        => 'aboutAction',
-                    '/{language:[a-z]{2}}/hosting'      => 'hostingAction',
-                    '/{language:[a-z]{2}}/sponsors'     => 'sponsorsAction',
-                    '/{language:[a-z]{2}}/support'      => 'supportAction',
-                    '/{language:[a-z]{2}}/team'         => 'teamAction',
-                    '/{language:[a-z]{2}}/testimonials' => 'testimonialsAction',
-                    '/{language:[a-z]{2}}/404'          => 'notfoundAction',
+                ],
+            ],
+        ],
+        [
+            'class'   => 'Website\Controllers\PagesController',
+            'prefix'  => '',
+            'methods' => [
+                'get' => [
+                    '/{language:[a-z]{2}}/{slug:(about|team|roadmap|testimonials)}' => 'pageAction',
                 ],
             ],
         ],

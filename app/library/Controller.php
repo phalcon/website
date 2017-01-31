@@ -14,9 +14,38 @@ use Website\Constants;
  */
 class Controller extends PhController
 {
+    /**
+     * Initializes the controller
+     */
+    public function onConstruct()
+    {
+        /**
+         * Collections
+         */
+        $this
+            ->assets
+            ->collection("header_js");
 
-//	public function onConstruct()
-//	{
+        $this
+            ->assets
+            ->collection("header_css")
+            ->addCss('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', false)
+            ->addCss('//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css', false)
+            ->addCss('//fonts.googleapis.com/css?family=Open+Sans:700,400', false);
+
+        $this
+            ->assets
+            ->collection("footer_js")
+            ->addJs('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', false)
+            ->addJs('//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js', false)
+            ->addJs($this->getCdnUrl() . 'js/plugins/jquery.lazyload.min.js', $this->isCdnLocal())
+            ->addJs($this->getCdnUrl() . 'js/plugins/jquery.magnific-popup.min.js', $this->isCdnLocal())
+            ->addJs($this->getCdnUrl() . 'js/plugins/highlight.pack.js', $this->isCdnLocal())
+            ->addJs($this->getCdnUrl() . 'js/plugins/jquery.ajaxchimp.min.js', $this->isCdnLocal())
+            ->addJs($this->getCdnUrl() . 'js/plugins/jquery.backstretch.min.js', $this->isCdnLocal())
+            ->addJs($this->getCdnUrl() . 'js/custom.js');
+
+
 //		if (!$release = $this->cacheData->get('gh_release')) {
 //			$options = [
 //				CURLOPT_RETURNTRANSFER => true,
@@ -62,7 +91,7 @@ class Controller extends PhController
 //		}
 //
 //		$this->view->setVar('release', $release);
-//	}
+    }
 //
 //	public function requestInitialize()
 //	{
@@ -131,4 +160,41 @@ class Controller extends PhController
 //
 //        return 'en';
 //    }
+
+    /**
+     * Returns the CDN URL
+     *
+     * @return string
+     */
+    protected function getCdnUrl()
+    {
+        return $this->utils->env('APP_STATIC_URL', '/');
+    }
+
+    /**
+     * Gets the contributors from the cached file
+     *
+     * @return array
+     */
+    protected function getContributors()
+    {
+        $contributors = [];
+        $fileName     = APP_PATH . '/storage/cache/data/contributors.json';
+        if (true == file_exists($fileName)) {
+            $contributors = file_get_contents($fileName);
+            $contributors = json_decode($contributors, true);
+        }
+
+        return $contributors;
+    }
+
+    /**
+     * Is the CDN local or not
+     *
+     * @return bool
+     */
+    protected function isCdnLocal()
+    {
+        return boolval('/' === $this->getCdnUrl());
+    }
 }

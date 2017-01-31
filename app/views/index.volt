@@ -70,7 +70,7 @@
                         <div class="arrow-left"></div>
                         <div class="arrow-down-2"></div>
                         <p>
-                            <img src='{{ cdnUrl ~ '/images/professor.png' }}'
+                            <img src='{{ cdnUrl ~ 'images/professor.png' }}'
                                  title='{{ locale.translate('learn') }}'
                                  alt='{{ locale.translate('learn') }}' />
                             {{ locale.translate('learn') }}
@@ -81,8 +81,8 @@
                 <div class="col-md-3">
                     <div class="advertised">
                         <p>
-                            <a href="{{ docsRoot }}reference/tutorial.html" style="color:#ffffff">
-                                <img src='{{ cdnUrl ~ '/images/chemistry.png' }}'
+                            <a href="reference/tutorial.html" style="color:#ffffff">
+                                <img src='{{ cdnUrl ~ 'images/chemistry.png' }}'
                                      title='{{ locale.translate('try_phalcon') }}'
                                      alt='{{ locale.translate('try_phalcon') }}' />
                                 {{ locale.translate('try_phalcon') }}
@@ -95,7 +95,7 @@
                     <div class="advertised">
                         <p>
                             <a href="http://zephir-lang.com">
-                                <img src='{{ cdnUrl ~ '/images/zephir_logo.png' }}'
+                                <img src='{{ cdnUrl ~ 'images/zephir_logo.png' }}'
                                      title='{{ locale.translate('zephir') }}'
                                      alt='{{ locale.translate('zephir') }}' />
                             </a>
@@ -107,7 +107,7 @@
                     <div class="advertised">
                         <p>
                             <a href="/{{ language }}/about">
-                                <img src='{{ cdnUrl ~ '/images/drop.png' }}'
+                                <img src='{{ cdnUrl ~ 'images/drop.png' }}'
                                      title='{{ locale.translate('contribute') }}'
                                      alt='{{ locale.translate('contribute') }}' />
                             {{ locale.translate('contribute') }}
@@ -136,7 +136,7 @@
                     <ul class="feature-list">
                         <li class="basic_features low_overhead">
                             <div class="feature-bullet">
-                                <img src='{{ cdnUrl ~ '/images/favorite.png' }}'
+                                <img src='{{ cdnUrl ~ 'images/favorite.png' }}'
                                      title='{{ locale.translate('low_overhead') }}'
                                      alt='{{ locale.translate('low_overhead') }}'
                                      class="img-star" />
@@ -150,7 +150,7 @@
                         </li>
                         <li class="basic_features mvc">
                             <div class="feature-bullet">
-                                <img src='{{ cdnUrl ~ '/images/favorite.png' }}'
+                                <img src='{{ cdnUrl ~ 'images/favorite.png' }}'
                                      title='{{ locale.translate('mvc_hmvc') }}'
                                      alt='{{ locale.translate('mvc_hmvc') }}'
                                      class="img-star" />
@@ -164,7 +164,7 @@
                         </li>
                         <li class="basic_features di">
                             <div class="feature-bullet">
-                                <img src='{{ cdnUrl ~ '/images/favorite.png' }}'
+                                <img src='{{ cdnUrl ~ 'images/favorite.png' }}'
                                      title='{{ locale.translate('dependency_injection') }}'
                                      alt='{{ locale.translate('dependency_injection') }}'
                                      class="img-star" />
@@ -178,7 +178,7 @@
                         </li>
                         <li class="basic_features rest">
                             <div class="feature-bullet">
-                                <img src='{{ cdnUrl ~ '/images/favorite.png' }}'
+                                <img src='{{ cdnUrl ~ 'images/favorite.png' }}'
                                      title='{{ locale.translate('rest') }}'
                                      alt='{{ locale.translate('rest') }}'
                                      class="img-star" />
@@ -192,7 +192,7 @@
                         </li>
                         <li class="basic_features autoloader">
                             <div class="feature-bullet">
-                                <img src='{{ cdnUrl ~ '/images/favorite.png' }}'
+                                <img src='{{ cdnUrl ~ 'images/favorite.png' }}'
                                      title='{{ locale.translate('autoloader') }}'
                                      alt='{{ locale.translate('autoloader') }}'
                                      class="img-star" />
@@ -206,7 +206,7 @@
                         </li>
                         <li class="basic_features router">
                             <div class="feature-bullet">
-                                <img src='{{ cdnUrl ~ '/images/favorite.png' }}'
+                                <img src='{{ cdnUrl ~ 'images/favorite.png' }}'
                                      title='{{ locale.translate('router') }}'
                                      alt='{{ locale.translate('router') }}'
                                      class="img-star" />
@@ -250,7 +250,7 @@
                     <ul class="feature-list">
                         <li class="data_storage orm">
                             <div class="feature-bullet">
-                                <img src='{{ cdnUrl ~ '/images/favorite.png' }}'
+                                <img src='{{ cdnUrl ~ 'images/favorite.png' }}'
                                      title='{{ locale.translate('orm') }}'
                                      alt='{{ locale.translate('orm') }}'
                                      class="img-star" />
@@ -264,7 +264,7 @@
                         </li>
                         <li class="data_storage phql">
                             <div class="feature-bullet">
-                                <img src='{{ cdnUrl ~ '/images/favorite.png' }}'
+                                <img src='{{ cdnUrl ~ 'images/favorite.png' }}'
                                      title='{{ locale.translate('phql') }}'
                                      alt='{{ locale.translate('phql') }}'
                                      class="img-star" />
@@ -278,7 +278,7 @@
                         </li>
                         <li class="data_storage odm">
                             <div class="feature-bullet">
-                                <img src='{{ cdnUrl ~ '/images/favorite.png' }}'
+                                <img src='{{ cdnUrl ~ 'images/favorite.png' }}'
                                      title='{{ locale.translate('odm_for_mongo') }}'
                                      alt='{{ locale.translate('odm_for_mongo') }}'
                                      class="img-star" />
@@ -292,7 +292,7 @@
                         </li>
                         <li class="data_storage transactions">
                             <div class="feature-bullet">
-                                <img src='{{ cdnUrl ~ '/images/favorite.png' }}'
+                                <img src='{{ cdnUrl ~ 'images/favorite.png' }}'
                                      title='{{ locale.translate('transactions') }}'
                                      alt='{{ locale.translate('transactions') }}'
                                      class="img-star" />
@@ -306,7 +306,7 @@
                         </li>
                         <li class="data_storage cache">
                             <div class="feature-bullet">
-                                <img src='{{ cdnUrl ~ '/images/favorite.png' }}'
+                                <img src='{{ cdnUrl ~ 'images/favorite.png' }}'
                                      title='{{ locale.translate('cache') }}'
                                      alt='{{ locale.translate('cache') }}'
                                      class="img-star" />
@@ -348,7 +348,7 @@
                     <ul class="feature-list">
                         <li class="views_front_end templates">
                             <div class="feature-bullet">
-                                <img src='{{ cdnUrl ~ '/images/favorite.png' }}'
+                                <img src='{{ cdnUrl ~ 'images/favorite.png' }}'
                                      title='{{ locale.translate('template_engines') }}'
                                      alt='{{ locale.translate('template_engines') }}'
                                      class="img-star" />
@@ -362,7 +362,7 @@
                         </li>
                         <li class="views_front_end volt">
                             <div class="feature-bullet">
-                                <img src='{{ cdnUrl ~ '/images/favorite.png' }}'
+                                <img src='{{ cdnUrl ~ 'images/favorite.png' }}'
                                      title='{{ locale.translate('template_engine_volt') }}'
                                      alt='{{ locale.translate('template_engine_volt') }}'
                                      class="img-star" />
@@ -378,7 +378,7 @@
                         </li>
                         <li class="views_front_end i18n">
                             <div class="feature-bullet">
-                                <img src='{{ cdnUrl ~ '/images/favorite.png' }}'
+                                <img src='{{ cdnUrl ~ 'images/favorite.png' }}'
                                      title='{{ locale.translate('i18n') }}'
                                      alt='{{ locale.translate('i18n') }}'
                                      class="img-star" />
@@ -392,7 +392,7 @@
                         </li>
                         <li class="views_front_end forms">
                             <div class="feature-bullet">
-                                <img src='{{ cdnUrl ~ '/images/favorite.png' }}'
+                                <img src='{{ cdnUrl ~ 'images/favorite.png' }}'
                                      title='{{ locale.translate('forms_builder') }}'
                                      alt='{{ locale.translate('forms_builder') }}'
                                      class="img-star" />
@@ -408,7 +408,7 @@
                         </li>
                         <li class="views_front_end flash">
                             <div class="feature-bullet">
-                                <img src='{{ cdnUrl ~ '/images/favorite.png' }}'
+                                <img src='{{ cdnUrl ~ 'images/favorite.png' }}'
                                      title='{{ locale.translate('flash_messages') }}'
                                      alt='{{ locale.translate('flash_messages') }}'
                                      class="img-star" />
@@ -452,7 +452,7 @@
                     <ul class="feature-list">
                         <li class="more_components acl">
                             <div class="feature-bullet">
-                                <img src='{{ cdnUrl ~ '/images/favorite.png' }}'
+                                <img src='{{ cdnUrl ~ 'images/favorite.png' }}'
                                      title='{{ locale.translate('acl') }}'
                                      alt='{{ locale.translate('acl') }}'
                                      class="img-star" />
@@ -466,7 +466,7 @@
                         </li>
                         <li class="more_components sharding">
                             <div class="feature-bullet">
-                                <img src='{{ cdnUrl ~ '/images/favorite.png' }}'
+                                <img src='{{ cdnUrl ~ 'images/favorite.png' }}'
                                      title='{{ locale.translate('sharding') }}'
                                      alt='{{ locale.translate('sharding') }}'
                                      class="img-star" />
@@ -480,7 +480,7 @@
                         </li>
                         <li class="more_components crypt">
                             <div class="feature-bullet">
-                                <img src='{{ cdnUrl ~ '/images/favorite.png' }}'
+                                <img src='{{ cdnUrl ~ 'images/favorite.png' }}'
                                      title='{{ locale.translate('crypt') }}'
                                      alt='{{ locale.translate('crypt') }}'
                                      class="img-star" />
@@ -494,7 +494,7 @@
                         </li>
                         <li class="more_components events">
                             <div class="feature-bullet">
-                                <img src='{{ cdnUrl ~ '/images/favorite.png' }}'
+                                <img src='{{ cdnUrl ~ 'images/favorite.png' }}'
                                      title='{{ locale.translate('events') }}'
                                      alt='{{ locale.translate('events') }}'
                                      class="img-star" />
@@ -508,7 +508,7 @@
                         </li>
                         <li class="more_components queueing">
                             <div class="feature-bullet">
-                                <img src='{{ cdnUrl ~ '/images/favorite.png' }}'
+                                <img src='{{ cdnUrl ~ 'images/favorite.png' }}'
                                      title='{{ locale.translate('queueing') }}'
                                      alt='{{ locale.translate('queueing') }}'
                                      class="img-star" />
@@ -550,7 +550,8 @@
                 <div class="separator"></div>
 
                 <!-- Video -->
-                <div class="video-img"><img alt="" src="{{ cdnUrl }}/images/flat_v3/laptop.png">
+                <div class="video-img">
+                    <img alt="" src="{{ cdnUrl }}images/flat_v3/laptop.png">
                     <div class="video">
                         <iframe src="https://player.vimeo.com/video/63022489?color=ffffff" allowfullscreen></iframe>
                     </div>
@@ -573,15 +574,15 @@
                 <br>
 
                 <a href="https://pdffiller.com/">
-                    <img src="{{ cdnUrl }}/images/backers/pdffiller-240x60.png">
+                    <img src="{{ cdnUrl }}images/backers/pdffiller-240x60.png">
                 </a>
 
                 <a href="https://mctekk.com/">
-                    <img src="{{ cdnUrl }}/images/backers/mctekk-240x60.png">
+                    <img src="{{ cdnUrl }}images/backers/mctekk-240x60.png">
                 </a>
 
                 <a href="https://abits.com/">
-                    <img src="{{ cdnUrl }}/images/backers/abits-240x60.png">
+                    <img src="{{ cdnUrl }}images/backers/abits-240x60.png">
                 </a>
 
             </div>
@@ -610,7 +611,7 @@
                         <a href="https://forum.phalconphp.com/">
                             <div class="benifit-icon">
                                 <img alt=""
-                                     src="{{ cdnUrl }}/images/chat.png"
+                                     src="{{ cdnUrl }}images/chat.png"
                                      width="60"
                                      height="60">
                             </div>
@@ -624,7 +625,7 @@
                         <a href="https://github.com/phalcon/cphalcon">
                             <div class="benifit-icon">
                                 <img alt=""
-                                     src="{{ cdnUrl }}/images/github_black.png"
+                                     src="{{ cdnUrl }}images/github_black.png"
                                      width="60"
                                      height="60"
                                      style="border-radius: 25px;">
@@ -641,7 +642,7 @@
                         <a href="http://stackoverflow.com/questions/tagged/phalcon">
                             <div class="benifit-icon">
                                 <img alt=""
-                                     src="{{ cdnUrl }}/images/stackoverflow.png"
+                                     src="{{ cdnUrl }}images/stackoverflow.png"
                                      width="60"
                                      height="60"
                                      style="border-radius: 25px;">
