@@ -92,7 +92,7 @@ nav:hover{
 }
 
 .footer {
-    background:url(../images/flat_v3/texture.png) repeat-x;
+    background:url(../images/flat_v3/texture.png);
     padding: 60px 0 80px
 }
 .footer h4 {
@@ -607,7 +607,7 @@ section p {
 =========================================
 -----------------------------------------*/
 .jumbotron {
-	background:url(../images/flat_v3/texture.png) repeat-x;
+	background:url(../images/flat_v3/texture.png);
 	min-height: 650px;
 	margin-bottom:0;
 	text-align:center;
@@ -631,7 +631,7 @@ section p {
 	font-size: 48px; /* PIXEL FALLBACK */
 	font-size: 4.8rem;
 	color: #fff;
-	margin-top:120px;
+	margin-top: 30px;
 }
 
 .jumbotron h1 span {
@@ -1489,3 +1489,27 @@ ul.social-icons li a {
 .no-cssanimations .bg-slideshow li span{
 	opacity: 1;
 }
+
+
+/*---------------------------------------
+  STYLE HELPERS
+-----------------------------------------*/
+
+ .img-response {
+     width: 100%;
+ }
+ 
+ .w-sm {
+     max-width: 600px;
+ }
+
+ .m-t-20 {
+     margin-top: 20px;
+ }
+ 
+ .m-t-50 {
+     margin-top: 50px;
+ }
+/*---------------------------------------
+  /STYLE HELPERS
+-----------------------------------------*/
