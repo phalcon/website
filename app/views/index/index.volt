@@ -3,7 +3,7 @@
 
 <!-- =========================
      Background Images
-============================== -->
+
 
 <ul class="bg-slideshow">
     <li><span>Image 01</span></li>
@@ -13,6 +13,7 @@
     <li><span>Image 05</span></li>
     <li><span>Image 06</span></li>
 </ul>
+============================== -->
 
 <!-- =========================
      Section1 - Header
@@ -43,11 +44,14 @@
             <!-- Header Content -->
             <div class="col-sm-12">
                 <div align="center">
+                    <div class="w-sm m-t-50">
+                        <img src="/images/illustrations/fast.svg" class="img-response" id="phal-img">
+                        <!-- <img src="/images/illustrations/elegant.svg" class="img-response" id="phal-img"> -->
+                    </div>
                     <div style="max-width: 600px"><h1>{{ tr('header_tagline') }}</h1></div>
                 </div>
 
                 <!--<div class="separator red"></div>-->
-                <br>
 
                 <p>
                     {{ tr('header_slogan') }}
@@ -56,12 +60,8 @@
                     </a>
                 </p>
 
-                <br>
-                <br>
-                <br>
-
                 {{ link_to(['for': 'pages', 'id': 'the-difference-tm', 'pageSlug': 'download',
-                                'language': language], '<button class="view-detail btn"> <i class="fa fa-download"></i> '~ tr('get_phalcon') ~ ' 3.0</button>',
+                                'language': language], '<button class="view-detail btn m-t-20"> <i class="fa fa-download"></i> '~ tr('get_phalcon') ~ ' 3.0</button>',
                                 'class': 'btn btn-lg btn-phalcon btn-download') }}
                 <div class="sublinks">
                     {{ link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], tr('download') ~ ' ' ~  release) }} |
