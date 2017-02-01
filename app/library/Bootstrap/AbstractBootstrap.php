@@ -3,9 +3,9 @@
 namespace Website\Bootstrap;
 
 use Dotenv\Dotenv;
+use Phalcon\Assets\Manager;
 use Phalcon\Cache\Frontend\Data as PhCacheFrontData;
 use Phalcon\Cache\Frontend\Output as PhCacheFrontOutput;
-use Phalcon\Cache\Backend\File as PhCacheBackFile;
 use Phalcon\Config as PhConfig;
 use Phalcon\Cli\Console as PhCliConsole;
 use Phalcon\Di as PhDI;
@@ -19,10 +19,10 @@ use Phalcon\Mvc\Micro\Collection as PhMicroCollection;
 use Phalcon\Mvc\View\Simple as PhViewSimple;
 use Phalcon\Mvc\View\Engine\Volt as PhVolt;
 
-use Website\Constants;
+use Website\Constants\Environment;
+use Website\Constants\Services;
 use Website\Exception;
 use Website\Locale;
-use Website\Middleware\NotFoundMiddleware;
 use Website\Utils;
 use Website\View\Engine\Volt\Extensions\Php;
 
@@ -59,7 +59,8 @@ abstract class AbstractBootstrap
             ->initLogger()
             ->initLocale()
             ->initRoutes()
-            ->initView();
+            ->initView()
+            ->initAssets();
 
         return $this->runApplication();
     }
@@ -77,6 +78,44 @@ abstract class AbstractBootstrap
     }
 
     /**
+     * Initializes the Assets manager
+     *
+     * @return $this
+     */
+    protected function initAssets()
+    {
+        /** @var \Website\Utils $utils */
+        $utils = $this->diContainer->getShared(Services::UTILS);
+
+        $assets = new Manager();
+
+        /**
+         * Collections
+         */
+        $assets->collection("header_js");
+        $assets
+            ->collection('header_css')
+            ->addCss('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', false)
+            ->addCss('//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css', false)
+            ->addCss('//fonts.googleapis.com/css?family=Open+Sans:700,400', false);
+
+        $assets
+            ->collection('footer_js')
+            ->addJs('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', false)
+            ->addJs('//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js', false)
+            ->addJs($utils->getCdnUrl() . 'js/plugins/jquery.lazyload.min.js', $utils->isCdnLocal())
+            ->addJs($utils->getCdnUrl() . 'js/plugins/jquery.magnific-popup.min.js', $utils->isCdnLocal())
+            ->addJs($utils->getCdnUrl() . 'js/plugins/highlight.pack.js', $utils->isCdnLocal())
+            ->addJs($utils->getCdnUrl() . 'js/plugins/jquery.ajaxchimp.min.js', $utils->isCdnLocal())
+            ->addJs($utils->getCdnUrl() . 'js/plugins/jquery.backstretch.min.js', $utils->isCdnLocal())
+            ->addJs($utils->getCdnUrl() . 'js/custom.js');
+
+        $this->diContainer->setShared(Services::ASSETS, $assets);
+
+        return $this;
+    }
+
+    /**
      * Initializes the Cache
      *
      * @return $this
@@ -86,23 +125,27 @@ abstract class AbstractBootstrap
         /**
          * viewCache
          */
-        /** @var \Website\Utils $utils */
-        $utils    = $this->diContainer->getShared('utils');
-        $lifetime = $utils->env(Constants::CACHE_LIFETIME, 3600);
+        /** @var \Phalcon\Config $config */
+        $config   = $this->diContainer->getShared(Services::CONFIG);
+        $lifetime = $config->get('cache')->get('lifetime', 3600);
+        $driver   = $config->get('cache')->get('viewDriver', 'file');
         $frontEnd = new PhCacheFrontOutput(['lifetime' => $lifetime]);
         $backEnd  = ['cacheDir' => APP_PATH . '/storage/cache/view/'];
-        $cache    = new PhCacheBackFile($frontEnd, $backEnd);
+        $class    = sprintf('\Phalcon\Cache\Backend\%s', ucfirst($driver));
+        $cache    = new $class($frontEnd, $backEnd);
 
-        $this->diContainer->set(Constants::SRV_VIEW_CACHE, $cache);
+        $this->diContainer->set(Services::VIEW_CACHE, $cache);
 
         /**
          * cacheData
          */
-        $frontEnd = new PhCacheFrontOutput(['lifetime' => $lifetime]);
+        $driver   = $config->get('cache')->get('driver', 'file');
+        $frontEnd = new PhCacheFrontData(['lifetime' => $lifetime]);
         $backEnd  = ['cacheDir' => APP_PATH . '/storage/cache/data/'];
-        $cache    = new PhCacheBackFile($frontEnd, $backEnd);
+        $class    = sprintf('\Phalcon\Cache\Backend\%s', ucfirst($driver));
+        $cache    = new $class($frontEnd, $backEnd);
 
-        $this->diContainer->setShared(Constants::SRV_CACHE_DATA, $cache);
+        $this->diContainer->setShared(Services::CACHE_DATA, $cache);
 
         return $this;
     }
@@ -123,7 +166,7 @@ abstract class AbstractBootstrap
         $configArray = require_once($fileName);
         $config = new PhConfig($configArray);
 
-        $this->diContainer->setShared(Constants::SRV_CONFIG, $config);
+        $this->diContainer->setShared(Services::CONFIG, $config);
 
         return $this;
     }
@@ -163,9 +206,9 @@ abstract class AbstractBootstrap
      */
     protected function initErrorHandler()
     {
-        $logger = $this->diContainer->getShared(Constants::SRV_LOGGER);
-        $utils  = $this->diContainer->getShared(Constants::SRV_UTILS);
-        $mode   = $utils->env(Constants::APP_ENV, 'development');
+        $logger = $this->diContainer->getShared(Services::LOGGER);
+        $utils  = $this->diContainer->getShared(Services::UTILS);
+        $mode   = $utils->env(Environment::APP_ENV, 'development');
 
         ini_set('display_errors', boolval('development' === $mode));
         error_reporting(E_ALL);
@@ -261,7 +304,7 @@ abstract class AbstractBootstrap
      */
     protected function initLocale()
     {
-        $this->diContainer->setShared(Constants::SRV_LOCALE, new Locale());
+        $this->diContainer->setShared(Services::LOCALE, new Locale());
 
         return $this;
     }
@@ -273,23 +316,24 @@ abstract class AbstractBootstrap
      */
     protected function initLogger()
     {
-        /** @var \Website\Utils $utils */
-        $utils     = $this->diContainer->getShared(Constants::SRV_UTILS);
+        /** @var \Phalcon\Config $config */
+        $config   = $this->diContainer->getShared(Services::CONFIG);
+        $fileName = $config->get('logger')
+                           ->get('defaultFilename', 'application');
+        $format   = $config->get('logger')
+                           ->get('format', '[%date%][%type%] %message%');
+
         $logFile   = sprintf(
             '%s/storage/logs/%s-%s.log',
             APP_PATH,
             date('Ymd'),
-            $utils->env('LOGGER_DEFAULT_FILENAME', 'application')
-        );
-        $format    = $utils->env(
-            Constants::LOGGER_FORMAT,
-            '[%date%][%type%] %message%'
+            $fileName
         );
         $formatter = new PhLoggerFormatter($format);
         $logger    = new PhFileLogger($logFile);
         $logger->setFormatter($formatter);
 
-        $this->diContainer->setShared(Constants::SRV_LOGGER, $logger);
+        $this->diContainer->setShared(Services::LOGGER, $logger);
 
         return $this;
     }
@@ -302,7 +346,7 @@ abstract class AbstractBootstrap
     protected function initRoutes()
     {
         /** @var PhConfig $config */
-        $config     = $this->diContainer->getShared(Constants::SRV_CONFIG);
+        $config     = $this->diContainer->getShared(Services::CONFIG);
         $routes     = $config->get('routes')->toArray();
         $middleware = $config->get('middleware')->toArray();
 
@@ -321,10 +365,10 @@ abstract class AbstractBootstrap
             $this->application->mount($collection);
         }
 
-        $eventsManager = $this->diContainer->getShared(Constants::SRV_EVENTS_MANAGER);
+        $eventsManager = $this->diContainer->getShared(Services::EVENTS_MANAGER);
 
         foreach ($middleware as $class) {
-            $eventsManager->attach(Constants::SRV_MICRO, new $class());
+            $eventsManager->attach(Services::MICRO, new $class());
             $this->application->before(new $class());
         }
 
@@ -340,7 +384,7 @@ abstract class AbstractBootstrap
      */
     protected function initUtils()
     {
-        $this->diContainer->setShared(Constants::SRV_UTILS, new Utils());
+        $this->diContainer->setShared(Services::UTILS, new Utils());
 
         return $this;
     }
@@ -352,9 +396,9 @@ abstract class AbstractBootstrap
      */
     protected function initView()
     {
-        /** @var \Website\Utils $utils */
-        $utils = $this->diContainer->getShared(Constants::SRV_UTILS);
-        $mode  = $utils->env(Constants::APP_ENV, 'development');
+        /** @var \Phalcon\Config $config */
+        $config = $this->diContainer->getShared(Services::CONFIG);
+        $mode   = $config->get('app')->get('env', 'development');
 
         $view  = new PhViewSimple();
         $view->setViewsDir(APP_PATH . '/app/views/');
@@ -384,7 +428,7 @@ abstract class AbstractBootstrap
             ]
         );
 
-        $this->diContainer->setShared(Constants::SRV_VIEW, $view);
+        $this->diContainer->setShared(Services::VIEW, $view);
 
         return $this;
     }
@@ -398,32 +442,4 @@ abstract class AbstractBootstrap
     {
         return $this->application->handle();
     }
-
-
-/******************************************************************************/
-/******************************************************************************/
-/******************************************************************************/
-/******************************************************************************/
-/******************************************************************************/
-
-
-
-    /**
-     * Sets the debug mode (development) and provides access to the debug
-     * functions if necessary
-     */
-    protected function initDebug()
-    {
-        $registry = $this->diContainer->get(CCS::REGISTRY);
-        $config   = $this->diContainer->get(CCS::CONFIG);
-
-        $registry->devmode = intval($config->get('app')->get('devmode', 0));
-        if (0 !== $registry->devmode) {
-            require_once $registry->base_path.'/library/Common/Debug.php';
-        }
-    }
-
-
-
-
 }

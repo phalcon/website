@@ -7,13 +7,13 @@ use Phalcon\Text;
 use Website\Controller as WController;
 
 /**
- * Class PagesController
+ * Class DownloadController
  *
  * @package Website\Controllers
  *
  * @property \Phalcon\Mvc\View\Simple $viewSimple
  */
-class PagesController extends WController
+class DownloadController extends WController
 {
     /**
      * @param $language
@@ -21,13 +21,17 @@ class PagesController extends WController
      *
      * @return \Phalcon\Http\Response|\Phalcon\Http\ResponseInterface
      */
-    public function pageAction($language, $slug)
+    public function pageAction($language, $slug = '')
     {
         $this
             ->assets
             ->collection('header_css')
             ->addCss($this->utils->getCdnUrl() . 'css/src/styles.css', $this->utils->isCdnLocal())
             ->addCss($this->utils->getCdnUrl() . 'css/phalconPage.css', $this->utils->isCdnLocal());
+
+        if (true === empty($slug)) {
+            $slug = 'index';
+        }
 
         switch ($slug) {
             case 'roadmap':
@@ -42,7 +46,7 @@ class PagesController extends WController
                 ->viewSimple
 //                ->cache(['key' => $cacheKey])
                 ->render(
-                    'pages/' . $slug,
+                    'download/' . $slug,
                     [
                         'page'         => $slug,
                         'language'     => $language,
@@ -60,6 +64,6 @@ class PagesController extends WController
      */
     public function pageRedirectAction($slug = '')
     {
-        return $this->response->redirect('/en/' . $slug, true);
+        return $this->response->redirect('/en/download/' . $slug, true);
     }
 }

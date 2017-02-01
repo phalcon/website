@@ -3,11 +3,12 @@
 namespace Website;
 
 use Phalcon\Mvc\User\Component;
+use Website\Constants\Environment;
 
 /**
  * Class Locale
  *
- * @property \Website\Utils $utils
+ * @property \Phalcon\Config $config
  */
 class Locale extends Component
 {
@@ -34,7 +35,7 @@ class Locale extends Component
          * If we are logged in, get the language specified in the identity,
          * otherwise revert to the default language for this installation
          */
-        $language = $this->utils->env('APP_LANG', 'en');
+        $language = $this->config->get('app')->get('lang', 'en');
 
         /**
          * If no phrases are present we need to load them

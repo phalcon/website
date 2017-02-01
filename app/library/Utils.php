@@ -3,27 +3,63 @@
 namespace Website;
 
 use Phalcon\Mvc\User\Component;
+use Website\Constants\Environment;
 
+/**
+ * Class Utils
+ *
+ * @package Website
+ *
+ * @property \Phalcon\Config $config
+ */
 class Utils extends Component
 {
     /**
-     * Checks for an environment variable and returns it; if not it returns
-     * the default variable
+     * Returns the language parameter if passed, otherwise defaults to the
+     * application default
      *
-     * @param string $value
-     * @param mixed  $default
+     * @param $lang
      *
-     * @return array|false|string
+     * @return mixed|string
      */
-    public function env($value, $default = '')
+    protected function getLang($lang)
     {
-        $return = $default;
+        if (true !== empty($lang)) {
+            $languagesAvailable = array_keys($this->config->get('languages')->toArray());
 
-        if (false !== getenv($value)) {
-            $return = getenv($value);
+            foreach ($this->request->getLanguages() as $httpLang) {
+                $httpLang = mb_strtolower(substr($httpLang['language'], 0, 2));
+                if (true === in_array($httpLang, $languagesAvailable)) {
+                    return $httpLang;
+                }
+            }
+        } else {
+            return $lang;
         }
 
-        return $return;
+        return 'en';
+    }
+
+    /**
+     * Returns the CDN URL
+     *
+     * @param string $resource
+     *
+     * @return string
+     */
+    public function getCdnUrl($resource = '')
+    {
+        return $this->config->get('app')->get('staticUrl', '/') . $resource;
+    }
+
+    /**
+     * Is the CDN local or not
+     *
+     * @return bool
+     */
+    public function isCdnLocal()
+    {
+        return boolval('/' === $this->getCdnUrl());
     }
 
     /**

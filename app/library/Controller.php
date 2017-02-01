@@ -3,14 +3,14 @@
 namespace Website;
 
 use Phalcon\Mvc\Controller as PhController;
-use	Phalcon\Mvc\Dispatcher as PhDispatcher;
 
-use Website\Constants;
+use Website\Constants\Environment;
 
 /**
  * Class Controller
  *
- * @property \Website\Utils           $utils
+ * @property \Phalcon\Config $config
+ * @property \Website\Utils  $utils
  */
 class Controller extends PhController
 {
@@ -24,10 +24,6 @@ class Controller extends PhController
          */
         $this
             ->assets
-            ->collection("header_js");
-
-        $this
-            ->assets
             ->collection("header_css")
             ->addCss('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', false)
             ->addCss('//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css', false)
@@ -38,12 +34,41 @@ class Controller extends PhController
             ->collection("footer_js")
             ->addJs('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', false)
             ->addJs('//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js', false)
-            ->addJs($this->getCdnUrl() . 'js/plugins/jquery.lazyload.min.js', $this->isCdnLocal())
-            ->addJs($this->getCdnUrl() . 'js/plugins/jquery.magnific-popup.min.js', $this->isCdnLocal())
-            ->addJs($this->getCdnUrl() . 'js/plugins/highlight.pack.js', $this->isCdnLocal())
-            ->addJs($this->getCdnUrl() . 'js/plugins/jquery.ajaxchimp.min.js', $this->isCdnLocal())
-            ->addJs($this->getCdnUrl() . 'js/plugins/jquery.backstretch.min.js', $this->isCdnLocal())
-            ->addJs($this->getCdnUrl() . 'js/custom.js');
+            ->addJs($this->utils->getCdnUrl() . 'js/plugins/jquery.lazyload.min.js', $this->utils->isCdnLocal())
+            ->addJs($this->utils->getCdnUrl() . 'js/plugins/jquery.magnific-popup.min.js', $this->utils->isCdnLocal())
+            ->addJs($this->utils->getCdnUrl() . 'js/plugins/highlight.pack.js', $this->utils->isCdnLocal())
+            ->addJs($this->utils->getCdnUrl() . 'js/plugins/jquery.ajaxchimp.min.js', $this->utils->isCdnLocal())
+            ->addJs($this->utils->getCdnUrl() . 'js/plugins/jquery.backstretch.min.js', $this->utils->isCdnLocal())
+            ->addJs($this->utils->getCdnUrl() . 'js/custom.js');
+    }
+
+    protected function getLanguages($language)
+    {
+        /**
+         * Find the languages available
+         */
+        $languages             = $this->config->get('languages');
+        $documentationLanguage = $this->config->get('doc_languages')->get(0, $language);
+        $languagesAvailable    = '';
+        $url                   = $this->request->getScheme() . '://'
+                               . $this->request->getHttpHost()
+                               . $this->config->get('app')->get('baseUri');
+        $uri                   = $this->router->getRewriteUri();
+        foreach ($languages as $key => $value) {
+            $selected            = ($key == $language) ? " selected='selected'" : '';
+            $href                = $url . str_replace("/{$language}", "{$key}", $uri);
+            $languagesAvailable .= sprintf(
+                "<a role='menuitem' tabindex='-1' href='%s' class='flag-%s'%s>%s</a>",
+                $href,
+                $key,
+                $selected,
+                $value
+            );
+        }
+
+        return $languagesAvailable;
+    }
+
 
 
 //		if (!$release = $this->cacheData->get('gh_release')) {
@@ -91,7 +116,7 @@ class Controller extends PhController
 //		}
 //
 //		$this->view->setVar('release', $release);
-    }
+//  }
 //
 //	public function requestInitialize()
 //	{
@@ -162,16 +187,6 @@ class Controller extends PhController
 //    }
 
     /**
-     * Returns the CDN URL
-     *
-     * @return string
-     */
-    protected function getCdnUrl()
-    {
-        return $this->utils->env('APP_STATIC_URL', '/');
-    }
-
-    /**
      * Gets the contributors from the cached file
      *
      * @return array
@@ -186,15 +201,5 @@ class Controller extends PhController
         }
 
         return $contributors;
-    }
-
-    /**
-     * Is the CDN local or not
-     *
-     * @return bool
-     */
-    protected function isCdnLocal()
-    {
-        return boolval('/' === $this->getCdnUrl());
     }
 }

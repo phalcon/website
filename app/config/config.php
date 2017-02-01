@@ -1,14 +1,53 @@
 <?php
 
+use Website\Constants\Environment;
+
+$pageSlugs     = 'about|team|roadmap|testimonials';
+$downloadSlugs = 'linux|windows|tools|docker|vagrant|stubs';
+
 return [
+    'app'           => [
+        'debug'           => getenv(Environment::APP_DEBUG),
+        'env'             => getenv(Environment::APP_ENV),
+        'url'             => getenv(Environment::APP_URL),
+        'name'            => getenv(Environment::APP_NAME),
+        'project'         => getenv(Environment::APP_PROJECT),
+        'description'     => getenv(Environment::APP_DESCRIPTION),
+        'keywords'        => getenv(Environment::APP_KEYWORDS),
+        'repo'            => getenv(Environment::APP_REPO),
+        'docs'            => getenv(Environment::APP_DOCS),
+        'baseUri'         => getenv(Environment::APP_BASE_URI),
+        'staticUrl'       => getenv(Environment::APP_STATIC_URL),
+        'lang'            => getenv(Environment::APP_LANG),
+        'supportEmail'    => getenv(Environment::APP_SUPPORT_EMAIL),
+    ],
+    'cache'         => [
+        'driver'          => getenv(Environment::CACHE_DRIVER),
+        'viewDriver'      => getenv(Environment::VIEW_CACHE_DRIVER),
+        'prefix'          => getenv(Environment::CACHE_PREFIX),
+        'lifetime'        => getenv(Environment::CACHE_LIFETIME),
+    ],
+    'memcached'     => [
+        'host'            => getenv(Environment::MEMCACHED_HOST),
+        'port'            => getenv(Environment::MEMCACHED_PORT),
+        'weight'          => getenv(Environment::MEMCACHED_WEIGHT),
+    ],
+    'logger'        => [
+        'defaultFilename' => getenv(Environment::LOGGER_DEFAULT_FILENAME),
+        'format'          => getenv(Environment::LOGGER_FORMAT),
+        'level'           => getenv(Environment::LOGGER_LEVEL),
+    ],
+    'google'        => [
+        'analytics'       => getenv(Environment::GOOGLE_ANALYTICS),
+    ],
     'routes'        => [
         [
             'class'   => 'Website\Controllers\IndexController',
             'prefix'  => '',
             'methods' => [
                 'get' => [
-                    '/'                                 => 'indexRedirectAction',
-                    '/{language:[a-z]{2}}'              => 'indexAction',
+                    '/'                      => 'indexRedirectAction',
+                    '/{language:[a-z]{2}}'   => 'indexAction',
                 ],
             ],
         ],
@@ -17,21 +56,20 @@ return [
             'prefix'  => '',
             'methods' => [
                 'get' => [
-                    '/{language:[a-z]{2}}/{slug:(about|team|roadmap|testimonials)}' => 'pageAction',
+                    "/{slug:({$pageSlugs})}"                     => 'pageRedirectAction',
+                    "/{language:[a-z]{2}}/{slug:({$pageSlugs})}" => 'pageAction',
                 ],
             ],
         ],
         [
             'class'   => 'Website\Controllers\DownloadController',
-            'prefix'  => 'download',
+            'prefix'  => '',
             'methods' => [
                 'get' => [
-                    '/'                            => 'indexRedirectAction',
-                    '/{language:[a-z]{2}}'         => 'indexAction',
-                    '/{language:[a-z]{2}}/windows' => 'windowsAction',
-                    '/{language:[a-z]{2}}/tools'   => 'toolsAction',
-                    '/{language:[a-z]{2}}/vagrant' => 'vagrantAction',
-                    '/{language:[a-z]{2}}/stubs'   => 'stubsAction',
+                    '/download'                                               => 'pageRedirectAction',
+                    "/download/{slug:({$downloadSlugs})}"                     => 'pageRedirectAction',
+                    '/{language:[a-z]{2}}/download'                           => 'pageAction',
+                    "/{language:[a-z]{2}}/download/{slug:({$downloadSlugs})}" => 'pageAction',
                 ],
             ],
         ],
@@ -50,25 +88,38 @@ return [
         'Website\Middleware\NotFoundMiddleware',
     ],
     'languages'     => [
+        'ar' => 'Arabic',
         'bg' => 'български',
+        'ca' => 'Catalan',
+        'cs' => 'Czech',
         'cz' => 'Český',
+        'da' => 'Danish',
         'de' => 'Deutsch',
         'el' => 'Ελληνικά',
         'en' => 'English',
         'es' => 'Español',
         'fa' => 'فارسی',
         'fr' => 'Français',
+        'gl' => 'Galician',
+        'he' => 'Hebrew',
+        'hi' => 'Hindi',
         'hu' => 'Magyar',
-        'ja' => '日本語',
+        'id' => 'Indonesian',
         'it' => 'Italiano',
+        'ja' => '日本語',
+        'kk' => 'Kazakh',
+        'km' => 'Khmer',
         'ko' => '한국어',
         'lt' => 'Lietuvos',
+        'lv' => 'Latvian',
         'mk' => 'македонски',
         'nl' => 'Nederlands',
+        'no' => 'Norwegian',
         'pl' => 'Polski',
         'pt' => 'Português',
         'ro' => 'Română',
         'ru' => 'Pусский',
+        'si' => 'Sinhala',
         'sr' => 'српски',
         'sv' => 'Svenska',
         'th' => 'ภาษาไทย',
@@ -79,172 +130,14 @@ return [
     'doc_languages' => [
         'en',
         'es',
+        'fa',
         'fr',
+        'id',
         'ja',
         'pl',
         'pt',
         'ru',
+        'uk',
+        'zh',
     ],
 ];
-
-/**
-    $routes = array(
-        // Index (Redirect)
-        '/' => array(
-            'params' => array(
-                'controller' => 'index',
-                'action'     => 'redirectIndex',
-            ),
-            'name'   => 'index-redirect',
-        ),
-        '/index' => array(
-            'params' => array(
-                'controller' => 'index',
-                'action'     => 'redirectIndex',
-            ),
-            'name'   => 'index-redirect',
-        ),
-        // Pages
-        '/{pageSlug:(about|team|roadmap|consulting|hosting|testimonials|support)}' => array(
-            'params' => array(
-                'controller' => 'index',
-                'action'     => 'redirectPages',
-            ),
-            'name'   => 'pages-redirect',
-        ),
-        '/contributors' => array(
-            'params' => array(
-                'controller' => 'utils',
-                'action'     => 'contributors',
-            ),
-            'name'   => 'contributors',
-        ),
-        '/sitemap' => array(
-            'params' => array(
-                'controller' => 'utils',
-                'action'     => 'sitemap',
-            ),
-            'name'   => 'index-sitemap',
-        ),
-        // Download
-        '/download' => array(
-            'params' => array(
-                'controller' => 'index',
-                'action'     => 'redirectDownload'
-            ),
-            'name'   => 'download-redirect',
-        ),
-        '/download/{type:(tools|stubs)}' => array(
-            'params' => array(
-                'controller' => 'index',
-                'action'     => 'redirectDownloadType',
-            ),
-            'name'   => 'download-type-redirect',
-        ),
-        '/download/windows' => array(
-            'params' => array(
-                'controller' => 'index',
-                'action'     => 'redirectDownloadWindows',
-            ),
-            'name'   => 'download-windows-redirect',
-        ),
-        '/download/vagrant' => array(
-            'params' => array(
-                'controller' => 'index',
-                'action'     => 'redirectDownloadVagrant',
-            ),
-            'name'   => 'download-vagrant-redirect',
-        ),
-        // Documentation
-        '/(documentation|reference)' => array(
-            'params' => array(
-                'controller' => 'documentation',
-                'action'     => 'index',
-            ),
-            'name'   => 'documentation',
-        ),
-        // Donate
-        '/donate' => array(
-            'params' => array(
-                'controller' => 'index',
-                'action'     => 'redirectDonate',
-            ),
-            'name'   => 'donate-redirect',
-        ),
-        // Index
-        '/{language:[a-z]{2}}' => array(
-            'params' => array(
-                'controller' => 'index',
-                'action'     => 'index',
-            ),
-            'name'   => 'index',
-        ),
-        '/{language:[a-z]{2}}/index' => array(
-            'params' => array(
-                'controller' => 'index',
-                'action'     => 'index',
-            ),
-            'name'   => 'index',
-        ),
-        // Pages
-        '/{language:[a-z]{2}}/{pageSlug:(about|team|roadmap|consulting|hosting|testimonials|support)}' => array(
-            'params' => array(
-                'controller' => 'pages',
-                'action'     => 'page',
-            ),
-            'name'   => 'pages',
-        ),
-        // Download
-        '/{language:[a-z]{2}}/download' => array(
-            'params' => array(
-                'controller' => 'download'
-            ),
-            'name'   => 'download',
-        ),
-        '/{language:[a-z]{2}}/download/{type:(tools|stubs)}' => array(
-            'params' => array(
-                'controller' => 'download',
-                'action'     => 'index',
-            ),
-            'name'   => 'download-type',
-        ),
-        '/{language:[a-z]{2}}/download/windows' => array(
-            'params' => array(
-                'controller' => 'download',
-                'action'     => 'windows',
-            ),
-            'name'   => 'download-windows',
-        ),
-        '/{language:[a-z]{2}}/download/vagrant' => array(
-            'params' => array(
-                'controller' => 'download',
-                'action'     => 'vagrant',
-            ),
-            'name'   => 'download-vagrant',
-        ),
-        // Documentation
-        '/{language:[a-z]{2}}/(documentation|reference)' => array(
-            'params' => array(
-                'controller' => 'documentation',
-                'action'     => 'index',
-            ),
-            'name'   => 'documentation',
-        ),
-        // Donate
-        '/{language:[a-z]{2}}/donate' => array(
-            'params' => array(
-                'controller' => 'index',
-                'action'     => 'donate',
-            ),
-            'name'   => 'donate',
-        ),
-        //Humans
-        '/humans.txt' => array(
-            'params' => array(
-                'controller' => 'utils',
-                'action'     => 'humans',
-            ),
-            'name'   => 'humans',
-        )
-    );
- */
