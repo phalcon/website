@@ -22,6 +22,8 @@
         <div class="container">
             <div class="row">
                 {% include 'partials/header_top.volt' %}
+            </div>
+            <div class="row">
                 <!-- Header Content -->
                 <div class="col-sm-12">
                     <div align="center">
