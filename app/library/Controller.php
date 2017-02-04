@@ -69,6 +69,15 @@ class Controller extends PhController
         return $languagesAvailable;
     }
 
+    public function redirectAction()
+    {
+        $rewriteUri = $this->router->getRewriteUri();
+        if ('/' !== substr($rewriteUri, -1)) {
+            $rewriteUri .= '/';
+        }
+
+        return $this->response->redirect('/en' . $rewriteUri, true);
+    }
 
 
 //		if (!$release = $this->cacheData->get('gh_release')) {

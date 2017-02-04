@@ -42,6 +42,18 @@ class DownloadController extends WController
 
         $this->tag->setTitle(Text::camelize($slug));
 
+        /**
+         * Only for download/windows page
+         */
+        $releases = [];
+        if ('windows' === $slug) {
+            $releaseName = APP_PATH . '/storage/files/releases.json';
+            if (true === file_exists($releaseName)) {
+                $releases = json_decode(file_get_contents($releaseName), true);
+            }
+        }
+
+
         return $this
                 ->viewSimple
 //                ->cache(['key' => $cacheKey])
@@ -52,18 +64,9 @@ class DownloadController extends WController
                         'language'     => $language,
                         'contributors' => $this->getContributors(),
                         'languages'    => $this->getLanguages($language),
+                        'releases'     => $releases,
                         'docsRoot'     => '',
                     ]
                 );
-    }
-
-    /**
-     * @param string $slug
-     *
-     * @return \Phalcon\Http\Response|\Phalcon\Http\ResponseInterface
-     */
-    public function pageRedirectAction($slug = '')
-    {
-        return $this->response->redirect('/en/download/' . $slug, true);
     }
 }

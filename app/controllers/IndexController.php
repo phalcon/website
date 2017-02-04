@@ -35,18 +35,7 @@ class IndexController extends WController
                         'language'     => $language,
                         'languages'    => $this->getLanguages($language),
                         'contributors' => $this->getContributors(),
-                        'docsRoot'     => '',
                     ]
                 );
-    }
-
-    /**
-     * @param string $slug
-     *
-     * @return \Phalcon\Http\Response|\Phalcon\Http\ResponseInterface
-     */
-    public function indexRedirectAction($slug = '')
-    {
-        return $this->response->redirect('/en/' . $slug, true);
     }
 }

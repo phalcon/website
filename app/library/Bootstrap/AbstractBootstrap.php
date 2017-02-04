@@ -10,6 +10,7 @@ use Phalcon\Config as PhConfig;
 use Phalcon\Cli\Console as PhCliConsole;
 use Phalcon\Di as PhDI;
 use Phalcon\Di\FactoryDefault as PhFactoryDefault;
+use Phalcon\Events\Event;
 use Phalcon\Loader as PhLoader;
 use Phalcon\Logger\Adapter\File as PhFileLogger;
 use Phalcon\Logger\Formatter\Line as PhLoggerFormatter;

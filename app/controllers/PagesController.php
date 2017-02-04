@@ -31,7 +31,7 @@ class PagesController extends WController
 
         switch ($slug) {
             case 'roadmap':
-                return $this->response->redirect('https://github.com/phalcon/cphalcon/wiki/Roadmap');
+                return $this->response->redirect('https://phalcon.link/roadmap');
         }
 
         $cacheKey = str_replace('/', '_', $this->router->getRewriteUri()) . '.cache';
@@ -51,15 +51,5 @@ class PagesController extends WController
                         'docsRoot'     => '',
                     ]
                 );
-    }
-
-    /**
-     * @param string $slug
-     *
-     * @return \Phalcon\Http\Response|\Phalcon\Http\ResponseInterface
-     */
-    public function pageRedirectAction($slug = '')
-    {
-        return $this->response->redirect('/en/' . $slug, true);
     }
 }

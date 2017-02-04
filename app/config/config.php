@@ -2,7 +2,7 @@
 
 use Website\Constants\Environment;
 
-$pageSlugs     = 'about|team|roadmap|testimonials';
+$pageSlugs     = 'about|team|roadmap|testimonials|sponsors|support';
 $downloadSlugs = 'linux|windows|tools|docker|vagrant|stubs';
 
 return [
@@ -43,31 +43,28 @@ return [
     'routes'        => [
         [
             'class'   => 'Website\Controllers\IndexController',
-            'prefix'  => '',
             'methods' => [
                 'get' => [
-                    '/'                      => 'indexRedirectAction',
+                    '/'                      => 'redirectAction',
                     '/{language:[a-z]{2}}'   => 'indexAction',
                 ],
             ],
         ],
         [
             'class'   => 'Website\Controllers\PagesController',
-            'prefix'  => '',
             'methods' => [
                 'get' => [
-                    "/{slug:({$pageSlugs})}"                     => 'pageRedirectAction',
+                    "/{slug:({$pageSlugs})}"                     => 'redirectAction',
                     "/{language:[a-z]{2}}/{slug:({$pageSlugs})}" => 'pageAction',
                 ],
             ],
         ],
         [
             'class'   => 'Website\Controllers\DownloadController',
-            'prefix'  => '',
             'methods' => [
                 'get' => [
-                    '/download'                                               => 'pageRedirectAction',
-                    "/download/{slug:({$downloadSlugs})}"                     => 'pageRedirectAction',
+                    '/download'                                               => 'redirectAction',
+                    "/download/{slug:({$downloadSlugs})}"                     => 'redirectAction',
                     '/{language:[a-z]{2}}/download'                           => 'pageAction',
                     "/{language:[a-z]{2}}/download/{slug:({$downloadSlugs})}" => 'pageAction',
                 ],
@@ -75,7 +72,6 @@ return [
         ],
         [
             'class'   => 'Website\Controllers\UtilsController',
-            'prefix'  => '',
             'methods' => [
                 'get' => [
                     '/contributors' => 'contributorsAction',
