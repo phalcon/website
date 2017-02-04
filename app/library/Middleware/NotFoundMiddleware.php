@@ -32,7 +32,7 @@ class NotFoundMiddleware extends Plugin implements MiddlewareInterface
         echo $this->viewSimple->render(
             'utils/notfound',
             [
-                'language' => 'en_US',
+                'language' => 'en',
                 'cdnUrl'   => '',
                 'docsRoot' => '',
                 'languages_available' => '',
