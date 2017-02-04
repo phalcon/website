@@ -6,7 +6,7 @@
 
 <section class="testimonials">
     <div class="container">
-    {% include 'pages/menu.volt' %}
+    {% include 'pages/about_menu.volt' %}
     <div class="row">
         <div class="col-lg-12">
             <p>{{ locale.translate('testimonials_description', 'team@phalconphp.com', 'team@phalconphp.com') }}</p>

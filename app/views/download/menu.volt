@@ -12,7 +12,7 @@ set downloadPages = [
             <ul class="nav nav-pills">
                 {% for downloadPage,downloadLabel in downloadPages %}
                     <li{% if page === downloadPage %} class="active"{% endif %}>
-                        <a href="/{{ language }}/{{ downloadPage }}">
+                        <a href="/{{ language }}/download/{{ downloadPage }}">
                             <span class="span-ul">{{ locale.translate(downloadLabel) }}</span>
                         </a>
                     </li>

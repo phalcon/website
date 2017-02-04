@@ -40,18 +40,23 @@
                     </p>
 
                     <br>
-                    <br>
-                    <br>
-
-                    <a href="/{{ language }}/download"
+                    <a href="{{ url(language ~ '/language') }}"
                        class="btn btn-lg btn-phalcon btn-download">
                         <button class="view-detail btn">
                             <i class="fa fa-download"></i> {{ locale.translate('get_phalcon', version) }}
                         </button>
                     </a>
                     <div class="sublinks">
-                        <a href="/{{ language }}/download">{{ locale.translate('download_version', version) }}</a> |
-                        <a href="/{{ language }}/download">{{ locale.translate('install_instructions') }}</a>
+                        <a href="{{ url(language ~ '/language') }}">{{ locale.translate('download_version', version) }}</a> |
+                        <a href="{{ url(language ~ '/language') }}">{{ locale.translate('install_instructions') }}</a>
+                    </div>
+                    <div class="sublinks">
+                        <a href="https://phalcon.link/fund"
+                           class="btn btn-lg btn-info btn-download">
+                            <button class="btn">
+                                <i class="fa fa-money"></i> {{ locale.translate('support_us') }}
+                            </button>
+                        </a>
                     </div>
                 </div>
                 <!-- /End Header Content -->
@@ -81,7 +86,7 @@
                 <div class="col-md-3">
                     <div class="advertised">
                         <p>
-                            <a href="reference/tutorial.html" style="color:#ffffff">
+                            <a href="{{ utils.getDocsUrl(language) ~ '/reference/tutorial.html' }}" style="color:#ffffff">
                                 <img src='{{ utils.getCdnUrl('images/chemistry.png') }}'
                                      title='{{ locale.translate('try_phalcon') }}'
                                      alt='{{ locale.translate('try_phalcon') }}' />
@@ -94,7 +99,7 @@
                 <div class="col-md-3">
                     <div class="advertised">
                         <p>
-                            <a href="http://zephir-lang.com">
+                            <a href="https://zephir-lang.com">
                                 <img src='{{ utils.getCdnUrl('images/zephir_logo.png') }}'
                                      title='{{ locale.translate('zephir') }}'
                                      alt='{{ locale.translate('zephir') }}' />
@@ -106,7 +111,7 @@
                 <div class="col-md-3">
                     <div class="advertised">
                         <p>
-                            <a href="/{{ language }}/about">
+                            <a href="{{ url(language ~ '/about') }}">
                                 <img src='{{ utils.getCdnUrl('images/drop.png') }}'
                                      title='{{ locale.translate('contribute') }}'
                                      alt='{{ locale.translate('contribute') }}' />
@@ -608,7 +613,7 @@
 
                     <!-- Benefit1 -->
                     <div class="col-md-4 community">
-                        <a href="https://forum.phalconphp.com/">
+                        <a href="https://phalcon.link/forum">
                             <div class="benifit-icon">
                                 <img alt=""
                                      src="{{ utils.getCdnUrl('images/chat.png') }}"
@@ -622,7 +627,7 @@
                     </div>
 
                     <div class="col-md-4 community">
-                        <a href="https://github.com/phalcon/cphalcon">
+                        <a href="https://phalcon.link/github">
                             <div class="benifit-icon">
                                 <img alt=""
                                      src="{{ utils.getCdnUrl('images/github_black.png') }}"
@@ -639,7 +644,7 @@
 
                     <!-- Benefit2 -->
                     <div class="col-md-4 community">
-                        <a href="http://stackoverflow.com/questions/tagged/phalcon">
+                        <a href="https://stackoverflow.com/questions/tagged/phalcon">
                             <div class="benifit-icon">
                                 <img alt=""
                                      src="{{ utils.getCdnUrl('images/stackoverflow.png') }}"
@@ -672,7 +677,5 @@
             </div>
         </div>
     </section>
-
-
 
 {% endblock %}

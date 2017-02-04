@@ -1,4 +1,4 @@
-{% set links = ['download', 'forum', 'slack', 'blog', 'api', 'store', 'resources', 'about'] %}
+{% set links = ['download', 'docs', 'forum', 'slack', 'blog', 'api', 'resources', 'sponsors'] %}
 <ul class="nav navbar-nav main-menu">
     {% for link in links %}
     <li {% if loop.first %}class="first"{% endif %}>
