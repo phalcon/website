@@ -4,10 +4,8 @@
 
 {% include 'partials/page_head.volt' %}
 
-<section class="team">
+<section class="hosting">
     <div class="container">
-        {% include 'pages/sponsors_menu.volt' %}
-
         <div class="row">
             <div class="col-lg-10">
                 <p>{{ locale.translate('sponsors_description_1') }}</p>

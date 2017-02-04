@@ -5,7 +5,7 @@
                 <h4>{{ locale.translate('download') }}</h4>
                 <ul>
                     <li><a href="{{ url(language ~ '/download') }}">{{ locale.translate('installing_phalcon_php') }}</a></li>
-                    <li><a href="{{ utils.getDocsUrl(language) }}index.html" class="header-nav-link" target="_blank">{{ locale.translate('documentation') }}</a></li>
+                    <li><a href="{{ utils.getDocsUrl(language) }}/index.html" class="header-nav-link" target="_blank">{{ locale.translate('documentation') }}</a></li>
                     <li><a href="http://api.phalconphp.com">API</a></li>
                     <li><a href="{{ utils.getDocsUrl(language) }}/reference/tutorial.html">{{ locale.translate('tutorial') }}</a></li>
                     <li><a href="{{ utils.getDocsUrl(language) }}/reference/tutorial.html#sample-applications">{{ locale.translate('sample_applications') }}</a></li>
@@ -29,10 +29,10 @@
                     <li><a class="link-black" href="{{ url(language ~ '/blog') }}">{{ locale.translate('blog') }}</a></li>
                     <li><a class="link-black" href="{{ url(language ~ '/about') }}">{{ locale.translate('about') }}</a></li>
                     <li><a class="link-black" href="{{ url(language ~ '/team') }}">{{ locale.translate('team') }}</a></li>
-                    <li><a class="link-black" href="{{ url(language ~ '/roadmap') }}">{{ locale.translate('roadmap') }}</a></li>
-                    <li><a class="link-black" href="{{ url(language ~ '/donate') }}">{{ locale.translate('donate') }}</a></li>
-                    {#<li>{{ link_to(['for': 'pages', 'pageSlug': 'consulting', 'language': language], locale.translate('consulting')) }}</li>#}
-                    {#<li>{{ link_to(['for': 'pages', 'pageSlug': 'hosting', 'language': language], locale.translate('hosting')) }}</li>#}
+                    <li><a class="link-black" href="https://phalcon.link/roadmap">{{ locale.translate('roadmap') }}</a></li>
+                    <li><a class="link-black" href="https://phalcon.link/donate">{{ locale.translate('donate') }}</a></li>
+                    <li><a class="link-black" href="{{ url(language ~ '/consulting') }}">{{ locale.translate('consulting') }}</a></li>
+                    <li><a class="link-black" href="{{ url(language ~ '/hosting') }}">{{ locale.translate('hosting') }}</a></li>
                 </ul>
             </div>
             <div id="license-spaccer" class="visible-xs"></div>
