@@ -2,8 +2,6 @@
 
 namespace Website\Controllers;
 
-use Phalcon\Text;
-
 use Website\Controller as WController;
 
 /**
@@ -23,14 +21,6 @@ class PagesController extends WController
      */
     public function pageAction($language, $slug)
     {
-        $this->viewSimple->setVar(
-            'pagePills',
-            [
-                'team'         => ['l' => 'team',         'u' => 'team'],
-                'about'        => ['l' => 'about',        'u' => 'about'],
-                'testimonials' => ['l' => 'testimonials', 'u' => 'testimonials'],
-            ]
-        );
         return $this->preparePages($language, $slug, 'pages');
     }
 }

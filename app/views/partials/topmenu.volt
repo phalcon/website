@@ -1,26 +1,14 @@
 
 <ul class="nav navbar-nav main-menu">
     <li class="first">
-        {{
-            link_to(
-                'https://phalcon.link/download',
-                locale.translate('download'),
-                'class': 'header-nav-link',
-                'target': '_blank', '
-                local': false
-            )
-        }}
+        <a href="/{{ language }}/download" class="header-nav-link">
+            {{ locale.translate('download') }}
+        </a>
     </li>
     <li>
-        {{
-            link_to(
-                'https://phalcon.link/docs',
-                locale.translate('docs'),
-                'class': 'header-nav-link',
-                'target': '_blank', '
-                local': false
-            )
-        }}
+        <a href="https://phalcon.link/docs" class="header-nav-link" target="_blank">
+            {{ locale.translate('docs') }}
+        </a>
     </li>
     <li class="dropdown">
         <a href="javascript:;"
@@ -33,92 +21,51 @@
         </a>
         <ul class="dropdown-menu">
             <li>
-                {{
-                    link_to(
-                        'https://phalcon.link/forum',
-                        locale.translate('forum'),
-                        'class': 'header-nav-link',
-                        'target': '_blank', '
-                        local': false
-                    )
-                }}
+                <a href="https://phalcon.link/forum" target="_blank">
+                    {{ locale.translate('forum') }}
+                </a>
             </li>
             <li>
-                {{
-                    link_to(
-                        'https://phalcon.link/blog',
-                        locale.translate('blog'),
-                        'class': 'header-nav-link',
-                        'target': '_blank', '
-                        local': false
-                    )
-                }}
+                <a href="https://phalcon.link/blog" target="_blank">
+                    {{ locale.translate('blog') }}
+                </a>
             </li>
             <li>
-                {{
-                    link_to(
-                        'https://phalcon.link/api',
-                        locale.translate('api'),
-                        'class': 'header-nav-link',
-                        'target': '_blank', '
-                        local': false
-                    )
-                }}
+                <a href="https://phalcon.link/api" target="_blank">
+                    {{ locale.translate('api') }}
+                </a>
             </li>
             <li>
-                {{
-                    link_to(
-                        'https://phalcon.link/resources',
-                        locale.translate('resources'),
-                        'class': 'header-nav-link',
-                        'target': '_blank', '
-                        local': false
-                    )
-                }}
-            </li>
-            <li role="separator" class="divider"></li>
-            <li>
-                {{
-                    link_to(
-                        'https://phalcon.link/f',
-                        locale.translate('facebook'),
-                        'target': '_blank', '
-                        local': false
-                )
-                }}
+                <a href="https://phalcon.link/resources" target="_blank">
+                    {{ locale.translate('resources') }}
+                </a>
             </li>
             <li>
-                {{
-                    link_to(
-                        'https://phalcon.link/g+',
-                        locale.translate('google_plus'),
-                        'target': '_blank', '
-                        local': false
-                )
-                }}
+                <a href="https://phalcon.link/f" target="_blank">
+                    {{ locale.translate('f') }}
+                </a>
             </li>
             <li>
-                {{
-                    link_to(
-                        'https://phalcon.link/gab',
-                        locale.translate('gab'),
-                        'target': '_blank', '
-                        local': false
-                    )
-                }}
+                <a href="https://phalcon.link/t" target="_blank">
+                    {{ locale.translate('t') }}
+                </a>
+            </li>
+            <li>
+                <a href="https://phalcon.link/g+" target="_blank">
+                    {{ locale.translate('google_plus') }}
+                </a>
+            </li>
+            <li>
+                <a href="https://phalcon.link/gab" target="_blank">
+                    {{ locale.translate('gab') }}
+                </a>
             </li>
         </ul>
     </li>
-    <li>
-        {{
-            link_to(
-                'https://phalcon.link/sponsors',
-                locale.translate('sponsors'),
-                'class': 'header-nav-link',
-                'target': '_blank', '
-                local': false
-            )
-        }}
+    <li class="first">
+        <a href="/{{ language }}/sponsors" class="header-nav-link">
+            {{ locale.translate('sponsors') }}
+        </a>
     </li>
     <li class="dropdown" style="margin-left:3px;">
         <a href="javascript:;" class="dropdown-toggle" id="dropdownLanguageMenu" data-toggle="dropdown">
