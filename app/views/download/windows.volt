@@ -2,12 +2,12 @@
 
 {% block content %}
 
-{% include 'pages/head.volt' %}
+{% include 'partials/page_head.volt' %}
 
 <section class="download">
     <div class="container">
 
-        {% include 'download/menu.volt' %}
+        {% include 'partials/menu_download.volt' %}
 
         <div class="alert alert-warning">
             {{ locale.translate('download_windows_note') }}
@@ -70,7 +70,7 @@
 
         <h3>{{ locale.translate('download_windows_installation') }}</h3>
 
-        <p>{{ locale.translate('download_windows_installation', docs_root ~ 'install.html#windows') }}</p>
+        <p>{{ locale.translate('download_windows_installation', utils.getDocsUrl(language) ~ '/install.html#windows') }}</p>
         <pre class="language-ini"><code>extension=php_phalcon.dll</code></pre>
 
         <br/><br/>
@@ -79,8 +79,16 @@
 
         <p>
             <ul class="dash-list">
-                <li><a href="{{ docs_root ~ 'reference/xampp.html' }}">{{ locale.translate('download_windows_guides_xampp') }}</a></li>
-                <li><a href="{{ docs_root ~ 'reference/wamp.html' }}">{{ locale.translate('download_windows_guides_wamp') }}</a></li>
+                <li>
+                    <a href="{{ utils.getDocsUrl(language) ~ '/reference/xampp.html' }}">
+                        {{ locale.translate('download_windows_guides_xampp') }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ utils.getDocsUrl(language) ~ '/reference/wamp.html' }}">
+                        {{ locale.translate('download_windows_guides_wamp') }}
+                    </a>
+                </li>
             </ul>
         </p>
 

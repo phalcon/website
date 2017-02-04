@@ -2,12 +2,12 @@
 
 {% block content %}
 
-{% include 'pages/head.volt' %}
+{% include 'partials/page_head.volt' %}
 
 <section class="download">
     <div class="container">
 
-        {% include 'download/menu.volt' %}
+        {% include 'partials/menu_download.volt' %}
 
         <h2>{{ locale.translate('download_vagrant_boxes') }}</h2>
         <p>{{ locale.translate('download_vagrant_1', 'http://www.vagrantup.com') }}</p>

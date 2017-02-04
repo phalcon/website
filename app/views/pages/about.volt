@@ -2,11 +2,11 @@
 
 {% block content %}
 
-{% include 'pages/head.volt' %}
+{% include 'partials/page_head.volt' %}
 
 <section class="about">
     <div class="container">
-        {% include 'pages/about_menu.volt' %}
+        {% include 'partials/menu_about.volt' %}
         <div class="row">
             <div class="col-lg-12">
                 <p>{{ locale.translate('about_description_1') }}</p>

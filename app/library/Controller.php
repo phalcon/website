@@ -3,14 +3,14 @@
 namespace Website;
 
 use Phalcon\Mvc\Controller as PhController;
-
-use Website\Constants\Environment;
+use Phalcon\Text;
 
 /**
  * Class Controller
  *
- * @property \Phalcon\Config $config
- * @property \Website\Utils  $utils
+ * @property \Phalcon\Config          $config
+ * @property \Website\Utils           $utils
+ * @property \Phalcon\Mvc\View\Simple $viewSimple
  */
 class Controller extends PhController
 {
@@ -42,13 +42,22 @@ class Controller extends PhController
             ->addJs($this->utils->getCdnUrl() . 'js/custom.js');
     }
 
-    protected function getLanguages($language)
+    public function redirectAction()
+    {
+        $rewriteUri = $this->router->getRewriteUri();
+        if ('/' !== substr($rewriteUri, -1)) {
+            $rewriteUri .= '/';
+        }
+
+        return $this->response->redirect('/en' . $rewriteUri, true);
+    }
+
+    protected function getMenuLanguages($language)
     {
         /**
          * Find the languages available
          */
         $languages             = $this->config->get('languages');
-        $documentationLanguage = $this->config->get('doc_languages')->get(0, $language);
         $languagesAvailable    = '';
         $url                   = $this->request->getScheme() . '://'
                                . $this->request->getHttpHost()
@@ -69,16 +78,47 @@ class Controller extends PhController
         return $languagesAvailable;
     }
 
-    public function redirectAction()
+    /**
+     * @param string $language
+     * @param string $slug
+     * @param string $viewPrefix
+     *
+     * @return \Phalcon\Http\Response|\Phalcon\Http\ResponseInterface
+     */
+    protected function preparePages($language, $slug = '', $viewPrefix = '')
     {
-        $rewriteUri = $this->router->getRewriteUri();
-        if ('/' !== substr($rewriteUri, -1)) {
-            $rewriteUri .= '/';
+        $this
+            ->assets
+            ->collection('header_css')
+            ->addCss($this->utils->getCdnUrl() . 'css/src/styles.css', $this->utils->isCdnLocal())
+            ->addCss($this->utils->getCdnUrl() . 'css/phalconPage.css', $this->utils->isCdnLocal());
+
+        if (true === empty($slug)) {
+            $slug = 'index';
         }
 
-        return $this->response->redirect('/en' . $rewriteUri, true);
-    }
+        $releases = [];
+        switch ($slug) {
+            case 'roadmap':
+                return $this->response->redirect('https://github.com/phalcon/cphalcon/wiki/Roadmap');
+                break;
+            case 'windows':
+                $releaseName = APP_PATH . '/storage/files/releases.json';
+                if (true === file_exists($releaseName)) {
+                    $releases = json_decode(file_get_contents($releaseName), true);
+                }
+                break;
+        }
 
+        $viewName = sprintf('%s/%s', $viewPrefix, $slug);
+
+        return $this->returnResponse(
+            $language,
+            $slug,
+            $viewName,
+            $releases
+        );
+    }
 
 //		if (!$release = $this->cacheData->get('gh_release')) {
 //			$options = [
@@ -210,5 +250,26 @@ class Controller extends PhController
         }
 
         return $contributors;
+    }
+
+    protected function returnResponse($language, $slug, $viewName, $releases = [])
+    {
+        $cacheKey = str_replace('/', '_', $this->router->getRewriteUri()) . '.cache';
+
+        $this->tag->setTitle(Text::camelize($slug));
+
+        return $this
+            ->viewSimple
+//                ->cache(['key' => $cacheKey])
+            ->render(
+                $viewName,
+                [
+                    'page'         => $slug,
+                    'language'     => $language,
+                    'contributors' => $this->getContributors(),
+                    'languages'    => $this->getMenuLanguages($language),
+                    'releases'     => $releases,
+                ]
+            );
     }
 }

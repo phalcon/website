@@ -25,17 +25,8 @@ class IndexController extends WController
             ->addCss($this->utils->getCdnUrl() . 'css/highlight.js.css', $this->utils->isCdnLocal())
             ->addCss($this->utils->getCdnUrl() . 'css/phalcon.min.css', $this->utils->isCdnLocal());
 
-        return $this
-                ->viewSimple
-                //->cache(true)
-                ->render(
-                    'index/index',
-                    [
-                        'version'      => '3.0.3',
-                        'language'     => $language,
-                        'languages'    => $this->getLanguages($language),
-                        'contributors' => $this->getContributors(),
-                    ]
-                );
+        $this->viewSimple->setVar('version', '3.0.3');
+
+        return $this->returnResponse($language, 'home', 'index/index');
     }
 }

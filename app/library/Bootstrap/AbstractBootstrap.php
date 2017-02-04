@@ -368,9 +368,11 @@ abstract class AbstractBootstrap
 
         $eventsManager = $this->diContainer->getShared(Services::EVENTS_MANAGER);
 
-        foreach ($middleware as $class) {
+        foreach ($middleware as $element) {
+            $class = $element['class'];
+            $event = $element['event'];
             $eventsManager->attach(Services::MICRO, new $class());
-            $this->application->before(new $class());
+            $this->application->$event(new $class());
         }
 
         $this->application->setEventsManager($eventsManager);

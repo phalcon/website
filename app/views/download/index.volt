@@ -2,12 +2,12 @@
 
 {% block content %}
 
-{% include 'pages/head.volt' %}
+{% include 'partials/page_head.volt' %}
 
 <section class="team">
     <div class="container">
 
-        {% include 'download/menu.volt' %}
+        {% include 'partials/menu_download.volt' %}
 
         <div class="note">{{ locale.translate('download_note') }}</div>
         <h2>{{ locale.translate('download_ubuntu_or_debian') }}</h2>

@@ -2,16 +2,16 @@
 
 {% block content %}
 
-{% include 'pages/head.volt' %}
+{% include 'partials/page_head.volt' %}
 
 <section class="testimonials">
     <div class="container">
-    {% include 'pages/about_menu.volt' %}
-    <div class="row">
-        <div class="col-lg-12">
-            <p>{{ locale.translate('testimonials_description', 'team@phalconphp.com', 'team@phalconphp.com') }}</p>
+        {% include 'partials/menu_about.volt' %}
+        <div class="row">
+            <div class="col-lg-12">
+                <p>{{ locale.translate('testimonials_description', 'team@phalconphp.com', 'team@phalconphp.com') }}</p>
+            </div>
         </div>
-    </div>
 
         <blockquote>
             <p>&rsaquo;&rsaquo; {{ locale.translate('testimonials_1', 'http://guitarama.ru', 'http://guitarama.ru') }}</p>

@@ -2,7 +2,7 @@
 
 use Website\Constants\Environment;
 
-$pageSlugs     = 'about|team|roadmap|testimonials|sponsors|support';
+$pageSlugs     = 'roadmap|sponsors|support|consulting|about|team|testimonials|hosting';
 $downloadSlugs = 'linux|windows|tools|docker|vagrant|stubs';
 
 return [
@@ -81,7 +81,10 @@ return [
         ],
     ],
     'middleware'    => [
-        'Website\Middleware\NotFoundMiddleware',
+        [
+            'event' => 'before',
+            'class' => 'Website\Middleware\NotFoundMiddleware',
+        ],
     ],
     'languages'     => [
         'ar' => 'Arabic',

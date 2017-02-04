@@ -2,12 +2,11 @@
 
 {% block content %}
 
-{% include 'pages/head.volt' %}
+{% include 'partials/page_head.volt' %}
 
 <section class="team">
     <div class="container">
-        {% include 'pages/about_menu.volt' %}
-
+        {% include 'partials/menu_about.volt' %}
         <div class="row">
             <div class="col-lg-2">
                 <img src="{{ utils.getCdnUrl('images/team/andres.jpg') }}"
