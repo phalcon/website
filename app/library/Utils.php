@@ -4,6 +4,7 @@ namespace Website;
 
 use Phalcon\Mvc\User\Component;
 use Website\Constants\Environment;
+use Website\Controllers\PagesController;
 
 /**
  * Class Utils
@@ -24,20 +25,37 @@ class Utils extends Component
      */
     protected function getLang($lang)
     {
-        if (true !== empty($lang)) {
-            $languagesAvailable = array_keys($this->config->get('languages')->toArray());
+        $return    = 'en';
+        $languages = $this->config->get('languages')->toArray();
 
+        if (true === empty($lang)) {
             foreach ($this->request->getLanguages() as $httpLang) {
                 $httpLang = mb_strtolower(substr($httpLang['language'], 0, 2));
-                if (true === in_array($httpLang, $languagesAvailable)) {
-                    return $httpLang;
+                if (true === array_key_exists($httpLang, $languages)) {
+                    $return = $httpLang;
                 }
             }
         } else {
-            return $lang;
+            if (true === array_key_exists($lang, $languages)) {
+                $return = $lang;
+            }
         }
 
-        return 'en';
+        return $return;
+    }
+
+    public function getDocsUrl($lang)
+    {
+        $return    = 'en';
+        $languages = $this->config->get('doc_languages')->toArray();
+
+        if (true !== empty($lang)) {
+            if (true === array_key_exists($lang, $languages)) {
+                $return = $lang;
+            }
+        }
+
+        return sprintf('https://docs.phalconphp.com/%s/latest', $return);
     }
 
     /**
