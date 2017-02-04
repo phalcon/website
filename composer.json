@@ -1,17 +1,15 @@
 {
-  "name": "phalcon/forum",
-  "description": "Open-sourced engine for building flexible, clear and fast forums.",
+  "name": "phalcon/website",
+  "description": "Official Phalcon Website",
   "keywords": [
-    "forum",
+    "website",
     "phalcon",
-    "discussion",
-    "question",
-    "answer",
-    "qa"
+    "framework",
+    "extension"
   ],
   "type": "project",
   "license": "BSD-3-Clause",
-  "homepage": "https://forum.phalconphp.com/",
+  "homepage": "https://phalconphp.com/",
   "authors": [
     {
       "name": "Phalcon Team",
@@ -20,21 +18,21 @@
     },
     {
       "name": "Contributors",
-      "homepage": "https://github.com/phalcon/forum/graphs/contributors"
+      "homepage": "https://github.com/phalcon/cphalcon/graphs/contributors"
     }
   ],
   "support": {
-    "source": "https://github.com/phalcon/forum",
-    "issues": "https://github.com/phalcon/forum/issues",
-    "wiki": "https://github.com/phalcon/forum/wiki",
-    "forum": "https://forum.phalconphp.com/"
+    "source": "https://github.com/phalcon/cphalcon",
+    "issues": "https://github.com/phalcon/cphalcon/issues",
+    "wiki": "https://github.com/phalcon/cphalcon/wiki",
+    "forum": "https://forum.phalconphp.com/",
+    "docs": "https://docs.phalconphp.com"
   },
   "autoload": {
     "psr-4": {
       "Website\\": "app/library/",
       "Website\\Controllers\\": "app/controllers/",
-      "Website\\Middleware\\": "app/library/Middleware/",
-      "Website\\Test\\Unit\\": "tests/unit/"
+      "Website\\Middleware\\": "app/library/Middleware/"
     }
   },
   "require": {
