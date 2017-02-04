@@ -3,6 +3,7 @@
 namespace Website;
 
 use Phalcon\Mvc\Controller as PhController;
+use Phalcon\Tag;
 use Phalcon\Text;
 
 /**
@@ -43,15 +44,20 @@ class Controller extends PhController
                                . $this->config->get('app')->get('baseUri');
         $uri                   = $this->router->getRewriteUri();
         foreach ($languages as $key => $value) {
-            $selected            = ($key == $language) ? " selected='selected'" : '';
-            $href                = $url . str_replace("/{$language}", "{$key}", $uri);
-            $languagesAvailable .= sprintf(
-                "<a role='menuitem' tabindex='-1' href='%s' class='flag-%s'%s>%s</a>",
-                $href,
-                $key,
-                $selected,
-                $value
-            );
+            $link = [
+                "action"   => $url . str_replace("/{$language}", "{$key}", $uri),
+                "text"     => $value,
+                "tabindex" => -1,
+                "role"     => "menuitem",
+                "class"    => "flag-{$key}",
+                "style"    => "background-repeat: no-repeat; background-position-y: 8px;"
+            ];
+
+            if ($key == $language) {
+                $link["selected"] = '"selected"';
+            }
+
+            $languagesAvailable .= Tag::linkTo($link);
         }
 
         return $languagesAvailable;
