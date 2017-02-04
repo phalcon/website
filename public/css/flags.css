@@ -1,7 +1,7 @@
 .flag-item {
     background-repeat: no-repeat;
     background-position-y: 8px;
-    background-position-x: 2%;
+    background-position-x: 15px;
 }
 .flag-ad { background-image: url("/images/flags/ad.gif"); }
 .flag-ae { background-image: url("/images/flags/ae.gif"); }
