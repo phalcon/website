@@ -19,27 +19,6 @@ class Controller extends PhController
      */
     public function onConstruct()
     {
-        /**
-         * Collections
-         */
-        $this
-            ->assets
-            ->collection("header_css")
-            ->addCss('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', false)
-            ->addCss('//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css', false)
-            ->addCss('//fonts.googleapis.com/css?family=Open+Sans:700,400', false);
-
-        $this
-            ->assets
-            ->collection("footer_js")
-            ->addJs('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', false)
-            ->addJs('//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js', false)
-            ->addJs($this->utils->getCdnUrl() . 'js/plugins/jquery.lazyload.min.js', $this->utils->isCdnLocal())
-            ->addJs($this->utils->getCdnUrl() . 'js/plugins/jquery.magnific-popup.min.js', $this->utils->isCdnLocal())
-            ->addJs($this->utils->getCdnUrl() . 'js/plugins/highlight.pack.js', $this->utils->isCdnLocal())
-            ->addJs($this->utils->getCdnUrl() . 'js/plugins/jquery.ajaxchimp.min.js', $this->utils->isCdnLocal())
-            ->addJs($this->utils->getCdnUrl() . 'js/plugins/jquery.backstretch.min.js', $this->utils->isCdnLocal())
-            ->addJs($this->utils->getCdnUrl() . 'js/custom.js');
     }
 
     public function redirectAction()
