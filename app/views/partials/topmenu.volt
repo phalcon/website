@@ -68,11 +68,11 @@
         </a>
     </li>
     <li class="dropdown" style="margin-left:3px;">
-        <a href="javascript:;" class="dropdown-toggle" id="dropdownLanguageMenu" data-toggle="dropdown">
-            <img src="{{ utils.getCdnUrl('images/flags/' ~ language ~ '.gif') }}" alt="" />
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <img src="{{ utils.getCdnUrl('images/flags/' ~ language ~ '.gif') }}" alt="{{ language }}">
             &nbsp;<span class="caret"></span>
         </a>
-        <ul class="dropdown-menu" id="dropdown-language" role="menu" style="color:black" aria-labelledby="dropdownLanguageMenu">
+        <ul class="dropdown-menu" role="menu" style="color:black">
             <li role="presentation" class="dropdown-link" style="color:black;">
                 {{ languages }}
             </li>

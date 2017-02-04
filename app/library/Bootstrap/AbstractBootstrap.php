@@ -97,13 +97,13 @@ abstract class AbstractBootstrap
         $assets
             ->collection('header_css')
             ->addCss('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', false)
-            ->addCss('//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css', false)
+            ->addCss('//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', false)
             ->addCss('//fonts.googleapis.com/css?family=Open+Sans:700,400', false);
 
         $assets
             ->collection('footer_js')
             ->addJs('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', false)
-            ->addJs('//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js', false)
+            ->addJs('//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', false)
             ->addJs($utils->getCdnUrl() . 'js/plugins/jquery.lazyload.min.js', $utils->isCdnLocal())
             ->addJs($utils->getCdnUrl() . 'js/plugins/jquery.magnific-popup.min.js', $utils->isCdnLocal())
             ->addJs($utils->getCdnUrl() . 'js/plugins/highlight.pack.js', $utils->isCdnLocal())
