@@ -50,6 +50,7 @@ class Controller extends PhController
                 "tabindex" => -1,
                 "role"     => "menuitem",
                 "class"    => "flag-item flag-{$key}",
+                "local"    => false
             ];
 
             if ($key == $language) {
