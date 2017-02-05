@@ -267,8 +267,6 @@ class Controller extends PhController
     {
         $cacheKey = str_replace('/', '_', $this->router->getRewriteUri()) . '.cache';
 
-        $this->tag->setTitle(Text::camelize($slug));
-
         return $this
             ->viewSimple
 //                ->cache(['key' => $cacheKey])

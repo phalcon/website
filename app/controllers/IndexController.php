@@ -24,6 +24,8 @@ class IndexController extends WController
             ->addCss($this->utils->getCdnUrl() . 'css/phalcon.min.css', $this->utils->isCdnLocal())
             ->addCss($this->utils->getCdnUrl() . 'css/style.css', $this->utils->isCdnLocal());
 
+        $this->tag->setTitle("High Performance PHP Framework");
+
         return $this->returnResponse($language, 'home', 'index/index');
     }
 }
