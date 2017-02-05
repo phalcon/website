@@ -30,7 +30,7 @@ trait LanguageTrait
             $lang  = mb_strtolower(substr(ltrim($query, '/'), 0, 2));
         }
 
-        if (true === empty($lang) || true === in_array($lang, $languages, true)) {
+        if (true === empty($lang) && true === in_array($lang, $languages, true)) {
             foreach ($application->request->getLanguages() as $httpLang) {
                 $httpLang = mb_strtolower(substr($httpLang['language'], 0, 2));
                 if (true === in_array($httpLang, $languages)) {
