@@ -2,44 +2,38 @@
 
 namespace Website\Traits;
 
+use Phalcon\Mvc\Micro;
+
 /**
  * Website\Traits\LanguageTrait
- *
- * @property \Phalcon\Mvc\Dispatcher|\Phalcon\Mvc\DispatcherInterface $dispatcher
- * @property \Phalcon\Mvc\Router|\Phalcon\Mvc\RouterInterface         $router
- * @property \Phalcon\Http\Request|\Phalcon\Http\RequestInterface     $request
- * @property \Phalcon\Config                                          $config
  *
  * @package Website\Traits
  */
 trait LanguageTrait
 {
     /**
-     * Gets current language.
+     * Language auto detect
      *
-     * @param  string $default
+     * @param Micro  $application
+     * @param string $default
+     *
      * @return string
      */
-    protected function getLang($default = "en")
+    protected function getLang(Micro $application, $default = 'en')
     {
-        $params = $this->router->getParams();
+        $params    = $application->router->getParams();
+        $lang      = $application->utils->fetch($params, 'language', '');
+        $languages = array_keys($application->config->get('languages')->toArray());
 
-        if (!empty($params['language'])) {
-            $lang = $params['language'];
-        } else {
-            $lang = $this->getUriParameter('language');
+        if (true === empty($lang) && true === $application->request->hasQuery('_url')) {
+            $query = $application->request->getQuery('_url');
+            $lang  = mb_strtolower(substr(ltrim($query, '/'), 0, 2));
         }
 
-        if (!$lang && $query = $this->request->getQuery('_url')) {
-            $lang = mb_strtolower(substr(ltrim($query, '/'), 0, 2));
-        }
-
-        $languagesAvailable = array_keys($this->config->get('languages')->toArray());
-
-        if (!$lang || !in_array($lang, $languagesAvailable, true)) {
-            foreach ($this->request->getLanguages() as $httpLang) {
+        if (true === empty($lang) || true === in_array($lang, $languages, true)) {
+            foreach ($application->request->getLanguages() as $httpLang) {
                 $httpLang = mb_strtolower(substr($httpLang['language'], 0, 2));
-                if (in_array($httpLang, $languagesAvailable)) {
+                if (true === in_array($httpLang, $languages)) {
                     return $httpLang;
                 }
             }

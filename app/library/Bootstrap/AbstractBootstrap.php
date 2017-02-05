@@ -26,6 +26,7 @@ use Website\Constants\Registry;
 use Website\Constants\Services;
 use Website\Exception;
 use Website\Locale;
+use Website\Middleware\NotFoundMiddleware;
 use Website\Utils;
 use Website\View\Engine\Volt\Extensions\Php;
 

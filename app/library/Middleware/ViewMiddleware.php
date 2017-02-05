@@ -36,6 +36,7 @@ class ViewMiddleware implements MiddlewareInterface
         $contributors = $registry->offsetGet(Registry::CONTRIBUTORS);
         $languages    = $registry->offsetGet(Registry::MENU_LANGUAGES);
         $releases     = $registry->offsetGet(Registry::RELEASES);
+        $version      = $registry->offsetGet(Registry::VERSION);
         $viewName     = $registry->offsetGet(Registry::VIEW);
 
         if ('production' === $application->config->get('env')) {
@@ -52,6 +53,7 @@ class ViewMiddleware implements MiddlewareInterface
                                 'contributors' => $contributors,
                                 'languages'    => $languages,
                                 'releases'     => $releases,
+                                'version'      => $version,
                             ]
                         );
 

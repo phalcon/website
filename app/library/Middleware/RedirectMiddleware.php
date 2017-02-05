@@ -27,10 +27,20 @@ class RedirectMiddleware implements MiddlewareInterface
      */
     public function call(Micro $application)
     {
-        $slug = $application->registry->offsetGet(Registry::SLUG);
+        $slug     = $application->registry->offsetGet(Registry::SLUG);
+        $uri      = $application->request->getURI();
+        $redirect = '';
 
         if ('roadmap' === $slug) {
-            $application->response->redirect('https://github.com/phalcon/cphalcon/wiki/Roadmap');
+            $redirect= 'https://github.com/phalcon/cphalcon/wiki/Roadmap';
+        } elseif ('download' === substr($uri, 4) || 'download/' === substr($uri, 4)) {
+            $redirect = $uri
+                      . ('/' === substr($uri, -1) ? '' : '/')
+                      . 'linux';
+        }
+
+        if (true !== empty($redirect)) {
+            $application->response->redirect($redirect);
             $application->response->send();
 
             return false;

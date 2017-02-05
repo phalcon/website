@@ -26,20 +26,20 @@ class NotFoundMiddleware extends Plugin implements MiddlewareInterface
      */
     public function beforeNotFound()
     {
-        $this
-            ->assets
-            ->collection('header_css')
-            ->addCss($this->utils->getCdnUrl() . 'css/flags.css', $this->utils->isCdnLocal())
-            ->addCss($this->utils->getCdnUrl() . 'css/highlight.js.css', $this->utils->isCdnLocal())
-            ->addCss($this->utils->getCdnUrl() . 'css/phalcon.min.css', $this->utils->isCdnLocal())
-            ->addCss($this->utils->getCdnUrl() . 'css/style.css', $this->utils->isCdnLocal());
+//        $this
+//            ->assets
+//            ->collection('header_css')
+//            ->addCss($this->utils->getCdnUrl() . 'css/flags.css', $this->utils->isCdnLocal())
+//            ->addCss($this->utils->getCdnUrl() . 'css/highlight.js.css', $this->utils->isCdnLocal())
+//            ->addCss($this->utils->getCdnUrl() . 'css/phalcon.min.css', $this->utils->isCdnLocal())
+//            ->addCss($this->utils->getCdnUrl() . 'css/style.css', $this->utils->isCdnLocal());
 
         $this->response->setStatusCode(404, 'Not Found');
 
         echo $this->viewSimple->render(
             'utils/notfound',
             [
-                'language' => $this->getLang(),
+                'language' => $this->getLang($this->application),
                 'cdnUrl'   => '',
                 'docsRoot' => '',
                 'languages_available' => '',

@@ -14,11 +14,15 @@ use Website\Constants\Registry;
  */
 class DownloadController extends WController
 {
+    public function indexAction()
+    {
+        return $this->response->redirect('download/linux');
+    }
+
     public function pageAction()
     {
         $slug     = $this->registry->offsetGet(Registry::SLUG);
-        $action   = $this->registry->offsetGet(Registry::ACTION);
-        $viewName = sprintf('%s/%s', $slug, $action);
+        $viewName = sprintf('download/%s', $slug);
 
         $this->tag->setTitle($this->locale->translate('download'));
         $this->registry->offsetSet(Registry::VIEW, $viewName);

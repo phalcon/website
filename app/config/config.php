@@ -46,7 +46,7 @@ return [
         [
             'class'   => Website\Controllers\IndexController::class,
             'methods' => [
-                'get' => [
+                'get'      => [
                     '/'                      => 'redirectAction',
                     '/{language:[a-z]{2}}'   => 'indexAction',
                 ],
@@ -56,7 +56,7 @@ return [
             'class'   => Website\Controllers\PagesController::class,
             'methods' => [
                 'get' => [
-                    "/{slug:({$pageSlugs})}"                     => 'redirectAction',
+                    '/{slug:({$pageSlugs})}'                     => 'redirectAction',
                     "/{language:[a-z]{2}}/{slug:({$pageSlugs})}" => 'pageAction',
                 ],
             ],
@@ -65,10 +65,10 @@ return [
             'class'   => Website\Controllers\DownloadController::class,
             'methods' => [
                 'get' => [
-                    '/download'                                                          => 'redirectAction',
-                    "/download/{slug:({$downloadSlugs})}"                                => 'redirectAction',
-                    '/{language:[a-z]{2}}/{slug:(download)}'                             => 'pageAction',
-                    "/{language:[a-z]{2}}/{slug:(download)}/{action:({$downloadSlugs})}" => 'pageAction',
+                    '/download'                                               => 'redirectAction',
+                    "/download/{slug:({$downloadSlugs})}"                     => 'redirectAction',
+                    '/{language:[a-z]{2}}/download'                           => 'pageAction',
+                    "/{language:[a-z]{2}}/download/{slug:({$downloadSlugs})}" => 'pageAction',
                 ],
             ],
         ],
@@ -85,11 +85,11 @@ return [
     'middleware'    => [
         [
             'event' => 'before',
-            'class' => Website\Middleware\NotFoundMiddleware::class,
+            'class' => Website\Middleware\EnvironmentMiddleware::class,
         ],
         [
             'event' => 'before',
-            'class' => Website\Middleware\EnvironmentMiddleware::class,
+            'class' => Website\Middleware\NotFoundMiddleware::class,
         ],
         [
             'event' => 'before',

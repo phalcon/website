@@ -7,6 +7,7 @@ use Phalcon\Mvc\Micro\MiddlewareInterface;
 use Phalcon\Tag;
 
 use Website\Constants\Registry;
+use Website\Traits\LanguageTrait;
 
 /**
  * Class EnvironmentMiddleware
@@ -15,6 +16,8 @@ use Website\Constants\Registry;
  */
 class EnvironmentMiddleware implements MiddlewareInterface
 {
+    use LanguageTrait;
+
     /**
      * Call me
      *
@@ -30,13 +33,11 @@ class EnvironmentMiddleware implements MiddlewareInterface
          */
         $params   = $application->router->getParams();
         $language = $this->getLang($application, 'en');
-        $slug     = $application->utils->fetch($params, 'slug', '');
-        $action   = $application->utils->fetch($params, 'action', 'index');
+        $slug     = $application->utils->fetch($params, 'slug', 'index');
 
         /**
          * These are needed for all pages
          */
-        $application->registry->offsetSet(Registry::ACTION, $action);
         $application->registry->offsetSet(Registry::LANGUAGE, $language);
         $application->registry->offsetSet(Registry::SLUG, $slug);
         $application->registry->offsetSet(
@@ -48,10 +49,10 @@ class EnvironmentMiddleware implements MiddlewareInterface
             $application->config->get('app')->get('version')
         );
 
-        /**
-         * Contributors are needed only in the front page or 'team'
-         */
         switch ($slug) {
+            /**
+             * Contributors are needed only in the front page or 'team'
+             */
             case 'team':
             case 'index':
             case '':
@@ -60,6 +61,9 @@ class EnvironmentMiddleware implements MiddlewareInterface
                     $this->getContributors()
                 );
                 break;
+            /**
+             * Releases are needed in 'windows'
+             */
             case 'windows':
                 $application->registry->offsetSet(
                     Registry::RELEASES,
@@ -87,39 +91,6 @@ class EnvironmentMiddleware implements MiddlewareInterface
         }
 
         return $contributors;
-    }
-
-    /**
-     * Language auto detect
-     *
-     * @param Micro  $application
-     * @param string $default
-     *
-     * @return string
-     */
-    protected function getLang(Micro $application, $default = 'en')
-    {
-        $params    = $application->router->getParams();
-        $lang      = $application->utils->fetch($params, 'language', '');
-        $languages = array_keys($application->config->get('languages')->toArray());
-
-        if (true === empty($lang) && true === $application->request->hasQuery('_url')) {
-            $query = $application->request->getQuery('_url');
-            $lang  = mb_strtolower(substr(ltrim($query, '/'), 0, 2));
-        }
-
-        if (true === empty($lang) || true === in_array($lang, $languages, true)) {
-            foreach ($application->request->getLanguages() as $httpLang) {
-                $httpLang = mb_strtolower(substr($httpLang['language'], 0, 2));
-                if (true === in_array($httpLang, $languages)) {
-                    return $httpLang;
-                }
-            }
-
-            return $default;
-        }
-
-        return $lang;
     }
 
     /**

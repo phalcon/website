@@ -29,7 +29,10 @@ class Controller extends PhController
             $rewriteUri .= '/';
         }
 
-        return $this->response->redirect('/' . $this->getLang("en") . $rewriteUri, true);
+        return $this->response->redirect(
+            '/' . $this->getLang($this->application, 'en') . $rewriteUri,
+            true
+        );
     }
 
 //		if (!$release = $this->cacheData->get('gh_release')) {

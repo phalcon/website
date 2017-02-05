@@ -31,7 +31,7 @@ class AssetsMiddleware implements MiddlewareInterface
         $cdnUrl     = $application->utils->getCdnUrl();
         $isCdnLocal = $application->utils->isCdnLocal();
 
-        if (true !== empty($slug)) {
+        if (true !== empty($slug) && 'index' !== $slug) {
             $application
                 ->assets
                 ->collection('header_css')

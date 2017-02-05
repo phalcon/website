@@ -1,7 +1,7 @@
 
 <ul class="nav navbar-nav main-menu">
     <li class="first">
-        <a href="/{{ language }}/download" class="header-nav-link">
+        <a href="/{{ language }}/download/linux" class="header-nav-link">
             {{ locale.translate('download') }}
         </a>
     </li>
