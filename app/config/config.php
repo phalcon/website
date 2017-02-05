@@ -65,10 +65,10 @@ return [
             'class'   => Website\Controllers\DownloadController::class,
             'methods' => [
                 'get' => [
-                    '/download'                                               => 'redirectAction',
-                    "/download/{slug:({$downloadSlugs})}"                     => 'redirectAction',
-                    '/{language:[a-z]{2}}/download'                           => 'pageAction',
-                    "/{language:[a-z]{2}}/download/{slug:({$downloadSlugs})}" => 'pageAction',
+                    '/download'                                                          => 'redirectAction',
+                    "/download/{slug:({$downloadSlugs})}"                                => 'redirectAction',
+                    '/{language:[a-z]{2}}/{slug:(download)}'                             => 'pageAction',
+                    "/{language:[a-z]{2}}/{slug:(download)}/{action:({$downloadSlugs})}" => 'pageAction',
                 ],
             ],
         ],
@@ -90,6 +90,18 @@ return [
         [
             'event' => 'before',
             'class' => Website\Middleware\EnvironmentMiddleware::class,
+        ],
+        [
+            'event' => 'before',
+            'class' => Website\Middleware\RedirectMiddleware::class,
+        ],
+        [
+            'event' => 'before',
+            'class' => Website\Middleware\AssetsMiddleware::class,
+        ],
+        [
+            'event' => 'after',
+            'class' => Website\Middleware\ViewMiddleware::class,
         ],
     ],
     'languages'     => [
