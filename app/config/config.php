@@ -7,6 +7,7 @@ $downloadSlugs = 'linux|windows|tools|docker|vagrant|stubs';
 
 return [
     'app'           => [
+        'version'         => '3.0.3',
         'debug'           => getenv(Environment::APP_DEBUG),
         'env'             => getenv(Environment::APP_ENV),
         'url'             => getenv(Environment::APP_URL),

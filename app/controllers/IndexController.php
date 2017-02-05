@@ -8,8 +8,6 @@ use Website\Controller as WController;
  * Class IndexController
  *
  * @package Website\Controllers
- *
- * @property \Phalcon\Mvc\View\Simple $viewSimple
  */
 class IndexController extends WController
 {
@@ -25,8 +23,6 @@ class IndexController extends WController
             ->addCss($this->utils->getCdnUrl() . 'css/highlight.js.css', $this->utils->isCdnLocal())
             ->addCss($this->utils->getCdnUrl() . 'css/phalcon.min.css', $this->utils->isCdnLocal())
             ->addCss($this->utils->getCdnUrl() . 'css/style.css', $this->utils->isCdnLocal());
-
-        $this->viewSimple->setVar('version', '3.0.3');
 
         return $this->returnResponse($language, 'home', 'index/index');
     }

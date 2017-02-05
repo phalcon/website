@@ -9,6 +9,7 @@ use Phalcon\Text;
 /**
  * Class Controller
  *
+ * @property \Website\Locale          $locale
  * @property \Phalcon\Config          $config
  * @property \Website\Utils           $utils
  * @property \Phalcon\Mvc\View\Simple $viewSimple
@@ -20,6 +21,7 @@ class Controller extends PhController
      */
     public function onConstruct()
     {
+        $this->viewSimple->setVar('version', $this->config->get('app')->get('version'));
     }
 
     public function redirectAction()
