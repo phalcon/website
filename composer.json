@@ -43,7 +43,7 @@
     "ext-json": "*",
     "ext-phalcon": "~3.0",
     "vlucas/phpdotenv": "^2.4",
-    "guzzlehttp/guzzle": "~6.0",
+    "guzzlehttp/guzzle": "^6.2",
     "swiftmailer/swiftmailer": "^5.4"
   },
   "require-dev": {
