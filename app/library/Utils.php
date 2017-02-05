@@ -3,8 +3,6 @@
 namespace Website;
 
 use Phalcon\Mvc\User\Component;
-use Website\Constants\Environment;
-use Website\Controllers\PagesController;
 
 /**
  * Class Utils

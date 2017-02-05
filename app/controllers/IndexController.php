@@ -20,4 +20,13 @@ class IndexController extends WController
         );
         $this->registry->view = 'index/index';
     }
+
+    public function notfoundAction()
+    {
+        $this->tag->setTitle(
+            $this->locale->translate('not_found')
+        );
+        $this->response->setStatusCode(404, 'Not Found');
+        $this->registry->view = 'utils/notfound';
+    }
 }

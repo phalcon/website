@@ -4,7 +4,6 @@ namespace Website\Middleware;
 
 use Phalcon\Mvc\Micro;
 use Phalcon\Mvc\User\Plugin;
-use Website\Traits\LanguageTrait;
 use Phalcon\Mvc\Micro\MiddlewareInterface;
 
 /**
@@ -17,8 +16,6 @@ use Phalcon\Mvc\Micro\MiddlewareInterface;
  */
 class NotFoundMiddleware extends Plugin implements MiddlewareInterface
 {
-    use LanguageTrait;
-
     /**
      * If the endpoint has not been found, redirect to the 404
      *
@@ -26,25 +23,11 @@ class NotFoundMiddleware extends Plugin implements MiddlewareInterface
      */
     public function beforeNotFound()
     {
-//        $this
-//            ->assets
-//            ->collection('header_css')
-//            ->addCss($this->utils->getCdnUrl() . 'css/flags.css', $this->utils->isCdnLocal())
-//            ->addCss($this->utils->getCdnUrl() . 'css/highlight.js.css', $this->utils->isCdnLocal())
-//            ->addCss($this->utils->getCdnUrl() . 'css/phalcon.min.css', $this->utils->isCdnLocal())
-//            ->addCss($this->utils->getCdnUrl() . 'css/style.css', $this->utils->isCdnLocal());
+        $language = $this->registry->language;
+        $redirect= sprintf('/%s/404', $language);
 
-        $this->response->setStatusCode(404, 'Not Found');
-
-        echo $this->viewSimple->render(
-            'utils/notfound',
-            [
-                'language' => $this->getLang($this->application),
-                'cdnUrl'   => '',
-                'docsRoot' => '',
-                'languages_available' => '',
-            ]
-        );
+        $this->response->redirect($redirect);
+        $this->response->send();
 
         return false;
     }

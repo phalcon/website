@@ -21,8 +21,6 @@ use Phalcon\Mvc\View\Simple as PhViewSimple;
 use Phalcon\Mvc\View\Engine\Volt as PhVolt;
 use Phalcon\Registry as PhRegistry;
 
-use Website\Constants\Environment;
-use Website\Constants\Services;
 use Website\Exception;
 use Website\Locale;
 use Website\Utils;

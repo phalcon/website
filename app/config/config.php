@@ -1,7 +1,5 @@
 <?php
 
-use Website\Constants\Environment;
-
 $pageSlugs     = 'roadmap|sponsors|support|consulting|about|team|testimonials|hosting';
 $downloadSlugs = 'linux|windows|tools|docker|vagrant|stubs';
 
@@ -47,8 +45,10 @@ return [
             'class'   => Website\Controllers\IndexController::class,
             'methods' => [
                 'get'      => [
-                    '/'                      => 'redirectAction',
-                    '/{language:[a-z]{2}}'   => 'indexAction',
+                    '/'                        => 'redirectAction',
+                    '/404'                     => 'redirectAction',
+                    '/{language:[a-z]{2}}'     => 'indexAction',
+                    '/{language:[a-z]{2}}/404' => 'notfoundAction',
                 ],
             ],
         ],
