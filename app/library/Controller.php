@@ -31,7 +31,7 @@ class Controller extends PhController
             $rewriteUri .= '/';
         }
 
-        return $this->response->redirect('/en' . $rewriteUri, true);
+        return $this->response->redirect('/' . $this->getLang("en") . $rewriteUri, true);
     }
 
     protected function getMenuLanguages($language)
@@ -197,30 +197,54 @@ class Controller extends PhController
 //	}
 //
 //
-//	protected function getUriParameter($parameter)
-//	{
-//		return $this->dispatcher->getParam($parameter);
-//	}
 
-//    protected function getLang()
-//    {
-//        $lang = $this->getUriParameter('language');
-//
-//        if (!$lang) {
-//            $languagesAvailable = array_keys($this->config->languages->toArray());
-//
-//            foreach ($this->request->getLanguages() as $httpLang) {
-//                $httpLang = mb_strtolower(substr($httpLang['language'], 0, 2));
-//                if (in_array($httpLang, $languagesAvailable)) {
-//                    return $httpLang;
-//                }
-//            }
-//        } else {
-//            return $lang;
-//        }
-//
-//        return 'en';
-//    }
+    /**
+     * Gets URI parameter.
+     *
+     * @param  string $parameter
+     * @param  mixed  $default
+     *
+     * @return mixed
+     */
+    protected function getUriParameter($parameter, $default = null)
+    {
+        if (!is_scalar($parameter) || !$this->dispatcher->hasParam($parameter)) {
+            return $default;
+        }
+
+        return $this->dispatcher->getParam($parameter);
+    }
+
+    /**
+     * Gets current language.
+     *
+     * @param  string $default
+     * @return string
+     */
+    protected function getLang($default = "en")
+    {
+        $params = $this->router->getParams();
+        if (!empty($params['language'])) {
+            $lang = $params['language'];
+        } else {
+            $lang = $this->getUriParameter('language');
+        }
+
+        $languagesAvailable = array_keys($this->config->get('languages')->toArray());
+
+        if (!$lang || !in_array($lang, $languagesAvailable, true)) {
+            foreach ($this->request->getLanguages() as $httpLang) {
+                $httpLang = mb_strtolower(substr($httpLang['language'], 0, 2));
+                if (in_array($httpLang, $languagesAvailable)) {
+                    return $httpLang;
+                }
+            }
+
+            return $default;
+        }
+
+        return $lang;
+    }
 
     /**
      * Gets the contributors from the cached file
