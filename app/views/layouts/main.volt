@@ -1,13 +1,23 @@
-<!DOCTYPE html>
-<html lang="{{ language }}">
+<!doctype html>
+<!--[if IE 8]> <html lang="{{ language }}" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="{{ language }}" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="{{ language }}" class="no-js">
+<!--<![endif]-->
+<head>
+    {%- include "include/meta.volt" -%}
+    {%- include "include/icons.volt" -%}
+    {%- include "include/analytics.volt" -%}
 
-{% include 'partials/head.volt' %}
+    {{- assets.outputCss('header_css') -}}
+
+    <title>Phalcon - {{ locale.translate(language, "High Performance PHP Framework") }}</title>
+</head>
 <body>
+    {%- block content %} {% endblock -%}
 
-{% block content %} {% endblock %}
+    {%- include "include/footer.volt" -%}
 
-{% include 'partials/footer.volt' %}
-
-    {{ assets.outputJs('footer_js') }}
+    {{-assets.outputJs('footer_js') -}}
 </body>
 </html>
