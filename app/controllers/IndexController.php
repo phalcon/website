@@ -26,6 +26,6 @@ class IndexController extends WController
 
         $this->tag->setTitle("High Performance PHP Framework");
 
-        return $this->returnResponse($language, 'home', 'index/index');
+        return $this->returnResponse('index/index');
     }
 }

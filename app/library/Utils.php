@@ -16,6 +16,29 @@ use Website\Controllers\PagesController;
 class Utils extends Component
 {
     /**
+     * Checks an object or an array if an element exists. If yes it returns
+     * the value of the element, otherwise the $default value
+     *
+     * @param object|array $data
+     * @param string       $element
+     * @param string       $default
+     *
+     * @return string
+     */
+    public function fetch($data, $element, $default = '')
+    {
+        $return = $default;
+
+        if (true === is_object($data) && true === isset($data->$element)) {
+            $return = $data->$element;
+        } elseif (true === is_array($data) && true === isset($data[$element])) {
+            $return = $data[$element];
+        }
+
+        return $return;
+    }
+
+    /**
      * Returns the language parameter if passed, otherwise defaults to the
      * application default
      *

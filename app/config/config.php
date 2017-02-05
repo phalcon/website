@@ -87,6 +87,10 @@ return [
             'event' => 'before',
             'class' => Website\Middleware\NotFoundMiddleware::class,
         ],
+        [
+            'event' => 'before',
+            'class' => Website\Middleware\EnvironmentMiddleware::class,
+        ],
     ],
     'languages'     => [
         'ar' => 'Arabic',

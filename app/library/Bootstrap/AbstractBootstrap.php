@@ -19,8 +19,10 @@ use Phalcon\Mvc\Micro as PhMicro;
 use Phalcon\Mvc\Micro\Collection as PhMicroCollection;
 use Phalcon\Mvc\View\Simple as PhViewSimple;
 use Phalcon\Mvc\View\Engine\Volt as PhVolt;
+use Phalcon\Registry as PhRegistry;
 
 use Website\Constants\Environment;
+use Website\Constants\Registry;
 use Website\Constants\Services;
 use Website\Exception;
 use Website\Locale;
@@ -34,9 +36,6 @@ use Website\View\Engine\Volt\Extensions\Php;
  */
 abstract class AbstractBootstrap
 {
-    private $memory    = 0;
-    private $execution = 0;
-
     /**
      * @var null|PhDI
      */
@@ -52,6 +51,7 @@ abstract class AbstractBootstrap
         $this
             ->initDi()
             ->initLoader()
+            ->initRegistry()
             ->initEnvironment()
             ->initApplication()
             ->initUtils()
@@ -192,8 +192,10 @@ abstract class AbstractBootstrap
      */
     protected function initEnvironment()
     {
-        $this->memory    = memory_get_usage();
-        $this->execution = microtime(true);
+        /** @var \Phalcon\Registry $registry */
+        $registry = $this->diContainer->getShared(Services::REGISTRY);
+        $registry->offsetSet(Registry::MEMORY, memory_get_usage());
+        $registry->offsetSet(Registry::EXECUTION_TIME, microtime(true));
 
         (new Dotenv(APP_PATH))->load();
 
@@ -334,6 +336,31 @@ abstract class AbstractBootstrap
         $logger->setFormatter($formatter);
 
         $this->diContainer->setShared(Services::LOGGER, $logger);
+
+        return $this;
+    }
+
+    /**
+     * Initializes the registry
+     *
+     * @return $this
+     */
+    protected function initRegistry()
+    {
+        /**
+         * Fill the registry with elements we will need
+         */
+        $registry = new PhRegistry();
+        $registry->offsetSet(Registry::CONTRIBUTORS, []);
+        $registry->offsetSet(Registry::EXECUTION_TIME, 0);
+        $registry->offsetSet(Registry::LANGUAGE, 'en');
+        $registry->offsetSet(Registry::MEMORY, 0);
+        $registry->offsetSet(Registry::MENU_LANGUAGES, []);
+        $registry->offsetSet(Registry::SLUG, '');
+        $registry->offsetSet(Registry::RELEASES, []);
+        $registry->offsetSet(Registry::VIEW, 'index/index');
+
+        $this->diContainer->set(Services::REGISTRY, new PhRegistry());
 
         return $this;
     }

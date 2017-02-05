@@ -3,6 +3,7 @@
 namespace Website;
 
 use Phalcon\Tag;
+use Website\Constants\Registry;
 use Website\Traits\LanguageTrait;
 use Phalcon\Mvc\Controller as PhController;
 
@@ -82,31 +83,20 @@ class Controller extends PhController
             ->addCss($this->utils->getCdnUrl() . 'css/style.css', $this->utils->isCdnLocal())
             ->addCss($this->utils->getCdnUrl() . 'css/phalconPage.css', $this->utils->isCdnLocal());
 
+        $slug     = $this->registry->offsetGet(Registry::SLUG);
         if (true === empty($slug)) {
             $slug = 'index';
         }
 
-        $releases = [];
         switch ($slug) {
             case 'roadmap':
                 return $this->response->redirect('https://github.com/phalcon/cphalcon/wiki/Roadmap');
-                break;
-            case 'windows':
-                $releaseName = APP_PATH . '/storage/files/releases.json';
-                if (true === file_exists($releaseName)) {
-                    $releases = json_decode(file_get_contents($releaseName), true);
-                }
                 break;
         }
 
         $viewName = sprintf('%s/%s', $viewPrefix, $slug);
 
-        return $this->returnResponse(
-            $language,
-            $slug,
-            $viewName,
-            $releases
-        );
+        return $this->returnResponse($viewName);
     }
 
 //		if (!$release = $this->cacheData->get('gh_release')) {
@@ -200,26 +190,17 @@ class Controller extends PhController
 //
 //
 
-    /**
-     * Gets the contributors from the cached file
-     *
-     * @return array
-     */
-    protected function getContributors()
-    {
-        $contributors = [];
-        $fileName     = APP_PATH . '/storage/cache/data/contributors.json';
-        if (true == file_exists($fileName)) {
-            $contributors = file_get_contents($fileName);
-            $contributors = json_decode($contributors, true);
-        }
-
-        return $contributors;
-    }
-
-    protected function returnResponse($language, $slug, $viewName, $releases = [])
+    protected function returnResponse($viewName)
     {
         $cacheKey = str_replace('/', '_', $this->router->getRewriteUri()) . '.cache';
+
+        /** @var \Phalcon\Registry $registry */
+        $registry     = $this->registry;
+        $language     = $registry->offsetGet(Registry::LANGUAGE);
+        $slug         = $registry->offsetGet(Registry::SLUG);
+        $contributors = $registry->offsetGet(Registry::CONTRIBUTORS);
+        $languages    = $registry->offsetGet(Registry::MENU_LANGUAGES);
+        $releases     = $registry->offsetGet(Registry::RELEASES);
 
         return $this
             ->viewSimple
@@ -229,8 +210,8 @@ class Controller extends PhController
                 [
                     'page'         => $slug,
                     'language'     => $language,
-                    'contributors' => $this->getContributors(),
-                    'languages'    => $this->getMenuLanguages($language),
+                    'contributors' => $contributors,
+                    'languages'    => $languages,
                     'releases'     => $releases,
                 ]
             );

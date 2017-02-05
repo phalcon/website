@@ -20,6 +20,7 @@ class Services
     const LOCALE         = 'locale';
     const LOGGER         = 'logger';
     const MICRO          = 'micro';
+    const REGISTRY       = 'registry';
     const REQUEST        = 'request';
     const RESPONSE       = 'response';
     const ROUTER         = 'router';
