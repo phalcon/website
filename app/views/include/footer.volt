@@ -9,6 +9,7 @@
                     <li><a href="http://api.phalconphp.com">API</a></li>
                     <li><a href="{{ utils.getDocsUrl(language) }}/reference/tutorial.html">{{ locale.translate('tutorial') }}</a></li>
                     <li><a href="{{ utils.getDocsUrl(language) }}/reference/tutorial.html#sample-applications">{{ locale.translate('sample_applications') }}</a></li>
+                    <li><a href="{{ url(language ~ '/support') }}">{{ locale.translate('support') }}</a></li>
                 </ul>
             </div>
             <div class="col-xs-4 col-sm-3">
