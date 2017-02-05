@@ -77,7 +77,7 @@ class Controller extends PhController
         $this
             ->assets
             ->collection('header_css')
-            ->addCss($this->utils->getCdnUrl() . 'css/src/styles.css', $this->utils->isCdnLocal())
+            ->addCss($this->utils->getCdnUrl() . 'css/style.css', $this->utils->isCdnLocal())
             ->addCss($this->utils->getCdnUrl() . 'css/phalconPage.css', $this->utils->isCdnLocal());
 
         if (true === empty($slug)) {
