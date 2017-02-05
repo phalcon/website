@@ -1,10 +1,11 @@
 {%- if (not config.get('google').get('analytics', '') is empty) -%}
+    {%- set analytics_url = config.get('app').get('url', 'https://phalconphp.com') ~ router.getRewriteUri() -%}
     <!-- Google Analytics -->
     <script type="application/javascript">
         window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
         ga("create", "{{ config.get('google').get('analytics', '') }}", "auto");
         ga("send", "pageview", {
-            "page": "https://phalconphp.com",
+            "page": "{{ analytics_url }}",
             "title": "Phalcon - High Performance PHP Framework"
         });
     </script>
