@@ -2,30 +2,23 @@
 
 namespace Website\Controllers;
 
+use Website\Constants\Registry;
 use Website\Controller as WController;
 
 /**
  * Class IndexController
  *
  * @package Website\Controllers
+ *
+ * @property \Phalcon\Registry $registry
  */
 class IndexController extends WController
 {
-    public function indexAction($language)
+    public function indexAction()
     {
-        /**
-         * Add more needed assets
-         */
-        $this
-            ->assets
-            ->collection('header_css')
-            ->addCss($this->utils->getCdnUrl() . 'css/flags.css', $this->utils->isCdnLocal())
-            ->addCss($this->utils->getCdnUrl() . 'css/highlight.js.css', $this->utils->isCdnLocal())
-            ->addCss($this->utils->getCdnUrl() . 'css/phalcon.min.css', $this->utils->isCdnLocal())
-            ->addCss($this->utils->getCdnUrl() . 'css/style.css', $this->utils->isCdnLocal());
-
-        $this->tag->setTitle("High Performance PHP Framework");
-
-        return $this->returnResponse('index/index');
+        $this->tag->setTitle(
+            $this->locale->translate('high_performance_php_framework')
+        );
+        $this->registry->offsetSet(Registry::VIEW, 'index/index');
     }
 }

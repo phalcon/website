@@ -3,26 +3,24 @@
 namespace Website\Controllers;
 
 use Website\Controller as WController;
+use Website\Constants\Registry;
 
 /**
  * Class DownloadController
  *
  * @package Website\Controllers
  *
- * @property \Phalcon\Mvc\View\Simple $viewSimple
+ * @property \Phalcon\Registry $registry
  */
 class DownloadController extends WController
 {
-    /**
-     * @param $language
-     * @param $slug
-     *
-     * @return \Phalcon\Http\Response|\Phalcon\Http\ResponseInterface
-     */
-    public function pageAction($language, $slug = '')
+    public function pageAction()
     {
-        $this->tag->setTitle($this->locale->translate($language, 'download'));
+        $slug     = $this->registry->offsetGet(Registry::SLUG);
+        $action   = $this->registry->offsetGet(Registry::ACTION);
+        $viewName = sprintf('%s/%s', $slug, $action);
 
-        return $this->preparePages($language, $slug, 'download');
+        $this->tag->setTitle($this->locale->translate('download'));
+        $this->registry->offsetSet(Registry::VIEW, $viewName);
     }
 }

@@ -3,7 +3,6 @@
 namespace Website\Controllers;
 
 use Phalcon\Mvc\Controller as PhController;
-use Website\Controller as WController;
 
 /**
  * Class UtilsController
@@ -12,7 +11,7 @@ use Website\Controller as WController;
  *
  * @property \Phalcon\Mvc\View\Simple $viewSimple
  */
-class UtilsController extends WController
+class UtilsController extends PhController
 {
     public function contributorsAction()
     {
@@ -76,8 +75,6 @@ class UtilsController extends WController
             }
         }
 
-//        var_dump($weights);
-//        asort($weights, SORT_NUMERIC & SORT_DESC);
         arsort($weights);
 
         $results = [];
@@ -105,7 +102,7 @@ class UtilsController extends WController
         }
 
         $sitemap = $this->viewSimple->render(
-            'sitemap',
+            'utils/sitemap',
             [
                 'languages' => ['en' => 'English',],
                 'pages'     => $pages,

@@ -3,6 +3,7 @@
 namespace Website\Controllers;
 
 use Phalcon\Text;
+use Website\Constants\Registry;
 use Website\Controller as WController;
 
 /**
@@ -10,20 +11,17 @@ use Website\Controller as WController;
  *
  * @package Website\Controllers
  *
- * @property \Phalcon\Mvc\View\Simple $viewSimple
+ * @property \Phalcon\Registry $registry
  */
 class PagesController extends WController
 {
-    /**
-     * @param string $language
-     * @param string $slug
-     *
-     * @return \Phalcon\Http\Response|\Phalcon\Http\ResponseInterface
-     */
-    public function pageAction($language, $slug)
+    public function pageAction()
     {
+        $slug = $this->registry->offsetGet(Registry::SLUG);
         $this->tag->setTitle(ucfirst(Text::humanize($slug)));
-
-        return $this->preparePages($language, $slug, 'pages');
+        $this->registry->offsetSet(
+            Registry::VIEW,
+            sprintf('pages/%s', $slug)
+        );
     }
 }
