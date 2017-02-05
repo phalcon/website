@@ -16,37 +16,28 @@
         </p>
 
         <div class="highlight1">
-            <pre><code class="bash">
-curl -s https://packagecloud.io/install/repositories/phalcon/stable/script.deb.sh | sudo bash
+            <pre><code class="bash">curl -s "https://packagecloud.io/install/repositories/phalcon/stable/script.deb.sh" | sudo bash
 
 sudo apt-get install php5-phalcon
 
-# Ubuntu 16.04+ or Debian 9+
-sudo apt-get install php7.0-phalcon
-            </code></pre>
+# Ubuntu 16.04+, Debian 9+
+sudo apt-get install php7.0-phalcon</code></pre>
         </div>
 
         <p>
             {{ locale.translate('download_ubuntu_2') }}
         </p>
         <div class="highlight1">
-            <pre><code class="bash">
-sudo apt-add-repository ppa:phalcon/legacy
-            </code></pre>
+            <pre><code class="bash">sudo apt-add-repository ppa:phalcon/legacy</code></pre>
         </div>
-        <p>
-            {{ locale.translate('download_ubuntu_1') }}
-
-            <div class="highlight1">
-                <pre><code class="bash">
-# Ubuntu 14.04+
+        <p>{{ locale.translate('download_ubuntu_1') }}</p>
+        <div class="highlight1">
+            <pre><code class="bash"># Ubuntu 14.04+
 sudo apt-get install software-properties-common
 
 # Ubuntu 12.04
-sudo apt-get install python-software-properties
-                </code></pre>
-            </div>
-        </p>
+sudo apt-get install python-software-properties</code></pre>
+        </div>
 
         <h2>{{ locale.translate('download_compilation') }}</h2>
 
@@ -61,10 +52,8 @@ sudo apt-get install python-software-properties
             <li>{{ locale.translate('download_requirements_3') }}</li>
         </ul>
 
-        <p>
-            <div class="highlight1">
-                <pre><code class="bash">
-# Ubuntu
+        <div class="highlight1">
+            <pre><code class="bash"># Ubuntu
 sudo apt-get install php5-dev php5-mysql gcc libpcre3-dev
 
 # Fedora
@@ -76,13 +65,12 @@ sudo yum install php-devel php-mysql gcc libtool pcre-devel
 # Suse
 yast2 -i php5-pear php5-devel php5-mysql gcc libtool pcre-devel
 
-# OS X (Using Homebrew)
+# OS X (Homebrew)
 brew tap homebrew/dupes
 brew tap homebrew/versions
 brew tap homebrew/php
-brew install php5x php5x-phalcon # Where "x" - minor number of PHP</code></pre>
-            </div>
-        </p>
+brew install php5x php5x-phalcon # php55, php56, ...</code></pre>
+        </div>
 
 
         <h3>{{ locale.translate('download_compilation') }}</h3>
@@ -90,8 +78,7 @@ brew install php5x php5x-phalcon # Where "x" - minor number of PHP</code></pre>
         <p>{{ locale.translate('download_compilation_11') }}</p>
 
         <p>
-            <pre><code class="bash">
-git clone --depth=1 git://github.com/phalcon/cphalcon.git
+            <pre><code class="bash">git clone --depth=1 "git://github.com/phalcon/cphalcon.git"
 cd cphalcon/build
 sudo ./install</code></pre>
         </p>
@@ -110,16 +97,10 @@ sudo ./install</code></pre>
 
         <h2>{{ locale.translate('download_freebsd') }}</h2>
 
-        <p>
-            {{ locale.translate('download_freebsd_1') }}
-            <pre><code>
-# pkg_add -r phalcon
-            </code></pre>
-            {{ locale.translate('or') }}
-            <pre><code>
-# cd /usr/ports/www/phalcon && make install clean
-            </code></pre>
-        </p>
+        <p>{{ locale.translate('download_freebsd_1') }}</p>
+        <pre><code class="bash">pkg_add -r phalcon</code></pre>
+        <p>{{ locale.translate('or') }}</p>
+        <pre><code class="bash">cd /usr/ports/www/phalcon && make install clean</code></pre>
 
         <h2>{{ locale.translate('download_cpanel') }}</h2>
 
