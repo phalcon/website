@@ -11,7 +11,7 @@
 
     {{- assets.outputCss('header_css') -}}
 
-    <title>{{ locale.translate(language, get_title(false)) ~ " - " ~ config.get('app').get('name', 'Phalcon Framework') }}</title>
+    <title>{{ locale.translate(get_title(false)) ~ " - " ~ config.get('app').get('name', 'Phalcon Framework') }}</title>
 </head>
 <body>
     {%- block content %} {% endblock -%}

@@ -9,36 +9,36 @@
         {% include 'partials/menu_about.volt' %}
         <div class="row">
             <div class="col-lg-12">
-                <p>{{ locale.translate(language, 'testimonials_description', 'team@phalconphp.com', 'team@phalconphp.com') }}</p>
+                <p>{{ locale.translate('testimonials_description', 'team@phalconphp.com', 'team@phalconphp.com') }}</p>
             </div>
         </div>
 
         <blockquote>
-            <p>&rsaquo;&rsaquo; {{ locale.translate(language, 'testimonials_1', 'http://guitarama.ru', 'http://guitarama.ru') }}</p>
+            <p>&rsaquo;&rsaquo; {{ locale.translate('testimonials_1', 'http://guitarama.ru', 'http://guitarama.ru') }}</p>
         </blockquote>
 
         <blockquote class="blockquote-reverse">
-            <p>&rsaquo;&rsaquo; {{ locale.translate(language, 'testimonials_2', 'http://kolesa.kz', 'http://kolesa.kz', 'http://krisha.kz', 'http://krisha.kz') }}</p>
+            <p>&rsaquo;&rsaquo; {{ locale.translate('testimonials_2', 'http://kolesa.kz', 'http://kolesa.kz', 'http://krisha.kz', 'http://krisha.kz') }}</p>
         </blockquote>
 
         <blockquote>
-            <p>&rsaquo;&rsaquo; {{ locale.translate(language, 'testimonials_3') }}</p>
+            <p>&rsaquo;&rsaquo; {{ locale.translate('testimonials_3') }}</p>
         </blockquote>
 
         <blockquote class="blockquote-reverse">
-            <p>&rsaquo;&rsaquo; {{ locale.translate(language, 'testimonials_4') }}</p>
+            <p>&rsaquo;&rsaquo; {{ locale.translate('testimonials_4') }}</p>
         </blockquote>
 
         <blockquote>
-            <p>&rsaquo;&rsaquo; {{ locale.translate(language, 'testimonials_5', 'https://github.com/blackbunny/Url-Shortener', 'https://github.com/blackbunny/Url-Shortener', 'http://u.dolap.co', 'http://u.dolap.co') }}</p>
+            <p>&rsaquo;&rsaquo; {{ locale.translate('testimonials_5', 'https://github.com/blackbunny/Url-Shortener', 'https://github.com/blackbunny/Url-Shortener', 'http://u.dolap.co', 'http://u.dolap.co') }}</p>
         </blockquote>
 
         <blockquote class="blockquote-reverse">
-            <p>&rsaquo;&rsaquo; {{ locale.translate(language, 'testimonials_6', 'http://bezbykow.pl', 'http://bezbykow.pl') }}</p>
+            <p>&rsaquo;&rsaquo; {{ locale.translate('testimonials_6', 'http://bezbykow.pl', 'http://bezbykow.pl') }}</p>
         </blockquote>
 
         <blockquote>
-            <p>&rsaquo;&rsaquo; {{ locale.translate(language, 'testimonials_7', 'https://delete.im', 'https://delete.im') }}</p>
+            <p>&rsaquo;&rsaquo; {{ locale.translate('testimonials_7', 'https://delete.im', 'https://delete.im') }}</p>
         </blockquote>
     </div>
 </section>

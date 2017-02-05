@@ -13,7 +13,7 @@
                 {% for currentPage, label in pages %}
                 <li{% if page === currentPage %} class="active"{% endif %}>
                     <a href="/{{ language }}/download{% if 'index' !== currentPage %}/{{ currentPage }}{% endif %}">
-                        <span class="span-ul">{{ locale.translate(language, label) }}</span>
+                        <span class="span-ul">{{ locale.translate(label) }}</span>
                     </a>
                 </li>
                 {% endfor %}

@@ -1,12 +1,12 @@
 <div class="codesample data_storage_code code_orm">
     <div class="codesample-header">
         <h3>
-            {{ locale.translate(language, 'orm') }}
+            {{ locale.translate('orm') }}
         </h3>
     </div>
     <div class="codesample-body">
         <p>
-            {{ locale.translate(language, 'orm_1') }}
+            {{ locale.translate('orm_1') }}
         </p>
         <div class="row">
             <div class="col-xs-12">

@@ -1,12 +1,12 @@
 <div class="codesample more_components_code code_sharding" style="display:none">
     <div class="codesample-header">
         <h3>
-            {{ locale.translate(language, 'sharding') }}
+            {{ locale.translate('sharding') }}
         </h3>
     </div>
     <div class="codesample-body">
         <p>
-            {{ locale.translate(language, 'sharding_1') }}
+            {{ locale.translate('sharding_1') }}
         </p>
         <div class="row">
             <div class="col-xs-12">
@@ -15,7 +15,7 @@
 use Phalcon\Db\Adapter\Pdo\Mysql as MysqlPdo;
 use Phalcon\Db\Adapter\Pdo\PostgreSQL as PostgreSQLPdo;
 
-// {{ locale.translate(language, 'sharding_2') }}
+// {{ locale.translate('sharding_2') }}
 
 $di->set(
     'dbMysql',
@@ -31,7 +31,7 @@ $di->set(
     }
 );
 
-// {{ locale.translate(language, 'sharding_3') }}
+// {{ locale.translate('sharding_3') }}
 
 $di->set(
     'dbPostgres',

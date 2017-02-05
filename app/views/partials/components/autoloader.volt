@@ -1,12 +1,12 @@
 <div class="codesample basic_features_code code_autoloader" style="display:none">
     <div class="codesample-header">
         <h3>
-            {{ locale.translate(language, 'auto_loader') }}
+            {{ locale.translate('auto_loader') }}
         </h3>
     </div>
     <div class="codesample-body">
         <p>
-            {{ locale.translate(language, 'auto_loader_1') }}
+            {{ locale.translate('auto_loader_1') }}
         </p>
         <div class="row">
             <div class="col-xs-12">
@@ -14,11 +14,11 @@
                     <code class="php">
 use Phalcon\Loader;
 
-// {{ locale.translate(language, 'auto_loader_2') }}
+// {{ locale.translate('auto_loader_2') }}
 
 $loader = new Loader();
 
-// {{ locale.translate(language, 'auto_loader_3') }}
+// {{ locale.translate('auto_loader_3') }}
 
 $loader->registerNamespaces(
     [
@@ -28,7 +28,7 @@ $loader->registerNamespaces(
     ]
 );
 
-// {{ locale.translate(language, 'auto_loader_4') }}
+// {{ locale.translate('auto_loader_4') }}
 
 $loader->register();
                     </code>

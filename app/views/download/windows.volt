@@ -10,10 +10,10 @@
         {% include 'partials/menu_download.volt' %}
 
         <div class="alert alert-warning">
-            {{ locale.translate(language, 'download_windows_note') }}
+            {{ locale.translate('download_windows_note') }}
         </div>
 
-        <h2>{{ locale.translate(language, 'download_windows_stable') }}</h2>
+        <h2>{{ locale.translate('download_windows_stable') }}</h2>
         <table class="table">
 
             <tr>
@@ -37,7 +37,7 @@
                     <a href="#" title="{{ data['name'] }}"
                        class="btn btn-success"
                        target="_download">
-                        {{ locale.translate(language, 'download') }}
+                        {{ locale.translate('download') }}
                     </a>
                 </td>
                 <td>
@@ -52,7 +52,7 @@
                     <a href="#" title="{{ releases['latest']['x64'][key]['name'] }}"
                        class="btn btn-success"
                        target="_download">
-                        {{ locale.translate(language, 'download') }}
+                        {{ locale.translate('download') }}
                     </a>
                 </td>
             </tr>
@@ -60,7 +60,7 @@
 
             <tr>
                 <td colspan="4">
-                    {{ locale.translate(language, 'download_source_code', 'https://github.com/phalcon/cphalcon/tree/master') }}
+                    {{ locale.translate('download_source_code', 'https://github.com/phalcon/cphalcon/tree/master') }}
                 </td>
             </tr>
 
@@ -68,25 +68,25 @@
 
         <br/><br/><br/>
 
-        <h3>{{ locale.translate(language, 'download_windows_installation') }}</h3>
+        <h3>{{ locale.translate('download_windows_installation') }}</h3>
 
-        <p>{{ locale.translate(language, 'download_windows_installation', utils.getDocsUrl(language) ~ '/install.html#windows') }}</p>
+        <p>{{ locale.translate('download_windows_installation', utils.getDocsUrl(language) ~ '/install.html#windows') }}</p>
         <pre class="language-ini"><code>extension=php_phalcon.dll</code></pre>
 
         <br/><br/>
 
-        <h3>{{ locale.translate(language, 'download_windows_guides') }}</h3>
+        <h3>{{ locale.translate('download_windows_guides') }}</h3>
 
         <p>
             <ul class="dash-list">
                 <li>
                     <a href="{{ utils.getDocsUrl(language) ~ '/reference/xampp.html' }}">
-                        {{ locale.translate(language, 'download_windows_guides_xampp') }}
+                        {{ locale.translate('download_windows_guides_xampp') }}
                     </a>
                 </li>
                 <li>
                     <a href="{{ utils.getDocsUrl(language) ~ '/reference/wamp.html' }}">
-                        {{ locale.translate(language, 'download_windows_guides_wamp') }}
+                        {{ locale.translate('download_windows_guides_wamp') }}
                     </a>
                 </li>
             </ul>
@@ -94,7 +94,7 @@
 
         <br/> <br/>
 
-        <h2>{{ locale.translate(language, 'download_windows_older') }}</h2>
+        <h2>{{ locale.translate('download_windows_older') }}</h2>
         <table class="table">
             <tr>
                 <th colspan="2">
@@ -117,7 +117,7 @@
                     <a href="#" title="{{ data['name'] }}"
                        class="btn btn-success"
                        target="_download">
-                        {{ locale.translate(language, 'download') }}
+                        {{ locale.translate('download') }}
                     </a>
                 </td>
                 <td>
@@ -132,14 +132,14 @@
                     <a href="#" title="{{ releases['previous']['x64'][key]['name'] }}"
                        class="btn btn-success"
                        target="_download">
-                        {{ locale.translate(language, 'download') }}
+                        {{ locale.translate('download') }}
                     </a>
                 </td>
             </tr>
             {% endfor %}
             <tr>
                 <td colspan="4">
-                    {{ locale.translate(language, 'download_source_code_switch', 'https://github.com/phalcon/cphalcon/') }}
+                    {{ locale.translate('download_source_code_switch', 'https://github.com/phalcon/cphalcon/') }}
                 </td>
             </tr>
         </table>

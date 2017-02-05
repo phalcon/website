@@ -1,12 +1,12 @@
 <div class="codesample views_front_end_code code_i18n"  style="display:none">
     <div class="codesample-header">
         <h3>
-            {{ locale.translate(language, 'i18n') }}
+            {{ locale.translate('i18n') }}
         </h3>
     </div>
     <div class="codesample-body">
         <p>
-            {{ locale.translate(language, 'i18n_1') }}
+            {{ locale.translate('i18n_1') }}
         </p>
         <div class="row">
             <div class="col-xs-12">
@@ -36,20 +36,20 @@ class UserController extends Controller
 {
     protected function getTranslation()
     {
-        // {{ locale.translate(language, 'i18n_2') }}
+        // {{ locale.translate('i18n_2') }}
 
         $language = $this->request->getBestLanguage();
 
-        // {{ locale.translate(language, 'i18n_3') }}
+        // {{ locale.translate('i18n_3') }}
 
         if (file_exists('app/messages/' . $language . '.php')) {
             require 'app/messages/' . $language . '.php';
         } else {
-            // {{ locale.translate(language, 'i18n_4') }}
+            // {{ locale.translate('i18n_4') }}
             require 'app/messages/en.php';
         }
 
-        // {{ locale.translate(language, 'i18n_5') }}
+        // {{ locale.translate('i18n_5') }}
 
         return new NativeArray(
             array(

@@ -28,16 +28,16 @@
                 <div class="col-sm-12">
                     <div align="center">
                         <div style="max-width: 600px">
-                            <h1>{{ locale.translate(language, 'header_tagline') }}</h1>
+                            <h1>{{ locale.translate('header_tagline') }}</h1>
                         </div>
                     </div>
 
                     <br>
 
                     <p>
-                        {{ locale.translate(language, 'header_slogan') }}
+                        {{ locale.translate('header_slogan') }}
                         <a id="bench-link" href="https://phalcon.link/docs" target="_blank">
-                            {{ locale.translate(language, 'see_for_yourself') }}
+                            {{ locale.translate('see_for_yourself') }}
                         </a>
                     </p>
 
@@ -45,18 +45,18 @@
                     <a href="{{ url(language ~ '/language') }}"
                        class="btn btn-lg btn-phalcon btn-download">
                         <button class="view-detail btn">
-                            <i class="fa fa-download"></i> {{ locale.translate(language, 'get_phalcon', version) }}
+                            <i class="fa fa-download"></i> {{ locale.translate('get_phalcon', version) }}
                         </button>
                     </a>
                     <div class="sublinks">
-                        <a href="{{ url(language ~ '/language') }}">{{ locale.translate(language, 'download_version', version) }}</a> |
-                        <a href="{{ url(language ~ '/language') }}">{{ locale.translate(language, 'install_instructions') }}</a>
+                        <a href="{{ url(language ~ '/language') }}">{{ locale.translate('download_version', version) }}</a> |
+                        <a href="{{ url(language ~ '/language') }}">{{ locale.translate('install_instructions') }}</a>
                     </div>
                     <div class="sublinks">
                         <a href="https://phalcon.link/fund"
                            class="btn btn-lg btn-info btn-support">
                             <button class="btn">
-                                <i class="fa fa-money"></i> {{ locale.translate(language, 'support_us') }}
+                                <i class="fa fa-money"></i> {{ locale.translate('support_us') }}
                             </button>
                         </a>
                     </div>
@@ -78,9 +78,9 @@
                         <div class="arrow-down-2"></div>
                         <p>
                             <img src='{{ utils.getCdnUrl('images/professor.png') }}'
-                                 title='{{ locale.translate(language, 'learn') }}'
-                                 alt='{{ locale.translate(language, 'learn') }}' />
-                            {{ locale.translate(language, 'learn') }}
+                                 title='{{ locale.translate('learn') }}'
+                                 alt='{{ locale.translate('learn') }}' />
+                            {{ locale.translate('learn') }}
                         </p>
                     </div>
                 </div>
@@ -90,9 +90,9 @@
                         <p>
                             <a href="{{ utils.getDocsUrl(language) ~ '/reference/tutorial.html' }}" style="color:#ffffff">
                                 <img src='{{ utils.getCdnUrl('images/chemistry.png') }}'
-                                     title='{{ locale.translate(language, 'try_phalcon') }}'
-                                     alt='{{ locale.translate(language, 'try_phalcon') }}' />
-                                {{ locale.translate(language, 'try_phalcon') }}
+                                     title='{{ locale.translate('try_phalcon') }}'
+                                     alt='{{ locale.translate('try_phalcon') }}' />
+                                {{ locale.translate('try_phalcon') }}
                             </a>
                         </p>
                     </div>
@@ -103,8 +103,8 @@
                         <p>
                             <a href="https://zephir-lang.com">
                                 <img src='{{ utils.getCdnUrl('images/zephir_logo.png') }}'
-                                     title='{{ locale.translate(language, 'zephir') }}'
-                                     alt='{{ locale.translate(language, 'zephir') }}' />
+                                     title='{{ locale.translate('zephir') }}'
+                                     alt='{{ locale.translate('zephir') }}' />
                             </a>
                         </p>
                     </div>
@@ -115,9 +115,9 @@
                         <p>
                             <a href="{{ url(language ~ '/about') }}">
                                 <img src='{{ utils.getCdnUrl('images/drop.png') }}'
-                                     title='{{ locale.translate(language, 'contribute') }}'
-                                     alt='{{ locale.translate(language, 'contribute') }}' />
-                            {{ locale.translate(language, 'contribute') }}
+                                     title='{{ locale.translate('contribute') }}'
+                                     alt='{{ locale.translate('contribute') }}' />
+                            {{ locale.translate('contribute') }}
                             </a>
                         </p>
                     </div>
@@ -138,90 +138,90 @@
                 <!-- Features Left -->
                 <div class="col-sm-5">
                     <h2 class="verticle-line">
-                        {{ locale.translate(language, 'basic_features') }}
+                        {{ locale.translate('basic_features') }}
                     </h2>
                     <ul class="feature-list">
                         <li class="basic_features low_overhead">
                             <div class="feature-bullet">
                                 <img src='{{ utils.getCdnUrl('images/favorite.png') }}'
-                                     title='{{ locale.translate(language, 'low_overhead') }}'
-                                     alt='{{ locale.translate(language, 'low_overhead') }}'
+                                     title='{{ locale.translate('low_overhead') }}'
+                                     alt='{{ locale.translate('low_overhead') }}'
                                      class="img-star" />
                             </div>
                             <div class="feature-content">
-                                <h3>{{ locale.translate(language, 'low_overhead') }}</h3>
+                                <h3>{{ locale.translate('low_overhead') }}</h3>
                                 <p>
-                                    {{ locale.translate(language, 'low_overhead_description') }}
+                                    {{ locale.translate('low_overhead_description') }}
                                 </p>
                             </div>
                         </li>
                         <li class="basic_features mvc">
                             <div class="feature-bullet">
                                 <img src='{{ utils.getCdnUrl('images/favorite.png') }}'
-                                     title='{{ locale.translate(language, 'mvc_hmvc') }}'
-                                     alt='{{ locale.translate(language, 'mvc_hmvc') }}'
+                                     title='{{ locale.translate('mvc_hmvc') }}'
+                                     alt='{{ locale.translate('mvc_hmvc') }}'
                                      class="img-star" />
                             </div>
                             <div class="feature-content">
-                                <h3>{{ locale.translate(language, 'mvc_hmvc') }}</h3>
+                                <h3>{{ locale.translate('mvc_hmvc') }}</h3>
                                 <p>
-                                    {{ locale.translate(language, 'mvc_hmvc_description') }}
+                                    {{ locale.translate('mvc_hmvc_description') }}
                                 </p>
                             </div>
                         </li>
                         <li class="basic_features di">
                             <div class="feature-bullet">
                                 <img src='{{ utils.getCdnUrl('images/favorite.png') }}'
-                                     title='{{ locale.translate(language, 'dependency_injection') }}'
-                                     alt='{{ locale.translate(language, 'dependency_injection') }}'
+                                     title='{{ locale.translate('dependency_injection') }}'
+                                     alt='{{ locale.translate('dependency_injection') }}'
                                      class="img-star" />
                             </div>
                             <div class="feature-content">
-                                <h3>{{ locale.translate(language, 'dependency_injection') }}</h3>
+                                <h3>{{ locale.translate('dependency_injection') }}</h3>
                                 <p>
-                                    {{ locale.translate(language, 'dependency_injection_description') }}
+                                    {{ locale.translate('dependency_injection_description') }}
                                 </p>
                             </div>
                         </li>
                         <li class="basic_features rest">
                             <div class="feature-bullet">
                                 <img src='{{ utils.getCdnUrl('images/favorite.png') }}'
-                                     title='{{ locale.translate(language, 'rest') }}'
-                                     alt='{{ locale.translate(language, 'rest') }}'
+                                     title='{{ locale.translate('rest') }}'
+                                     alt='{{ locale.translate('rest') }}'
                                      class="img-star" />
                             </div>
                             <div class="feature-content">
-                                <h3>{{ locale.translate(language, 'rest') }}</h3>
+                                <h3>{{ locale.translate('rest') }}</h3>
                                 <p>
-                                    {{ locale.translate(language, 'rest_description') }}
+                                    {{ locale.translate('rest_description') }}
                                 </p>
                             </div>
                         </li>
                         <li class="basic_features autoloader">
                             <div class="feature-bullet">
                                 <img src='{{ utils.getCdnUrl('images/favorite.png') }}'
-                                     title='{{ locale.translate(language, 'autoloader') }}'
-                                     alt='{{ locale.translate(language, 'autoloader') }}'
+                                     title='{{ locale.translate('autoloader') }}'
+                                     alt='{{ locale.translate('autoloader') }}'
                                      class="img-star" />
                             </div>
                             <div class="feature-content">
-                                <h3>{{ locale.translate(language, 'autoloader') }}</h3>
+                                <h3>{{ locale.translate('autoloader') }}</h3>
                                 <p>
-                                    {{ locale.translate(language, 'autoloader_description') }}
+                                    {{ locale.translate('autoloader_description') }}
                                 </p>
                             </div>
                         </li>
                         <li class="basic_features router">
                             <div class="feature-bullet">
                                 <img src='{{ utils.getCdnUrl('images/favorite.png') }}'
-                                     title='{{ locale.translate(language, 'router') }}'
-                                     alt='{{ locale.translate(language, 'router') }}'
+                                     title='{{ locale.translate('router') }}'
+                                     alt='{{ locale.translate('router') }}'
                                      class="img-star" />
                             </div>
                             <div class="feature-content">
-                                <h3>{{ locale.translate(language, 'router') }}</h3>
+                                <h3>{{ locale.translate('router') }}</h3>
                                 <p>
-                                    {{ locale.translate(language, 'router_description') }}
+                                    {{ locale.translate('router_description') }}
                                 </p>
                             </div>
                         </li>
@@ -258,70 +258,70 @@
                         <li class="data_storage orm">
                             <div class="feature-bullet">
                                 <img src='{{ utils.getCdnUrl('images/favorite.png') }}'
-                                     title='{{ locale.translate(language, 'orm') }}'
-                                     alt='{{ locale.translate(language, 'orm') }}'
+                                     title='{{ locale.translate('orm') }}'
+                                     alt='{{ locale.translate('orm') }}'
                                      class="img-star" />
                             </div>
                             <div class="feature-content">
-                                <h3>{{ locale.translate(language, 'orm') }}</h3>
+                                <h3>{{ locale.translate('orm') }}</h3>
                                 <p>
-                                    {{ locale.translate(language, 'orm_description') }}
+                                    {{ locale.translate('orm_description') }}
                                 </p>
                             </div>
                         </li>
                         <li class="data_storage phql">
                             <div class="feature-bullet">
                                 <img src='{{ utils.getCdnUrl('images/favorite.png') }}'
-                                     title='{{ locale.translate(language, 'phql') }}'
-                                     alt='{{ locale.translate(language, 'phql') }}'
+                                     title='{{ locale.translate('phql') }}'
+                                     alt='{{ locale.translate('phql') }}'
                                      class="img-star" />
                             </div>
                             <div class="feature-content">
-                                <h3>{{ locale.translate(language, 'phql') }}</h3>
+                                <h3>{{ locale.translate('phql') }}</h3>
                                 <p>
-                                    {{ locale.translate(language, 'phql_description') }}
+                                    {{ locale.translate('phql_description') }}
                                 </p>
                             </div>
                         </li>
                         <li class="data_storage odm">
                             <div class="feature-bullet">
                                 <img src='{{ utils.getCdnUrl('images/favorite.png') }}'
-                                     title='{{ locale.translate(language, 'odm_for_mongo') }}'
-                                     alt='{{ locale.translate(language, 'odm_for_mongo') }}'
+                                     title='{{ locale.translate('odm_for_mongo') }}'
+                                     alt='{{ locale.translate('odm_for_mongo') }}'
                                      class="img-star" />
                             </div>
                             <div class="feature-content">
-                                <h3>{{ locale.translate(language, 'odm_for_mongo') }}</h3>
+                                <h3>{{ locale.translate('odm_for_mongo') }}</h3>
                                 <p>
-                                    {{ locale.translate(language, 'odm_for_mongo_description') }}
+                                    {{ locale.translate('odm_for_mongo_description') }}
                                 </p>
                             </div>
                         </li>
                         <li class="data_storage transactions">
                             <div class="feature-bullet">
                                 <img src='{{ utils.getCdnUrl('images/favorite.png') }}'
-                                     title='{{ locale.translate(language, 'transactions') }}'
-                                     alt='{{ locale.translate(language, 'transactions') }}'
+                                     title='{{ locale.translate('transactions') }}'
+                                     alt='{{ locale.translate('transactions') }}'
                                      class="img-star" />
                             </div>
                             <div class="feature-content">
-                                <h3>{{ locale.translate(language, 'transactions') }}</h3>
+                                <h3>{{ locale.translate('transactions') }}</h3>
                                 <p>
-                                    {{ locale.translate(language, 'transactions_description') }}
+                                    {{ locale.translate('transactions_description') }}
                                 </p>
                             </div>
                         </li>
                         <li class="data_storage cache">
                             <div class="feature-bullet">
                                 <img src='{{ utils.getCdnUrl('images/favorite.png') }}'
-                                     title='{{ locale.translate(language, 'cache') }}'
-                                     alt='{{ locale.translate(language, 'cache') }}'
+                                     title='{{ locale.translate('cache') }}'
+                                     alt='{{ locale.translate('cache') }}'
                                      class="img-star" />
                             </div>
                             <div class="feature-content">
-                                <h3>{{ locale.translate(language, 'cache') }}</h3>
+                                <h3>{{ locale.translate('cache') }}</h3>
                                 <p>
-                                    {{ locale.translate(language, 'cache_description') }}
+                                    {{ locale.translate('cache_description') }}
                                 </p>
                             </div>
                         </li>
@@ -349,83 +349,83 @@
                 <div class="col-sm-5">
 
                     <h2 class="verticle-line">
-                        {{ locale.translate(language, 'views_and_frontend') }}
+                        {{ locale.translate('views_and_frontend') }}
                     </h2>
 
                     <ul class="feature-list">
                         <li class="views_front_end templates">
                             <div class="feature-bullet">
                                 <img src='{{ utils.getCdnUrl('images/favorite.png') }}'
-                                     title='{{ locale.translate(language, 'template_engines') }}'
-                                     alt='{{ locale.translate(language, 'template_engines') }}'
+                                     title='{{ locale.translate('template_engines') }}'
+                                     alt='{{ locale.translate('template_engines') }}'
                                      class="img-star" />
                             </div>
                             <div class="feature-content">
-                                <h3>{{ locale.translate(language, 'template_engines') }}</h3>
+                                <h3>{{ locale.translate('template_engines') }}</h3>
                                 <p>
-                                    {{ locale.translate(language, 'template_engines_description') }}
+                                    {{ locale.translate('template_engines_description') }}
                                 </p>
                             </div>
                         </li>
                         <li class="views_front_end volt">
                             <div class="feature-bullet">
                                 <img src='{{ utils.getCdnUrl('images/favorite.png') }}'
-                                     title='{{ locale.translate(language, 'template_engine_volt') }}'
-                                     alt='{{ locale.translate(language, 'template_engine_volt') }}'
+                                     title='{{ locale.translate('template_engine_volt') }}'
+                                     alt='{{ locale.translate('template_engine_volt') }}'
                                      class="img-star" />
                             </div>
                             <div class="feature-content">
                                 <h3>
-                                    {{ locale.translate(language, 'template_engine_volt') }}
+                                    {{ locale.translate('template_engine_volt') }}
                                 </h3>
                                 <p>
-                                    {{ locale.translate(language, 'template_engine_volt_description') }}
+                                    {{ locale.translate('template_engine_volt_description') }}
                                 </p>
                             </div>
                         </li>
                         <li class="views_front_end i18n">
                             <div class="feature-bullet">
                                 <img src='{{ utils.getCdnUrl('images/favorite.png') }}'
-                                     title='{{ locale.translate(language, 'i18n') }}'
-                                     alt='{{ locale.translate(language, 'i18n') }}'
+                                     title='{{ locale.translate('i18n') }}'
+                                     alt='{{ locale.translate('i18n') }}'
                                      class="img-star" />
                             </div>
                             <div class="feature-content">
-                                <h3>{{ locale.translate(language, 'i18n') }}</h3>
+                                <h3>{{ locale.translate('i18n') }}</h3>
                                 <p>
-                                    {{ locale.translate(language, 'i18n_description') }}
+                                    {{ locale.translate('i18n_description') }}
                                 </p>
                             </div>
                         </li>
                         <li class="views_front_end forms">
                             <div class="feature-bullet">
                                 <img src='{{ utils.getCdnUrl('images/favorite.png') }}'
-                                     title='{{ locale.translate(language, 'forms_builder') }}'
-                                     alt='{{ locale.translate(language, 'forms_builder') }}'
+                                     title='{{ locale.translate('forms_builder') }}'
+                                     alt='{{ locale.translate('forms_builder') }}'
                                      class="img-star" />
                             </div>
                             <div class="feature-content">
                                 <h3>
-                                    {{ locale.translate(language, 'forms_builder') }}
+                                    {{ locale.translate('forms_builder') }}
                                 </h3>
                                 <p>
-                                    {{ locale.translate(language, 'forms_builder_description') }}
+                                    {{ locale.translate('forms_builder_description') }}
                                 </p>
                             </div>
                         </li>
                         <li class="views_front_end flash">
                             <div class="feature-bullet">
                                 <img src='{{ utils.getCdnUrl('images/favorite.png') }}'
-                                     title='{{ locale.translate(language, 'flash_messages') }}'
-                                     alt='{{ locale.translate(language, 'flash_messages') }}'
+                                     title='{{ locale.translate('flash_messages') }}'
+                                     alt='{{ locale.translate('flash_messages') }}'
                                      class="img-star" />
                             </div>
                             <div class="feature-content">
                                 <h3>
-                                    {{ locale.translate(language, 'flash_messages') }}
+                                    {{ locale.translate('flash_messages') }}
                                 </h3>
                                 <p>
-                                    {{ locale.translate(language, 'flash_messages_description') }}
+                                    {{ locale.translate('flash_messages_description') }}
                                 </p>
                             </div>
                         </li>
@@ -454,76 +454,76 @@
             <div class=" col-md-12 white-bg">
                 <!-- Features Left -->
                 <div class="col-sm-5">
-                    <h2 class="verticle-line">{{ locale.translate(language, 'more') }}</h2>
+                    <h2 class="verticle-line">{{ locale.translate('more') }}</h2>
 
                     <ul class="feature-list">
                         <li class="more_components acl">
                             <div class="feature-bullet">
                                 <img src='{{ utils.getCdnUrl('images/favorite.png') }}'
-                                     title='{{ locale.translate(language, 'acl') }}'
-                                     alt='{{ locale.translate(language, 'acl') }}'
+                                     title='{{ locale.translate('acl') }}'
+                                     alt='{{ locale.translate('acl') }}'
                                      class="img-star" />
                             </div>
                             <div class="feature-content">
-                                <h3>{{ locale.translate(language, 'acl') }}</h3>
+                                <h3>{{ locale.translate('acl') }}</h3>
                                 <p>
-                                    {{ locale.translate(language, 'acl_description') }}
+                                    {{ locale.translate('acl_description') }}
                                 </p>
                             </div>
                         </li>
                         <li class="more_components sharding">
                             <div class="feature-bullet">
                                 <img src='{{ utils.getCdnUrl('images/favorite.png') }}'
-                                     title='{{ locale.translate(language, 'sharding') }}'
-                                     alt='{{ locale.translate(language, 'sharding') }}'
+                                     title='{{ locale.translate('sharding') }}'
+                                     alt='{{ locale.translate('sharding') }}'
                                      class="img-star" />
                             </div>
                             <div class="feature-content">
-                                <h3>{{ locale.translate(language, 'sharding') }}</h3>
+                                <h3>{{ locale.translate('sharding') }}</h3>
                                 <p>
-                                    {{ locale.translate(language, 'sharding_description') }}
+                                    {{ locale.translate('sharding_description') }}
                                 </p>
                             </div>
                         </li>
                         <li class="more_components crypt">
                             <div class="feature-bullet">
                                 <img src='{{ utils.getCdnUrl('images/favorite.png') }}'
-                                     title='{{ locale.translate(language, 'crypt') }}'
-                                     alt='{{ locale.translate(language, 'crypt') }}'
+                                     title='{{ locale.translate('crypt') }}'
+                                     alt='{{ locale.translate('crypt') }}'
                                      class="img-star" />
                             </div>
                             <div class="feature-content">
-                                <h3>{{ locale.translate(language, 'crypt') }}</h3>
+                                <h3>{{ locale.translate('crypt') }}</h3>
                                 <p>
-                                    {{ locale.translate(language, 'crypt_description') }}
+                                    {{ locale.translate('crypt_description') }}
                                 </p>
                             </div>
                         </li>
                         <li class="more_components events">
                             <div class="feature-bullet">
                                 <img src='{{ utils.getCdnUrl('images/favorite.png') }}'
-                                     title='{{ locale.translate(language, 'events') }}'
-                                     alt='{{ locale.translate(language, 'events') }}'
+                                     title='{{ locale.translate('events') }}'
+                                     alt='{{ locale.translate('events') }}'
                                      class="img-star" />
                             </div>
                             <div class="feature-content">
-                                <h3>{{ locale.translate(language, 'events') }}</h3>
+                                <h3>{{ locale.translate('events') }}</h3>
                                 <p>
-                                    {{ locale.translate(language, 'events_description') }}
+                                    {{ locale.translate('events_description') }}
                                 </p>
                             </div>
                         </li>
                         <li class="more_components queueing">
                             <div class="feature-bullet">
                                 <img src='{{ utils.getCdnUrl('images/favorite.png') }}'
-                                     title='{{ locale.translate(language, 'queueing') }}'
-                                     alt='{{ locale.translate(language, 'queueing') }}'
+                                     title='{{ locale.translate('queueing') }}'
+                                     alt='{{ locale.translate('queueing') }}'
                                      class="img-star" />
                             </div>
                             <div class="feature-content">
-                                <h3>{{ locale.translate(language, 'queueing') }}</h3>
+                                <h3>{{ locale.translate('queueing') }}</h3>
                                 <p>
-                                    {{ locale.translate(language, 'queueing_description') }}
+                                    {{ locale.translate('queueing_description') }}
                                 </p>
                             </div>
                         </li>
@@ -552,8 +552,8 @@
             <div class="col-md-12 red-bg">
 
                 <!-- HEADING -->
-                <h2>{{ locale.translate(language, 'polling_app') }}</h2>
-                <p>{{ locale.translate(language, 'watch_demo') }}</p>
+                <h2>{{ locale.translate('polling_app') }}</h2>
+                <p>{{ locale.translate('watch_demo') }}</p>
                 <div class="separator"></div>
 
                 <!-- Video -->
@@ -576,7 +576,7 @@
 
                 <!-- Section Heading -->
                 <h2>
-                    {{ locale.translate(language, 'sponsored_by') }}
+                    {{ locale.translate('sponsored_by') }}
                 </h2>
                 <br>
 
@@ -605,10 +605,10 @@
 
                 <!-- Section Heading -->
                 <h2>
-                    {{ locale.translate(language, 'join_our_community') }}
+                    {{ locale.translate('join_our_community') }}
                 </h2>
                 <p>
-                    {{ locale.translate(language, 'join_our_community_description') }}
+                    {{ locale.translate('join_our_community_description') }}
                 </p>
                 <br>
                 <div class="clearfix">
@@ -623,7 +623,7 @@
                                      height="60">
                             </div>
                             <h3>
-                                {{ locale.translate(language, 'forum') }}
+                                {{ locale.translate('forum') }}
                             </h3>
                         </a>
                     </div>
@@ -638,7 +638,7 @@
                                      style="border-radius: 25px;">
                             </div>
                             <h3>
-                                {{ locale.translate(language, 'github') }}
+                                {{ locale.translate('github') }}
                             </h3>
                         </a>
                     </div>
@@ -655,7 +655,7 @@
                                      style="border-radius: 25px;">
                             </div>
                             <h3>
-                                {{ locale.translate(language, 'stack_overflow') }}
+                                {{ locale.translate('stack_overflow') }}
                             </h3>
                         </a>
                     </div>
@@ -671,9 +671,9 @@
     <section>
         <div class="container">
             <div class="col-md-12 white-bg">
-                <h2>{{ locale.translate(language, 'contributors') }}</h2>
+                <h2>{{ locale.translate('contributors') }}</h2>
                 <p>
-                    {{ locale.translate(language, 'contributors_description') }}
+                    {{ locale.translate('contributors_description') }}
                 </p>
                 {{ partial('partials/contributors') }}
             </div>

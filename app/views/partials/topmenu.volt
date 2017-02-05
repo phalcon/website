@@ -2,12 +2,12 @@
 <ul class="nav navbar-nav main-menu">
     <li class="first">
         <a href="/{{ language }}/download" class="header-nav-link">
-            {{ locale.translate(language, 'download') }}
+            {{ locale.translate('download') }}
         </a>
     </li>
     <li>
         <a href="https://phalcon.link/docs" class="header-nav-link" target="_blank">
-            {{ locale.translate(language, 'docs') }}
+            {{ locale.translate('docs') }}
         </a>
     </li>
     <li class="dropdown">
@@ -17,55 +17,55 @@
            role="button"
            aria-haspopup="true"
            aria-expanded="false">
-            {{ locale.translate(language, 'community') }} <span class="caret"></span>
+            {{ locale.translate('community') }} <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
             <li>
                 <a href="https://phalcon.link/forum" target="_blank">
-                    {{ locale.translate(language, 'forum') }}
+                    {{ locale.translate('forum') }}
                 </a>
             </li>
             <li>
                 <a href="https://phalcon.link/blog" target="_blank">
-                    {{ locale.translate(language, 'blog') }}
+                    {{ locale.translate('blog') }}
                 </a>
             </li>
             <li>
                 <a href="https://phalcon.link/api" target="_blank">
-                    {{ locale.translate(language, 'api') }}
+                    {{ locale.translate('api') }}
                 </a>
             </li>
             <li>
                 <a href="https://phalcon.link/resources" target="_blank">
-                    {{ locale.translate(language, 'resources') }}
+                    {{ locale.translate('resources') }}
                 </a>
             </li>
             <li role="separator" class="divider"></li>
             <li>
                 <a href="https://phalcon.link/f" target="_blank">
-                    {{ locale.translate(language, 'facebook') }}
+                    {{ locale.translate('facebook') }}
                 </a>
             </li>
             <li>
                 <a href="https://phalcon.link/t" target="_blank">
-                    {{ locale.translate(language, 'twitter') }}
+                    {{ locale.translate('twitter') }}
                 </a>
             </li>
             <li>
                 <a href="https://phalcon.link/g+" target="_blank">
-                    {{ locale.translate(language, 'google_plus') }}
+                    {{ locale.translate('google_plus') }}
                 </a>
             </li>
             <li>
                 <a href="https://phalcon.link/gab" target="_blank">
-                    {{ locale.translate(language, 'gab') }}
+                    {{ locale.translate('gab') }}
                 </a>
             </li>
         </ul>
     </li>
     <li class="first">
         <a href="/{{ language }}/sponsors" class="header-nav-link">
-            {{ locale.translate(language, 'sponsors') }}
+            {{ locale.translate('sponsors') }}
         </a>
     </li>
     <li class="dropdown lang-wrapper">

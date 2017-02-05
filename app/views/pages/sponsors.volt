@@ -8,13 +8,13 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-10">
-                <p>{{ locale.translate(language, 'sponsors_description_1') }}</p>
+                <p>{{ locale.translate('sponsors_description_1') }}</p>
             </div>
             <div class="col-lg-2">
                 <div class="widget">
                     <a href="https://www.patreon.com/bePatron?u=4653615"
                        data-patreon-widget-type="become-patron-button">
-                        {{ locale.translate(language, 'sponsors_become_patron') }}
+                        {{ locale.translate('sponsors_become_patron') }}
                     </a>
                     <script async src="https://cdn6.patreon.com/becomePatronButton.bundle.js"></script>
                 </div>
@@ -23,7 +23,7 @@
         <hr/>
         <div class="row">
             <div class="col-lg-12">
-                <h3 class="text-uppercase">{{ locale.translate(language, 'sponsors_and_supporters') }}</h3>
+                <h3 class="text-uppercase">{{ locale.translate('sponsors_and_supporters') }}</h3>
                 <div>
                     <a href="https://pdffiller.com/" target="_blank">
                         <img width="240px"
