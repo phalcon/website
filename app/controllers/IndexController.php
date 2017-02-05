@@ -2,7 +2,6 @@
 
 namespace Website\Controllers;
 
-use Website\Constants\Registry;
 use Website\Controller as WController;
 
 /**
@@ -19,6 +18,6 @@ class IndexController extends WController
         $this->tag->setTitle(
             $this->locale->translate('high_performance_php_framework')
         );
-        $this->registry->offsetSet(Registry::VIEW, 'index/index');
+        $this->registry->view = 'index/index';
     }
 }

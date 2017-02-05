@@ -6,7 +6,6 @@ use Phalcon\Mvc\Micro;
 use Phalcon\Mvc\Micro\MiddlewareInterface;
 use Phalcon\Tag;
 
-use Website\Constants\Registry;
 use Website\Traits\LanguageTrait;
 
 /**
@@ -38,16 +37,10 @@ class EnvironmentMiddleware implements MiddlewareInterface
         /**
          * These are needed for all pages
          */
-        $application->registry->offsetSet(Registry::LANGUAGE, $language);
-        $application->registry->offsetSet(Registry::SLUG, $slug);
-        $application->registry->offsetSet(
-            Registry::MENU_LANGUAGES,
-            $this->getMenuLanguages($application, $language)
-        );
-        $application->registry->offsetSet(
-            Registry::VERSION,
-            $application->config->get('app')->get('version')
-        );
+        $application->registry->language      = $language;
+        $application->registry->slug          = $slug;
+        $application->registry->menuLanguages = $this->getMenuLanguages($application, $language);
+        $application->registry->version       = $application->config->get('app')->get('version');
 
         switch ($slug) {
             /**
@@ -56,19 +49,13 @@ class EnvironmentMiddleware implements MiddlewareInterface
             case 'team':
             case 'index':
             case '':
-                $application->registry->offsetSet(
-                    Registry::CONTRIBUTORS,
-                    $this->getContributors()
-                );
+                $application->registry->contributors = $this->getContributors();
                 break;
             /**
              * Releases are needed in 'windows'
              */
             case 'windows':
-                $application->registry->offsetSet(
-                    Registry::RELEASES,
-                    $this->getReleases()
-                );
+                $application->registry->releases = $this->getReleases();
                 break;
         }
 

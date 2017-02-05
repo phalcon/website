@@ -3,7 +3,6 @@
 namespace Website\Controllers;
 
 use Website\Controller as WController;
-use Website\Constants\Registry;
 
 /**
  * Class DownloadController
@@ -21,10 +20,10 @@ class DownloadController extends WController
 
     public function pageAction()
     {
-        $slug     = $this->registry->offsetGet(Registry::SLUG);
+        $slug     = $this->registry->slug;
         $viewName = sprintf('download/%s', $slug);
 
         $this->tag->setTitle($this->locale->translate('download'));
-        $this->registry->offsetSet(Registry::VIEW, $viewName);
+        $this->registry->view = $viewName;
     }
 }

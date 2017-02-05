@@ -4,9 +4,6 @@ namespace Website\Middleware;
 
 use Phalcon\Mvc\Micro;
 use Phalcon\Mvc\Micro\MiddlewareInterface;
-use Phalcon\Tag;
-
-use Website\Constants\Registry;
 
 /**
  * Class AssetsMiddleware
@@ -27,7 +24,7 @@ class AssetsMiddleware implements MiddlewareInterface
         /**
          * Adds relevant assets to the assets manager
          */
-        $slug       = $application->registry->offsetGet(Registry::SLUG);
+        $slug       = $application->registry->slug;
         $cdnUrl     = $application->utils->getCdnUrl();
         $isCdnLocal = $application->utils->isCdnLocal();
 

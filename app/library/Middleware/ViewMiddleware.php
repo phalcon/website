@@ -5,8 +5,6 @@ namespace Website\Middleware;
 use Phalcon\Mvc\Micro;
 use Phalcon\Mvc\Micro\MiddlewareInterface;
 
-use Website\Constants\Registry;
-
 /**
  * Class EnvironmentMiddleware
  *
@@ -31,13 +29,7 @@ class ViewMiddleware implements MiddlewareInterface
 
         /** @var \Phalcon\Registry $registry */
         $registry     = $application->registry;
-        $language     = $registry->offsetGet(Registry::LANGUAGE);
-        $slug         = $registry->offsetGet(Registry::SLUG);
-        $contributors = $registry->offsetGet(Registry::CONTRIBUTORS);
-        $languages    = $registry->offsetGet(Registry::MENU_LANGUAGES);
-        $releases     = $registry->offsetGet(Registry::RELEASES);
-        $version      = $registry->offsetGet(Registry::VERSION);
-        $viewName     = $registry->offsetGet(Registry::VIEW);
+        $viewName     = $registry->view;
 
         if ('production' === $application->config->get('env')) {
             $application->viewSimple->cache(['key' => $cacheKey]);
@@ -48,12 +40,12 @@ class ViewMiddleware implements MiddlewareInterface
                         ->render(
                             $viewName,
                             [
-                                'page'         => $slug,
-                                'language'     => $language,
-                                'contributors' => $contributors,
-                                'languages'    => $languages,
-                                'releases'     => $releases,
-                                'version'      => $version,
+                                'page'         => $registry->slug,
+                                'language'     => $registry->language,
+                                'contributors' => $registry->contributors,
+                                'languages'    => $registry->menuLanguages,
+                                'releases'     => $registry->releases,
+                                'version'      => $registry->version,
                             ]
                         );
 

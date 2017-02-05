@@ -22,11 +22,9 @@ use Phalcon\Mvc\View\Engine\Volt as PhVolt;
 use Phalcon\Registry as PhRegistry;
 
 use Website\Constants\Environment;
-use Website\Constants\Registry;
 use Website\Constants\Services;
 use Website\Exception;
 use Website\Locale;
-use Website\Middleware\NotFoundMiddleware;
 use Website\Utils;
 use Website\View\Engine\Volt\Extensions\Php;
 
@@ -87,7 +85,7 @@ abstract class AbstractBootstrap
     protected function initAssets()
     {
         /** @var \Website\Utils $utils */
-        $utils = $this->diContainer->getShared(Services::UTILS);
+        $utils = $this->diContainer->getShared('utils');
 
         $assets = new Manager();
 
@@ -112,7 +110,7 @@ abstract class AbstractBootstrap
             ->addJs($utils->getCdnUrl() . 'js/plugins/jquery.backstretch.min.js', $utils->isCdnLocal())
             ->addJs($utils->getCdnUrl() . 'js/custom.js');
 
-        $this->diContainer->setShared(Services::ASSETS, $assets);
+        $this->diContainer->setShared('assets', $assets);
 
         return $this;
     }
@@ -128,7 +126,7 @@ abstract class AbstractBootstrap
          * viewCache
          */
         /** @var \Phalcon\Config $config */
-        $config   = $this->diContainer->getShared(Services::CONFIG);
+        $config   = $this->diContainer->getShared('config');
         $lifetime = $config->get('cache')->get('lifetime', 3600);
         $driver   = $config->get('cache')->get('viewDriver', 'file');
         $frontEnd = new PhCacheFrontOutput(['lifetime' => $lifetime]);
@@ -136,7 +134,7 @@ abstract class AbstractBootstrap
         $class    = sprintf('\Phalcon\Cache\Backend\%s', ucfirst($driver));
         $cache    = new $class($frontEnd, $backEnd);
 
-        $this->diContainer->set(Services::VIEW_CACHE, $cache);
+        $this->diContainer->set('viewCache', $cache);
 
         /**
          * cacheData
@@ -147,7 +145,7 @@ abstract class AbstractBootstrap
         $class    = sprintf('\Phalcon\Cache\Backend\%s', ucfirst($driver));
         $cache    = new $class($frontEnd, $backEnd);
 
-        $this->diContainer->setShared(Services::CACHE_DATA, $cache);
+        $this->diContainer->setShared('cacheData', $cache);
 
         return $this;
     }
@@ -168,7 +166,7 @@ abstract class AbstractBootstrap
         $configArray = require_once($fileName);
         $config = new PhConfig($configArray);
 
-        $this->diContainer->setShared(Services::CONFIG, $config);
+        $this->diContainer->setShared('config', $config);
 
         return $this;
     }
@@ -194,9 +192,9 @@ abstract class AbstractBootstrap
     protected function initEnvironment()
     {
         /** @var \Phalcon\Registry $registry */
-        $registry = $this->diContainer->getShared(Services::REGISTRY);
-        $registry->offsetSet(Registry::MEMORY, memory_get_usage());
-        $registry->offsetSet(Registry::EXECUTION_TIME, microtime(true));
+        $registry                = $this->diContainer->getShared('registry');
+        $registry->memory        = memory_get_usage();
+        $registry->executionTime = microtime(true);
 
         (new Dotenv(APP_PATH))->load();
 
@@ -208,9 +206,9 @@ abstract class AbstractBootstrap
      */
     protected function initErrorHandler()
     {
-        $logger = $this->diContainer->getShared(Services::LOGGER);
-        $utils  = $this->diContainer->getShared(Services::UTILS);
-        $mode   = $utils->env(Environment::APP_ENV, 'development');
+        $logger = $this->diContainer->getShared('logger');
+        $utils  = $this->diContainer->getShared('utils');
+        $mode   = $utils->env('APP_ENV', 'development');
 
         ini_set('display_errors', boolval('development' === $mode));
         error_reporting(E_ALL);
@@ -303,11 +301,11 @@ abstract class AbstractBootstrap
      */
     protected function initLocale()
     {
-        $config = $this->diContainer->getShared(Services::CONFIG);
+        $config = $this->diContainer->getShared('config');
 
         date_default_timezone_set($config->get('app')->get('timezone', 'US/Eastern'));
 
-        $this->diContainer->setShared(Services::LOCALE, new Locale());
+        $this->diContainer->setShared('locale', new Locale());
 
         return $this;
     }
@@ -320,7 +318,7 @@ abstract class AbstractBootstrap
     protected function initLogger()
     {
         /** @var \Phalcon\Config $config */
-        $config   = $this->diContainer->getShared(Services::CONFIG);
+        $config   = $this->diContainer->getShared('config');
         $fileName = $config->get('logger')
                            ->get('defaultFilename', 'application');
         $format   = $config->get('logger')
@@ -336,7 +334,7 @@ abstract class AbstractBootstrap
         $logger    = new PhFileLogger($logFile);
         $logger->setFormatter($formatter);
 
-        $this->diContainer->setShared(Services::LOGGER, $logger);
+        $this->diContainer->setShared('logger', $logger);
 
         return $this;
     }
@@ -352,18 +350,18 @@ abstract class AbstractBootstrap
          * Fill the registry with elements we will need
          */
         $registry = new PhRegistry();
-        $registry->offsetSet(Registry::ACTION, '');
-        $registry->offsetSet(Registry::CONTRIBUTORS, []);
-        $registry->offsetSet(Registry::EXECUTION_TIME, 0);
-        $registry->offsetSet(Registry::LANGUAGE, 'en');
-        $registry->offsetSet(Registry::MEMORY, 0);
-        $registry->offsetSet(Registry::MENU_LANGUAGES, []);
-        $registry->offsetSet(Registry::SLUG, '');
-        $registry->offsetSet(Registry::RELEASES, []);
-        $registry->offsetSet(Registry::VERSION, '3.0.0');
-        $registry->offsetSet(Registry::VIEW, 'index/index');
+        $registry->action        = '';
+        $registry->contributors  = [];
+        $registry->executionTime = 0;
+        $registry->language      = 'en';
+        $registry->memory        = 0;
+        $registry->menuLanguages = [];
+        $registry->slug          = '';
+        $registry->releases      = [];
+        $registry->version       = '3.0.0';
+        $registry->view          = 'index/index';
 
-        $this->diContainer->setShared(Services::REGISTRY, $registry);
+        $this->diContainer->setShared('registry', $registry);
 
         return $this;
     }
@@ -376,7 +374,7 @@ abstract class AbstractBootstrap
     protected function initRoutes()
     {
         /** @var PhConfig $config */
-        $config     = $this->diContainer->getShared(Services::CONFIG);
+        $config     = $this->diContainer->getShared('config');
         $routes     = $config->get('routes')->toArray();
         $middleware = $config->get('middleware')->toArray();
 
@@ -395,12 +393,12 @@ abstract class AbstractBootstrap
             $this->application->mount($collection);
         }
 
-        $eventsManager = $this->diContainer->getShared(Services::EVENTS_MANAGER);
+        $eventsManager = $this->diContainer->getShared('eventsManager');
 
         foreach ($middleware as $element) {
             $class = $element['class'];
             $event = $element['event'];
-            $eventsManager->attach(Services::MICRO, new $class());
+            $eventsManager->attach('micro', new $class());
             $this->application->$event(new $class());
         }
 
@@ -416,7 +414,7 @@ abstract class AbstractBootstrap
      */
     protected function initUtils()
     {
-        $this->diContainer->setShared(Services::UTILS, new Utils());
+        $this->diContainer->setShared('utils', new Utils());
 
         return $this;
     }
@@ -429,7 +427,7 @@ abstract class AbstractBootstrap
     protected function initView()
     {
         /** @var \Phalcon\Config $config */
-        $config = $this->diContainer->getShared(Services::CONFIG);
+        $config = $this->diContainer->getShared('config');
         $mode   = $config->get('app')->get('env', 'development');
 
         $view  = new PhViewSimple();
@@ -460,7 +458,7 @@ abstract class AbstractBootstrap
             ]
         );
 
-        $this->diContainer->setShared(Services::VIEW, $view);
+        $this->diContainer->setShared('viewSimple', $view);
 
         return $this;
     }

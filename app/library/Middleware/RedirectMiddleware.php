@@ -3,9 +3,6 @@
 namespace Website\Middleware;
 
 use Phalcon\Mvc\Micro;
-use Phalcon\Mvc\User\Plugin;
-use Website\Constants\Registry;
-use Website\Traits\LanguageTrait;
 use Phalcon\Mvc\Micro\MiddlewareInterface;
 
 /**
@@ -27,7 +24,7 @@ class RedirectMiddleware implements MiddlewareInterface
      */
     public function call(Micro $application)
     {
-        $slug     = $application->registry->offsetGet(Registry::SLUG);
+        $slug     = $application->registry->slug;
         $uri      = $application->request->getURI();
         $redirect = '';
 
