@@ -40,14 +40,15 @@
                     {{ locale.translate('resources') }}
                 </a>
             </li>
+            <li role="separator" class="divider"></li>
             <li>
                 <a href="https://phalcon.link/f" target="_blank">
-                    {{ locale.translate('f') }}
+                    {{ locale.translate('facebook') }}
                 </a>
             </li>
             <li>
                 <a href="https://phalcon.link/t" target="_blank">
-                    {{ locale.translate('t') }}
+                    {{ locale.translate('twitter') }}
                 </a>
             </li>
             <li>
