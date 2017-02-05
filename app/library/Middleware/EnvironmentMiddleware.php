@@ -114,11 +114,11 @@ class EnvironmentMiddleware implements MiddlewareInterface
         $uri                   = $application->router->getRewriteUri();
         foreach ($languages as $key => $value) {
             $link = [
-                'action'   => $url . str_replace('/{$language}', '{$key}', $uri),
+                'action'   => $url . str_replace("/{$language}", $key, $uri),
                 'text'     => $value,
                 'tabindex' => -1,
                 'role'     => 'menuitem',
-                'class'    => 'flag-item flag-{$key}',
+                'class'    => "flag-item flag-{$key}",
                 'local'    => false
             ];
 
