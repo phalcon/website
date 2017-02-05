@@ -2,6 +2,7 @@
 
 namespace Website\Controllers;
 
+use Phalcon\Text;
 use Website\Controller as WController;
 
 /**
@@ -21,6 +22,8 @@ class PagesController extends WController
      */
     public function pageAction($language, $slug)
     {
+        $this->tag->setTitle(ucfirst(Text::humanize($slug)));
+
         return $this->preparePages($language, $slug, 'pages');
     }
 }

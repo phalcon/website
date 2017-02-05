@@ -192,8 +192,6 @@ abstract class AbstractBootstrap
      */
     protected function initEnvironment()
     {
-        date_default_timezone_set('US/Eastern');
-
         $this->memory    = memory_get_usage();
         $this->execution = microtime(true);
 
@@ -255,9 +253,6 @@ abstract class AbstractBootstrap
             }
         );
 
-//        $timezone = $config->get('app_timezone', 'US/Eastern');
-//        date_default_timezone_set($timezone);
-
         return $this;
     }
 
@@ -305,6 +300,10 @@ abstract class AbstractBootstrap
      */
     protected function initLocale()
     {
+        $config = $this->diContainer->getShared(Services::CONFIG);
+
+        date_default_timezone_set($config->get('app')->get('timezone', 'US/Eastern'));
+
         $this->diContainer->setShared(Services::LOCALE, new Locale());
 
         return $this;

@@ -20,6 +20,7 @@ class Environment
     const APP_STATIC_URL          = 'APP_STATIC_URL';
     const APP_SUPPORT_EMAIL       = 'APP_SUPPORT_EMAIL';
     const APP_URL                 = 'APP_URL';
+    const APP_TIMEZONE            = 'APP_TIMEZONE';
 
     const CACHE_DRIVER            = 'CACHE_DRIVER';
     const VIEW_CACHE_DRIVER       = 'VIEW_CACHE_DRIVER';

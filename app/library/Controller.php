@@ -2,24 +2,28 @@
 
 namespace Website;
 
-use Phalcon\Mvc\Controller as PhController;
 use Phalcon\Tag;
-use Phalcon\Text;
+use Website\Traits\LanguageTrait;
+use Phalcon\Mvc\Controller as PhController;
 
 /**
  * Class Controller
  *
- * @property \Phalcon\Config          $config
+ * @property \Website\Locale          $locale
+ *
  * @property \Website\Utils           $utils
  * @property \Phalcon\Mvc\View\Simple $viewSimple
  */
 class Controller extends PhController
 {
+    use LanguageTrait;
+
     /**
      * Initializes the controller
      */
     public function onConstruct()
     {
+        $this->viewSimple->setVar('version', $this->config->get('app')->get('version'));
     }
 
     public function redirectAction()
@@ -29,7 +33,7 @@ class Controller extends PhController
             $rewriteUri .= '/';
         }
 
-        return $this->response->redirect('/en' . $rewriteUri, true);
+        return $this->response->redirect('/' . $this->getLang("en") . $rewriteUri, true);
     }
 
     protected function getMenuLanguages($language)
@@ -75,7 +79,7 @@ class Controller extends PhController
         $this
             ->assets
             ->collection('header_css')
-            ->addCss($this->utils->getCdnUrl() . 'css/src/styles.css', $this->utils->isCdnLocal())
+            ->addCss($this->utils->getCdnUrl() . 'css/style.css', $this->utils->isCdnLocal())
             ->addCss($this->utils->getCdnUrl() . 'css/phalconPage.css', $this->utils->isCdnLocal());
 
         if (true === empty($slug)) {
@@ -195,30 +199,6 @@ class Controller extends PhController
 //	}
 //
 //
-//	protected function getUriParameter($parameter)
-//	{
-//		return $this->dispatcher->getParam($parameter);
-//	}
-
-//    protected function getLang()
-//    {
-//        $lang = $this->getUriParameter('language');
-//
-//        if (!$lang) {
-//            $languagesAvailable = array_keys($this->config->languages->toArray());
-//
-//            foreach ($this->request->getLanguages() as $httpLang) {
-//                $httpLang = mb_strtolower(substr($httpLang['language'], 0, 2));
-//                if (in_array($httpLang, $languagesAvailable)) {
-//                    return $httpLang;
-//                }
-//            }
-//        } else {
-//            return $lang;
-//        }
-//
-//        return 'en';
-//    }
 
     /**
      * Gets the contributors from the cached file
@@ -240,8 +220,6 @@ class Controller extends PhController
     protected function returnResponse($language, $slug, $viewName, $releases = [])
     {
         $cacheKey = str_replace('/', '_', $this->router->getRewriteUri()) . '.cache';
-
-        $this->tag->setTitle(Text::camelize($slug));
 
         return $this
             ->viewSimple

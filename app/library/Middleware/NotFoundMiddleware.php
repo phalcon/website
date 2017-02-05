@@ -3,16 +3,22 @@
 namespace Website\Middleware;
 
 use Phalcon\Mvc\Micro;
-use Phalcon\Mvc\Micro\MiddlewareInterface;
 use Phalcon\Mvc\User\Plugin;
+use Website\Traits\LanguageTrait;
+use Phalcon\Mvc\Micro\MiddlewareInterface;
 
 /**
  * Class NotFoundMiddleware
+ *
+ * @property \Website\Utils           $utils
+ * @property \Phalcon\Mvc\View\Simple $viewSimple
  *
  * @package Website\Middleware
  */
 class NotFoundMiddleware extends Plugin implements MiddlewareInterface
 {
+    use LanguageTrait;
+
     /**
      * If the endpoint has not been found, redirect to the 404
      *
@@ -29,10 +35,11 @@ class NotFoundMiddleware extends Plugin implements MiddlewareInterface
             ->addCss($this->utils->getCdnUrl() . 'css/style.css', $this->utils->isCdnLocal());
 
         $this->response->setStatusCode(404, 'Not Found');
+
         echo $this->viewSimple->render(
             'utils/notfound',
             [
-                'language' => 'en',
+                'language' => $this->getLang(),
                 'cdnUrl'   => '',
                 'docsRoot' => '',
                 'languages_available' => '',

@@ -7,6 +7,8 @@ $downloadSlugs = 'linux|windows|tools|docker|vagrant|stubs';
 
 return [
     'app'           => [
+        'version'         => '3.0.3',
+        'timezone'        => getenv(Environment::APP_TIMEZONE),
         'debug'           => getenv(Environment::APP_DEBUG),
         'env'             => getenv(Environment::APP_ENV),
         'url'             => getenv(Environment::APP_URL),
@@ -42,7 +44,7 @@ return [
     ],
     'routes'        => [
         [
-            'class'   => 'Website\Controllers\IndexController',
+            'class'   => Website\Controllers\IndexController::class,
             'methods' => [
                 'get' => [
                     '/'                      => 'redirectAction',
@@ -51,7 +53,7 @@ return [
             ],
         ],
         [
-            'class'   => 'Website\Controllers\PagesController',
+            'class'   => Website\Controllers\PagesController::class,
             'methods' => [
                 'get' => [
                     "/{slug:({$pageSlugs})}"                     => 'redirectAction',
@@ -60,7 +62,7 @@ return [
             ],
         ],
         [
-            'class'   => 'Website\Controllers\DownloadController',
+            'class'   => Website\Controllers\DownloadController::class,
             'methods' => [
                 'get' => [
                     '/download'                                               => 'redirectAction',
@@ -71,7 +73,7 @@ return [
             ],
         ],
         [
-            'class'   => 'Website\Controllers\UtilsController',
+            'class'   => Website\Controllers\UtilsController::class,
             'methods' => [
                 'get' => [
                     '/contributors' => 'contributorsAction',
@@ -83,12 +85,12 @@ return [
     'middleware'    => [
         [
             'event' => 'before',
-            'class' => 'Website\Middleware\NotFoundMiddleware',
+            'class' => Website\Middleware\NotFoundMiddleware::class,
         ],
     ],
     'languages'     => [
         'ar' => 'Arabic',
-        'bg' => 'български',
+        'bg' => 'Български',
         'ca' => 'Catalan',
         'cs' => 'Czech',
         'cz' => 'Český',
@@ -111,7 +113,7 @@ return [
         'ko' => '한국어',
         'lt' => 'Lietuvos',
         'lv' => 'Latvian',
-        'mk' => 'македонски',
+        'mk' => 'Македонски',
         'nl' => 'Nederlands',
         'no' => 'Norwegian',
         'pl' => 'Polski',
@@ -119,7 +121,7 @@ return [
         'ro' => 'Română',
         'ru' => 'Pусский',
         'si' => 'Sinhala',
-        'sr' => 'српски',
+        'sr' => 'Српски',
         'sv' => 'Svenska',
         'th' => 'ภาษาไทย',
         'tr' => 'Türkçe',
