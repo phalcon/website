@@ -67,13 +67,13 @@
             {{ locale.translate('sponsors') }}
         </a>
     </li>
-    <li class="dropdown" style="margin-left:3px;">
+    <li class="dropdown lang-wrapper">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             <img src="{{ utils.getCdnUrl('images/flags/' ~ language ~ '.gif') }}" alt="{{ language }}">
-            &nbsp;<span class="caret"></span>
+            <span class="caret"></span>
         </a>
-        <ul class="dropdown-menu" role="menu" style="color:black">
-            <li role="presentation" class="dropdown-link" style="color:black;">
+        <ul class="dropdown-menu lang-dropdown" role="menu">
+            <li role="presentation" class="dropdown-link">
                 {{ languages }}
             </li>
         </ul>

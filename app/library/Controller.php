@@ -49,8 +49,8 @@ class Controller extends PhController
                 "text"     => $value,
                 "tabindex" => -1,
                 "role"     => "menuitem",
-                "class"    => "flag-{$key}",
-                "style"    => "background-repeat: no-repeat; background-position-y: 8px;"
+                "class"    => "flag-item flag-{$key}",
+                "local"    => false
             ];
 
             if ($key == $language) {

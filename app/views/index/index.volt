@@ -22,6 +22,8 @@
         <div class="container">
             <div class="row">
                 {% include 'partials/header_top.volt' %}
+            </div>
+            <div class="row">
                 <!-- Header Content -->
                 <div class="col-sm-12">
                     <div align="center">
@@ -52,7 +54,7 @@
                     </div>
                     <div class="sublinks">
                         <a href="https://phalcon.link/fund"
-                           class="btn btn-lg btn-info btn-download">
+                           class="btn btn-lg btn-info btn-support">
                             <button class="btn">
                                 <i class="fa fa-money"></i> {{ locale.translate('support_us') }}
                             </button>

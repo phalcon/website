@@ -164,6 +164,37 @@ a.header-logo {color: #000;}
 .header-nav-link {color:#000; font-size: 16px; line-height: 18px;}
 a.header-nav-link {color:#000;}
 
+.jumbotron {
+    overflow: visible;
+}
+.lang-wrapper {
+    margin-left:3px;
+}
+
+.lang-wrapper a {
+    color:#000;
+}
+
+li.dropdown.lang-wrapper > ul > li > a {
+    padding: 3px 22px 3px 38px;
+}
+
+div.menu-phalcon a {
+    padding-right: 15px;
+}
+
+a.btn-support,
+a.btn-support:focus,
+a.btn-support:hover {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+a.btn-support:focus button,
+a.btn-support:hover button {
+    background-color: #65D38D;
+}
+
 .header-line {min-width:980px; height: 87px; background: #42aaa9  url('../images/header-line.jpg') 50% 0 no-repeat; margin: 0 0 20px; overflow: hidden;}
 
 .header-line-title {font-size:48px; line-height: 50px; padding: 20px 0; margin: 0; }
