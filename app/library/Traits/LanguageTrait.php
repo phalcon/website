@@ -34,7 +34,6 @@ trait LanguageTrait
             foreach ($application->request->getLanguages() as $httpLang) {
                 $httpLang = mb_strtolower(substr($httpLang['language'], 0, 2));
                 if (true === $languages->offsetExists($httpLang)) {
-                    var_dump($httpLang);die;
                     return $httpLang;
                 }
             }
