@@ -351,6 +351,7 @@ abstract class AbstractBootstrap
          * Fill the registry with elements we will need
          */
         $registry = new PhRegistry();
+        $registry->offsetSet(Registry::ACTION, '');
         $registry->offsetSet(Registry::CONTRIBUTORS, []);
         $registry->offsetSet(Registry::EXECUTION_TIME, 0);
         $registry->offsetSet(Registry::LANGUAGE, 'en');
@@ -358,9 +359,10 @@ abstract class AbstractBootstrap
         $registry->offsetSet(Registry::MENU_LANGUAGES, []);
         $registry->offsetSet(Registry::SLUG, '');
         $registry->offsetSet(Registry::RELEASES, []);
+        $registry->offsetSet(Registry::VERSION, '3.0.0');
         $registry->offsetSet(Registry::VIEW, 'index/index');
 
-        $this->diContainer->set(Services::REGISTRY, new PhRegistry());
+        $this->diContainer->setShared(Services::REGISTRY, $registry);
 
         return $this;
     }

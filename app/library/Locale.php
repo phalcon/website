@@ -4,11 +4,13 @@ namespace Website;
 
 use Phalcon\Mvc\User\Component;
 use Website\Constants\Environment;
+use Website\Constants\Registry;
 
 /**
  * Class Locale
  *
- * @property \Phalcon\Config $config
+ * @property \Phalcon\Config   $config
+ * @property \Phalcon\Registry $registry
  */
 class Locale extends Component
 {
@@ -32,7 +34,7 @@ class Locale extends Component
          */
 
         $defaultLanguage = $this->config->get('app')->get('lang', 'en');
-        $currentLanguage = array_shift($arguments);
+        $currentLanguage = $this->registry->offsetGet(Registry::LANGUAGE);
 
         /**
          * If no phrases are present we need to load them

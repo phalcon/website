@@ -2,8 +2,6 @@
 
 namespace Website;
 
-use Phalcon\Tag;
-use Website\Constants\Registry;
 use Website\Traits\LanguageTrait;
 use Phalcon\Mvc\Controller as PhController;
 
@@ -20,13 +18,10 @@ class Controller extends PhController
     use LanguageTrait;
 
     /**
-     * Initializes the controller
+     * Redirects incorrect URLs to the /en/ equivalents
+     *
+     * @return \Phalcon\Http\Response|\Phalcon\Http\ResponseInterface
      */
-    public function onConstruct()
-    {
-        $this->viewSimple->setVar('version', $this->config->get('app')->get('version'));
-    }
-
     public function redirectAction()
     {
         $rewriteUri = $this->router->getRewriteUri();
@@ -35,68 +30,6 @@ class Controller extends PhController
         }
 
         return $this->response->redirect('/' . $this->getLang("en") . $rewriteUri, true);
-    }
-
-    protected function getMenuLanguages($language)
-    {
-        /**
-         * Find the languages available
-         */
-        $languages             = $this->config->get('languages');
-        $languagesAvailable    = '';
-        $url                   = $this->request->getScheme() . '://'
-                               . $this->request->getHttpHost()
-                               . $this->config->get('app')->get('baseUri');
-        $uri                   = $this->router->getRewriteUri();
-        foreach ($languages as $key => $value) {
-            $link = [
-                "action"   => $url . str_replace("/{$language}", "{$key}", $uri),
-                "text"     => $value,
-                "tabindex" => -1,
-                "role"     => "menuitem",
-                "class"    => "flag-item flag-{$key}",
-                "local"    => false
-            ];
-
-            if ($key == $language) {
-                $link["selected"] = '"selected"';
-            }
-
-            $languagesAvailable .= Tag::linkTo($link);
-        }
-
-        return $languagesAvailable;
-    }
-
-    /**
-     * @param string $language
-     * @param string $slug
-     * @param string $viewPrefix
-     *
-     * @return \Phalcon\Http\Response|\Phalcon\Http\ResponseInterface
-     */
-    protected function preparePages($language, $slug = '', $viewPrefix = '')
-    {
-        $this
-            ->assets
-            ->collection('header_css')
-            ->addCss($this->utils->getCdnUrl() . 'css/style.css', $this->utils->isCdnLocal())
-            ->addCss($this->utils->getCdnUrl() . 'css/phalconPage.css', $this->utils->isCdnLocal());
-
-        $slug     = $this->registry->offsetGet(Registry::SLUG);
-        if (true === empty($slug)) {
-            $slug = 'index';
-        }
-
-        switch ($slug) {
-            case 'roadmap':
-                return $this->response->redirect('https://github.com/phalcon/cphalcon/wiki/Roadmap');
-                break;
-        }
-
-        $viewName = sprintf('%s/%s', $viewPrefix, $slug);
-
-        return $this->returnResponse($viewName);
     }
 
 //		if (!$release = $this->cacheData->get('gh_release')) {
@@ -145,75 +78,4 @@ class Controller extends PhController
 //
 //		$this->view->setVar('release', $release);
 //  }
-//
-//	public function requestInitialize()
-//	{
-//		if ($this->config->application->debug) {
-//            $cdnUrl = $this->config->application->baseUri;
-//		} else {
-//            $cdnUrl = $this->config->application->cdn;
-//		}
-//
-//		$baseUrl = $this->config->application->baseUri;
-//
-//		/**
-//		 * Docs path and CDN url
-//		 */
-//		$lang = $this->getLang();
-//
-//		/**
-//		 * Find the languages available
-//		 */
-//		$languages              = $this->config->languages;
-//		$documentationLanguage  = $this->config->doclanguages->get(0,$lang);
-//		$languagesAvailable     = '';
-//		$selected               = '';
-//		$url                    = $this->request->getScheme() . '://'
-//							    . $this->request->getHttpHost()
-//							    . $this->config->application->baseUri;
-//		$uri                    = $this->router->getRewriteUri();
-//		foreach ($languages as $key => $value) {
-//			$selected = ($key == $lang) ? " selected='selected'" : '';
-//			$href     = $url .  str_replace("/{$lang}", "{$key}", $uri);
-//			$languagesAvailable .= "<a role='menuitem' tabindex='-1' href='{$href}' class='flag-{$key}'>{$value}</a>";
-//
-//			#$languagesAvailable .= "<option value='{$href}'{$selected}>{$value}</option>"; // old way to do it
-//		}
-//
-//		$this->view->setVar('language', $lang);
-//		$this->view->setVar('baseurl', $baseUrl);
-//		$this->view->setVar('languages_available', $languagesAvailable);
-//		$this->view->setVar('docs_root', 'http://docs.phalconphp.com/'.$documentationLanguage.'/latest/');
-//		$this->view->setVar('cdn_url', $cdnUrl);
-//        $this->view->setVar('isFrontpage', true);
-//	}
-//
-//
-
-    protected function returnResponse($viewName)
-    {
-        $cacheKey = str_replace('/', '_', $this->router->getRewriteUri()) . '.cache';
-
-        /** @var \Phalcon\Registry $registry */
-        $registry     = $this->registry;
-        $language     = $registry->offsetGet(Registry::LANGUAGE);
-        $slug         = $registry->offsetGet(Registry::SLUG);
-        $contributors = $registry->offsetGet(Registry::CONTRIBUTORS);
-        $languages    = $registry->offsetGet(Registry::MENU_LANGUAGES);
-        $releases     = $registry->offsetGet(Registry::RELEASES);
-
-        return $this
-            ->viewSimple
-//                ->cache(['key' => $cacheKey])
-            ->render(
-                $viewName,
-                [
-                    'page'         => $slug,
-                    'language'     => $language,
-                    'contributors' => $contributors,
-                    'languages'    => $languages,
-                    'releases'     => $releases,
-                ]
-            );
-    }
 }

@@ -15,23 +15,6 @@ namespace Website\Traits;
 trait LanguageTrait
 {
     /**
-     * Gets URI parameter.
-     *
-     * @param  string $parameter
-     * @param  mixed  $default
-     *
-     * @return mixed
-     */
-    protected function getUriParameter($parameter, $default = null)
-    {
-        if (!is_scalar($parameter) || !$this->dispatcher->hasParam($parameter)) {
-            return $default;
-        }
-
-        return $this->dispatcher->getParam($parameter);
-    }
-
-    /**
      * Gets current language.
      *
      * @param  string $default
