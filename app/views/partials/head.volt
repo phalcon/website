@@ -32,7 +32,7 @@
 
     <link href="/images/favicon.ico" rel="icon" type="image/x-ico"/>
 
-    <title>Phalcon - High Performance PHP Framework</title>
+    <title>Phalcon - {{ locale.translate(language, "High Performance PHP Framework") }}</title>
 
     {{ assets.outputCss('header_css') }}
 
