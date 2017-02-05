@@ -9,10 +9,10 @@
                 <div class="col-sm-12">
                     <div align="center">
                         <div style="max-width: 600px">
-                            <h1>{{ locale.translate('oops') }}</h1>
+                            <h1>{{ locale.translate(language, 'oops') }}</h1>
                             <br>
                             <br>
-                            <h2>{{ locale.translate('something_went_wrong') }}</h2>
+                            <h2>{{ locale.translate(language, 'something_went_wrong') }}</h2>
                         </div>
                     </div>
                 </div>

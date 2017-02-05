@@ -26,16 +26,13 @@ class Locale extends Component
         /**
          * $args has all the arguments passed.
          *
-         * The first argument will be the name of the string to be translated.
-         * Subsequent arguments will serve as replacement values to placeholders
-         * in the translated string.
+         * The first argument will be the language. The second is the name of
+         * the string to be translated. Subsequent arguments will serve as
+         * replacement values to placeholders in the translated string.
          */
 
-        /**
-         * If we are logged in, get the language specified in the identity,
-         * otherwise revert to the default language for this installation
-         */
-        $language = $this->config->get('app')->get('lang', 'en');
+        $defaultLanguage = $this->config->get('app')->get('lang', 'en');
+        $currentLanguage = array_shift($arguments);
 
         /**
          * If no phrases are present we need to load them
@@ -48,19 +45,20 @@ class Locale extends Component
              */
             $english = file_get_contents(
                 sprintf(
-                    '%s/storage/languages/en.json',
-                    APP_PATH
+                    '%s/storage/languages/%s.json',
+                    APP_PATH,
+                    $defaultLanguage
                 )
             );
 
             $phrases = json_decode($english, true);
 
-            if ('en' !== $language) {
+            if ('en' !== $currentLanguage) {
                 $other   = file_get_contents(
                     sprintf(
                         '%s/storage/languages/%s.json',
                         APP_PATH,
-                        $language
+                        $currentLanguage
                     )
                 );
                 $other   = json_decode($other, true);

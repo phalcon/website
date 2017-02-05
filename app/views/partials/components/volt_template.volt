@@ -1,12 +1,12 @@
 <div class="codesample views_front_end_code code_volt" style="display:none">
     <div class="codesample-header">
         <h3>
-            {{ locale.translate('template_engine_volt') }}
+            {{ locale.translate(language, 'template_engine_volt') }}
         </h3>
     </div>
     <div class="codesample-body">
         <p>
-            {{ locale.translate('template_engine_volt_1') }}
+            {{ locale.translate(language, 'template_engine_volt_1') }}
         </p>
         <div class="row">
             <div class="col-xs-12">

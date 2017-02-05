@@ -17,10 +17,10 @@
 
             <div class="col-lg-10">
                 <h3 class="member-name">Andres Gutierrez</h3>
-                <p>{{ locale.translate('team_andres_1') }}</p>
-                <p>{{ locale.translate('team_andres_2') }}</p>
-                <p>{{ locale.translate('team_andres_3') }}</p>
-                <p>{{ locale.translate('team_andres_4') }}</p>
+                <p>{{ locale.translate(language, 'team_andres_1') }}</p>
+                <p>{{ locale.translate(language, 'team_andres_2') }}</p>
+                <p>{{ locale.translate(language, 'team_andres_3') }}</p>
+                <p>{{ locale.translate(language, 'team_andres_4') }}</p>
             </div>
 
         </div>
@@ -35,9 +35,9 @@
 
             <div class="col-lg-10">
                 <h3 class="member-name">Eduar Carvajal</h3>
-                <p>{{ locale.translate('team_eduar_1') }}</p>
-                <p>{{ locale.translate('team_eduar_2') }}</p>
-                <p>{{ locale.translate('team_eduar_3') }}</p>
+                <p>{{ locale.translate(language, 'team_eduar_1') }}</p>
+                <p>{{ locale.translate(language, 'team_eduar_2') }}</p>
+                <p>{{ locale.translate(language, 'team_eduar_3') }}</p>
             </div>
 
         </div>
@@ -52,10 +52,10 @@
 
             <div class="col-lg-10">
                 <h3 class="member-name">Nikolaos (Nikos) Dimopoulos</h3>
-                <p>{{ locale.translate('team_nikos_1') }}</p>
-                <p>{{ locale.translate('team_nikos_2') }}</p>
-                <p>{{ locale.translate('team_nikos_3') }}</p>
-                <p>{{ locale.translate('team_nikos_4') }}</p>
+                <p>{{ locale.translate(language, 'team_nikos_1') }}</p>
+                <p>{{ locale.translate(language, 'team_nikos_2') }}</p>
+                <p>{{ locale.translate(language, 'team_nikos_3') }}</p>
+                <p>{{ locale.translate(language, 'team_nikos_4') }}</p>
             </div>
 
         </div>
@@ -70,11 +70,11 @@
 
             <div class="col-lg-10">
                 <h3 class="member-name">Nikolay (boston) Kirsh</h3>
-                <p>{{ locale.translate('team_nikolay_1') }}</p>
-                <p>{{ locale.translate('team_nikolay_2') }}</p>
-                <p>{{ locale.translate('team_nikolay_3') }}</p>
-                <p>{{ locale.translate('team_nikolay_4') }}</p>
-                <p>{{ locale.translate('team_nikolay_5', 'http://phalconphp.ru', 'http://docs.phalconphp.ru', 'http://vk.com/phalconphp') }}</p>
+                <p>{{ locale.translate(language, 'team_nikolay_1') }}</p>
+                <p>{{ locale.translate(language, 'team_nikolay_2') }}</p>
+                <p>{{ locale.translate(language, 'team_nikolay_3') }}</p>
+                <p>{{ locale.translate(language, 'team_nikolay_4') }}</p>
+                <p>{{ locale.translate(language, 'team_nikolay_5', 'http://phalconphp.ru', 'http://docs.phalconphp.ru', 'http://vk.com/phalconphp') }}</p>
             </div>
 
         </div>
@@ -89,9 +89,9 @@
 
             <div class="col-lg-10">
                 <h3 class="member-name">Serghei Iakovlev</h3>
-                <p>{{ locale.translate('team_serghei_1', 'http://codeception.com/') }}</p>
-                <p>{{ locale.translate('team_serghei_2') }}</p>
-                <p>{{ locale.translate('team_serghei_3') }}</p>
+                <p>{{ locale.translate(language, 'team_serghei_1', 'http://codeception.com/') }}</p>
+                <p>{{ locale.translate(language, 'team_serghei_2') }}</p>
+                <p>{{ locale.translate(language, 'team_serghei_3') }}</p>
             </div>
 
         </div>
@@ -100,8 +100,8 @@
             <div class="col-lg-2">
             </div>
             <div class="col-lg-10">
-                <h3 class="member-name">{{ locale.translate('phalcon_team_1') }}</h3>
-                <p>{{ locale.translate('phalcon_team_2') }}</p>
+                <h3 class="member-name">{{ locale.translate(language, 'phalcon_team_1') }}</h3>
+                <p>{{ locale.translate(language, 'phalcon_team_2') }}</p>
                 <div class="hr"></div>
             </div>
         </div>

@@ -1,12 +1,12 @@
 <div class="codesample more_components_code code_crypt" style="display:none">
     <div class="codesample-header">
         <h3>
-            {{ locale.translate('encryption') }}
+            {{ locale.translate(language, 'encryption') }}
         </h3>
     </div>
     <div class="codesample-body">
         <p>
-            {{ locale.translate('encryption_1') }}
+            {{ locale.translate(language, 'encryption_1') }}
         </p>
         <div class="row">
             <div class="col-xs-12">
@@ -17,8 +17,8 @@ use Phalcon\Crypt;
 // Create an instance
 $crypt     = new Crypt();
 
-$key       = '{{ locale.translate('encryption_2') }}';
-$text      = '{{ locale.translate('encryption_3') }}';
+$key       = '{{ locale.translate(language, 'encryption_2') }}';
+$text      = '{{ locale.translate(language, 'encryption_3') }}';
 
 $encrypted = $crypt->encrypt($text, $key);
 
