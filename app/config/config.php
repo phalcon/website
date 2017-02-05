@@ -1,7 +1,7 @@
 <?php
 
 $pageSlugs     = 'roadmap|sponsors|support|consulting|about|team|testimonials|hosting';
-$downloadSlugs = 'linux|windows|tools|docker|vagrant|stubs';
+$downloadSlugs = 'linux|windows|tools|docker|stubs';
 
 return [
     'app'           => [

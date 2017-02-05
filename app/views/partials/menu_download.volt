@@ -4,7 +4,6 @@
         'windows' : 'download_windows',
         'tools'   : 'download_developer_tools',
         'docker'  : 'download_docker',
-        'vagrant' : 'download_vagrant',
         'stubs'   : 'download_ide_stubs'
     ]
 -%}

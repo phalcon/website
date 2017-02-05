@@ -15,7 +15,7 @@
                 <h3>{{ locale.translate('documentation') }}</h3>
             </div>
             <div class="col-lg-12">
-                <p>{{ locale.translate('support_documentation_1', link_to('documentation', locale.translate('documentation'))) }}</p>
+                <p>{{ locale.translate('support_documentation_1', link_to('https://phalcon.link/docs', locale.translate('documentation'), false)) }}</p>
             </div>
         </div>
         <div class="row">
