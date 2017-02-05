@@ -25,8 +25,9 @@ trait LanguageTrait
         $lang   = $application->utils->fetch($params, 'language', '');
 
         if (true === empty($lang) && true === $application->request->hasQuery('_url')) {
-            $query = $application->request->getQuery('_url');
-            $lang  = mb_strtolower(substr(ltrim($query, '/'), 0, 2));
+            if ($query = $application->request->getQuery('_url')) {
+                $lang = mb_strtolower(explode('/', ltrim($query, '/'))[0]);
+            }
         }
 
         $languages = $application->config->languages;
