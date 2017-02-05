@@ -11,13 +11,13 @@
 
     {{- assets.outputCss('header_css') -}}
 
-    <title>Phalcon - {{ locale.translate(language, "High Performance PHP Framework") }}</title>
+    <title>{{ locale.translate(language, get_title(false)) ~ " - " ~ config.get('app').get('name', 'Phalcon Framework') }}</title>
 </head>
 <body>
     {%- block content %} {% endblock -%}
 
     {%- include "include/footer.volt" -%}
 
-    {{-assets.outputJs('footer_js') -}}
+    {{- assets.outputJs('footer_js') -}}
 </body>
 </html>
