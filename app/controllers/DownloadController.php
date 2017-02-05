@@ -21,7 +21,7 @@ class DownloadController extends WController
      */
     public function pageAction($language, $slug = '')
     {
-        $this->tag->setTitle("Download");
+        $this->tag->setTitle($this->locale->translate($language, 'download'));
 
         return $this->preparePages($language, $slug, 'download');
     }

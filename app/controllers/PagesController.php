@@ -15,8 +15,8 @@ use Website\Controller as WController;
 class PagesController extends WController
 {
     /**
-     * @param $language
-     * @param $slug
+     * @param string $language
+     * @param string $slug
      *
      * @return \Phalcon\Http\Response|\Phalcon\Http\ResponseInterface
      */
