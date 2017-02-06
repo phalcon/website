@@ -5,7 +5,7 @@
 <html lang="{{ language }}" class="no-js">
 <!--<![endif]-->
 <head>
-    {%- if noindex is defined and noindex is true -%}
+    {%- if noindex is true -%}
         {%- include "include/noindex-meta.volt" -%}
     {%- else -%}
         {%- include "include/meta.volt" -%}

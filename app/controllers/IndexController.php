@@ -29,6 +29,6 @@ class IndexController extends WController
         $this->response->setStatusCode(404, 'Not Found');
 
         $this->registry->noindex = true;
-        $this->registry->view = 'utils/notfound';
+        $this->registry->view    = 'utils/notfound';
     }
 }

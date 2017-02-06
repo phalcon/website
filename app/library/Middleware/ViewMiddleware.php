@@ -40,13 +40,10 @@ class ViewMiddleware implements MiddlewareInterface
             'language'     => $registry->language,
             'contributors' => $registry->contributors,
             'languages'    => $registry->menuLanguages,
+            'noindex'      => $registry->noindex,
             'releases'     => $registry->releases,
             'version'      => $registry->version,
         ];
-
-        if ($registry->offsetExists('noindex') && $registry->offsetGet('noindex')) {
-            $params['noindex'] = true;
-        }
 
         $contents = $application->viewSimple->render($viewName, $params);
 

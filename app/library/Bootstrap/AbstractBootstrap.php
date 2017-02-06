@@ -354,6 +354,7 @@ abstract class AbstractBootstrap
         $registry->language      = 'en';
         $registry->memory        = 0;
         $registry->menuLanguages = [];
+        $registry->noindex       = false;
         $registry->slug          = '';
         $registry->releases      = [];
         $registry->version       = '3.0.0';
