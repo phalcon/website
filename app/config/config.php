@@ -56,7 +56,7 @@ return [
             'class'   => Website\Controllers\PagesController::class,
             'methods' => [
                 'get' => [
-                    '/{slug:({$pageSlugs})}'                     => 'redirectAction',
+                    "/{slug:({$pageSlugs})}"                     => 'redirectAction',
                     "/{language:[a-z]{2}}/{slug:({$pageSlugs})}" => 'pageAction',
                 ],
             ],
@@ -157,4 +157,19 @@ return [
         'uk',
         'zh',
     ],
+    'sitemap'       => [
+        'roadmap',
+        'sponsors',
+        'support',
+        'consulting',
+        'about',
+        'team',
+        'testimonials',
+        'hosting',
+        'download/linux',
+        'download/windows',
+        'download/tools',
+        'download/docker',
+        'download/stubs',
+    ]
 ];

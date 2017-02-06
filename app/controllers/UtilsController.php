@@ -9,6 +9,9 @@ use Phalcon\Mvc\Controller as PhController;
  *
  * @package Website\Controllers
  *
+ * @property \Phalcon\Config          $config
+ * @property \Phalcon\Http\Response   $response
+ * @property \Phalcon\Registry        $registry
  * @property \Phalcon\Mvc\View\Simple $viewSimple
  */
 class UtilsController extends PhController
@@ -94,25 +97,7 @@ class UtilsController extends PhController
      */
     public function sitemapAction()
     {
-        /** @var \Phalcon\Mvc\Router $router */
-        $routes = $this->router->getRoutes();
-        $pages  = [];
-        foreach ($routes as $route) {
-            $pages[] = $route->getCompiledPattern();
-        }
-
-        $sitemap = $this->viewSimple->render(
-            'utils/sitemap',
-            [
-                'languages' => ['en' => 'English',],
-                'pages'     => $pages,
-            ]
-        );
-
-        $this
-            ->response
-            ->setContentType('text/xml')
-            ->setContent($sitemap)
-            ->send();
+        $this->response->setHeader('Content-Type', 'application/xml');
+        $this->registry->view = 'utils/sitemap';
     }
 }
