@@ -35,19 +35,20 @@ class ViewMiddleware implements MiddlewareInterface
             $application->viewSimple->cache(['key' => $cacheKey]);
         }
 
-        $contents = $application
-                        ->viewSimple
-                        ->render(
-                            $viewName,
-                            [
-                                'page'         => $registry->slug,
-                                'language'     => $registry->language,
-                                'contributors' => $registry->contributors,
-                                'languages'    => $registry->menuLanguages,
-                                'releases'     => $registry->releases,
-                                'version'      => $registry->version,
-                            ]
-                        );
+        $params = [
+            'page'         => $registry->slug,
+            'language'     => $registry->language,
+            'contributors' => $registry->contributors,
+            'languages'    => $registry->menuLanguages,
+            'releases'     => $registry->releases,
+            'version'      => $registry->version,
+        ];
+
+        if ($registry->offsetExists('noindex') && $registry->offsetGet('noindex')) {
+            $params['noindex'] = true;
+        }
+
+        $contents = $application->viewSimple->render($viewName, $params);
 
         $application->response->setContent($contents);
         $application->response->send();

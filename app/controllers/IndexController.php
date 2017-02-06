@@ -27,6 +27,8 @@ class IndexController extends WController
             $this->locale->translate('not_found')
         );
         $this->response->setStatusCode(404, 'Not Found');
+
+        $this->registry->noindex = true;
         $this->registry->view = 'utils/notfound';
     }
 }
