@@ -5,7 +5,12 @@
 <html lang="{{ language }}" class="no-js">
 <!--<![endif]-->
 <head>
-    {%- include "include/meta.volt" -%}
+    {%- if noindex is defined and noindex is true -%}
+        {%- include "include/noindex-meta.volt" -%}
+    {%- else -%}
+        {%- include "include/meta.volt" -%}
+    {%- endif -%}
+
     {%- include "include/icons.volt" -%}
     {%- include "include/analytics.volt" -%}
 
