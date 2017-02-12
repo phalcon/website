@@ -42,31 +42,18 @@
     "ext-mbstring": "*",
     "ext-iconv": "*",
     "ext-json": "*",
-    "ext-phalcon": "~3.0",
     "vlucas/phpdotenv": "^2.4",
-    "guzzlehttp/guzzle": "^6.2",
+    "guzzlehttp/guzzle": "~6.0",
     "swiftmailer/swiftmailer": "^5.4",
     "dariuszp/cli-progress-bar": "^1.0"
   },
   "require-dev": {
-    "phpdocumentor/reflection-docblock": "^2.0",
     "phpunit/phpunit": "^4.8",
-    "fzaninotto/faker": "^1.6",
     "codeception/codeception": "^2.2",
     "codeception/verify": "~0.3",
     "codeception/specify": "~0.4",
     "codeception/mockery-module": "^0.2",
-    "squizlabs/php_codesniffer": "~2.7",
-    "phalcongelist/dd": "^1"
-  },
-  "suggest": {
-    "ext-yaml": "*",
-    "ext-intl": "*"
-  },
-  "scripts": {
-    "post-root-package-install": [
-      "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-    ]
+    "squizlabs/php_codesniffer": "~2.7"
   },
   "config": {
     "preferred-install": "dist"
