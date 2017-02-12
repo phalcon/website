@@ -101,4 +101,14 @@ class Cli extends AbstractBootstrap
     protected function initView()
     {
     }
+
+    /**
+     * Runs the main application
+     *
+     * @return PhCliDI
+     */
+    protected function runApplication()
+    {
+        return $this->application->handle($this->options);
+    }
 }

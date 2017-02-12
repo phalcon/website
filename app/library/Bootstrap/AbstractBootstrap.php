@@ -10,8 +10,6 @@ use Phalcon\Config as PhConfig;
 use Phalcon\Cli\Console as PhCliConsole;
 use Phalcon\Di as PhDI;
 use Phalcon\Di\FactoryDefault as PhFactoryDefault;
-use Phalcon\Events\Event;
-use Phalcon\Loader as PhLoader;
 use Phalcon\Logger\Adapter\File as PhFileLogger;
 use Phalcon\Logger\Formatter\Line as PhLoggerFormatter;
 use Phalcon\Mvc\Application as PhApplication;
@@ -250,31 +248,9 @@ abstract class AbstractBootstrap
     protected function initLoader()
     {
         /**
-         * Get the PSR4 loaders from composer and register them. This way we keep
-         * only one loader for the application
+         * Use the composer autoloader
          */
-        $composerFile = APP_PATH . '/vendor/composer/autoload_psr4.php';
-        if (true !== file_exists($composerFile)) {
-            throw new \InvalidArgumentException(
-                'Composer autoloader file cannot be found/read. Please update composer'
-            );
-        }
-
-        /**
-         * The composer namespaces have an extra '\' at the end. We need to remove it.
-         */
-        $composerNamespaces = require_once($composerFile);
-
-        $namespaces = [];
-        foreach ($composerNamespaces as $namespace => $path) {
-            $key = substr($namespace, 0, -1);
-            $namespaces[$key] = $path[0];
-        }
-
-        /**
-         * Not using a variable here to remove the loader from the global space
-         */
-        (new PhLoader())->registerNamespaces($namespaces)->register();
+        require_once APP_PATH . '/vendor/autoload.php';
     }
 
     /**
@@ -437,6 +413,6 @@ abstract class AbstractBootstrap
      */
     protected function runApplication()
     {
-        return $this->application->handle($this->options);
+        return $this->application->handle();
     }
 }
