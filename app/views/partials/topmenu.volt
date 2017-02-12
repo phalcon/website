@@ -63,9 +63,14 @@
             </li>
         </ul>
     </li>
-    <li class="first">
+    <li>
         <a href="/{{ language }}/sponsors" class="header-nav-link">
             {{ locale.translate('sponsors') }}
+        </a>
+    </li>
+    <li>
+        <a href="https://phalcon.link/fund" class="header-nav-link">
+            {{ locale.translate('support_us') }}
         </a>
     </li>
     <li class="dropdown lang-wrapper">

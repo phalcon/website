@@ -6,7 +6,7 @@
                             class="navbar-toggle collapsed"
                             data-toggle="collapse"
                             data-target="#main-menu-container">
-                        <span class="sr-only">Toggle navigation</span>
+                        <span class="sr-only">{{ locale.translate('toggle_navigation') }}</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
