@@ -25,12 +25,24 @@ class Utils extends Component
      */
     public function fetch($data, $element, $default = '')
     {
-        $return = $default;
+        $version = intval(substr(phpversion(), 0, 1));
+        $return  = $default;
 
-        if (true === is_object($data) && true === isset($data->$element)) {
-            $return = $data->$element;
-        } elseif (true === is_array($data) && true === isset($data[$element])) {
-            $return = $data[$element];
+        /**
+         * PHP7 goodies!
+         */
+        if (7 === $version) {
+            if (true === is_object($data)) {
+                $return = $data->$element ?? $default;
+            } elseif (true === is_array($data)) {
+                $return = $data[$element] ?? $default;
+            }
+        } else {
+            if (true === is_object($data) && true === isset($data->$element)) {
+                $return = $data->$element;
+            } elseif (true === is_array($data) && true === isset($data[$element])) {
+                $return = $data[$element];
+            }
         }
 
         return $return;
