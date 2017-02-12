@@ -4,8 +4,41 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b2c89a3d513f3fa2b2c4d10acd19f9e",
+    "content-hash": "64e8273c502bfac731e1b71c4e7ca5ec",
     "packages": [
+        {
+            "name": "dariuszp/cli-progress-bar",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dariuszp/cli-progress-bar.git",
+                "reference": "54020a8fc60bf19579bfe0317f17a2848d48991d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dariuszp/cli-progress-bar/zipball/54020a8fc60bf19579bfe0317f17a2848d48991d",
+                "reference": "54020a8fc60bf19579bfe0317f17a2848d48991d",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dariuszp\\": "src/Dariuszp"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dariusz Półtorak",
+                    "email": "poltorak.dariusz@gmail.com"
+                }
+            ],
+            "description": "Cli progress bar",
+            "time": "2015-11-02T14:38:59+00:00"
+        },
         {
             "name": "guzzlehttp/guzzle",
             "version": "6.2.2",

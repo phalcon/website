@@ -31,6 +31,7 @@
   "autoload": {
     "psr-4": {
       "Website\\": "app/library/",
+      "Website\\Cli\\Tasks\\": "app/tasks/",
       "Website\\Controllers\\": "app/controllers/",
       "Website\\Middleware\\": "app/library/Middleware/"
     }
@@ -44,7 +45,8 @@
     "ext-phalcon": "~3.0",
     "vlucas/phpdotenv": "^2.4",
     "guzzlehttp/guzzle": "^6.2",
-    "swiftmailer/swiftmailer": "^5.4"
+    "swiftmailer/swiftmailer": "^5.4",
+    "dariuszp/cli-progress-bar": "^1.0"
   },
   "require-dev": {
     "phpdocumentor/reflection-docblock": "^2.0",
