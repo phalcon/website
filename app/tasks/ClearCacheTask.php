@@ -8,7 +8,7 @@ use RecursiveIteratorIterator;
 use Dariuszp\CliProgressBar as CliProgressBar;
 
 /**
- * MainTask
+ * ClearCacheTask
  */
 class ClearCacheTask extends PhTask
 {
