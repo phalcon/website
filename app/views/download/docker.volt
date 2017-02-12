@@ -10,16 +10,16 @@
         {% include 'partials/menu_download.volt' %}
 
         <h2>{{ locale.translate('download_docker') }}</h2>
-        <p>There are many ways that you can use Phalcon with Docker.</p>
+        <p>{{ locale.translate('download_docker_1') }}</p>
         <h3>Docker Hub</h3>
-        <p>Our official images are located <a href="https://hub.docker.com/r/phalconphp/">here</a>. We always welcome pull requests and improvements. The repository for the docker files is located here: <a href="https://github.com/phalcon/dockerfiles">https://github.com/phalcon/dockerfiles</a>.
+        <p>{{ locale.translate('download_docker_2', 'https://hub.docker.com/r/phalconphp/') }} <a href="https://github.com/phalcon/dockerfiles">https://github.com/phalcon/dockerfiles</a>.
         </p>
         <h3>Phalcon Compose</h3>
         <p>
-            With Phalcon-compose you can create an isolated environment with docker, that will allow you to use Phalcon without any additional installations. Note that using Phalcon Compose, requires <a href="https://docs.docker.com/installation/">Docker Engine</a> >= 1.10.0 and <a href="https://docs.docker.com/compose/install/">Docker Compose</a> >= 1.6.2
+            {{ locale.translate('download_docker_3') }} <a href="https://docs.docker.com/installation/">Docker Engine</a> >= 1.10.0 {{ locale.translate('download_docker_4') }} <a href="https://docs.docker.com/compose/install/">Docker Compose</a> >= 1.6.2
         </p>
-        <h4>Services</h4>
-        <p>Phalcon Compose offers the following services by default:
+        <h4>{{ locale.translate('download_docker_5') }}</h4>
+        <p>{{ locale.translate('download_docker_6') }}
             <ul>
                 <li>Aerospike</li>
                 <li>Apache 2</li>
@@ -36,47 +36,47 @@
             </ul>
         </p>
         <p>
-            Phalcon Compose is very easy to use. Assume that you need to create an application that will be located in: <code class="bash">/home/website</code>. We will now need to run the following command for our container application can be created:
+            {{ locale.translate('download_docker_7') }} <code class="bash">/home/website</code>. {{ locale.translate('download_docker_8') }}
             <pre><code class="bash">composer create-project sergeyklay/phalcon-compose --prefer-dist /home/website</code></pre>
-            The above command will download the skeleton of the docker environment.
+            {{ locale.translate('download_docker_9') }}
         </p>
-        <h4>Variables</h4>
+        <h4>{{ locale.translate('download_docker_10') }}</h4>
         <p>
-            You will need to create a new file called <code>variables.env</code> in <code>/home/website</code>. A sample file has been provided called <code>variables.env.example</code>.
+            {{ locale.translate('download_docker_11') }} <code>variables.env</code> {{ locale.translate('download_docker_12') }} <code>/home/website</code>. {{ locale.translate('download_docker_13') }} <code>variables.env.example</code>.
             <pre><code class="bash">cd /home/website
 cp variables.env.example variables.env
 nano variables.env</code></pre>
-        Adjust the variables in that file to suit your needs. The most important variable is the <code>WEB_ALIAS_DOMAIN</code>. Change the name to something you will be able to use. In our case we just leave the default called <code>phalcon.local</code>.
+    {{ locale.translate('download_docker_14') }} <code>WEB_ALIAS_DOMAIN</code>. {{ locale.translate('download_docker_15') }} <code>phalcon.local</code>.
         </p>
         <p>
-            Open your hosts file (/etc/hosts) and enter a new line like this:
+            {{ locale.translate('download_docker_16') }}
 <pre><code class="bash">127.0.0.1 phalcon.local</code></pre>
         </p>
 
         <h4>docker-compose.yml</h4>
         <p>
-            You might want to edit the docker-compose.yml file and remove services that you will not be using. Phalcon Compose offers a lot of services as mentioned above, so your application might not need some of them. Removing the relevant services from the <code>docker-compose.yml</code> file will reduce memory usage of your environment.
+            {{ locale.translate('download_docker_17') }}
         </p>
-        <h4>Build</h4>
+        <h4>{{ locale.translate('download_docker_18') }}</h4>
         <p>
-            You can now build the application.
+            {{ locale.translate('download_docker_19') }}
 <pre><code class="bash">docker-compose build</code></pre>
-        Containers will be downloaded as needed and set up on your environment.
+            {{ locale.translate('download_docker_20') }}
         </p>
-        <h4>Launch</h4>
+        <h4>{{ locale.translate('download_docker_21') }}</h4>
         <p>
-            You can now launch the environment:
+            {{ locale.translate('download_docker_22') }}
 <pre><code class="bash">cd /home/website
 docker-compose up -d</code></pre>
         <p>
-            Go to <code>http://phalcon.local</code> in your browser and you will see your environment is set up. You can now develop your application in the app folder.
+            {{ locale.translate('download_docker_23', '<code>http://phalcon.local</code>') }}
         </p>
-        <h4>Shutdown</h4>
+        <h4>{{ locale.translate('download_docker_24') }}</h4>
         <p>
-            To shut down the environment when is no longer needed you can issue the following command:
+            {{ locale.translate('download_docker_25') }}
 <pre><code class="bash">cd /home/website
 docker-compose down</code></pre>
-        Additional information can be found at: <a href="https://phalcon.link/compose">https://phalcon.link/compose</a>
+            {{ locale.translate('download_docker_26') }} <a href="https://phalcon.link/compose">https://phalcon.link/compose</a>
         </p>
     </div>
 </section>
