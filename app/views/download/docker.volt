@@ -12,7 +12,7 @@
         <h2>{{ locale.translate('download_docker') }}</h2>
         <p>There are many ways that you can use Phalcon with Docker.</p>
         <h3>Docker Hub</h3>
-        <p>Our official images are located <a href="https://hub.docker.com/r/phalconphp/">here</a>. We always welcome pull requests and improvements. The repository for the docker files is located <a href="https://github.com/phalcon/dockerfiles">here</a>.
+        <p>Our official images are located <a href="https://hub.docker.com/r/phalconphp/">here</a>. We always welcome pull requests and improvements. The repository for the docker files is located here: <a href="https://github.com/phalcon/dockerfiles">https://github.com/phalcon/dockerfiles</a>.
         </p>
         <h3>Phalcon Compose</h3>
         <p>
