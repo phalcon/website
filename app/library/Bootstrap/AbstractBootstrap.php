@@ -34,51 +34,51 @@ use Website\View\Engine\Volt\Extensions\Php;
 abstract class AbstractBootstrap
 {
     /**
+     * @var null|PhMicro|PhCliConsole
+     */
+    protected $application = null;
+
+    /**
      * @var null|PhDI
      */
     protected $diContainer = null;
 
     /**
-     * @var null|PhMicro|PhCliConsole
+     * @var array
      */
-    protected $application = null;
+    protected $options = [];
 
     public function run()
     {
-        $this
-            ->initDi()
-            ->initLoader()
-            ->initRegistry()
-            ->initEnvironment()
-            ->initApplication()
-            ->initUtils()
-            ->initConfig()
-            ->initCache()
-            ->initLogger()
-            ->initLocale()
-            ->initRoutes()
-            ->initView()
-            ->initAssets();
+        $this->initOptions();
+        $this->initDi();
+        $this->initLoader();
+        $this->initRegistry();
+        $this->initEnvironment();
+        $this->initApplication();
+        $this->initUtils();
+        $this->initConfig();
+        $this->initDispatcher();
+        $this->initCache();
+        $this->initLogger();
+        $this->initLocale();
+        $this->initRoutes();
+        $this->initView();
+        $this->initAssets();
 
         return $this->runApplication();
     }
 
     /**
      * Initializes the application
-     *
-     * @return $this
      */
     protected function initApplication()
     {
         $this->application = new PhMicro($this->diContainer);
-
-        return $this;
     }
 
     /**
      * Initializes the Assets manager
-     *
-     * @return $this
      */
     protected function initAssets()
     {
@@ -109,14 +109,10 @@ abstract class AbstractBootstrap
             ->addJs($utils->getCdnUrl() . 'js/custom.js');
 
         $this->diContainer->setShared('assets', $assets);
-
-        return $this;
     }
 
     /**
      * Initializes the Cache
-     *
-     * @return $this
      */
     protected function initCache()
     {
@@ -144,14 +140,11 @@ abstract class AbstractBootstrap
         $cache    = new $class($frontEnd, $backEnd);
 
         $this->diContainer->setShared('cacheData', $cache);
-
-        return $this;
     }
 
     /**
      * Initializes the Config container
      *
-     * @return $this
      * @throws Exception
      */
     protected function initConfig()
@@ -165,27 +158,26 @@ abstract class AbstractBootstrap
         $config = new PhConfig($configArray);
 
         $this->diContainer->setShared('config', $config);
-
-        return $this;
     }
 
     /**
      * Initializes the Di container
-     *
-     * @return $this
      */
     protected function initDi()
     {
         $this->diContainer = new PhFactoryDefault();
         PhDI::setDefault($this->diContainer);
+    }
 
-        return $this;
+    /**
+     * Initializes the Dispatcher
+     */
+    protected function initDispatcher()
+    {
     }
 
     /**
      * Initializes the environment
-     *
-     * @return $this
      */
     protected function initEnvironment()
     {
@@ -195,8 +187,6 @@ abstract class AbstractBootstrap
         $registry->executionTime = microtime(true);
 
         (new Dotenv(APP_PATH))->load();
-
-        return $this;
     }
 
     /**
@@ -204,9 +194,10 @@ abstract class AbstractBootstrap
      */
     protected function initErrorHandler()
     {
-        $logger = $this->diContainer->getShared('logger');
-        $utils  = $this->diContainer->getShared('utils');
-        $mode   = $utils->env('APP_ENV', 'development');
+        $registry = $this->diContainer->getShared('registry');
+        $logger   = $this->diContainer->getShared('logger');
+        $utils    = $this->diContainer->getShared('utils');
+        $mode     = $utils->env('APP_ENV', 'development');
 
         ini_set('display_errors', boolval('development' === $mode));
         error_reporting(E_ALL);
@@ -236,9 +227,9 @@ abstract class AbstractBootstrap
         );
 
         register_shutdown_function(
-            function () use ($logger, $utils, $mode) {
-                $memory    = memory_get_usage() - $this->memory;
-                $execution = microtime(true) - $this->execution;
+            function () use ($logger, $utils, $registry, $mode) {
+                $memory    = memory_get_usage() - $registry->memory;
+                $execution = microtime(true) - $registry->executionTime;
 
                 if ('development' === $mode) {
                     $logger->info(
@@ -251,14 +242,10 @@ abstract class AbstractBootstrap
                 }
             }
         );
-
-        return $this;
     }
 
     /**
      * Initializes the autoloader
-     *
-     * @return $this
      */
     protected function initLoader()
     {
@@ -288,14 +275,10 @@ abstract class AbstractBootstrap
          * Not using a variable here to remove the loader from the global space
          */
         (new PhLoader())->registerNamespaces($namespaces)->register();
-
-        return $this;
     }
 
     /**
      * Initializes the Locale service
-     *
-     * @return $this
      */
     protected function initLocale()
     {
@@ -304,14 +287,10 @@ abstract class AbstractBootstrap
         date_default_timezone_set($config->get('app')->get('timezone', 'US/Eastern'));
 
         $this->diContainer->setShared('locale', new Locale());
-
-        return $this;
     }
 
     /**
      * Initializes the loggers
-     *
-     * @return $this
      */
     protected function initLogger()
     {
@@ -333,14 +312,17 @@ abstract class AbstractBootstrap
         $logger->setFormatter($formatter);
 
         $this->diContainer->setShared('logger', $logger);
+    }
 
-        return $this;
+    /**
+     * Initializes the options
+     */
+    protected function initOptions()
+    {
     }
 
     /**
      * Initializes the registry
-     *
-     * @return $this
      */
     protected function initRegistry()
     {
@@ -361,14 +343,10 @@ abstract class AbstractBootstrap
         $registry->view          = 'index/index';
 
         $this->diContainer->setShared('registry', $registry);
-
-        return $this;
     }
 
     /**
      * Initializes the routes
-     *
-     * @return $this
      */
     protected function initRoutes()
     {
@@ -402,26 +380,18 @@ abstract class AbstractBootstrap
         }
 
         $this->application->setEventsManager($eventsManager);
-
-        return $this;
     }
 
     /**
      * Initializes the utils service and stores it in the DI
-     *
-     * @return $this
      */
     protected function initUtils()
     {
         $this->diContainer->setShared('utils', new Utils());
-
-        return $this;
     }
 
     /**
      * Initializes the View services and Volt
-     *
-     * @return $this
      */
     protected function initView()
     {
@@ -458,8 +428,6 @@ abstract class AbstractBootstrap
         );
 
         $this->diContainer->setShared('viewSimple', $view);
-
-        return $this;
     }
 
     /**
@@ -469,6 +437,6 @@ abstract class AbstractBootstrap
      */
     protected function runApplication()
     {
-        return $this->application->handle();
+        return $this->application->handle($this->options);
     }
 }

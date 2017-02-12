@@ -2,7 +2,9 @@
 
 namespace Website\Bootstrap;
 
-use Phalcon\Cli as PhCli;
+use Phalcon\Cli\Console as PhCliConsole;
+use Phalcon\Cli\Dispatcher as PhCliDispatcher;
+use Phalcon\DI\FactoryDefault\CLI as PhCliDI;
 
 /**
  * Bootstrap
@@ -11,20 +13,20 @@ class Cli extends AbstractBootstrap
 {
     /**
      * Initializes the application
-     *
-     * @return $this
      */
     protected function initApplication()
     {
-        $this->application = new PhMicro($this->diContainer);
+        $this->application = new PhCliConsole($this->diContainer);
 
-        return $this;
+        /**
+         * Put the console in the di_container because we need to use it in the
+         * main task
+         */
+        $this->diContainer->setShared('console', $this->application);
     }
 
     /**
      * Initializes the Assets manager
-     *
-     * @return $this
      */
     protected function initAssets()
     {
@@ -32,166 +34,71 @@ class Cli extends AbstractBootstrap
 
     /**
      * Initializes the Cache
-     *
-     * @return $this
      */
     protected function initCache()
     {
     }
 
     /**
-     * Initializes the autoloader
-     *
-     * @return $this
+     * Initializes the Di container
      */
-    protected function initLoader()
+    protected function initDi()
     {
-        /**
-         * Get the PSR4 loaders from composer and register them. This way we keep
-         * only one loader for the application
-         */
-        $composerFile = APP_PATH . '/vendor/composer/autoload_psr4.php';
-        if (true !== file_exists($composerFile)) {
-            throw new \InvalidArgumentException(
-                'Composer autoloader file cannot be found/read. Please update composer'
-            );
-        }
-
-        /**
-         * The composer namespaces have an extra '\' at the end. We need to remove it.
-         */
-        $composerNamespaces = require_once($composerFile);
-
-        $namespaces = [];
-        foreach ($composerNamespaces as $namespace => $path) {
-            $key = substr($namespace, 0, -1);
-            $namespaces[$key] = $path[0];
-        }
-
-        /**
-         * Not using a variable here to remove the loader from the global space
-         */
-        (new PhLoader())->registerNamespaces($namespaces)->register();
-
-        return $this;
+        $this->diContainer = new PhCliDI();
+        PhCliDI::setDefault($this->diContainer);
     }
 
     /**
-     * Initializes the loggers
-     *
-     * @return $this
+     * Initializes the Dispatcher
      */
-    protected function initLogger()
+    protected function initDispatcher()
     {
-        /** @var \Phalcon\Config $config */
-        $config   = $this->diContainer->getShared('config');
-        $fileName = $config->get('logger')
-            ->get('defaultFilename', 'application');
-        $format   = $config->get('logger')
-            ->get('format', '[%date%][%type%] %message%');
+        $dispatcher = new PhCliDispatcher();
+        $dispatcher->setDefaultNamespace('Website\Cli\Tasks');
 
-        $logFile   = sprintf(
-            '%s/storage/logs/%s-%s.log',
-            APP_PATH,
-            date('Ymd'),
-            $fileName
-        );
-        $formatter = new PhLoggerFormatter($format);
-        $logger    = new PhFileLogger($logFile);
-        $logger->setFormatter($formatter);
-
-        $this->diContainer->setShared('logger', $logger);
-
-        return $this;
+        $this->diContainer->setShared('dispatcher', $dispatcher);
     }
 
     /**
-     * Initializes the registry
-     *
-     * @return $this
+     * Initializes the error handlers
      */
-    protected function initRegistry()
+    protected function initErrorHandler()
     {
-        /**
-         * Fill the registry with elements we will need
-         */
-        $registry = new PhRegistry();
-        $registry->action        = '';
-        $registry->contributors  = [];
-        $registry->executionTime = 0;
-        $registry->language      = 'en';
-        $registry->memory        = 0;
-        $registry->menuLanguages = [];
-        $registry->slug          = '';
-        $registry->releases      = [];
-        $registry->version       = '3.0.0';
-        $registry->view          = 'index/index';
-
-        $this->diContainer->setShared('registry', $registry);
-
-        return $this;
     }
 
     /**
      * Initializes the routes
-     *
-     * @return $this
      */
     protected function initRoutes()
     {
-        /** @var PhConfig $config */
-        $config     = $this->diContainer->getShared('config');
-        $routes     = $config->get('routes')->toArray();
-        $middleware = $config->get('middleware')->toArray();
+    }
 
-        foreach ($routes as $route) {
-            $collection = new PhMicroCollection();
-            $collection->setHandler($route['class'], true);
-            if (true !== empty($route['prefix'])) {
-                $collection->setPrefix($route['prefix']);
-            }
-
-            foreach ($route['methods'] as $verb => $methods) {
-                foreach ($methods as $endpoint => $action) {
-                    $collection->$verb($endpoint, $action);
+    protected function initOptions()
+    {
+        $arguments = [];
+        if (true === isset($_SERVER['argv'])) {
+            foreach ($_SERVER['argv'] as $index => $argument) {
+                switch ($index) {
+                    case 1:
+                        $arguments['task'] = $argument;
+                        break;
+                    case 2:
+                        $arguments['action'] = $argument;
+                        break;
+                    case 3:
+                        $arguments['params'] = $argument;
+                        break;
                 }
             }
-            $this->application->mount($collection);
         }
 
-        $eventsManager = $this->diContainer->getShared('eventsManager');
-
-        foreach ($middleware as $element) {
-            $class = $element['class'];
-            $event = $element['event'];
-            $eventsManager->attach('micro', new $class());
-            $this->application->$event(new $class());
-        }
-
-        $this->application->setEventsManager($eventsManager);
-
-        return $this;
+        $this->options = $arguments;
     }
 
     /**
-     * Initializes the utils service and stores it in the DI
-     *
-     * @return $this
+     * Initializes the View services and Volt
      */
-    protected function initUtils()
+    protected function initView()
     {
-        $this->diContainer->setShared('utils', new Utils());
-
-        return $this;
-    }
-
-    /**
-     * Runs the main application
-     *
-     * @return PhApplication
-     */
-    protected function runApplication()
-    {
-        return $this->application->handle();
     }
 }
