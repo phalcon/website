@@ -76,7 +76,6 @@ return [
             'class'   => Website\Controllers\UtilsController::class,
             'methods' => [
                 'get' => [
-                    '/contributors' => 'contributorsAction',
                     '/sitemap'      => 'sitemapAction',
                 ],
             ],
