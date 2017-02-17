@@ -19,7 +19,7 @@
                     <li><a href="https://phalcon.link/github">GitHub</a></li>
                     <li><a href="https://github.com/phalcon/cphalcon/issues">{{ locale.translate('issue_tracker') }}</a></li>
                     <li><a href="https://stackoverflow.com/questions/tagged/phalcon">{{ locale.translate('stack_overflow') }}</a></li>
-                    <li><a href="{{ url(language ~ '/testimonials') }}">{{ locale.translate('testimonials') }}</li>
+                    <li><a href="{{ url(language ~ '/testimonials') }}">{{ locale.translate('testimonials') }}</a></li>
                     <li><a href="https://phalcon.link/builtwith">{{ locale.translate('built_with_phalcon') }}</a></li>
                     <li><a href="https://phalcon.link/store">{{ locale.translate('store') }}</a></li>
                 </ul>
