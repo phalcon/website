@@ -86,7 +86,8 @@ class FetchContributorsTask extends PhTask
             }
 
             arsort($weights);
-            $weights = array_splice($weights, 0, 170);
+            $length  = intval(count($weights) / 18) * 18;
+            $weights = array_splice($weights, 0, $length);
             $results = [];
             foreach ($weights as $login => $weight) {
                 $results[$login] = $contributors[$login];
