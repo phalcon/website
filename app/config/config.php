@@ -1,27 +1,177 @@
 <?php
 
-defined('APP_PATH') || define('APP_PATH', realpath('.'));
+$pageSlugs     = 'roadmap|sponsors|support|consulting|about|team|testimonials|hosting';
+$downloadSlugs = 'linux|windows|tools|docker|stubs';
 
-return new \Phalcon\Config(
-    [
-        'database' => [
-            'adapter'     => 'Mysql',
-            'host'        => 'localhost',
-            'username'    => 'root',
-            'password'    => '',
-            'dbname'      => 'test',
-            'charset'     => 'utf8',
+return [
+    'app'           => [
+        'version'         => '3.0.3',
+        'timezone'        => getenv('APP_TIMEZONE'),
+        'debug'           => getenv('APP_DEBUG'),
+        'env'             => getenv('APP_ENV'),
+        'url'             => getenv('APP_URL'),
+        'name'            => getenv('APP_NAME'),
+        'project'         => getenv('APP_PROJECT'),
+        'description'     => getenv('APP_DESCRIPTION'),
+        'keywords'        => getenv('APP_KEYWORDS'),
+        'repo'            => getenv('APP_REPO'),
+        'docs'            => getenv('APP_DOCS'),
+        'baseUri'         => getenv('APP_BASE_URI'),
+        'staticUrl'       => getenv('APP_STATIC_URL'),
+        'lang'            => getenv('APP_LANG'),
+        'supportEmail'    => getenv('APP_SUPPORT_EMAIL'),
+    ],
+    'cache'         => [
+        'driver'          => getenv('CACHE_DRIVER'),
+        'viewDriver'      => getenv('VIEW_CACHE_DRIVER'),
+        'prefix'          => getenv('CACHE_PREFIX'),
+        'lifetime'        => getenv('CACHE_LIFETIME'),
+    ],
+    'memcached'     => [
+        'host'            => getenv('MEMCACHED_HOST'),
+        'port'            => getenv('MEMCACHED_PORT'),
+        'weight'          => getenv('MEMCACHED_WEIGHT'),
+    ],
+    'logger'        => [
+        'defaultFilename' => getenv('LOGGER_DEFAULT_FILENAME'),
+        'format'          => getenv('LOGGER_FORMAT'),
+        'level'           => getenv('LOGGER_LEVEL'),
+    ],
+    'google'        => [
+        'analytics'       => getenv('GOOGLE_ANALYTICS'),
+    ],
+    'routes'        => [
+        [
+            'class'   => Website\Controllers\IndexController::class,
+            'methods' => [
+                'get'      => [
+                    '/'                        => 'redirectAction',
+                    '/404'                     => 'redirectAction',
+                    '/{language:[a-z]{2}}'     => 'indexAction',
+                    '/{language:[a-z]{2}}/404' => 'notfoundAction',
+                ],
+            ],
         ],
-        'application' => [
-            'controllersDir'  => APP_PATH . '/app/controllers/',
-            'modelsDir'       => APP_PATH . '/app/models/',
-            'migrationsDir'   => APP_PATH . '/app/migrations/',
-            'viewsDir'        => APP_PATH . '/app/views/',
-            'pluginsDir'      => APP_PATH . '/app/plugins/',
-            'libraryDir'      => APP_PATH . '/app/library/',
-            'cacheDir'        => APP_PATH . '/app/cache/',
-            'baseUri'         => '',
-            'googleAnalytics' => 'UA-90300500-2',
+        [
+            'class'   => Website\Controllers\PagesController::class,
+            'methods' => [
+                'get' => [
+                    "/{slug:({$pageSlugs})}"                     => 'redirectAction',
+                    "/{language:[a-z]{2}}/{slug:({$pageSlugs})}" => 'pageAction',
+                ],
+            ],
         ],
+        [
+            'class'   => Website\Controllers\DownloadController::class,
+            'methods' => [
+                'get' => [
+                    '/download'                                               => 'redirectAction',
+                    "/download/{slug:({$downloadSlugs})}"                     => 'redirectAction',
+                    '/{language:[a-z]{2}}/download'                           => 'pageAction',
+                    "/{language:[a-z]{2}}/download/{slug:({$downloadSlugs})}" => 'pageAction',
+                ],
+            ],
+        ],
+        [
+            'class'   => Website\Controllers\UtilsController::class,
+            'methods' => [
+                'get' => [
+                    '/sitemap'      => 'sitemapAction',
+                ],
+            ],
+        ],
+    ],
+    'middleware'    => [
+        [
+            'event' => 'before',
+            'class' => Website\Middleware\EnvironmentMiddleware::class,
+        ],
+        [
+            'event' => 'before',
+            'class' => Website\Middleware\NotFoundMiddleware::class,
+        ],
+        [
+            'event' => 'before',
+            'class' => Website\Middleware\RedirectMiddleware::class,
+        ],
+        [
+            'event' => 'before',
+            'class' => Website\Middleware\AssetsMiddleware::class,
+        ],
+        [
+            'event' => 'after',
+            'class' => Website\Middleware\ViewMiddleware::class,
+        ],
+    ],
+    'languages'     => [
+        'ar' => 'Arabic',
+        'bg' => 'Български',
+        'ca' => 'Catalan',
+        'cs' => 'Czech',
+        'cz' => 'Český',
+        'da' => 'Danish',
+        'de' => 'Deutsch',
+        'el' => 'Ελληνικά',
+        'en' => 'English',
+        'es' => 'Español',
+        'fa' => 'فارسی',
+        'fr' => 'Français',
+        'gl' => 'Galician',
+        'he' => 'Hebrew',
+        'hi' => 'Hindi',
+        'hu' => 'Magyar',
+        'id' => 'Indonesian',
+        'it' => 'Italiano',
+        'ja' => '日本語',
+        'kk' => 'Kazakh',
+        'km' => 'Khmer',
+        'ko' => '한국어',
+        'lt' => 'Lietuvos',
+        'lv' => 'Latvian',
+        'mk' => 'Македонски',
+        'nl' => 'Nederlands',
+        'no' => 'Norwegian',
+        'pl' => 'Polski',
+        'pt' => 'Português',
+        'ro' => 'Română',
+        'ru' => 'Pусский',
+        'si' => 'Sinhala',
+        'sr' => 'Српски',
+        'sv' => 'Svenska',
+        'th' => 'ภาษาไทย',
+        'tr' => 'Türkçe',
+        'vi' => 'Tiếng Việt',
+        'zh' => '简体中文',
+    ],
+    'languages_map' => [
+        'sv' => 'se',
+    ],
+    'doc_languages' => [
+        'en',
+        'es',
+        'fa',
+        'fr',
+        'id',
+        'ja',
+        'pl',
+        'pt',
+        'ru',
+        'uk',
+        'zh',
+    ],
+    'sitemap'       => [
+        'roadmap',
+        'sponsors',
+        'support',
+        'consulting',
+        'about',
+        'team',
+        'testimonials',
+        'hosting',
+        'download/linux',
+        'download/windows',
+        'download/tools',
+        'download/docker',
+        'download/stubs',
     ]
-);
+];

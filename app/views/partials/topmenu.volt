@@ -1,20 +1,87 @@
+
 <ul class="nav navbar-nav main-menu">
     <li class="first">
-        {{
-            link_to(['for': 'pages', 'pageSlug': 'download', 'language': language], tr('download'), 'class' : 'header-nav-link')
-        }}
+        <a href="/{{ language }}/download/linux" class="header-nav-link">
+            {{ locale.translate('download') }}
+        </a>
     </li>
-    <li><a href="https://docs.phalconphp.com/" class="header-nav-link" target="_blank">{{ tr('documentation') }}</a></li>
-    <li><a href="https://forum.phalconphp.com/" class="header-nav-link" target="_blank">{{ tr('forum') }}</a></li>
-    <li><a href="https://slack.phalconphp.com/" class="header-nav-link" target="_blank">{{ tr('Slack') }}</a></li>
-    <li><a href="https://blog.phalconphp.com/" class="header-nav-link" target="_blank">{{ tr('blog') }}</a></li>
-    <li><a href="https://api.phalconphp.com/" class="header-nav-link" target="_blank">{{ tr('API') }}</a></li>
-    <li><a href="http://phalconist.com/" class="header-nav-link" target="_blank">{{ tr('resources') }}</a></li>
-    <li>{{ link_to(['for': 'pages', 'pageSlug': 'about', 'language': language], tr('about')) }}</li>
-    <li class="dropdown" style="margin-left:3px;">
-        <a href="javascript:;" class="dropdown-toggle" id="dropdownLanguageMenu" data-toggle="dropdown"><img src="{{ cdn_url }}/images/flags/{{ language }}.gif" alt="" />&nbsp;<span class="caret"></span></a>
-        <ul class="dropdown-menu" id="dropdown-language" role="menu" style="color:black" aria-labelledby="dropdownLanguageMenu">
-            <li role="presentation" class="dropdown-link" style="color:black;">{{ languages_available }}</li>
+    <li>
+        <a href="https://phalcon.link/docs" class="header-nav-link" target="_blank">
+            {{ locale.translate('docs') }}
+        </a>
+    </li>
+    <li class="dropdown">
+        <a href="javascript:;"
+           class="dropdown-toggle"
+           data-toggle="dropdown"
+           role="button"
+           aria-haspopup="true"
+           aria-expanded="false">
+            {{ locale.translate('community') }} <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="https://phalcon.link/forum" target="_blank">
+                    {{ locale.translate('forum') }}
+                </a>
+            </li>
+            <li>
+                <a href="https://phalcon.link/blog" target="_blank">
+                    {{ locale.translate('blog') }}
+                </a>
+            </li>
+            <li>
+                <a href="https://phalcon.link/api" target="_blank">
+                    {{ locale.translate('api') }}
+                </a>
+            </li>
+            <li>
+                <a href="https://phalcon.link/resources" target="_blank">
+                    {{ locale.translate('resources') }}
+                </a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li>
+                <a href="https://phalcon.link/f" target="_blank">
+                    {{ locale.translate('facebook') }}
+                </a>
+            </li>
+            <li>
+                <a href="https://phalcon.link/t" target="_blank">
+                    {{ locale.translate('twitter') }}
+                </a>
+            </li>
+            <li>
+                <a href="https://phalcon.link/g+" target="_blank">
+                    {{ locale.translate('google_plus') }}
+                </a>
+            </li>
+            <li>
+                <a href="https://phalcon.link/gab" target="_blank">
+                    {{ locale.translate('gab') }}
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="/{{ language }}/sponsors" class="header-nav-link">
+            {{ locale.translate('sponsors') }}
+        </a>
+    </li>
+    <li>
+        <a href="https://phalcon.link/fund" class="header-nav-link">
+            {{ locale.translate('support_us') }}
+        </a>
+    </li>
+    <li class="dropdown lang-wrapper">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <img src="{{ utils.getCdnUrl('images/flags/' ~ imageLanguage ~ '.gif') }}" alt="{{ language }}">
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu lang-dropdown" role="menu">
+            <li role="presentation" class="dropdown-link">
+                {{ languages }}
+            </li>
         </ul>
     </li>
 </ul>

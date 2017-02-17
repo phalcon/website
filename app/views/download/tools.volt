@@ -1,16 +1,25 @@
-{% include 'download/header.volt' %}
+{% extends 'layouts/main.volt' %}
 
-    <h2>{{ tr('download_developer_tools') }}</h2>
-    <p>{{ tr('download_devtools_1') }}</p>
-    <p>{{ tr('download_devtools_docs', docs_root ~ 'reference/tools.html') }}</p>
+{% block content %}
 
-    <br />
-    <h3>{{ tr('download_devtools_composer') }}</h3>
-    <p>{{ tr('download_devtools_composer_1') }}</p>
+{% include 'partials/page_head.volt' %}
 
-    <pre><code>curl -s http://getcomposer.org/installer | php</code></pre>
+<section class="download">
+    <div class="container">
 
-    <p>{{ tr('download_devtools_composer_2') }}</p>
+        {% include 'partials/menu_download.volt' %}
+
+        <h2>{{ locale.translate('download_developer_tools') }}</h2>
+        <p>{{ locale.translate('download_devtools_1') }}</p>
+        <p>{{ locale.translate('download_devtools_docs', utils.getDocsUrl(language) ~ '/reference/tools.html') }}</p>
+
+        <br />
+        <h3>{{ locale.translate('download_devtools_composer') }}</h3>
+        <p>{{ locale.translate('download_devtools_composer_1') }}</p>
+
+        <pre><code>curl -s http://getcomposer.org/installer | php</code></pre>
+
+        <p>{{ locale.translate('download_devtools_composer_2') }}</p>
 
 <pre><code>{
     "require": {
@@ -19,19 +28,19 @@
 }
 </code></pre>
 
-    <p>{{ tr('download_devtools_composer_3') }}</p>
+        <p>{{ locale.translate('download_devtools_composer_3') }}</p>
 
-    <pre><code>php composer.phar install</code></pre>
+        <pre><code>php composer.phar install</code></pre>
 
-    <p>{{ tr('download_devtools_composer_4') }}</p>
+        <p>{{ locale.translate('download_devtools_composer_4') }}</p>
 
 <pre><code>ln -s ~/devtools/phalcon.php /usr/bin/phalcon
 chmod ugo+x /usr/bin/phalcon</code></pre>
 
-    <br /> <br />
-    <h3>{{ tr('download') }}</h3>
-    <p>{{ tr('download_devtools_download', 'https://github.com/phalcon/phalcon-devtools') }}</p>
+        <br />
+        <h3>{{ locale.translate('download') }}</h3>
+        <p>{{ locale.translate('download_devtools_download', 'https://github.com/phalcon/phalcon-devtools') }}</p>
 
-</div>
-</div>
-    </section>
+    </div>
+</section>
+{% endblock %}

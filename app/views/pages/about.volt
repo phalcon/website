@@ -1,23 +1,31 @@
-{% include 'pages/head.volt' %}
+{% extends 'layouts/main.volt' %}
+
+{% block content %}
+
+{% include 'partials/page_head.volt' %}
+
 <section class="about">
-    {% include 'pages/header.volt' %}
+    <div class="container">
+        {% include 'partials/menu_about.volt' %}
         <div class="row">
             <div class="col-lg-12">
-                <p>{{ tr('about_description_1') }}</p>
-                <p>{{ tr('about_description_2') }}</p>
+                <p>{{ locale.translate('about_description_1') }}</p>
+                <p>{{ locale.translate('about_description_2') }}</p>
             </div>
         </div>
+
         <div class="row">
             <div class="col-lg-6">
-                <h3 class="text-uppercase">{{ tr('documentation_upper') }}</h3>
-                <p>{{ tr('about_documentation_1', 'https://github.com/phalcon/docs', 'https://readthedocs.org') }}</p>
+                <h3>{{ locale.translate('about_documentation') }}</h3>
+                <p>{{ locale.translate('about_documentation_1', 'https://github.com/phalcon/docs', 'https://readthedocs.org') }}</p>
             </div>
 
             <div class="col-lg-6">
-                <h3 class="text-uppercase">{{ tr('translations') }}</h3>
-                <p>{{ tr('about_translations_1', 'http://www.transifex.com', 'Transifex', 'https://www.transifex.com/projects/p/phalcon') }}</p>
+                <h3>{{ locale.translate('about_translations') }}</h3>
+                <p>{{ locale.translate('about_translations_1', 'http://www.transifex.com', 'Transifex', 'https://www.transifex.com/projects/p/phalcon') }}</p>
                 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-                <script type="text/javascript" src="https://www.transifex.com/projects/p/phalcon/resource/website/chart/inc_js/"></script>
+                <script type="text/javascript"
+                        src="https://www.transifex.com/_/charts/js/phalcon/phalcon/inc_js/phalcon-website/"></script>
                 <div id="txchart-phalcon-website">Loading chart...</div>
             </div>
         </div>
@@ -26,27 +34,13 @@
 
         <div class="row">
             <div class="col-lg-6">
-                <h3 class="text-uppercase">{{ tr('tests') }}</h3>
-                <p>{{ tr('about_tests_1', 'https://travis-ci.org/phalcon/cphalcon') }}</p>
+                <h3>{{ locale.translate('about_tests') }}</h3>
+                <p>{{ locale.translate('about_tests_1', 'https://travis-ci.org/phalcon/cphalcon') }}</p>
             </div>
 
             <div class="col-lg-6">
-                <h3 class="text-uppercase">{{ tr('screencasts') }}</h3>
-                <p>{{ tr('about_screencasts_1', 'https://vimeo.com/user10964377') }}</p>
-            </div>
-        </div>
-
-        <div class="hr"></div>
-
-        <div class="row">
-            <div class="col-lg-6">
-                <h3 class="text-uppercase">{{ tr('evangelism') }}</h3>
-                <p>{{ tr('about_evangelism_1') }}</p>
-            </div>
-
-            <div class="col-lg-6">
-                <h3 class="text-uppercase">{{ tr('sample_applications') }}</h3>
-                <p>{{ tr('about_sample_apps_1') }}</p>
+                <h3>{{ locale.translate('about_screencasts') }}</h3>
+                <p>{{ locale.translate('about_screencasts_1', 'https://vimeo.com/user10964377') }}</p>
             </div>
         </div>
 
@@ -54,13 +48,13 @@
 
         <div class="row">
             <div class="col-lg-6">
-                <h3 class="text-uppercase">{{ tr('blog') }}</h3>
-                <p>{{ tr('about_blog_1', 'http://blog.phalconphp.com') }}</p>
+                <h3>{{ locale.translate('about_evangelism') }}</h3>
+                <p>{{ locale.translate('about_evangelism_1') }}</p>
             </div>
 
             <div class="col-lg-6">
-                <h3 class="text-uppercase">{{ tr('share_your_experiences') }}</h3>
-                <p>{{ tr('about_share_experiences_1') }}</p>
+                <h3>{{ locale.translate('about_sample_applications') }}</h3>
+                <p>{{ locale.translate('about_sample_apps_1') }}</p>
             </div>
         </div>
 
@@ -68,24 +62,38 @@
 
         <div class="row">
             <div class="col-lg-6">
-                <h3 class="text-uppercase">{{ tr('social_networks') }}</h3>
+                <h3>{{ locale.translate('about_blog') }}</h3>
+                <p>{{ locale.translate('about_blog_1', 'http://blog.phalconphp.com') }}</p>
+            </div>
 
-                <p>{{ tr('about_social_networks_1') }}</p>
-                <p>{{ tr('about_social_networks_2') }}</p>
+            <div class="col-lg-6">
+                <h3>{{ locale.translate('about_share_your_experiences') }}</h3>
+                <p>{{ locale.translate('about_share_experiences_1') }}</p>
+            </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>{{ locale.translate('about_social_networks') }}</h3>
+                <p>{{ locale.translate('about_social_networks_1') }}</p>
+                <p>{{ locale.translate('about_social_networks_2') }}</p>
 
                 <ul class="dash-list">
-                    <li><a href="http://twitter.com/phalconphp">{{ tr('follow_on_twitter') }}</a></li>
-                    <li><a href="http://www.facebook.com/pages/Phalcon/134230726685897">{{ tr('facebook_page') }}</a></li>
-                    <li><a href="https://plus.google.com/102376109340560896457">{{ tr('google_plus_page') }}</a></li>
-                    <li><a href="http://blog.phalconphp.com">{{ tr('official_blog') }}</a></li>
-                    <li><a href="http://github.com/phalcon/cphalcon">{{ tr('star_on_github') }}</a></li>
+                    <li><a href="https://twitter.com/phalconphp">{{ locale.translate('about_follow_on_twitter') }}</a></li>
+                    <li><a href="https://gab.ai/phalcon">{{ locale.translate('about_follow_on_gab') }}</a></li>
+                    <li><a href="https://www.facebook.com/pages/Phalcon/134230726685897">{{ locale.translate('about_facebook_page') }}</a></li>
+                    <li><a href="https://plus.google.com/102376109340560896457">{{ locale.translate('about_google_plus_page') }}</a></li>
+                    <li><a href="https://blog.phalconphp.com">{{ locale.translate('about_official_blog') }}</a></li>
+                    <li><a href="http://github.com/phalcon/cphalcon">{{ locale.translate('about_star_on_github') }}</a></li>
                 </ul>
 
             </div>
 
             <div class="col-lg-6">
-                <h3 class="text-uppercase">{{ tr('donations_sponsoring') }}</h3>
-                <p>{{ tr('about_sponsoring_1') }}</p>
+                <h3>{{ locale.translate('about_donations_sponsoring') }}</h3>
+                <p>{{ locale.translate('about_sponsoring_1') }}</p>
             </div>
         </div>
 
@@ -93,12 +101,12 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <h3 class="text-uppercase">{{ tr('thank_you') }}</h3>
-
-                <p>{{ tr('about_thank_you_1') }}</p>
-
-                <p><span class="strong">{{ tr('flying_with_phalcon') }}</span></p>
+                <h3>{{ locale.translate('about_thank_you') }}</h3>
+                <p>{{ locale.translate('about_thank_you_1') }}</p>
+                <p><span class="strong">{{ locale.translate('about_flying_with_phalcon') }}</span></p>
             </div>
         </div>
     </div>
 </section>
+
+{% endblock %}

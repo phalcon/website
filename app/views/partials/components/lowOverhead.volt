@@ -1,30 +1,27 @@
 <div class="codesample basic_features_code code_low_overhead">
     <div class="codesample-header">
         <h3>
-            {{ tr("low_overhead") }}
+            {{ locale.translate('low_overhead') }}
         </h3>
     </div>
     <div class="codesample-body">
         <div class="row">
             <div class="col-xs-12">
                 <h3 class="text-center">
-                    PHP C-extension (Phalcon)
+                    {{ locale.translate('low_overhead_title') }}
                 </h3>
                 <ul class="features features-positive">
                     <li>
-                        Zephir/C extensions are loaded together with PHP one time on the web server’s daemon start process
+                        {{ locale.translate('low_overhead_1') }}
                     </li>
                     <li>
-                        Classes and functions provided by the extension are ready to use for any application
+                        {{ locale.translate('low_overhead_2') }}
                     </li>
                     <li>
-                        The code is compiled and isn’t interpreted because it's already compiled to a specific platform and processor
+                        {{ locale.translate('low_overhead_3') }}
                     </li>
                     <li>
-                        Thanks to its low-level architecture and optimizations
-                        <strong>
-                            Phalcon provides the lowest overhead for MVC-based applications
-                        </strong>
+                        {{ locale.translate('low_overhead_4') }}
                     </li>
                 </ul>
             </div>

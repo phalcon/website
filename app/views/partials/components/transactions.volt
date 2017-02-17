@@ -1,12 +1,12 @@
 <div class="codesample data_storage_code code_transactions" style="display:none">
     <div class="codesample-header">
         <h3>
-            {{ tr("transactions") }}
+            {{ locale.translate('transactions') }}
         </h3>
     </div>
     <div class="codesample-body">
         <p>
-            When a process performs multiple database operations, it might be important that each step is completed successfully so that data integrity can be maintained. Transactions offer the ability to ensure that all database operations have been executed successfully before the data is committed to the database.
+            {{ locale.translate('transactions_1') }}
         </p>
         <div class="row">
             <div class="col-xs-12">
@@ -17,30 +17,35 @@ use Phalcon\Mvc\Model\Transaction\Manager as TxManager;
 
 try {
 
-    // Create a transaction manager
+    // {{ locale.translate('transactions_2') }}
+
     $manager     = new TxManager();
 
-    // Request a transaction
+    // {{ locale.translate('transactions_3') }}
+
     $transaction = $manager->get();
 
-    // Get the robots to be deleted
+    // {{ locale.translate('transactions_4') }}
+
     foreach (Robots::find("type = 'mechanical'") as $robot) {
         $robot->setTransaction($transaction);
         if ($robot->delete() == false) {
-            // Something's gone wrong, we should rollback the transaction
+            // {{ locale.translate('transactions_5') }}
+
             foreach ($robot->getMessages() as $message) {
                 $transaction->rollback($message->getMessage());
             }
         }
     }
 
-    // Everything's gone fine, let's commit the transaction
+    // {{ locale.translate('transactions_6') }}
+
     $transaction->commit();
 
-    echo "Robots were deleted successfully!";
+    echo "{{ locale.translate('transactions_7') }}";
 
 } catch (TxFailed $e) {
-    echo "Failed, reason: ", $e->getMessage();
+    echo "{{ locale.translate('transactions_8') }} ", $e->getMessage();
 }
 </code>
                 </pre>
