@@ -1,27 +1,29 @@
 <div class="codesample basic_features_code code_router" style="display:none">
     <div class="codesample-header">
         <h3>
-            {{ tr("router") }}
+            {{ locale.translate('router') }}
         </h3>
     </div>
     <div class="codesample-body">
         <p>
-            Routing as it supposed to be. Nothing more. Nothing less.
+            {{ locale.translate('router_1') }}
         </p>
         <div class="row">
             <div class="col-xs-12">
                 <pre>
                     <code class="php">
-// Create the router
+// {{ locale.translate('router_2') }}
+
 $router = new \Phalcon\Mvc\Router();
 
-//Define a route
+// {{ locale.translate('router_3') }}
+
 $router->add(
-   "/admin/users/my-profile",
-   array(
-       "controller" => "users",
-       "action"     => "profile",
-   )
+   '/admin/users/my-profile',
+   [
+       'controller' => 'users',
+       'action'     => 'profile',
+   ]
 );
                     </code>
                 </pre>

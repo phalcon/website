@@ -1,13 +1,12 @@
 <div class="codesample basic_features_code code_autoloader" style="display:none">
     <div class="codesample-header">
         <h3>
-            {{ tr("auto_loader") }}
+            {{ locale.translate('auto_loader') }}
         </h3>
     </div>
     <div class="codesample-body">
         <p>
-            Register namespaces, prefixes, directories or classes. Take advantage of the autoloader events and maintain full control
-            over what files are loaded and from where.
+            {{ locale.translate('auto_loader_1') }}
         </p>
         <div class="row">
             <div class="col-xs-12">
@@ -15,19 +14,22 @@
                     <code class="php">
 use Phalcon\Loader;
 
-// Creates the autoloader
+// {{ locale.translate('auto_loader_2') }}
+
 $loader = new Loader();
 
-// Register some namespaces
+// {{ locale.translate('auto_loader_3') }}
+
 $loader->registerNamespaces(
-    array(
-       "Example\Base"    => "vendor/example/base/",
-       "Example\Adapter" => "vendor/example/adapter/",
-       "Example"         => "vendor/example/"
-    )
+    [
+       'Example\Base'    => 'vendor/example/base/',
+       'Example\Adapter' => 'vendor/example/adapter/',
+       'Example'         => 'vendor/example/',
+    ]
 );
 
-// Register autoloader
+// {{ locale.translate('auto_loader_4') }}
+
 $loader->register();
                     </code>
                 </pre>

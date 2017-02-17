@@ -1,13 +1,12 @@
 <div class="codesample data_storage_code code_orm">
     <div class="codesample-header">
         <h3>
-            {{ tr("orm") }}
+            {{ locale.translate('orm') }}
         </h3>
     </div>
     <div class="codesample-body">
         <p>
-            A powerful ORM is provided by Phalcon allowing you to manipulate database records
-            as classes and objects. MySQL, PostgreSQL and SQLite are supported out of the box.
+            {{ locale.translate('orm_1') }}
         </p>
         <div class="row">
             <div class="col-xs-12">
@@ -23,7 +22,7 @@ class Robots extends Model
 
     public function initialize()
     {
-        $this->hasMany("id", "RobotsParts", "robots_id");
+        $this->hasMany('id', 'RobotsParts', 'robots_id');
     }
 }
                     </code>

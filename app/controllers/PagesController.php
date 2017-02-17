@@ -1,24 +1,23 @@
 <?php
 
+namespace Website\Controllers;
+
 use Phalcon\Text;
+use Website\Controller as WController;
 
-class PagesController extends \ControllerBase
+/**
+ * Class PagesController
+ *
+ * @package Website\Controllers
+ *
+ * @property \Phalcon\Registry $registry
+ */
+class PagesController extends WController
 {
-
     public function pageAction()
     {
-        $pageSlug  = $this->getUriParameter('pageSlug');
-
-        switch ($pageSlug) {
-
-            case 'roadmap':
-                return $this->response->redirect('https://github.com/phalcon/cphalcon/wiki/Roadmap');                
-        }
-
-        $pageTitle = Text::camelize($pageSlug);
-        $this->tag->setTitle($pageTitle);
-        $this->view->pick('pages/' . $pageSlug);
-        $this->view->setVar('isFrontpage', false);
-        $this->view->setVar('isPage', $pageSlug);
+        $slug = $this->registry->slug;
+        $this->tag->setTitle(ucfirst(Text::humanize($slug)));
+        $this->registry->view = sprintf('pages/%s', $slug);
     }
 }

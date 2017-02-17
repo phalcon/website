@@ -1,90 +1,34 @@
 <?php
 
-use Phalcon\Mvc\View as PhView;
+namespace Website\Controllers;
 
-class IndexController extends \ControllerBase
+use Website\Controller as WController;
+
+/**
+ * Class IndexController
+ *
+ * @package Website\Controllers
+ *
+ * @property \Phalcon\Registry $registry
+ */
+class IndexController extends WController
 {
-
     public function indexAction()
     {
-        $this->tag->setTitle('Phalcon - High Performance PHP Framework');
-    }
-
-    public function index2Action()
-    {
-        $this->tag->setTitle('Phalcon - High Performance PHP Framework');
-    }
-
-    public function notFoundAction()
-    {
-        $this->response->setStatusCode(404, 'Not Found');
-        $this->view->pick('404/404');
-        $this->view->setVar('isFrontpage', false);
-        $this->view->setVar('isPage', 404);
-    }
-
-    public function subscribeAction()
-    {
-        $subscriber = new Subscribers();
-        $subscriber->email = $this->request->getPost('email', 'email');
-        if ($subscriber->save() == false) {
-            $this->flash->error("At this moment you can't subscribe, the following problem happen:");
-            foreach ($subscriber->getMessages() as $message) {
-                $this->flash->error($message);
-            }
-        } else {
-            $this->flash->success('Thanks for subscribing!');
-        }
-
-        return $this->dispatcher->forward(
-            array(
-                'controller' => 'index',
-                'action' => 'index'
-            )
+        $this->tag->setTitle(
+            $this->locale->translate('high_performance_php_framework')
         );
+        $this->registry->view = 'index/index';
     }
 
-    public function donateAction()
+    public function notfoundAction()
     {
-        $this->tag->setTitle('Donate');
-    }
+        $this->tag->setTitle(
+            $this->locale->translate('not_found')
+        );
+        $this->response->setStatusCode(404, 'Not Found');
 
-    /**
-     * Redirects for old links
-     */
-    public function redirectIndexAction()
-    {
-        return $this->response->redirect($this->getLang() . '/', 301);
-    }
-
-    public function redirectPagesAction()
-    {
-        $slug = $this->getUriParameter('pageSlug');
-
-        $slug = ($slug) ? $slug : '';
-        $this->response->redirect($this->getLang() . '/' . $slug, 301);
-    }
-
-    public function redirectDownloadAction()
-    {
-        return $this->response->redirect($this->getLang() . "/download", 301);
-    }
-
-    public function redirectDownloadTypeAction()
-    {
-        $slug = $this->getUriParameter('type');
-        $slug = ($slug) ? '/' . $slug : '';
-
-        $this->response->redirect($this->getLang() . "/download" . $slug, 301);
-    }
-
-    public function redirectDownloadWindowsAction()
-    {
-        return $this->response->redirect($this->getLang() . "/download/windows", 301);
-    }
-
-    public function redirectDonateAction()
-    {
-        return $this->response->redirect($this->getLang() . '/donate', 301);
+        $this->registry->noindex = true;
+        $this->registry->view    = 'utils/notfound';
     }
 }
