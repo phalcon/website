@@ -145,6 +145,7 @@ return [
     ],
     'languages_map' => [
         'sv' => 'se',
+        'vi' => 'vn',
     ],
     'doc_languages' => [
         'en',
