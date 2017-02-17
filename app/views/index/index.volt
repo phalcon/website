@@ -32,8 +32,6 @@
                         </div>
                     </div>
 
-                    <br>
-
                     <p>
                         {{ locale.translate('header_slogan') }}
                         <a id="bench-link" href="https://phalcon.link/docs" target="_blank">
@@ -41,7 +39,6 @@
                         </a>
                     </p>
 
-                    <br>
                     <a href="{{ url(language ~ '/language') }}"
                        class="btn btn-lg btn-phalcon btn-download">
                         <button class="view-detail btn">
@@ -126,6 +123,31 @@
         </div>
     </div>
 
+    <!-- =========================
+         Section5 - Sponsors
+    ============================== -->
+    <section>
+        <div class="container" id="sponsors">
+            <div class="col-md-12 white-bg">
+                <h4>
+                    {{ locale.translate('sponsored_by') }}
+                </h4>
+
+                <a href="https://pdffiller.com/">
+                    <img src="{{ utils.getCdnUrl('images/backers/pdffiller-240x60.png') }}">
+                </a>
+
+                <a href="https://mctekk.com/">
+                    <img src="{{ utils.getCdnUrl('images/backers/mctekk-240x60.png') }}">
+                </a>
+
+                <a href="https://abits.com/">
+                    <img src="{{ utils.getCdnUrl('images/backers/abits-240x60.png') }}">
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!--
     =========================
          Section3 - Features
@@ -134,7 +156,7 @@
 
     <section id="feature-section" class="codesamples">
         <div class="container">
-            <div class=" col-md-12 white-bg">
+            <div class="col-md-12 white-bg">
                 <!-- Features Left -->
                 <div class="col-sm-5">
                     <h2 class="verticle-line">
@@ -563,35 +585,6 @@
                         <iframe src="https://player.vimeo.com/video/63022489?color=ffffff" allowfullscreen></iframe>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- =========================
-         Section5 - Benefits
-    ============================== -->
-    <section>
-        <div class="container">
-            <div class="white-bg">
-
-                <!-- Section Heading -->
-                <h2>
-                    {{ locale.translate('sponsored_by') }}
-                </h2>
-                <br>
-
-                <a href="https://pdffiller.com/">
-                    <img src="{{ utils.getCdnUrl('images/backers/pdffiller-240x60.png') }}">
-                </a>
-
-                <a href="https://mctekk.com/">
-                    <img src="{{ utils.getCdnUrl('images/backers/mctekk-240x60.png') }}">
-                </a>
-
-                <a href="https://abits.com/">
-                    <img src="{{ utils.getCdnUrl('images/backers/abits-240x60.png') }}">
-                </a>
-
             </div>
         </div>
     </section>
