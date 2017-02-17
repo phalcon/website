@@ -16,15 +16,16 @@
 
         <div class="row">
             <div class="col-lg-6">
-                <h3 class="text-uppercase">{{ locale.translate('about_documentation_upper') }}</h3>
+                <h3>{{ locale.translate('about_documentation') }}</h3>
                 <p>{{ locale.translate('about_documentation_1', 'https://github.com/phalcon/docs', 'https://readthedocs.org') }}</p>
             </div>
 
             <div class="col-lg-6">
-                <h3 class="text-uppercase">{{ locale.translate('about_translations') }}</h3>
+                <h3>{{ locale.translate('about_translations') }}</h3>
                 <p>{{ locale.translate('about_translations_1', 'http://www.transifex.com', 'Transifex', 'https://www.transifex.com/projects/p/phalcon') }}</p>
                 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-                <script type="text/javascript" src="https://www.transifex.com/projects/p/phalcon/resource/phalcon-website/chart/inc_js/"></script>
+                <script type="text/javascript"
+                        src="https://www.transifex.com/_/charts/js/phalcon/phalcon/inc_js/phalcon-website/"></script>
                 <div id="txchart-phalcon-website">Loading chart...</div>
             </div>
         </div>
@@ -33,12 +34,12 @@
 
         <div class="row">
             <div class="col-lg-6">
-                <h3 class="text-uppercase">{{ locale.translate('about_tests') }}</h3>
+                <h3>{{ locale.translate('about_tests') }}</h3>
                 <p>{{ locale.translate('about_tests_1', 'https://travis-ci.org/phalcon/cphalcon') }}</p>
             </div>
 
             <div class="col-lg-6">
-                <h3 class="text-uppercase">{{ locale.translate('about_screencasts') }}</h3>
+                <h3>{{ locale.translate('about_screencasts') }}</h3>
                 <p>{{ locale.translate('about_screencasts_1', 'https://vimeo.com/user10964377') }}</p>
             </div>
         </div>
@@ -47,12 +48,12 @@
 
         <div class="row">
             <div class="col-lg-6">
-                <h3 class="text-uppercase">{{ locale.translate('about_evangelism') }}</h3>
+                <h3>{{ locale.translate('about_evangelism') }}</h3>
                 <p>{{ locale.translate('about_evangelism_1') }}</p>
             </div>
 
             <div class="col-lg-6">
-                <h3 class="text-uppercase">{{ locale.translate('about_sample_applications') }}</h3>
+                <h3>{{ locale.translate('about_sample_applications') }}</h3>
                 <p>{{ locale.translate('about_sample_apps_1') }}</p>
             </div>
         </div>
@@ -61,12 +62,12 @@
 
         <div class="row">
             <div class="col-lg-6">
-                <h3 class="text-uppercase">{{ locale.translate('about_blog') }}</h3>
+                <h3>{{ locale.translate('about_blog') }}</h3>
                 <p>{{ locale.translate('about_blog_1', 'http://blog.phalconphp.com') }}</p>
             </div>
 
             <div class="col-lg-6">
-                <h3 class="text-uppercase">{{ locale.translate('about_share_your_experiences') }}</h3>
+                <h3>{{ locale.translate('about_share_your_experiences') }}</h3>
                 <p>{{ locale.translate('about_share_experiences_1') }}</p>
             </div>
         </div>
@@ -75,8 +76,7 @@
 
         <div class="row">
             <div class="col-lg-6">
-                <h3 class="text-uppercase">{{ locale.translate('about_social_networks') }}</h3>
-
+                <h3>{{ locale.translate('about_social_networks') }}</h3>
                 <p>{{ locale.translate('about_social_networks_1') }}</p>
                 <p>{{ locale.translate('about_social_networks_2') }}</p>
 
@@ -92,7 +92,7 @@
             </div>
 
             <div class="col-lg-6">
-                <h3 class="text-uppercase">{{ locale.translate('about_donations_sponsoring') }}</h3>
+                <h3>{{ locale.translate('about_donations_sponsoring') }}</h3>
                 <p>{{ locale.translate('about_sponsoring_1') }}</p>
             </div>
         </div>
@@ -101,10 +101,8 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <h3 class="text-uppercase">{{ locale.translate('about_thank_you') }}</h3>
-
+                <h3>{{ locale.translate('about_thank_you') }}</h3>
                 <p>{{ locale.translate('about_thank_you_1') }}</p>
-
                 <p><span class="strong">{{ locale.translate('about_flying_with_phalcon') }}</span></p>
             </div>
         </div>
