@@ -64,6 +64,11 @@
         </ul>
     </li>
     <li>
+        <a href="/{{ language }}/about" class="header-nav-link">
+            {{ locale.translate('contribute') }}
+        </a>
+    </li>
+    <li>
         <a href="/{{ language }}/sponsors" class="header-nav-link">
             {{ locale.translate('sponsors') }}
         </a>
