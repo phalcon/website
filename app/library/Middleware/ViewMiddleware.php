@@ -37,13 +37,14 @@ class ViewMiddleware implements MiddlewareInterface
 
         $application->viewSimple->setVars(
             [
-                'page'         => $registry->slug,
-                'language'     => $registry->language,
-                'contributors' => $registry->contributors,
-                'languages'    => $registry->menuLanguages,
-                'noindex'      => $registry->noindex,
-                'releases'     => $registry->releases,
-                'version'      => $registry->version,
+                'page'          => $registry->slug,
+                'language'      => $registry->language,
+                'imageLanguage' => $registry->imageLanguage,
+                'contributors'  => $registry->contributors,
+                'languages'     => $registry->menuLanguages,
+                'noindex'       => $registry->noindex,
+                'releases'      => $registry->releases,
+                'version'       => $registry->version,
             ]
         );
 

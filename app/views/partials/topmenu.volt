@@ -75,7 +75,7 @@
     </li>
     <li class="dropdown lang-wrapper">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <img src="{{ utils.getCdnUrl('images/flags/' ~ language ~ '.gif') }}" alt="{{ language }}">
+            <img src="{{ utils.getCdnUrl('images/flags/' ~ imageLanguage ~ '.gif') }}" alt="{{ language }}">
             <span class="caret"></span>
         </a>
         <ul class="dropdown-menu lang-dropdown" role="menu">

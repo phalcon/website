@@ -310,6 +310,7 @@ abstract class AbstractBootstrap
         $registry->contributors  = [];
         $registry->executionTime = 0;
         $registry->language      = 'en';
+        $registry->imageLanguage = 'en';
         $registry->memory        = 0;
         $registry->menuLanguages = [];
         $registry->noindex       = false;

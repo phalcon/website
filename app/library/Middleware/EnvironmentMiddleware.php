@@ -33,12 +33,18 @@ class EnvironmentMiddleware implements MiddlewareInterface
         $params   = $application->router->getParams();
         $language = $this->getLang($application, 'en');
         $slug     = $application->utils->fetch($params, 'slug', 'index');
+        $image    = $application->utils->fetch(
+            $this->getImageMap($application),
+            $language,
+            'en'
+        );
 
         /**
          * These are needed for all pages
          */
         $application->registry->language      = $language;
         $application->registry->slug          = $slug;
+        $application->registry->imageLanguage = $image;
         $application->registry->menuLanguages = $this->getMenuLanguages($application, $language);
         $application->registry->version       = $application->config->get('app')->get('version');
 
@@ -81,6 +87,28 @@ class EnvironmentMiddleware implements MiddlewareInterface
     }
 
     /**
+     * Returns the image map for languages
+     *
+     * @param Micro  $application
+     *
+     * @return array
+     */
+    private function getImageMap(Micro $application)
+    {
+        /**
+         * Find the languages available
+         */
+        $languages   = $application->config->get('languages');
+        $keys        = array_keys($languages->toArray());
+        $languageMap = $application->config->get('languages_map')->toArray();
+        $images      = array_combine($keys, $keys);
+        $images      = array_merge($images, $languageMap);
+
+
+        return $images;
+    }
+
+    /**
      * Returns the available languages for the top menu
      *
      * @param Micro  $application
@@ -93,19 +121,21 @@ class EnvironmentMiddleware implements MiddlewareInterface
         /**
          * Find the languages available
          */
-        $languages             = $application->config->get('languages');
-        $languagesAvailable    = '';
-        $url                   = $application->request->getScheme() . '://'
-                               . $application->request->getHttpHost()
-                               . $application->config->get('app')->get('baseUri');
-        $uri                   = $application->router->getRewriteUri();
+        $languages          = $application->config->get('languages');
+        $languagesAvailable = '';
+        $url                = $application->request->getScheme() . '://'
+                            . $application->request->getHttpHost()
+                            . $application->config->get('app')->get('baseUri');
+        $uri                = $application->router->getRewriteUri();
+        $images             = $this->getImageMap($application);
+
         foreach ($languages as $key => $value) {
             $link = [
                 'action'   => $url . str_replace("/{$language}", $key, $uri),
                 'text'     => $value,
                 'tabindex' => -1,
                 'role'     => 'menuitem',
-                'class'    => "flag-item flag-{$key}",
+                'class'    => "flag-item flag-{$images[$key]}",
                 'local'    => false
             ];
 

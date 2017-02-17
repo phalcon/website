@@ -143,6 +143,9 @@ return [
         'vi' => 'Tiếng Việt',
         'zh' => '简体中文',
     ],
+    'languages_map' => [
+        'sv' => 'se',
+    ],
     'doc_languages' => [
         'en',
         'es',
