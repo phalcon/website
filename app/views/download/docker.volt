@@ -78,6 +78,14 @@ docker-compose up -d</code></pre>
 docker-compose down</code></pre>
             {{ locale.translate('download_docker_26') }} <a href="https://phalcon.link/compose">https://phalcon.link/compose</a>
         </p>
+
+        <p class="text-center">
+            <iframe width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/3JOFChJoNBw"
+                    frameborder="0"
+                    allowfullscreen></iframe>
+        </p>
     </div>
 </section>
 
