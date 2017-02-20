@@ -39,16 +39,12 @@
                         </a>
                     </p>
 
-                    <a href="{{ url(language ~ '/language') }}"
+                    <a href="{{ url(language ~ '/download/linux') }}"
                        class="btn btn-lg btn-phalcon btn-download">
                         <button class="view-detail btn">
                             <i class="fa fa-download"></i> {{ locale.translate('get_phalcon', version) }}
                         </button>
                     </a>
-                    <div class="sublinks">
-                        <a href="{{ url(language ~ '/language') }}">{{ locale.translate('download_version', version) }}</a> |
-                        <a href="{{ url(language ~ '/language') }}">{{ locale.translate('install_instructions') }}</a>
-                    </div>
                     <div class="sublinks">
                         <a href="https://phalcon.link/fund"
                            class="btn btn-lg btn-info btn-support">
