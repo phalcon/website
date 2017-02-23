@@ -116,7 +116,7 @@
                 </span>
                 </td>
                 <td class="text-right">
-                    <a href="#" title="{{ data['name'] }}"
+                    <a href="https://phalcon.link/download/windows/previous/x86-{{ key }}"
                        class="btn btn-success"
                        target="_download">
                         {{ locale.translate('download') }}
@@ -131,7 +131,8 @@
                 </span>
                 </td>
                 <td class="text-right">
-                    <a href="#" title="{{ releases['previous']['x64'][key]['name'] }}"
+                    <a href="https://phalcon.link/download/windows/previous/x64-{{ key }}"
+                       title="{{ releases['previous']['x64'][key]['name'] }}"
                        class="btn btn-success"
                        target="_download">
                         {{ locale.translate('download') }}
