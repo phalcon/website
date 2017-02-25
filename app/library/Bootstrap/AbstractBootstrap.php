@@ -46,6 +46,11 @@ abstract class AbstractBootstrap
      */
     protected $options = [];
 
+    /**
+     * Runs the application
+     *
+     * @return PhApplication
+     */
     public function run()
     {
         $this->initOptions();
@@ -60,6 +65,7 @@ abstract class AbstractBootstrap
         $this->initCache();
         $this->initLogger();
         $this->initLocale();
+        $this->initErrorHandler();
         $this->initRoutes();
         $this->initView();
         $this->initAssets();
@@ -195,7 +201,8 @@ abstract class AbstractBootstrap
         $registry = $this->diContainer->getShared('registry');
         $logger   = $this->diContainer->getShared('logger');
         $utils    = $this->diContainer->getShared('utils');
-        $mode     = $utils->env('APP_ENV', 'development');
+        $mode     = getenv('APP_ENV');
+        $mode     = (false !== $mode) ? $mode : 'development';
 
         ini_set('display_errors', boolval('development' === $mode));
         error_reporting(E_ALL);

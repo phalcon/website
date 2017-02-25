@@ -19,7 +19,7 @@ class Cli extends AbstractBootstrap
         $this->application = new PhCliConsole($this->diContainer);
 
         /**
-         * Put the console in the di_container because we need to use it in the
+         * Put the console in the diContainer because we need to use it in the
          * main task
          */
         $this->diContainer->setShared('console', $this->application);
@@ -73,6 +73,9 @@ class Cli extends AbstractBootstrap
     {
     }
 
+    /**
+     * Initializes the params passed
+     */
     protected function initOptions()
     {
         $arguments = [];
