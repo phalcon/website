@@ -36,34 +36,10 @@ class Utils extends Component
     }
 
     /**
-     * Returns the language parameter if passed, otherwise defaults to the
-     * application default
-     *
      * @param $lang
      *
-     * @return mixed|string
+     * @return string
      */
-    protected function getLang($lang)
-    {
-        $return    = 'en';
-        $languages = $this->config->get('languages')->toArray();
-
-        if (true === empty($lang)) {
-            foreach ($this->request->getLanguages() as $httpLang) {
-                $httpLang = mb_strtolower(substr($httpLang['language'], 0, 2));
-                if (true === array_key_exists($httpLang, $languages)) {
-                    $return = $httpLang;
-                }
-            }
-        } else {
-            if (true === array_key_exists($lang, $languages)) {
-                $return = $lang;
-            }
-        }
-
-        return $return;
-    }
-
     public function getDocsUrl($lang)
     {
         $return    = 'en';
