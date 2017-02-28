@@ -313,7 +313,6 @@ abstract class AbstractBootstrap
          * Fill the registry with elements we will need
          */
         $registry = new PhRegistry();
-        $registry->action        = '';
         $registry->contributors  = [];
         $registry->executionTime = 0;
         $registry->language      = 'en';
