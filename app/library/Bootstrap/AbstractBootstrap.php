@@ -87,7 +87,7 @@ abstract class AbstractBootstrap
     protected function initAssets()
     {
         /** @var \Website\Utils $utils */
-        $utils = $this->diContainer->getShared('utils');
+        $utils  = $this->diContainer->getShared('utils');
 
         $assets = new Manager();
 
@@ -105,12 +105,12 @@ abstract class AbstractBootstrap
             ->collection('footer_js')
             ->addJs('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', false)
             ->addJs('//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', false)
-            ->addJs($utils->getCdnUrl() . 'js/plugins/jquery.lazyload.min.js', $utils->isCdnLocal())
-            ->addJs($utils->getCdnUrl() . 'js/plugins/jquery.magnific-popup.min.js', $utils->isCdnLocal())
-            ->addJs($utils->getCdnUrl() . 'js/plugins/highlight.pack.js', $utils->isCdnLocal())
-            ->addJs($utils->getCdnUrl() . 'js/plugins/jquery.ajaxchimp.min.js', $utils->isCdnLocal())
-            ->addJs($utils->getCdnUrl() . 'js/plugins/jquery.backstretch.min.js', $utils->isCdnLocal())
-            ->addJs($utils->getCdnUrl() . 'js/custom.js');
+            ->addJs($utils->getAsset('js/plugins/jquery.lazyload.min.js'), $utils->isCdnLocal())
+            ->addJs($utils->getAsset('js/plugins/jquery.magnific-popup.min.js'), $utils->isCdnLocal())
+            ->addJs($utils->getAsset('js/plugins/highlight.pack.js'), $utils->isCdnLocal())
+            ->addJs($utils->getAsset('js/plugins/jquery.ajaxchimp.min.js'), $utils->isCdnLocal())
+            ->addJs($utils->getAsset('js/plugins/jquery.backstretch.min.js'), $utils->isCdnLocal())
+            ->addJs($utils->getAsset('js/custom.js'));
 
         $this->diContainer->setShared('assets', $assets);
     }
