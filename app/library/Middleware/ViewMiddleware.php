@@ -31,24 +31,28 @@ class ViewMiddleware implements MiddlewareInterface
         $registry     = $application->registry;
         $viewName     = $registry->view;
 
-        if ('production' === $application->config->get('env')) {
+        if ('production' === $application->config->get('app')->get('env')) {
             $application->viewSimple->cache(['key' => $cacheKey]);
         }
 
-        $application->viewSimple->setVars(
-            [
-                'page'          => $registry->slug,
-                'language'      => $registry->language,
-                'imageLanguage' => $registry->imageLanguage,
-                'contributors'  => $registry->contributors,
-                'languages'     => $registry->menuLanguages,
-                'noindex'       => $registry->noindex,
-                'releases'      => $registry->releases,
-                'version'       => $registry->version,
-            ]
-        );
+        if (true === $application->viewCache->exists($cacheKey)) {
+            $contents = $application->viewCache->get($cacheKey);
+        } else {
+            $application->viewSimple->setVars(
+                [
+                    'page'          => $registry->slug,
+                    'language'      => $registry->language,
+                    'imageLanguage' => $registry->imageLanguage,
+                    'contributors'  => $registry->contributors,
+                    'languages'     => $registry->menuLanguages,
+                    'noindex'       => $registry->noindex,
+                    'releases'      => $registry->releases,
+                    'version'       => $registry->version,
+                ]
+            );
 
-        $contents = $application->viewSimple->render($viewName);
+            $contents = $application->viewSimple->render($viewName);
+        }
         $application->response->setContent($contents);
         $application->response->send();
 
