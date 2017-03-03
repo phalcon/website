@@ -55,6 +55,33 @@ class Utils extends Component
     }
 
     /**
+     * Returns an asset with the CDN and the version
+     *
+     * @param string $asset
+     *
+     * @return string
+     */
+    public function getAsset($asset)
+    {
+        $cdnUrl    = $this->config->get('app')->get('staticUrl', '/');
+        $version   = $this->config->get('app')->get('version', '');
+        $pathInfo  = pathinfo($asset);
+        $dirName   = $pathInfo['dirname'];
+        $fileName  = $pathInfo['filename'];
+        $extension = $pathInfo['extension'];
+
+
+        return sprintf(
+            '%s%s/%s.%s.%s',
+            $cdnUrl,
+            $dirName,
+            $fileName,
+            $version,
+            $extension
+        );
+    }
+
+    /**
      * Returns the CDN URL
      *
      * @param string $resource

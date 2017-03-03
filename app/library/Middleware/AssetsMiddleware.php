@@ -25,23 +25,22 @@ class AssetsMiddleware implements MiddlewareInterface
          * Adds relevant assets to the assets manager
          */
         $slug       = $application->registry->slug;
-        $cdnUrl     = $application->utils->getCdnUrl();
         $isCdnLocal = $application->utils->isCdnLocal();
 
         if (true !== empty($slug) && 'index' !== $slug) {
             $application
                 ->assets
                 ->collection('header_css')
-                ->addCss($cdnUrl . 'css/style.css', $isCdnLocal)
-                ->addCss($cdnUrl . 'css/phalconPage.css', $isCdnLocal);
+                ->addCss($application->utils->getAsset('css/style.css'), $isCdnLocal)
+                ->addCss($application->utils->getAsset('css/phalconPage.css'), $isCdnLocal);
         } else {
             $application
                 ->assets
                 ->collection('header_css')
-                ->addCss($cdnUrl . 'css/flags.css', $isCdnLocal)
-                ->addCss($cdnUrl . 'css/highlight.js.css', $isCdnLocal)
-                ->addCss($cdnUrl . 'css/phalcon.min.css', $isCdnLocal)
-                ->addCss($cdnUrl . 'css/style.css', $isCdnLocal);
+                ->addCss($application->utils->getAsset('css/flags.css'), $isCdnLocal)
+                ->addCss($application->utils->getAsset('css/highlight.js.css'), $isCdnLocal)
+                ->addCss($application->utils->getAsset('css/phalcon.min.css'), $isCdnLocal)
+                ->addCss($application->utils->getAsset('css/style.css'), $isCdnLocal);
         }
 
         return true;
