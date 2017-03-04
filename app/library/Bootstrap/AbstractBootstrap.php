@@ -387,22 +387,21 @@ abstract class AbstractBootstrap
     {
         /** @var \Phalcon\Registry $registry */
         $registry = $this->diContainer->getShared('registry');
+        $options  = [
+            'compiledPath'      => APP_PATH . '/storage/cache/volt/',
+            'compiledSeparator' => '_',
+            'compiledExtension' => '.php',
+            'compileAlways'     => boolval('development' === $registry->mode),
+            'stat'              => true,
+        ];
 
         $view  = new PhViewSimple();
         $view->setViewsDir(APP_PATH . '/app/views/');
         $view->registerEngines(
             [
-                '.volt' => function ($view) use ($registry) {
+                '.volt' => function ($view) use ($options) {
                     $volt  = new PhVolt($view, $this->diContainer);
-                    $volt->setOptions(
-                        [
-                            'compiledPath'      => APP_PATH . '/storage/cache/volt/',
-                            'compiledSeparator' => '_',
-                            'compiledExtension' => '.php',
-                            'compileAlways'     => boolval('development' === $registry->mode),
-                            'stat'              => true,
-                        ]
-                    );
+                    $volt->setOptions($options);
 
                     /**
                      * Register the PHP extension, to be able to use PHP
