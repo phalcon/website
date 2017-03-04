@@ -25,14 +25,13 @@ class Utils extends Component
      */
     public function fetch($data, $element, $default = '')
     {
-        $return = $default;
         if (true === is_object($data) && true === isset($data->$element)) {
-            $return = $data->$element;
+            return $data->$element;
         } elseif (true === is_array($data) && true === isset($data[$element])) {
-            $return = $data[$element];
+            return $data[$element];
         }
 
-        return $return;
+        return $default;
     }
 
     /**
@@ -45,10 +44,8 @@ class Utils extends Component
         $return    = 'en';
         $languages = $this->config->get('doc_languages')->toArray();
 
-        if (true !== empty($lang)) {
-            if (true === array_key_exists($lang, $languages)) {
-                $return = $lang;
-            }
+        if (true !== empty($lang) && true === array_key_exists($lang, $languages)) {
+            $return = $lang;
         }
 
         return sprintf('https://docs.phalconphp.com/%s/latest', $return);
