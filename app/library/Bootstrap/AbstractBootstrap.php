@@ -191,6 +191,11 @@ abstract class AbstractBootstrap
         $registry->executionTime = microtime(true);
 
         (new Dotenv(APP_PATH))->load();
+
+        $mode = getenv('APP_ENV');
+        $mode = (false !== $mode) ? $mode : 'development';
+
+        $registry->mode = $mode;
     }
 
     /**
@@ -201,10 +206,11 @@ abstract class AbstractBootstrap
         $registry = $this->diContainer->getShared('registry');
         $logger   = $this->diContainer->getShared('logger');
         $utils    = $this->diContainer->getShared('utils');
-        $mode     = getenv('APP_ENV');
-        $mode     = (false !== $mode) ? $mode : 'development';
 
-        ini_set('display_errors', boolval('development' === $mode));
+        ini_set(
+            'display_errors',
+            boolval('development' === $registry->mode)
+        );
         error_reporting(E_ALL);
 
         set_error_handler(
@@ -232,11 +238,11 @@ abstract class AbstractBootstrap
         );
 
         register_shutdown_function(
-            function () use ($logger, $utils, $registry, $mode) {
+            function () use ($logger, $utils, $registry) {
                 $memory    = memory_get_usage() - $registry->memory;
                 $execution = microtime(true) - $registry->executionTime;
 
-                if ('development' === $mode) {
+                if ('development' === $registry->mode) {
                     $logger->info(
                         sprintf(
                             'Shutdown completed [%s] - [%s]',
@@ -324,6 +330,7 @@ abstract class AbstractBootstrap
         $registry->releases      = [];
         $registry->version       = '3.0.0';
         $registry->view          = 'index/index';
+        $registry->mode          = 'development';
 
         $this->diContainer->setShared('registry', $registry);
     }
@@ -378,22 +385,21 @@ abstract class AbstractBootstrap
      */
     protected function initView()
     {
-        /** @var \Phalcon\Config $config */
-        $config = $this->diContainer->getShared('config');
-        $mode   = $config->get('app')->get('env', 'development');
+        /** @var \Phalcon\Registry $registry */
+        $registry = $this->diContainer->getShared('registry');
 
         $view  = new PhViewSimple();
         $view->setViewsDir(APP_PATH . '/app/views/');
         $view->registerEngines(
             [
-                '.volt' => function ($view) use ($mode) {
+                '.volt' => function ($view) use ($registry) {
                     $volt  = new PhVolt($view, $this->diContainer);
                     $volt->setOptions(
                         [
                             'compiledPath'      => APP_PATH . '/storage/cache/volt/',
                             'compiledSeparator' => '_',
                             'compiledExtension' => '.php',
-                            'compileAlways'     => boolval('development' === $mode),
+                            'compileAlways'     => boolval('development' === $registry->mode),
                             'stat'              => true,
                         ]
                     );

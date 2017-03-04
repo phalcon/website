@@ -43,26 +43,13 @@ class Locale extends Component
              * This makes it easier to find text that has not been translated
              * yet
              */
-            $english = file_get_contents(
-                sprintf(
-                    '%s/storage/languages/%s.json',
-                    APP_PATH,
-                    $defaultLanguage
-                )
-            );
-
-            $phrases = json_decode($english, true);
+            $phrases = $this->getCachedLanguage('en');
 
             if ('en' !== $currentLanguage) {
-                $other   = file_get_contents(
-                    sprintf(
-                        '%s/storage/languages/%s.json',
-                        APP_PATH,
-                        $currentLanguage
-                    )
+                $phrases = array_merge(
+                    $phrases,
+                    $this->getCachedLanguage($currentLanguage)
                 );
-                $other   = json_decode($other, true);
-                $phrases = array_merge($phrases, $other);
             }
 
             $this->phrases = $phrases;
@@ -96,5 +83,35 @@ class Locale extends Component
         }
 
         return $return;
+    }
+
+    /**
+     * Returns the contents of a language
+     *
+     * @param string $language
+     *
+     * @return array
+     */
+    private function getCachedLanguage($language)
+    {
+        $cacheKey = sprintf('language-%s.cache', $language);
+        if ('production' === $this->registry->mode &&
+            true === $this->cacheData->exists($cacheKey)) {
+            $phrases = $this->cacheData->get($cacheKey);
+        } else {
+            $english = file_get_contents(
+                sprintf(
+                    '%s/storage/languages/%s.json',
+                    APP_PATH,
+                    $language
+                )
+            );
+
+            $phrases = json_decode($english, true);
+
+            $this->cacheData->save($cacheKey, $phrases);
+        }
+
+        return $phrases;
     }
 }

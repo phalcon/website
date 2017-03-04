@@ -17,7 +17,7 @@ class ClearCacheTask extends PhTask
      */
     public function mainAction()
     {
-        //$this->clearFolder('Data', 'data');
+        $this->clearFolder('Data', 'data');
         $this->clearFolder('View', 'view');
         $this->clearFolder('Volt', 'volt');
     }
@@ -49,7 +49,7 @@ class ClearCacheTask extends PhTask
             if (true !== $file->isDir() &&
                 '.' !== $file->getFilename() &&
                 '..' !== $file->getFilename() &&
-                '.gitignore' !== $file->getFilename()) {
+                ('php' === $file->getExtension() || 'cache' === $file->getExtension())) {
                 $bar->progress();
                 unlink($file->getPathname());
             }
