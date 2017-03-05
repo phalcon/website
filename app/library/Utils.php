@@ -45,10 +45,11 @@ class Utils extends Component
         $return    = 'en';
         $languages = $this->config->get('doc_languages')->toArray();
 
-        if (true !== empty($lang)) {
-            if (true === array_key_exists($lang, $languages)) {
-                $return = $lang;
-            }
+        if (
+            true !== empty($lang) &&
+            true === array_key_exists($lang, $languages)
+        ) {
+            $return = $lang;
         }
 
         return sprintf('https://docs.phalconphp.com/%s/latest', $return);
