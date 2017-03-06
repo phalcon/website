@@ -6,7 +6,7 @@ use Phalcon\Mvc\Micro;
 use Phalcon\Mvc\Micro\MiddlewareInterface;
 
 /**
- * Class NotFoundMiddleware
+ * Class RedirectMiddleware
  *
  * @property \Website\Utils           $utils
  * @property \Phalcon\Mvc\View\Simple $viewSimple
