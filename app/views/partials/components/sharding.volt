@@ -25,7 +25,7 @@ $di->set(
                 'host'     => 'localhost',
                 'username' => 'root',
                 'password' => 'secret',
-                'dbname"   => 'invo',
+                'dbname'   => 'invo',
             ]
         );
     }
