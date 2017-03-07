@@ -38,7 +38,7 @@ $di->set(
     function () {
         return new PostgreSQLPdo(
             [
-                'host"     => 'localhost',
+                'host'     => 'localhost',
                 'username' => 'postgres',
                 'password' => '',
                 'dbname'   => 'invo',
