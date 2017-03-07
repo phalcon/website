@@ -1,56 +1,48 @@
-# Contributing Phosphorum
+# Contributing to our Website
 
-Phosphorum is an open source project and a volunteer effort. Phosphorum welcomes contribution from everyone.
+Our website is developed with Phalcon, in order to showcase an implementation and leverage the power of the framework.
 
 ## Contributions
 
-Contributions to Phosphorum should be made in the form of GitHub pull requests.
-Each pull request will be reviewed by a core contributor (someone with permission to land patches) and either landed in
-the main tree or given feedback for changes that would be required before it can be merged. All contributions should
-follow this format, even those from core contributors.
+Contributions to our website should be made in the form of GitHub pull requests. Each pull request will be reviewed by a core contributor (someone with permission to merge pull requests). Based on the type and content of the pull request, it can either be merged immediately, put on hold if clarifications are needed, or rejected. 
+
+Please ensure that you are sending your pull request to the correct branch and that you already have rebased your code.
 
 ## Questions & Support
 
 _We only accept bug reports, new feature requests and pull requests in GitHub._ For questions regarding the usage of the
-Phosphorum or support requests please visit the [official forums][:forums:].
+our website code or support requests please visit the [official forums][:forums:].
 
 ## Bug Report Checklist
 
-* Make sure you are using the latest released version of Phosphorum before submitting a bug report.
-  Bugs in versions older than the latest released one will not be addressed by the core team
+* Make sure you are using the latest released version of Phalcon before submitting a bug report. Bugs in versions older than the latest released one will not be addressed by the core team.
 
-* If you have found a bug it is important to add relevant reproducibility information to your issue to allow us to
-  reproduce the bug and fix it quicker. Add a script, small program or repository providing the necessary code to make
-  everyone reproduce the issue reported easily. If a bug cannot be reproduced by the development it would be difficult
-  provide corrections and solutions
+* If you have found a bug, it is essential to add relevant information to reproduce it. Being able to reproduce a bug greatly reduces the time to investigate and fix it. This information should come in the form of a script, small application, or even a failing test. Please check [Submit Reproducible Test][:srt:] for more information.
 
-* Be sure that information such as OS, Phalcon Framework and Phosphorum versions and PHP version are part of the
-  bug report
+* As part of your report, please include additional information such as the OS, PHP version, Phalcon version, web server, memory etc.
 
-* If you're submitting a Segmentation Fault error, we would require a backtrace, please see
-  [Generating a Backtrace][:bt:]
+* If you're submitting a Segmentation Fault error, we would require a backtrace. Please check [Generating a Backtrace][:bt:] for more information.
 
 ## Pull Request Checklist
 
-* Don't submit your pull requests to the master branch. Branch from the required branch and, if needed, rebase to the
-  proper branch before submitting your pull request. If it doesn't merge cleanly with master you may be asked to
-  rebase your changes
+* Don't submit your pull requests to the master branch. Branch from the required branch and, if needed, rebase to the proper branch before submitting your pull request. If it doesn't merge cleanly with master you may be asked to rebase your changes
 
-* Don't put submodule updates, composer.lock, etc in your pull request unless they are to landed commits
+* Don't put submodule updates, composer.lock, etc in your pull request unless they are to merged commits
 
-* Make sure that the code you write fits with the general style and coding standards of the
-  [Accepted PHP Standards][:psr:]
+* Make sure that the code you write adheres with the general style and coding standards of the [Accepted PHP Standards][:psr:]
 
 ## Getting Support
 
-If you have a question about how to use Phalcon, please see the [support page][:support:].
+If you have a questions about how to use Phalcon, please see the [support page][:support:].
 
 ## Requesting Features
 
 If you have a change or new feature in mind, please fill an [NFR][:nfr:].
 
-Thanks! <br />
-Phalcon Team
+Thanks! 
+
+
+<3 Phalcon Team
 
 
 [:forums:]: https://forum.phalconphp.com/

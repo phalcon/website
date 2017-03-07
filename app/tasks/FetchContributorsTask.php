@@ -16,7 +16,6 @@ class FetchContributorsTask extends PhTask
      */
     public function mainAction()
     {
-        $outputFile = APP_PATH . '/storage/cache/data/contributors.json';
         $repositories = [
             'cphalcon'         => 4,
             'zephir'           => 4,
