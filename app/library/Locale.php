@@ -43,7 +43,7 @@ class Locale extends Component
              * This makes it easier to find text that has not been translated
              * yet
              */
-            $phrases = $this->getCachedLanguage('en');
+            $phrases = $this->getCachedLanguage($defaultLanguage);
 
             if ('en' !== $currentLanguage) {
                 $phrases = array_merge(
