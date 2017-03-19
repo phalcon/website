@@ -107,7 +107,7 @@
   "download_devtools_composer_2": "composer.json dosyasını aşağıda belirtildiği şekilde oluşturun:",
   "download_devtools_composer_3": "Composer yükleyicisini çalıştırın:",
   "download_devtools_composer_4": "Create a symbolic link to the phalcon.php script:",
-  "download_devtools_docs": "Documentation:  <a href=':1:'>Phalcon Developer Tools</a>",
+  "download_devtools_docs": "Dökümantasyon: <a href=':1:'>Phalcon Geliştirici Araçları</a>",
   "download_devtools_download": "You can download or clone a cross platform package containing the developer tools from <a href=':1:'>Github</a>.",
   "download_docker": "Docker",
   "download_docker_1": "There are many ways that you can use Phalcon with Docker.",
