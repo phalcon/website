@@ -2,66 +2,66 @@
   "latest": {
     "x86": {
       "70": {
-        "name": "Phalcon 3.0.4 - Windows x86 for PHP 7.0 (vc14)",
-        "date": "February 20 2017 15:24:13 EST",
-        "sha1": "cb3de111d27e080adab613fc6725561d1f33f1f2"
+        "name": "Phalcon 3.1.0 - Windows x86 for PHP 7.0 (vc14)",
+        "date": "March 22 2017 16:46:15 EST",
+        "sha1": "270b458e5904bb6d84d2dd0d917c046c98fe0e88"
       },
       "70-nts": {
-        "name": "Phalcon 3.0.4 - Windows x86 for PHP 7.0 NTS (vc14)",
-        "date": "February 20 2017 15:24:13 EST",
-        "sha1": "e8956fe884c52d285ebc7e93661d73d4fa0ed83f"
+        "name": "Phalcon 3.1.0 - Windows x86 for PHP 7.0 NTS (vc14)",
+        "date": "March 22 2017 16:46:15 EST",
+        "sha1": "c87f06e754fd0d28ea581a4a1d95f405ae7a9627"
       },
       "56": {
-        "name": "Phalcon 3.0.4 - Windows x86 for PHP 5.6 (vc11)",
-        "date": "February 20 2017 15:24:13 EST",
-        "sha1": "2db9d35710059203df18eff03c14ddfb8cdee466"
+        "name": "Phalcon 3.1.0 - Windows x86 for PHP 5.6 (vc11)",
+        "date": "March 22 2017 16:46:15 EST",
+        "sha1": "562ea0c1d8ef317e121c80db930d69eaaa6149cf"
       },
       "56-nts": {
-        "name": "Phalcon 3.0.4 - Windows x86 for PHP 5.6 NTS (vc11)",
-        "date": "February 20 2017 15:24:13 EST",
-        "sha1": "e53464c40f0db89242aa89e07e2e39456f4e8ca7"
+        "name": "Phalcon 3.1.0 - Windows x86 for PHP 5.6 NTS (vc11)",
+        "date": "March 22 2017 16:46:15 EST",
+        "sha1": "744a49baeaabac878e06736106f2a6bde559e603"
       },
       "55": {
-        "name": "Phalcon 3.0.4 - Windows x86 for PHP 5.5 (vc11)",
-        "date": "February 20 2017 15:24:13 EST",
-        "sha1": "80b7287632e175be0be8cf4eb7a1f81e66c864e6"
+        "name": "Phalcon 3.1.0 - Windows x86 for PHP 5.5 (vc11)",
+        "date": "March 22 2017 16:46:15 EST",
+        "sha1": "78dbf600f9d93af00bbf92d56e98cd17f9db5101"
       },
       "55-nts": {
-        "name": "Phalcon 3.0.4 - Windows x86 for PHP 5.5 NTS (vc11)",
-        "date": "February 20 2017 15:24:13 EST",
-        "sha1": "f373830efacea7ce01676577dd7c71c29ef21f77"
+        "name": "Phalcon 3.1.0 - Windows x86 for PHP 5.5 NTS (vc11)",
+        "date": "March 22 2017 16:46:15 EST",
+        "sha1": "00dc844955b500bf4fd99900054c74720d7f5eec"
       }
     },
     "x64": {
       "70": {
-        "name": "Phalcon 3.0.4 - Windows x64 for PHP 7.0 (vc14)",
-        "date": "February 20 2017 15:24:13 EST",
-        "sha1": "cd6e981f89f673c3b7b40a1925618d49e76c1e35"
+        "name": "Phalcon 3.1.0 - Windows x64 for PHP 7.0 (vc14)",
+        "date": "March 22 2017 16:46:15 EST",
+        "sha1": "f6c911cb85f6ca73980eab1cfde3c40e3c1f415d"
       },
       "70-nts": {
-        "name": "Phalcon 3.0.4 - Windows x64 for PHP 7.0 NTS (vc14)",
-        "date": "February 20 2017 15:24:13 EST",
-        "sha1": "c2d0697285f7cdd9b9d5a82be0d58268275de58f"
+        "name": "Phalcon 3.1.0 - Windows x64 for PHP 7.0 NTS (vc14)",
+        "date": "March 22 2017 16:46:15 EST",
+        "sha1": "1f7b7fd541d1f349def2895f37bb4fee5aaef580"
       },
       "56": {
-        "name": "Phalcon 3.0.4 - Windows x64 for PHP 5.6 (vc11)",
-        "date": "February 20 2017 15:24:13 EST",
-        "sha1": "fa276515b1f3c92c42369b77112ce9f1ca23475f"
+        "name": "Phalcon 3.1.0 - Windows x64 for PHP 5.6 (vc11)",
+        "date": "March 22 2017 16:46:15 EST",
+        "sha1": "d27e5bf6cb2fe7aa182862b5e410b3bf04c18e1d"
       },
       "56-nts": {
-        "name": "Phalcon 3.0.4 - Windows x64 for PHP 5.6 NTS (vc11)",
-        "date": "February 20 2017 15:24:13 EST",
-        "sha1": "309f3e458fe5862238b2a898988bc7b81b0eacf2"
+        "name": "Phalcon 3.1.0 - Windows x64 for PHP 5.6 NTS (vc11)",
+        "date": "March 22 2017 16:46:15 EST",
+        "sha1": "0928d98efa8e4bcae7065d8b85df8f924d6c4beb"
       },
       "55": {
-        "name": "Phalcon 3.0.4 - Windows x64 for PHP 5.5 (vc11)",
-        "date": "February 20 2017 15:24:13 EST",
-        "sha1": "27b366108cc4d256be3e054894807f46387139a6"
+        "name": "Phalcon 3.1.0 - Windows x64 for PHP 5.5 (vc11)",
+        "date": "March 22 2017 16:46:15 EST",
+        "sha1": "c235c5d38729e6ae412f51a139e749d48070fed5"
       },
       "55-nts": {
-        "name": "Phalcon 3.0.4 - Windows x64 for PHP 5.5 NTS (vc11)",
-        "date": "February 20 2017 15:24:13 EST",
-        "sha1": "e230119c63c88c4b250cdd73049f1e928713fce2"
+        "name": "Phalcon 3.1.0 - Windows x64 for PHP 5.5 NTS (vc11)",
+        "date": "March 22 2017 16:46:15 EST",
+        "sha1": "2d04291698e712a1e2b4ba14b7bdb98dba03a882"
       }
     }
   },
