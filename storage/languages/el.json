@@ -353,6 +353,8 @@
   "team_serghei_1": "Ο Serghei έχει εργαστεί ως προγραμματιστής Ruby/PHP για πάνω από 8 χρόνια και έχει ειδικευτεί στην ανάπτυξη εφαρμογών ιστού.. Είναι φανατικός υποστηρικτής και υπέρμαχος της Ανάπτυξης με Γνώμονα Συμπεριφοράς (BDD) και είναι μέλος της ομάδας <a href=':1:'>Codeception</a>.",
   "team_serghei_2": "Ο Serghei έχει πάθος με καινοτόμες τεχνολογίες, και έτσι βρήκε το Phalcon. Ο ρόλος του είναι να συντονίζει NFRs και bugs, τεστς, τα εργαλεία για προγραμματιστές (developer tools), incubator και υποστήρηξη για άλλες εφαρμογές που έχουν δημιουργηθεί με το Phalcon.",
   "team_serghei_3": "Όταν δεν εργάζεται, ο Serghei απολαμβάνει ντοκιμαντέρ, ταινίες επιστημονικής φαντασίας και παίζει μερικές φορές Mahjong ή Go.",
+  "team_volodymyr_1": "Volodymyr has been developing server and web applications for over 20 years. He has been involved in designing and writing very complex and high performance software applications. Volodymyr’s passion for writing fast, robust and optimized software introduced him to Phalcon and he joined the development team.",
+  "team_volodymyr_2": "In his free time Volodymyr enjoys the company of his beloved wife, contributes to open source projects, and studies foreign languages.",
   "template_engine_volt": "Μηχανή Προτύπων (Volt)",
   "template_engine_volt_1": "Το Volt είναι μια εξαιρετικά γρήγορη και φιλική για τους σχεδιαστές templating γλώσσα γραμμένο σε Zephir/C για PHP. Σας παρέχει ένα σύνολο των βοηθών να γράφετε απόψεις εύκολα. Το Volt είναι ενσωματωμένη με άλλα στοιχεία του Phalcon, και μπορείτε να το χρησιμοποιήσετε ως ένα αυτόνομο στοιχείο στις εφαρμογές σας.",
   "template_engine_volt_description": "Ενα πρότυπο κινητήρα απόψεων, εμπνευσμένο από τη Jinja αλλά χτισμένο σε C για το PHP",

@@ -353,6 +353,8 @@
   "team_serghei_1": "Сергей является Ruby/PHP разработчиком более 8 лет. Он специализируется на разработке web-приложений. Как ярый сторонник Behavior Driven Development (BDD), также он является членом команды <a href=':1:'>Codeception</a>.",
   "team_serghei_2": "Serghei can be found neck deep in innovative technologies which introduced him in Phalcon. He is responsible for the coordination of bug fixes, testing, developer tools, incubator and support other Phalcon-related projects.",
   "team_serghei_3": "When he's not working, Serghei enjoys watch documentaries, science fiction movies and sometimes plays Mahjong or Go.",
+  "team_volodymyr_1": "Volodymyr has been developing server and web applications for over 20 years. He has been involved in designing and writing very complex and high performance software applications. Volodymyr’s passion for writing fast, robust and optimized software introduced him to Phalcon and he joined the development team.",
+  "team_volodymyr_2": "In his free time Volodymyr enjoys the company of his beloved wife, contributes to open source projects, and studies foreign languages.",
   "template_engine_volt": "Шаблонизатор (Volt)",
   "template_engine_volt_1": "Volt является ультра-быстрым и дружелюбным языком шаблона, написанным на Zephir/C для PHP. Он предоставляет вам набор хелперов для написания представлений легким способом. Volt сильно интегрирован с другими компонентами Phalcon. Также вы можете использовать его в качестве самостоятельного компонента в вашем приложении.",
   "template_engine_volt_description": "A template engine inspired by Jinja but built in C for PHP",
