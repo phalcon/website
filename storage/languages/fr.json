@@ -353,6 +353,8 @@
   "team_serghei_1": "Serghei has been working as a Ruby/PHP developer for over 8 years and has been specializing in web application development. As a supporter and advocate of Behavior Driven Development (BDD) is also a member of the <a href=':1:'>Codeception</a> team.",
   "team_serghei_2": "Serghei can be found neck deep in innovative technologies which introduced him in Phalcon. He is responsible for the coordination of bug fixes, testing, developer tools, incubator and support other Phalcon-related projects.",
   "team_serghei_3": "When he's not working, Serghei enjoys watch documentaries, science fiction movies and sometimes plays Mahjong or Go.",
+  "team_volodymyr_1": "Volodymyr has been developing server and web applications for over 20 years. He has been involved in designing and writing very complex and high performance software applications. Volodymyr’s passion for writing fast, robust and optimized software introduced him to Phalcon and he joined the development team.",
+  "team_volodymyr_2": "In his free time Volodymyr enjoys the company of his beloved wife, contributes to open source projects, and studies foreign languages.",
   "template_engine_volt": "Moteur de rendu (Volt)",
   "template_engine_volt_1": "Volt is an ultra-fast and designer friendly templating language written in Zephir/C for PHP. It provides you a set of helpers to write views in an easy way. Volt is highly integrated with other components of Phalcon, just as you can use it as a stand-alone component in your applications.",
   "template_engine_volt_description": "A template engine inspired by Jinja but built in C for PHP",
