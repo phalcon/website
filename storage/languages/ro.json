@@ -163,6 +163,8 @@
   "download_vagrant_2": "Use any of the following boxes to test or develop with Phalcon on a pre-configured environment.",
   "download_vagrant_boxes": "Vagrant Boxes",
   "download_windows": "Fișiere DLL pentru Windows",
+  "download_windows_download": "Download",
+  "download_windows_dlls": "Windows DLLs can be downloaded from our Github release page <a href=':1:'>here</a>",
   "download_windows_guides": "Ghiduri similare",
   "download_windows_guides_wamp": "Instalare pe WAMP",
   "download_windows_guides_xampp": "Instalare pe XAMPP",
