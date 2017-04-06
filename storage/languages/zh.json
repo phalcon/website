@@ -163,6 +163,8 @@
   "download_vagrant_2": "用以下任何一个预先配置的Phalcon环境来测试或者开发。",
   "download_vagrant_boxes": "Vagrant Boxes",
   "download_windows": "Windows DLLs",
+  "download_windows_download": "Download",
+  "download_windows_dlls": "Windows DLLs can be downloaded from our Github release page <a href=':1:'>here</a>",
   "download_windows_guides": "相关指南",
   "download_windows_guides_wamp": "在WAMP下安装",
   "download_windows_guides_xampp": "在XAMPP下安装",

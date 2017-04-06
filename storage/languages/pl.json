@@ -163,6 +163,8 @@
   "download_vagrant_2": "Użyj jednego z następujących zestawów do testowania lub pracy z Phalconem na wstępnie skonfigurowanym środowisku.",
   "download_vagrant_boxes": "Vagrant zestawy",
   "download_windows": "Windows DLLs",
+  "download_windows_download": "Download",
+  "download_windows_dlls": "Windows DLLs can be downloaded from our Github release page <a href=':1:'>here</a>",
   "download_windows_guides": "Powiązane",
   "download_windows_guides_wamp": "Instalacja na WAMP",
   "download_windows_guides_xampp": "Instalacje na XAMPP",

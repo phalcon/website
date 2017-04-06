@@ -163,6 +163,8 @@
   "download_vagrant_2": "ใช้กล่อง เหล่านี้เพื่อใช้สำหรับทดสอบหรือพัฒนาเว็บไซด์ด้วย Phalcon ผ่านการตั้งค่าที่ได้จัดเตรียมไว้ให้",
   "download_vagrant_boxes": "กล่องเวแกรนต์",
   "download_windows": "Windows DLLs",
+  "download_windows_download": "Download",
+  "download_windows_dlls": "Windows DLLs can be downloaded from our Github release page <a href=':1:'>here</a>",
   "download_windows_guides": "การแนะนำที่เกี่ยวข้อง",
   "download_windows_guides_wamp": "ติดตั้งบน WAMP",
   "download_windows_guides_xampp": "ติดตั้งบน XAMPP",
