@@ -15,11 +15,11 @@
 
         <h3>{{ locale.translate('download_windows_download') }}</h3>
 
-        <p>{{ locale.translate('download_windows_dlls') }}</p>
+        <p>{{ locale.translate('download_windows_dlls', 'https://github.com/phalcon/cphalcon/releases/latest') }}</p>
 
         <br>
 
-        <h3>{{ locale.translate('download_windows_installation', 'https://github.com/phalcon/cphalcon/releases/latest') }}</h3>
+        <h3>{{ locale.translate('download_windows_installation') }}</h3>
 
         <p>{{ locale.translate('download_windows_installation', utils.getDocsUrl(language) ~ '/install.html#windows') }}</p>
         <pre class="language-ini"><code>extension=php_phalcon.dll</code></pre>
