@@ -27,7 +27,7 @@
             <div class="col-xs-4 col-sm-2">
                 <h4>{{ locale.translate('about') }}</h4>
                 <ul>
-                    <li><a class="link-black" href="{{ url(language ~ '/blog') }}">{{ locale.translate('blog') }}</a></li>
+                    <li><a class="link-black" href="https://phalcon.link/blog">{{ locale.translate('blog') }}</a></li>
                     <li><a class="link-black" href="{{ url(language ~ '/about') }}">{{ locale.translate('about') }}</a></li>
                     <li><a class="link-black" href="{{ url(language ~ '/team') }}">{{ locale.translate('team') }}</a></li>
                     <li><a class="link-black" href="{{ url(language ~ '/roadmap') }}">{{ locale.translate('roadmap') }}</a></li>
