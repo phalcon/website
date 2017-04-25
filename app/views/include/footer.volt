@@ -30,7 +30,7 @@
                     <li><a class="link-black" href="{{ url(language ~ '/blog') }}">{{ locale.translate('blog') }}</a></li>
                     <li><a class="link-black" href="{{ url(language ~ '/about') }}">{{ locale.translate('about') }}</a></li>
                     <li><a class="link-black" href="{{ url(language ~ '/team') }}">{{ locale.translate('team') }}</a></li>
-                    <li><a class="link-black" href="https://phalcon.link/roadmap">{{ locale.translate('roadmap') }}</a></li>
+                    <li><a class="link-black" href="{{ url(language ~ '/roadmap') }}">{{ locale.translate('roadmap') }}</a></li>
                     <li><a class="link-black" href="https://phalcon.link/donate">{{ locale.translate('donate') }}</a></li>
                     <li><a class="link-black" href="{{ url(language ~ '/consulting') }}">{{ locale.translate('consulting') }}</a></li>
                     <li><a class="link-black" href="{{ url(language ~ '/hosting') }}">{{ locale.translate('hosting') }}</a></li>
