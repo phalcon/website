@@ -61,6 +61,11 @@
                     {{ locale.translate('gab') }}
                 </a>
             </li>
+            <li>
+                <a href="https://phalcon.link/slack" target="_blank">
+                    {{ locale.translate('slack') }}
+                </a>
+            </li>
         </ul>
     </li>
     <li>
