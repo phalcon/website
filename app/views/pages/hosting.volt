@@ -134,6 +134,22 @@
                 <p>{{ locale.translate('hosting_install_instructions') }}</p>
             </div>
         </div>
+        <!-- Mediasecure -->
+        <div class="row">
+            <div class="col-lg-3">
+                <img src='{{ utils.getCdnUrl('images/hosting/mediasecure-gray.png') }}'
+                     title='{{ locale.translate('hosting_mediasecure_title') }}'
+                     alt='{{ locale.translate('hosting_mediasecure_title') }}' style='margin-top: 13px' />
+            </div>
+            <div class="col-lg-9">
+                <h4>
+                    <a target="_blank" href='https://www.mediasecure.org/'>
+                        {{ locale.translate('hosting_mediasecure_title') }}
+                    </a>
+                </h4>
+                <p>{{ locale.translate('hosting_mediasecure_1', 'https://www.mediasecure.org/') }}</p>
+            </div>
+        </div>
         <!-- Rackspace -->
         <div class="row">
             <div class="col-lg-3">
