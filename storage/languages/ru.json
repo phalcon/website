@@ -80,6 +80,7 @@
   "dependency_injection_3": "Register classes, functions, components",
   "dependency_injection_4": "Use anywhere else in code",
   "dependency_injection_description": "Внедрение зависимостей, локатор сервисов и контейнер для них.",
+  "discord": "Discord",
   "docs": "Документация",
   "documentation": "Документация",
   "donate": "Поддержать проект",

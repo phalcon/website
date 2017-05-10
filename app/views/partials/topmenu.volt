@@ -62,8 +62,8 @@
                 </a>
             </li>
             <li>
-                <a href="https://phalcon.link/slack" target="_blank">
-                    {{ locale.translate('slack') }}
+                <a href="https://phalcon.link/discord" target="_blank">
+                    {{ locale.translate('discord') }}
                 </a>
             </li>
         </ul>

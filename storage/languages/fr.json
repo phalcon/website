@@ -80,6 +80,7 @@
   "dependency_injection_3": "Enregistrez des classes, fonctions, composants",
   "dependency_injection_4": "Utilisez les partout ailleurs dans votre code",
   "dependency_injection_description": "l'Injection de Dépendances et la Localisation de Service sont eux-même un conteneur.",
+  "discord": "Discord",
   "docs": "Docs",
   "documentation": "Documentation",
   "donate": "Faire un don",
