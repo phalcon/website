@@ -80,6 +80,7 @@
   "dependency_injection_3": "Register classes, functions, components",
   "dependency_injection_4": "Use anywhere else in code",
   "dependency_injection_description": "Dependency Injection and Location of services and it's itself a container for them.",
+  "discord": "Discord",
   "docs": "Docs",
   "documentation": "เอกสารการใช้งาน",
   "donate": "ร่วมสนับสนุน",
