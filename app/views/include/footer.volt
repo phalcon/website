@@ -22,7 +22,7 @@
                     <li><a href="{{ url(language ~ '/testimonials') }}">{{ locale.translate('testimonials') }}</a></li>
                     <li><a href="https://phalcon.link/builtwith">{{ locale.translate('built_with_phalcon') }}</a></li>
                     <li><a href="https://phalcon.link/store">{{ locale.translate('store') }}</a></li>
-                    <li><a href="https://phalcon.link/slack">{{ locale.translate('slack') }}</a></li>
+                    <li><a href="https://phalcon.link/discord">{{ locale.translate('discord') }}</a></li>
                 </ul>
             </div>
             <div class="col-xs-4 col-sm-2">
