@@ -40,12 +40,12 @@
             </div>
             <div class="col-lg-9">
                 <h4>
-                    <a target="_blank" href='https://aspnix.com/'>
+                    <a target="_blank" href='https://www.aspnix.com/'>
                         {{ locale.translate('hosting_aspnix_title') }}
                     </a>
                 </h4>
-                <p>{{ locale.translate('hosting_aspnix_1', 'https://aspnix.com/') }}</p>
-                <p>{{ locale.translate('hosting_aspnix_2', 'https://aspnix.com/kb/sales-kb/what-php-extensions-are-supported-on-windows-shared-hosting/') }}</p>
+                <p>{{ locale.translate('hosting_aspnix_1', 'https://www.aspnix.com/') }}</p>
+                <p>{{ locale.translate('hosting_aspnix_2', 'https://www.aspnix.com/kb/sales-kb/what-php-extensions-are-supported-on-windows-shared-hosting/') }}</p>
             </div>
         </div>
         <!-- Digital Ocean -->
