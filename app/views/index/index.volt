@@ -133,7 +133,7 @@
                     <img src="{{ utils.getCdnUrl('images/backers/pdffiller-240x60.png') }}">
                 </a>
 
-                <a href="https://mctekk.com/">
+                <a href="https://mctekk.com/phalcon">
                     <img src="{{ utils.getCdnUrl('images/backers/mctekk-240x60.png') }}">
                 </a>
 

@@ -57,12 +57,6 @@ class EnvironmentMiddleware implements MiddlewareInterface
             case '':
                 $application->registry->contributors = $this->getContributors();
                 break;
-            /**
-             * Releases are needed in 'windows'
-             */
-            case 'windows':
-                $application->registry->releases = $this->getReleases();
-                break;
         }
 
         return true;

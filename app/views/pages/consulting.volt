@@ -27,7 +27,7 @@
             <div class="col-lg-10">
                 <p>{{ locale.translate('consulting_mctekk_1') }}</p>
                 <p>{{ locale.translate('consulting_mctekk_2') }}</p>
-                <p>{{ locale.translate('consulting_mctekk_3', 'http://www.mctekk.com') }}</p>
+                <p>{{ locale.translate('consulting_mctekk_3', 'https://mctekk.com/phalcon') }}</p>
             </div>
         </div>
 
