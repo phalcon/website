@@ -22,7 +22,7 @@
         <div class="row" id="sponsors-page">
             <div class="col-lg-12">
                 <h3>{{ locale.translate('sponsors_and_supporters_upper') }}</h3>
-                <a href="https://pdffiller.com/" target="_blank">
+                <a href="https://www.pdffiller.com/" target="_blank">
                     <img width="240px"
                          src="https://raw.githubusercontent.com/phalcon/cphalcon/master/backers/pdffiller-240x60.png">
                 </a>

@@ -129,7 +129,7 @@
                     {{ locale.translate('sponsored_by') }}
                 </h4>
 
-                <a href="https://pdffiller.com/">
+                <a href="https://www.pdffiller.com/">
                     <img src="{{ utils.getCdnUrl('images/backers/pdffiller-240x60.png') }}">
                 </a>
 
