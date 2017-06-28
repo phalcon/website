@@ -17,12 +17,20 @@
         <div class="row">
             <div class="col-lg-6">
                 <h3>{{ locale.translate('about_documentation') }}</h3>
-                <p>{{ locale.translate('about_documentation_1', 'https://github.com/phalcon/docs', 'https://crowdin.com', 'Crowdin', 'https://crowdin.com/project/phalcon-documentation') }}</p>
+                <p>
+                    {{ locale.translate('about_documentation_1', 'https://github.com/phalcon/docs', 'https://crowdin.com', 'Crowdin', 'https://crowdin.com/project/phalcon-documentation') }}
+                </p>
             </div>
 
             <div class="col-lg-6">
                 <h3>{{ locale.translate('about_translations') }}</h3>
-                <p>{{ locale.translate('about_translations_1', 'https://crowdin.com', 'Crowdin', 'https://crowdin.com/project/phalcon-website') }}</p>
+                <p>{{ locale.translate('about_translations_1', 'https://crowdin.com', 'Crowdin', 'https://crowdin.com/project/phalcon-website') }}
+                    <br />
+                    <br />
+                    <a href="https://crowdin.com/project/phalcon-website">
+                        <img src="/images/crowdin-logo.png" alt="Crowdin" style="width: 400px;">
+                    </a>
+                </p>
             </div>
         </div>
 
