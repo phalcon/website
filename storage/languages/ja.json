@@ -31,7 +31,7 @@
   "about_thank_you":"THANK YOU!",
   "about_thank_you_1":"私たちは Phalcon のような最高のフレームワークを作るために私達を後押してくれる貢献者やコミュニティのすべてのメンバーに感謝したいと思います。あなたの優しい言葉と関わりは、私たちはより良い進行を実行するものです。私たちは、あなたの Phalcon への信頼に応え、さらにはそれを超えたいと考えています。",
   "about_translations":"TRANSLATIONS",
-  "about_translations_1":"私たちは、言語の壁を取り除きできるだけ多くの開発者に届くように努めています。 このサイトのために翻訳される必要のあるすべての単語、文章を扱うために <a href=':1:'>:2:</a> を使っています。このプロジェクトのリポジトリは <a href=':3:'>here</a> にあり、この下に私たちの翻訳の努力の現状を見ることができます。",
+  "about_translations_1":"We are trying to reach as many developers as possible, breaking down the language barriers. We are using <a href=':1:'>:2:</a>, to handle all the words or sentences that need to be translated for this site. The project repository is located <a href=':3:'>here</a>.",
   "acl":"ACL",
   "acl_1":"アクセス制御リスト(ACL)を作成する方法は次のとおりです。:",
   "acl_2":"ACLオブジェクトを作る",

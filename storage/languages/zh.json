@@ -31,7 +31,7 @@
   "about_thank_you":"非常感谢！",
   "about_thank_you_1":"我们感谢所有推动Phalcon成为最佳框架的贡献者和社区成员。您的评论和参与是我们做得更好的动力。我们希望，Phalcon能够满足并超越你们对它的信任。",
   "about_translations":"翻译",
-  "about_translations_1":"我们正尽可能地打破语言障碍，让更多的开发人员接触到我们。 我们正在使用<a href=':1:'>:2:</a>来管理此网站所有需要翻译的词语和句子。 项目仓库在<a href=':3:'>这里</a>，您可以通过下图查看我们当前的翻译进度。",
+  "about_translations_1":"We are trying to reach as many developers as possible, breaking down the language barriers. We are using <a href=':1:'>:2:</a>, to handle all the words or sentences that need to be translated for this site. The project repository is located <a href=':3:'>here</a>.",
   "acl":"ACL",
   "acl_1":"This is how you can built the access control list (ACL):",
   "acl_2":"Create the ACL",
