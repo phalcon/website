@@ -5,7 +5,7 @@
   "about_description_1":"素晴らしいプロジェクトは素晴らしい技量を必要とします。あなたはまだ知らないかもしれないが、より良いWebを作成するのにとても合っていると思います。一緒になって、世界を変える準備をしましょう！Phalconがあります。みなさんに、簡単で楽しい方法で、開発を支援しながら、素晴らしいパフォーマンスを与える、新世代のPHPフレームワークを作っています。",
   "about_description_2":"私達はあなたが私達と同様にPhalconを楽しむことを望んでいます。私達はあなたの協力と援助をいつでも歓迎します！ <strong>あなたがPhalconを援助するためにC言語の開発者である必要はありません！</strong> あなたが貢献できる他の多くの分野があります。",
   "about_documentation":"DOCUMENTATION",
-  "about_documentation_1":"このウェブサイトのリポジトリは <a href=':1:'>github</a> にあり、利用できます。また、 <a href=':2:'>readthedocs</a> をドキュメント管理の為に使用しています。<br /><br />ドキュメントの修正や追加、補足は、いつでも歓迎します。何よりもまず、リポジトリをクローンしてプルリクエストを下さい!!<br /><br />もしコンテンツを英語以外の別言語に翻訳して頂けたら、英語圏でない開発者の方を助力になり、とても素晴らしいです!!",
+  "about_documentation_1":"The repository of this website is available on <a href=':1:'>github</a>. We are using that repository as a source for our documentation for the English language only!.<br /><br />We always appreciate corrections, additions and enhancements in our documentation, so all you have to do is clone the repository and issue a pull request!<br /><br />If you can help non English speaking developers by translating some of the content to another language, that would be great! We are using <a href=':2:'>:3:</a> for our translations, and you can find our project <a href=':4:'>here</a>",
   "about_donations_sponsoring":"DONATIONS / SPONSORING",
   "about_evangelism":"EVANGELISM",
   "about_evangelism_1":"Phalconが存在し、実際に動作することを知らない人がまだたくさんいます。多くの開発者は、Phalconが何であり、どのように助けてくれるのかを聞くことで恩恵を受けるのは確実です。PHPのイベントやミーティングがあることを知ってて、プロジェクトについて講演をしたいなら、私たちはそれをフルサポートします。PHPの開発に革命を起こすツールについて誰もが知りたいとは思いませんか？",
