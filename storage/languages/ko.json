@@ -31,7 +31,7 @@
   "about_thank_you":"THANK YOU!",
   "about_thank_you_1":"우리는 Phalcon 같은 최고의 프레임 워크를 만들기 위해 우리를 나아가게 해주는 참여자와 커뮤니티의 모든 구성원에 감사하고 싶습니다. 당신의 좋은 말과 관계는 우리가 더 좋은 진행을 하게 할 것입니다. 우리는 당신의 Phalcon 에 대한 신뢰에 부응하고 심지어 그것을 능가하고 싶다고 생각하고 있습니다.",
   "about_translations":"TRANSLATIONS",
-  "about_translations_1":"We are trying to reach as many developers as possible, breaking down the language barriers. We are using <a href=':1:'>:2:</a>, to handle all the words or sentences that need to be translated for this site. The project repository is located <a href=':3:'>here</a> and below you can see the current status of our translation effort.",
+  "about_translations_1":"We are trying to reach as many developers as possible, breaking down the language barriers. We are using <a href=':1:'>:2:</a>, to handle all the words or sentences that need to be translated for this site. The project repository is located <a href=':3:'>here</a>.",
   "acl":"ACL",
   "acl_1":"This is how you can built the access control list (ACL):",
   "acl_2":"Create the ACL",
