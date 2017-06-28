@@ -17,16 +17,12 @@
         <div class="row">
             <div class="col-lg-6">
                 <h3>{{ locale.translate('about_documentation') }}</h3>
-                <p>{{ locale.translate('about_documentation_1', 'https://github.com/phalcon/docs', 'https://readthedocs.org') }}</p>
+                <p>{{ locale.translate('about_documentation_1', 'https://github.com/phalcon/docs', 'https://crowdin.com', 'Crowdin', 'https://crowdin.com/project/phalcon-documentation') }}</p>
             </div>
 
             <div class="col-lg-6">
                 <h3>{{ locale.translate('about_translations') }}</h3>
-                <p>{{ locale.translate('about_translations_1', 'http://www.transifex.com', 'Transifex', 'https://www.transifex.com/projects/p/phalcon') }}</p>
-                <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-                <script type="text/javascript"
-                        src="https://www.transifex.com/_/charts/js/phalcon/phalcon/inc_js/phalcon-website/"></script>
-                <div id="txchart-phalcon-website">Loading chart...</div>
+                <p>{{ locale.translate('about_translations_1', 'https://crowdin.com', 'Crowdin', 'https://crowdin.com/project/phalcon-website') }}</p>
             </div>
         </div>
 
