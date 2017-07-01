@@ -361,7 +361,7 @@
   "team_volodymyr_1":"Volodymyr ha desarrollado aplicaciones de servidores y web por más de 20 años. Ha participado en el diseño y escritura de aplicaciones de software muy complejas y de alto rendimiento. La pasión de Volodimir para escribir software robusto, rápido y optimizado le llevó a involucrarse con Phalcon y se unió al equipo de desarrollo.",
   "team_volodymyr_2":"En su tiempo libre que Volodymyr disfruta la compañía de su amada esposa, contribuye con proyectos open source y estudia idiomas extranjeros.",
   "template_engine_volt":"Motor de plantillas (Volt)",
-  "template_engine_volt_1":"Volt is an ultra-fast and designer friendly templating language written in Zephir/C for PHP. It provides you a set of helpers to write views in an easy way. Volt is highly integrated with other components of Phalcon, just as you can use it as a stand-alone component in your applications.",
+  "template_engine_volt_1":"Volt es un lenguaje de plantillas para PHP ultra rápido y amigable para el diseñador, está escrito en Zephir/C. Le proporciona un conjunto de ayudantes para escribir vistas de una manera fácil. Volt están altamente integrada con otros componentes de Phalcon, y puede ser utilizado como componente independiente en sus aplicaciones.",
   "template_engine_volt_description":"Un motor de templates inspirado en Jinja pero construido en C para PHP",
   "template_engines":"Motores de Plantillas",
   "template_engines_1":"Views represent the user interface of your application. Views are often HTML files with embedded PHP code that perform tasks related solely to the presentation of the data. Views handle the job of providing data to the web browser or other tool that is used to make requests from your application.",
