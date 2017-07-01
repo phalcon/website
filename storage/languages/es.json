@@ -294,7 +294,7 @@
   "rest":"Rest",
   "rest_description":"En este caso, puede utilizar una micro aplicación o una aplicación full stack para cumplir su objetivo. Además, un potente conjunto de ayudantes HTTP.",
   "restful_services":"Servicios RESTful",
-  "restful_services_1":"Escribir servidores REST y aplicaciones nunca ha sito tan fácil. Sin complicaciones. Los servicios simples caben en un solo archivo.",
+  "restful_services_1":"Escribir servidores y aplicaciones REST (Representational State Transfer) nunca ha sito tan fácil. Sin complicaciones. Los servicios simples caben en un solo archivo.",
   "restful_services_2":"Devolver datos en JSON",
   "roadmap":"Planificación",
   "router":"Router",
