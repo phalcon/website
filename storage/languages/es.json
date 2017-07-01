@@ -179,7 +179,7 @@
   "encryption_2":"Esta es una clave secreta (32 bytes).",
   "encryption_3":"Este es el texto que desea cifrar.",
   "events":"Eventos",
-  "events_description":"Extend the most of the framework components by setting 'hook points'. Create your own events and make your application more flexible and powerful",
+  "events_description":"Puedes ampliar la mayoría de los componentes del framework mediante la creación de 'puntos del anclaje'. Esto permite crear sus propios eventos para hacer su aplicación más flexible y potente",
   "events_management":"Gestión de Eventos",
   "events_management_1":"An EventsManager allows us to attach listeners to a particular type of event. The type that interests us now is 'dispatch'. The following code filters all events produced by the Dispatcher:",
   "events_management_2":"Crear un nuevo gestor de eventos",
