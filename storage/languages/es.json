@@ -41,7 +41,7 @@
   "acl_description":"Lista de control de acceso (ACL) permite a los usuarios acceder a los módulos que están autorizados a",
   "api":"API",
   "auto_loader":"Cargador automático",
-  "auto_loader_1":"Registro de namespaces, prefijos, directorios o clases. Aprovechar los eventos de auto cargador y mantener el control total sobre qué archivos se cargan y desde donde.",
+  "auto_loader_1":"Registre namespaces, prefijos, directorios o clases. Aproveche las ventajas del los eventos del auto cargador y mantenga el control total sobre qué archivos se cargan y desde donde.",
   "auto_loader_2":"Crea el auto cargador",
   "auto_loader_3":"Registrar algunos namespaces",
   "auto_loader_4":"Registrar autoloader",
