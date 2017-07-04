@@ -109,7 +109,7 @@
   "download_devtools_composer_3":"Führe den Composer-Installer aus:",
   "download_devtools_composer_4":"Erstelle eine Verknüpfung zum phalcon.php-Skript:",
   "download_devtools_docs":"Dokumentation: <a href=':1:'>Phalcon Entwicklerwerkzeuge</a>",
-  "download_devtools_download":"Sie können ein Cross-Plattform-Paket mit den Entwicklertools von <a href=':1:'> Github</a> herunterladen oder Klonen.",
+  "download_devtools_download":"Du kannst ein Cross-Plattform-Paket mit den Entwicklertools von <a href=':1:'> Github</a> herunterladen oder Klonen.",
   "download_docker":"Docker",
   "download_docker_1":"Es gibt viele Arten auf die Phalcon mit Docker genutzt werden kann.",
   "download_docker_2":"Unsere offiziellen Images befinden sich <a href=':1:'> hier</a>. Pull-Requests und Verbesserungen sind immer willkommen. Hier befindet sich das Repository für die Docker-Dateien:",
