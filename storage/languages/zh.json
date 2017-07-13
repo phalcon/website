@@ -100,7 +100,7 @@
   "download_cpanel_1":"后社会的要求，cPanel 开发人员发布允许安装Phalcon 在 cPanel 主办网站的自定义模块。可以找到的信息 <a href=':1:'> 在这里</a>。该模块是在 <a href=':2:'> Github</a> 中维护的。",
   "download_dependencies":"依赖",
   "download_dependencies_1":"尽管Phalcon并不直接依赖其他PHP扩展，但还是使用了一部分扩展用于提供某些功能。所使用的扩展如下:",
-  "download_dependencies_2":"不是所有上述的扩展要有Phalcon安装的系统中存在的必要条件。你只能安装满足您的需要的那些。举例来说，如果你使用一个 MySQL 数据库，那么你只能加载 PDO 和 PDO 和 MySQL 忽略了 Oracle，SQlite，Postgresql 和Mongo。",
+  "download_dependencies_2":"Phalcon的安装环境并不要求以上所有扩展全部存在，你可以只安装需要的那些。举例来说，如果你使用的数据库是MySQL，那么只安装 PDO 和 PDO/MySQL 即可， 其他扩展如 Oracle，SQlite,，Postgresql 和 Mongo 则可以忽略。",
   "download_developer_tools":"开发工具",
   "download_devtools_1":"这些工具是一些有用的脚本，用于生成结构性的代码。 您应用的核心代码只需要用一句简单的命令即可生成， 让您更加方便地使用Phalcon去开发应用。",
   "download_devtools_composer":"使用Composer安装",
