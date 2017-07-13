@@ -117,7 +117,7 @@
   "download_docker_4":"und",
   "download_docker_5":"Dienste",
   "download_docker_6":"Phalcon Compose stellt standardmäßig die folgenden Dienste bereit:",
-  "download_docker_7":"Phalcon Compose ist einfach zu benutzten. Angenommen Sie müssen eine App erstellen, welche an folgendem Ort liegt:",
+  "download_docker_7":"Phalcon Compose ist einfach zu benutzen. Angenommen Sie müssen eine App erstellen, welche an folgendem Ort liegt: ",
   "download_docker_8":"Wir müssen nun den folgende Befehl ausführen, um unsere Container-Anwendung zu erstellen:",
   "download_docker_9":"Der obige Befehl wird das Skelett der Docker Umgebung herunterladen.",
   "download_docker_10":"Variablen",
