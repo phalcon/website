@@ -98,7 +98,7 @@ class FetchContributorsTask extends PhTask
             $avatar = $contributors[$login]['avatar'] . '&s=90';
             $image = file_get_contents($avatar);
             file_put_contents(
-                APP_PATH . '/public/images/backers/' . $login . '.jpg',
+                APP_PATH . '/public/images/contributors/' . $login . '.jpg',
                 $image
             );
         }
