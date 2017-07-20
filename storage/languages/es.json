@@ -29,7 +29,7 @@
   "about_tests":"PRUEBAS (TESTS)",
   "about_tests_1":"No hay software que esté libre de bugs. Si encuentras uno, por favor no dudes en contarnos. Nuestra suite de test unitarios contiene más de <a href=':1:'>16.000</a> tests. Sin embargo, los test unitarios nunca sobran. Ayúdanos a mejorar la suite de tests agregando más o mejorando los existentes. Cada test hace que el framework sea más estable.",
   "about_thank_you":"GRACIAS!",
-  "about_thank_you_1":"Queremos dar gracias a todos los colaboradores y miembros de la comunidad por ser nuestro empuje para crear el mejor framework de su clase. Sus amables palabras y confianza es lo que nos motiva a ser mejores. Esperamos alcanzar y superar las expectativas y confianza que ponen en Phalcon.",
+  "about_thank_you_1":"Queremos dar las gracias a a todos los colaboradores y miembros de la comunidad por ser ayudarnos crear el mejor framework de su clase. Su compromiso y sus palabras de ánimo es lo que nos motiva a ser mejores. Esperamos alcanzar y superar las expectativas y confianza que ponen en Phalcon.",
   "about_translations":"TRADUCCIONES",
   "about_translations_1":"Estamos tratando de llegar a tantos desarrolladores como sea posible, rompiendo las barreras del idioma. Estamos usando <a href=':1:'>:2:</a>, para administrar todas las palabras o frases que deben ser traducidas en este sitio. El repositorio del proyecto está ubicado <a href=':3:'>aquí</a> y a continuación puedes ver el estado actual de los esfuerzos de traducción.",
   "acl":"ACL",
