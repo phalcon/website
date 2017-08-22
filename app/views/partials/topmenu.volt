@@ -6,7 +6,7 @@
         </a>
     </li>
     <li>
-        <a href="https://phalcon.link/docs" class="header-nav-link" target="_blank">
+        <a href="https://phalcon.link/docs/{{language}}" class="header-nav-link" target="_blank">
             {{ locale.translate('docs') }}
         </a>
     </li>
