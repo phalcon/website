@@ -1,10 +1,10 @@
 {
   "about":"관하여",
   "about_blog":"블로그",
-  "about_blog_1":"If you like writing, remember that <a href=':1:'>our blog</a> is open to post tutorials created by you. If you have a blog of your own and have written something about Phalcon, we can also publish in our social network pages so as to achieve maximum visibility. If your blog post is in a language other than English, we want to share it and potentially translate it if possible. If you know about blogs related to PHP that are interested in presenting the project to its audience please let us know.",
+  "about_blog_1":"글쓰는걸 좋아한다면 <a href=':1:'>우리의 블로그</a>에 튜토리얼을 써주세요. 만약 당신의 블로그에 팔콘에 대한 글이 있다면 우리가 SNS 페이지에 공유하여 많은 사람이 보게 만들수 있습니다. 블로그 글이 영어가 아니라도 우리는 가능하다면 번역해서 공유하고자 합니다. 팔콘에 관련된 글이 있는 PHP관련 블로그를 알고 있다면 우리에게 알려주세요.",
   "about_description_1":"놀라운 프로젝트는 놀라운 사람이 필요합니다. 우리는 아직 당신을 알고 있지 않을 수 있습니다. ​​하지만 우리는 당신이 더 나은 웹을 구축하기 위한 중대한 적임자가 될 것이라고 생각합니다. 우리는 함께 세상을 바꿀 준비가 되있습니다! 여기 팔콘에서 우리는 PHP를 위한 새로운 세대의 프레임 워크를 구축하고, 당신은 쉽고 재미있는 방식으로 개발할 수 있도록 하는 동안 우리는 당신에게 놀라운 성능을 제공합니다.",
-  "about_description_2":"We hope that you enjoy Phalcon as much as we do. We always welcome your collaboration and help! <strong>You don't have to be a C developer to help Phalcon!</strong> There are many other areas that you can contribute:",
-  "about_documentation":"DOCUMENTATION",
+  "about_description_2":"우리가 팔콘을 즐기는 만큼 당신도 즐기길 바랍니다. 우리는 항상 당신의 협력과 도움에 열려있습니다! <strong>팔콘을 돕기 위해 C언어 개발자일 필요는 없습니다!</strong> 기여할 수 있는 많은 다른 방법이 있습니다:",
+  "about_documentation":"문서",
   "about_documentation_1":"The repository of this website is available on <a href=':1:'>github</a>. We are using that repository as a source for our documentation for the English language only!.<br /><br />We always appreciate corrections, additions and enhancements in our documentation, so all you have to do is clone the repository and issue a pull request!<br /><br />If you can help non English speaking developers by translating some of the content to another language, that would be great! We are using <a href=':2:'>:3:</a> for our translations, and you can find our project <a href=':4:'>here</a>",
   "about_donations_sponsoring":"DONATIONS / SPONSORING",
   "about_evangelism":"EVANGELISM",
