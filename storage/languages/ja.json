@@ -1,10 +1,10 @@
 {
   "about":"私たちについて",
-  "about_blog":"BLOG",
+  "about_blog":"ブログ",
   "about_blog_1":"もし書くことが好きならば、<a href=':1:'>私たちのブログ</a>が、あなたによってチュートリアルを作成することにオープンなこと思い出してください。自分でブログを持っていて、Phalconについて何かを書いているなら、私たちのソーシャルネットワークのページで最大限見られるように公開することができます。あなたのブログ記事が英語以外の場合、それを共有し、可能な限り翻訳します。PHPに関連するブログが、そのプロジェクトを顧客に提供することに興味があれば、私たちに教えてください。",
   "about_description_1":"素晴らしいプロジェクトは素晴らしい技量を必要とします。あなたはまだ知らないかもしれないが、より良いWebを作成するのにとても合っていると思います。一緒になって、世界を変える準備をしましょう！Phalconがあります。みなさんに、簡単で楽しい方法で、開発を支援しながら、素晴らしいパフォーマンスを与える、新世代のPHPフレームワークを作っています。",
   "about_description_2":"私達はあなたが私達と同様にPhalconを楽しむことを望んでいます。私達はあなたの協力と援助をいつでも歓迎します！ <strong>あなたがPhalconを援助するためにC言語の開発者である必要はありません！</strong> あなたが貢献できる他の多くの分野があります。",
-  "about_documentation":"DOCUMENTATION",
+  "about_documentation":"ドキュメント",
   "about_documentation_1":"The repository of this website is available on <a href=':1:'>github</a>. We are using that repository as a source for our documentation for the English language only!.<br /><br />We always appreciate corrections, additions and enhancements in our documentation, so all you have to do is clone the repository and issue a pull request!<br /><br />If you can help non English speaking developers by translating some of the content to another language, that would be great! We are using <a href=':2:'>:3:</a> for our translations, and you can find our project <a href=':4:'>here</a>",
   "about_donations_sponsoring":"DONATIONS / SPONSORING",
   "about_evangelism":"EVANGELISM",
