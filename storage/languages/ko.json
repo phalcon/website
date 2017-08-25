@@ -164,7 +164,7 @@
   "download_vagrant_2":"박스들은 팔콘이 미리 설정된 상태로 테스트하거나 개발하는데 사용할수 있습니다",
   "download_vagrant_boxes":"Vagrant 박스들",
   "download_windows":"윈도우 DLLs",
-  "download_windows_download":"Download",
+  "download_windows_download":"다운로드",
   "download_windows_dlls":"Windows DLLs can be downloaded from our Github release page <a href=':1:'>here</a>",
   "download_windows_guides":"관련 가이드문서",
   "download_windows_guides_wamp":"WAMP 에 설치하기",
