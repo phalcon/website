@@ -266,7 +266,7 @@
   "low_overhead_title":"PHP C-확장 (팔콘)",
   "more":"더보기...",
   "mvc":"MVC",
-  "mvc_1":"Build single and multi-module applications with ease and pleasure. Using the file structure, scheme and patterns you already know.",
+  "mvc_1":"쉽고 즐겁게 싱글 & 멀티모듈 어플리케이션을 만드세요. 파일 계층 구조를 사용하여 스키마와 패턴을 작성하세요.",
   "mvc_hmvc":"MVC & HMVC",
   "mvc_hmvc_description":"Modules, components, models, views and controllers",
   "odm_for_mongo":"ODM for Mongo",
