@@ -256,7 +256,7 @@
   "join_our_community_description":"확장, 플러그인, 어댑터, VM, 예제, 소스코드 등에 대한 커뮤니티의 기여",
   "language_text":"영어",
   "learn":"학습",
-  "license_new_bsd":"팔콘은 C-extension으로 만들어진<br /> 오픈소스 PHP 프레임워크입니다. <br /><a href='http: //opensource.org/licenses/BSD-3-Clause' target='_blank'>new BSD 라이센스</a> 하에 공개되어 있습니다.",
+  "license_new_bsd":"팔콘은 C-extension으로 만들어진<br /> 오픈소스 PHP 프레임워크입니다. <br /><a href='http://opensource.org/licenses/BSD-3-Clause' target='_blank'>new BSD 라이센스</a> 하에 공개되어 있습니다.",
   "low_overhead":"낮은 오버헤드",
   "low_overhead_1":"Zephir/C 확장은 웹서버의 데몬 시작 과정에서 PHP와 함께 단 한번 로드 됩니다.",
   "low_overhead_2":"확장모듈으로 제공되는 클래스와 함수는 어떤 어플리케이션에서나 사용가능합니다.",
