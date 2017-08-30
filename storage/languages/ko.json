@@ -147,7 +147,7 @@
   "download_need_help":"도움이 필요하세요?",
   "download_need_help_1":"지원 받을 방법을 알아보고 싶다면 우리의 <a href=':1:'>지원 페이지</a>를 확인하세요.",
   "download_note":"Phalcon 은 C 언어의 확장이며, 당신의 플랫폼에 대한 바이너리를 다운로드하거나 소스 코드에서 컴파일해야합니다.",
-  "download_opensuse":"OpenSUSE",
+  "download_opensuse":"오픈수세",
   "download_opensuse_1":"사용가능한 패키지가 <a href=':1:'>여기</a>에 있습니다(<a href=':2:'>Mariusz Łączak</a>에게 감사드립니다)",
   "download_requirements":"요구 사항",
   "download_requirements_1":"사전에 설치해야하는 패키지들:",
