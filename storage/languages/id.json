@@ -256,7 +256,7 @@
   "join_our_community_description":"kontribusi komunitas dalam Extensions, Plugins, Adapter, VM, contoh, kode sumber ... dan lainnya",
   "language_text":"Bahasa Inggris",
   "learn":"Learn",
-  "license_new_bsd":"Phalcon merupakan Framework PHP  open-source<br /> dibangun sebagai ekstensi-C. Yang berada di bawah <br /> yang <a href='http: //opensource.org/licenses/BSD-3-Clause' target='_blank'> License BSD yang baru </a>.",
+  "license_new_bsd":"Phalcon merupakan Framework PHP  open-source<br /> dibangun sebagai ekstensi-C. Yang berada di bawah <br /> yang <a href='http://opensource.org/licenses/BSD-3-Clause' target='_blank'> License BSD yang baru </a>.",
   "low_overhead":"Low overhead",
   "low_overhead_1":"Ekstensi Zephir/C dijalankan bersama dengan PHP pada saat proses awal daemon web server",
   "low_overhead_2":"Classes and functions provided by the extension are ready to use for any application",
