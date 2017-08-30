@@ -256,7 +256,7 @@
   "join_our_community_description":"Community contributions in Extensions, Plugins, Adapters, VM, examples, source code... and more",
   "language_text":"İngilizce",
   "learn":"Öğren",
-  "license_new_bsd":"Phalcon, C ile geliştirilmiş ve PHP eklentisi olarak yüklenen bir PHP Çatısıdır. <a href='http: //opensource.org/licenses/BSD-3-Clause' target='_blank'>Yeni BSD Licensı</a> ile dağıtılmaktadır.",
+  "license_new_bsd":"Phalcon, C ile geliştirilmiş ve PHP eklentisi olarak yüklenen bir PHP Çatısıdır. <a href='http://opensource.org/licenses/BSD-3-Clause' target='_blank'>Yeni BSD Licensı</a> ile dağıtılmaktadır.",
   "low_overhead":"Düşük yük",
   "low_overhead_1":"Zephir/C ile geliştirilmiş eklentiler web sunucu yazılımının başlatılması sırasında bir kere yüklenir",
   "low_overhead_2":"Classes and functions provided by the extension are ready to use for any application",
