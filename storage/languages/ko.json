@@ -123,7 +123,7 @@
   "download_docker_10":"변수들",
   "download_docker_11":"라는 새로운 파일을 생성 해야 합니다.",
   "download_docker_12":"안에",
-  "download_docker_13":"A sample file has been provided called",
+  "download_docker_13":"라는 파일이 샘플로 제공됩니다.",
   "download_docker_14":"Adjust the variables in that file to suit your needs. The most important variable is the",
   "download_docker_15":"Change the name to something you will be able to use. In our case we just leave the default called ",
   "download_docker_16":"Hosts 파일(<code/etc/hosts/</code>)을 열어 다음과 같이 새로운 라인을 추가하세요:",
