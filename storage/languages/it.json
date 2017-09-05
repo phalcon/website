@@ -31,7 +31,7 @@
   "about_thank_you":"GRAZIE!",
   "about_thank_you_1":"Vorremmo ringraziare tutti coloro che hanno dato il loro contributo e i membri della comunità per l'aiuto checi danno a rendere Phalcon il miglior framework nel suo genere. Le vostre parole di incoraggiamento ed il coinvolgimento è quello che ci sprona a dare il meglio di noi. Speriamo di raggiungere e superare le aspettative che state riponendo in Phalcon.",
   "about_translations":"TRADUZIONI",
-  "about_translations_1":"We are trying to reach as many developers as possible, breaking down the language barriers. We are using <a href=':1:'>:2:</a>, to handle all the words or sentences that need to be translated for this site. The project repository is located <a href=':3:'>here</a>.",
+  "about_translations_1":"Stiamo cercando di raggiungere il maggior numero possibile di sviluppatori abbattendo le barriere della lingua. Per gestire tutte le parole o le frasi da tradurre per questo sito stiamo utilizzando <a href=':1:'>:2:</a>. Il repository del progetto si trova <a href=':3:'> qui</a>.",
   "acl":"ACL",
   "acl_1":"This is how you can built the access control list (ACL):",
   "acl_2":"Create the ACL",
