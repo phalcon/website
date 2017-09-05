@@ -45,6 +45,24 @@
 
         <div class="row">
             <div class="col-lg-2">
+                <img src="{{ utils.getCdnUrl('images/team/paulscoder.jpg') }}"
+                     alt="Paul Scarrone"
+                     style="width: 102px;"
+                     class="img-circle"/>
+            </div>
+
+            <div class="col-lg-10">
+                <h3 class="member-name">Paul Scarrone</h3>
+                <p><a href="https://twitter.com/PaulSCoder">Twitter</a> | <a href="https://github.com/ninjapanzer">Github</a></p>
+                <p>{{ locale.translate('team_paul_1') }}</p>
+                <p>{{ locale.translate('team_paul_2') }}</p>
+                <p>{{ locale.translate('team_paul_3') }}</p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-2">
                 <img src="{{ utils.getCdnUrl('images/team/serghei.png') }}"
                      alt="Serghei Iakovlev"
                      style="width: 102px;"
