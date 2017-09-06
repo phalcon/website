@@ -81,7 +81,7 @@
                 <div class="col-md-3">
                     <div class="advertised">
                         <p>
-                            <a href="{{ utils.getDocsUrl(language) ~ '/reference/tutorial.html' }}">
+                            <a href="{{ utils.getDocsUrl(language) ~ '/tutorial-base' }}">
                                 <img src='{{ utils.getCdnUrl('images/chemistry.png') }}'
                                      title='{{ locale.translate('try_phalcon') }}'
                                      alt='{{ locale.translate('try_phalcon') }}' />
