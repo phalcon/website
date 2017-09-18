@@ -144,7 +144,7 @@
   "download_ide_stubs":"IDE-Integration",
   "download_ide_stubs_1":"Das Video unten beschreibt, wie IDE Stubs für PhpStorm aktiviert werden",
   "download_linux":"Linux/Unix/Mac",
-  "download_need_help":"Benötiget Du Hilfe?",
+  "download_need_help":"Brauchen Sie Hilfe?",
   "download_need_help_1":"Schauen Sie auf unserer <a href=':1:'> Support-Seite</a> nach Möglichkeiten, Unterstützung zu erhalten. Wir tun unser Bestes, um Ihnen zu helfen.",
   "download_note":"Phalcon ist eine in C geschriebene Erweiterung, daher musst Du die passende Binary herunterladen oder neu kompilieren.",
   "download_opensuse":"OpenSUSE",
