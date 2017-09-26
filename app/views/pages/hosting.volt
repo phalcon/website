@@ -66,6 +66,24 @@
                 <p>{{ locale.translate('hosting_digital_ocean_2', 'https://www.digitalocean.com/community/articles/how-to-install-and-get-started-with-phalcon-on-an-ubuntu-12-04-vps') }}</p>
             </div>
         </div>
+                        <!-- DCT Host -->
+        <div class="row">
+            <div class="col-lg-3">
+                <img src='{{ utils.getCdnUrl('images/hosting/dct-host.png') }}'
+                     title='{{ locale.translate('hosting_dcthost_title') }}'
+                     alt='{{ locale.translate('hosting_dcthost_title') }}' />
+            </div>
+            <div class="col-lg-9">
+                <h4>
+                    <a target="_blank" href='https://dct.host/'>
+                        {{ locale.translate('hosting_dcthost_title') }}
+                    </a>
+                </h4>
+                <p>{{ locale.translate('hosting_dcthost_1') }}</p>
+                <p>{{ locale.translate('hosting_dcthost_2', 'https://dct.host') }}</p>
+                <p>{{ locale.translate('hosting_install_instructions') }}</p>
+            </div>
+        </div>
         <!-- Fortrabbit -->
         <div class="row">
             <div class="col-lg-3">

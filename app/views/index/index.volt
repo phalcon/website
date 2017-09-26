@@ -34,7 +34,7 @@
 
                     <p>
                         {{ locale.translate('header_slogan') }}
-                        <a id="bench-link" href="https://phalcon.link/docs" target="_blank">
+                        <a id="bench-link" href="https://phalcon.link/docs/{{language}}" target="_blank">
                             {{ locale.translate('see_for_yourself') }}
                         </a>
                     </p>
@@ -81,7 +81,7 @@
                 <div class="col-md-3">
                     <div class="advertised">
                         <p>
-                            <a href="{{ utils.getDocsUrl(language) ~ '/reference/tutorial.html' }}">
+                            <a href="{{ utils.getDocsUrl(language) ~ '/tutorial-base' }}">
                                 <img src='{{ utils.getCdnUrl('images/chemistry.png') }}'
                                      title='{{ locale.translate('try_phalcon') }}'
                                      alt='{{ locale.translate('try_phalcon') }}' />

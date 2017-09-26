@@ -22,19 +22,18 @@ trait LanguageTrait
     protected function getLang(Micro $application, $default = 'en')
     {
         $params = $application->router->getParams();
-        $lang   = $application->utils->fetch($params, 'language', '');
-
-        if (true === empty($lang) && true === $application->request->hasQuery('_url')) {
+        $lang   = $params['language'] ?? '';
+        if (empty($lang) && $application->request->hasQuery('_url')) {
             if ($query = $application->request->getQuery('_url')) {
                 $lang = mb_strtolower(explode('/', ltrim($query, '/'))[0]);
             }
         }
 
-        $languages = $application->config->languages;
-        if (true === empty($lang) || false === $languages->offsetExists($lang)) {
+        $languages = $application->config->languages->toArray();
+        if (empty($lang) || !isset($languages[$lang])) {
             foreach ($application->request->getLanguages() as $httpLang) {
                 $httpLang = mb_strtolower(substr($httpLang['language'], 0, 2));
-                if (true === $languages->offsetExists($httpLang)) {
+                if (isset($languages[$httpLang])) {
                     return $httpLang;
                 }
             }

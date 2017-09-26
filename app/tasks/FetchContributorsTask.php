@@ -2,6 +2,8 @@
 
 namespace Website\Cli\Tasks;
 
+use const APP_PATH;
+use function file_put_contents;
 use Phalcon\CLI\Task as PhTask;
 use Dariuszp\CliProgressBar as CliProgressBar;
 use GuzzleHttp\Client as GClient;
@@ -89,6 +91,16 @@ class FetchContributorsTask extends PhTask
         $results = [];
         foreach ($weights as $login => $weight) {
             $results[$login] = $contributors[$login];
+
+            /**
+             * Get the images also from Github
+             */
+            $avatar = $contributors[$login]['avatar'] . '&s=90';
+            $image = file_get_contents($avatar);
+            file_put_contents(
+                APP_PATH . '/public/images/contributors/' . $login . '.jpg',
+                $image
+            );
         }
 
         file_put_contents(
