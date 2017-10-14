@@ -36,7 +36,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ utils.getDocsUrl(language) ~ '/webserver-wamp' }}">
+                <a href="{{ utils.getDocsUrl(language) ~ '/webserver-wampp' }}">
                     {{ locale.translate('download_windows_guides_wamp') }}
                 </a>
             </li>
