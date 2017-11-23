@@ -1,6 +1,11 @@
-Phalcon Framework - Web site source
-=======================================
+# Phalcon Website
 
-This is the official web site source code. Feel free to improve it or use the code in your own projects
+Official Phalcon Website source code. Feel free to improve it or use the code in your own projects.
 
-The main JS and CSS files are minified; To modify their sources you may need to use [Grunt](http://gruntjs.com/). 
+We are using [Crowdin](https://crowdin.com/), to handle all the words or sentences that need to be translated for this site.
+The project repository is located [here](https://crowdin.com/project/phalcon-website).
+
+## License
+
+Phalcon Website is open source software licensed under the New BSD License.
+See the [LICENSE.txt](LICENSE.txt) file for more. © Phalcon Team
