@@ -168,6 +168,22 @@ h2 + h3 {
     margin-top: 20px;
 }
 
+.alert-danger a {
+    color:#337ab7;
+    text-decoration:none;
+}
+
+.alert-danger a:focus,
+.alert-danger a:hover {
+    color:#23527c;
+    text-decoration:underline;
+}
+
+.alert-danger a:focus {
+    outline:5px auto -webkit-focus-ring-color;
+    outline-offset:-2px;
+}
+
 .upper {
     text-transform: uppercase;
 }
