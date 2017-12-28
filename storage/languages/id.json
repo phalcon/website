@@ -165,7 +165,7 @@
   "download_vagrant_boxes": "Kotak Gelandangan",
   "download_windows": "Windows DLL",
   "download_windows_download": "Unduh",
-  "download_windows_dlls": "Windows DLL dapat didownload dari halaman rilis Github kami\n<a href=':1:'>here</a>",
+  "download_windows_dlls": "Windows DLLs dapat didownload dari halaman rilis Github kami <a href=':1:'>disini</a>",
   "download_windows_guides": "Panduan terkait",
   "download_windows_guides_wamp": "Instalasi di WAMP",
   "download_windows_guides_xampp": "Instalasi di XAMPP",
