@@ -34,7 +34,7 @@
   "about_translations_1": "We are trying to reach as many developers as possible, breaking down the language barriers. We are using <a href=':1:'>:2:</a>, to handle all the words or sentences that need to be translated for this site. The project repository is located <a href=':3:'>here</a>.",
   "acl": "EKT",
   "acl_1": "Erişim kontrol listesi (EKT) şu şekilde oluşturulur:",
-  "acl_2": "Create the ACL",
+  "acl_2": "ACL oluştur",
   "acl_3": "The default action is DENY access",
   "acl_4": "Register two roles, Users is registered users",
   "acl_5": "and guests are users without a defined identity",
