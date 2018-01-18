@@ -244,7 +244,7 @@
   "hosting_webfaction_2": "WebFaction sunucuları üzerinde Phalcon'u kurmak için <a href=':1:'>burada</a> özetlenen talimatları izleyin.",
   "hosting_webfaction_title": "WebFaction",
   "i18n": "i18n",
-  "i18n_1": "The component Phalcon\\Translate aids in creating multilingual applications. Applications using this component, display content in different languages, based on the user's chosen language supported by the application.",
+  "i18n_1": "Phalcon\\Çeviri bileşeni çok dilli uygulamalar oluşturma konusunda yardımcı olur. Bu bileşeni kullanan uygulamalar, uygulamanın desteklediği kullanıcının seçtiği dile dayanarak içeriği farklı dillerde görüntüler.",
   "i18n_2": "Ask browser what is the best language",
   "i18n_3": "Check if we have a translation file for that lang",
   "i18n_4": "Fallback to some default",
