@@ -370,7 +370,7 @@
   "team_volodymyr_2": "Volodymyr, boş zamanında çok sevdiği eşinin şirketine destek olur, açık kaynak projelerine katkıda bulunur ve yabancı dilleri inceler.",
   "template_engine_volt": "Şablon Motoru (Volt)",
   "template_engine_volt_1": "Volt, PHP için Zephir / C'de yazılmış, ultra hızlı ve tasarımcı dostu bir tema dilidir. Size tema geliştirme sürecinizi hızlandıran ve kolaylaştıran yardımcı uygulamalar sağlar. Volt'u, uygulamanızda tek başına bir bileşen olarak kullanabileceğiniz gibi Phalcon'un diğer bileşenleri ile de kolayca entegre edebilirsiniz.",
-  "template_engine_volt_description": "A template engine inspired by Jinja but built in C for PHP",
+  "template_engine_volt_description": "Motor şablonu Jinja'dan ilham alınmış ama C için PHP yerleştirilmiştir",
   "template_engines": "Şablon Motorları",
   "template_engines_1": "Görünümler, uygulamanızın kullanıcı arabirimini temsil eder. Görünümler genellikle yalnızca verilerin sunumuyla ilgili görevleri yerine getiren katıştırılmış PHP kodu içeren HTML dosyalarıdır. Görünümler, web tarayıcısına veya uygulamanızdan istekte bulunmak için kullanılan diğer bir araca veri sağlama işini üstlenir.",
   "template_engines_description": "Görünümler uygulamanızın kullanıcı arabirimini temsil eder",
