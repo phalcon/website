@@ -154,7 +154,7 @@
   "download_requirements_2": "PHP 5.x zdroje",
   "download_requirements_3": "GCC kompilátor",
   "download_source_code": "Zdrojový kód: <a href=':1:' target='_download' title='GitHub Repo'>na githubu</a>",
-  "download_source_code_switch": "Source Code (please switch to the relevant branch): <a href=':1:' target='_download' title='GitHub Repo'>github</a>",
+  "download_source_code_switch": "Zdrojový kód (přepněte si prosím na příslušnou vývojovou větev): <a href=':1:' target='_download' title='GitHub Repo'>github</a>",
   "download_ubuntu": "To install Phalcon on Ubuntu or Debian you need to follow these steps:",
   "download_ubuntu_1": "If you are missing apt-add-repository run the following command:",
   "download_ubuntu_2": "If you wish to install the legacy version of Phalcon (1.x) use the following PPA: ",
