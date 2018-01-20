@@ -161,7 +161,7 @@
   "download_ubuntu_or_debian": "Ubuntu nebo Debian",
   "download_vagrant": "Vagrant",
   "download_vagrant_1": "<a href=':1:'>Vagrant</a> je vynikající nástroj k vytváření a konfigurování odlehčených, reprodukovatelných a přenosných vývojářských prostředí.",
-  "download_vagrant_2": "Use any of the following boxes to test or develop with Phalcon on a pre-configured environment.",
+  "download_vagrant_2": "Využijte libovolný z následujících balíčků k testování nebo vývoji v předkonfigurovaném prostředí s Phalconem.",
   "download_vagrant_boxes": "Vagrant Boxy",
   "download_windows": "Windows DLL knihovny",
   "download_windows_download": "Stáhnout",
