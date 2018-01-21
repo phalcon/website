@@ -287,7 +287,7 @@
   "phql_1": "PHP je vysokoúrovňový objektově orientovaný dialekt SQL, který umožňuje psát příkazy pomocí standardizovaného jazyka podobného SQL. PHQL je implementovaný jako převaděč (napsaný v C), který překládá syntaxe do cílového RDBMS. K dosažen maximálního možného výkonu nabízí Phalcon převaděč, který využívá stejnou technologii jako SQLite. Tato technologie poskytuje v paměti malý převaděč s nízkou paměťovou zátěží, který je zároveň bezpečným podprocesem.",
   "phql_2": "Jméno",
   "phql_description": "Výkonný a bezpečný Phalcon Query Language, PHQL",
-  "polling_app": "A polling app built from scratch in < 15 min",
+  "polling_app": "Dotazníková aplikace vytvořená za méně než 15 minut",
   "queueing": "Queueing - background process",
   "queueing_1": "Activities like processing videos, resizing images or sending emails aren't suitable to be executed online or in real time because it may slow the loading time of pages and severely impact the user experience. The best solution here is to implement background jobs. The web application puts jobs into a queue and which will be processed separately.",
   "queueing_2": "Connect to the queue",
