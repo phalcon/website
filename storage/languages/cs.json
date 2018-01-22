@@ -284,7 +284,7 @@
   "phalcon_team_1": "Mnoho dalších lidí",
   "phalcon_team_2": "Phalcon je a vždy byl dílem mnoha dobrovolníků: ",
   "phql": "PHQL",
-  "phql_1": "PHQL je vysokoúrovňový objektově orientovaný dialekt SQL, který umožňuje psát příkazy pomocí standardizovaného jazyka podobného SQL. PHQL je implementovaný jako převaděč (napsaný v C), který překládá syntaxe do cílového RDBMS. K dosažení maximálního možného výkonu nabízí Phalcon převaděč, který využívá stejnou technologii jako SQLite. Tato technologie poskytuje malý paměťový převaděč s nízkou paměťovou zátěží, který je zároveň bezpečným vláknem.",
+  "phql_1": "PHQL je vysokoúrovňový objektově orientovaný dialekt SQL, který umožňuje psát příkazy pomocí standardizovaného jazyka podobného SQL. PHQL je implementovaný jako syntaktický analyzátor (napsaný v C), který překládá syntaxe do cílového RDBMS. K dosažení maximálního možného výkonu nabízí Phalcon syntaktický analyzátor, který využívá stejnou technologii jako SQLite. Tato technologie poskytuje malý paměťový převaděč s nízkou paměťovou zátěží, který je zároveň bezpečným vláknem.",
   "phql_2": "Jméno",
   "phql_description": "Výkonný a bezpečný Phalcon Query Language, PHQL",
   "polling_app": "Dotazníková aplikace vytvořená za méně než 15 minut",
