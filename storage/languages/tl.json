@@ -148,7 +148,7 @@
   "download_need_help_1": "Tingnan ang aming <a href=':1:'>pahinang pangsuporta</a> para makakuha ng tulong. Gagawin namin ang aming makakaya upang matulungan kayo.",
   "download_note": "Ang Phalcon ay isang ekstensyon ng C, kaya kailangang magdownload ng isang binary para sa iyong plataporma o isama-sama ito mula sa pinagmulang code.",
   "download_opensuse": "OpenSUSE",
-  "download_opensuse_1": "There is a package available <a href=':1:'>here</a> (thanks to <a href=':2:'>Mariusz Łączak</a>)",
+  "download_opensuse_1": "May isang pakete na makukuha <a href=':1:'>dito</a> (salamat kay <a href=':2:'>Mariusz Łączak</a>)",
   "download_requirements": "Requirements",
   "download_requirements_1": "We need some packages previously installed: ",
   "download_requirements_2": "PHP 5.x development resources",
