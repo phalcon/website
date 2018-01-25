@@ -170,7 +170,7 @@
   "download_windows_guides_wamp": "Installation sa WAMP",
   "download_windows_guides_xampp": "Installation sa XAMPP",
   "download_windows_installation": "Installation",
-  "download_windows_installation_1": "To use phalcon on Windows you can download a DLL library. Edit your php.ini, append at the end, and restart your webserver to load the extension. <a href=':1:'>More</a>.",
+  "download_windows_installation_1": "Upang magamit ang phalcon sa Windows maaari mong i-download ang DLL Library. I-edit ang iyong php.ini, ilakip sa huli, at i-restart ang iyong webserver upang magload ang extension. <a href=':1:'><a href=':1:'>Iba pa</a>.",
   "download_windows_note": "We highly recommend you use the latest version of PHP corresponding to our DLLs, so as to take advantage of the full feature set of Phalcon.",
   "download_windows_older": "Older versions",
   "download_windows_stable": "Stable/Master versions",
