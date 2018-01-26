@@ -344,7 +344,7 @@
   "support_social_network_accounts": "Ang aming mga account sa social network ay: <a href=':1:'>Gab.ai</a>,<a href=':2:'>Twitter</a>,<a href=':3:'>Facebook</a>at<a href=':4:'>Google+</a>",
   "support_us": "Suportahan Kami",
   "team": "Team",
-  "team_andres_1": "Andres is no stranger to open source projects. In the last nine years, he has designed and released frameworks for PHP and has been involved in web development - his main passion.",
+  "team_andres_1": "Si Andres ay hindi na bago sa mga open source na proyekto. Sa nakalipas na siyam na taon, siya ay nakadisenyo na at nakapagbigay ng mga balangkas para sa PHP at nakalahok na rin sa pagde-develop ng web - ang kanyang pangunahing hilig.",
   "team_andres_2": "A TR35 winner, Andres' main drive is to always choose and implement or use the right tool for the job, mostly focused on performance. Therefore in 2011 a new idea was in the works; to create a new kind of framework for PHP developers, one that focuses on usability, features and mostly performance.",
   "team_andres_3": "Through this new innovative approach Phalcon was born. A PHP framework written in C that can offer a wealth of features to developers while maximizing performance and keeping resource utilization low.",
   "team_andres_4": "Andres is one of the core developers of Phalcon and its inspiration.",
