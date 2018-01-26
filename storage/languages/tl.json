@@ -209,7 +209,7 @@
   "high_performance_php_framework": "Magandang Pagganap ng Balangkas na PHP",
   "hosting": "Pagho-host",
   "hosting_amazon_ec2_1": "Ang Amazon Elastic Compute Cloud ay naghahatid ng masukat, magbayad-kapag-ikaw-ay-umalis na kapasidad sa pag-compute sa cloud.",
-  "hosting_amazon_ec2_2": "Select a pre-configured, templated Amazon Machine Image (AMI) to get up and running immediately. Or create an AMI containing your applications, libraries, data, and associated configuration settings. <a href=':1:'>See more</a>",
+  "hosting_amazon_ec2_2": "Pumili ng isang na-configure na, naka-template na Amazon Machine Image (AMI) upang makatayo at makapagsimula kaagad. O maglikha ng isang AMI na naglalaman ng iyong mga aplikasyon, mga library, mga datos at katulad na setting ng konpigurasyon.<a href=':1:'> Magtingin pa</a>",
   "hosting_amazon_ec2_title": "Amazon EC2",
   "hosting_aspnix_1": "ASPnix provides superior Linux cPanel and Windows web hosting services. Our customers have rated our service as outstanding. We offer economical plans for shared Windows and Linux cPanel web hosting, Virtual private servers and dedicated servers!  <a href=':1:'>See more</a>",
   "hosting_aspnix_2": "Phalcon is supported on all Windows and Linux cPanel shared web hosting packages and plans, no configuration or installation required! They offer a variety of PHP versions from 5.2 - 7.1 as well as many <a href=':1:' target=\"_blank\">additional extensions</a>!",
