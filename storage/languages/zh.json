@@ -212,7 +212,7 @@
   "hosting_amazon_ec2_2": "选择预配置的模板化亚马逊机图像 (AMI) 要立即启动并运行。或创建一个包含您的应用程序、 库、 数据和关联的配置设置的 AMI。<a href=':1:'> 看到更多</a>",
   "hosting_amazon_ec2_title": "亚马逊 EC2",
   "hosting_aspnix_1": "ASPnix provides superior Windows web hosting services. Our customers have rated our service as outstanding. We offer economical plans for shared Windows and Linux cPanel web hosting, Virtual private servers and dedicated servers!  <a href=':1:'>See more</a>",
-  "hosting_aspnix_2": "Phalcon is supported on all Windows shared web hosting packages and plans, no configuration or installation required! They offer a variety of PHP versions from 5.2 - 7.0 as well as many <a href=':1:' target=\"_blank\">additional extensions</a>!",
+  "hosting_aspnix_2": "Phalcon is supported on all Windows and Linux cPanel shared web hosting packages and plans, no configuration or installation required! ASPnix offers a variety of PHP versions from 5.2 - 7.2 as well as many <a href=':1:' target=\"_blank\">additional extensions</a>!",
   "hosting_aspnix_title": "ASPnix",
   "hosting_azure_1": "<a href=':1:'> Windows Azure 云</a> 为您提供高可扩展性和可管理的 Windows 为您的 web 应用程序托管。使用尔康来减少您实例的成本。",
   "hosting_azure_2": "若要安装Phalcon，步骤一步一步在 <a href=':1:'> 本文中为你</a>。",
