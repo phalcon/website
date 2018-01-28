@@ -212,7 +212,7 @@
   "hosting_amazon_ec2_2": "Zvolte si přednastavenou šablonu Amazon Machine Image (AMI), abyste mohli začít okamžitě pracovat. Nebo si vytvořte AMI obsahující vaše aplikace, knihovny, data a přidružená konfigurační nastavení. <a href=':1:'>Více zde</a>",
   "hosting_amazon_ec2_title": "Amazon EC2",
   "hosting_aspnix_1": "ASPnix provides superior Windows web hosting services. Our customers have rated our service as outstanding. We offer economical plans for shared Windows and Linux cPanel web hosting, Virtual private servers and dedicated servers!  <a href=':1:'>See more</a>",
-  "hosting_aspnix_2": "Phalcon is supported on all Windows shared web hosting packages and plans, no configuration or installation required! They offer a variety of PHP versions from 5.2 - 7.0 as well as many <a href=':1:' target=\"_blank\">additional extensions</a>!",
+  "hosting_aspnix_2": "Phalcon is supported on all Windows and Linux cPanel shared web hosting packages and plans, no configuration or installation required! ASPnix offers a variety of PHP versions from 5.2 - 7.2 as well as many <a href=':1:' target=\"_blank\">additional extensions</a>!",
   "hosting_aspnix_title": "ASPnix",
   "hosting_azure_1": "<a href=':1:'>Windows Azure cloud</a> vám pro vaše webové aplikace nabízí vysoce škálovatelný a nastavitelný Windows hosting. Využijte Phalcon, abyste snížili své objektové náklady.",
   "hosting_azure_2": "Pro nainstalování Phalconu postupujte krok za krokem podle návodu v <a href=':1:'>tomto článku na SitePoint</a>.",
