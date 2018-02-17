@@ -31,7 +31,7 @@
   "about_thank_you": "СПАСИБО ВАМ!",
   "about_thank_you_1": "Мы благодарим всех наших разработчиков и членов сообщества за вклад в процесс создания лучшего в своём роде фреймворка. Ваша поддержка помогает нам двигаться в достижении этой цели. Мы надеемся, что Phalcon оправдает или превзойдёт то доверие, которое вы оказали ему.",
   "about_translations": "ПЕРЕВОДЫ",
-  "about_translations_1": "We are trying to reach as many developers as possible, breaking down the language barriers. We are using <a href=':1:'>:2:</a>, to handle all the words or sentences that need to be translated for this site. The project repository is located <a href=':3:'>here</a>.",
+  "about_translations_1": "Мы стремимся охватить настолько большой круг разработчиков, насколько это возможно, преодолевая языковые барьеры. Мы используем <a href=':1:'>:2:</a>, чтобы обрабатывать все слова или предложения, которые необходимо перевести для этого сайта. Репозиторий проекта расположен <a href=':3:'>здесь</a>.",
   "acl": "ACL",
   "acl_1": "Так вы можете создать список контроля доступа (ACL):",
   "acl_2": "Create the ACL",
