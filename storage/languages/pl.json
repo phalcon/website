@@ -196,7 +196,7 @@
   "flash_messages_description": "Flash messages are used to notify the user about the state of actions.",
   "forms_builder": "Tworzenie formularzy",
   "forms_builder_1": "Each element in the form can be rendered as required by the developer. Internally, Phalcon\\Tag is used to produce the correct HTML for each element and you can pass additional HTML attributes as the second parameter of render():",
-  "forms_builder_2": "Home",
+  "forms_builder_2": "Strona główna",
   "forms_builder_3": "Cellphone",
   "forms_builder_description": "Easily create HTML forms",
   "forum": "Forum",
