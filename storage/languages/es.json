@@ -182,7 +182,7 @@
   "events_description": "Puedes ampliar la mayoría de los componentes del framework mediante la creación de 'puntos del anclaje'. Esto permite crear sus propios eventos para hacer su aplicación más flexible y potente",
   "events_management": "Gestión de Eventos",
   "events_management_1": "Un EventsManager te permite adjuntar listeners a un tipo particular de evento. El tipo de evento que nos interesa ahora es 'dispatch'. El siguiente código filtra todos los eventos producidos por el Dispatcher:",
-  "events_management_2": "Crear un nuevo gestor de eventos",
+  "events_management_2": "Crear un gestor de eventos",
   "events_management_3": "Estar atento por eventos producidos en el distribuidor usando el plugin Security",
   "events_management_4": "Maneja excepciones y excepciones no encontradas usando NotFoundPlugin",
   "events_management_5": "Asignar el gestor de eventos al despachador",
