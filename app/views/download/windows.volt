@@ -31,12 +31,12 @@
         <p>
         <ul class="dash-list">
             <li>
-                <a href="{{ utils.getDocsUrl(language) ~ '/webserver-xamp' }}">
+                <a href="{{ utils.getDocsUrl(language) ~ '/webserver-xampp' }}">
                     {{ locale.translate('download_windows_guides_xampp') }}
                 </a>
             </li>
             <li>
-                <a href="{{ utils.getDocsUrl(language) ~ '/webserver-wampp' }}">
+                <a href="{{ utils.getDocsUrl(language) ~ '/webserver-wamp' }}">
                     {{ locale.translate('download_windows_guides_wamp') }}
                 </a>
             </li>
