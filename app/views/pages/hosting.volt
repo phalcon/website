@@ -34,7 +34,7 @@
         <!-- ASPnix -->
         <div class="row">
             <div class="col-lg-3">
-                <img src='{{ utils.getCdnUrl('images/hosting/aspnix-gray.png') }}'
+                <img src='{{ utils.getCdnUrl('images/hosting/aspnix-logo.png') }}'
                      title='{{ locale.translate('hosting_aspnix_title') }}'
                      alt='{{ locale.translate('hosting_aspnix_title') }}' />
             </div>
