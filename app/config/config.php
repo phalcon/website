@@ -5,7 +5,7 @@ $downloadSlugs = 'linux|windows|tools|docker|stubs';
 
 return [
     'app'           => [
-        'version'         => '3.2',
+        'version'         => '3.3',
         'timezone'        => getenv('APP_TIMEZONE'),
         'debug'           => getenv('APP_DEBUG'),
         'env'             => getenv('APP_ENV'),
