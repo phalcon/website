@@ -212,7 +212,7 @@
   "hosting_amazon_ec2_2": "Selectionnez une template préconfigurée Amazon Machine Image (AMI) pour un départ immédiat. Vous pouvez également créer une AMI contenant vos application, vos librairies vos données et les configurations associées. <a href=':1:'>En savoir plus</a>",
   "hosting_amazon_ec2_title": "Amazon EC2",
   "hosting_aspnix_1": "ASPnix fournit un très bon service d'hébergement web sur Windows. Nos client ont décrit nos services comme étant exceptionnel. Nous avons des offres pour les hébergements web mutualisées sur Linux ou Windows, pour les serveurs virtuels privés (VPS) ou pour les serveurs dédiés! <a href=':1:'>En savoir plus</a>",
-  "hosting_aspnix_2": "Phalcon is supported on all Windows and Linux cPanel shared web hosting packages and plans, no configuration or installation required! ASPnix offers a variety of PHP versions from 5.2 - 7.2 as well as many <a href=':1:' target=\"_blank\">additional extensions</a>!",
+  "hosting_aspnix_2": "Phalcon is supported on all Windows shared web hosting packages and plans, no configuration or installation required! They offer a variety of PHP versions from 5.2 - 7.0 as well as many <a href=':1:' target=\"_blank\">additional extensions</a>!",
   "hosting_aspnix_title": "ASPnix",
   "hosting_azure_1": "<a href=':1:'>Windows Azure</a> est une plateforme Cloud ouverte et flexible qui vous permet de générer, déployer et gérer rapidement des applications à travers un réseau global de centres de données gérés par Microsoft.       \n  ",
   "hosting_azure_2": "Installer Phalcon en utilisant les <a href=':1:'>instructions d'installation</a>.",
