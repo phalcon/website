@@ -212,7 +212,7 @@
   "hosting_amazon_ec2_2": "미리 설정된 아마존 머신 이미지 템플릿(AMI)을 선택해서 만드세요. 또는 어플리케이션, 라이브러리, 데이터, 관련된\n 세팅을 포함하여 여러분만의 AMI를 만드세요. <a href=':1:'>더보기</a>",
   "hosting_amazon_ec2_title": "아마존 EC2",
   "hosting_aspnix_1": "ASPnix provides superior Windows web hosting services. Our customers have rated our service as outstanding. We offer economical plans for shared Windows and Linux cPanel web hosting, Virtual private servers and dedicated servers!  <a href=':1:'>See more</a>",
-  "hosting_aspnix_2": "Phalcon is supported on all Windows and Linux cPanel shared web hosting packages and plans, no configuration or installation required! ASPnix offers a variety of PHP versions from 5.2 - 7.2 as well as many <a href=':1:' target=\"_blank\">additional extensions</a>!",
+  "hosting_aspnix_2": "Phalcon is supported on all Windows shared web hosting packages and plans, no configuration or installation required! They offer a variety of PHP versions from 5.2 - 7.0 as well as many <a href=':1:' target=\"_blank\">additional extensions</a>!",
   "hosting_aspnix_title": "ASPnix",
   "hosting_azure_1": "<a href=':1:'>Windows Azure cloud</a>는 당신의 어플리케이션을 위해 높은 확장성과 관리편의성을 가진 호스팅을 제공합니다. 인스턴스 비용을 줄이기 위해 팔콘을 사용하세요.",
   "hosting_azure_2": "팔콘을 설치하려면 <a href=':1:'>SitePoint의 글</a>을 참조하여 단계적 절차를 따르세요",
