@@ -175,7 +175,7 @@
   "download_windows_older": "Застарілі версії",
   "download_windows_stable": "Stable/Master versions",
   "encryption": "Шифрування",
-  "encryption_1": "Phalcon забезпечує шифрування об'єктів за допомогою компоненту Phalcon\\Crypt. Цей клас пропонує просту об'єктно-орієнтовану обгортку для PHP-бібліотеки шифрування openssl.",
+  "encryption_1": "Phalcon забезпечує шифрування об'єктів за допомогою компоненту Phalcon\\Crypt. Цей клас пропонує просту, об'єктно-орієнтовану обгортку для PHP-бібліотеки шифрування openssl.",
   "encryption_2": "Це секретний ключ (32 байта).",
   "encryption_3": "This is the text that you want to encrypt.",
   "events": "Події",
