@@ -136,7 +136,7 @@
   "download_docker_23": "Go to :1: in your browser and you will see your environment is set up. You can now develop your application in the app folder.",
   "download_docker_24": "Shutdown",
   "download_docker_25": "To shut down the environment when is no longer needed you can issue the following command:",
-  "download_docker_26": "Additional information can be found at: ",
+  "download_docker_26": "Додаткову інформацію можна знайти на: ",
   "download_examples": "Попередньо встановлені приклади",
   "download_examples_1": "The following examples are pre-installed on each vagrant box: ",
   "download_freebsd": "FreeBSD",
