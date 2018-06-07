@@ -142,7 +142,7 @@
   "download_freebsd": "FreeBSD",
   "download_freebsd_1": "Порт наявний для FreeBSD. Вам необхідно тільки виконати одну з цих команд щоб встановити його: ",
   "download_ide_stubs": "Заглушки IDE",
-  "download_ide_stubs_1": "The video below outlines how to enable IDE stubs for PhpStorm",
+  "download_ide_stubs_1": "У наведеному нижче відео викладено, як увімкнути IDE-stubs для PhpStorm",
   "download_linux": "Linux/Unix/Mac",
   "download_need_help": "Потрібна допомога?",
   "download_need_help_1": "Якщо вам потрібна допомога, на нашій <a href=':1:'>сторінці підтримки</a> ви знайдете посилання на додаткові ресурси. Ми завжди готові допомогти вам.",
