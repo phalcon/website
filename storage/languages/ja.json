@@ -112,7 +112,7 @@
   "download_devtools_download": "<a href=\":1:\">Github</a> から、開発ツールが含まれているクロスプラットフォームのパッケージをダウンロードしたり、クローンを作成することができます",
   "download_docker": "Docker",
   "download_docker_1": "Docker で Phalcon を利用する、多くの方法があります。",
-  "download_docker_2": "Our official images are located <a href=':1:'>here</a>. We always welcome pull requests and improvements. The repository for the docker files is located here:",
+  "download_docker_2": "私たちの公式画像が <a href=':1:'>ここ</a>にあります。私たちはいつもプルリクエストと改善を歓迎します。docker fileのリポジトリはここにあります:",
   "download_docker_3": "With Phalcon-compose you can create an isolated environment with docker, that will allow you to use Phalcon without any additional installations. Note that using Phalcon Compose, requires ",
   "download_docker_4": "および",
   "download_docker_5": "サービス",
