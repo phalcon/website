@@ -118,7 +118,7 @@
   "download_docker_5": "サービス",
   "download_docker_6": "Phalcon Composeは、デフォルトで以下のサービスを提供しています：",
   "download_docker_7": "Phalcon Composeは非常に使いやすいです。 アプリケーションを作成するために必要なものは、ここにあります: ",
-  "download_docker_8": "We will now need to run the following command for our container application can be created:",
+  "download_docker_8": "コンテナアプリケーションを作成するために次のコマンドを実行する必要があります。",
   "download_docker_9": "The above command will download the skeleton of the docker environment.",
   "download_docker_10": "変数",
   "download_docker_11": "You will need to create a new file called",
