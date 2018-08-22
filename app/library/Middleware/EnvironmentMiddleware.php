@@ -6,6 +6,7 @@ use Phalcon\Mvc\Micro;
 use Phalcon\Mvc\Micro\MiddlewareInterface;
 use Phalcon\Tag;
 
+use function var_dump;
 use Website\Traits\LanguageTrait;
 
 /**
@@ -32,12 +33,9 @@ class EnvironmentMiddleware implements MiddlewareInterface
          */
         $params   = $application->router->getParams();
         $language = $this->getLang($application, 'en');
-        $slug     = $application->utils->fetch($params, 'slug', 'index');
-        $image    = $application->utils->fetch(
-            $this->getImageMap($application),
-            $language,
-            'en'
-        );
+        $slug     = $params['slug'] ?? 'index';
+        $imageMap = $this->getImageMap($application);
+        $image    = $imageMap[$language] ?? 'en';
 
         /**
          * These are needed for all pages

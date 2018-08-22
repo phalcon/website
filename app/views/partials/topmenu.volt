@@ -6,7 +6,7 @@
         </a>
     </li>
     <li>
-        <a href="https://phalcon.link/docs" class="header-nav-link" target="_blank">
+        <a href="https://phalcon.link/docs/{{language}}" class="header-nav-link" target="_blank">
             {{ locale.translate('docs') }}
         </a>
     </li>
@@ -42,7 +42,7 @@
             </li>
             <li role="separator" class="divider"></li>
             <li>
-                <a href="https://phalcon.link/f" target="_blank">
+                <a href="https://phalcon.link/fb" target="_blank">
                     {{ locale.translate('facebook') }}
                 </a>
             </li>
@@ -52,7 +52,7 @@
                 </a>
             </li>
             <li>
-                <a href="https://phalcon.link/g+" target="_blank">
+                <a href="https://phalcon.link/gplus" target="_blank">
                     {{ locale.translate('google_plus') }}
                 </a>
             </li>

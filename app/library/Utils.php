@@ -52,7 +52,11 @@ class Utils extends Component
             $return = $lang;
         }
 
-        return sprintf('https://docs.phalconphp.com/%s/latest', $return);
+        return sprintf(
+            'https://docs.phalconphp.com/%s/%s',
+            $return,
+            $this->config->get('app')->get('version')
+        );
     }
 
     /**
