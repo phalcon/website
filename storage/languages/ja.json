@@ -79,7 +79,7 @@
   "dependency_injection_2": "依存性を注入するコンテナ（DIコンテナ）を作成する",
   "dependency_injection_3": "クラス、関数、コンポーネントを登録する",
   "dependency_injection_4": "コード内の他の場所で使用する",
-  "dependency_injection_description": "依存性注入とサービスの場所は、それ自体のためのコンテナです。",
+  "dependency_injection_description": "依存するサービスの注入と配置において、DI自体がコンテナとして機能します。",
   "discord": "Discord",
   "docs": "ドキュメント",
   "documentation": "ドキュメント",
