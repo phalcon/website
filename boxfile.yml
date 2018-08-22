@@ -1,9 +1,43 @@
+# Runtime configuration
 run.config:
-  engine: php  
-  engine.config:    
-    runtime: php-7.1    
-    document_root: public    
+  # Main engine
+  engine: php
+  engine.config:
+    # Using the PHP 7.1 runtime
+    runtime: php-7.1
+    # Apache
+    document_root: public
+
+    # Timezone/Locale/Mimetype/Encoding
+    date_timezone: 'UTC'
+    default_locale: 'en_US'
+    default_mimetype: 'text/html'
+    iconv_internal_encoding: 'UTF-8'
+
+    # Security
+    expose_php: 'Off'
+    disable_functions:
+      - exec
+      - shell_exec
+      - system
+
+    # Error reporting
+    display_errors: 'stderr'
+    error_reporting: E_ALL
+
+    # Execution/Input Vars/Memory Limit
+    max_execution_time: 30
+    max_input_time: 60
+    max_input_vars: 1000
+    memory_limit: '128M'
+
+    # Register argc/globals
+    register_argc_argv: 'Off'
+    register_globals: 'Off'
+
+    # Enabled extensions
     extensions:
+      - ctype
       - curl
       - dom
       - json
@@ -11,9 +45,54 @@ run.config:
       - mbstring
       - opcache
       - phalcon
+      - session
       - simplexml
       - tokenizer
       - xml
       - xmlwriter
+    zend_extensions:
+      - opcache
+    dev_zend_extensions:
+      add:
+        - xdebug
+      rm:
+        - opcache
   extra_steps:
     - echo "alias phalcon=\'phalcon.php\'" >> /data/var/home/gonano/.bashrc
+    - cp /app/storage/setup/xdebug.ini /data/etc/php.dev.d/xdebug.ini
+
+# Website setup
+web.www:
+  # Autostart services
+  start:
+    php: start-php
+    apache: start-apache
+
+  # Only one route
+  routes:
+    - /
+
+  # Writable folders for logs and cache
+  writable_dirs:
+    - storage/cache/data
+    - storage/cache/view
+    - storage/cache/volt
+    - storage/logs
+
+  # The log to watch
+  log_watch:
+    app[error]: /app/storage/logs/application.log
+
+# Deploy configuration
+deploy.config:
+  # Transformations - before deployment
+  transform:
+    # Copy setup files
+    - cp /app/storage/setup/.env.prod /app/.env
+    # Force create any folders that do not exist
+    - mkdir -p /app/storage/cache/data
+    - mkdir -p /app/storage/cache/volt
+    - mkdir -p /app/storage/cache/view
+    - mkdir -p /app/storage/logs
+    # Clear the log for this deployment
+    - truncate -s 0 /app/storage/logs/application.log
