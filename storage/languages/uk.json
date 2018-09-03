@@ -112,7 +112,7 @@
   "download_devtools_download": "Ви можете завантажити або клонувати міжплатформовий пакет, який містить інструменти розробника на <a href=':1:'>Github</a>.",
   "download_docker": "Docker",
   "download_docker_1": "Існує багато способів використання Phalcon з Docker.",
-  "download_docker_2": "Our official images are located <a href=':1:'>here</a>. We always welcome pull requests and improvements. The repository for the docker files is located here:",
+  "download_docker_2": "Наші офіційно образи розміщені <a href=':1:'>тут</a>. Ми завжди раді новим пул-реквстам та покращенням. Репозиторій для докерівських файлів знаходиться тут:",
   "download_docker_3": "With Phalcon-compose you can create an isolated environment with docker, that will allow you to use Phalcon without any additional installations. Note that using Phalcon Compose, requires ",
   "download_docker_4": "та",
   "download_docker_5": "Служби",
