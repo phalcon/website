@@ -104,7 +104,7 @@ return [
         ],
     ],
     'languages'     => [
-        'ar' => 'Armenian',
+        'ar' => 'Arabic',
         'bg' => 'Bulgarian',
         'ca' => 'Catalan',
         'cs' => 'Český',
@@ -142,6 +142,10 @@ return [
     'languages_map' => [
         'sv' => 'se',
         'vi' => 'vn',
+        'uk' => 'ua',
+        'hy' => 'am',
+        'da' => 'dk',
+        'kk' => 'kz',
     ],
     'doc_languages' => [
         'en',
