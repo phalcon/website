@@ -328,6 +328,7 @@ a.button-medium {
     text-decoration: none;
     background: #f2f2f2;
     color: #000;
+    transition: all 250ms;
 }
 
 .button:hover {
