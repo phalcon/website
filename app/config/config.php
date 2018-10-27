@@ -5,7 +5,7 @@ $downloadSlugs = 'linux|windows|tools|docker|stubs';
 
 return [
     'app'           => [
-        'version'         => '3.3',
+        'version'         => '3.4.1',
         'timezone'        => getenv('APP_TIMEZONE'),
         'debug'           => getenv('APP_DEBUG'),
         'env'             => getenv('APP_ENV'),
@@ -104,7 +104,7 @@ return [
         ],
     ],
     'languages'     => [
-        'ar' => 'Armenian',
+        'ar' => 'Arabic',
         'bg' => 'Bulgarian',
         'ca' => 'Catalan',
         'cs' => 'Český',
@@ -142,6 +142,10 @@ return [
     'languages_map' => [
         'sv' => 'se',
         'vi' => 'vn',
+        'uk' => 'ua',
+        'hy' => 'am',
+        'da' => 'dk',
+        'kk' => 'kz',
     ],
     'doc_languages' => [
         'en',

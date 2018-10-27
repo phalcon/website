@@ -212,7 +212,7 @@
   "hosting_amazon_ec2_2": "Pilih pra-dikonfigurasi, templated Amazon Machine Image (AMI) untuk membangun dan menjalan dengan segera. Atau membuat sebuah AMI yang berisi aplikasi, perpustakaan, data, dan pengaturan konfigurasi terkait. <a href=':1:'> lebih lanjut</a>",
   "hosting_amazon_ec2_title": "Amazon EC2",
   "hosting_aspnix_1": "ASPnix memberikan layanan web hosting Windows yang superior. pelanggan kami telah mendapatkan layanan kami dengan luar biasa. Kami menawarkan paket ekonomis untuk  cPanel web hosting Windows dan Linux , Virtual private server dan dedicated server! <a href=':1:'> Lihat lebih </a>",
-  "hosting_aspnix_2": "Phalcon didukung di semua paket shared web hosting Windows dan Linux cPanel, tidak ada konfigurasi atau instalasi yang diperlukan! Mereka menawarkan berbagai versi PHP 5,2-7,0 serta banyak <a href=':1:' ekstensi tambahan target=\"_blank\"> </a>!",
+  "hosting_aspnix_2": "Phalcon didukung di semua paket shared web hosting Windows, tidak ada konfigurasi atau instalasi yang diperlukan! Mereka menawarkan berbagai versi PHP 5,2-7,0 serta banyak <a href=':1:' ekstensi tambahan target=\"_blank\"> </a>!",
   "hosting_aspnix_title": "ASPnix",
   "hosting_azure_1": "<a Href=':1:'> cloud Windows Azure </a> membantu Anda dengan scalable yang sangat tinggi dan  hosting Windows yang mudah dikelola untuk aplikasi web Anda. Gunakan Phalcon untuk mengurangi biaya Anda.",
   "hosting_azure_2": "Untuk menginstal Phalcon, ikuti langkah-langkah prosedur di <a href=':1:'> artikel SitePoint ini </a>.",
