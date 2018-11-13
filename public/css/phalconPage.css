@@ -490,18 +490,6 @@ a:hover.btn-video span {
     border-color: #2a3e80;
     text-shadow: -1px -1px 1px #2a3e80
 }
-.prefooter a.btn-social-googleplus {
-    background: #da3924;
-    background: -moz-linear-gradient(top, #f17d68 0, #da3924 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f17d68), color-stop(100%, #da3924));
-    background: -webkit-linear-gradient(top, #f17d68 0, #da3924 100%);
-    background: -o-linear-gradient(top, #f17d68 0, #da3924 100%);
-    background: -ms-linear-gradient(top, #f17d68 0, #da3924 100%);
-    background: linear-gradient(to bottom, #f17d68 0, #da3924 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='$start', endColorstr='$end', GradientType=0);
-    border-color: #b92a15;
-    text-shadow: -1px -1px 1px #cf331b
-}
 .prefooter a.btn-social-github {
     background: #616161;
     background: -moz-linear-gradient(top, #898989 0, #616161 100%);
@@ -1257,9 +1245,6 @@ screen and (max-height: 300px) {
 }
 .icon-bubbles:before {
     content: "\e601"
-}
-.icon-googleplus:before {
-    content: "\e605"
 }
 .icon-facebook:before {
     content: "\e606"
