@@ -88,7 +88,6 @@
                     <li><a href="https://twitter.com/phalconphp">{{ locale.translate('about_follow_on_twitter') }}</a></li>
                     <li><a href="https://gab.ai/phalcon">{{ locale.translate('about_follow_on_gab') }}</a></li>
                     <li><a href="https://www.facebook.com/pages/Phalcon/134230726685897">{{ locale.translate('about_facebook_page') }}</a></li>
-                    <li><a href="https://plus.google.com/102376109340560896457">{{ locale.translate('about_google_plus_page') }}</a></li>
                     <li><a href="https://blog.phalconphp.com">{{ locale.translate('about_official_blog') }}</a></li>
                     <li><a href="http://github.com/phalcon/cphalcon">{{ locale.translate('about_star_on_github') }}</a></li>
                 </ul>

@@ -52,11 +52,6 @@
                 </a>
             </li>
             <li>
-                <a href="https://phalcon.link/gplus" target="_blank">
-                    {{ locale.translate('google_plus') }}
-                </a>
-            </li>
-            <li>
                 <a href="https://phalcon.link/gab" target="_blank">
                     {{ locale.translate('gab') }}
                 </a>
