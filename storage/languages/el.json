@@ -210,7 +210,7 @@
   "hosting_amazon_ec2_2": "Επιλέξτε ένα προ-ρυθμισμένη, Image Machine Amazon (AMI) για να δμιουργηθεί και να λειτουργήσει άμεσα. Ή δημιουργήσετε ένα AMI που περιέχει τις εφαρμογές, βιβλιοθήκες, δεδομένα και τις συναφείς ρυθμίσεις που χρειάζεστε. <a href=':1:'>Δείτε περισσότερα</a>",
   "hosting_amazon_ec2_title": "Amazon EC2",
   "hosting_aspnix_1": "Το ASPnix παρέχει ανώτερες υπηρεσίες φιλοξενίας ιστοσελίδων σε Windows. Οι πελάτες μας έχουν βαθμολογίσει υπηρεσία μας ως εξαιρετική. Προσφέρουμε οικονομικά σχέδια για κοινόχρηστο Windows και Linux Ιστοφιλοξενία cPanel, εικονικού ιδιωτικού διακομιστές και αποκλειστικούς διακομιστές! <a href=':1:'>Δείτε περισσότερα</a>",
-  "hosting_aspnix_2": "Το Phalcon υποστηρίζεται σε όλα τα Windows επιμερισμένα πακέτα και σχέδια φιλοξενείας, χωρίς να χρειάζεται ρύθμιση παραμέτρων ή περεταίρω εγκατάσταση! Προσφέρουν μια ποικιλία από εκδόσεις PHP 5.2-7.0, καθώς και πολλές <a href=':1:' target=\"_blank\">πρόσθετες επεκτάσεις</a>!",
+  "hosting_aspnix_2": "Phalcon is supported on all Windows and Linux cPanel shared web hosting packages and plans, no configuration or installation required! ASPnix offers a variety of PHP versions from 5.2 - 7.2 as well as many <a href=':1:' target=\"_blank\">additional extensions</a>!",
   "hosting_aspnix_title": "ASPnix",
   "hosting_azure_1": "Το <a href=':1:'>Windows Azure cloud</a> σας παρέχει εξαιρετικά επεκτάσιμη και διαχειρίσιμη Windows φιλοξενία για τις εφαρμογές ιστού σας. Χρησιμοποιήστε το Phalcon για να μειώσετε το κόστος σας.",
   "hosting_azure_2": "Για να εγκαταστήσετε το Phalcon, ακολουθήσετε τις βήμα προς βήμα οδηγείες σε <a href=':1:'>αυτό το άρθρο του SitePoint</a>.",
