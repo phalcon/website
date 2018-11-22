@@ -18,6 +18,7 @@ $robots = Robots::find();
 echo "{{ locale.translate('odm_for_mongo_4', 'count($robots)') }}\n";
 
 // {{ locale.translate('odm_for_mongo_3') }}
+
 $robots = Robots::find(
     array(
         array(

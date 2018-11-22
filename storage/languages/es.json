@@ -339,7 +339,7 @@
   "support_reporting_a_bug_1": "Por favor, reporta errores cuando hayas agotado todas las opciones anteriores, usando el <a href=':1:'>issue tracker</a> de Github.",
   "support_slack": "Hay una comunidad menos activa pero aún funcional en <a href=':1:'>Slack</a>",
   "support_stack_overflow": "Otra forma es hacer una pregunta en <a href=':1:' target='_blank'>Stackoverflow</a> y etiquetar con <a href=':2:'><code>phalcon</code></a>",
-  "support_social_network_accounts": "Our social network accounts are: <a href=':1:'>Gab.ai</a> , <a href=':2:'>Twitter</a> and <a href=':3:'>Facebook</a>",
+  "support_social_network_accounts": "Nuestras cuentas de redes sociales son: <a href=':1:'>Gab.ai</a>, <a href=':2:'>Twitter</a> y <a href=':3:'>Facebook</a>",
   "support_us": "Apóyanos",
   "team": "Equipo",
   "team_andres_1": "Andrés no es ajeno a los proyectos de software abierto, en los últimos nueve años, ha estado diseñando y liberando frameworks y librerías para PHP además de estar envuelto activamente en desarrollo web - su mayor pasión.",

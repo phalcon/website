@@ -339,7 +339,7 @@
   "support_reporting_a_bug_1": "请当你用尽了所有的上面的选项中，在 Github 使用 <a href=':1:'> 问题跟踪器</a>，报告 bug。",
   "support_slack": "这是一个不太活跃但仍在运行的<a href=':1:'>Slack</a>社区",
   "support_stack_overflow": "另一种方法是在 <a href=':1:' target='_blank'>Stack Overflow</a> 的<a href=':2:'><code>phalcon</code></a>作标记",
-  "support_social_network_accounts": "你可以通过如下社交网络找到我们: <a href=':1:'>Gab.ai </a>, <a href=':2:'>Twitter</a>, <a href=':3:'>Facebook</a>",
+  "support_social_network_accounts": "你可以通过如下社交网络找到我们: <a href=':1:'>Gab.ai</a> , <a href=':2:'>Twitter</a> and <a href=':3:'>Facebook</a>",
   "support_us": "支持我们",
   "team": "团队",
   "team_andres_1": "Andres并不是开源项目里的陌生人。在过去的九年里，他已经设计和发布许多PHP框架、参与web开发，这是他的激情所在。",
