@@ -29,11 +29,6 @@ class FetchContributorsTask extends PhTask
             'zephir-docs'      => 1.5,
             'forum'            => 1.5,
             'vokuro'           => 1,
-            'invo'             => 0.9,
-            'album-o-rama'     => 0.9,
-            'php-site'         => 0.9,
-            'mvc'              => 0.9,
-            'dasshy'           => 0.9,
         ];
 
         $steps = count($repositories);
