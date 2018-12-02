@@ -4,8 +4,6 @@ namespace Website;
 
 use function explode;
 use Phalcon\Mvc\User\Component;
-use function strrpos;
-use function substr;
 
 /**
  * Class Utils
