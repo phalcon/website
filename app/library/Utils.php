@@ -60,7 +60,7 @@ class Utils extends Component
             'https://docs.phalconphp.com/%s/%s.%s',
             $return,
             $parts[0] ?? 0,
-            $parts[0] ?? 0
+            $parts[1] ?? 0
         );
     }
 
