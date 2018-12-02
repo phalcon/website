@@ -2,7 +2,10 @@
 
 namespace Website;
 
+use function explode;
 use Phalcon\Mvc\User\Component;
+use function strrpos;
+use function substr;
 
 /**
  * Class Utils
@@ -52,10 +55,13 @@ class Utils extends Component
             $return = $lang;
         }
 
+        $version = $this->config->get('app')->get('version');
+        $version = substr($version, 0, strrpos($version, ','));
+
         return sprintf(
             'https://docs.phalconphp.com/%s/%s',
             $return,
-            $this->config->get('app')->get('version')
+            $version
         );
     }
 
