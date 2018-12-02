@@ -56,12 +56,13 @@ class Utils extends Component
         }
 
         $version = $this->config->get('app')->get('version');
-        $version = substr($version, 0, strrpos($version, ','));
+        $parts   = explode('.', $version);
 
         return sprintf(
-            'https://docs.phalconphp.com/%s/%s',
+            'https://docs.phalconphp.com/%s/%s.%s',
             $return,
-            $version
+            $parts[0] ?? 0,
+            $parts[0] ?? 0
         );
     }
 
