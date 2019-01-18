@@ -57,7 +57,7 @@ sudo apt-get install python-software-properties</code></pre>
 sudo apt-get install php5-dev php5-mysql gcc libpcre3-dev
 
 # Fedora
-sudo yum install php-devel php-mysqlnd gcc libtool pcre-devel
+sudo dnf install php-devel php-mysqlnd gcc libtool pcre-devel re2c
 
 # RHEL
 sudo yum install php-devel php-mysql gcc libtool pcre-devel
