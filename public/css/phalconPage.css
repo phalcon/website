@@ -152,7 +152,7 @@ header #dropdownLanguageMenu span {
     margin-bottom: 4px
 }
 header .dropdown-menu {
-    background: rgba(255, 255, 255, .6)
+    background: #ffffff;
 }
 header .dropdown-menu li a {
     font-size: 12px;
@@ -692,14 +692,24 @@ a:hover.btn-video span {
         padding-right: 20px
     }
     header .main-menu li {
-        margin: 0 1px
+        margin: 0 1px;
     }
     header .main-menu li a {
-        padding: 8px 16px
+        padding: 8px 16px;
     }
     header .dropdown-menu li a {
-        padding: 4px 0 4px 32px
+        padding: 3px 20px;
+        font-size: 14px;
+        color: #000;
     }
+    header .dropdown-menu li a:hover {
+        background-color: #f5f5f5;
+        color: #000;
+    }
+    header .dropdown-menu li {
+        margin: 0;
+    }
+
 }
 @media screen and (min-width: 992px) {
     header .phalcon-logo {
