@@ -323,6 +323,10 @@ ul.feature-list li:hover {
     cursor: hand
 }
 
+.community {
+    border: 2px solid #fff;
+}
+
 .community:hover {
     background: #eeeff1;
     border: 2px solid #fff;
