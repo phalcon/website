@@ -60,4 +60,4 @@
           href="https://assets.phalconphp.com/phalcon/favicons/favicon-196x196.png">
     <link rel="shortcut icon"
           type="image/png"
-          href="https://assets.phalconphp.com/phalcon/favicon.ico"/>
+          href="https://assets.phalconphp.com/phalcon/favicons/favicon.ico"/>
