@@ -593,6 +593,10 @@ section p {
     text-align: right
 }
 
+.social-icons-align a{
+    display: inline-block;
+}
+
 .jumbotron h1 {
     font-size: 48px;
     font-size: 4.8rem;
