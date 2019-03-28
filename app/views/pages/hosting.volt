@@ -17,8 +17,8 @@
         <div class="row">
             <div class="col-lg-3">
                 <img src='{{ utils.getCdnUrl('images/hosting/amazon-gray.png') }}'
-                     title='{{ locale.translate('hosting_amazon_ec2_title') }}'
-                     alt='{{ locale.translate('hosting_amazon_ec2_title') }}' />
+                title='{{ locale.translate('hosting_amazon_ec2_title') }}'
+                alt='{{ locale.translate('hosting_amazon_ec2_title') }}' />
             </div>
             <div class="col-lg-9">
                 <h4>
@@ -35,8 +35,8 @@
         <div class="row">
             <div class="col-lg-3">
                 <img src='{{ utils.getCdnUrl('images/hosting/aspnix-logo.png') }}'
-                     title='{{ locale.translate('hosting_aspnix_title') }}'
-                     alt='{{ locale.translate('hosting_aspnix_title') }}' />
+                title='{{ locale.translate('hosting_aspnix_title') }}'
+                alt='{{ locale.translate('hosting_aspnix_title') }}' />
             </div>
             <div class="col-lg-9">
                 <h4>
@@ -52,8 +52,8 @@
         <div class="row">
             <div class="col-lg-3">
                 <img src='{{ utils.getCdnUrl('images/hosting/digital-ocean-gray.png') }}'
-                     title='{{ locale.translate('hosting_digital_ocean_title') }}'
-                     alt='{{ locale.translate('hosting_digital_ocean_title') }}' />
+                title='{{ locale.translate('hosting_digital_ocean_title') }}'
+                alt='{{ locale.translate('hosting_digital_ocean_title') }}' />
             </div>
             <div class="col-lg-9">
                 <h4>
@@ -66,16 +66,18 @@
                 <p>{{ locale.translate('hosting_digital_ocean_2', 'https://www.digitalocean.com/community/articles/how-to-install-and-get-started-with-phalcon-on-an-ubuntu-12-04-vps') }}</p>
             </div>
         </div>
-                        <!-- DCT Host -->
+        <!-- DCT Host -->
         <div class="row">
             <div class="col-lg-3">
                 <img src='{{ utils.getCdnUrl('images/hosting/dct-host.png') }}'
-                     title='{{ locale.translate('hosting_dcthost_title') }}'
-                     alt='{{ locale.translate('hosting_dcthost_title') }}' />
+                title='{{ locale.translate('hosting_dcthost_title') }}'
+                alt='{{ locale.translate('hosting_dcthost_title') }}'
+                width='220px'
+                height='110px'/>
             </div>
             <div class="col-lg-9">
                 <h4>
-                    <a target="_blank" href='https://dct.host/'>
+                    <a target="_blank" href='https://dct.host/website-hosting?utm_source=phalcon&utm_medium=image&utm_campaign=image'>
                         {{ locale.translate('hosting_dcthost_title') }}
                     </a>
                 </h4>
@@ -88,8 +90,8 @@
         <div class="row">
             <div class="col-lg-3">
                 <img src='{{ utils.getCdnUrl('images/hosting/fortrabbit-gray.png') }}'
-                     title='{{ locale.translate('hosting_fortrabbit_title') }}'
-                     alt='{{ locale.translate('hosting_fortrabbit_title') }}' />
+                title='{{ locale.translate('hosting_fortrabbit_title') }}'
+                alt='{{ locale.translate('hosting_fortrabbit_title') }}' />
             </div>
             <div class="col-lg-9">
                 <h4>
@@ -106,8 +108,8 @@
         <div class="row">
             <div class="col-lg-3">
                 <img src='{{ utils.getCdnUrl('images/hosting/kinghost-gray.png') }}'
-                     title='{{ locale.translate('hosting_kinghost_title') }}'
-                     alt='{{ locale.translate('hosting_kinghost_title') }}' />
+                title='{{ locale.translate('hosting_kinghost_title') }}'
+                alt='{{ locale.translate('hosting_kinghost_title') }}' />
             </div>
             <div class="col-lg-9">
                 <h4>
@@ -122,8 +124,8 @@
         <div class="row">
             <div class="col-lg-3">
                 <img src='{{ utils.getCdnUrl('images/hosting/layershift-gray.png') }}'
-                     title='{{ locale.translate('hosting_layershift_title') }}'
-                     alt='{{ locale.translate('hosting_layershift_title') }}' />
+                title='{{ locale.translate('hosting_layershift_title') }}'
+                alt='{{ locale.translate('hosting_layershift_title') }}' />
             </div>
             <div class="col-lg-9">
                 <h4>
@@ -138,9 +140,9 @@
         <!-- Linode -->
         <div class="row">
             <div class="col-lg-3">
-                <img src='{{ utils.getCdnUrl('images/hosting/linode-gray.png') }}' 
-                     title='{{ locale.translate('hosting_linode_title') }}'
-                     alt='{{ locale.translate('hosting_linode_title') }}' />
+                <img src='{{ utils.getCdnUrl('images/hosting/linode-gray.png') }}'
+                title='{{ locale.translate('hosting_linode_title') }}'
+                alt='{{ locale.translate('hosting_linode_title') }}' />
             </div>
             <div class="col-lg-9">
                 <h4>
@@ -156,8 +158,8 @@
         <div class="row">
             <div class="col-lg-3">
                 <img src='{{ utils.getCdnUrl('images/hosting/mediasecure-gray.png') }}'
-                     title='{{ locale.translate('hosting_mediasecure_title') }}'
-                     alt='{{ locale.translate('hosting_mediasecure_title') }}' style='margin-top: 13px' />
+                title='{{ locale.translate('hosting_mediasecure_title') }}'
+                alt='{{ locale.translate('hosting_mediasecure_title') }}' style='margin-top: 13px' />
             </div>
             <div class="col-lg-9">
                 <h4>
@@ -172,8 +174,8 @@
         <div class="row">
             <div class="col-lg-3">
                 <img src='{{ utils.getCdnUrl('images/hosting/rackspace-gray.png') }}'
-                     title='{{ locale.translate('hosting_rackspace_title') }}'
-                     alt='{{ locale.translate('hosting_rackspace_title') }}' />
+                title='{{ locale.translate('hosting_rackspace_title') }}'
+                alt='{{ locale.translate('hosting_rackspace_title') }}' />
             </div>
             <div class="col-lg-9">
                 <h4>
@@ -189,8 +191,8 @@
         <div class="row">
             <div class="col-lg-3">
                 <img src='{{ utils.getCdnUrl('images/hosting/webfaction-gray.png') }}'
-                     title='{{ locale.translate('hosting_webfaction_title') }}'
-                     alt='{{ locale.translate('hosting_webfaction_title') }}' />
+                title='{{ locale.translate('hosting_webfaction_title') }}'
+                alt='{{ locale.translate('hosting_webfaction_title') }}' />
             </div>
             <div class="col-lg-9">
                 <h4>
@@ -206,8 +208,8 @@
         <div class="row">
             <div class="col-lg-3">
                 <img src='{{ utils.getCdnUrl('images/hosting/azure-gray.jpg') }}'
-                     title='{{ locale.translate('hosting_azure_title') }}'
-                     alt='{{ locale.translate('hosting_azure_title') }}' />
+                title='{{ locale.translate('hosting_azure_title') }}'
+                alt='{{ locale.translate('hosting_azure_title') }}' />
             </div>
             <div class="col-lg-9">
                 <h4>
