@@ -580,6 +580,12 @@ a.header-nav-link {
     min-height: unset;
 }
 
+@media (max-width: 767px) {
+    .jumbotron {
+        background-size: cover;
+    }
+}
+
 .lang-wrapper {
     margin-left: 3px;
 }
