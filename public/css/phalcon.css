@@ -599,9 +599,14 @@ section p {
 
 .jumbotron h1 {
     font-size: 48px;
-    font-size: 4.8rem;
     color: #fff;
     margin-top: 120px
+}
+
+@media (max-width: 767px) {
+    .jumbotron h1 {
+        font-size: 28px;
+    }
 }
 
 .jumbotron h1 span {
