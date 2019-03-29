@@ -81,8 +81,8 @@
                         {{ locale.translate('hosting_dcthost_title') }}
                     </a>
                 </h4>
-                <p>{{ locale.translate('hosting_dcthost_1') }}</p>
-                <p>{{ locale.translate('hosting_dcthost_2', 'https://dct.host') }}</p>
+                <p>{{ locale.translate('hosting_dcthost_1', 'https://dct.host/website-hosting?utm_source=phalcon&utm_medium=image&utm_campaign=image') }}</p>
+                <p>{{ locale.translate('hosting_dcthost_2') }}</p>
                 <p>{{ locale.translate('hosting_install_instructions') }}</p>
             </div>
         </div>
