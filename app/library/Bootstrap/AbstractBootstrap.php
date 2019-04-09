@@ -237,12 +237,12 @@ abstract class AbstractBootstrap
             }
         );
 
-        register_shutdown_function(
-            function () use ($logger, $utils, $registry) {
-                $memory    = memory_get_usage() - $registry->memory;
-                $execution = microtime(true) - $registry->executionTime;
+        if ('development' === $registry->mode) {
+            register_shutdown_function(
+                function () use ($logger, $utils, $registry) {
+                    $memory    = memory_get_usage() - $registry->memory;
+                    $execution = microtime(true) - $registry->executionTime;
 
-                if ('development' === $registry->mode) {
                     $logger->info(
                         sprintf(
                             'Shutdown completed [%s] - [%s]',
@@ -251,8 +251,8 @@ abstract class AbstractBootstrap
                         )
                     );
                 }
-            }
-        );
+            );
+        }
     }
 
     /**
