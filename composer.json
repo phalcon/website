@@ -30,10 +30,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Website\\": "app/library/",
-      "Website\\Cli\\Tasks\\": "app/tasks/",
-      "Website\\Controllers\\": "app/controllers/",
-      "Website\\Middleware\\": "app/library/Middleware/"
+      "Website\\": "app/library/"
     }
   },
   "require": {
