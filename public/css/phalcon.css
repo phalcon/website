@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
 .codesamples h2, .codesamples h4, .footer .design, .footer h4, h4 {
     text-transform: uppercase
 }
@@ -604,7 +606,8 @@ section p {
 .jumbotron h1 {
     font-size: 48px;
     color: #fff;
-    margin-top: 120px
+    margin-top: 120px;
+    line-height: 1;
 }
 
 @media (max-width: 767px) {
