@@ -24,15 +24,15 @@
                 <h3>{{ locale.translate('sponsors_and_supporters_upper') }}</h3>
                 <a href="https://www.pdffiller.com/" target="_blank">
                     <img width="240px"
-                         src="https://raw.githubusercontent.com/phalcon/cphalcon/master/backers/pdffiller-240x60.png" alt="Pdffiller">
+                         src="https://assets.phalconphp.com/phalcon/images/backers/pdffiller-164x34.svg" alt="Pdffiller">
                 </a>
                 <a href="https://mctekk.com/phalcon" target="_blank">
                     <img width="240px"
-                         src="https://raw.githubusercontent.com/phalcon/cphalcon/master/backers/mctekk-240x60.png"  alt="Mctekk">
+                         src="https://assets.phalconphp.com/phalcon/images/backers/mctekk-149x34.svg"  alt="Mctekk">
                 </a>
                 <a href="https://abits.com/" target="_blank">
                     <img width="240px"
-                         src="https://raw.githubusercontent.com/phalcon/cphalcon/master/backers/abits-240x60.png" alt="Abits">
+                         src="https://assets.phalconphp.com/phalcon/images/backers/abits-100x34.svg" alt="Abits">
                 </a>
                 <a href="https://algolia.com/" target="_blank">
                     <img width="240px" src="https://assets.phalconphp.com/phalcon/images/backers/algolia-725x360.svg" alt="Algolia">
