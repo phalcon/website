@@ -398,5 +398,9 @@
   "views_and_frontend": "Απόψεις και frontend",
   "vimeo": "Vimeo",
   "watch_demo": "Παρακολουθήστε το βίντεο επίδειξης",
-  "zephir": "Zephir"
+  "zephir": "Zephir",
+  "telegram": "Telegram",
+  "mewe": "MeWe",
+  "parler": "Parler",
+  "stack_overflow": "Stack Overflow"
 }

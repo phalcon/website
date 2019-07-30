@@ -398,5 +398,9 @@
   "views_and_frontend": "Views & frontend",
   "vimeo": "Vimeo",
   "watch_demo": "Menonton video demo",
-  "zephir": "zephir"
+  "zephir": "zephir",
+  "telegram": "Telegram",
+  "mewe": "MeWe",
+  "parler": "Parler",
+  "stack_overflow": "Stack Overflow"
 }
