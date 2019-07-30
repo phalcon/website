@@ -398,5 +398,9 @@
   "views_and_frontend": "Представления и фронтенд",
   "vimeo": "Vimeo",
   "watch_demo": "Watch the demo video",
-  "zephir": "Zephir"
+  "zephir": "Zephir",
+  "telegram": "Telegram",
+  "mewe": "MeWe",
+  "parler": "Parler",
+  "stack_overflow": "Stack Overflow"
 }

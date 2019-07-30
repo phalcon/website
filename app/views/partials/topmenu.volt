@@ -22,34 +22,18 @@
         </a>
         <ul class="dropdown-menu">
             <li>
-                <a href="https://phalcon.link/forum" target="_blank">
-                    {{ locale.translate('forum') }}
-                </a>
-            </li>
-            <li>
                 <a href="https://phalcon.link/blog" target="_blank">
                     {{ locale.translate('blog') }}
                 </a>
             </li>
             <li>
-                <a href="https://phalcon.link/api" target="_blank">
-                    {{ locale.translate('api') }}
+                <a href="https://phalcon.link/telegram" target="_blank">
+                    {{ locale.translate('telegram') }}
                 </a>
             </li>
             <li>
-                <a href="https://phalcon.link/resources" target="_blank">
-                    {{ locale.translate('resources') }}
-                </a>
-            </li>
-            <li role="separator" class="divider"></li>
-            <li>
-                <a href="https://phalcon.link/fb" target="_blank">
-                    {{ locale.translate('facebook') }}
-                </a>
-            </li>
-            <li>
-                <a href="https://phalcon.link/t" target="_blank">
-                    {{ locale.translate('twitter') }}
+                <a href="https://phalcon.link/mewe" target="_blank">
+                    {{ locale.translate('mewe') }}
                 </a>
             </li>
             <li>
@@ -58,8 +42,39 @@
                 </a>
             </li>
             <li>
+                <a href="https://phalcon.link/fb" target="_blank">
+                    {{ locale.translate('facebook') }}
+                </a>
+            </li>
+             <li>
+                <a href="https://phalcon.link/t" target="_blank">
+                    {{ locale.translate('twitter') }}
+                </a>
+            </li>
+            <li>
+                <a href="https://phalcon.link/parler" target="_blank">
+                    {{ locale.translate('parler') }}
+                </a>
+            </li>
+            <li role="separator" class="divider"></li>
+             <li>
+                <a href="https://phalcon.link/forum" target="_blank">
+                    {{ locale.translate('forum') }}
+                </a>
+            </li>
+            <li>
+                <a href="https://phalcon.link/api" target="_blank">
+                    {{ locale.translate('api') }}
+                </a>
+            </li>
+            <li>
                 <a href="https://phalcon.link/discord" target="_blank">
                     {{ locale.translate('discord') }}
+                </a>
+            </li>
+            <li>
+                <a href="https://phalcon.link/so" target="_blank">
+                    {{ locale.translate('stack_overflow') }}
                 </a>
             </li>
         </ul>
