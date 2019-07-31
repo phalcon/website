@@ -72,8 +72,7 @@
                 <img src='{{ utils.getCdnUrl('images/hosting/dct-host.png') }}'
                 title='{{ locale.translate('hosting_dcthost_title') }}'
                 alt='{{ locale.translate('hosting_dcthost_title') }}'
-                width='220px'
-                height='110px'/>
+                width='220px'/>
             </div>
             <div class="col-lg-9">
                 <h4>
