@@ -21,6 +21,9 @@
             {{ locale.translate('community') }} <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
+            <li class="dropdown-menu-title">
+                {{ locale.translate('dropdown_menu_title_social') }}
+            </li>
             <li>
                 <a href="https://phalcon.link/blog" target="_blank">
                     {{ locale.translate('blog') }}
@@ -57,6 +60,9 @@
                 </a>
             </li>
             <li role="separator" class="divider"></li>
+            <li class="dropdown-menu-title">
+                {{ locale.translate('dropdown_menu_title_help') }}
+            </li>
              <li>
                 <a href="https://phalcon.link/forum" target="_blank">
                     {{ locale.translate('forum') }}
