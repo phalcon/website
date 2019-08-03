@@ -402,5 +402,8 @@
     "telegram": "Telegram",
     "mewe": "MeWe",
     "parler": "Parler",
-    "stack_overflow": "Stack Overflow"
+    "stack_overflow": "Stack Overflow",
+    "dropdown_menu_title_social": "Social",
+    "dropdown_menu_title_help": "Help"
+
 }

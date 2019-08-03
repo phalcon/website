@@ -1383,3 +1383,9 @@ ul.social-icons li a {
     font-size: .9em;
     margin: 0 0 10px
 }
+
+.dropdown-menu-title {
+    color: #000;
+    font-weight: bold;
+    padding: 3px 15px 3px 20px;
+}
