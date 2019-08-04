@@ -1389,3 +1389,9 @@ ul.social-icons li a {
     font-weight: bold;
     padding: 3px 15px 3px 20px;
 }
+
+.nav .open>a,
+.nav .open>a:focus,
+.nav .open>a:hover {
+    background-color: transparent;
+}
