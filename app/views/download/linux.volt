@@ -69,7 +69,10 @@ yast2 -i php5-pear php5-devel php5-mysql gcc libtool pcre-devel
 brew tap homebrew/dupes
 brew tap homebrew/versions
 brew tap homebrew/php
-brew install php5x php5x-phalcon # php55, php56, ...</code></pre>
+brew install php5x php5x-phalcon # php55, php56, ...
+
+# macOS (MacPorts)
+sudo port install php73-phalcon # php72, php71, php56, ...</code></pre>
         </div>
 
 
