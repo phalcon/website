@@ -1293,3 +1293,9 @@ ul.footer-links-list {
     text-align: center;
 }
 
+.dropdown-menu-title {
+    color: #000;
+    font-weight: bold;
+    padding: 3px 15px 3px 20px;
+}
+
