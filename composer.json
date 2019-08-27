@@ -9,12 +9,12 @@
   ],
   "type": "project",
   "license": "BSD-3-Clause",
-  "homepage": "https://phalconphp.com/",
+  "homepage": "https://phalcon.io/",
   "authors": [
     {
       "name": "Phalcon Team",
-      "email": "team@phalconphp.com",
-      "homepage": "https://phalconphp.com/en/team"
+      "email": "team@phalcon.io",
+      "homepage": "https://phalcon.io/en/team"
     },
     {
       "name": "Contributors",
@@ -25,8 +25,8 @@
     "source": "https://github.com/phalcon/cphalcon",
     "issues": "https://github.com/phalcon/cphalcon/issues",
     "wiki": "https://github.com/phalcon/cphalcon/wiki",
-    "forum": "https://forum.phalconphp.com/",
-    "docs": "https://docs.phalconphp.com"
+    "forum": "https://forum.phalcon.io/",
+    "docs": "https://docs.phalcon.io"
   },
   "autoload": {
     "psr-4": {

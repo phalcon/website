@@ -24,21 +24,21 @@
                 <h3>{{ locale.translate('sponsors_and_supporters_upper') }}</h3>
                 <a href="https://www.pdffiller.com/" target="_blank">
                     <img width="240px"
-                         src="https://assets.phalconphp.com/phalcon/images/backers/pdffiller-164x34.svg" alt="Pdffiller">
+                         src="https://assets.phalcon.io/phalcon/images/backers/pdffiller-164x34.svg" alt="Pdffiller">
                 </a>
                 <a href="https://mctekk.com/phalcon" target="_blank">
                     <img width="240px"
-                         src="https://assets.phalconphp.com/phalcon/images/backers/mctekk-149x34.svg"  alt="Mctekk">
+                         src="https://assets.phalcon.io/phalcon/images/backers/mctekk-149x34.svg"  alt="Mctekk">
                 </a>
                 <a href="https://abits.com/" target="_blank">
                     <img width="240px"
-                         src="https://assets.phalconphp.com/phalcon/images/backers/abits-100x34.svg" alt="Abits">
+                         src="https://assets.phalcon.io/phalcon/images/backers/abits-100x34.svg" alt="Abits">
                 </a>
                 <a href="https://algolia.com/" target="_blank">
-                    <img width="240px" src="https://assets.phalconphp.com/phalcon/images/backers/algolia-725x360.svg" alt="Algolia">
+                    <img width="240px" src="https://assets.phalcon.io/phalcon/images/backers/algolia-725x360.svg" alt="Algolia">
                 </a>
                 <a href="https://netlify.com/" target="_blank">
-                    <img width="240px" src="https://assets.phalconphp.com/phalcon/images/backers/netlify-147x40.svg" alt="Netlify">
+                    <img width="240px" src="https://assets.phalcon.io/phalcon/images/backers/netlify-147x40.svg" alt="Netlify">
                 </a>
                 <a href="https://odva.pro/" target="_blank">
                     <svg width="50" height="46" viewBox="0 0 38 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,7 +48,7 @@
                     </svg>
                 </a>
                 <a href="https://crowdin.com/" target="_blank">
-                    <img width="240px" src="https://assets.phalconphp.com/phalcon/images/backers/crowdin.png" alt="Crowdin">
+                    <img width="240px" src="https://assets.phalcon.io/phalcon/images/backers/crowdin.png" alt="Crowdin">
                 </a>
             </div>
         </div>

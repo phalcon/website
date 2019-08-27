@@ -3,7 +3,7 @@
 {% for language, languageName in config.languages.toArray() %}{% for page in config.sitemap.toArray() %}
 
     <url>
-        <loc>https://phalconphp.com/{{ language }}/{{ page }}</loc>
+        <loc>https://phalcon.io/{{ language }}/{{ page }}</loc>
         <changefreq>daily</changefreq>
     </url>
     {% endfor %}

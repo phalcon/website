@@ -57,7 +57,7 @@ class Utils extends Component
         $parts   = explode('.', $version);
 
         return sprintf(
-            'https://docs.phalconphp.com/%s/%s.%s',
+            'https://docs.phalcon.io/%s/%s.%s',
             $return,
             $parts[0] ?? 0,
             $parts[1] ?? 0

@@ -45,8 +45,8 @@ Thanks!
 <3 Phalcon Team
 
 
-[:forums:]: https://forum.phalconphp.com/
+[:forums:]: https://forum.phalcon.io/
 [:bt:]: https://github.com/phalcon/cphalcon/wiki/Generating-a-backtrace
 [:psr:]: http://www.php-fig.org/psr/
-[:support:]: https://phalconphp.com/support
+[:support:]: https://phalcon.io/support
 [:nfr:]: https://github.com/phalcon/cphalcon/wiki/New-Feature-Request---NFR
