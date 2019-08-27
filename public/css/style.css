@@ -526,7 +526,7 @@ a.header-logo {
     height: 28px;
     overflow: hidden;
     text-indent: -9999px;
-    background: url('https://assets.phalconphp.com/phalcon/images/phalcon-logo-text.png');
+    background: url('https://assets.phalcon.io/phalcon/images/phalcon-logo-text.png');
 }
 
 .header-logo:before {

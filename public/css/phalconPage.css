@@ -97,7 +97,7 @@ header .phalcon-logo {
     display: block;
     width: 200px;
     height: 90px;
-    background: url(//static.phalconphp.com/www/images/phalcon.png) 0 0/200px 90px no-repeat
+    background: url(//static.phalcon.io/www/images/phalcon.png) 0 0/200px 90px no-repeat
 }
 header .main-menu {
     margin-top: 38px
@@ -127,21 +127,21 @@ header .main-menu li a.active {
 }
 header a.github {
     margin-right: 0;
-    background: url(//static.phalconphp.com/www/images/github.png) center center no-repeat;
+    background: url(//static.phalcon.io/www/images/github.png) center center no-repeat;
     opacity: .6
 }
 header a:hover.github {
     opacity: .9
 }
 header a.twitter {
-    background: url(//static.phalconphp.com/www/images/twitter.png) center center no-repeat;
+    background: url(//static.phalcon.io/www/images/twitter.png) center center no-repeat;
     opacity: .6
 }
 header a:hover.twitter {
     opacity: .9
 }
 header a#dropdownLanguageMenu {
-    background: url(//static.phalconphp.com/www/images/frame.png) 6px 3px no-repeat;
+    background: url(//static.phalcon.io/www/images/frame.png) 6px 3px no-repeat;
     margin-right: 0
 }
 header a:hover#dropdownLanguageMenu {
@@ -293,10 +293,10 @@ a:hover.btn-video span {
     color: #fff
 }
 .codesamples ul.features-positive {
-    list-style-image: url(//static.phalconphp.com/www/images/check.png)
+    list-style-image: url(//static.phalcon.io/www/images/check.png)
 }
 .codesamples ul.features-negative {
-    list-style-image: url(//static.phalconphp.com/www/images/remove.png)
+    list-style-image: url(//static.phalcon.io/www/images/remove.png)
 }
 .codesamples ul.features li {
     margin-bottom: 5px
@@ -365,7 +365,7 @@ a:hover.btn-video span {
 .contributors {
     margin-top: 40px;
     position: relative;
-    background: url(//static.phalconphp.com/www/images/contributors.jpeg) center -2px #fff;
+    background: url(//static.phalcon.io/www/images/contributors.jpeg) center -2px #fff;
     text-align: center
 }
 .contributors .fader {
@@ -532,7 +532,7 @@ a:hover.btn-video span {
     border-bottom: 1px dotted #c0c6cf
 }
 .footer #license-wrapper {
-    background: url(//static.phalconphp.com/www/images/phalcon3.png) 10px 0/74px 85px no-repeat
+    background: url(//static.phalcon.io/www/images/phalcon3.png) 10px 0/74px 85px no-repeat
 }
 .footer #license-spaccer {
     float: left;
@@ -603,7 +603,7 @@ a:hover.btn-video span {
         margin-left: 0;
         width: 169px;
         height: 58px;
-        background-image: url(//static.phalconphp.com/www/images/phalcon1.png);
+        background-image: url(//static.phalcon.io/www/images/phalcon1.png);
         background-size: 169px 58px
     }
     header .navbar-header {
@@ -682,7 +682,7 @@ a:hover.btn-video span {
         margin-left: 0;
         width: 169px;
         height: 58px;
-        background-image: url(//static.phalconphp.com/www/images/phalcon1.png);
+        background-image: url(//static.phalcon.io/www/images/phalcon1.png);
         background-size: 169px 58px
     }
     header .main-menu {
@@ -717,7 +717,7 @@ a:hover.btn-video span {
         display: block;
         width: 200px;
         height: 90px;
-        background: url(//static.phalconphp.com/www/images/phalcon.png) 0 0/200px 90px no-repeat
+        background: url(//static.phalcon.io/www/images/phalcon.png) 0 0/200px 90px no-repeat
     }
     header .main-menu {
         margin-top: 38px;
@@ -739,79 +739,79 @@ a:hover.btn-video span {
     padding: 10px
 }
 .flag-bg {
-    background-image: url(//static.phalconphp.com/www/images/flags/bg.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/bg.gif)
 }
 .flag-cz {
-    background-image: url(//static.phalconphp.com/www/images/flags/cz.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/cz.gif)
 }
 .flag-de {
-    background-image: url(//static.phalconphp.com/www/images/flags/de.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/de.gif)
 }
 .flag-el {
-    background-image: url(//static.phalconphp.com/www/images/flags/el.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/el.gif)
 }
 .flag-en {
-    background-image: url(//static.phalconphp.com/www/images/flags/en.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/en.gif)
 }
 .flag-es {
-    background-image: url(//static.phalconphp.com/www/images/flags/es.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/es.gif)
 }
 .flag-fa {
-    background-image: url(//static.phalconphp.com/www/images/flags/fa.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/fa.gif)
 }
 .flag-fr {
-    background-image: url(//static.phalconphp.com/www/images/flags/fr.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/fr.gif)
 }
 .flag-hu {
-    background-image: url(//static.phalconphp.com/www/images/flags/hu.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/hu.gif)
 }
 .flag-ja {
-    background-image: url(//static.phalconphp.com/www/images/flags/ja.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/ja.gif)
 }
 .flag-it {
-    background-image: url(//static.phalconphp.com/www/images/flags/it.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/it.gif)
 }
 .flag-ko {
-    background-image: url(//static.phalconphp.com/www/images/flags/ko.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/ko.gif)
 }
 .flag-mk {
-    background-image: url(//static.phalconphp.com/www/images/flags/mk.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/mk.gif)
 }
 .flag-lt {
-    background-image: url(//static.phalconphp.com/www/images/flags/lt.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/lt.gif)
 }
 .flag-nl {
-    background-image: url(//static.phalconphp.com/www/images/flags/nl.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/nl.gif)
 }
 .flag-pl {
-    background-image: url(//static.phalconphp.com/www/images/flags/pl.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/pl.gif)
 }
 .flag-pt {
-    background-image: url(//static.phalconphp.com/www/images/flags/pt.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/pt.gif)
 }
 .flag-ro {
-    background-image: url(//static.phalconphp.com/www/images/flags/ro.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/ro.gif)
 }
 .flag-ru {
-    background-image: url(//static.phalconphp.com/www/images/flags/ru.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/ru.gif)
 }
 .flag-sr {
-    background-image: url(//static.phalconphp.com/www/images/flags/rs.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/rs.gif)
 }
 .flag-sv {
-    background-image: url(//static.phalconphp.com/www/images/flags/sv.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/sv.gif)
 }
 .flag-th {
-    background-image: url(//static.phalconphp.com/www/images/flags/th.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/th.gif)
 }
 .flag-tr {
-    background-image: url(//static.phalconphp.com/www/images/flags/tr.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/tr.gif)
 }
 .flag-vi {
-    background-image: url(//static.phalconphp.com/www/images/flags/vi.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/vi.gif)
 }
 .flag-zh {
-    background-image: url(//static.phalconphp.com/www/images/flags/zh.gif)
+    background-image: url(//static.phalcon.io/www/images/flags/zh.gif)
 }
 .mfp-bg {
     top: 0;
@@ -1230,8 +1230,8 @@ screen and (max-height: 300px) {
 }
 @font-face {
     font-family: icomoon;
-    src: url(//static.phalconphp.com/www/fonts/icomoon.eot?3n7c2);
-    src: url(//static.phalconphp.com/www/fonts/icomoon.eot?#iefix3n7c2) format('embedded-opentype'), url(//static.phalconphp.com/www/fonts/icomoon.woff?3n7c2) format('woff'), url(//static.phalconphp.com/www/fonts/icomoon.ttf?3n7c2) format('truetype'), url(//static.phalconphp.com/www/fonts/icomoon.svg?3n7c2#icomoon) format('svg');
+    src: url(//static.phalcon.io/www/fonts/icomoon.eot?3n7c2);
+    src: url(//static.phalcon.io/www/fonts/icomoon.eot?#iefix3n7c2) format('embedded-opentype'), url(//static.phalcon.io/www/fonts/icomoon.woff?3n7c2) format('woff'), url(//static.phalcon.io/www/fonts/icomoon.ttf?3n7c2) format('truetype'), url(//static.phalcon.io/www/fonts/icomoon.svg?3n7c2#icomoon) format('svg');
     font-weight: 400;
     font-style: normal
 }

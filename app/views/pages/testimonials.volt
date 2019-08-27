@@ -9,7 +9,7 @@
         {% include 'partials/menu_about.volt' %}
         <div class="row">
             <div class="col-lg-12">
-                <p>{{ locale.translate('testimonials_description', 'team@phalconphp.com', 'team@phalconphp.com') }}</p>
+                <p>{{ locale.translate('testimonials_description', 'team@phalcon.io', 'team@phalcon.io') }}</p>
             </div>
         </div>
 
